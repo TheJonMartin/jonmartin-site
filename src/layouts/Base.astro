@@ -1,0 +1,61 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--plum: #4a3352;
+		--sage: #7c9473;
+		--mustard: #e8a93b;
+		--cream: #faf6ef;
+		--charcoal: #2e2a26;
+	}
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; }
+	body {
+		margin: 0;
+		background: var(--cream);
+		color: var(--charcoal);
+		font-family: Calibri, "Carlito", sans-serif;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+	h1, h2, h3 {
+		font-family: Georgia, "Times New Roman", serif;
+		color: var(--plum);
+		line-height: 1.2;
+		margin: 0;
+	}
+	.label {
+		font-family: "Courier New", Courier, monospace;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+	a { color: var(--plum); }
+	hr.hairline {
+		border: none;
+		border-top: 1px solid rgba(46, 42, 38, 0.15);
+		margin: 0;
+	}
+</style>

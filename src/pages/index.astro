@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Jon Martin — Field Report & Second Opinion';
+const description =
+	"I don't build it. I tell you why the last three things you built didn't work — written diagnosis and written second opinions for founders of $3-5M professional services businesses.";
+---
+
+<Base title={title} description={description}>
+	<main>
+		<section class="hero">
+			<p class="label kicker">Jon Martin</p>
+			<h1>
+				You are the only person in your company with enough range to handle what
+				comes at it.
+			</h1>
+			<p class="subhead">
+				Every fix you've tried — the hire, the software, the SOP, the management
+				layer — has added capacity without adding range. That's why it kept
+				breaking anyway.
+			</p>
+			<hr class="hairline" />
+			<p class="tagline">
+				I don't build it. I tell you <span class="accent">why</span> the last three
+				things you built didn't work.
+			</p>
+		</section>
+
+		<hr class="hairline" />
+
+		<section class="who">
+			<h2>Who this is for</h2>
+			<p>
+				Founders of professional services businesses doing $3–5M in revenue —
+				agencies, consultancies, MSPs, engineering and design firms. Somewhere
+				between twenty and fifty people. Still founder-led, still
+				founder-dependent: you're still the best seller, often still the best
+				deliverer, and still in the loop on everything that matters.
+			</p>
+			<p>
+				You hired someone senior and they can't operate without you. You bought
+				software and nobody trusts what it reports. You wrote SOPs and nobody
+				follows them. You added a layer of management and it turned into a game
+				of telephone. Each of those looks like a separate problem. It isn't.
+			</p>
+		</section>
+
+		<hr class="hairline" />
+
+		<section class="coming">
+			<p class="label">In development</p>
+			<h2>Two fixed-price written products</h2>
+			<p>
+				A written diagnosis of where your org, your process, and your systems
+				have diverged — and a written second opinion on the growth plan you're
+				about to commit to. No discovery calls, no retainers, no calendar. You
+				send the artifacts, you get the document.
+			</p>
+			<p class="note">
+				Both are being built in public against a composite example company before
+				either one is bookable. Nothing here is for sale yet.
+			</p>
+		</section>
+
+		<hr class="hairline" />
+
+		<footer>
+			<p>
+				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
+			</p>
+			<p class="copyright">© 2026 Jon Martin.</p>
+		</footer>
+	</main>
+</Base>
+
+<style>
+	main { max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+	.hero { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 0; padding-bottom: 3rem; }
+	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
+	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; }
+	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0; }
+	.tagline { font-size: 1.3rem; font-family: Georgia, serif; color: var(--plum); margin: 0; }
+	.accent { color: var(--mustard); font-style: italic; }
+	section { padding: 3rem 0; }
+	h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
+	p { margin: 0 0 1.1rem; }
+	p:last-child { margin-bottom: 0; }
+	.coming .label { font-size: 0.8rem; color: var(--sage); margin-bottom: 0.5rem; }
+	.note { font-family: "Courier New", Courier, monospace; font-size: 0.9rem; color: var(--charcoal); opacity: 0.75; }
+	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+	footer a { font-family: "Courier New", Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
+	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
+</style>
