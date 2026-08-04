@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import NotifyForm from '../components/NotifyForm.astro';
 
 const title = 'Jon Martin — Field Report & Second Opinion';
 const description =
@@ -64,6 +65,10 @@ const description =
 
 		<hr class="hairline" />
 
+		<NotifyForm />
+
+		<hr class="hairline" />
+
 		<footer>
 			<p>
 				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
@@ -80,7 +85,15 @@ const description =
 	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; }
 	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0; }
 	.tagline { font-size: 1.3rem; font-family: Georgia, serif; color: var(--plum); margin: 0; }
-	.accent { color: var(--mustard); font-style: italic; }
+	/* Mustard on cream is 1.92:1 — far below the 4.5:1 minimum, so it can't
+	   carry text. The emphasis moves to plum italic (10.33:1, AAA) and mustard
+	   becomes a decorative underline, where contrast rules don't apply. Same
+	   brand moment, actually readable. */
+	.accent {
+		color: var(--plum);
+		font-style: italic;
+		border-bottom: 2px solid var(--mustard);
+	}
 	section { padding: 3rem 0; }
 	h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
 	p { margin: 0 0 1.1rem; }

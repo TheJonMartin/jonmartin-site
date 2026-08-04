@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Hand-maintained. The site is one page, so a static file beats adding the
+  @astrojs/sitemap dependency. Add a <url> block here whenever you add a page
+  you want indexed. /thanks is deliberately absent — it's noindex.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://thejonmartin.com/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>1.0</priority>
+	</url>
+</urlset>
