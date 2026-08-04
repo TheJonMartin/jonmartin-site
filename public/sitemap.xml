@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Hand-maintained. Add a <url> block whenever you publish a post, using the
-  same slug as the markdown filename:
-      <url><loc>https://thejonmartin.com/writing/your-slug/</loc></url>
-  /thanks is deliberately absent — it's noindex. If posting gets frequent
-  enough that maintaining this by hand annoys you, `npx astro add sitemap`
-  generates it automatically at build time.
+  Hand-maintained. Whenever you publish a post, copy one of the url blocks
+  below and swap the path for /writing/your-post-slug/ — same slug as the
+  markdown filename. /thanks is deliberately absent; it's noindex.
+
+  If maintaining this by hand starts to annoy you, `npx astro add sitemap`
+  generates it automatically at build time instead.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
