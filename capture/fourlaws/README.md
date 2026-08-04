@@ -27,7 +27,7 @@ Confirmed complete against the live site's own `sitemap.xml`.
 | `/applied-examples` | not captured |
 | `/glossary` | **ported** → `src-fourlaws/content/pages/glossary.md` |
 | `/faq` | not captured |
-| `/about` | not captured |
+| `/about` | **ported** → `src-fourlaws/content/pages/about.md` |
 | `/contact` | not captured |
 
 ### Interactive tools (3)
