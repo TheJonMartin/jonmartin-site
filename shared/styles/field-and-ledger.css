@@ -1,0 +1,87 @@
+/*
+ * Field & Ledger — the single source of truth for both sites.
+ *
+ * Imported by src/layouts/Base.astro (thejonmartin.com) and
+ * src-fourlaws/layouts/Base.astro (fourlaws.thejonmartin.com). It lives outside
+ * both srcDir trees on purpose: neither site owns it, so neither can quietly
+ * drift from the other. Change a token here and both sites move together.
+ *
+ * The rules, for anything added below:
+ *   - Mustard is an accent, not a color. One use per page, reserved for a
+ *     genuine highlight or outlier. If two things on a page are mustard,
+ *     neither reads as important.
+ *   - Never pure black (#000) or pure white (#fff). Charcoal and cream are the
+ *     extremes of the range.
+ *   - Dividers are hairlines. No heavy rules, no boxes-within-boxes.
+ *   - Two font families, plus Courier New strictly for labels, tags, and
+ *     pull-quotes. Courier is never body copy.
+ */
+
+:root {
+	--plum: #4a3352;
+	--sage: #7c9473;
+	--mustard: #e8a93b;
+	--cream: #faf6ef;
+	--charcoal: #2e2a26;
+
+	/* Derived from --charcoal so tinted rules and muted text stay in the same
+	   family as body copy instead of drifting toward a neutral grey. */
+	--hairline: rgba(46, 42, 38, 0.15);
+	--muted: rgba(46, 42, 38, 0.7);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+	margin: 0;
+	background: var(--cream);
+	color: var(--charcoal);
+	font-family: Calibri, "Carlito", sans-serif;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, "Times New Roman", serif;
+	color: var(--plum);
+	line-height: 1.2;
+	margin: 0;
+}
+
+/* Courier New's one sanctioned use: eyebrow labels, tags, and pull-quote
+   attributions. Applying this to a paragraph is a design-system violation. */
+.label {
+	font-family: "Courier New", Courier, monospace;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+a { color: var(--plum); }
+
+hr.hairline {
+	border: none;
+	border-top: 1px solid var(--hairline);
+	margin: 0;
+}
+
+/* Sage-filled header row is the house table style. Both sites get it here so
+   Four Laws' reference tables match anything on the main site. */
+table.ledger {
+	width: 100%;
+	border-collapse: collapse;
+}
+table.ledger th {
+	background: var(--sage);
+	color: var(--cream);
+	font-family: Georgia, "Times New Roman", serif;
+	font-weight: normal;
+	text-align: left;
+	padding: 0.6rem 0.75rem;
+}
+table.ledger td {
+	border-bottom: 1px solid var(--hairline);
+	padding: 0.6rem 0.75rem;
+	vertical-align: top;
+}

@@ -1,0 +1,35 @@
+---
+// The cross-domain link back to thejonmartin.com lives here rather than in the
+// nav on purpose: Four Laws is the reference material, the main site is the
+// offer. Someone should finish reading before being pointed at the work.
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<hr class="hairline" />
+	<div class="inner">
+		<p class="colophon">
+			Four Laws of Complex System Design &copy; {year} Jon Martin. All rights reserved.
+		</p>
+		<p class="crosslink">
+			Written by <a href="https://thejonmartin.com">Jon Martin</a>.
+		</p>
+	</div>
+</footer>
+
+<style>
+	.inner {
+		max-width: 68rem;
+		margin: 0 auto;
+		padding: 1.5rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 2rem;
+		justify-content: space-between;
+	}
+	p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--muted);
+	}
+</style>

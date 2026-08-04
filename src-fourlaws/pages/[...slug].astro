@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+// One route for every markdown page in the collection. The entry id is the
+// filename without extension, which is also the URL — see the note in
+// src-fourlaws/content.config.ts about why those are deliberately the same.
+export async function getStaticPaths() {
+	const pages = await getCollection('pages', ({ data }) => !data.draft);
+	return pages.map((page) => ({
+		params: { slug: page.id },
+		props: { page },
+	}));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<Base title={page.data.title} description={page.data.description}>
+	<article>
+		<span class="label eyebrow">{page.data.group}</span>
+		<h1>{page.data.title}</h1>
+		<Content />
+	</article>
+</Base>
+
+<style>
+	.eyebrow {
+		font-size: 0.72rem;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 0.4rem;
+	}
+</style>

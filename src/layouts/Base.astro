@@ -7,6 +7,11 @@ interface Props {
 }
 const { title, description, noindex = false } = Astro.props;
 
+// Field & Ledger tokens and base element styles. Shared verbatim with the Four
+// Laws site (src-fourlaws/layouts/Base.astro) so the two can't drift — edit
+// shared/styles/field-and-ledger.css, not a copy in here.
+import '../../shared/styles/field-and-ledger.css';
+
 // Requires `site` to be set in astro.config.mjs — without it Astro.site is
 // undefined and this throws at build time rather than silently emitting a
 // broken canonical.
@@ -33,39 +38,3 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 	</body>
 </html>
 
-<style is:global>
-	:root {
-		--plum: #4a3352;
-		--sage: #7c9473;
-		--mustard: #e8a93b;
-		--cream: #faf6ef;
-		--charcoal: #2e2a26;
-	}
-	* { box-sizing: border-box; }
-	html { scroll-behavior: smooth; }
-	body {
-		margin: 0;
-		background: var(--cream);
-		color: var(--charcoal);
-		font-family: Calibri, "Carlito", sans-serif;
-		font-size: 18px;
-		line-height: 1.6;
-	}
-	h1, h2, h3 {
-		font-family: Georgia, "Times New Roman", serif;
-		color: var(--plum);
-		line-height: 1.2;
-		margin: 0;
-	}
-	.label {
-		font-family: "Courier New", Courier, monospace;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-	}
-	a { color: var(--plum); }
-	hr.hairline {
-		border: none;
-		border-top: 1px solid rgba(46, 42, 38, 0.15);
-		margin: 0;
-	}
-</style>

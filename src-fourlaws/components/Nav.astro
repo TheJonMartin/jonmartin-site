@@ -1,0 +1,147 @@
+---
+// Mirrors the nav on the live fourlaws.netlify.app, restyled to Field & Ledger.
+// The grouping (Explore / Tools / Reference) and every href are carried over
+// unchanged so existing muscle memory and existing links both still work.
+//
+// Kept as a flat data structure rather than hand-written markup so that porting
+// the remaining pages is a matter of editing this list, not hunting through
+// nested <ul>s in every layout.
+const groups: { label: string; links: { href: string; text: string }[] }[] = [
+	{
+		label: 'Explore',
+		links: [
+			{ href: '/four-laws-flow-and-constraints', text: 'Flow Deck' },
+			{ href: '/conways-law-revops-team-structure', text: "RevOps & Conway's Law" },
+			{ href: '/conways-law-ai-agents-revops', text: "AI Agents & Conway's Law" },
+			{ href: '/stakeholder-decision-bottlenecks', text: 'Stakeholder Decision Stalls' },
+			{ href: '/wip-limits-vs-theory-of-constraints', text: 'WIP Limits vs. ToC' },
+			{ href: '/vsm-ai-system-4', text: 'AI, System 4 & VSM' },
+			{ href: '/applied-examples', text: 'More Applied Examples' },
+		],
+	},
+	{
+		label: 'Tools',
+		links: [
+			{ href: '/part8-flow-diagnostic', text: 'Diagnostic Tool' },
+			{ href: '/flow-formula-calculator', text: 'Calculator' },
+			{ href: '/stakeholder-decision-checklist', text: 'Decision Stall Checklist' },
+		],
+	},
+	{
+		label: 'Reference',
+		links: [
+			{ href: '/glossary', text: 'Glossary' },
+			{ href: '/faq', text: 'FAQ' },
+			{ href: '/about', text: 'About' },
+			{ href: '/contact', text: 'Contact' },
+		],
+	},
+];
+
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+---
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+	<nav aria-label="Primary">
+		<div class="masthead">
+			<a class="wordmark" href="/">Four Laws of Complex System Design</a>
+			<a class="full-ref" href="/four-laws-complex-system-design-full">Full Reference</a>
+		</div>
+
+		<div class="groups">
+			{groups.map((group) => (
+				<div class="group">
+					<span class="label group-label">{group.label}</span>
+					<ul>
+						{group.links.map((link) => (
+							<li>
+								<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
+									{link.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</nav>
+</header>
+
+<style>
+	/* Visible only when tabbed to — keyboard users get the escape hatch without
+	   it occupying layout for everyone else. */
+	.skip {
+		position: absolute;
+		left: -9999px;
+	}
+	.skip:focus {
+		left: 1rem;
+		top: 1rem;
+		z-index: 10;
+		background: var(--cream);
+		padding: 0.5rem 0.75rem;
+		border: 1px solid var(--plum);
+	}
+
+	header {
+		border-bottom: 1px solid var(--hairline);
+	}
+	nav {
+		max-width: 68rem;
+		margin: 0 auto;
+		padding: 1.25rem 1.5rem;
+	}
+
+	.masthead {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.75rem;
+	}
+	.wordmark {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.15rem;
+		color: var(--plum);
+		text-decoration: none;
+	}
+	.full-ref {
+		font-size: 0.95rem;
+	}
+
+	.groups {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		margin-top: 1rem;
+	}
+	.group-label {
+		font-size: 0.72rem;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+	}
+	li a {
+		font-size: 0.95rem;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	li a:hover {
+		border-bottom-color: var(--plum);
+	}
+	/* Mustard's single appearance in the chrome: it marks where you are, which
+	   is a genuine outlier among a list of places you aren't. */
+	li a[aria-current='page'] {
+		border-bottom-color: var(--mustard);
+	}
+</style>

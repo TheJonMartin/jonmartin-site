@@ -2,11 +2,19 @@
   "name": "jonmartin-site",
   "type": "module",
   "version": "0.0.1",
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "dev:fourlaws": "astro dev --config astro.config.fourlaws.mjs",
+    "build:fourlaws": "astro build --config astro.config.fourlaws.mjs",
+    "preview:fourlaws": "astro preview --config astro.config.fourlaws.mjs"
   },
-  "dependencies": { "astro": "^7.1.6" }
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^7.1.6"
+  }
 }

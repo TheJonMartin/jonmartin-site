@@ -1,0 +1,95 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+// SCAFFOLD. The real home page copy still lives on fourlaws.netlify.app and has
+// not been ported yet — see capture/fourlaws/README.md for what's captured and
+// what's outstanding. This renders whatever pages have been migrated so far, so
+// the build is meaningful from the first commit and migration progress is
+// visible rather than something you have to go count files to know.
+const pages = await getCollection('pages', ({ data }) => !data.draft);
+
+const byGroup = (group: string) =>
+	pages
+		.filter((p) => p.data.group === group)
+		.sort((a, b) => a.data.order - b.data.order);
+
+// The three tools are JavaScript applications, not collection entries, so they
+// can't be discovered by getCollection. Listed by hand until they're ported.
+const tools = [
+	{ href: '/part8-flow-diagnostic', text: 'Flow & Constraint Diagnostic', ported: false },
+	{ href: '/flow-formula-calculator', text: 'Flow Formula Calculator', ported: false },
+	{ href: '/stakeholder-decision-checklist', text: 'Stakeholder Decision Stall Checklist', ported: false },
+];
+
+const sections = [
+	{ label: 'Reference', entries: byGroup('reference') },
+	{ label: 'Explore', entries: byGroup('explore') },
+	{ label: 'About', entries: byGroup('meta') },
+];
+---
+
+<Base
+	title="Four Laws of Complex System Design"
+	description="Ashby's, Conway's, and Brooks's Laws, Little's Law and the Theory of Constraints — the structural and flow laws that govern why complex systems and the teams that build them behave the way they do."
+>
+	<h1>Four Laws of Complex System Design</h1>
+
+	<p class="standfirst">
+		Why complex systems resist the changes you make to them — and what the
+		structural and flow laws predict will happen instead.
+	</p>
+
+	<hr class="hairline" />
+
+	{sections.map((section) => section.entries.length > 0 && (
+		<section>
+			<h2>{section.label}</h2>
+			<ul>
+				{section.entries.map((entry) => (
+					<li>
+						<a href={`/${entry.id}`}>{entry.data.title}</a>
+						<span class="desc">{entry.data.description}</span>
+					</li>
+				))}
+			</ul>
+		</section>
+	))}
+
+	<section>
+		<h2>Tools</h2>
+		<ul>
+			{tools.map((tool) => (
+				<li>
+					{tool.ported
+						? <a href={tool.href}>{tool.text}</a>
+						: <span class="pending">{tool.text}</span>}
+					{!tool.ported && <span class="desc">Not yet migrated — still live on the old site.</span>}
+				</li>
+			))}
+		</ul>
+	</section>
+</Base>
+
+<style>
+	.standfirst {
+		font-size: 1.15rem;
+		color: var(--muted);
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	li {
+		padding: 0.6rem 0;
+		border-bottom: 1px solid var(--hairline);
+	}
+	.desc {
+		display: block;
+		font-size: 0.9rem;
+		color: var(--muted);
+	}
+	.pending {
+		color: var(--muted);
+	}
+</style>

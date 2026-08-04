@@ -1,0 +1,95 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+// Field & Ledger tokens, shared with the main site. Editing a copy of these in
+// here instead of in shared/ is how the two sites start to drift.
+import '../../shared/styles/field-and-ledger.css';
+
+interface Props {
+	title: string;
+	description: string;
+	/** Utility pages that shouldn't appear in search. */
+	noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+
+// Astro.site comes from astro.config.fourlaws.mjs. Building this site with the
+// main config would silently emit thejonmartin.com canonicals onto Four Laws
+// pages, which is why the two configs exist rather than one config with a flag.
+//
+// build.format is 'file', so Astro.url.pathname here is '/glossary.html' — but
+// the URL Netlify actually serves, and the one every existing inbound link uses,
+// is '/glossary'. Canonicalising to the .html form would point search engines
+// and shared links at a second address for the same page. Strip it.
+const cleanPath = Astro.url.pathname
+	.replace(/index\.html$/, '')
+	.replace(/\.html$/, '');
+const canonical = new URL(cleanPath, Astro.site).href;
+
+// Titles read "<page> | Four Laws of Complex System Design", matching the live
+// site, except on the home page where that would stutter.
+const fullTitle = title === 'Four Laws of Complex System Design'
+	? title
+	: `${title} | Four Laws of Complex System Design`;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{fullTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+		{noindex && <meta name="robots" content="noindex, follow" />}
+		<meta property="og:site_name" content="Four Laws of Complex System Design" />
+		<meta property="og:title" content={fullTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={canonical} />
+		<meta name="twitter:card" content="summary" />
+	</head>
+	<body>
+		<Nav />
+		<main id="main">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style is:global>
+	/* Reading measure for the reference prose. Four Laws pages are long-form
+	   documents, not marketing pages — the constraint that matters is line
+	   length, not viewport width. */
+	main {
+		max-width: 44rem;
+		margin: 0 auto;
+		padding: 2.5rem 1.5rem 3.5rem;
+	}
+	main h1 {
+		font-size: 2.1rem;
+		margin-bottom: 0.75rem;
+	}
+	main h2 {
+		font-size: 1.45rem;
+		margin: 2.25rem 0 0.5rem;
+	}
+	main h3 {
+		font-size: 1.15rem;
+		margin: 1.5rem 0 0.35rem;
+	}
+	main blockquote {
+		margin: 1.5rem 0;
+		padding-left: 1rem;
+		border-left: 2px solid var(--sage);
+		font-family: "Courier New", Courier, monospace;
+		font-size: 0.95rem;
+	}
+	main code {
+		font-family: "Courier New", Courier, monospace;
+		font-size: 0.95em;
+	}
+</style>
