@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import NotifyForm from '../components/NotifyForm.astro';
+import RecentWriting from '../components/RecentWriting.astro';
 
 const title = 'Jon Martin — Field Report & Second Opinion';
 const description =
@@ -48,20 +49,7 @@ const description =
 
 		<hr class="hairline" />
 
-		<section class="coming">
-			<p class="label">In development</p>
-			<h2>Two fixed-price written products</h2>
-			<p>
-				A written diagnosis of where your org, your process, and your systems
-				have diverged — and a written second opinion on the growth plan you're
-				about to commit to. No discovery calls, no retainers, no calendar. You
-				send the artifacts, you get the document.
-			</p>
-			<p class="note">
-				Both are being built in public against a composite example company before
-				either one is bookable. Nothing here is for sale yet.
-			</p>
-		</section>
+		<RecentWriting />
 
 		<hr class="hairline" />
 
@@ -70,7 +58,8 @@ const description =
 		<hr class="hairline" />
 
 		<footer>
-			<p>
+			<p class="links">
+				<a href="/writing/">Writing</a>
 				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
 			</p>
 			<p class="copyright">© 2026 Jon Martin.</p>
@@ -98,9 +87,8 @@ const description =
 	h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
 	p { margin: 0 0 1.1rem; }
 	p:last-child { margin-bottom: 0; }
-	.coming .label { font-size: 0.8rem; color: var(--sage); margin-bottom: 0.5rem; }
-	.note { font-family: "Courier New", Courier, monospace; font-size: 0.9rem; color: var(--charcoal); opacity: 0.75; }
 	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+	.links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 	footer a { font-family: "Courier New", Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
 	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
 </style>

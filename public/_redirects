@@ -1,8 +1,9 @@
 # Old HubSpot URLs. Order matters — Netlify stops at the first match.
-# /contact points at the waitlist form rather than the bare homepage, so the
-# old link lands somewhere with an action on it.
+# The blog now lives at /writing, so legacy /blog links land there rather than
+# on the homepage — closer to what the visitor was actually looking for.
 
-/contact             /#notify   301
-/blog/*              /          301
-/starter-package     /          301
-/premium-package     /          301
+/contact             /#notify    301
+/blog                /writing/   301
+/blog/*              /writing/   301
+/starter-package     /           301
+/premium-package     /           301

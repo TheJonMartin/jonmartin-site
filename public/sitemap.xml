@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Hand-maintained. The site is one page, so a static file beats adding the
-  @astrojs/sitemap dependency. Add a <url> block here whenever you add a page
-  you want indexed. /thanks is deliberately absent — it's noindex.
+  Hand-maintained. Add a <url> block whenever you publish a post, using the
+  same slug as the markdown filename:
+      <url><loc>https://thejonmartin.com/writing/your-slug/</loc></url>
+  /thanks is deliberately absent — it's noindex. If posting gets frequent
+  enough that maintaining this by hand annoys you, `npx astro add sitemap`
+  generates it automatically at build time.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>https://thejonmartin.com/</loc>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>https://thejonmartin.com/writing/</loc>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
 	</url>
 </urlset>

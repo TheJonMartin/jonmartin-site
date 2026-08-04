@@ -1,0 +1,96 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('writing', ({ data }) => !data.draft);
+	return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+type Props = { post: CollectionEntry<'writing'> };
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fmt = (d: Date) =>
+	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base title={`${post.data.title} — Jon Martin`} description={post.data.description}>
+	<main>
+		<article>
+			<header class="head">
+				<p class="label kicker"><a href="/writing/">Writing</a></p>
+				<h1>{post.data.title}</h1>
+				<p class="label date">
+					{fmt(post.data.pubDate)}
+					{post.data.updatedDate && <span> · updated {fmt(post.data.updatedDate)}</span>}
+				</p>
+			</header>
+
+			<hr class="hairline" />
+
+			<div class="prose">
+				<Content />
+			</div>
+
+			{post.data.tags.length > 0 && (
+				<p class="label tags">{post.data.tags.join(' · ')}</p>
+			)}
+		</article>
+
+		<hr class="hairline" />
+
+		<footer>
+			<p><a href="/writing/">&larr; All writing</a></p>
+			<p class="copyright">© 2026 Jon Martin.</p>
+		</footer>
+	</main>
+</Base>
+
+<style>
+	main { max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+	.head { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 2.5rem; }
+	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
+	.kicker a { color: var(--sage); text-decoration: none; }
+	.kicker a:hover { border-bottom: 1px solid var(--sage); }
+	h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 400; }
+	.date { font-size: 0.8rem; color: var(--sage); margin: 0; }
+	.prose { padding: 2.5rem 0; }
+	.tags { font-size: 0.75rem; color: var(--sage); margin: 0 0 2.5rem; }
+	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
+	footer a { font-family: 'Courier New', Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
+	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
+</style>
+
+<style is:global>
+	/* Markdown output. Scoped styles can't reach <Content /> children, so these
+	   are global but namespaced under .prose. */
+	.prose h2 { font-size: 1.4rem; margin: 2.5rem 0 1rem; }
+	.prose h3 { font-size: 1.15rem; margin: 2rem 0 0.75rem; }
+	.prose p { margin: 0 0 1.1rem; }
+	.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.4rem; }
+	.prose li { margin-bottom: 0.4rem; }
+	.prose blockquote {
+		margin: 1.5rem 0;
+		padding-left: 1.2rem;
+		border-left: 2px solid var(--sage);
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 0.95rem;
+	}
+	.prose code {
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 0.92em;
+		background: rgba(46, 42, 38, 0.06);
+		padding: 0.1em 0.3em;
+		border-radius: 2px;
+	}
+	.prose pre {
+		background: rgba(46, 42, 38, 0.06);
+		padding: 1rem;
+		border-radius: 2px;
+		overflow-x: auto;
+	}
+	.prose pre code { background: none; padding: 0; }
+	.prose hr { border: none; border-top: 1px solid rgba(46, 42, 38, 0.15); margin: 2.5rem 0; }
+	.prose img { max-width: 100%; height: auto; }
+</style>
