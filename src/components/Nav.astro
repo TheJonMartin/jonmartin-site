@@ -1,0 +1,110 @@
+---
+// This site is two pages deep (home, writing), so it doesn't need Four Laws'
+// grouped multi-section nav — a single row is enough. Structure and class
+// names still mirror src-fourlaws/components/Nav.astro (skip link, hairline
+// header, wordmark) so the two sites read as one family rather than two
+// unrelated designs.
+//
+// The link to Four Laws is the cross-site jump: this site and
+// fourlaws.thejonmartin.com are both "thejonmartin.com" in the reader's head
+// even though they're two Netlify projects under the hood, so getting from
+// one to the other should take one click from any page, not just a footer
+// link on the far side. Four Laws' own nav carries the matching link back —
+// see src-fourlaws/components/Nav.astro.
+const links: { href: string; text: string }[] = [{ href: '/writing/', text: 'Writing' }];
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const inWriting = path === '/writing' || path.startsWith('/writing/');
+---
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+	<nav aria-label="Primary">
+		<div class="masthead">
+			<a class="wordmark" href="/">Jon Martin</a>
+			<div class="links">
+				{links.map((link) => (
+					<a href={link.href} aria-current={inWriting ? 'page' : undefined}>
+						{link.text}
+					</a>
+				))}
+				<a class="crosssite" href="https://fourlaws.thejonmartin.com">
+					Four Laws of Complex System Design
+				</a>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<style>
+	/* Visible only when tabbed to — keyboard users get the escape hatch without
+	   it occupying layout for everyone else. */
+	.skip {
+		position: absolute;
+		left: -9999px;
+	}
+	.skip:focus {
+		left: 1rem;
+		top: 1rem;
+		z-index: 10;
+		background: var(--cream);
+		padding: 0.5rem 0.75rem;
+		border: 1px solid var(--plum);
+	}
+
+	header {
+		border-bottom: 1px solid var(--hairline);
+	}
+	nav {
+		max-width: 680px;
+		margin: 0 auto;
+		padding: 1.25rem 1.5rem;
+	}
+
+	.masthead {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.75rem 1.5rem;
+	}
+	.wordmark {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.15rem;
+		color: var(--plum);
+		text-decoration: none;
+	}
+
+	.links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.5rem 1.5rem;
+	}
+	.links a {
+		font-size: 0.95rem;
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	.links a:hover {
+		border-bottom-color: var(--plum);
+	}
+	/* Mustard's single appearance in the chrome: it marks where you are, which
+	   is a genuine outlier among a list of places you aren't. */
+	.links a[aria-current='page'] {
+		border-bottom-color: var(--mustard);
+	}
+
+	/* The cross-site link is a different kind of destination than "Writing" —
+	   a whole other reference site, not another page here — so it's set apart
+	   with a hairline rule rather than folded into the same unbroken list. */
+	.crosssite {
+		padding-left: 1.5rem;
+		border-left: 1px solid var(--hairline);
+		color: var(--sage);
+	}
+	.crosssite:hover {
+		border-bottom-color: var(--sage);
+	}
+</style>

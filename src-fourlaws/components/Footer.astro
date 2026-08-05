@@ -1,7 +1,9 @@
 ---
-// The cross-domain link back to thejonmartin.com lives here rather than in the
-// nav on purpose: Four Laws is the reference material, the main site is the
-// offer. Someone should finish reading before being pointed at the work.
+// The cross-domain link back to thejonmartin.com also lives in the nav
+// (Nav.astro's .crosssite link) so it's reachable from every page, not just
+// after scrolling to the bottom. It stays here too, with a name attached
+// ("Written by Jon Martin"), as the sign-off a reader sees after finishing
+// the material — nav gets you there quickly, footer closes the piece.
 const year = new Date().getFullYear();
 ---
 

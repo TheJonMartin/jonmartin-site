@@ -16,7 +16,7 @@ const fmt = (d: Date) =>
 ---
 
 <Base title={title} description={description}>
-	<main>
+	<main id="main">
 		<section class="hero">
 			<p class="label kicker"><a href="/">Jon Martin</a></p>
 			<h1>Writing</h1>
@@ -58,7 +58,10 @@ const fmt = (d: Date) =>
 </Base>
 
 <style>
-	main { max-width: 680px; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+	/* Top padding was 5rem before the site had a persistent header nav; trimmed
+	   to 2.5rem so content doesn't sit stacked below both the nav's own
+	   padding and this. */
+	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
 	.hero { display: flex; flex-direction: column; gap: 1.25rem; padding-bottom: 3rem; }
 	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
 	.kicker a { color: var(--sage); text-decoration: none; }

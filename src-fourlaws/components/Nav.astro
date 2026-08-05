@@ -47,7 +47,10 @@ const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 	<nav aria-label="Primary">
 		<div class="masthead">
 			<a class="wordmark" href="/">Four Laws of Complex System Design</a>
-			<a class="full-ref" href="/four-laws-complex-system-design-full">Full Reference</a>
+			<div class="masthead-links">
+				<a class="full-ref" href="/four-laws-complex-system-design-full">Full Reference</a>
+				<a class="crosssite" href="https://thejonmartin.com">thejonmartin.com</a>
+			</div>
 		</div>
 
 		<div class="groups">
@@ -107,8 +110,28 @@ const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 		color: var(--plum);
 		text-decoration: none;
 	}
+	.masthead-links {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 1.25rem;
+	}
 	.full-ref {
 		font-size: 0.95rem;
+	}
+	/* The cross-site link back to thejonmartin.com used to live only in the
+	   footer (see Footer.astro) so a reader would finish the material before
+	   being pointed at the offer. It's in the nav now too, on request, so the
+	   two sites are reachable from each other on every page, not just after
+	   scrolling to the bottom of one. */
+	.crosssite {
+		font-size: 0.95rem;
+		color: var(--sage);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	.crosssite:hover {
+		border-bottom-color: var(--sage);
 	}
 
 	.groups {
