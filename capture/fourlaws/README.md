@@ -17,7 +17,7 @@ Confirmed complete against the live site's own `sitemap.xml`.
 | Path | Status |
 |---|---|
 | `/` | **ported** → `src-fourlaws/pages/index.astro` |
-| `/four-laws-complex-system-design-full` | **outstanding** — the big one, Parts 1–8 |
+| `/four-laws-complex-system-design-full` | **ported** ⚠︎ see "Full Reference" below |
 | `/four-laws-flow-and-constraints` | **ported** ⚠︎ see "Flow Deck" below |
 | `/conways-law-revops-team-structure` | **ported** |
 | `/conways-law-ai-agents-revops` | **ported** |
@@ -53,24 +53,54 @@ One structural change in all three: the originals wired buttons with inline
 `window` and inline handlers would silently no-op. Navigation is wired with
 `addEventListener` against `data-goto` / `data-action` attributes instead.
 
-## Do not cut over yet
+## Full Reference
 
-One page is still missing — `/four-laws-complex-system-design-full` — and most
-ported pages link into it, several with deep anchors (`#s21`, `#s81`, `#p6`).
-Deploying the subdomain today would publish a site with live links into 404s.
+All sixteen URLs now build. The Full Reference is
+`src-fourlaws/content/pages/four-laws-complex-system-design-full.md` — a
+collection entry rather than a hand-built `.astro` page, since it is prose.
 
-Order of operations:
+It carries 49 explicit anchor ids: `#p1`–`#p8`, `#s21`–`#s25`, `#s31`–`#s34`,
+`#s41`–`#s43`, `#s51`–`#s53`, `#s61`–`#s68`, `#s71`–`#s76`, `#s81`–`#s85`, and
+`#s831`–`#s837`. Every heading in the file is raw `<h2 id="…">` / `<h3 id="…">`
+HTML rather than markdown, because markdown's auto-generated slugs would turn
+"2.1 Ashby's Law of Requisite Variety" into `#21-ashbys-law-of-requisite-variety`
+and silently break ten internal pages plus every outreach link already in the
+wild. On the live site `#s833`–`#s837` are `<div>` blocks with a bold lead-in;
+they are promoted to `<h4>` here so each anchor lands on something semantic.
 
-1. Port the Full Reference, preserving its `#sNN` / `#pN` anchor ids exactly.
-2. Re-run the missing-link check (below) and confirm it returns nothing.
-3. Then follow `docs/fourlaws-deploy.md` for the Netlify and DNS steps.
+`src-fourlaws/layouts/Base.astro` changed with it: the title rule now skips the
+" | Four Laws of Complex System Design" suffix for any title that already opens
+with the site name, so this page's `<title>` matches the live one exactly
+instead of stuttering.
 
-Missing-link check, after a `npm run build:fourlaws`:
+## Pre-cutover checks
+
+Both of these must come back clean before following `docs/fourlaws-deploy.md`.
+As of the Full Reference port, both do.
+
+Missing-page check, after `npm run build:fourlaws`:
 
 ```sh
 grep -oh 'href="/[^"#]*' dist-fourlaws/*.html | sed 's/href="//' | sort -u |
   while read p; do f="dist-fourlaws${p}.html"; [ "$p" = "/" ] && f="dist-fourlaws/index.html";
   [ -f "$f" ] || echo "MISSING: $p"; done
+```
+
+Missing-anchor check — the one that actually matters here, since the deep links
+into the Full Reference are what made the page a cutover blocker:
+
+```sh
+python3 - <<'EOF'
+import re, glob, os
+ids = {os.path.basename(f)[:-5]: set(re.findall(r'id="([^"]+)"', open(f).read()))
+       for f in glob.glob('dist-fourlaws/*.html')}
+for f in glob.glob('dist-fourlaws/*.html'):
+    for href in set(re.findall(r'href="(/[^"]*#[^"]+)"', open(f).read())):
+        page, anchor = href.split('#', 1)
+        key = 'index' if page == '/' else page.lstrip('/').replace('.html', '')
+        if key not in ids: print('NO PAGE  ', href, '<-', os.path.basename(f))
+        elif anchor not in ids[key]: print('NO ANCHOR', href, '<-', os.path.basename(f))
+EOF
 ```
 
 ## Known deltas from the live site
@@ -86,6 +116,22 @@ Decisions made during the port, so they don't get rediscovered as bugs.
   well that way since each slide already had a heading and prose. If the deck
   behaviour is wanted back, that page needs curling and the carousel rebuilding.
   Two SVG diagrams from it are currently rendered as plain text.
+- **Full Reference presentation.** Three small departures from the live page, all
+  consequences of the reskin rather than content changes. The `<h1>` reads "Four
+  Laws of Complex System Design — Full Reference" where the live page splits that
+  across an `<h1>` and a subtitle line; the eyebrow reads "reference" (the
+  collection's group) where the live page says "Reference Document"; and 8.5's
+  quick-reference table is a list, because it was a single-header table that has
+  no faithful markdown equivalent. The other two tables (5.1, 5.2) are real
+  tables. Nothing else in the prose was cut or reworded.
+- **Body diagrams.** The Full Reference has eleven inline diagrams (Figures 0–10,
+  22 files — a `.webp` with a `.png` fallback each). The `<figure>` elements are
+  ported with their captions intact and each `<img>` preserved verbatim inside an
+  HTML comment carrying its `src` and full alt text — nothing renders broken, and
+  restoring them is a matter of copying the files into `public-fourlaws/img/` and
+  uncommenting. Left uncopied deliberately: they are drawn in the old dark
+  navy/cyan palette and would look wrong on a cream Field & Ledger page, so they
+  want redrawing rather than copying.
 - **OG images.** The live site has per-page `og/*.png` images. None are carried
   over yet; `Base.astro` currently emits `twitter:card: summary` rather than
   `summary_large_image` to match.

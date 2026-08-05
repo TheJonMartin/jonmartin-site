@@ -28,10 +28,11 @@ const cleanPath = Astro.url.pathname
 const canonical = new URL(cleanPath, Astro.site).href;
 
 // Titles read "<page> | Four Laws of Complex System Design", matching the live
-// site, except on the home page where that would stutter.
-const fullTitle = title === 'Four Laws of Complex System Design'
-	? title
-	: `${title} | Four Laws of Complex System Design`;
+// site — except where the title already opens with the site name, which is the
+// home page and the Full Reference ("Four Laws of Complex System Design — Full
+// Reference"). Appending the suffix to those would stutter.
+const siteName = 'Four Laws of Complex System Design';
+const fullTitle = title.startsWith(siteName) ? title : `${title} | ${siteName}`;
 ---
 
 <!doctype html>
