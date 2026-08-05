@@ -1,95 +1,239 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
-// SCAFFOLD. The real home page copy still lives on fourlaws.netlify.app and has
-// not been ported yet — see capture/fourlaws/README.md for what's captured and
-// what's outstanding. This renders whatever pages have been migrated so far, so
-// the build is meaningful from the first commit and migration progress is
-// visible rather than something you have to go count files to know.
-const pages = await getCollection('pages', ({ data }) => !data.draft);
+// Hand-authored rather than generated from the collection. Each card has its own
+// framing copy that's deliberately different from the page's meta description —
+// the description sells the page to a search engine, the card sells it to
+// someone already here deciding what to read next. Generating these from
+// entry.data.description would flatten that distinction.
+//
+// `ready: false` renders the item as plain text with a note instead of a dead
+// link. Everything unported is visible rather than hidden, so the home page
+// doubles as the migration's progress board — see capture/fourlaws/README.md.
 
-const byGroup = (group: string) =>
-	pages
-		.filter((p) => p.data.group === group)
-		.sort((a, b) => a.data.order - b.data.order);
+type Card = {
+	kicker: string;
+	title: string;
+	blurb: string;
+	cta: string;
+	href: string;
+	ready: boolean;
+};
 
-// The three tools are JavaScript applications, not collection entries, so they
-// can't be discovered by getCollection. Listed by hand until they're ported.
-const tools = [
-	{ href: '/part8-flow-diagnostic', text: 'Flow & Constraint Diagnostic', ported: false },
-	{ href: '/flow-formula-calculator', text: 'Flow Formula Calculator', ported: false },
-	{ href: '/stakeholder-decision-checklist', text: 'Stakeholder Decision Stall Checklist', ported: false },
+const read: Card[] = [
+	{
+		kicker: 'Full Reference · Parts 1–8',
+		title: 'Four Laws of Complex System Design',
+		blurb: 'The complete reference document — how the four laws originated, how they interact, decomposability, Beer’s VSM, boundaries you don’t control, and flow & constraints.',
+		cta: 'Read the full document',
+		href: '/four-laws-complex-system-design-full',
+		ready: false,
+	},
 ];
 
-const sections = [
-	{ label: 'Reference', entries: byGroup('reference') },
-	{ label: 'Explore', entries: byGroup('explore') },
-	{ label: 'About', entries: byGroup('meta') },
+const explore: Card[] = [
+	{
+		kicker: 'Walkthrough',
+		title: 'Managing Process: Flow & Constraints',
+		blurb: 'Little’s Law and the Theory of Constraints, with a worked subscription-billing delivery example.',
+		cta: 'Read the walkthrough',
+		href: '/four-laws-flow-and-constraints',
+		ready: true,
+	},
+	{
+		kicker: 'Applied example',
+		title: "Conway's Law and Your RevOps Team Structure",
+		blurb: 'Why your CRM, CPQ, and billing systems already mirror your org chart, and how to use the Reverse Conway Maneuver to redraw team boundaries around quote-to-cash instead of department lines.',
+		cta: 'Read the example',
+		href: '/conways-law-revops-team-structure',
+		ready: true,
+	},
+	{
+		kicker: 'Applied example',
+		title: "Conway's Law in the AI Agent Era",
+		blurb: 'AI agents inherit your team boundaries, not just your tasks — why an AI SDR or billing-exceptions agent fails exactly where your org chart already had a seam.',
+		cta: 'Read the example',
+		href: '/conways-law-ai-agents-revops',
+		ready: true,
+	},
+	{
+		kicker: 'Applied example',
+		title: 'Why Executive Decisions Stall on Client Projects',
+		blurb: 'Little’s Law, Kingman’s formula, and Weinberg’s numbers, applied to the steering committee instead of the delivery team — why the same sign-off takes six weeks.',
+		cta: 'Read the example',
+		href: '/stakeholder-decision-bottlenecks',
+		ready: true,
+	},
+	{
+		kicker: 'Applied examples',
+		title: 'The Four Laws Across Revenue and Back-Office Teams',
+		blurb: 'Ten worked examples — Marketing, Sales, Customer Success, Finance, and RevOps, each with a SaaS and a services flavor — showing where these laws actually show up in day-to-day work.',
+		cta: 'Browse the examples',
+		href: '/applied-examples',
+		ready: true,
+	},
+	{
+		kicker: 'Disambiguation',
+		title: 'WIP Limits vs. the Theory of Constraints',
+		blurb: 'A WIP limit is a Kanban practice; the Theory of Constraints tells you where to put it. Why conflating them leaves throughput exactly where it started.',
+		cta: 'Read the breakdown',
+		href: '/wip-limits-vs-theory-of-constraints',
+		ready: true,
+	},
+	{
+		kicker: 'Applied example',
+		title: "AI, System 4, and Beer's VSM",
+		blurb: 'AI can supercharge System 4 environmental scanning — but faster signals without a functioning System 5 just produce paralysis at machine speed.',
+		cta: 'Read the example',
+		href: '/vsm-ai-system-4',
+		ready: true,
+	},
+];
+
+const lookUp: Card[] = [
+	{
+		kicker: 'Reference',
+		title: 'Glossary',
+		blurb: 'Short definitions of every term on this site — Ashby, Conway, Brooks, Reverse Conway, Team Topologies, Beer’s VSM, Little’s Law, and the Theory of Constraints — with links to the full explanation.',
+		cta: 'Browse the glossary',
+		href: '/glossary',
+		ready: true,
+	},
+	{
+		kicker: 'Reference',
+		title: 'FAQ',
+		blurb: 'Straight answers to the questions that come up most — how these ideas differ, how they interact, and where to start applying them.',
+		cta: 'Read the FAQ',
+		href: '/faq',
+		ready: true,
+	},
+];
+
+const use: Card[] = [
+	{
+		kicker: 'Interactive tool',
+		title: 'Flow & Constraint Diagnostic',
+		blurb: 'A five-step guided diagnostic — plug in your own WIP, throughput, and constraint details to get a personalized Five Focusing Steps writeup you can use in a client conversation.',
+		cta: 'Start the diagnostic',
+		href: '/part8-flow-diagnostic',
+		ready: false,
+	},
+	{
+		kicker: 'Interactive tool',
+		title: 'Flow Formula Calculator',
+		blurb: 'Interactive calculators for Little’s Law, Kingman’s formula, and Weinberg’s context-switching numbers — plug in real engagement numbers to see what they predict.',
+		cta: 'Open the calculator',
+		href: '/flow-formula-calculator',
+		ready: false,
+	},
+	{
+		kicker: 'Interactive tool',
+		title: 'Stakeholder Decision Stall Checklist',
+		blurb: 'Check off what’s true of a stalled client engagement to see whether you’re facing a Little’s Law queue problem, a Kingman utilization problem, or a Weinberg signal-distortion problem.',
+		cta: 'Run the checklist',
+		href: '/stakeholder-decision-checklist',
+		ready: false,
+	},
+];
+
+const laws = [
+	{ text: "Ashby's Law of Requisite Variety", href: '/four-laws-complex-system-design-full#s21' },
+	{ text: "Conway's Law", href: '/four-laws-complex-system-design-full#s22' },
+	{ text: "Brooks's Law", href: '/four-laws-complex-system-design-full#s23' },
+	{ text: 'The Reverse Conway Maneuver', href: '/four-laws-complex-system-design-full#s24' },
+	{ text: "Beer's Viable System Model", href: '/four-laws-complex-system-design-full#p6' },
+];
+
+const sections: { heading: string; cards: Card[] }[] = [
+	{ heading: 'Read', cards: read },
+	{ heading: 'Explore', cards: explore },
+	{ heading: 'Look up', cards: lookUp },
+	{ heading: 'Use', cards: use },
 ];
 ---
 
 <Base
 	title="Four Laws of Complex System Design"
-	description="Ashby's, Conway's, and Brooks's Laws, Little's Law and the Theory of Constraints — the structural and flow laws that govern why complex systems and the teams that build them behave the way they do."
+	description="A framework for designing teams and systems: Ashby's Law, Conway's Law, Brooks's Law, Reverse Conway, and Beer's VSM — plus tools for diagnosing flow and constraints."
 >
+	<span class="label eyebrow">Reference site</span>
 	<h1>Four Laws of Complex System Design</h1>
 
 	<p class="standfirst">
-		Why complex systems resist the changes you make to them — and what the
-		structural and flow laws predict will happen instead.
+		Why teams and the systems they build keep running into the same failure
+		modes — and a shared vocabulary for diagnosing them. Built around four
+		foundational laws, how they interact, and what happens to work once it
+		starts moving through the structure they create.
 	</p>
 
-	<hr class="hairline" />
+	<ul class="laws">
+		{laws.map((law) => <li><a href={law.href}>{law.text}</a></li>)}
+	</ul>
 
-	{sections.map((section) => section.entries.length > 0 && (
+	{sections.map((section) => (
 		<section>
-			<h2>{section.label}</h2>
-			<ul>
-				{section.entries.map((entry) => (
-					<li>
-						<a href={`/${entry.id}`}>{entry.data.title}</a>
-						<span class="desc">{entry.data.description}</span>
-					</li>
-				))}
-			</ul>
+			<h2>{section.heading}</h2>
+			{section.cards.map((card) => (
+				<article class:list={['card', { pending: !card.ready }]}>
+					<span class="label kicker">{card.kicker}</span>
+					<h3>{card.title}</h3>
+					<p>{card.blurb}</p>
+					{card.ready
+						? <a class="cta" href={card.href}>{card.cta} &rarr;</a>
+						: <p class="note">Not yet migrated — still live on the old site.</p>}
+				</article>
+			))}
 		</section>
 	))}
 
 	<section>
-		<h2>Tools</h2>
-		<ul>
-			{tools.map((tool) => (
-				<li>
-					{tool.ported
-						? <a href={tool.href}>{tool.text}</a>
-						: <span class="pending">{tool.text}</span>}
-					{!tool.ported && <span class="desc">Not yet migrated — still live on the old site.</span>}
-				</li>
-			))}
-		</ul>
+		<h2>Downloads</h2>
+		<article class="card pending">
+			<span class="label kicker">DOCX</span>
+			<h3>Ashby's Law — Client as Regulator (one-pager)</h3>
+			<p class="note">
+				Not yet migrated — the file still needs copying across from the old
+				site into <code>public-fourlaws/</code>.
+			</p>
+		</article>
 	</section>
+
+	<hr class="hairline" />
+
+	<p class="closing">
+		Questions, a correction, or want to talk shop?
+		<a href="/contact">Get in touch &rarr;</a>
+	</p>
 </Base>
 
 <style>
-	.standfirst {
-		font-size: 1.15rem;
-		color: var(--muted);
-	}
-	ul {
+	.eyebrow { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.standfirst { font-size: 1.15rem; color: var(--muted); }
+
+	.laws {
 		list-style: none;
 		padding: 0;
+		margin: 1.5rem 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 1.25rem;
+		font-size: 0.95rem;
 	}
-	li {
-		padding: 0.6rem 0;
+
+	.card {
+		padding: 1.1rem 0;
 		border-bottom: 1px solid var(--hairline);
 	}
-	.desc {
-		display: block;
-		font-size: 0.9rem;
-		color: var(--muted);
-	}
-	.pending {
-		color: var(--muted);
-	}
+	.card h3 { margin: 0.15rem 0 0.35rem; }
+	.card p { margin: 0 0 0.5rem; font-size: 0.97rem; }
+	.kicker { font-size: 0.72rem; color: var(--sage); }
+	.cta { font-size: 0.95rem; text-decoration: none; border-bottom: 1px solid var(--hairline); }
+	.cta:hover { border-bottom-color: var(--plum); }
+
+	/* Muted rather than hidden. A visibly unfinished item is a to-do; a hidden
+	   one is something you forget you owe. */
+	.pending h3 { color: var(--muted); }
+	.note { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+
+	.closing { margin-top: 1.5rem; }
 </style>

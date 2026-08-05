@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V6MR0V297V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V6MR0V297V');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flow & Constraint Diagnostic | Four Laws</title>
+<meta name="description" content="A five-step diagnostic that turns your own WIP, throughput, and constraint data into a personalized Five Focusing Steps writeup.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fourlaws.netlify.app/part8-flow-diagnostic.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%2338d6f5%27/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Four Laws of Complex System Design">
+<meta property="og:title" content="Flow & Constraint Diagnostic | Four Laws">
+<meta property="og:description" content="A five-step diagnostic that turns your own WIP, throughput, and constraint data into a personalized Five Focusing Steps writeup.">
+<meta property="og:url" content="https://fourlaws.netlify.app/part8-flow-diagnostic.html">
+<meta property="og:image" content="https://fourlaws.netlify.app/og/part8-flow-diagnostic.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Flow & Constraint Diagnostic — Four Laws of Complex System Design">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flow & Constraint Diagnostic | Four Laws">
+<meta name="twitter:description" content="A five-step diagnostic that turns your own WIP, throughput, and constraint data into a personalized Five Focusing Steps writeup.">
+<meta name="twitter:image" content="https://fourlaws.netlify.app/og/part8-flow-diagnostic.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Flow & Constraint Diagnostic",
+  "url": "https://fourlaws.netlify.app/part8-flow-diagnostic.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "description": "A five-step diagnostic that turns your own WIP, throughput, and constraint data into a personalized Five Focusing Steps writeup.",
+  "author": {
+    "@type": "Person",
+    "name": "Jon Martin"
+  }
+}
+</script>
+<style>
+  :root{
+    --bg:#0a1220; --card:#132038; --card2:#1a2a4d; --card3:#0f1c34;
+    --text:#f2f5fb; --muted:#93a1c2; --muted2:#8295c4;
+    --purple:#a78bfa; --blue:#4d9dff; --orange:#ff7a45; --green:#34d399; --cyan:#38d6f5;
+    --amber:#fbbf39; --rose:#fb4570; --line:rgba(255,255,255,0.08);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:radial-gradient(circle at 15% 0%, #101c36 0%, #070d18 55%);
+    color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    min-height:100vh;
+  }
+  main{max-width:760px;margin:0 auto;padding:52px 24px 100px;}
+  .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--muted2);margin:0 0 8px;}
+  h1{font-size:clamp(26px,4vw,36px);line-height:1.1;margin:0 0 10px;letter-spacing:-0.01em;}
+  p.sub{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 30px;max-width:65ch;}
+
+  .progress{display:flex;gap:6px;margin-bottom:32px;}
+  .progress .seg{flex:1;height:4px;border-radius:4px;background:var(--card2);}
+  .progress .seg.done{background:var(--purple);}
+
+  .step{display:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px 32px;}
+  .step.active{display:block;}
+  .step .n{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-weight:800;margin-bottom:6px;}
+  .step h2{font-size:21px;margin:0 0 10px;letter-spacing:-0.01em;}
+  .step p.help{font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:22px;}
+
+  label{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted2);font-weight:700;margin-bottom:6px;}
+  input[type=text], input[type=number], select, textarea{
+    width:100%;background:var(--card3);border:1px solid var(--line);border-radius:8px;
+    color:var(--text);font-size:15px;padding:11px 13px;font-family:inherit;margin-bottom:18px;
+  }
+  textarea{resize:vertical;min-height:70px;}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:600px){.row{grid-template-columns:1fr;}}
+
+  .choice{display:flex;flex-direction:column;gap:10px;margin-bottom:18px;}
+  .choice label.opt{
+    display:flex;gap:12px;align-items:flex-start;background:var(--card3);border:1.5px solid var(--line);
+    border-radius:10px;padding:12px 14px;cursor:pointer;font-size:13.5px;color:#dbe1ee;line-height:1.5;
+    text-transform:none;font-weight:400;letter-spacing:0;margin-bottom:0;
+  }
+  .choice label.opt.checked{border-color:var(--purple);background:rgba(167,139,250,0.08);}
+  .choice input{margin:2px 0 0;flex:none;}
+  .choice .opt b{color:var(--text);}
+
+  .btnrow{display:flex;justify-content:space-between;margin-top:26px;gap:10px;}
+  button{
+    background:var(--purple);color:#160a2e;border:none;border-radius:10px;
+    padding:12px 24px;font-size:14px;font-weight:800;cursor:pointer;font-family:inherit;
+  }
+  button.secondary{background:var(--card3);color:var(--muted);border:1px solid var(--line);}
+  button:disabled{opacity:0.4;cursor:not-allowed;}
+
+  .summary-card{background:var(--card3);border-radius:12px;padding:16px 18px;margin-bottom:14px;border-left:3px solid var(--purple);}
+  .summary-card .n{width:24px;height:24px;border-radius:50%;background:var(--rose);color:#160812;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;margin-right:10px;}
+  .summary-card .t{font-size:13.5px;line-height:1.6;color:#dbe1ee;}
+  .summary-card .t b{color:var(--text);}
+  .summary-card .head{display:flex;align-items:center;margin-bottom:8px;font-size:14.5px;font-weight:800;color:var(--text);}
+
+  .stat-row{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+  .stat{flex:1;min-width:140px;background:var(--card3);border-radius:10px;padding:12px 14px;}
+  .stat .label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted2);font-weight:800;margin-bottom:4px;}
+  .stat .val{font-size:18px;font-weight:800;color:var(--cyan);}
+
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+.sitenav{position:sticky;top:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 20px;background:rgba(8,14,26,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.sitenav .brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.02em;flex:none;}
+.sitenav .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none;}
+.sitenav .links{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end;}
+.sitenav .links a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;padding:6px 10px;border-radius:7px;white-space:nowrap;}
+.sitenav .links a:hover{color:var(--text);background:var(--card2);}
+.sitenav .links a.current{color:var(--cyan);background:rgba(56,214,245,0.1);}
+.sitenav .links details.navdrop{position:relative;}
+.sitenav .links details.navdrop summary{list-style:none;color:var(--muted);font-size:12px;font-weight:600;padding:6px 10px;border-radius:7px;white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:4px;}
+.sitenav .links details.navdrop summary::marker{content:"";}
+.sitenav .links details.navdrop summary::-webkit-details-marker{display:none;}
+.sitenav .links details.navdrop summary::after{content:"▾";font-size:9px;opacity:.7;}
+.sitenav .links details.navdrop summary:hover{color:var(--text);background:var(--card2);}
+.sitenav .links details.navdrop[open] summary{color:var(--text);background:var(--card2);}
+.sitenav .links details.navdrop summary.current{color:var(--cyan);background:rgba(56,214,245,0.1);}
+.sitenav .links details.navdrop .navdrop-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:130px;box-shadow:0 12px 30px -10px rgba(0,0,0,0.55);z-index:300;}
+.sitenav .links details.navdrop .navdrop-menu a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;padding:8px 10px;border-radius:7px;white-space:nowrap;}
+.sitenav .links details.navdrop .navdrop-menu a:hover{color:var(--text);background:var(--card3);}
+.sitenav .links details.navdrop .navdrop-menu a.current{color:var(--cyan);background:rgba(56,214,245,0.1);}
+@media (max-width:860px){.sitenav{flex-wrap:wrap;height:auto;padding:10px 16px;} .sitenav .links{justify-content:flex-start;}}
+  .skiplink{position:absolute;top:-40px;left:8px;z-index:1000;background:var(--cyan);color:#04202b;font-weight:800;font-size:13px;padding:8px 14px;border-radius:0 0 8px 8px;text-decoration:none;transition:top .15s ease;}
+  .skiplink:focus{top:0;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}
+  }
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px;}
+</style>
+</head>
+<body>
+<a class="skiplink" href="#main">Skip to content</a>
+<div class="sitenav">
+  <a class='brand' href='/'><span class="dot" aria-hidden="true"></span>Four Laws of Complex System Design</a>
+  <nav class="links" aria-label="Main">
+    <a href='/'>Home</a>
+    <a href='/four-laws-complex-system-design-full'>Full Reference</a>
+    <details class="navdrop">
+      <summary>Explore</summary>
+      <div class="navdrop-menu">
+        <a href='/four-laws-flow-and-constraints'>Flow Deck</a>
+        <a href='/conways-law-revops-team-structure'>RevOps &amp; Conway's Law</a>
+        <a href='/conways-law-ai-agents-revops'>AI Agents &amp; Conway's Law</a>
+        <a href='/stakeholder-decision-bottlenecks'>Stakeholder Decision Stalls</a>
+                <a href='/wip-limits-vs-theory-of-constraints'>WIP Limits vs. ToC</a>
+                <a href='/vsm-ai-system-4'>AI, System 4 &amp; VSM</a>
+        <a href='/applied-examples'>More Applied Examples</a>
+      </div>
+    </details>
+    <details class="navdrop" open>
+      <summary class="current">Tools</summary>
+      <div class="navdrop-menu">
+        <a class='current' href='/part8-flow-diagnostic'>Diagnostic Tool</a>
+        <a href='/flow-formula-calculator'>Calculator</a>
+        <a href='/stakeholder-decision-checklist'>Decision Stall Checklist</a>
+      </div>
+    </details>
+    <details class="navdrop">
+      <summary>Reference</summary>
+      <div class="navdrop-menu">
+        <a href='/glossary'>Glossary</a>
+        <a href='/faq'>FAQ</a>
+      </div>
+    </details>
+    <a href='/about'>About</a>
+    <a href='/contact'>Contact</a>
+  </nav>
+</div>
+<main id="main" tabindex="-1">
+  <div class="eyebrow">Companion Tool · Four Laws of Complex System Design</div>
+  <h1>Flow &amp; Constraint Diagnostic</h1>
+  <p class="sub">Walk through Part 8's Five Focusing Steps with your own numbers. Five short steps, then a personalized diagnosis you can use directly in a client conversation.</p>
+
+  <div class="progress" id="progress"></div>
+
+  <!-- STEP 0 -->
+  <div class="step active" data-step="0">
+    <div class="n">Before You Start</div>
+    <h2>What this diagnostic does</h2>
+    <p class="help">It doesn't tell you anything new about the Theory of Constraints — it just makes you answer the same four questions the Five Focusing Steps always start with, then plugs your answers into the framework so the output reads like a diagnosis instead of a worksheet. Have rough numbers ready: current WIP, recent throughput, and a sense of where work backs up.</p>
+    <div class="btnrow" style="justify-content:flex-end;">
+      <button onclick="goTo(1)">Start →</button>
+    </div>
+  </div>
+
+  <!-- STEP 1: WIP & Throughput -->
+  <div class="step" data-step="1">
+    <div class="n">Step 1 of 4</div>
+    <h2>Work in Progress &amp; Throughput</h2>
+    <p class="help">Little's Law (Part 8.1): cycle time follows directly from these two numbers.</p>
+    <div class="row">
+      <div>
+        <label>Current WIP (items actively in flight)</label>
+        <input type="number" id="d-wip" value="15" min="0">
+      </div>
+      <div>
+        <label>Throughput (items completed)</label>
+        <input type="number" id="d-throughput" value="5" min="0">
+      </div>
+    </div>
+    <label>Per</label>
+    <select id="d-unit">
+      <option value="day">day</option>
+      <option value="week" selected>week</option>
+      <option value="month">month</option>
+    </select>
+    <div class="stat-row">
+      <div class="stat"><div class="label">Implied Avg. Cycle Time</div><div class="val" id="d-cycletime">—</div></div>
+    </div>
+    <div class="btnrow">
+      <button class="secondary" onclick="goTo(0)">← Back</button>
+      <button onclick="goTo(2)">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2: Where does the queue form -->
+  <div class="step" data-step="2">
+    <div class="n">Step 2 of 4</div>
+    <h2>Where Does the Queue Actually Form?</h2>
+    <p class="help">Not where work is assigned — where it sits waiting. That location is the constraint; everywhere else is noise until that one thing changes.</p>
+    <label>Describe the location (a role, a step, a system, a person)</label>
+    <input type="text" id="d-location" placeholder="e.g., legal review, the billing architect, vendor API rate limit">
+    <label>Has this been the same location for a while, or does it move around?</label>
+    <div class="choice" id="d-moves-choice">
+      <label class="opt"><input type="radio" name="moves" value="same" checked><span><b>Stays put</b> — it's been the same bottleneck for a while, like one machine on a factory line.</span></label>
+      <label class="opt"><input type="radio" name="moves" value="wanders"><span><b>Wanders</b> — it genuinely shifts week to week between different people, teams, or systems.</span></label>
+    </div>
+    <div class="btnrow">
+      <button class="secondary" onclick="goTo(1)">← Back</button>
+      <button onclick="goTo(3)">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Constraint type -->
+  <div class="step" data-step="3">
+    <div class="n">Step 3 of 4</div>
+    <h2>What Kind of Constraint Is It?</h2>
+    <p class="help">Part 8.2 — conflating these is the most common mistake. The five steps work differently depending on which kind is in play.</p>
+    <div class="choice" id="d-type-choice">
+      <label class="opt"><input type="radio" name="ctype" value="physical" checked><span><b>Physical</b> — a resource (labor, a machine, material) whose capacity is genuinely smaller than the demand on it.</span></label>
+      <label class="opt"><input type="radio" name="ctype" value="attention"><span><b>Physical — one person's attention</b> — the resource is a specific person's cognitive bandwidth, not headcount or a machine. Context-switching cost is the symptom.</span></label>
+      <label class="opt"><input type="radio" name="ctype" value="policy"><span><b>Policy</b> — a rule, habit, or approval requirement caps throughput even though no physical resource is maxed out.</span></label>
+      <label class="opt"><input type="radio" name="ctype" value="market"><span><b>Market</b> — the limit is outside the organization; demand itself is the ceiling.</span></label>
+      <label class="opt"><input type="radio" name="ctype" value="paradigm"><span><b>Paradigm</b> — an unstated assumption nobody has thought to question yet.</span></label>
+    </div>
+    <div class="btnrow">
+      <button class="secondary" onclick="goTo(2)">← Back</button>
+      <button onclick="buildSummary(); goTo(4)">See Diagnosis →</button>
+    </div>
+  </div>
+
+  <!-- STEP 4: Summary -->
+  <div class="step" data-step="4">
+    <div class="n">Diagnosis</div>
+    <h2>Your Five Focusing Steps</h2>
+    <div class="stat-row" id="d-final-stats"></div>
+    <div id="d-summary"></div>
+    <div class="btnrow">
+      <button class="secondary" onclick="goTo(0); resetForm();">↺ Start Over</button>
+      <button onclick="window.print()">Print / Save</button>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted2);line-height:1.6;margin-top:14px;">Want the underlying formulas? Try the <a href='/flow-formula-calculator' style='color:var(--cyan);'>Flow Formula Calculator</a> — or see the full walkthrough with a worked example in the <a href='/four-laws-flow-and-constraints' style='color:var(--cyan);'>Flow Deck</a>. If your constraint is a policy one, see <a href='/wip-limits-vs-theory-of-constraints' style='color:var(--cyan);'>WIP Limits vs. the Theory of Constraints</a> for where a WIP limit actually helps.</p>
+
+  <footer>
+    <span>Four Laws of Complex System Design</span>
+    <span>Companion tool for Part 8</span>
+  </footer>
+</main>
+
+<script>
+const totalSteps = 5; // 0-4
+const progressEl = document.getElementById('progress');
+function renderProgress(current){
+  progressEl.innerHTML = '';
+  for (let i=0;i<totalSteps;i++){
+    const seg = document.createElement('div');
+    seg.className = 'seg' + (i <= current ? ' done' : '');
+    progressEl.appendChild(seg);
+  }
+}
+function goTo(step){
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.querySelector(`.step[data-step="${step}"]`).classList.add('active');
+  renderProgress(step);
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+renderProgress(0);
+
+// live cycle time
+function computeCycleTime(){
+  const wip = parseFloat(document.getElementById('d-wip').value) || 0;
+  const tp = parseFloat(document.getElementById('d-throughput').value) || 0;
+  const unit = document.getElementById('d-unit').value;
+  const ct = tp > 0 ? (wip/tp) : 0;
+  document.getElementById('d-cycletime').textContent = tp > 0 ? `${Math.round(ct*100)/100} ${unit}s` : '—';
+}
+['d-wip','d-throughput','d-unit'].forEach(id => document.getElementById(id).addEventListener('input', computeCycleTime));
+computeCycleTime();
+
+// highlight selected choice
+document.querySelectorAll('.choice').forEach(group => {
+  group.addEventListener('change', () => {
+    group.querySelectorAll('.opt').forEach(o => o.classList.remove('checked'));
+    const checked = group.querySelector('input:checked');
+    if (checked) checked.closest('.opt').classList.add('checked');
+  });
+});
+document.querySelectorAll('.choice input:checked').forEach(el => el.closest('.opt').classList.add('checked'));
+
+const typeCopy = {
+  physical: {
+    label: 'Physical constraint',
+    exploit: 'Get the absolute most from it without spending money: eliminate idle time there, keep it fed with only the work that actually needs its specific capability, and protect it from anything else.',
+    elevate: 'Only after exploiting and subordinating everything else, invest — add capacity, automate, hire, or buy equipment for this specific resource.'
+  },
+  attention: {
+    label: 'Physical constraint — one person\'s attention',
+    exploit: 'Reduce how many concurrent items this person is allowed to hold. Per Weinberg\'s numbers, this is a structural loss, not a motivation problem — "work harder" doesn\'t recover time lost to switching.',
+    elevate: 'Elevate by reducing genuine concurrent demand on this person, not by adding more tickets to their queue. If real capacity is needed, that means fewer things asked of them at once, not more hours.'
+  },
+  policy: {
+    label: 'Policy constraint',
+    exploit: 'There\'s often nothing to exploit in the physical sense — the exploit step here means questioning whether the rule, approval gate, or habit is actually necessary before touching anything else.',
+    elevate: 'Elevating a policy constraint usually means rewriting or removing the policy. Throwing capacity at a policy constraint does nothing, because the ceiling was never about capacity.'
+  },
+  market: {
+    label: 'Market constraint',
+    exploit: 'Exploit means getting the most from existing demand — better conversion, better retention — before assuming more capacity or more supply will help.',
+    elevate: 'Elevating a market constraint means creating or capturing more demand: new offers, new segments, new positioning — not more internal throughput.'
+  },
+  paradigm: {
+    label: 'Paradigm constraint',
+    exploit: 'Ask "why do we do it this way" until you reach a real reason or discover there isn\'t one. The exploit step here is surfacing the unstated assumption, not optimizing around it.',
+    elevate: 'Elevating a paradigm constraint means deliberately redesigning around the new assumption once it\'s been named — the old workflow was built for a premise that may no longer hold.'
+  }
+};
+
+function buildSummary(){
+  const wip = document.getElementById('d-wip').value;
+  const tp = document.getElementById('d-throughput').value;
+  const unit = document.getElementById('d-unit').value;
+  const cycletime = document.getElementById('d-cycletime').textContent;
+  const location = document.getElementById('d-location').value || 'the location you identified';
+  const moves = document.querySelector('input[name="moves"]:checked').value;
+  const ctype = document.querySelector('input[name="ctype"]:checked').value;
+  const info = typeCopy[ctype];
+
+  document.getElementById('d-final-stats').innerHTML = `
+    <div class="stat"><div class="label">WIP</div><div class="val">${wip}</div></div>
+    <div class="stat"><div class="label">Throughput</div><div class="val">${tp}/${unit}</div></div>
+    <div class="stat"><div class="label">Cycle Time</div><div class="val">${cycletime}</div></div>
+    <div class="stat"><div class="label">Constraint Type</div><div class="val" style="font-size:14px;">${info.label}</div></div>
+  `;
+
+  const wanderNote = moves === 'wanders'
+    ? `You said this constraint <b>wanders</b> — this is a network, not a chain (Part 8.2's wandering-constraints caveat). Treat step 1 as a standing habit, not a one-time diagnosis: recheck on a cadence rather than assuming this answer still holds next month.`
+    : `You said this constraint <b>stays put</b> — the classic stable case the Five Focusing Steps were written for. Still worth a periodic recheck once it's been addressed, so a fixed policy doesn't quietly calcify around the old bottleneck.`;
+
+  document.getElementById('d-summary').innerHTML = `
+    <div class="summary-card"><div class="head"><span class="n">1</span>Identify</div><div class="t">The constraint is <b>${location}</b> — a <b>${info.label.toLowerCase()}</b>. Current WIP of <b>${wip}</b> against throughput of <b>${tp}/${unit}</b> implies an average cycle time of <b>${cycletime}</b> (Little's Law, 8.1).</div></div>
+    <div class="summary-card"><div class="head"><span class="n">2</span>Exploit</div><div class="t">${info.exploit}</div></div>
+    <div class="summary-card"><div class="head"><span class="n">3</span>Subordinate</div><div class="t">Everything upstream of <b>${location}</b> should pace itself to its rhythm. Working faster anywhere else just builds inventory in front of it — a WIP limit placed directly in front of <b>${location}</b> is Little's Law and the Theory of Constraints applied simultaneously (8.3.1).</div></div>
+    <div class="summary-card"><div class="head"><span class="n">4</span>Elevate</div><div class="t">${info.elevate}</div></div>
+    <div class="summary-card"><div class="head"><span class="n">5</span>Repeat</div><div class="t">${wanderNote}</div></div>
+  `;
+}
+
+function resetForm(){
+  document.getElementById('d-location').value = '';
+}
+</script>
+<script>
+  document.querySelectorAll('.navdrop-menu a').forEach(function(link){
+    link.addEventListener('click', function(){
+      var d = link.closest('details.navdrop');
+      if (d) d.removeAttribute('open');
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('details.navdrop').forEach(function(d){
+    var summary = d.querySelector('summary');
+    if (summary) summary.setAttribute('aria-expanded', d.hasAttribute('open') ? 'true' : 'false');
+    d.addEventListener('toggle', function(){
+      if (summary) summary.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' || e.key === 'Esc'){
+      document.querySelectorAll('details.navdrop[open]').forEach(function(d){
+        d.removeAttribute('open');
+        var summary = d.querySelector('summary');
+        if (summary) summary.focus();
+      });
+    }
+  });
+</script>
+</body>
+</html>

@@ -38,6 +38,11 @@ export default defineConfig({
 	// sitemap at all.
 	integrations: [
 		sitemap({
+			// /thanks carries <meta name="robots" content="noindex">. Listing it in
+			// the sitemap would tell search engines to index a page that tells them
+			// not to — the two have to agree, so it's filtered here. Any future
+			// noindex page needs adding to this list too.
+			filter: (page) => !/\/thanks(\.html)?$/.test(page),
 			serialize(item) {
 				item.url = item.url.replace(/index\.html$/, '').replace(/\.html$/, '');
 				return item;

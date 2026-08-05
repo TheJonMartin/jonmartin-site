@@ -1,4 +1,4 @@
-# Four Laws capture — migration source material
+# Four Laws migration — status and source material
 
 `fourlaws.netlify.app` has **no source repo**. It has only ever existed as a
 deployed site. Everything needed to rebuild it therefore has to be pulled off
@@ -16,63 +16,78 @@ Confirmed complete against the live site's own `sitemap.xml`.
 
 | Path | Status |
 |---|---|
-| `/` | not captured |
-| `/four-laws-complex-system-design-full` | not captured — the big one, Parts 1–8 |
-| `/four-laws-flow-and-constraints` | not captured |
-| `/conways-law-revops-team-structure` | not captured |
-| `/conways-law-ai-agents-revops` | not captured |
-| `/stakeholder-decision-bottlenecks` | not captured |
-| `/wip-limits-vs-theory-of-constraints` | not captured |
-| `/vsm-ai-system-4` | not captured |
-| `/applied-examples` | not captured |
-| `/glossary` | **ported** → `src-fourlaws/content/pages/glossary.md` |
-| `/faq` | not captured |
-| `/about` | **ported** → `src-fourlaws/content/pages/about.md` |
-| `/contact` | not captured |
+| `/` | **ported** → `src-fourlaws/pages/index.astro` |
+| `/four-laws-complex-system-design-full` | **outstanding** — the big one, Parts 1–8 |
+| `/four-laws-flow-and-constraints` | **ported** ⚠︎ see "Flow Deck" below |
+| `/conways-law-revops-team-structure` | **ported** |
+| `/conways-law-ai-agents-revops` | **ported** |
+| `/stakeholder-decision-bottlenecks` | **ported** |
+| `/wip-limits-vs-theory-of-constraints` | **ported** |
+| `/vsm-ai-system-4` | **ported** |
+| `/applied-examples` | **ported** — `#marketing` `#sales` `#cs` `#finance` `#revops` anchors preserved |
+| `/glossary` | **ported** |
+| `/faq` | **ported** |
+| `/about` | **ported** |
+| `/contact` | **ported** → `src-fourlaws/pages/contact.astro` (a form, so a page not a collection entry) |
 
-### Interactive tools (3)
+Plus `/thanks`, which is new — the contact form needs somewhere to post to.
+It's `noindex` and excluded from the sitemap.
 
-| Path | Tool |
-|---|---|
-| `/part8-flow-diagnostic` | Flow & Constraint Diagnostic — 5-step diagnostic logic |
-| `/flow-formula-calculator` | Flow Formula Calculator — Little's Law, Kingman's VUT, Weinberg context-switching |
-| `/stakeholder-decision-checklist` | Stakeholder Decision Stall Checklist |
+### Interactive tools (3) — all outstanding
 
-## The one thing that needs a human
+Raw HTML captured in this folder. Inline `<script>` verified present and intact.
 
-**The three tools' JavaScript could not be captured automatically.** Their logic
-lives in inline `<script>` tags rather than external `.js` files, and the
-browser automation available here blocks reading inline script contents.
+| Path | Tool | Captured JS |
+|---|---|---|
+| `/part8-flow-diagnostic` | Flow & Constraint Diagnostic | `raw-tool-flow-diagnostic.html` — 6,637 bytes |
+| `/flow-formula-calculator` | Flow Formula Calculator | `raw-tool-formula-calculator.html` — 3,840 bytes |
+| `/stakeholder-decision-checklist` | Stakeholder Decision Stall Checklist | `raw-tool-decision-checklist.html` — 3,840 bytes |
 
-This is worth doing properly rather than rebuilding from observed behaviour —
-working code exists, so this is a port, not a reverse-engineering job.
+These sizes match what the original capture recorded, so the logic came through
+whole. This is a **port, not a rebuild** — don't reverse-engineer the behaviour
+from the UI when working code is sitting right here.
 
-To capture it, for each of the three tool URLs:
+## Do not cut over yet
 
-1. Open the page in Chrome.
-2. `Cmd+Opt+U` (View Source).
-3. Save the whole page as `capture/fourlaws/raw-<name>.html` in this folder.
+Four pages are still missing, and the ported pages link to all four:
+`/four-laws-complex-system-design-full` and the three tools. Deploying the
+subdomain today would publish a site with live links into 404s.
 
-Or from a terminal, which is faster and gets all three at once:
+Order of operations:
+
+1. Port the Full Reference and the three tools.
+2. Re-run the missing-link check (below) and confirm it returns nothing.
+3. Then follow `docs/fourlaws-deploy.md` for the Netlify and DNS steps.
+
+Missing-link check, after a `npm run build:fourlaws`:
 
 ```sh
-cd ~/Documents/GitHub/jonmartin-site/capture/fourlaws
-curl -s https://fourlaws.netlify.app/part8-flow-diagnostic          -o raw-tool-flow-diagnostic.html
-curl -s https://fourlaws.netlify.app/flow-formula-calculator        -o raw-tool-formula-calculator.html
-curl -s https://fourlaws.netlify.app/stakeholder-decision-checklist -o raw-tool-decision-checklist.html
+grep -oh 'href="/[^"#]*' dist-fourlaws/*.html | sed 's/href="//' | sort -u |
+  while read p; do f="dist-fourlaws${p}.html"; [ "$p" = "/" ] && f="dist-fourlaws/index.html";
+  [ -f "$f" ] || echo "MISSING: $p"; done
 ```
 
-Then commit. Once those files exist, the tool logic can be extracted and ported
-without any further dependence on the old site staying up.
+## Known deltas from the live site
 
-## Note on the visual identity
+Decisions made during the port, so they don't get rediscovered as bugs.
 
-The live site is a dark navy/purple technical-dashboard design (`--bg:#0a1220`,
-`--card:#132038`, cyan/purple/amber accents). **None of that is being carried
-over.** The decision is to reskin everything to Field & Ledger
-(`shared/styles/field-and-ledger.css`) so Four Laws reads as part of one brand
-with thejonmartin.com.
-
-So when capturing raw HTML, the CSS is not the point — the content, the
-structure, the heading IDs (the Full Reference uses anchors like `#s21`, `#p6`
-that the glossary links into), and the tool JavaScript are.
+- **Visual identity.** The live site's dark navy/purple dashboard design
+  (`--bg:#0a1220`, cyan/purple/amber accents) is **not** carried over. Everything
+  is reskinned to Field & Ledger per `shared/styles/field-and-ledger.css`.
+- **The Flow Deck is no longer a deck.** `/four-laws-flow-and-constraints` was a
+  JS slide carousel with arrow/keyboard navigation and SVG diagrams. It's ported
+  as a linear document — consistent with the Field & Ledger reskin, and it reads
+  well that way since each slide already had a heading and prose. If the deck
+  behaviour is wanted back, that page needs curling and the carousel rebuilding.
+  Two SVG diagrams from it are currently rendered as plain text.
+- **OG images.** The live site has per-page `og/*.png` images. None are carried
+  over yet; `Base.astro` currently emits `twitter:card: summary` rather than
+  `summary_large_image` to match.
+- **The `/Ashby_Law_Client_as_Regulator_OnePager.docx` download** hasn't been
+  copied into `public-fourlaws/` yet. The home page flags it as pending.
+- **Google Analytics** (`G-V6MR0V297V`) is present on the live site and has not
+  been carried over. Deliberate — worth an explicit decision rather than a
+  silent copy.
+- **"Get in touch" CTAs** still point at `/contact`. The separate backlog item
+  to repoint the highest-intent pages at product links on thejonmartin.com is
+  untouched.

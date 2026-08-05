@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Where the contact form posts on success. noindex because a confirmation page
+// in search results is a dead end for whoever lands on it.
+---
+
+<Base
+	title="Thanks"
+	description="Your message has been sent."
+	noindex={true}
+>
+	<h1>Thanks — that's sent.</h1>
+
+	<p class="standfirst">
+		I read everything that comes through here. If it needs a reply you'll get
+		one; if it's a correction to the Full Reference, it'll show up in the
+		document rather than in your inbox.
+	</p>
+
+	<hr class="hairline" />
+
+	<p>
+		In the meantime: the <a href="/four-laws-complex-system-design-full">Full
+		Reference</a> is the whole argument in one document, and the
+		<a href="/part8-flow-diagnostic">Flow &amp; Constraint Diagnostic</a> will
+		tell you which of the four laws your situation is actually running into.
+	</p>
+</Base>
+
+<style>
+	.standfirst { font-size: 1.05rem; color: var(--muted); }
+</style>

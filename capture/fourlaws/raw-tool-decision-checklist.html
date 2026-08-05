@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V6MR0V297V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-V6MR0V297V');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stakeholder Decision Stall Checklist | Four Laws</title>
+<meta name="description" content="A checklist for stalled steering-committee decisions — sorts symptoms into a Little's Law, Kingman, or Weinberg problem, each with its own fix.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fourlaws.netlify.app/stakeholder-decision-checklist.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%2338d6f5%27/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Four Laws of Complex System Design">
+<meta property="og:title" content="Stakeholder Decision Stall Checklist | Four Laws">
+<meta property="og:description" content="A checklist for stalled steering-committee decisions — sorts symptoms into a Little's Law, Kingman, or Weinberg problem, each with its own fix.">
+<meta property="og:url" content="https://fourlaws.netlify.app/stakeholder-decision-checklist.html">
+<meta property="og:image" content="https://fourlaws.netlify.app/og/stakeholder-decision-checklist.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Stakeholder Decision Stall Checklist — Four Laws of Complex System Design">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stakeholder Decision Stall Checklist | Four Laws">
+<meta name="twitter:description" content="A checklist for stalled steering-committee decisions — sorts symptoms into a Little's Law, Kingman, or Weinberg problem, each with its own fix.">
+<meta name="twitter:image" content="https://fourlaws.netlify.app/og/stakeholder-decision-checklist.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Stakeholder Decision Stall Checklist",
+  "url": "https://fourlaws.netlify.app/stakeholder-decision-checklist.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "isAccessibleForFree": true,
+  "description": "A checklist for stalled steering-committee decisions — sorts symptoms into a Little's Law, Kingman, or Weinberg problem, each with its own fix.",
+  "author": { "@type": "Person", "name": "Jon Martin" }
+}
+</script>
+<style>
+  :root{
+    --bg:#0a1220; --card:#132038; --card2:#1a2a4d; --card3:#0f1c34;
+    --text:#f2f5fb; --muted:#93a1c2; --muted2:#8295c4;
+    --purple:#a78bfa; --blue:#4d9dff; --orange:#ff7a45; --green:#34d399; --cyan:#38d6f5;
+    --amber:#fbbf39; --rose:#fb4570; --line:rgba(255,255,255,0.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:radial-gradient(circle at 15% 0%, #101c36 0%, #070d18 55%);
+    color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    min-height:100vh;
+  }
+  .sitenav{position:sticky;top:0;z-index:200;height:52px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 20px;background:rgba(8,14,26,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .sitenav .brand{display:flex;align-items:center;gap:8px;color:var(--text);text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.02em;flex:none;}
+  .sitenav .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:none;}
+  .sitenav .links{display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end;}
+  .sitenav .links a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;padding:6px 10px;border-radius:7px;white-space:nowrap;}
+  .sitenav .links a:hover{color:var(--text);background:var(--card2);}
+  .sitenav .links a.current{color:var(--cyan);background:rgba(56,214,245,0.1);}
+  @media (max-width:860px){.sitenav{flex-wrap:wrap;height:auto;padding:10px 16px;} .sitenav .links{justify-content:flex-start;}}
+  .sitenav .links details.navdrop{position:relative;}
+  .sitenav .links details.navdrop summary{list-style:none;color:var(--muted);font-size:12px;font-weight:600;padding:6px 10px;border-radius:7px;white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:4px;}
+  .sitenav .links details.navdrop summary::marker{content:"";}
+  .sitenav .links details.navdrop summary::-webkit-details-marker{display:none;}
+  .sitenav .links details.navdrop summary::after{content:"▾";font-size:9px;opacity:.7;}
+  .sitenav .links details.navdrop summary:hover{color:var(--text);background:var(--card2);}
+  .sitenav .links details.navdrop[open] summary{color:var(--text);background:var(--card2);}
+  .sitenav .links details.navdrop summary.current{color:var(--cyan);background:rgba(56,214,245,0.1);}
+  .sitenav .links details.navdrop .navdrop-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:6px;display:flex;flex-direction:column;gap:2px;min-width:150px;box-shadow:0 12px 30px -10px rgba(0,0,0,0.55);z-index:300;}
+  .sitenav .links details.navdrop .navdrop-menu a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:600;padding:8px 10px;border-radius:7px;white-space:nowrap;}
+  .sitenav .links details.navdrop .navdrop-menu a:hover{color:var(--text);background:var(--card3);}
+  .sitenav .links details.navdrop .navdrop-menu a.current{color:var(--cyan);background:rgba(56,214,245,0.1);}
+
+  main{max-width:760px;margin:0 auto;padding:52px 24px 100px;}
+  .eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--muted2);margin:0 0 8px;}
+  h1{font-size:clamp(26px,4vw,36px);line-height:1.1;margin:0 0 10px;letter-spacing:-0.01em;}
+  p.sub{color:var(--muted);font-size:15px;line-height:1.6;margin:0 0 34px;max-width:65ch;}
+
+  .section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin-bottom:20px;}
+  .section .n{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);font-weight:800;margin-bottom:6px;}
+  .section h2{font-size:19px;margin:0 0 6px;letter-spacing:-0.01em;}
+  .section p.help{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 18px;max-width:62ch;}
+  .section.a{border-top:3px solid var(--cyan);}
+  .section.b{border-top:3px solid var(--purple);}
+  .section.c{border-top:3px solid var(--orange);}
+
+  .citem{display:flex;gap:12px;align-items:flex-start;background:var(--card3);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:13.5px;color:#dbe1ee;line-height:1.5;margin-bottom:10px;}
+  .citem:last-child{margin-bottom:0;}
+  .citem.checked{border-color:var(--purple);background:rgba(167,139,250,0.08);}
+  .citem input{margin:2px 0 0;flex:none;width:16px;height:16px;accent-color:var(--purple);}
+
+  .scorebar{display:flex;align-items:center;gap:10px;margin-top:16px;}
+  .scorebar .track{flex:1;height:6px;border-radius:6px;background:var(--card3);overflow:hidden;}
+  .scorebar .fill{height:100%;border-radius:6px;background:var(--cyan);width:0%;transition:width .2s ease;}
+  .section.b .scorebar .fill{background:var(--purple);}
+  .section.c .scorebar .fill{background:var(--orange);}
+  .scorebar .count{font-size:12px;font-weight:800;color:var(--muted2);white-space:nowrap;}
+
+  .resultwrap{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin-top:8px;}
+  .resultwrap h2{font-size:20px;margin:0 0 6px;letter-spacing:-0.01em;}
+  .resultwrap p.help{font-size:13.5px;color:var(--muted);line-height:1.6;margin:0 0 20px;}
+  .bars{display:flex;flex-direction:column;gap:14px;margin-bottom:22px;}
+  .bar{}
+  .bar .lbl{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:6px;}
+  .bar .lbl span.pct{color:var(--muted2);font-weight:800;}
+  .bar .track{height:10px;border-radius:6px;background:var(--card3);overflow:hidden;}
+  .bar .fill{height:100%;border-radius:6px;width:0%;transition:width .25s ease;}
+  .bar.a .fill{background:var(--cyan);}
+  .bar.b .fill{background:var(--purple);}
+  .bar.c .fill{background:var(--orange);}
+
+  .verdict{background:var(--card3);border-radius:12px;padding:16px 18px;border-left:3px solid var(--cyan);}
+  .verdict.b{border-left-color:var(--purple);}
+  .verdict.c{border-left-color:var(--orange);}
+  .verdict.tie{border-left-color:var(--muted2);}
+  .verdict .head{font-size:14.5px;font-weight:800;color:var(--text);margin-bottom:8px;}
+  .verdict .t{font-size:13.5px;line-height:1.65;color:#dbe1ee;}
+  .verdict .t b{color:var(--text);}
+
+  .btnrow{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+  button{
+    background:var(--purple);color:#160a2e;border:none;border-radius:10px;
+    padding:12px 22px;font-size:13.5px;font-weight:800;cursor:pointer;font-family:inherit;
+  }
+  button.secondary{background:var(--card3);color:var(--muted);border:1px solid var(--line);}
+
+  .authorcta{background:var(--card3);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:32px;font-size:13.5px;color:var(--muted);line-height:1.6;}
+  .authorcta a{color:var(--cyan);text-decoration:none;font-weight:700;}
+  .authorcta a:hover{text-decoration:underline;}
+
+  footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  @media print{
+    .sitenav, .btnrow, footer{display:none;}
+    body{background:#fff;color:#111;}
+  }
+  .skiplink{position:absolute;top:-40px;left:8px;z-index:1000;background:var(--cyan);color:#04202b;font-weight:800;font-size:13px;padding:8px 14px;border-radius:0 0 8px 8px;text-decoration:none;transition:top .15s ease;}
+  .skiplink:focus{top:0;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}
+  }
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:2px;border-radius:4px;}
+</style>
+</head>
+<body>
+<a class="skiplink" href="#main">Skip to content</a>
+<div class="sitenav">
+  <a class='brand' href='/'><span class="dot" aria-hidden="true"></span>Four Laws of Complex System Design</a>
+  <nav class="links" aria-label="Main">
+    <a href='/'>Home</a>
+    <a href='/four-laws-complex-system-design-full'>Full Reference</a>
+    <details class="navdrop">
+      <summary>Explore</summary>
+      <div class="navdrop-menu">
+        <a href='/four-laws-flow-and-constraints'>Flow Deck</a>
+        <a href='/conways-law-revops-team-structure'>RevOps &amp; Conway's Law</a>
+        <a href='/conways-law-ai-agents-revops'>AI Agents &amp; Conway's Law</a>
+        <a href='/stakeholder-decision-bottlenecks'>Stakeholder Decision Stalls</a>
+                <a href='/wip-limits-vs-theory-of-constraints'>WIP Limits vs. ToC</a>
+                <a href='/vsm-ai-system-4'>AI, System 4 &amp; VSM</a>
+        <a href='/applied-examples'>More Applied Examples</a>
+      </div>
+    </details>
+    <details class="navdrop" open>
+      <summary class="current">Tools</summary>
+      <div class="navdrop-menu">
+        <a href='/part8-flow-diagnostic'>Diagnostic Tool</a>
+        <a href='/flow-formula-calculator'>Calculator</a>
+        <a class='current' href='/stakeholder-decision-checklist'>Decision Stall Checklist</a>
+      </div>
+    </details>
+    <details class="navdrop">
+      <summary>Reference</summary>
+      <div class="navdrop-menu">
+        <a href='/glossary'>Glossary</a>
+        <a href='/faq'>FAQ</a>
+      </div>
+    </details>
+    <a href='/about'>About</a>
+    <a href='/contact'>Contact</a>
+  </nav>
+</div>
+
+<main id="main" tabindex="-1">
+  <div class="eyebrow">Companion Tool · Stakeholder Decision Stalls</div>
+  <h1>Stakeholder Decision Stall Checklist</h1>
+  <p class="sub">Check whatever's true of your current engagement. This sorts what you're seeing into a Little's Law queue problem, a Kingman utilization/variability problem, or a Weinberg information-distortion problem — each one needs a different fix. See the reasoning behind each in <a href='/stakeholder-decision-bottlenecks' style='color:var(--cyan);'>Why Executive Decisions Stall on Client Projects</a>.</p>
+
+  <!-- SECTION A: Little's Law -->
+  <div class="section a" data-group="a">
+    <div class="n">Little's Law · L = λW</div>
+    <h2>The Decision Queue</h2>
+    <p class="help">Signals that you're generating decisions faster than leadership can clear them.</p>
+
+    <label class="citem"><input type="checkbox"><span>More than one decision is currently sitting with the client's leadership, unresolved, right now.</span></label>
+    <label class="citem"><input type="checkbox"><span>New decisions get raised as they come up, one at a time, rather than being planned for and batched in advance.</span></label>
+    <label class="citem"><input type="checkbox"><span>You can't say, off the top of your head, how many decisions are currently pending sign-off.</span></label>
+    <label class="citem"><input type="checkbox"><span>The project plan treats "exec approval" as a single line item rather than a recurring, sized piece of the timeline.</span></label>
+    <label class="citem"><input type="checkbox"><span>Multiple workstreams have gone quiet in the same week, all waiting on the same person or committee.</span></label>
+
+    <div class="scorebar"><div class="track"><div class="fill" id="fill-a"></div></div><div class="count" id="count-a">0 / 5</div></div>
+  </div>
+
+  <!-- SECTION B: Kingman -->
+  <div class="section b" data-group="b">
+    <div class="n">Kingman's Formula · Wait ≈ V·U·T</div>
+    <h2>Utilization &amp; Variability</h2>
+    <p class="help">Signals that the decision-maker is running near capacity, with unpredictable arrivals or wildly uneven decision complexity.</p>
+
+    <label class="citem"><input type="checkbox"><span>The key decision-maker is sponsoring or serving on other initiatives at the same time as yours.</span></label>
+    <label class="citem"><input type="checkbox"><span>Decisions arrive at unpredictable times — a vendor issue, a budget question, something out of cycle — rather than on a known cadence.</span></label>
+    <label class="citem"><input type="checkbox"><span>Some decisions take the exec two minutes; others require them to absorb real strategic context — there's no consistency in how much each one costs them.</span></label>
+    <label class="citem"><input type="checkbox"><span>Wait times for sign-off have been inconsistent — sometimes same-day, sometimes weeks, with no obvious pattern.</span></label>
+    <label class="citem"><input type="checkbox"><span>You've heard some version of "they're just really busy right now" as the explanation for the delay.</span></label>
+
+    <div class="scorebar"><div class="track"><div class="fill" id="fill-b"></div></div><div class="count" id="count-b">0 / 5</div></div>
+  </div>
+
+  <!-- SECTION C: Weinberg -->
+  <div class="section c" data-group="c">
+    <div class="n">Weinberg · Context-Switching &amp; Distortion</div>
+    <h2>Signal Integrity</h2>
+    <p class="help">Signals that the true urgency and cost of delay aren't reaching the person who can actually clear the queue.</p>
+
+    <label class="citem"><input type="checkbox"><span>Someone between you and the final decision-maker is softening or summarizing the ask before it gets to them.</span></label>
+    <label class="citem"><input type="checkbox"><span>Nobody has put a number — dollars, days, or a missed date — on what the delay is actually costing.</span></label>
+    <label class="citem"><input type="checkbox"><span>You suspect the real holdup is politics, budget ownership, or someone avoiding blame — not the substance of the decision itself.</span></label>
+    <label class="citem"><input type="checkbox"><span>More than one person could plausibly be "the one who's supposed to decide," and none of them has clearly claimed it.</span></label>
+    <label class="citem"><input type="checkbox"><span>The project sponsor has an incentive to make things look more on-track than they are when reporting up.</span></label>
+
+    <div class="scorebar"><div class="track"><div class="fill" id="fill-c"></div></div><div class="count" id="count-c">0 / 5</div></div>
+  </div>
+
+  <div class="resultwrap">
+    <h2>Diagnosis</h2>
+    <p class="help">Updates live as you check items above.</p>
+    <div class="bars">
+      <div class="bar a">
+        <div class="lbl"><span>Little's Law — Queue</span><span class="pct" id="pct-a">0%</span></div>
+        <div class="track"><div class="fill" id="bar-a"></div></div>
+      </div>
+      <div class="bar b">
+        <div class="lbl"><span>Kingman — Utilization &amp; Variability</span><span class="pct" id="pct-b">0%</span></div>
+        <div class="track"><div class="fill" id="bar-b"></div></div>
+      </div>
+      <div class="bar c">
+        <div class="lbl"><span>Weinberg — Signal Integrity</span><span class="pct" id="pct-c">0%</span></div>
+        <div class="track"><div class="fill" id="bar-c"></div></div>
+      </div>
+    </div>
+    <div class="verdict" id="verdict">
+      <div class="head">Check a few boxes above to see your diagnosis.</div>
+      <div class="t">Most stalled engagements are a mix of all three — this just tells you which lever to pull first.</div>
+    </div>
+    <div class="btnrow">
+      <button class="secondary" onclick="resetAll()">↺ Clear All</button>
+      <button onclick="window.print()">Print / Save</button>
+    </div>
+  </div>
+
+  <div class="authorcta">For the reasoning behind each of the three categories above, read <a href='/stakeholder-decision-bottlenecks'>Why Executive Decisions Stall on Client Projects</a>. For the underlying math, see <a href='/four-laws-complex-system-design-full#s81'>8.1 Little's Law</a> in the Full Reference, or plug real numbers into the <a href='/flow-formula-calculator'>Flow Formula Calculator</a>. If your engagement is stuck and you want a second set of eyes on it, <a href='/contact'>get in touch</a>.</div>
+
+  <footer>
+    <span>Four Laws of Complex System Design</span>
+    <span>Companion tool for Part 8</span>
+  </footer>
+</main>
+
+<script>
+const verdictCopy = {
+  a: {
+    label: "Little's Law — Queue",
+    cls: 'a',
+    text: "Your strongest signal is a raw <b>decision queue problem</b>: you're pushing decisions up faster than they're being cleared. The fix isn't escalation, it's redesigning the queue — batch decisions into a fixed cadence instead of raising them as they come up, and pre-package each one (options plus a recommendation) so it takes the exec minutes instead of a fresh context-build every time."
+  },
+  b: {
+    label: 'Kingman — Utilization & Variability',
+    cls: 'b',
+    text: "Your strongest signal is <b>utilization and variability</b>: the decision-maker is running near capacity across everything they're holding, and both when decisions arrive and how long each one takes are unpredictable. You likely can't get more of their time — but you can lower variability. Standardize how decisions are framed, batch similar ones together, and give advance notice of what's coming so arrivals stop being a surprise."
+  },
+  c: {
+    label: 'Weinberg — Signal Integrity',
+    cls: 'c',
+    text: "Your strongest signal is <b>signal integrity</b>: the real cost of delay isn't reaching the person who could clear it, in undistorted form. The fix is making the stakes impossible to soften — attach a dollar-quantified cost-of-delay to every pending decision, name one accountable owner per decision so responsibility can't diffuse, and check whether the real blocker is political rather than substantive."
+  },
+  tie: {
+    label: 'Mixed signal',
+    cls: 'tie',
+    text: "You're seeing a mix, which is the most common real-world case — all three usually compound each other. Start with whichever category scored highest above; addressing it will often reduce pressure on the other two as well."
+  }
+};
+
+function updateAll(){
+  ['a','b','c'].forEach(g => {
+    const items = document.querySelectorAll(`.section.${g} .citem input`);
+    const checked = document.querySelectorAll(`.section.${g} .citem input:checked`).length;
+    const total = items.length;
+    const pct = total ? Math.round((checked/total)*100) : 0;
+    document.getElementById('fill-'+g).style.width = pct + '%';
+    document.getElementById('count-'+g).textContent = `${checked} / ${total}`;
+    document.getElementById('bar-'+g).style.width = pct + '%';
+    document.getElementById('pct-'+g).textContent = pct + '%';
+  });
+
+  const scores = {
+    a: document.querySelectorAll('.section.a .citem input:checked').length,
+    b: document.querySelectorAll('.section.b .citem input:checked').length,
+    c: document.querySelectorAll('.section.c .citem input:checked').length
+  };
+  const total = scores.a + scores.b + scores.c;
+  const verdictEl = document.getElementById('verdict');
+  if (total === 0){
+    verdictEl.className = 'verdict';
+    verdictEl.innerHTML = `<div class="head">Check a few boxes above to see your diagnosis.</div><div class="t">Most stalled engagements are a mix of all three — this just tells you which lever to pull first.</div>`;
+    return;
+  }
+  const max = Math.max(scores.a, scores.b, scores.c);
+  const leaders = Object.keys(scores).filter(k => scores[k] === max);
+  const key = leaders.length > 1 ? 'tie' : leaders[0];
+  const info = verdictCopy[key];
+  verdictEl.className = 'verdict ' + info.cls;
+  verdictEl.innerHTML = `<div class="head">${info.label}${leaders.length===1 ? ` (${scores[key]}/5)` : ''}</div><div class="t">${info.text}</div>`;
+}
+
+document.querySelectorAll('.citem input').forEach(input => {
+  input.addEventListener('change', () => {
+    input.closest('.citem').classList.toggle('checked', input.checked);
+    updateAll();
+  });
+});
+
+function resetAll(){
+  document.querySelectorAll('.citem input').forEach(input => {
+    input.checked = false;
+    input.closest('.citem').classList.remove('checked');
+  });
+  updateAll();
+}
+
+updateAll();
+</script>
+<script>
+  document.querySelectorAll('.navdrop-menu a').forEach(function(link){
+    link.addEventListener('click', function(){
+      var d = link.closest('details.navdrop');
+      if (d) d.removeAttribute('open');
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('details.navdrop').forEach(function(d){
+    var summary = d.querySelector('summary');
+    if (summary) summary.setAttribute('aria-expanded', d.hasAttribute('open') ? 'true' : 'false');
+    d.addEventListener('toggle', function(){
+      if (summary) summary.setAttribute('aria-expanded', d.open ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' || e.key === 'Esc'){
+      document.querySelectorAll('details.navdrop[open]').forEach(function(d){
+        d.removeAttribute('open');
+        var summary = d.querySelector('summary');
+        if (summary) summary.focus();
+      });
+    }
+  });
+</script>
+</body>
+</html>
