@@ -1,0 +1,448 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Ported from capture/fourlaws/raw-tool-flow-diagnostic.html — the largest of
+// the three tools (6.6KB of inline script).
+//
+// All five steps, the typeCopy lookup, the wandering-constraint branch, and the
+// generated Five Focusing Steps summary are carried over verbatim. The only
+// structural change: the original wired navigation with inline
+// onclick="goTo(n)". Astro bundles this script as a module, so nothing lands on
+// `window` — buttons carry data-goto / data-action attributes and are wired with
+// addEventListener instead. Same behaviour, no globals.
+---
+
+<Base
+	title="Flow & Constraint Diagnostic"
+	description="A five-step guided diagnostic — plug in your own WIP, throughput, and constraint details to get a personalized Five Focusing Steps writeup you can use in a client conversation."
+>
+	<span class="label eyebrow">Companion tool · Part 8</span>
+	<h1>Flow &amp; Constraint Diagnostic</h1>
+
+	<p class="standfirst">
+		Walk through Part 8's Five Focusing Steps with your own numbers. Five short
+		steps, then a personalized diagnosis you can use directly in a client
+		conversation.
+	</p>
+
+	<div class="progress" id="progress" role="progressbar" aria-label="Diagnostic progress"></div>
+
+	<!-- STEP 0 -->
+	<section class="step active" data-step="0">
+		<span class="label n">Before you start</span>
+		<h2>What this diagnostic does</h2>
+		<p class="help">
+			It doesn't tell you anything new about the Theory of Constraints — it just
+			makes you answer the same four questions the Five Focusing Steps always
+			start with, then plugs your answers into the framework so the output reads
+			like a diagnosis instead of a worksheet. Have rough numbers ready: current
+			WIP, recent throughput, and a sense of where work backs up.
+		</p>
+		<div class="btnrow end">
+			<button type="button" data-goto="1">Start &rarr;</button>
+		</div>
+	</section>
+
+	<!-- STEP 1 -->
+	<section class="step" data-step="1">
+		<span class="label n">Step 1 of 4</span>
+		<h2>Work in progress &amp; throughput</h2>
+		<p class="help">Little's Law (Part 8.1): cycle time follows directly from these two numbers.</p>
+
+		<div class="row">
+			<div class="field">
+				<label for="d-wip">Current WIP (items actively in flight)</label>
+				<input type="number" id="d-wip" value="15" min="0" />
+			</div>
+			<div class="field">
+				<label for="d-throughput">Throughput (items completed)</label>
+				<input type="number" id="d-throughput" value="5" min="0" />
+			</div>
+			<div class="field">
+				<label for="d-unit">Per</label>
+				<select id="d-unit">
+					<option value="day">day</option>
+					<option value="week" selected>week</option>
+					<option value="month">month</option>
+				</select>
+			</div>
+		</div>
+
+		<p class="result" aria-live="polite">
+			<span class="label">Implied avg. cycle time</span>
+			<span class="val" id="d-cycletime">—</span>
+		</p>
+
+		<div class="btnrow">
+			<button type="button" class="secondary" data-goto="0">&larr; Back</button>
+			<button type="button" data-goto="2">Next &rarr;</button>
+		</div>
+	</section>
+
+	<!-- STEP 2 -->
+	<section class="step" data-step="2">
+		<span class="label n">Step 2 of 4</span>
+		<h2>Where does the queue actually form?</h2>
+		<p class="help">
+			Not where work is assigned — where it sits waiting. That location is the
+			constraint; everywhere else is noise until that one thing changes.
+		</p>
+
+		<div class="field">
+			<label for="d-location">Describe the location (a role, a step, a system, a person)</label>
+			<input type="text" id="d-location" placeholder="e.g., legal review, the billing architect, vendor API rate limit" />
+		</div>
+
+		<fieldset class="choice">
+			<legend>Has this been the same location for a while, or does it move around?</legend>
+			<label class="opt checked">
+				<input type="radio" name="moves" value="same" checked />
+				<span><strong>Stays put</strong> — it's been the same bottleneck for a while, like one machine on a factory line.</span>
+			</label>
+			<label class="opt">
+				<input type="radio" name="moves" value="wanders" />
+				<span><strong>Wanders</strong> — it genuinely shifts week to week between different people, teams, or systems.</span>
+			</label>
+		</fieldset>
+
+		<div class="btnrow">
+			<button type="button" class="secondary" data-goto="1">&larr; Back</button>
+			<button type="button" data-goto="3">Next &rarr;</button>
+		</div>
+	</section>
+
+	<!-- STEP 3 -->
+	<section class="step" data-step="3">
+		<span class="label n">Step 3 of 4</span>
+		<h2>What kind of constraint is it?</h2>
+		<p class="help">
+			Part 8.2 — conflating these is the most common mistake. The five steps work
+			differently depending on which kind is in play.
+		</p>
+
+		<fieldset class="choice">
+			<legend class="visually-hidden">Constraint type</legend>
+			<label class="opt checked">
+				<input type="radio" name="ctype" value="physical" checked />
+				<span><strong>Physical</strong> — a resource (labor, a machine, material) whose capacity is genuinely smaller than the demand on it.</span>
+			</label>
+			<label class="opt">
+				<input type="radio" name="ctype" value="attention" />
+				<span><strong>Physical — one person's attention</strong> — the resource is a specific person's cognitive bandwidth, not headcount or a machine. Context-switching cost is the symptom.</span>
+			</label>
+			<label class="opt">
+				<input type="radio" name="ctype" value="policy" />
+				<span><strong>Policy</strong> — a rule, habit, or approval requirement caps throughput even though no physical resource is maxed out.</span>
+			</label>
+			<label class="opt">
+				<input type="radio" name="ctype" value="market" />
+				<span><strong>Market</strong> — the limit is outside the organization; demand itself is the ceiling.</span>
+			</label>
+			<label class="opt">
+				<input type="radio" name="ctype" value="paradigm" />
+				<span><strong>Paradigm</strong> — an unstated assumption nobody has thought to question yet.</span>
+			</label>
+		</fieldset>
+
+		<div class="btnrow">
+			<button type="button" class="secondary" data-goto="2">&larr; Back</button>
+			<button type="button" data-action="summarize">See diagnosis &rarr;</button>
+		</div>
+	</section>
+
+	<!-- STEP 4 -->
+	<section class="step" data-step="4">
+		<span class="label n">Diagnosis</span>
+		<h2>Your Five Focusing Steps</h2>
+		<div class="stat-row" id="d-final-stats"></div>
+		<div id="d-summary"></div>
+		<div class="btnrow">
+			<button type="button" class="secondary" data-action="restart">↺ Start over</button>
+			<button type="button" data-action="print">Print / save</button>
+		</div>
+	</section>
+
+	<p class="note">
+		Want the underlying formulas? Try the
+		<a href="/flow-formula-calculator">Flow Formula Calculator</a> — or see the
+		full walkthrough with a worked example in the
+		<a href="/four-laws-flow-and-constraints">Flow Deck</a>. If your constraint is
+		a policy one, see
+		<a href="/wip-limits-vs-theory-of-constraints">WIP Limits vs. the Theory of Constraints</a>
+		for where a WIP limit actually helps.
+	</p>
+</Base>
+
+<script>
+	const totalSteps = 5; // 0–4
+	const progressEl = document.getElementById('progress') as HTMLElement;
+
+	function renderProgress(current: number) {
+		progressEl.innerHTML = '';
+		for (let i = 0; i < totalSteps; i++) {
+			const seg = document.createElement('div');
+			seg.className = 'seg' + (i <= current ? ' done' : '');
+			progressEl.appendChild(seg);
+		}
+	}
+
+	function goTo(step: number) {
+		document.querySelectorAll('.step').forEach((s) => s.classList.remove('active'));
+		document.querySelector(`.step[data-step="${step}"]`)!.classList.add('active');
+		renderProgress(step);
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
+	renderProgress(0);
+
+	// ---------- live cycle time ----------
+	function computeCycleTime() {
+		const wip = parseFloat((document.getElementById('d-wip') as HTMLInputElement).value) || 0;
+		const tp = parseFloat((document.getElementById('d-throughput') as HTMLInputElement).value) || 0;
+		const unit = (document.getElementById('d-unit') as HTMLSelectElement).value;
+		const ct = tp > 0 ? wip / tp : 0;
+		(document.getElementById('d-cycletime') as HTMLElement).textContent =
+			tp > 0 ? `${Math.round(ct * 100) / 100} ${unit}s` : '—';
+	}
+	['d-wip', 'd-throughput', 'd-unit'].forEach((id) =>
+		document.getElementById(id)!.addEventListener('input', computeCycleTime)
+	);
+	computeCycleTime();
+
+	// ---------- highlight selected choice ----------
+	document.querySelectorAll('.choice').forEach((group) => {
+		group.addEventListener('change', () => {
+			group.querySelectorAll('.opt').forEach((o) => o.classList.remove('checked'));
+			const checked = group.querySelector('input:checked');
+			if (checked) checked.closest('.opt')!.classList.add('checked');
+		});
+	});
+
+	const typeCopy: Record<string, { label: string; exploit: string; elevate: string }> = {
+		physical: {
+			label: 'Physical constraint',
+			exploit: 'Get the absolute most from it without spending money: eliminate idle time there, keep it fed with only the work that actually needs its specific capability, and protect it from anything else.',
+			elevate: 'Only after exploiting and subordinating everything else, invest — add capacity, automate, hire, or buy equipment for this specific resource.',
+		},
+		attention: {
+			label: "Physical constraint — one person's attention",
+			exploit: "Reduce how many concurrent items this person is allowed to hold. Per Weinberg's numbers, this is a structural loss, not a motivation problem — \"work harder\" doesn't recover time lost to switching.",
+			elevate: 'Elevate by reducing genuine concurrent demand on this person, not by adding more tickets to their queue. If real capacity is needed, that means fewer things asked of them at once, not more hours.',
+		},
+		policy: {
+			label: 'Policy constraint',
+			exploit: "There's often nothing to exploit in the physical sense — the exploit step here means questioning whether the rule, approval gate, or habit is actually necessary before touching anything else.",
+			elevate: 'Elevating a policy constraint usually means rewriting or removing the policy. Throwing capacity at a policy constraint does nothing, because the ceiling was never about capacity.',
+		},
+		market: {
+			label: 'Market constraint',
+			exploit: 'Exploit means getting the most from existing demand — better conversion, better retention — before assuming more capacity or more supply will help.',
+			elevate: 'Elevating a market constraint means creating or capturing more demand: new offers, new segments, new positioning — not more internal throughput.',
+		},
+		paradigm: {
+			label: 'Paradigm constraint',
+			exploit: 'Ask "why do we do it this way" until you reach a real reason or discover there isn\'t one. The exploit step here is surfacing the unstated assumption, not optimizing around it.',
+			elevate: "Elevating a paradigm constraint means deliberately redesigning around the new assumption once it's been named — the old workflow was built for a premise that may no longer hold.",
+		},
+	};
+
+	function buildSummary() {
+		const wip = (document.getElementById('d-wip') as HTMLInputElement).value;
+		const tp = (document.getElementById('d-throughput') as HTMLInputElement).value;
+		const unit = (document.getElementById('d-unit') as HTMLSelectElement).value;
+		const cycletime = (document.getElementById('d-cycletime') as HTMLElement).textContent;
+		const location =
+			(document.getElementById('d-location') as HTMLInputElement).value ||
+			'the location you identified';
+		const moves = (document.querySelector('input[name="moves"]:checked') as HTMLInputElement).value;
+		const ctype = (document.querySelector('input[name="ctype"]:checked') as HTMLInputElement).value;
+		const info = typeCopy[ctype];
+
+		(document.getElementById('d-final-stats') as HTMLElement).innerHTML = `
+			<div class="stat"><span class="label">WIP</span><span class="val">${wip}</span></div>
+			<div class="stat"><span class="label">Throughput</span><span class="val">${tp}/${unit}</span></div>
+			<div class="stat"><span class="label">Cycle time</span><span class="val">${cycletime}</span></div>
+			<div class="stat"><span class="label">Constraint type</span><span class="val small">${info.label}</span></div>
+		`;
+
+		const wanderNote =
+			moves === 'wanders'
+				? `You said this constraint <b>wanders</b> — this is a network, not a chain (Part 8.2's wandering-constraints caveat). Treat step 1 as a standing habit, not a one-time diagnosis: recheck on a cadence rather than assuming this answer still holds next month.`
+				: `You said this constraint <b>stays put</b> — the classic stable case the Five Focusing Steps were written for. Still worth a periodic recheck once it's been addressed, so a fixed policy doesn't quietly calcify around the old bottleneck.`;
+
+		(document.getElementById('d-summary') as HTMLElement).innerHTML = `
+			<div class="summary-card"><div class="head"><span class="sn">1</span>Identify</div><div class="t">The constraint is <b>${location}</b> — a <b>${info.label.toLowerCase()}</b>. Current WIP of <b>${wip}</b> against throughput of <b>${tp}/${unit}</b> implies an average cycle time of <b>${cycletime}</b> (Little's Law, 8.1).</div></div>
+			<div class="summary-card"><div class="head"><span class="sn">2</span>Exploit</div><div class="t">${info.exploit}</div></div>
+			<div class="summary-card"><div class="head"><span class="sn">3</span>Subordinate</div><div class="t">Everything upstream of <b>${location}</b> should pace itself to its rhythm. Working faster anywhere else just builds inventory in front of it — a WIP limit placed directly in front of <b>${location}</b> is Little's Law and the Theory of Constraints applied simultaneously (8.3.1).</div></div>
+			<div class="summary-card"><div class="head"><span class="sn">4</span>Elevate</div><div class="t">${info.elevate}</div></div>
+			<div class="summary-card"><div class="head"><span class="sn">5</span>Repeat</div><div class="t">${wanderNote}</div></div>
+		`;
+	}
+
+	// ---------- wiring ----------
+	document.querySelectorAll<HTMLButtonElement>('[data-goto]').forEach((btn) => {
+		btn.addEventListener('click', () => goTo(parseInt(btn.dataset.goto!)));
+	});
+
+	document.querySelector('[data-action="summarize"]')!.addEventListener('click', () => {
+		buildSummary();
+		goTo(4);
+	});
+
+	document.querySelector('[data-action="restart"]')!.addEventListener('click', () => {
+		(document.getElementById('d-location') as HTMLInputElement).value = '';
+		goTo(0);
+	});
+
+	document.querySelector('[data-action="print"]')!.addEventListener('click', () => window.print());
+</script>
+
+<style>
+	.eyebrow { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.standfirst { font-size: 1.05rem; color: var(--muted); }
+
+	.progress {
+		display: flex;
+		gap: 0.35rem;
+		margin: 1.75rem 0;
+	}
+	.n { font-size: 0.72rem; color: var(--sage); display: block; margin-bottom: 0.3rem; }
+
+	/* Only the active step is in the document flow. The others stay in the DOM so
+	   their inputs keep their values as you move back and forth. */
+	.step { display: none; }
+	.step.active { display: block; }
+
+	.help { font-size: 0.92rem; color: var(--muted); }
+
+	.row { display: flex; flex-wrap: wrap; gap: 1rem; }
+	.field { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: 1rem; flex: 1 1 12rem; }
+	label { font-size: 0.9rem; font-weight: bold; }
+	input[type='number'],
+	input[type='text'],
+	select {
+		width: 100%;
+		padding: 0.5rem 0.6rem;
+		font: inherit;
+		font-size: 0.97rem;
+		color: var(--charcoal);
+		background: #fffdf9;
+		border: 1px solid rgba(46, 42, 38, 0.3);
+		border-radius: 2px;
+	}
+	input:focus-visible, select:focus-visible { outline: 2px solid var(--plum); outline-offset: 1px; }
+
+	.choice { border: none; padding: 0; margin: 0 0 1rem; }
+	.choice legend { font-size: 0.9rem; font-weight: bold; padding: 0 0 0.5rem; }
+	.opt {
+		display: flex;
+		gap: 0.7rem;
+		align-items: flex-start;
+		padding: 0.6rem 0;
+		border-bottom: 1px solid var(--hairline);
+		font-size: 0.95rem;
+		font-weight: normal;
+		line-height: 1.45;
+		cursor: pointer;
+	}
+	.opt input { margin-top: 0.3rem; accent-color: var(--plum); }
+	.opt.checked span { color: var(--plum); }
+
+	.result {
+		margin: 1.25rem 0;
+		padding: 0.9rem 1rem;
+		background: rgba(124, 148, 115, 0.12);
+		border-left: 2px solid var(--sage);
+	}
+	.result .label { display: block; font-size: 0.72rem; color: var(--muted); margin-bottom: 0.2rem; }
+	.result .val { font-family: Georgia, "Times New Roman", serif; font-size: 1.1rem; color: var(--plum); }
+
+	.btnrow { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
+	.btnrow.end { justify-content: flex-end; }
+	button {
+		font: inherit;
+		font-size: 0.95rem;
+		color: var(--cream);
+		background: var(--plum);
+		border: 1px solid var(--plum);
+		border-radius: 2px;
+		padding: 0.55rem 1.1rem;
+		cursor: pointer;
+	}
+	button.secondary { color: var(--plum); background: transparent; }
+	button:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 2px; }
+
+	.note { font-size: 0.9rem; color: var(--muted); }
+	.visually-hidden {
+		position: absolute;
+		width: 1px; height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	}
+
+	@media print {
+		.btnrow, .progress { display: none; }
+	}
+</style>
+
+<style is:global>
+	/* Progress segments and the summary cards are script-generated, so Astro's
+	   scoped-style hashes can't reach them. */
+	.progress .seg {
+		flex: 1;
+		height: 3px;
+		background: rgba(46, 42, 38, 0.12);
+	}
+	.progress .seg.done { background: var(--sage); }
+
+	.stat-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		margin: 1.25rem 0 1.75rem;
+		padding-bottom: 1.25rem;
+		border-bottom: 1px solid var(--hairline);
+	}
+	.stat-row .stat { flex: 1 1 7rem; }
+	.stat-row .label {
+		display: block;
+		font-family: "Courier New", Courier, monospace;
+		font-size: 0.68rem;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		color: var(--muted);
+		margin-bottom: 0.2rem;
+	}
+	.stat-row .val {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.3rem;
+		color: var(--plum);
+	}
+	.stat-row .val.small { font-size: 0.95rem; }
+
+	.summary-card {
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--hairline);
+	}
+	.summary-card .head {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.05rem;
+		color: var(--plum);
+		margin-bottom: 0.35rem;
+	}
+	.summary-card .sn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1.6rem;
+		height: 1.6rem;
+		border-radius: 50%;
+		background: var(--sage);
+		color: var(--cream);
+		font-family: "Courier New", Courier, monospace;
+		font-size: 0.8rem;
+	}
+	.summary-card .t { font-size: 0.95rem; }
+</style>

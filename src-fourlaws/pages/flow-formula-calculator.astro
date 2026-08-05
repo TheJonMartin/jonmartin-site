@@ -1,0 +1,413 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Ported from the original inline <script> on fourlaws.netlify.app, captured in
+// capture/fourlaws/raw-tool-formula-calculator.html.
+//
+// The arithmetic is carried over unchanged — same formulas, same rounding, same
+// Weinberg lookup table, same Kingman curve normalisation constants. Only the
+// presentation was reskinned to Field & Ledger. If you're tempted to "clean up"
+// a number in here, check it against the capture first: these figures are cited
+// on other pages of this site and in the diagnostic tool.
+---
+
+<Base
+	title="Flow Formula Calculator"
+	description="Interactive calculators for Little's Law, Kingman's formula, and Weinberg's context-switching numbers — plug in real engagement numbers to see what they predict."
+>
+	<span class="label eyebrow">Companion tool · Part 8</span>
+	<h1>Flow Formula Calculator</h1>
+
+	<p class="standfirst">
+		Interactive versions of the three formulas from Part 8 — Little's Law,
+		Kingman's formula, and Weinberg's context-switching numbers. Plug in real
+		numbers from an engagement to see what they predict.
+	</p>
+
+	<!-- ---------- Little's Law ---------- -->
+	<section class="tool">
+		<h2>Little's Law</h2>
+		<p class="formula">L = λ × W</p>
+		<p class="desc">
+			Work in progress equals arrival rate multiplied by average time in system.
+			Give it any two values and it solves for the third. Keep the time unit for
+			arrival rate and cycle time consistent — both in days, or both in weeks.
+		</p>
+
+		<div class="field">
+			<label for="ll-unit">Shared time unit</label>
+			<select id="ll-unit">
+				<option value="day">days</option>
+				<option value="week" selected>weeks</option>
+				<option value="month">months</option>
+			</select>
+		</div>
+
+		<div class="solvefor" id="ll-solvefor" role="group" aria-label="Solve for">
+			<button type="button" data-target="L" class="active">Solve for WIP (L)</button>
+			<button type="button" data-target="lambda">Solve for arrival rate (λ)</button>
+			<button type="button" data-target="W">Solve for cycle time (W)</button>
+		</div>
+
+		<div class="row">
+			<div class="field">
+				<label for="ll-L">WIP — items in progress (L)</label>
+				<input type="number" id="ll-L" value="12" min="0" step="0.1" />
+			</div>
+			<div class="field">
+				<label for="ll-lambda">Arrival rate — items per unit (λ)</label>
+				<input type="number" id="ll-lambda" value="4" min="0" step="0.1" />
+			</div>
+			<div class="field">
+				<label for="ll-W">Cycle time — units per item (W)</label>
+				<input type="number" id="ll-W" value="3" min="0" step="0.1" />
+			</div>
+		</div>
+
+		<p class="result" aria-live="polite">
+			<span class="label">Result</span>
+			<span class="val" id="ll-result">—</span>
+		</p>
+	</section>
+
+	<!-- ---------- Kingman ---------- -->
+	<section class="tool">
+		<h2>Kingman's formula (the VUT equation)</h2>
+		<p class="formula">Wait ≈ V × U/(1−U) × T</p>
+		<p class="desc">
+			Estimates average wait time from variability, utilization, and average
+			processing time. The curve is not linear — watch what happens as
+			utilization approaches 100%.
+		</p>
+
+		<div class="field">
+			<label for="kg-u">Utilization (U) — <span id="kg-u-label">75%</span></label>
+			<input type="range" id="kg-u" min="5" max="98" value="75" />
+		</div>
+
+		<div class="row">
+			<div class="field">
+				<label for="kg-v">Variability (V)</label>
+				<select id="kg-v">
+					<option value="0.25">Very low (0.25) — highly predictable work</option>
+					<option value="0.5">Low (0.5)</option>
+					<option value="1.0" selected>Medium (1.0) — typical mixed workload</option>
+					<option value="1.5">High (1.5)</option>
+					<option value="2.5">Very high (2.5) — unpredictable client delivery work</option>
+				</select>
+			</div>
+			<div class="field">
+				<label for="kg-t">Avg. processing time (T)</label>
+				<input type="number" id="kg-t" value="2" min="0" step="0.1" />
+			</div>
+		</div>
+
+		<div class="viz">
+			<svg id="kg-svg" viewBox="0 0 400 90" preserveAspectRatio="none" role="img"
+				aria-label="Wait time rising non-linearly as utilization approaches 100 percent">
+				<path id="kg-curve" fill="none" stroke="var(--sage)" stroke-width="2" />
+				<circle id="kg-dot" r="5" fill="var(--mustard)" />
+			</svg>
+		</div>
+
+		<p class="result" aria-live="polite">
+			<span class="label">Estimated average wait</span>
+			<span class="val" id="kg-result">—</span>
+		</p>
+
+		<p class="note">
+			<strong>Reading the curve:</strong> the last 10–15% of utilization is where
+			nearly all the danger lives. Two teams at 65% and 90% utilization aren't
+			"a bit different" — they're qualitatively different systems.
+		</p>
+	</section>
+
+	<!-- ---------- Weinberg ---------- -->
+	<section class="tool">
+		<h2>Weinberg's context-switching numbers</h2>
+		<p class="desc">
+			How much effective capacity a person loses as concurrent projects
+			increase. A practitioner heuristic, not a lab measurement — but the
+			most-cited figures in the field.
+		</p>
+
+		<div class="field">
+			<label for="wb-n">Concurrent items held by one person: <span id="wb-n-label">2</span></label>
+			<input type="range" id="wb-n" min="1" max="5" value="2" step="1" />
+		</div>
+
+		<div class="bars" id="wb-bars"></div>
+
+		<p class="result" aria-live="polite">
+			<span class="label">Effective capacity lost to switching</span>
+			<span class="val" id="wb-result">—</span>
+		</p>
+
+		<p class="note">
+			Weinberg's data doesn't extend meaningfully past five concurrent items —
+			the trend just keeps getting worse. <strong>The only real levers:</strong>
+			reduce how many concurrent items that person is allowed to hold, or reduce
+			genuine demand on them.
+		</p>
+	</section>
+
+	<p class="note">
+		Want a guided walkthrough instead of raw formulas? Try the
+		<a href="/part8-flow-diagnostic">Flow &amp; Constraint Diagnostic</a> — or see
+		these formulas applied to a full worked example in the
+		<a href="/four-laws-flow-and-constraints">Flow Deck</a>.
+	</p>
+</Base>
+
+<script>
+	// ---------- Little's Law ----------
+	const llL = document.getElementById('ll-L') as HTMLInputElement;
+	const llLambda = document.getElementById('ll-lambda') as HTMLInputElement;
+	const llW = document.getElementById('ll-W') as HTMLInputElement;
+	const llUnit = document.getElementById('ll-unit') as HTMLSelectElement;
+	const llResult = document.getElementById('ll-result') as HTMLElement;
+	const llButtons = document.querySelectorAll<HTMLButtonElement>('#ll-solvefor button');
+	let llTarget = 'L';
+
+	function round2(n: number) { return Math.round(n * 100) / 100; }
+
+	llButtons.forEach((btn) => {
+		btn.addEventListener('click', () => {
+			llButtons.forEach((b) => b.classList.remove('active'));
+			btn.classList.add('active');
+			llTarget = btn.dataset.target!;
+			[llL, llLambda, llW].forEach((i) => (i.disabled = false));
+			if (llTarget === 'L') llL.disabled = true;
+			if (llTarget === 'lambda') llLambda.disabled = true;
+			if (llTarget === 'W') llW.disabled = true;
+			computeLittles();
+		});
+	});
+	llL.disabled = true;
+
+	function computeLittles() {
+		const unit = llUnit.value;
+		let L = parseFloat(llL.value);
+		let lambda = parseFloat(llLambda.value);
+		let W = parseFloat(llW.value);
+		if (llTarget === 'L') { L = lambda * W; llL.value = String(round2(L)); }
+		else if (llTarget === 'lambda') { lambda = W > 0 ? L / W : 0; llLambda.value = String(round2(lambda)); }
+		else if (llTarget === 'W') { W = lambda > 0 ? L / lambda : 0; llW.value = String(round2(W)); }
+		llResult.innerHTML =
+			`${round2(L)} items in progress <span>&nbsp;=&nbsp;</span> ` +
+			`${round2(lambda)} items/${unit} <span>&times;</span> ${round2(W)} ${unit}/item`;
+	}
+	[llL, llLambda, llW, llUnit].forEach((el) => el.addEventListener('input', computeLittles));
+	computeLittles();
+
+	// ---------- Kingman ----------
+	const kgU = document.getElementById('kg-u') as HTMLInputElement;
+	const kgULabel = document.getElementById('kg-u-label') as HTMLElement;
+	const kgV = document.getElementById('kg-v') as HTMLSelectElement;
+	const kgT = document.getElementById('kg-t') as HTMLInputElement;
+	const kgResult = document.getElementById('kg-result') as HTMLElement;
+	const kgCurve = document.getElementById('kg-curve') as SVGPathElement & Element;
+	const kgDot = document.getElementById('kg-dot') as SVGCircleElement & Element;
+
+	// The 0.02/0.96 window and the /15 normalisation are carried over from the
+	// original. They exist to keep the asymptote on-canvas: u/(1-u) runs away to
+	// infinity, so the curve is clipped at 15 and the domain stops short of 1.
+	function drawCurve() {
+		let d = '';
+		for (let i = 0; i <= 100; i++) {
+			const u = 0.02 + (i / 100) * 0.96;
+			const y = u / (1 - u);
+			const yn = Math.min(y / 15, 1);
+			const x = (i / 100) * 400;
+			const yPix = 88 - yn * 82;
+			d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + yPix.toFixed(1) + ' ';
+		}
+		kgCurve.setAttribute('d', d);
+	}
+
+	function computeKingman() {
+		const u = parseInt(kgU.value) / 100;
+		const v = parseFloat(kgV.value);
+		const t = parseFloat(kgT.value);
+		kgULabel.textContent = kgU.value + '%';
+		const wait = v * (u / (1 - u)) * t;
+		kgResult.textContent = round2(wait) + ' time units';
+		const x = ((u - 0.02) / 0.96) * 400;
+		const y = u / (1 - u);
+		const yn = Math.min(y / 15, 1);
+		const yPix = 88 - yn * 82;
+		kgDot.setAttribute('cx', String(x));
+		kgDot.setAttribute('cy', String(yPix));
+	}
+	[kgU, kgV, kgT].forEach((el) => el.addEventListener('input', computeKingman));
+	drawCurve();
+	computeKingman();
+
+	// ---------- Weinberg ----------
+	// Verbatim from the original capture. These specific figures are quoted on
+	// other pages — don't adjust them here without adjusting them there.
+	const wbTable: Record<number, { eff: number; loss: number }> = {
+		1: { eff: 100, loss: 0 },
+		2: { eff: 40, loss: 20 },
+		3: { eff: 20, loss: 40 },
+		4: { eff: 10, loss: 60 },
+		5: { eff: 5, loss: 75 },
+	};
+	const wbN = document.getElementById('wb-n') as HTMLInputElement;
+	const wbNLabel = document.getElementById('wb-n-label') as HTMLElement;
+	const wbResult = document.getElementById('wb-result') as HTMLElement;
+	const wbBars = document.getElementById('wb-bars') as HTMLElement;
+
+	function renderBars(n: number) {
+		wbBars.innerHTML = '';
+		for (let i = 1; i <= 5; i++) {
+			const eff = wbTable[i].eff;
+			const bar = document.createElement('div');
+			bar.className = 'bar' + (i === n ? ' active' : '');
+			bar.innerHTML = `<div class="fill" style="height:${eff}%"></div><div class="n">${i}</div>`;
+			wbBars.appendChild(bar);
+		}
+	}
+
+	function computeWeinberg() {
+		const n = parseInt(wbN.value);
+		wbNLabel.textContent = String(n);
+		renderBars(n);
+		const info = wbTable[n];
+		wbResult.textContent = `${info.loss}% lost — each item gets ~${info.eff}% effective attention`;
+	}
+	wbN.addEventListener('input', computeWeinberg);
+	computeWeinberg();
+</script>
+
+<style>
+	.eyebrow { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.standfirst { font-size: 1.05rem; color: var(--muted); }
+
+	.tool {
+		margin: 2.5rem 0;
+		padding-top: 1.75rem;
+		border-top: 1px solid var(--hairline);
+	}
+	.formula {
+		font-family: "Courier New", Courier, monospace;
+		font-size: 1.15rem;
+		color: var(--plum);
+		margin: 0.5rem 0 0.75rem;
+	}
+	.desc { font-size: 0.97rem; margin-top: 0; }
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	.field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		margin-bottom: 1rem;
+		flex: 1 1 13rem;
+	}
+	label { font-size: 0.9rem; font-weight: bold; }
+	input[type='number'],
+	select {
+		width: 100%;
+		padding: 0.5rem 0.6rem;
+		font: inherit;
+		font-size: 0.97rem;
+		color: var(--charcoal);
+		background: #fffdf9;
+		border: 1px solid rgba(46, 42, 38, 0.3);
+		border-radius: 2px;
+	}
+	input:disabled {
+		background: rgba(46, 42, 38, 0.06);
+		color: var(--muted);
+	}
+	input[type='range'] { width: 100%; accent-color: var(--plum); }
+	input:focus-visible,
+	select:focus-visible { outline: 2px solid var(--plum); outline-offset: 1px; }
+
+	.solvefor {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1.25rem;
+	}
+	.solvefor button {
+		font: inherit;
+		font-size: 0.88rem;
+		padding: 0.4rem 0.8rem;
+		color: var(--plum);
+		background: transparent;
+		border: 1px solid var(--hairline);
+		border-radius: 2px;
+		cursor: pointer;
+	}
+	.solvefor button:hover { border-color: var(--plum); }
+	.solvefor button.active {
+		background: var(--plum);
+		color: var(--cream);
+		border-color: var(--plum);
+	}
+
+	.result {
+		margin: 1.25rem 0 0;
+		padding: 0.9rem 1rem;
+		background: rgba(124, 148, 115, 0.12);
+		border-left: 2px solid var(--sage);
+	}
+	.result .label {
+		display: block;
+		font-size: 0.72rem;
+		color: var(--muted);
+		margin-bottom: 0.2rem;
+	}
+	.result .val {
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 1.1rem;
+		color: var(--plum);
+	}
+
+	.viz { margin: 1.25rem 0 0; }
+	.viz svg { width: 100%; height: 90px; display: block; }
+
+	.bars {
+		display: flex;
+		align-items: flex-end;
+		gap: 0.6rem;
+		height: 120px;
+		margin-top: 0.5rem;
+	}
+	.note { font-size: 0.9rem; color: var(--muted); }
+</style>
+
+<style is:global>
+	/* Bars are built by the script, so their styles can't be scoped — Astro's
+	   scoping hashes only reach markup present at build time. */
+	.bars .bar {
+		flex: 1;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: relative;
+	}
+	.bars .fill {
+		background: var(--sage);
+		opacity: 0.45;
+		border-radius: 1px 1px 0 0;
+	}
+	.bars .bar.active .fill {
+		background: var(--mustard);
+		opacity: 1;
+	}
+	.bars .n {
+		text-align: center;
+		font-family: "Courier New", Courier, monospace;
+		font-size: 0.75rem;
+		color: var(--muted);
+		padding-top: 0.3rem;
+	}
+</style>

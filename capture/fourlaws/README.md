@@ -33,29 +33,35 @@ Confirmed complete against the live site's own `sitemap.xml`.
 Plus `/thanks`, which is new — the contact form needs somewhere to post to.
 It's `noindex` and excluded from the sitemap.
 
-### Interactive tools (3) — all outstanding
+### Interactive tools (3) — all ported
 
-Raw HTML captured in this folder. Inline `<script>` verified present and intact.
+Raw HTML kept in this folder as the reference source.
 
-| Path | Tool | Captured JS |
+| Path | Tool | Source capture |
 |---|---|---|
-| `/part8-flow-diagnostic` | Flow & Constraint Diagnostic | `raw-tool-flow-diagnostic.html` — 6,637 bytes |
+| `/part8-flow-diagnostic` | Flow & Constraint Diagnostic | `raw-tool-flow-diagnostic.html` — 6,637 bytes of inline JS |
 | `/flow-formula-calculator` | Flow Formula Calculator | `raw-tool-formula-calculator.html` — 3,840 bytes |
 | `/stakeholder-decision-checklist` | Stakeholder Decision Stall Checklist | `raw-tool-decision-checklist.html` — 3,840 bytes |
 
-These sizes match what the original capture recorded, so the logic came through
-whole. This is a **port, not a rebuild** — don't reverse-engineer the behaviour
-from the UI when working code is sitting right here.
+The arithmetic was carried over unchanged and verified against the build output:
+the Weinberg lookup table, Kingman's `0.02`/`0.96` domain window, the `/15`
+curve normalisation and `88 − yn×82` pixel mapping, and all three Little's Law
+solve-for branches are byte-equivalent to the capture.
+
+One structural change in all three: the originals wired buttons with inline
+`onclick="…"`. Astro bundles page scripts as modules, so nothing lands on
+`window` and inline handlers would silently no-op. Navigation is wired with
+`addEventListener` against `data-goto` / `data-action` attributes instead.
 
 ## Do not cut over yet
 
-Four pages are still missing, and the ported pages link to all four:
-`/four-laws-complex-system-design-full` and the three tools. Deploying the
-subdomain today would publish a site with live links into 404s.
+One page is still missing — `/four-laws-complex-system-design-full` — and most
+ported pages link into it, several with deep anchors (`#s21`, `#s81`, `#p6`).
+Deploying the subdomain today would publish a site with live links into 404s.
 
 Order of operations:
 
-1. Port the Full Reference and the three tools.
+1. Port the Full Reference, preserving its `#sNN` / `#pN` anchor ids exactly.
 2. Re-run the missing-link check (below) and confirm it returns nothing.
 3. Then follow `docs/fourlaws-deploy.md` for the Netlify and DNS steps.
 
