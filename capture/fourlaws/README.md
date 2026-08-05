@@ -124,14 +124,22 @@ Decisions made during the port, so they don't get rediscovered as bugs.
   quick-reference table is a list, because it was a single-header table that has
   no faithful markdown equivalent. The other two tables (5.1, 5.2) are real
   tables. Nothing else in the prose was cut or reworded.
-- **Body diagrams.** The Full Reference has eleven inline diagrams (Figures 0–10,
-  22 files — a `.webp` with a `.png` fallback each). The `<figure>` elements are
-  ported with their captions intact and each `<img>` preserved verbatim inside an
-  HTML comment carrying its `src` and full alt text — nothing renders broken, and
-  restoring them is a matter of copying the files into `public-fourlaws/img/` and
-  uncommenting. Left uncopied deliberately: they are drawn in the old dark
-  navy/cyan palette and would look wrong on a cream Field & Ledger page, so they
-  want redrawing rather than copying.
+- **Body diagrams — done, redrawn rather than copied.** All eleven Figures (0–10)
+  are original SVG artwork in `public-fourlaws/img/`, built to the Field & Ledger
+  spec rather than copied from the old dark navy/cyan originals — same reason the
+  rest of the site was reskinned rather than ported pixel-for-pixel. SVG over
+  the old `.webp`+`.png` pair: vector stays crisp at any size, each file is a
+  few KB instead of hundreds, and there's one file to maintain per figure instead
+  of two. Colors are hardcoded hex inside each SVG rather than referencing the
+  site's CSS variables — an `<img>`-embedded SVG can't inherit the host page's
+  stylesheet, so the palette is deliberately duplicated rather than linked.
+  `Base.astro` picked up matching `figure`/`figcaption` styling (hairline frame,
+  Calibri-italic muted caption per the spec's "Caption / meta" role) since
+  neither existed before this. Mustard is used once per diagram at most, on
+  the genuine outlier each figure is illustrating — the leaked variety in
+  Figure 1, the lever in Figures 0 and 4, the bottleneck in Figure 10 — never
+  as decoration. Two figures (8, 9) have no mustard at all; not every diagram
+  has a single outlier to spend it on, and the spec doesn't require one.
 - **OG images.** The live site has per-page `og/*.png` images. None are carried
   over yet; `Base.astro` currently emits `twitter:card: summary` rather than
   `summary_large_image` to match.

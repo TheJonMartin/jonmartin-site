@@ -1,0 +1,58 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig3title fig3desc">
+<title id="fig3title">Brooks's Law: communication pairs scale as n(n-1)/2</title>
+<desc id="fig3desc">Bar chart of communication pairs against team size for n equals 2, 3, 4, 5, 6, 8, and 10, rising from 1 pair to 45 pairs. A dashed line shows team size itself for comparison, staying nearly flat by contrast — the bars grow combinatorially while the reference line grows linearly.</desc>
+
+<text x="130" y="35" font-family="Courier New, Courier, monospace" font-size="11" letter-spacing="0.5" fill="#4A3352">■ COMMUNICATION PAIRS — n(n−1)/2</text>
+<text x="130" y="55" font-family="Courier New, Courier, monospace" font-size="11" letter-spacing="0.5" fill="#7C9473">- - TEAM SIZE (n) — LINEAR REFERENCE</text>
+
+<line x1="60" y1="400" x2="700" y2="400" stroke="#2E2A26" stroke-width="1.25"/>
+<line x1="60" y1="70" x2="60" y2="400" stroke="#DBD7D1" stroke-width="1"/>
+<line x1="60" y1="283" x2="700" y2="283" stroke="#DBD7D1" stroke-width="1"/>
+<line x1="60" y1="167" x2="700" y2="167" stroke="#DBD7D1" stroke-width="1"/>
+
+<!-- bars: pairs -->
+<rect x="99" y="392.2" width="50" height="7.8" fill="#4A3352"/>
+<rect x="188" y="376.7" width="50" height="23.3" fill="#4A3352"/>
+<rect x="277" y="353.3" width="50" height="46.7" fill="#4A3352"/>
+<rect x="365" y="322.2" width="50" height="77.8" fill="#4A3352"/>
+<rect x="454" y="283.3" width="50" height="116.7" fill="#4A3352"/>
+<rect x="542" y="182.2" width="50" height="217.8" fill="#4A3352"/>
+<rect x="631" y="50" width="50" height="350" fill="#4A3352"/>
+
+<!-- linear reference line -->
+<polyline points="124,384.4 213,376.7 302,368.9 390,361.1 479,353.3 567,337.8 656,322.2"
+  fill="none" stroke="#7C9473" stroke-width="1.75" stroke-dasharray="5 4"/>
+<g fill="#7C9473">
+  <circle cx="124" cy="384.4" r="3"/>
+  <circle cx="213" cy="376.7" r="3"/>
+  <circle cx="302" cy="368.9" r="3"/>
+  <circle cx="390" cy="361.1" r="3"/>
+  <circle cx="479" cy="353.3" r="3"/>
+  <circle cx="567" cy="337.8" r="3"/>
+  <circle cx="656" cy="322.2" r="3"/>
+</g>
+
+<!-- value labels above bars — positioned above whichever is higher, the bar top or
+     the reference line/dot at that x, so small-n labels don't collide with the
+     sage dots (which sit above the tiny early bars) -->
+<g font-family="Courier New, Courier, monospace" font-size="11" fill="#4A3352" text-anchor="middle">
+  <text x="124" y="374">1</text>
+  <text x="213" y="367">3</text>
+  <text x="302" y="343">6</text>
+  <text x="390" y="312">10</text>
+  <text x="479" y="273">15</text>
+  <text x="567" y="172">28</text>
+  <text x="656" y="40">45</text>
+</g>
+
+<!-- x-axis labels -->
+<g font-family="Courier New, Courier, monospace" font-size="11" fill="#6B6762" text-anchor="middle">
+  <text x="124" y="418">n=2</text>
+  <text x="213" y="418">n=3</text>
+  <text x="302" y="418">n=4</text>
+  <text x="390" y="418">n=5</text>
+  <text x="479" y="418">n=6</text>
+  <text x="567" y="418">n=8</text>
+  <text x="656" y="418">n=10</text>
+</g>
+</svg>

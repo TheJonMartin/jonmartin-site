@@ -1,0 +1,23 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig7title fig7desc">
+<title id="fig7title">Fixed team boundaries with a designed engagement structure over them</title>
+<desc id="fig7desc">Three host teams, each drawn as a fixed, unconnected box — there is no direct line between them, since by default they do not coordinate. A mustard-haloed engagement lead node at the bottom connects to all three: the one thing the external designer can still shape, even though the team boundaries themselves are fixed.</desc>
+
+<rect x="60" y="60" width="180" height="280" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2.25"/>
+<rect x="290" y="60" width="180" height="280" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2.25"/>
+<rect x="520" y="60" width="180" height="280" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2.25"/>
+
+<text x="150" y="90" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="11" letter-spacing="0.5" fill="#4A3352">TEAM A (FIXED)</text>
+<text x="380" y="90" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="11" letter-spacing="0.5" fill="#4A3352">TEAM B (FIXED)</text>
+<text x="610" y="90" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="11" letter-spacing="0.5" fill="#4A3352">TEAM C (FIXED)</text>
+
+<!-- deliberately no lines directly between the three boxes -->
+
+<line x1="380" y1="378" x2="150" y2="340" stroke="#7C9473" stroke-width="2"/>
+<line x1="380" y1="378" x2="380" y2="340" stroke="#7C9473" stroke-width="2"/>
+<line x1="380" y1="378" x2="610" y2="340" stroke="#7C9473" stroke-width="2"/>
+
+<circle cx="380" cy="378" r="22" fill="none" stroke="#E8A93B" stroke-width="3" opacity="0.6"/>
+<circle cx="380" cy="378" r="16" fill="#FAF6EF" stroke="#7C9473" stroke-width="2"/>
+<text x="380" y="405" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="10.5" letter-spacing="0.5" fill="#E8A93B">WHAT THE DESIGNER CAN SHAPE</text>
+<text x="380" y="382" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="8.5" fill="#7C9473">LEAD</text>
+</svg>

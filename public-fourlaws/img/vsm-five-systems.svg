@@ -1,0 +1,41 @@
+<svg viewBox="0 0 640 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig6title fig6desc">
+<title id="fig6title">Beer's Viable System Model: five systems, S3-star, and the algedonic channel</title>
+<desc id="fig6desc">A vertical reporting chain from System 5 Policy down through System 4 Intelligence, System 3 Operational Management, System 2 Coordination, to System 1 Operations, drawn as multiple operational units. A System 3-star audit channel runs directly and independently from System 3 down to System 1, bypassing System 2. A mustard algedonic channel arcs from System 1 all the way up to System 5, bypassing the whole hierarchy, for emergencies the normal channel is too slow to surface.</desc>
+
+<!-- normal reporting chain -->
+<line x1="280" y1="90" x2="280" y2="150" stroke="#4A3352" stroke-width="1.75"/>
+<line x1="280" y1="190" x2="280" y2="250" stroke="#4A3352" stroke-width="1.75"/>
+<line x1="280" y1="290" x2="280" y2="350" stroke="#4A3352" stroke-width="1.75"/>
+<line x1="280" y1="390" x2="200" y2="450" stroke="#4A3352" stroke-width="1.75"/>
+<line x1="280" y1="390" x2="280" y2="450" stroke="#4A3352" stroke-width="1.75"/>
+<line x1="280" y1="390" x2="360" y2="450" stroke="#4A3352" stroke-width="1.75"/>
+
+<rect x="200" y="50" width="160" height="40" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2"/>
+<text x="280" y="75" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="12" fill="#4A3352">S5 — POLICY</text>
+
+<rect x="200" y="150" width="160" height="40" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2"/>
+<text x="280" y="175" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="12" fill="#4A3352">S4 — INTELLIGENCE</text>
+
+<rect x="200" y="250" width="160" height="40" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2"/>
+<text x="280" y="275" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="11.5" fill="#4A3352">S3 — OPS MGMT</text>
+
+<rect x="200" y="350" width="160" height="40" rx="6" fill="#FAF6EF" stroke="#4A3352" stroke-width="2"/>
+<text x="280" y="375" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="11.5" fill="#4A3352">S2 — COORDINATION</text>
+
+<circle cx="200" cy="470" r="20" fill="#4A3352"/>
+<circle cx="280" cy="470" r="20" fill="#4A3352"/>
+<circle cx="360" cy="470" r="20" fill="#4A3352"/>
+<text x="280" y="515" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="11" letter-spacing="0.5" fill="#4A3352">S1 — OPERATIONS (MULTIPLE UNITS)</text>
+
+<!-- S3* audit channel: bypasses S2 -->
+<rect x="450" y="255" width="90" height="32" rx="5" fill="#FAF6EF" stroke="#7C9473" stroke-width="1.75"/>
+<text x="495" y="276" text-anchor="middle" font-family="Courier New, Courier, monospace" font-size="10.5" fill="#7C9473">S3* AUDIT</text>
+<path d="M495,287 C495,380 340,420 285,463" fill="none" stroke="#7C9473" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+<!-- algedonic channel: bypasses everything, mustard. Arrives at the S5 box's left
+     edge rather than its interior, so the arrowhead doesn't sit on top of the
+     "S5 — POLICY" label. -->
+<path d="M180,460 C30,380 30,120 193,70" fill="none" stroke="#E8A93B" stroke-width="2.75"/>
+<polygon points="197,70 179,62 179,78" fill="#E8A93B"/>
+<text x="60" y="270" font-family="Courier New, Courier, monospace" font-size="10.5" letter-spacing="0.5" fill="#E8A93B" transform="rotate(-90 60 270)">ALGEDONIC — EMERGENCY BYPASS</text>
+</svg>

@@ -26,8 +26,7 @@ How the four laws originated, what each one claims, how they interact with each 
 Read this if any of the following sound familiar: a project keeps slipping despite adding people to it; you're inheriting a system built by teams whose structure you don't control; work is visibly backed up somewhere in the process but you can't pin down exactly where; or you're about to draw team boundaries and want a principled way to decide where the lines go instead of defaulting to the existing org chart.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/ — see capture/fourlaws/README.md
-	     <img src="/img/four-laws-vsm-overview.png" alt="Ashby's Law, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver mapped as interacting forces around complex systems, with Beer's Viable System Model shown as the framework that integrates all four." /> -->
+	<img src="/img/four-laws-vsm-overview.svg" alt="Ashby's Law, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver mapped as interacting forces around complex systems, with Beer's Viable System Model shown as the framework that integrates all four." />
 	<figcaption>Figure 0. The four laws, and where Beer's Viable System Model fits alongside them.</figcaption>
 </figure>
 
@@ -73,8 +72,7 @@ Ashby's law does not say that maximum variety is always good, or that simplifica
 As a theorem derived from information theory and control systems, Ashby's law is mathematically sound in its native domain. Its application to human organizations is a widely-used and productive metaphor, but is not empirically testable in the strict sense — organizational "variety" is harder to define and measure than the discrete-state systems Ashby modeled. Stafford Beer's Viable System Model is the most developed attempt to operationalize it for organizations; its empirical track record is mixed.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/ashbys-law-variety-mismatch.png" alt="A regulator with less variety than its environment fails to absorb every disturbance, letting uncontrolled variation pass through — illustrating Ashby's Law of Requisite Variety." /> -->
+	<img src="/img/ashbys-law-variety-mismatch.svg" alt="A regulator with less variety than its environment fails to absorb every disturbance, letting uncontrolled variation pass through — illustrating Ashby's Law of Requisite Variety." />
 	<figcaption>Figure 1. A regulator with too little variety lets variation leak through uncontrolled.</figcaption>
 </figure>
 
@@ -105,8 +103,7 @@ Though Conway wrote about software, the principle applies to any designed artifa
 Conway's Law has meaningful empirical support, more than its 1968 origin might suggest. MacCormack, Rusnak, and Baldwin (2012) compared open-source and proprietary software and found that distributed teams produced more modular architectures — consistent with Conway's prediction that loosely-coupled communication structures produce loosely-coupled systems. Nagappan, Murphy, and Basili (Microsoft Research) found that organizational metrics — how many people touched a codebase, organizational distance between contributors — predicted defect rates better than most code complexity metrics. Colfer and Baldwin's 2016 survey of the mirroring hypothesis found the effect is real but varies in strength; causality runs in both directions over a system's lifetime (architecture can also shape org structure, not only the reverse). For a worked example outside software — how this plays out across a RevOps org's CRM, CPQ, and billing stack — see [Conway's Law and Your RevOps Team Structure](/conways-law-revops-team-structure).
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/conways-law-module-boundaries.png" alt="Team communication patterns showing dense ties within teams and thin ties across teams, with the resulting software module boundaries falling along those same seams — illustrating Conway's Law." /> -->
+	<img src="/img/conways-law-module-boundaries.svg" alt="Team communication patterns showing dense ties within teams and thin ties across teams, with the resulting software module boundaries falling along those same seams — illustrating Conway's Law." />
 	<figcaption>Figure 2. Dense internal ties, thin cross-team ties — the seams become the module boundaries.</figcaption>
 </figure>
 
@@ -143,8 +140,7 @@ Brooks himself, in the 20th-anniversary edition of the book, walked back the abs
 The qualitative finding — that late-stage additions to high-interdependency projects reliably hurt — is well supported and widely replicated in software project management research. The absolute "always makes it later" framing is an oversimplification. McConnell's synthesis in *Rapid Development* (1996) treats it as a strong directional warning with important partitionability-dependent exceptions.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/brooks-law-communication-scaling.png" alt="As team size grows arithmetically, the number of communication pairs grows combinatorially according to n(n−1)/2, showing why adding people to a late project increases coordination overhead faster than output — illustrating Brooks's Law." /> -->
+	<img src="/img/brooks-law-communication-scaling.svg" alt="As team size grows arithmetically, the number of communication pairs grows combinatorially according to n(n−1)/2, showing why adding people to a late project increases coordination overhead faster than output — illustrating Brooks's Law." />
 	<figcaption>Figure 3. Communication pairs scale as n(n−1)/2 — combinatorially, not linearly.</figcaption>
 </figure>
 
@@ -179,8 +175,7 @@ Skelton and Pais' *Team Topologies* provides the most complete operationalizatio
 As a strategy rather than a natural law, the Reverse Conway Maneuver's empirical status is harder to assess independently. The evidence base is primarily the empirical support for Conway's Law itself (if the mirroring effect is real, deliberately using it is rational) combined with practitioner case studies. The Team Topologies framework has broad adoption in software engineering and DevOps communities but has not been subject to controlled empirical study.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/reverse-conway-maneuver.png" alt="A target software architecture drawn first, with team boundaries then deliberately designed to mirror it — illustrating the Reverse Conway Maneuver's reversal of Conway's Law." /> -->
+	<img src="/img/reverse-conway-maneuver.svg" alt="A target software architecture drawn first, with team boundaries then deliberately designed to mirror it — illustrating the Reverse Conway Maneuver's reversal of Conway's Law." />
 	<figcaption>Figure 4. The target architecture is drawn first; the team is designed to produce it.</figcaption>
 </figure>
 
@@ -230,8 +225,7 @@ The four concepts are more useful together than separately because each one addr
 Beer's Viable System Model intersects with all four as well, but needs its own vocabulary established first — see 6.7 for how VSM connects back to each concept mapped below.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/four-laws-interaction-triangle.png" alt="Ashby's Law, Conway's Law, and Brooks's Law shown as three connected mechanisms in the same causal chain, with the Reverse Conway Maneuver as the lever that integrates all three." /> -->
+	<img src="/img/four-laws-interaction-triangle.svg" alt="Ashby's Law, Conway's Law, and Brooks's Law shown as three connected mechanisms in the same causal chain, with the Reverse Conway Maneuver as the lever that integrates all three." />
 	<figcaption>Figure 5. Ashby, Conway, and Brooks as a triangle of mechanisms, integrated by Reverse Conway.</figcaption>
 </figure>
 
@@ -378,8 +372,7 @@ The VSM defines five numbered subsystems, each with a specific and non-redundant
 AI is changing what System 4 can do faster than it's changing what System 5 can absorb — see [AI, System 4, and Beer's VSM](/vsm-ai-system-4) for what happens when environmental-scanning capacity outruns the decision layer built to receive it.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/vsm-five-systems.png" alt="Beer's Viable System Model showing Systems 1 through 5, the System 3* audit channel bypassing normal reporting lines, and the algedonic channel that signals urgent problems directly to System 5." /> -->
+	<img src="/img/vsm-five-systems.svg" alt="Beer's Viable System Model showing Systems 1 through 5, the System 3* audit channel bypassing normal reporting lines, and the algedonic channel that signals urgent problems directly to System 5." />
 	<figcaption>Figure 6. The five systems, S3*, and the algedonic channel that bypasses the hierarchy when it must.</figcaption>
 </figure>
 
@@ -476,8 +469,7 @@ This documented artifact functions as the "team API" described in the interactio
 **Wherever a decision touches more than one host team's differing mental model, resolve it in a joint session that produces a shared, host-owned artifact — never by privately reconciling separate interviews.**
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/engagement-communication-structure.png" alt="Fixed host-team boundaries with a deliberately designed communication structure layered across them, showing what an engagement lead can still shape even when team boundaries themselves are out of their control." /> -->
+	<img src="/img/engagement-communication-structure.svg" alt="Fixed host-team boundaries with a deliberately designed communication structure layered across them, showing what an engagement lead can still shape even when team boundaries themselves are out of their control." />
 	<figcaption>Figure 7. The team boundaries are fixed; what the designer can shape is what crosses them.</figcaption>
 </figure>
 
@@ -515,8 +507,7 @@ Written as **L = λW**: L is the average number of items in the system (work in 
 Nothing else moves cycle time. Adding visibility, meetings, or people who don't change L or λ leaves W exactly where it was.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/littles-law.png" alt="Little's Law formula, Cycle Time equals Work in Progress divided by Throughput, shown with the two levers — reducing WIP or increasing throughput — that are the only ways to reduce cycle time." /> -->
+	<img src="/img/littles-law.svg" alt="Little's Law formula, Cycle Time equals Work in Progress divided by Throughput, shown with the two levers — reducing WIP or increasing throughput — that are the only ways to reduce cycle time." />
 	<figcaption>Figure 8. Cycle time as a direct function of work in progress and throughput.</figcaption>
 </figure>
 
@@ -527,8 +518,7 @@ Nothing else moves cycle time. Adding visibility, meetings, or people who don't 
 Little's Law says WIP and cycle time are linked. It doesn't say why a queue forms in the first place, or why it can grow far faster than utilization seems to justify. Kingman's formula fills that gap: average wait time is approximately proportional to **V × U/(1−U) × T** — variability, multiplied by a utilization term that behaves well at low utilization and rises toward infinity as utilization approaches 100%, multiplied by the average processing time.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/kingmans-formula.png" alt="Kingman's formula (the VUT equation) showing wait time climbing steeply as utilization approaches 100%, with the curve's steepness driven by variability in arrival and service times." /> -->
+	<img src="/img/kingmans-formula.svg" alt="Kingman's formula (the VUT equation) showing wait time climbing steeply as utilization approaches 100%, with the curve's steepness driven by variability in arrival and service times." />
 	<figcaption>Figure 9. Wait time doesn't rise with utilization — it rises against it, and variability decides how violently.</figcaption>
 </figure>
 
@@ -589,8 +579,7 @@ In this configuration, "identify the constraint" (step 1) is not a one-time diag
 Strong practitioner and case-study track record in manufacturing, including the Drum-Buffer-Rope scheduling method derived directly from it. Its application to software/knowledge work is more recent, popularized largely through *The Phoenix Project* (Kim, Behr, Spafford, 2013). Evidence base is primarily case studies and wide practitioner adoption rather than controlled trials — but the central qualitative claim, that local optimization ≠ global optimization, is well supported and rarely disputed.
 
 <figure>
-	<!-- TODO: image not yet copied into public-fourlaws/img/
-	     <img src="/img/theory-of-constraints.png" alt="A queue of work items backed up in front of a single bottleneck step, illustrating the Theory of Constraints principle that one constraint gates the throughput of the entire system." /> -->
+	<img src="/img/theory-of-constraints.svg" alt="A queue of work items backed up in front of a single bottleneck step, illustrating the Theory of Constraints principle that one constraint gates the throughput of the entire system." />
 	<figcaption>Figure 10. Work queues in front of the one step that gates the whole system.</figcaption>
 </figure>
 
