@@ -72,15 +72,35 @@ So don't assume it worked. After DNS propagates, load
 domain. If it doesn't, Netlify → Domain management → HTTPS → **Verify DNS
 configuration**, then **Renew certificate**.
 
-## Cutover, when the content is actually migrated
+## Cutover
 
-Not yet — the site is a scaffold. When the pages and the three tools are ported:
+The content is migrated. All 16 URLs build, including the Full Reference and
+the three tools, and both pre-cutover checks in `capture/fourlaws/README.md`
+(missing pages, missing anchors) come back clean. Nothing in the repo is
+blocking — steps 1–3 above are what's left.
 
-1. Verify every URL in the sitemap resolves on the new subdomain.
-2. Add redirects from the old `fourlaws.netlify.app` paths on the *old* Netlify
-   project, pointing at the new subdomain, so existing links and any search
-   equity follow.
+Once the subdomain is live:
+
+1. Verify every URL in the sitemap resolves on the new subdomain, and spot-check
+   a deep link into the Full Reference (`/four-laws-complex-system-design-full#s21`)
+   — the anchors are the part most likely to have rotted, and the part existing
+   outreach links depend on.
+2. Add redirects on the *old* Netlify project pointing at the new subdomain, so
+   existing links and any search equity follow. Because `build.format: 'file'`
+   kept every path byte-identical, this is a single splat rule rather than 16
+   individual ones — in the old project's `_redirects`:
+
+   ```
+   /*  https://fourlaws.thejonmartin.com/:splat  301!
+   ```
+
+   Confirm a couple of real paths through it before trusting the wildcard.
 3. Only then take the old project down.
+
+Note the old site carries Google Analytics (`G-V6MR0V297V`) and per-page OG
+images that were deliberately not carried over. Decide whether either should
+come back *before* retiring the old project, while it's still there to copy
+from — see the deltas list in `capture/fourlaws/README.md`.
 
 ## Local development
 
