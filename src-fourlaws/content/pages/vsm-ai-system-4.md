@@ -1,6 +1,7 @@
 ---
 title: AI, System 4, and Beer's VSM
 description: AI can supercharge System 4 environmental scanning — but faster signals without a functioning System 5 just produce paralysis at machine speed.
+seoTitle: "AI, System 4, and Beer's VSM | Four Laws"
 group: explore
 order: 60
 ---

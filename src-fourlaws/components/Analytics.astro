@@ -1,0 +1,26 @@
+---
+// GA4 tag for the Four Laws site. Deliberately a copy of
+// src/components/Analytics.astro rather than a shared import: Astro components
+// resolve against their own srcDir, and the two sites build from separate
+// trees. If you change one, change the other — the file is short for exactly
+// that reason.
+//
+// Renders nothing when no measurement ID is configured. `is:inline` is required
+// on both scripts; without it Astro bundles them and the gtag loader breaks.
+interface Props {
+	id: string;
+}
+const { id } = Astro.props;
+---
+
+{id && (
+	<>
+		<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+		<script is:inline define:vars={{ id }}>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', id);
+		</script>
+	</>
+)}

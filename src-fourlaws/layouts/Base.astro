@@ -1,6 +1,8 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import { GA_FOURLAWS } from '../../shared/analytics';
 
 // Field & Ledger tokens, shared with the main site. Editing a copy of these in
 // here instead of in shared/ is how the two sites start to drift.
@@ -11,8 +13,33 @@ interface Props {
 	description: string;
 	/** Utility pages that shouldn't appear in search. */
 	noindex?: boolean;
+	/**
+	 * Overrides the <title> and og:title without changing the on-page <h1>.
+	 * Several pages here have headlines that read well but run past the ~60
+	 * characters Google displays; this is how they get a short search title
+	 * without shortening the page itself. Falls back to `title`.
+	 *
+	 * Note this bypasses the "| Four Laws…" suffix logic below — an seoTitle is
+	 * taken as the complete, final title, because the whole point of setting one
+	 * is to control the exact length.
+	 */
+	seoTitle?: string;
+	/** Per-page social card, root-relative. Defaults to public-fourlaws/og.png. */
+	ogImage?: string;
+	/** Page-level og:type. 'website' for the home page, 'article' for content. */
+	ogType?: string;
+	/** JSON-LD emitted in <head>. Pass a plain object; serialized here. */
+	schema?: Record<string, unknown> | Record<string, unknown>[];
 }
-const { title, description, noindex = false } = Astro.props;
+const {
+	title,
+	description,
+	noindex = false,
+	seoTitle,
+	ogImage = '/og.png',
+	ogType = 'article',
+	schema,
+} = Astro.props;
 
 // Astro.site comes from astro.config.fourlaws.mjs. Building this site with the
 // main config would silently emit thejonmartin.com canonicals onto Four Laws
@@ -32,7 +59,12 @@ const canonical = new URL(cleanPath, Astro.site).href;
 // home page and the Full Reference ("Four Laws of Complex System Design — Full
 // Reference"). Appending the suffix to those would stutter.
 const siteName = 'Four Laws of Complex System Design';
-const fullTitle = title.startsWith(siteName) ? title : `${title} | ${siteName}`;
+const fullTitle =
+	seoTitle ?? (title.startsWith(siteName) ? title : `${title} | ${siteName}`);
+
+// og:image must be absolute — most scrapers drop a relative path rather than
+// resolving it, which is why a card silently comes back blank.
+const ogImageUrl = new URL(ogImage, Astro.site).href;
 ---
 
 <!doctype html>
@@ -45,12 +77,31 @@ const fullTitle = title.startsWith(siteName) ? title : `${title} | ${siteName}`;
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonical} />
 		{noindex && <meta name="robots" content="noindex, follow" />}
+
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<meta name="theme-color" content="#4A3352" />
+
 		<meta property="og:site_name" content="Four Laws of Complex System Design" />
 		<meta property="og:title" content={fullTitle} />
 		<meta property="og:description" content={description} />
-		<meta property="og:type" content="article" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:url" content={canonical} />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content={ogImageUrl} />
+
+		{schema && (
+			<script
+				type="application/ld+json"
+				is:inline
+				set:html={JSON.stringify(schema)}
+			/>
+		)}
+
+		<Analytics id={GA_FOURLAWS} />
 	</head>
 	<body>
 		<Nav />

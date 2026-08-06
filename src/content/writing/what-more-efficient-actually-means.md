@@ -1,6 +1,7 @@
 ---
 title: '"I Want to Make Processes More Efficient" — What That Actually Means'
 description: 'Operations is variety management, not efficiency work — four systems laws (Ashby, Conway, Brooks, Reverse Conway) that make an ambiguous job definable.'
+seoTitle: "What 'More Efficient' Actually Means — Jon Martin"
 pubDate: 2026-08-04
 draft: false
 tags: ['Systems', 'RevOps']

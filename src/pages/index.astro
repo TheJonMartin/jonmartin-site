@@ -6,9 +6,56 @@ import RecentWriting from '../components/RecentWriting.astro';
 const title = 'Jon Martin — Field Report & Second Opinion';
 const description =
 	"I don't build it. I tell you why the last three things you built didn't work — written diagnosis and written second opinions for founders of $3-5M professional services businesses.";
+
+// Person + WebSite, emitted as a @graph so both entities share one script block
+// and can reference each other by @id.
+//
+// The '#jon' @id is the stable identifier for Jon-the-entity across the whole
+// site — every BlogPosting's author field points at this same @id rather than
+// re-describing him, which is what lets a crawler understand the posts and the
+// person as one thing rather than several.
+//
+// `knowsAbout` and `sameAs` are the two fields that do real work here: the first
+// is the topical claim, the second is how an engine reconciles this Person with
+// the same person elsewhere on the web. Add profile URLs to sameAs as they
+// become worth claiming.
+const schema = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Person',
+			'@id': 'https://thejonmartin.com/#jon',
+			name: 'Jon Martin',
+			url: 'https://thejonmartin.com/',
+			email: 'mailto:jon@thejonmartin.com',
+			jobTitle: 'Revenue Operations Solutions Architect',
+			description:
+				'Writes diagnoses of why systems, processes, and org structures keep breaking in founder-led professional services firms.',
+			knowsAbout: [
+				'Revenue Operations',
+				'Organizational Design',
+				'Systems Thinking',
+				'Subscription Management',
+				'Systems Integration',
+				"Conway's Law",
+				"Ashby's Law of Requisite Variety",
+			],
+			sameAs: ['https://fourlaws.thejonmartin.com/'],
+		},
+		{
+			'@type': 'WebSite',
+			'@id': 'https://thejonmartin.com/#website',
+			url: 'https://thejonmartin.com/',
+			name: 'Jon Martin',
+			description,
+			publisher: { '@id': 'https://thejonmartin.com/#jon' },
+			inLanguage: 'en-US',
+		},
+	],
+};
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} schema={schema}>
 	<main id="main">
 		<section class="hero">
 			<p class="label kicker">Jon Martin</p>

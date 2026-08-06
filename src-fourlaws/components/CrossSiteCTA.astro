@@ -1,0 +1,55 @@
+---
+// The Four Laws site's only conversion point.
+//
+// This site is the deeper property — sixteen pages, three tools, a glossary and
+// an FAQ — and until now it captured nothing. Someone who has just read the
+// Full Reference or worked through the glossary is the warmest reader either
+// site will ever have, and they were leaving with nowhere to go but a nav link.
+//
+// It points at thejonmartin.com/#notify rather than duplicating the Netlify
+// form here: the two sites are separate Netlify projects with separate form
+// buckets, and one waitlist split across two buckets is worse than one link.
+---
+
+<aside class="cta-block">
+	<span class="label kicker">From the author</span>
+	<p class="lede">
+		These laws are the vocabulary I use in the field. If you're running a
+		founder-led professional services firm and something structural keeps
+		breaking, I write diagnoses — not implementations.
+	</p>
+	<a class="cta" href="https://thejonmartin.com/#notify">
+		See what that is &rarr;
+	</a>
+</aside>
+
+<style>
+	/* Sage left rule rather than mustard: this appears on every content page, and
+	   an accent that shows up everywhere isn't an accent. Mustard stays reserved
+	   for genuine per-page outliers. */
+	.cta-block {
+		margin: 3.5rem 0 0;
+		padding: 1.5rem;
+		border: 1px solid var(--hairline);
+		border-left: 3px solid var(--sage);
+		border-radius: 4px;
+	}
+	.kicker {
+		font-size: 0.72rem;
+		color: var(--sage);
+		display: block;
+		margin-bottom: 0.5rem;
+	}
+	.lede {
+		margin: 0 0 0.85rem;
+		font-size: 0.97rem;
+	}
+	.cta {
+		font-size: 0.95rem;
+		text-decoration: none;
+		border-bottom: 1px solid var(--hairline);
+	}
+	.cta:hover {
+		border-bottom-color: var(--plum);
+	}
+</style>

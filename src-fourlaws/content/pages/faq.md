@@ -1,6 +1,7 @@
 ---
 title: Frequently Asked Questions
 description: Direct answers on Conway's Law vs. Team Topologies, Brooks's Law under Agile, Little's Law for knowledge work, and WIP limits vs. the Theory of Constraints.
+seoTitle: "Frequently Asked Questions | Four Laws"
 group: reference
 order: 30
 ---

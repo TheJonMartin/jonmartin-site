@@ -1,6 +1,7 @@
 ---
 title: Conway's Law and Your RevOps Team Structure
 description: Why your CRM, CPQ, and billing systems already mirror your RevOps org chart — and how to redraw team boundaries around quote-to-cash instead.
+seoTitle: "Conway's Law and Your RevOps Team Structure | Four Laws"
 group: explore
 order: 20
 ---

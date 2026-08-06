@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 
 // Ported from capture/fourlaws/raw-tool-flow-diagnostic.html — the largest of
 // the three tools (6.6KB of inline script).
@@ -14,6 +15,7 @@ import Base from '../layouts/Base.astro';
 
 <Base
 	title="Flow & Constraint Diagnostic"
+	seoTitle="Flow & Constraint Diagnostic | Four Laws"
 	description="A five-step guided diagnostic — plug in your own WIP, throughput, and constraint details to get a personalized Five Focusing Steps writeup you can use in a client conversation."
 >
 	<span class="label eyebrow">Companion tool · Part 8</span>
@@ -171,6 +173,8 @@ import Base from '../layouts/Base.astro';
 		<a href="/wip-limits-vs-theory-of-constraints">WIP Limits vs. the Theory of Constraints</a>
 		for where a WIP limit actually helps.
 	</p>
+
+	<CrossSiteCTA />
 </Base>
 
 <script>

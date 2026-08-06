@@ -4,6 +4,14 @@
 // after scrolling to the bottom. It stays here too, with a name attached
 // ("Written by Jon Martin"), as the sign-off a reader sees after finishing
 // the material — nav gets you there quickly, footer closes the piece.
+//
+// The sign-off below matches the main site's exactly. A longer rights notice
+// used to trail this line and nothing on thejonmartin.com — two different
+// copyright notices across one brand read as two different operations.
+//
+// Keep notes like this in the frontmatter, not in an HTML comment: Astro emits
+// HTML comments to the built page, so a comment explaining why a phrase was
+// removed will ship that phrase right back into the markup.
 const year = new Date().getFullYear();
 ---
 
@@ -11,7 +19,7 @@ const year = new Date().getFullYear();
 	<hr class="hairline" />
 	<div class="inner">
 		<p class="colophon">
-			Four Laws of Complex System Design &copy; {year} Jon Martin. All rights reserved.
+			Four Laws of Complex System Design &copy; {year} Jon Martin.
 		</p>
 		<p class="crosslink">
 			Written by <a href="https://thejonmartin.com">Jon Martin</a>.

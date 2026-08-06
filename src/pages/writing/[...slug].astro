@@ -13,9 +13,37 @@ const { Content } = await render(post);
 
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const canonical = new URL(`/writing/${post.id}/`, Astro.site).href;
+
+// BlogPosting rather than Article: it's the narrower type, and the narrower
+// type is always the better answer when it fits. datePublished/dateModified are
+// what put a date next to the result in search; author ties the post to the
+// Person entity declared on the home page via the same @id.
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	'@id': canonical,
+	headline: post.data.title,
+	description: post.data.description,
+	url: canonical,
+	datePublished: post.data.pubDate.toISOString(),
+	...(post.data.updatedDate && { dateModified: post.data.updatedDate.toISOString() }),
+	author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	publisher: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	image: new URL('/og.png', Astro.site).href,
+	inLanguage: 'en-US',
+	...(post.data.tags.length > 0 && { keywords: post.data.tags.join(', ') }),
+	mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+};
 ---
 
-<Base title={`${post.data.title} — Jon Martin`} description={post.data.description}>
+<Base
+	title={`${post.data.title} — Jon Martin`}
+	seoTitle={post.data.seoTitle}
+	description={post.data.description}
+	schema={schema}
+>
 	<main id="main">
 		<article>
 			<header class="head">

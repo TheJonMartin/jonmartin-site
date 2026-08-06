@@ -1,6 +1,7 @@
 ---
 title: "Applied Examples: The Four Laws Across Revenue Teams"
 description: Ten worked examples of Ashby's, Conway's, and Brooks's Laws applied to Marketing, Sales, CS, Finance, and RevOps in SaaS and professional-services teams.
+seoTitle: "Applied Examples: Four Laws in Revenue Teams | Four Laws"
 group: explore
 order: 70
 ---

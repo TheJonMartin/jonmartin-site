@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 
 // Ported from capture/fourlaws/raw-tool-decision-checklist.html.
 //
@@ -67,6 +68,7 @@ const barLabels = [
 
 <Base
 	title="Stakeholder Decision Stall Checklist"
+	seoTitle="Stakeholder Decision Stall Checklist | Four Laws"
 	description="Check off what's true of a stalled client engagement to see whether you're facing a Little's Law queue problem, a Kingman utilization problem, or a Weinberg signal-distortion problem."
 >
 	<span class="label eyebrow">Companion tool · Stakeholder decision stalls</span>
@@ -140,6 +142,8 @@ const barLabels = [
 		engagement is stuck and you want a second set of eyes on it,
 		<a href="/contact">get in touch</a>.
 	</p>
+
+	<CrossSiteCTA />
 </Base>
 
 <script>

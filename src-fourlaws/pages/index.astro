@@ -8,8 +8,10 @@ import Base from '../layouts/Base.astro';
 // entry.data.description would flatten that distinction.
 //
 // `ready: false` renders the item as plain text with a note instead of a dead
-// link. Everything unported is visible rather than hidden, so the home page
-// doubles as the migration's progress board — see capture/fourlaws/README.md.
+// link. The migration is complete, so nothing uses it today — it's kept for the
+// next time a card is announced here before its page exists. If you set it,
+// check back: a `ready: false` card left up for weeks reads as a broken site,
+// not a roadmap.
 
 type Card = {
 	kicker: string;
@@ -27,7 +29,7 @@ const read: Card[] = [
 		blurb: 'The complete reference document — how the four laws originated, how they interact, decomposability, Beer’s VSM, boundaries you don’t control, and flow & constraints.',
 		cta: 'Read the full document',
 		href: '/four-laws-complex-system-design-full',
-		ready: false,
+		ready: true,
 	},
 ];
 
@@ -144,6 +146,23 @@ const laws = [
 	{ text: "Beer's Viable System Model", href: '/four-laws-complex-system-design-full#p6' },
 ];
 
+// WebSite for the subdomain, tied back to the same Person @id the main site
+// declares. Without that link the two domains look like two unrelated
+// publishers; with it, Four Laws is understood as Jon's reference site rather
+// than a separate entity that happens to link to him.
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	'@id': 'https://fourlaws.thejonmartin.com/#website',
+	url: 'https://fourlaws.thejonmartin.com/',
+	name: 'Four Laws of Complex System Design',
+	description:
+		"A reference for designing teams and systems: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, the Reverse Conway Maneuver, and Beer's Viable System Model.",
+	inLanguage: 'en-US',
+	author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	publisher: { '@id': 'https://thejonmartin.com/#jon' },
+};
+
 const sections: { heading: string; cards: Card[] }[] = [
 	{ heading: 'Read', cards: read },
 	{ heading: 'Explore', cards: explore },
@@ -155,6 +174,8 @@ const sections: { heading: string; cards: Card[] }[] = [
 <Base
 	title="Four Laws of Complex System Design"
 	description="A framework for designing teams and systems: Ashby's Law, Conway's Law, Brooks's Law, Reverse Conway, and Beer's VSM — plus tools for diagnosing flow and constraints."
+	ogType="website"
+	schema={schema}
 >
 	<span class="label eyebrow">Reference site</span>
 	<h1>Four Laws of Complex System Design</h1>
@@ -186,19 +207,18 @@ const sections: { heading: string; cards: Card[] }[] = [
 		</section>
 	))}
 
-	<section>
-		<h2>Downloads</h2>
-		<article class="card pending">
-			<span class="label kicker">DOCX</span>
-			<h3>Ashby's Law — Client as Regulator (one-pager)</h3>
-			<p class="note">
-				Not yet migrated — the file still needs copying across from the old
-				site into <code>public-fourlaws/</code>.
-			</p>
-		</article>
-	</section>
-
 	<hr class="hairline" />
+
+	<section class="waitlist">
+		<span class="label kicker">From the author</span>
+		<h2>Written diagnosis for founder-led firms</h2>
+		<p>
+			These laws are the vocabulary I use in the field. If you're running a
+			professional services firm and something structural keeps breaking, I
+			write diagnoses — not implementations.
+		</p>
+		<a class="cta" href="https://thejonmartin.com/#notify">See what that is &rarr;</a>
+	</section>
 
 	<p class="closing">
 		Questions, a correction, or want to talk shop?
@@ -234,6 +254,19 @@ const sections: { heading: string; cards: Card[] }[] = [
 	   one is something you forget you owe. */
 	.pending h3 { color: var(--muted); }
 	.note { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+
+	/* The one cross-site conversion point on this domain. Sage-bordered rather
+	   than mustard: it's a standing invitation, not a page-level outlier, and
+	   mustard is already spent on the nav's current-page marker. */
+	.waitlist {
+		margin: 2.5rem 0 0;
+		padding: 1.5rem;
+		border: 1px solid var(--hairline);
+		border-left: 3px solid var(--sage);
+		border-radius: 4px;
+	}
+	.waitlist h2 { font-size: 1.25rem; margin: 0.15rem 0 0.5rem; }
+	.waitlist p { margin: 0 0 0.75rem; font-size: 0.97rem; }
 
 	.closing { margin-top: 1.5rem; }
 </style>

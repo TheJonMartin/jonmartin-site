@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import CrossSiteCTA from '../components/CrossSiteCTA.astro';
+import { faqSchema, glossarySchema } from '../lib/schema';
 
 // One route for every markdown page in the collection. The entry id is the
 // filename without extension, which is also the URL — see the note in
@@ -15,14 +17,40 @@ export async function getStaticPaths() {
 
 const { page } = Astro.props;
 const { Content } = await render(page);
+
+const canonical = new URL(`/${page.id}`, Astro.site).href;
+
+// Schema is derived from the page's own markdown (see lib/schema.ts) rather
+// than declared in front matter, so it can't drift from the visible content.
+// Only two pages have a shape schema.org has real vocabulary for; everything
+// else is prose, and marking prose up as an Article adds nothing a crawler
+// doesn't already infer.
+let schema: Record<string, unknown> | undefined;
+if (page.id === 'faq') {
+	schema = faqSchema(page.body ?? '', canonical);
+} else if (page.id === 'glossary') {
+	schema = glossarySchema(page.body ?? '', canonical, Astro.site!.href);
+}
+
+// The waitlist CTA goes on the pages someone reaches by reading, not on
+// about/contact — those already have their own call to action, and stacking two
+// asks on one page halves both.
+const showCTA = page.data.group !== 'meta';
 ---
 
-<Base title={page.data.title} description={page.data.description}>
+<Base
+	title={page.data.title}
+	seoTitle={page.data.seoTitle}
+	description={page.data.description}
+	schema={schema}
+>
 	<article>
 		<span class="label eyebrow">{page.data.group}</span>
 		<h1>{page.data.title}</h1>
 		<Content />
 	</article>
+
+	{showCTA && <CrossSiteCTA />}
 </Base>
 
 <style>

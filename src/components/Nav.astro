@@ -11,10 +11,22 @@
 // one to the other should take one click from any page, not just a footer
 // link on the far side. Four Laws' own nav carries the matching link back —
 // see src-fourlaws/components/Nav.astro.
-const links: { href: string; text: string }[] = [{ href: '/writing/', text: 'Writing' }];
+const links: { href: string; text: string }[] = [
+	{ href: '/writing/', text: 'Writing' },
+	{ href: '/about/', text: 'About' },
+];
 
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
-const inWriting = path === '/writing' || path.startsWith('/writing/');
+
+// Writing needs prefix matching because individual posts live beneath it and
+// should still mark the section as current. About is a single page, so an exact
+// match is correct — and prefix-matching a one-page section is how you end up
+// highlighting it on /about-something-else later.
+const isCurrent = (href: string) => {
+	const target = href.replace(/\/$/, '');
+	if (target === '/writing') return path === '/writing' || path.startsWith('/writing/');
+	return path === target;
+};
 ---
 
 <a class="skip" href="#main">Skip to content</a>
@@ -25,7 +37,7 @@ const inWriting = path === '/writing' || path.startsWith('/writing/');
 			<a class="wordmark" href="/">Jon Martin</a>
 			<div class="links">
 				{links.map((link) => (
-					<a href={link.href} aria-current={inWriting ? 'page' : undefined}>
+					<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
 						{link.text}
 					</a>
 				))}

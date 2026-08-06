@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Astro emits this as /404.html, which Netlify serves automatically for any
+// unmatched path — no _redirects rule needed. Without it, Netlify falls back to
+// its own default page, which tells the visitor to go read Netlify's support
+// docs. On a personal-brand site that's the worst page you can ship.
+//
+// noindex because a 404 that gets indexed is a 404 that shows up in search.
+---
+
+<Base
+	title="Page not found — Jon Martin"
+	description="That page doesn't exist. Links to the writing archive and the Four Laws reference site."
+	noindex
+>
+	<main id="main">
+		<p class="label kicker">404</p>
+		<h1>That page isn't here.</h1>
+		<p class="subhead">
+			Either the link was wrong, or it used to be something else. Both are
+			fixable — here's where things actually are.
+		</p>
+
+		<hr class="hairline" />
+
+		<ul class="ways">
+			<li>
+				<a href="/">The homepage</a>
+				<span>What I do and who it's for.</span>
+			</li>
+			<li>
+				<a href="/writing/">Writing</a>
+				<span>Notes on org design, systems, and why things keep breaking.</span>
+			</li>
+			<li>
+				<a href="https://fourlaws.thejonmartin.com">Four Laws of Complex System Design</a>
+				<span>The reference site — Ashby, Conway, Brooks, Reverse Conway, Beer's VSM.</span>
+			</li>
+		</ul>
+
+		<hr class="hairline" />
+
+		<p class="closing">
+			Landed here from a link that should have worked?
+			<a href="mailto:jon@thejonmartin.com">Tell me</a> and I'll fix it.
+		</p>
+	</main>
+</Base>
+
+<style>
+	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0 0 1.75rem; }
+	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; margin-bottom: 1.75rem; }
+	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0 0 3rem; }
+
+	.ways { list-style: none; padding: 0; margin: 0; }
+	.ways li {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		padding: 1.25rem 0;
+		border-bottom: 1px solid var(--hairline);
+	}
+	.ways li:last-child { border-bottom: none; }
+	.ways a { font-size: 1.05rem; text-decoration: none; border-bottom: 1px solid var(--hairline); align-self: flex-start; }
+	.ways a:hover { border-bottom-color: var(--plum); }
+	.ways span { font-size: 0.95rem; color: var(--muted); }
+
+	.closing { margin-top: 2rem; font-size: 0.95rem; color: var(--muted); }
+</style>

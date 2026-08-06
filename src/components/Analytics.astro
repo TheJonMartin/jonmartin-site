@@ -1,0 +1,23 @@
+---
+// GA4 tag. Renders nothing when no measurement ID is configured, so the site
+// stays script-free until shared/analytics.ts is filled in.
+//
+// `is:inline` on both scripts is required: without it Astro would try to bundle
+// and process them, which breaks the gtag.js loader and the dataLayer shim.
+interface Props {
+	id: string;
+}
+const { id } = Astro.props;
+---
+
+{id && (
+	<>
+		<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${id}`}></script>
+		<script is:inline define:vars={{ id }}>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', id);
+		</script>
+	</>
+)}

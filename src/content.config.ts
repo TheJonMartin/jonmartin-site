@@ -14,6 +14,13 @@ const writing = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+
+		// Search-results title. The on-page h1 can be as long as it needs to be;
+		// this is what goes in <title> and og:title. Google displays about 60
+		// characters, and "<title> — Jon Martin" eats 13 of them. Set this when
+		// the headline is long; omit it and the title is used.
+		seoTitle: z.string().optional(),
+
 		pubDate: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		draft: z.boolean().default(false),
