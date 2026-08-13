@@ -124,4 +124,105 @@ const schema = {
 	.prose pre code { background: none; padding: 0; }
 	.prose hr { border: none; border-top: 1px solid rgba(46, 42, 38, 0.15); margin: 2.5rem 0; }
 	.prose img { max-width: 100%; height: auto; }
+
+	/* Wide reference tables. The base table.ledger style lives in
+	   shared/styles/field-and-ledger.css; everything here is the responsive
+	   behaviour that only matters in a 680px prose column.
+
+	   A six-column matrix cannot be a grid on a phone — at ~360px each column
+	   gets 60px, which wraps every cell to one word per line and makes the
+	   table less readable than no table at all. Horizontal scroll was the other
+	   option and it hides columns behind a gesture most readers never make. So
+	   below 700px each row becomes its own card and each cell carries its
+	   column name from the data-label attribute. Markup stays a real <table>,
+	   so it's still a table to a screen reader and to Google.
+
+	   Any post using this must put data-label on every <td>. A missing one
+	   renders as a value with no label on mobile. */
+	.prose table.matrix { margin: 2rem 0; font-size: 0.9rem; }
+	.prose table.matrix th { font-size: 0.85rem; }
+
+	/* Mustard marks the outlier row — the system-admin tier that breaks the
+	   seniority pattern and is the argument the post is actually making. One
+	   mustard element on the page, which is the whole rule for the accent. */
+	.prose table.matrix tr.outlier td { background: rgba(232, 169, 59, 0.12); }
+
+	@media (max-width: 700px) {
+		.prose table.matrix thead {
+			/* Not display:none — that drops the header from the accessibility
+			   tree along with the visual grid. Clipped instead, so assistive
+			   tech still reads the column names. */
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+		.prose table.matrix tr {
+			display: block;
+			margin-bottom: 1.5rem;
+			border: 1px solid var(--hairline);
+			border-radius: 2px;
+			padding: 0.25rem 0;
+		}
+		.prose table.matrix tr.outlier { border-color: var(--mustard); }
+		.prose table.matrix td {
+			display: grid;
+			grid-template-columns: 8.5rem 1fr;
+			gap: 0.75rem;
+			border-bottom: none;
+			padding: 0.35rem 0.75rem;
+		}
+		.prose table.matrix td::before {
+			content: attr(data-label);
+			font-family: 'Courier New', Courier, monospace;
+			font-size: 0.7rem;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: var(--sage);
+			padding-top: 0.2rem;
+		}
+		/* The stakeholder name is the card's heading, so it gets the sage fill
+		   the header row carries on desktop rather than a redundant label. */
+		.prose table.matrix td:first-child {
+			display: block;
+			background: var(--sage);
+			color: var(--cream);
+			font-family: Georgia, 'Times New Roman', serif;
+			padding: 0.5rem 0.75rem;
+			margin-bottom: 0.35rem;
+		}
+		.prose table.matrix td:first-child::before { content: none; }
+	}
+
+	/* End-of-post resource block. Deliberately not a form: gating a one-page
+	   PDF behind an email address costs more trust than the address is worth. */
+	.prose .download {
+		margin: 3rem 0 0;
+		padding: 1.75rem;
+		border: 1px solid var(--hairline);
+		border-radius: 2px;
+	}
+	.prose .download .label {
+		font-size: 0.75rem;
+		color: var(--sage);
+		margin: 0 0 0.5rem;
+	}
+	.prose .download p { margin: 0 0 1.25rem; font-size: 0.95rem; }
+	.prose .download .button {
+		display: inline-block;
+		font-size: 1rem;
+		color: var(--cream);
+		background: var(--plum);
+		border-radius: 2px;
+		padding: 0.7rem 1.5rem;
+		text-decoration: none;
+	}
+	.prose .download .button:hover { background: #3c2a43; }
+	.prose .download .button:focus-visible {
+		outline: 2px solid var(--charcoal);
+		outline-offset: 2px;
+	}
 </style>
