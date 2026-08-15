@@ -1,7 +1,7 @@
 ---
 title: WIP Limits vs. the Theory of Constraints
 description: A WIP limit is a Kanban practice; the Theory of Constraints tells you where to put it. Why conflating them leaves throughput exactly where it started.
-seoTitle: "WIP Limits vs. Theory of Constraints | Four Laws"
+seoTitle: "WIP Limits vs. Theory of Constraints | Four Laws Framework"
 group: explore
 order: 50
 ---

@@ -1,5 +1,6 @@
 ---
 title: Glossary
+seoTitle: "Term Glossary | Four Laws of Complex System Design"
 description: Definitions of every term on this site — Ashby's, Conway's, Brooks's Laws, Reverse Conway, Team Topologies, Beer's VSM, Little's Law, Theory of Constraints.
 group: reference
 order: 20

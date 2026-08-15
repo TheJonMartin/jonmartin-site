@@ -1,6 +1,7 @@
 ---
 title: Jon Martin
-description: About Jon Martin — RevOps presales and delivery solutions architect, author of the Four Laws of Complex System Design framework.
+seoTitle: "Jon Martin, Author | Four Laws of Complex System Design"
+description: About Jon Martin — RevOps presales and delivery solutions architect, and author of the Four Laws of Complex System Design framework used across this site.
 group: meta
 order: 10
 ---

@@ -117,3 +117,53 @@ export function glossarySchema(body: string, url: string, siteUrl: string) {
 		hasDefinedTerm: terms,
 	};
 }
+
+/**
+ * TechArticle for the long-form prose pages — everything in the collection
+ * except the meta pages (about) and the two pages with a more specific type
+ * above (FAQPage, DefinedTermSet). Applied to any page that reaches the
+ * fallback branch in [...slug].astro, so a new long-form page picks this up
+ * automatically without editing a hardcoded list here.
+ *
+ * datePublished/dateModified are deliberately omitted: content.config.ts has
+ * no publish-date field, and its optional updatedDate is unset on every file
+ * today. Inventing either would be a real error, not a missing nice-to-have —
+ * a wrong date actively misleads a crawler, where no date just means no date.
+ * Wire one in here if updatedDate (or a new publishDate field) is ever
+ * populated; until then this follows the same rule as the rest of this file:
+ * silent absence over a fabricated value.
+ */
+export function articleSchema(title: string, description: string, url: string) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'TechArticle',
+		'@id': url,
+		headline: title,
+		description,
+		url,
+		author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+		publisher: { '@id': 'https://thejonmartin.com/#jon' },
+		isPartOf: { '@id': 'https://fourlaws.thejonmartin.com/#website' },
+	};
+}
+
+/**
+ * A two-level Home > Page breadcrumb, applied site-wide from Base.astro.
+ *
+ * Deliberately not Home > Section > Page. The nav's three groups (Explore /
+ * Tools / Reference) are a visual grouping in Nav.astro, not real pages — there
+ * is no /explore or /tools URL for a middle crumb to point at. A BreadcrumbList
+ * ListItem without a real `item` URL is worse than no breadcrumb at all, so
+ * this reflects the site's actual (flat) navigation rather than inventing a
+ * URL for a section that doesn't exist as a page.
+ */
+export function breadcrumbSchema(pageTitle: string, pageUrl: string, siteUrl: string) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+			{ '@type': 'ListItem', position: 2, name: pageTitle, item: pageUrl },
+		],
+	};
+}

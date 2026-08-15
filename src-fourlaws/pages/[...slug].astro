@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CrossSiteCTA from '../components/CrossSiteCTA.astro';
-import { faqSchema, glossarySchema } from '../lib/schema';
+import { articleSchema, faqSchema, glossarySchema } from '../lib/schema';
 
 // One route for every markdown page in the collection. The entry id is the
 // filename without extension, which is also the URL — see the note in
@@ -20,16 +20,19 @@ const { Content } = await render(page);
 
 const canonical = new URL(`/${page.id}`, Astro.site).href;
 
-// Schema is derived from the page's own markdown (see lib/schema.ts) rather
-// than declared in front matter, so it can't drift from the visible content.
-// Only two pages have a shape schema.org has real vocabulary for; everything
-// else is prose, and marking prose up as an Article adds nothing a crawler
-// doesn't already infer.
+// Schema is derived from the page's own markdown/front matter (see
+// lib/schema.ts) rather than declared per-page, so it can't drift from the
+// visible content. Two pages have a shape schema.org has more specific
+// vocabulary for (FAQPage, DefinedTermSet); the 'meta' page (about) gets none,
+// since a bio isn't an article; everything else — the long-form explore and
+// reference prose — falls through to TechArticle.
 let schema: Record<string, unknown> | undefined;
 if (page.id === 'faq') {
 	schema = faqSchema(page.body ?? '', canonical);
 } else if (page.id === 'glossary') {
 	schema = glossarySchema(page.body ?? '', canonical, Astro.site!.href);
+} else if (page.data.group !== 'meta') {
+	schema = articleSchema(page.data.title, page.data.description, canonical);
 }
 
 // The waitlist CTA goes on the pages someone reaches by reading, not on

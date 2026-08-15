@@ -1,7 +1,7 @@
 ---
 title: "Managing Process: Flow & Constraints"
-description: A walkthrough of Little's Law and the Theory of Constraints — how work actually flows through the structure the four laws create.
-seoTitle: "Managing Process: Flow & Constraints | Four Laws"
+description: A walkthrough of Little's Law and the Theory of Constraints — how work actually flows through the team structure the first three laws create together.
+seoTitle: "Managing Process: Flow & Constraints | Four Laws Framework"
 group: explore
 order: 10
 ---

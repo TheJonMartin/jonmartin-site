@@ -1,7 +1,7 @@
 ---
 title: Conway's Law in the AI Agent Era
 description: AI agents inherit your team boundaries, not just your tasks — why an AI SDR or billing-exceptions agent fails exactly where your org chart already had a seam.
-seoTitle: "Conway's Law in the AI Agent Era | Four Laws"
+seoTitle: "Conway's Law in the AI Agent Era | Four Laws Framework"
 group: explore
 order: 30
 ---

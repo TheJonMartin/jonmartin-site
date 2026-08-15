@@ -3,6 +3,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import { GA_FOURLAWS } from '../../shared/analytics';
+import { breadcrumbSchema } from '../lib/schema';
 
 // Field & Ledger tokens, shared with the main site. Editing a copy of these in
 // here instead of in shared/ is how the two sites start to drift.
@@ -52,7 +53,12 @@ const {
 const cleanPath = Astro.url.pathname
 	.replace(/index\.html$/, '')
 	.replace(/\.html$/, '');
-const canonical = new URL(cleanPath, Astro.site).href;
+// Every non-root canonical is already slash-less (cleanPath never ends in
+// '/' for a real subpage) — but new URL('', site).href can't produce a
+// slash-less origin for the root, so strip the one trailing slash it forces.
+// This also matches the sitemap, which the 'file' build format and its
+// serialize hook (astro.config.fourlaws.mjs) likewise emit without one.
+const canonical = new URL(cleanPath, Astro.site).href.replace(/\/$/, '');
 
 // Titles read "<page> | Four Laws of Complex System Design", matching the live
 // site — except where the title already opens with the site name, which is the
@@ -65,6 +71,18 @@ const fullTitle =
 // og:image must be absolute — most scrapers drop a relative path rather than
 // resolving it, which is why a card silently comes back blank.
 const ogImageUrl = new URL(ogImage, Astro.site).href;
+
+// Every page gets a Home > Page breadcrumb except home itself, where a
+// breadcrumb would be a single-item list pointing at the page you're already
+// on — not useful and not how any site actually implements this.
+// Merged with any page-specific schema (FAQPage, DefinedTermSet) into one
+// array, since a page can legitimately carry more than one JSON-LD block.
+const isHome = cleanPath === '' || cleanPath === '/';
+const breadcrumb = isHome ? undefined : breadcrumbSchema(title, canonical, Astro.site!.href);
+const schemaList = [
+	breadcrumb,
+	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
+].filter((s): s is Record<string, unknown> => Boolean(s));
 ---
 
 <!doctype html>
@@ -93,13 +111,13 @@ const ogImageUrl = new URL(ogImage, Astro.site).href;
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:image" content={ogImageUrl} />
 
-		{schema && (
+		{schemaList.map((s) => (
 			<script
 				type="application/ld+json"
 				is:inline
-				set:html={JSON.stringify(schema)}
+				set:html={JSON.stringify(s)}
 			/>
-		)}
+		))}
 
 		<Analytics id={GA_FOURLAWS} />
 	</head>
