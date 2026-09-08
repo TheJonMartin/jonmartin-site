@@ -2,7 +2,7 @@
 title: 'Harnessing What You Can''t Control'
 description: 'A complex system can''t be controlled the way a complicated one can — the real skill is recognizing it accurately and responding to match.'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 

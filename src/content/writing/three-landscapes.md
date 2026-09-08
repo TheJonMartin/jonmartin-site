@@ -2,7 +2,7 @@
 title: 'Three Landscapes: Fuji, Rugged, and Dancing'
 description: 'Scott Page''s landscape metaphor for solvability — Mount Fuji, rugged, and dancing terrain — and why each shape calls for a different strategy.'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 

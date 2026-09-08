@@ -2,7 +2,7 @@
 title: 'The Small Event That Wasn''t Actually Small'
 description: 'Cascading failures don''t need an attacker — highly connected systems can quietly organize into a shape where an ordinary event triggers collapse on its own.'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 

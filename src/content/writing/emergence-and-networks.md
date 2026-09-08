@@ -2,7 +2,7 @@
 title: 'What Shows Up Without Anyone Designing It'
 description: 'Half of what keeps a scaling RevOps org functioning was never designed by anyone — it emerged bottom-up, the way structure does in complex systems.'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 

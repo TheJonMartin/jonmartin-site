@@ -3,7 +3,7 @@ title: 'Complex Isn''t Complicated — And That Distinction Is Costing You'
 description: 'Complicated systems have parts; complex systems have parts that adapt — and that''s why documentation alone stops working once a RevOps process scales.'
 seoTitle: 'Complex Isn''t Complicated — Jon Martin'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 

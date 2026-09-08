@@ -2,7 +2,7 @@
 title: 'Diversity, Deconstructed'
 description: '"Diversity" isn''t one thing — Scott Page breaks it into four distinct measures, and most "too much" or "too little" arguments are really about different ones.'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 

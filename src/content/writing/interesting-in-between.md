@@ -2,7 +2,7 @@
 title: 'The Interesting In-Between'
 description: 'Good complexity doesn''t come from maximizing integration and data, or minimizing for simplicity — it lives in the middle Page calls the interesting in-between.'
 pubDate: 2026-09-08
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
