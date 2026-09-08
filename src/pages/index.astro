@@ -2,10 +2,11 @@
 import Base from '../layouts/Base.astro';
 import NotifyForm from '../components/NotifyForm.astro';
 import RecentWriting from '../components/RecentWriting.astro';
+import home from '../content/pages/home.json';
 
-const title = 'Jon Martin — Field Report & Second Opinion';
-const description =
-	"I don't build it. I tell you why the last three things you built didn't work — written diagnosis and written second opinions for founders of $3-5M professional services businesses.";
+// Copy lives in src/content/pages/home.json so it's editable through the
+// Decap CMS at /admin without touching this template. See docs/cms-setup.md.
+const { title, description } = home;
 
 // Person + WebSite, emitted as a @graph so both entities share one script block
 // and can reference each other by @id.
@@ -58,40 +59,18 @@ const schema = {
 <Base title={title} description={description} schema={schema}>
 	<main id="main">
 		<section class="hero">
-			<p class="label kicker">Jon Martin</p>
-			<h1>
-				You are the only person in your company with enough range to handle what
-				comes at it.
-			</h1>
-			<p class="subhead">
-				Every fix you've tried — the hire, the software, the SOP, the management
-				layer — has added capacity without adding range. That's why it kept
-				breaking anyway.
-			</p>
+			<p class="label kicker">{home.kicker}</p>
+			<h1>{home.heroTitle}</h1>
+			<p class="subhead">{home.subhead}</p>
 			<hr class="hairline" />
-			<p class="tagline">
-				I don't build it. I tell you <span class="accent">why</span> the last three
-				things you built didn't work.
-			</p>
+			<p class="tagline" set:html={home.tagline} />
 		</section>
 
 		<hr class="hairline" />
 
 		<section class="who">
-			<h2>Who this is for</h2>
-			<p>
-				Founders of professional services businesses doing $3–5M in revenue —
-				agencies, consultancies, MSPs, engineering and design firms. Somewhere
-				between twenty and fifty people. Still founder-led, still
-				founder-dependent: you're still the best seller, often still the best
-				deliverer, and still in the loop on everything that matters.
-			</p>
-			<p>
-				You hired someone senior and they can't operate without you. You bought
-				software and nobody trusts what it reports. You wrote SOPs and nobody
-				follows them. You added a layer of management and it turned into a game
-				of telephone. Each of those looks like a separate problem. It isn't.
-			</p>
+			<h2>{home.whoHeading}</h2>
+			{home.whoParagraphs.map((paragraph) => <p set:html={paragraph} />)}
 		</section>
 
 		<hr class="hairline" />
@@ -109,7 +88,7 @@ const schema = {
 				<a href="/writing/">Writing</a>
 				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
 			</p>
-			<p class="copyright">© 2026 Jon Martin.</p>
+			<p class="copyright">© {home.copyrightYear} Jon Martin.</p>
 		</footer>
 	</main>
 </Base>

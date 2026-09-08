@@ -1,0 +1,100 @@
+# Decap CMS config. See docs/cms-setup.md for the one manual setup step
+# (registering a GitHub OAuth app in Netlify) and how day-to-day editing works.
+#
+# No base_url/auth_endpoint set below — that leaves Decap on its documented
+# defaults (api.netlify.com/auth), which is Netlify's own hosted OAuth proxy
+# for git-based CMSs. That's a separate, still-supported feature from the
+# deprecated Netlify Identity widget; it just needs a GitHub OAuth app
+# registered once in this site's Netlify dashboard.
+
+backend:
+  name: github
+  repo: TheJonMartin/jonmartin-site
+  branch: main
+
+# Lets `npx decap-server` run a local git proxy so changes can be tested with
+# `npm run dev` without going through GitHub OAuth at all. Only used when
+# actually running that proxy — has no effect on the deployed /admin.
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "writing"
+    label: "Writing"
+    folder: "src/content/writing"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "SEO title (optional — overrides Title in <title> and search results)",
+          name: "seoTitle",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Publish date", name: "pubDate", widget: "datetime" }
+      - {
+          label: "Updated date (optional)",
+          name: "updatedDate",
+          widget: "datetime",
+          required: false,
+        }
+      - {
+          label: "Draft (keeps it off the published site)",
+          name: "draft",
+          widget: "boolean",
+          default: false,
+        }
+      - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "src/content/pages/home.json"
+        format: "json"
+        fields:
+          - { label: "Page title (browser tab / search results)", name: "title", widget: "string" }
+          - { label: "Meta description (search results)", name: "description", widget: "text" }
+          - { label: "Kicker (small label above the headline)", name: "kicker", widget: "string" }
+          - { label: "Headline (H1)", name: "heroTitle", widget: "text" }
+          - { label: "Subhead", name: "subhead", widget: "text" }
+          - {
+              label: 'Tagline (HTML allowed — the accent word is wrapped like <span class="accent">why</span>)',
+              name: "tagline",
+              widget: "text",
+            }
+          - { label: '"Who this is for" heading', name: "whoHeading", widget: "string" }
+          - label: '"Who this is for" paragraphs'
+            name: "whoParagraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Copyright year", name: "copyrightYear", widget: "number", value_type: "int" }
+
+      - name: "about"
+        label: "About Page"
+        file: "src/content/pages/about.json"
+        format: "json"
+        fields:
+          - { label: "Page title (browser tab / search results)", name: "title", widget: "string" }
+          - { label: "Meta description (search results)", name: "description", widget: "text" }
+          - { label: "Kicker (small label above the headline)", name: "kicker", widget: "string" }
+          - { label: "Headline (H1)", name: "heroTitle", widget: "text" }
+          - { label: "Subhead", name: "subhead", widget: "text" }
+          - label: "Sections (each becomes its own block on the page, in this order)"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: 'Paragraphs (HTML allowed, e.g. <a href="...">link text</a>)'
+                name: "paragraphs"
+                widget: "list"
+                field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Copyright year", name: "copyrightYear", widget: "number", value_type: "int" }

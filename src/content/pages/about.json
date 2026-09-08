@@ -1,0 +1,37 @@
+{
+	"title": "About — Jon Martin",
+	"description": "Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms — and why the last three fixes did not hold.",
+	"kicker": "About",
+	"heroTitle": "I diagnose. I don't implement.",
+	"subhead": "Most people who get called into a broken business are there to build something. That's the problem — the last three things you built are why you're calling.",
+	"sections": [
+		{
+			"heading": "What I actually do",
+			"paragraphs": [
+				"I work in revenue operations — systems integration and subscription management, mostly for SaaS and professional services firms. The job looks like tooling from the outside. It isn't. It's variety management: deciding what complexity a business should absorb, what it should refuse, and whether the answer is new tooling or a redrawn boundary.",
+				"That distinction is the whole reason this site exists. A firm that can't quote consistently doesn't have a CPQ problem. A firm whose reports nobody trusts doesn't have a dashboard problem. Those are symptoms of a structure that produces them reliably, and replacing the tool leaves the structure intact — which is why the new tool breaks in the same place the old one did."
+			]
+		},
+		{
+			"heading": "Why a second opinion, and not a project",
+			"paragraphs": [
+				"The highest-leverage move in operations is usually to move a team boundary, and that's almost never available to the person brought in to fix the process. I do a lot of my work as an external designer — hired to fix the system, not to redraw the org.",
+				"So the honest deliverable is a written diagnosis: here's what's actually breaking, here's the constraint you can't remove, here's what it costs you a year, and here's the best system available inside it. Naming a constraint you can't remove isn't failure. Pretending you can automate around it is."
+			]
+		},
+		{
+			"heading": "Where the framework comes from",
+			"paragraphs": [
+				"Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement.",
+				"<a href=\"https://fourlaws.thejonmartin.com\">Four Laws of Complex System Design &rarr;</a>"
+			]
+		},
+		{
+			"heading": "Getting in touch",
+			"paragraphs": [
+				"Nothing is bookable yet. I'm writing the first diagnoses now — if you want the sample when it's finished, <a href=\"/#notify\">the waitlist is on the homepage</a>. Otherwise: <a href=\"mailto:jon@thejonmartin.com\">jon@thejonmartin.com</a>."
+			]
+		}
+	],
+	"copyrightYear": 2026
+}

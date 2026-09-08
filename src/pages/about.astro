@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import about from '../content/pages/about.json';
 
 // DRAFT — written from what's already public on this site, the Four Laws
 // about page, and the essay in /writing. Jon has not reviewed or corrected it.
@@ -21,10 +22,11 @@ import Base from '../layouts/Base.astro';
 //     of how you think about institutions and people inside them, and it's
 //     either a differentiator or a distraction depending on who you're writing
 //     for. Your call, not mine.
+//
+// Copy lives in src/content/pages/about.json so it's editable through the
+// Decap CMS at /admin without touching this template. See docs/cms-setup.md.
 
-const title = 'About — Jon Martin';
-const description =
-	'Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms — and why the last three fixes did not hold.';
+const { title, description } = about;
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -40,83 +42,22 @@ const schema = {
 <Base title={title} description={description} schema={schema}>
 	<main id="main">
 		<section class="head">
-			<p class="label kicker">About</p>
-			<h1>I diagnose. I don't implement.</h1>
-			<p class="subhead">
-				Most people who get called into a broken business are there to build
-				something. That's the problem — the last three things you built are why
-				you're calling.
-			</p>
+			<p class="label kicker">{about.kicker}</p>
+			<h1>{about.heroTitle}</h1>
+			<p class="subhead">{about.subhead}</p>
 		</section>
 
 		<hr class="hairline" />
 
-		<section>
-			<h2>What I actually do</h2>
-			<p>
-				I work in revenue operations — systems integration and subscription
-				management, mostly for SaaS and professional services firms. The job
-				looks like tooling from the outside. It isn't. It's variety management:
-				deciding what complexity a business should absorb, what it should
-				refuse, and whether the answer is new tooling or a redrawn boundary.
-			</p>
-			<p>
-				That distinction is the whole reason this site exists. A firm that
-				can't quote consistently doesn't have a CPQ problem. A firm whose
-				reports nobody trusts doesn't have a dashboard problem. Those are
-				symptoms of a structure that produces them reliably, and replacing the
-				tool leaves the structure intact — which is why the new tool breaks in
-				the same place the old one did.
-			</p>
-		</section>
-
-		<hr class="hairline" />
-
-		<section>
-			<h2>Why a second opinion, and not a project</h2>
-			<p>
-				The highest-leverage move in operations is usually to move a team
-				boundary, and that's almost never available to the person brought in to
-				fix the process. I do a lot of my work as an external designer — hired
-				to fix the system, not to redraw the org.
-			</p>
-			<p>
-				So the honest deliverable is a written diagnosis: here's what's actually
-				breaking, here's the constraint you can't remove, here's what it costs
-				you a year, and here's the best system available inside it. Naming a
-				constraint you can't remove isn't failure. Pretending you can automate
-				around it is.
-			</p>
-		</section>
-
-		<hr class="hairline" />
-
-		<section>
-			<h2>Where the framework comes from</h2>
-			<p>
-				Four systems laws do most of the work: Ashby's Law of Requisite Variety,
-				Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with
-				Beer's Viable System Model behind them. I've written the whole thing up
-				as a standing reference rather than re-explaining it per engagement.
-			</p>
-			<p>
-				<a href="https://fourlaws.thejonmartin.com">
-					Four Laws of Complex System Design &rarr;
-				</a>
-			</p>
-		</section>
-
-		<hr class="hairline" />
-
-		<section>
-			<h2>Getting in touch</h2>
-			<p>
-				Nothing is bookable yet. I'm writing the first diagnoses now — if you
-				want the sample when it's finished, <a href="/#notify">the waitlist is
-				on the homepage</a>. Otherwise:
-				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>.
-			</p>
-		</section>
+		{about.sections.map((section, i) => (
+			<Fragment>
+				<section>
+					<h2>{section.heading}</h2>
+					{section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+				</section>
+				{i < about.sections.length - 1 && <hr class="hairline" />}
+			</Fragment>
+		))}
 
 		<hr class="hairline" />
 
@@ -125,7 +66,7 @@ const schema = {
 				<a href="/writing/">Writing</a>
 				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
 			</p>
-			<p class="copyright">© 2026 Jon Martin.</p>
+			<p class="copyright">© {about.copyrightYear} Jon Martin.</p>
 		</footer>
 	</main>
 </Base>
