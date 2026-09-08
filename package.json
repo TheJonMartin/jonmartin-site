@@ -12,10 +12,14 @@
     "dev:fourlaws": "astro dev --config astro.config.fourlaws.mjs",
     "build:fourlaws": "astro build --config astro.config.fourlaws.mjs",
     "preview:fourlaws": "astro preview --config astro.config.fourlaws.mjs",
-    "cms": "npx decap-server"
+    "cms": "npx decap-server",
+    "seo-scan": "npm run build && npm run build:fourlaws && node scripts/seo-scan/index.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.6"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.13"
   }
 }
