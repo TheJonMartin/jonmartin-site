@@ -25,7 +25,7 @@ export const config = {
 			// route, so its built route string isn't as predictable as a real
 			// page's).
 			excludeFromContentChecks: ['/404', '/admin'],
-			expectedNoindex: ['/thanks', '/thanks-contact', '/404'],
+			expectedNoindex: ['/thanks', '/thanks-contact', '/thanks-consulting', '/404'],
 			runContentGapRules: true,
 			// Pages that are short by design, not by neglect: interactive tools
 			// whose value is the tool rather than surrounding prose, and a

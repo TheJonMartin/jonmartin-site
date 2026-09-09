@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import about from '../content/pages/about.json';
+import ConsultingInquiryForm from '../components/ConsultingInquiryForm.astro';
 
 // Written from what's already public on this site, the Four Laws material,
 // and the essay in /writing. Deliberately does not name an employer — Jon's
@@ -41,6 +42,7 @@ const schema = {
 				<section>
 					<h2>{section.heading}</h2>
 					{section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+					{section.id === 'contact' && <ConsultingInquiryForm />}
 				</section>
 				{i < about.sections.length - 1 && <hr class="hairline" />}
 			</Fragment>
