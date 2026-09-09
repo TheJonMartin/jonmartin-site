@@ -1,5 +1,5 @@
 ---
-import FourLawsNav from '../components/FourLawsNav.astro';
+import Nav from '../components/Nav.astro';
 import FourLawsFooter from '../components/FourLawsFooter.astro';
 import Analytics from '../components/Analytics.astro';
 import { GA_FOURLAWS } from '../../shared/analytics';
@@ -128,7 +128,7 @@ const schemaList = [
 		<Analytics id={GA_FOURLAWS} />
 	</head>
 	<body>
-		<FourLawsNav />
+		<Nav section="four-laws" />
 		<main id="main">
 			<slot />
 		</main>

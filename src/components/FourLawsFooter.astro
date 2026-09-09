@@ -1,6 +1,51 @@
 ---
-// "Written by Jon Martin" now links to /about rather than the site root —
-// from the two-site era, this used to be the cross-domain jump back to
+// The full Explore/Tools/Reference link list used to live in the page
+// header (FourLawsNav.astro), repeated above every single piece of content
+// — a screen and a half of links on a phone before you reached anything to
+// read. Moved here instead: still fully reachable on every Four Laws page,
+// just after the content rather than blocking it. See Nav.astro for the
+// slim replacement header.
+//
+// Kept as a flat data structure rather than hand-written markup so adding a
+// page is a matter of editing this list, not hunting through nested <ul>s.
+const groups: { label: string; links: { href: string; text: string }[] }[] = [
+	{
+		label: 'Explore',
+		links: [
+			{ href: '/four-laws-flow-and-constraints', text: 'Flow Deck' },
+			{ href: '/conways-law-revops-team-structure', text: "RevOps & Conway's Law" },
+			{ href: '/conways-law-ai-agents-revops', text: "AI Agents & Conway's Law" },
+			{ href: '/stakeholder-decision-bottlenecks', text: 'Stakeholder Decision Stalls' },
+			{ href: '/wip-limits-vs-theory-of-constraints', text: 'WIP Limits vs. ToC' },
+			{ href: '/vsm-ai-system-4', text: 'AI, System 4 & VSM' },
+			{ href: '/applied-examples', text: 'More Applied Examples' },
+		],
+	},
+	{
+		label: 'Tools',
+		links: [
+			{ href: '/part8-flow-diagnostic', text: 'Diagnostic Tool' },
+			{ href: '/flow-formula-calculator', text: 'Calculator' },
+			{ href: '/stakeholder-decision-checklist', text: 'Decision Stall Checklist' },
+		],
+	},
+	{
+		label: 'Reference',
+		links: [
+			{ href: '/four-laws-complex-system-design-full', text: 'Full Reference' },
+			{ href: '/glossary', text: 'Glossary' },
+			{ href: '/faq', text: 'FAQ' },
+			{ href: '/contact', text: 'Contact' },
+		],
+	},
+];
+
+// build.format 'file' means Astro.url.pathname is e.g. '/glossary.html' —
+// strip it, same as Nav.astro, or aria-current never matches.
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+
+// "Written by Jon Martin" links to /about rather than the site root — from
+// the two-site era, this used to be the cross-domain jump back to
 // thejonmartin.com; now it's the same site, so a bare link to "/" would be a
 // no-op. /about is the more useful destination a reader who wants to know
 // who wrote this would actually want.
@@ -8,22 +53,39 @@
 // The sign-off matches the main site's exactly. A longer rights notice used
 // to trail this line and nothing on thejonmartin.com — two different
 // copyright notices across one brand read as two different operations.
-//
-// Keep notes like this in the frontmatter, not in an HTML comment: Astro emits
-// HTML comments to the built page, so a comment explaining why a phrase was
-// removed will ship that phrase right back into the markup.
 const year = new Date().getFullYear();
 ---
 
 <footer>
 	<hr class="hairline" />
 	<div class="inner">
-		<p class="colophon">
-			Four Laws of Complex System Design &copy; {year} Jon Martin.
-		</p>
-		<p class="crosslink">
-			Written by <a href="/about">Jon Martin</a>.
-		</p>
+		<nav aria-label="Four Laws sections">
+			{groups.map((group) => (
+				<div class="group">
+					<span class="label group-label">{group.label}</span>
+					<ul>
+						{group.links.map((link) => (
+							<li>
+								<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
+									{link.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</nav>
+
+		<hr class="hairline" />
+
+		<div class="colophon-row">
+			<p class="colophon">
+				Four Laws of Complex System Design &copy; {year} Jon Martin.
+			</p>
+			<p class="crosslink">
+				Written by <a href="/about">Jon Martin</a>.
+			</p>
+		</div>
 	</div>
 </footer>
 
@@ -31,13 +93,54 @@ const year = new Date().getFullYear();
 	.inner {
 		max-width: 68rem;
 		margin: 0 auto;
-		padding: 1.5rem;
+		padding: 2.5rem 1.5rem 1.5rem;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+	.group-label {
+		font-size: 0.72rem;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+	}
+	li a {
+		font-size: 0.9rem;
+		color: var(--charcoal);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	li a:hover {
+		border-bottom-color: var(--plum);
+	}
+	/* Mustard's single appearance in this block: it marks where you are,
+	   which is a genuine outlier among a list of places you aren't. */
+	li a[aria-current='page'] {
+		border-bottom-color: var(--mustard);
+	}
+
+	.inner hr.hairline {
+		margin: 1.5rem 0;
+	}
+
+	.colophon-row {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem 2rem;
 		justify-content: space-between;
 	}
-	p {
+	.colophon-row p {
 		margin: 0;
 		font-size: 0.9rem;
 		color: var(--muted);

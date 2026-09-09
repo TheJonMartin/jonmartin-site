@@ -1,25 +1,35 @@
 ---
-// Main-page nav: home, writing, about. Four Laws' own content (thirteen
-// pages, three tools) has a separate, grouped nav — see FourLawsNav.astro —
-// used only on those pages, since a flat single row doesn't scale to that
-// much material. Structure and class names still mirror FourLawsNav.astro
-// (skip link, hairline header, wordmark) so the two read as one family
-// rather than two unrelated designs, even though only one of them appears on
-// any given page.
+// The one nav for the whole site — main pages and Four Laws pages alike.
 //
-// The link to Four Laws goes to the Full Reference — the natural deep-dive
-// entry point into that material (same page the About page's "Where the
-// framework comes from" section links to). It's visually set apart with a
-// hairline rule because it's a different kind of destination than "Writing"
-// — a deep reference document, not another page in the same register.
+// Four Laws used to have its own separate, grouped Explore/Tools/Reference
+// nav (FourLawsNav.astro, now deleted) carrying all thirteen content pages
+// and three tools in the page header itself. On a phone that was a screen
+// and a half of links before any actual content, and its big serif
+// "Four Laws of Complex System Design" wordmark linked to this site's
+// homepage — a jarring mismatch, since that page is about Jon's consulting,
+// not Four Laws. Confusing on both counts.
+//
+// Fixed by going the other direction: one slim nav everywhere, and the full
+// Four Laws link list moved to FourLawsFooter.astro — still fully reachable
+// on every Four Laws page, just after the content instead of blocking it.
+//
+// `section="four-laws"` (passed only by FourLawsLayout.astro) highlights the
+// "Four Laws of Complex System Design" link as the current section even
+// though it points at one specific page (the Full Reference) rather than
+// whichever Four Laws page you're actually on — same "current section, not
+// literally current page" treatment "Writing" already gets below.
+interface Props {
+	section?: 'four-laws';
+}
+const { section } = Astro.props;
+
 const links: { href: string; text: string }[] = [
 	{ href: '/writing', text: 'Writing' },
 	{ href: '/about', text: 'About' },
 ];
 
 // build.format 'file' (astro.config.mjs) means Astro.url.pathname here is
-// e.g. '/writing.html' — strip it the same way FourLawsNav.astro and
-// Base.astro's canonical logic do, or aria-current never matches.
+// e.g. '/writing.html' — strip it, or aria-current never matches.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
 // Writing needs prefix matching because individual posts live beneath it and
@@ -44,7 +54,11 @@ const isCurrent = (href: string) => {
 						{link.text}
 					</a>
 				))}
-				<a class="crosssite" href="/four-laws-complex-system-design-full">
+				<a
+					class="crosssite"
+					href="/four-laws-complex-system-design-full"
+					aria-current={section === 'four-laws' ? 'page' : undefined}
+				>
 					Four Laws of Complex System Design
 				</a>
 			</div>
@@ -111,10 +125,9 @@ const isCurrent = (href: string) => {
 		border-bottom-color: var(--mustard);
 	}
 
-	/* A different kind of destination than "Writing" — a deep reference
-	   document with its own grouped nav on the far side of it, not another
-	   page in the same register — so it's set apart with a hairline rule
-	   rather than folded into the same unbroken list. */
+	/* A different kind of destination than "Writing" — the whole Four Laws
+	   reference, not another page in the same register — so it's set apart
+	   with a hairline rule rather than folded into the same unbroken list. */
 	.crosssite {
 		padding-left: 1.5rem;
 		border-left: 1px solid var(--hairline);
@@ -122,5 +135,8 @@ const isCurrent = (href: string) => {
 	}
 	.crosssite:hover {
 		border-bottom-color: var(--sage);
+	}
+	.crosssite[aria-current='page'] {
+		border-bottom-color: var(--mustard);
 	}
 </style>
