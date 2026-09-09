@@ -23,13 +23,19 @@
       "heading": "Where the framework comes from",
       "paragraphs": [
         "Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement.",
-        "<a href=\"https://fourlaws.thejonmartin.com\">Four Laws of Complex System Design &rarr;</a>"
+        "<a href=\"/four-laws-complex-system-design-full\">Four Laws of Complex System Design &rarr;</a>"
       ]
     },
     {
       "heading": "Getting in touch",
       "paragraphs": [
         "Nothing is bookable yet. I'm writing the first diagnoses now — if you want the sample when it's finished, <a href=\"/#notify\">the waitlist is on the homepage</a>. Otherwise: <a href=\"mailto:jon@thejonmartin.com\">jon@thejonmartin.com</a>."
+      ]
+    },
+    {
+      "heading": "Elsewhere",
+      "paragraphs": [
+        "<a href=\"https://www.linkedin.com/in/jonmartinco/\">LinkedIn</a> &middot; <a href=\"https://www.instagram.com/jonmartin.co/\">Instagram</a> &middot; <a href=\"https://www.threads.com/@jonmartin.co\">Threads</a> &middot; <a href=\"https://x.com/TheJonMartin\">X</a>."
       ]
     }
   ],

@@ -1,6 +1,6 @@
 ---
 import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import FourLawsFooter from '../components/FourLawsFooter.astro';
 import Analytics from '../components/Analytics.astro';
 import { GA_FOURLAWS } from '../../shared/analytics';
 import { breadcrumbSchema } from '../lib/schema';
@@ -25,7 +25,8 @@ interface Props {
 	 * is to control the exact length.
 	 */
 	seoTitle?: string;
-	/** Per-page social card, root-relative. Defaults to public-fourlaws/og.png. */
+	/** Per-page social card, root-relative. Defaults to the Four Laws og image
+	 * (distinct from the main site's own /og.png). */
 	ogImage?: string;
 	/** Page-level og:type. 'website' for the home page, 'article' for content. */
 	ogType?: string;
@@ -37,17 +38,22 @@ const {
 	description,
 	noindex = false,
 	seoTitle,
-	ogImage = '/og.png',
+	ogImage = '/four-laws-og.png',
 	ogType = 'article',
 	schema,
 } = Astro.props;
 
-// Astro.site comes from astro.config.fourlaws.mjs. Building this site with the
-// main config would silently emit thejonmartin.com canonicals onto Four Laws
-// pages, which is why the two configs exist rather than one config with a flag.
+// Astro.site is 'https://thejonmartin.com' (astro.config.mjs) — these pages
+// used to build from a separate config with site set to
+// 'https://fourlaws.thejonmartin.com', back when this was a second Netlify
+// project on its own subdomain. That's now the one thing that changed for
+// these pages in the merge: same path, same content, new host. Everything
+// below (title suffix, canonical stripping, schema) still works exactly as
+// it did — none of it depended on which domain it was building for.
 //
-// build.format is 'file', so Astro.url.pathname here is '/glossary.html' — but
-// the URL Netlify actually serves, and the one every existing inbound link uses,
+// build.format is 'file' sitewide (kept specifically for this page set — see
+// astro.config.mjs), so Astro.url.pathname here is '/glossary.html' — but the
+// URL Netlify actually serves, and the one every existing inbound link uses,
 // is '/glossary'. Canonicalising to the .html form would point search engines
 // and shared links at a second address for the same page. Strip it.
 const cleanPath = Astro.url.pathname
@@ -122,11 +128,11 @@ const schemaList = [
 		<Analytics id={GA_FOURLAWS} />
 	</head>
 	<body>
-		<Nav />
+		<Nav section="four-laws" />
 		<main id="main">
 			<slot />
 		</main>
-		<Footer />
+		<FourLawsFooter />
 	</body>
 </html>
 

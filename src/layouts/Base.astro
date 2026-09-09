@@ -41,7 +41,20 @@ import { GA_MAIN } from '../../shared/analytics';
 // Requires `site` to be set in astro.config.mjs — without it Astro.site is
 // undefined and this throws at build time rather than silently emitting a
 // broken canonical.
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+//
+// build.format is 'file' (astro.config.mjs), so Astro.url.pathname here is
+// e.g. '/about.html' — but the URL Netlify actually serves at, and the one
+// every internal link and the sitemap use, is '/about'. Canonicalising to the
+// .html form would point search engines at a second address for the same
+// page. Strip it, same as FourLawsLayout.astro does for the same reason.
+const cleanPath = Astro.url.pathname
+	.replace(/index\.html$/, '')
+	.replace(/\.html$/, '');
+// A slash-less root ('') can't survive `new URL('', site).href` without the
+// trailing slash new URL forces back on — strip the one it adds for '/'.
+// Every other page's cleanPath is already slash-less, so this only ever
+// touches the home page. Same pattern as FourLawsLayout.astro.
+const canonical = new URL(cleanPath, Astro.site).href.replace(/\/$/, '');
 
 // og:image must be an absolute URL. Relative paths are silently dropped by
 // most scrapers rather than resolved, which is the failure mode that leaves

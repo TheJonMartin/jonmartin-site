@@ -1,22 +1,29 @@
 # Content editing with Decap CMS
 
 A browser-based editor at `/admin` for making small content changes — new
-writing posts, tweaks to the Home and About page copy — without touching code
-or going through Claude. Edits commit straight to this GitHub repo (same repo
-Claude edits), which triggers the same Netlify build as any other push. There
-is no separate database and nothing to keep in sync — the CMS just edits the
-same files.
+writing posts, edits to the Four Laws reference pages, tweaks to the Home and
+About page copy — without touching code or going through Claude. Edits commit
+straight to this GitHub repo (same repo Claude edits), which triggers the
+same Netlify build as any other push. There is no separate database and
+nothing to keep in sync — the CMS just edits the same files.
 
 **What's editable:**
 
 | What | Where it lives | CMS collection |
 |---|---|---|
 | Writing posts | `src/content/writing/*.md` | Writing |
+| Four Laws reference pages | `src/content/four-laws/*.md` | Four Laws |
 | Home page copy | `src/content/pages/home.json` | Pages → Home Page |
 | About page copy | `src/content/pages/about.json` | Pages → About Page |
 
-Everything else — layout, styling, nav, the Four Laws site, `robots.txt`,
-schema markup — is still code, still Claude's (or your) territory.
+Everything else — layout, styling, nav, `robots.txt`, schema markup, and the
+three interactive Four Laws tools (they're real JavaScript applications, not
+prose) — is still code, still Claude's (or your) territory.
+
+Until [docs/site-consolidation.md](site-consolidation.md), the Four Laws
+pages lived on a separate site (fourlaws.thejonmartin.com) with their own
+Netlify project and their own copy of this same CMS setup. They're all one
+site and one `/admin` now.
 
 ## One-time setup Jon has to do by hand
 
@@ -54,9 +61,9 @@ Netlify Identity widget, and not anything Git Gateway-related.
 ### 3. Confirm you can log in
 
 Visit `https://thejonmartin.com/admin`, click **Login with GitHub**, approve
-the app. You should land in the Decap CMS editor with "Writing" and "Pages"
-in the sidebar. Only GitHub accounts with write access to the repo can
-authenticate — right now that's just you.
+the app. You should land in the Decap CMS editor with "Writing", "Four Laws",
+and "Pages" in the sidebar. Only GitHub accounts with write access to the
+repo can authenticate — right now that's just you.
 
 ## Day to day
 
@@ -68,9 +75,17 @@ authenticate — right now that's just you.
   live site or in the RSS feed (this mirrors `content.config.ts`'s existing
   `draft` field exactly, same rule Claude follows). Uncheck it when it's
   ready and hit **Publish**.
-- **Delete a post:** open it in the CMS and use the delete option in the
-  editor's menu (writing is configured with `delete: true`). Home and About
-  are single files, not deletable entries.
+- **Edit a Four Laws page:** `/admin` → Four Laws → pick a page. Same `draft`
+  rule as Writing. The **Nav group** field (reference / explore / meta)
+  controls which group of `FourLawsNav.astro` the page appears under —
+  changing it moves the page in the nav, it doesn't change the URL. Renaming
+  a page in the CMS renames its file, which changes its URL — don't do that
+  for an existing published page without also adding a redirect, since these
+  specific URLs have real outreach links and backlink pitches pointing at
+  them (see `docs/site-consolidation.md`).
+- **Delete a post or Four Laws page:** open it in the CMS and use the delete
+  option in the editor's menu (both collections are configured with
+  `delete: true`). Home and About are single files, not deletable entries.
 - A couple of fields explicitly allow HTML — the tagline on Home (for the
   `<span class="accent">` styling) and any paragraph that needs a link on
   About. Everywhere else, plain text is enough; you don't need to know HTML
