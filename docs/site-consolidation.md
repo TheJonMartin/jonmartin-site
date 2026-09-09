@@ -1,8 +1,10 @@
 # Consolidating thejonmartin.com and fourlaws.thejonmartin.com
 
-**Status: merged locally and verified, not yet deployed.** This doc will be
-updated once the redirects in "Deploy" below are actually live — until then,
-treat that section as the plan, not a description of the current state.
+**Status: deployed and verified live**, as of 9 September 2026. `thejonmartin.com`
+serves the consolidated site; `fourlaws.thejonmartin.com` and the legacy
+`fourlaws.netlify.app` both 301 every path to the matching `thejonmartin.com`
+URL. Both were re-verified against their real production domains, not just
+draft URLs.
 
 ## Why
 
@@ -96,19 +98,38 @@ host changes.
 - `isPartOf` in the TechArticle schema and the BreadcrumbList's home item
   both correctly reference the single merged WebSite entity.
 
-## Deploy (see chat / commit history for actual execution)
+## Deploy — what actually happened (9 September 2026)
 
-1. Draft-deploy the merged build to `jonmartin-mvp`, verify the draft URL,
-   then promote to production.
-2. Redirect the two old hosts **without touching DNS**: replace what
+1. Draft-deployed the merged build to `jonmartin-mvp` first
+   (`netlify deploy --dir dist --no-build`), and used it to check the one
+   thing that couldn't be verified locally: whether Netlify's pretty-URL
+   handling actually normalizes `/writing/<slug>/` (trailing slash) to the
+   real `/writing/<slug>.html` asset. **Confirmed yes** — a plain `curl -I`
+   against the draft URL returned a 301 to the clean path with no explicit
+   redirect rule needed for that case. Also caught and worked around an
+   unrelated problem: the project has a dashboard-configured Lighthouse
+   build plugin whose Puppeteer/Chromium install failed on a network error
+   in the sandbox running the CLI — irrelevant to the actual site code, so
+   `--no-build` (deploy the already-built `dist/` directly, skip the
+   plugin-installing build orchestration) sidestepped it rather than trying
+   to fix a Lighthouse plugin.
+2. Promoted to production (`--prod`). Verified live on the real domain: all
+   sampled paths 200, canonical tags correctly say `thejonmartin.com` with
+   no `.html` suffix.
+3. Redirected both old hosts **without touching DNS** — replaced what
    `fourlaws-thejonmartin` (fourlaws.thejonmartin.com) and the legacy
-   `fourlaws` project (fourlaws.netlify.app — no source repo, so this is a
-   fresh minimal deploy, not a code change) actually serve with a single
-   `_redirects` file: `/* https://thejonmartin.com/:splat 301!`. This keeps
-   each project's existing custom domain and TLS certificate attached and
-   serving, avoiding the cert-reprovisioning delay the original
-   `fourlaws-deploy.md` migration ran into once.
-3. Verify a sample of real Four Laws URLs against both old hosts and confirm
-   a 301 to the matching `thejonmartin.com` path.
-4. Once stable for a while, `fourlaws-thejonmartin` can be deleted entirely
-   — no urgency either way.
+   `fourlaws` project (fourlaws.netlify.app — no source repo, so this was a
+   fresh minimal deploy from a scratch folder, not a code change in this
+   repo) actually serve with a single `_redirects` file:
+   `/* https://thejonmartin.com/:splat 301!`. This kept each project's
+   existing custom domain and TLS certificate attached and serving,
+   avoiding the cert-reprovisioning delay the original `fourlaws-deploy.md`
+   migration ran into once. Draft-verified each before promoting, same as
+   step 1–2.
+4. Verified a sample of real Four Laws URLs against both old hosts on their
+   real production domains (not just draft URLs) — all correctly 301 to the
+   matching `thejonmartin.com` path, splat-preserving the exact path.
+
+**Still open, no urgency:** `fourlaws-thejonmartin` (now just a redirect)
+can be deleted entirely once Jon's comfortable the redirect has held for a
+while — nothing forces that decision.
