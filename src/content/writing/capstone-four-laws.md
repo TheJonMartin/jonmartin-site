@@ -1,6 +1,6 @@
 ---
 title: 'Two Fields That Never Talked to Each Other, Converging on the Same Physics'
-description: 'Two lineages that never cited each other — Ashby, Conway, Brooks, and Beer''s systems theory, and Scott Page''s complexity science — converge on the same mechanisms.'
+description: 'Two lineages that never cited each other — Ashby, Conway, Brooks, and Beer''s systems theory, and Scott Page''s complexity science — converge on the same physics.'
 seoTitle: 'Two Fields, Converging on the Same Physics — Jon Martin'
 pubDate: 2026-09-08
 draft: false

@@ -1,0 +1,46 @@
+# Jon Martin
+
+> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work.
+
+## Main pages
+
+- [Home](https://thejonmartin.com/): Who this site is for and what a written diagnosis/second opinion is.
+- [About](https://thejonmartin.com/about): What Jon does, why a second opinion rather than a project, and where the Four Laws framework comes from.
+- [Writing](https://thejonmartin.com/writing): Essays on systems, complexity, and revenue operations.
+- [Contact](https://thejonmartin.com/contact): Questions about the Four Laws framework, a correction to the reference material, or a consulting/speaking conversation.
+
+## Writing
+
+- [Complex Isn't Complicated — And That Distinction Is Costing You](https://thejonmartin.com/writing/complex-isnt-complicated)
+- [Three Landscapes: Fuji, Rugged, and Dancing](https://thejonmartin.com/writing/three-landscapes)
+- [The Interesting In-Between](https://thejonmartin.com/writing/interesting-in-between)
+- [Diversity, Deconstructed](https://thejonmartin.com/writing/diversity-deconstructed)
+- [Why Some Things Should Never Fully Ship](https://thejonmartin.com/writing/explore-exploit)
+- [What Shows Up Without Anyone Designing It](https://thejonmartin.com/writing/emergence-and-networks)
+- [The Small Event That Wasn't Actually Small](https://thejonmartin.com/writing/feedback-and-cascades)
+- [Harnessing What You Can't Control](https://thejonmartin.com/writing/harnessing-complexity)
+- [Two Fields That Never Talked to Each Other, Converging on the Same Physics](https://thejonmartin.com/writing/capstone-four-laws)
+- [A Field-Tested Stakeholder Communication Matrix](https://thejonmartin.com/writing/stakeholder-communication-matrix)
+- ["I Want to Make Processes More Efficient" — What That Actually Means](https://thejonmartin.com/writing/what-more-efficient-actually-means)
+
+## Four Laws of Complex System Design — Reference
+
+- [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM.
+- [Glossary](https://thejonmartin.com/glossary): Definitions of every term used across the reference.
+- [FAQ](https://thejonmartin.com/faq): Frequently asked questions about the framework.
+
+## Four Laws — Applied essays
+
+- [Applied Examples: The Four Laws Across Revenue Teams](https://thejonmartin.com/applied-examples)
+- [Managing Process: Flow & Constraints](https://thejonmartin.com/four-laws-flow-and-constraints)
+- [Conway's Law and Your RevOps Team Structure](https://thejonmartin.com/conways-law-revops-team-structure)
+- [Conway's Law in the AI Agent Era](https://thejonmartin.com/conways-law-ai-agents-revops)
+- [Why Executive Decisions Stall on Client Projects](https://thejonmartin.com/stakeholder-decision-bottlenecks)
+- [AI, System 4, and Beer's VSM](https://thejonmartin.com/vsm-ai-system-4)
+- [WIP Limits vs. the Theory of Constraints](https://thejonmartin.com/wip-limits-vs-theory-of-constraints)
+
+## Four Laws — Interactive tools
+
+- [Flow Formula Calculator](https://thejonmartin.com/flow-formula-calculator): Interactive Little's Law, Kingman's formula, and Weinberg's context-switching calculators.
+- [Flow & Constraint Diagnostic](https://thejonmartin.com/part8-flow-diagnostic): A five-step guided diagnostic that produces a personalized Five Focusing Steps writeup.
+- [Stakeholder Decision Checklist](https://thejonmartin.com/stakeholder-decision-checklist): A checklist for diagnosing why a decision is stalled on a client engagement.

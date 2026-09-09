@@ -13,9 +13,35 @@ const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
 
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const canonical = new URL('/writing', Astro.site).href;
+
+// Built from the same `posts` array the page itself renders, rather than
+// hand-maintained separately — a listing's ItemList that could drift from
+// the list a visitor actually sees would be worse than no schema at all.
+const schema =
+	posts.length > 0
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'CollectionPage',
+				'@id': canonical,
+				name: title,
+				description,
+				url: canonical,
+				isPartOf: { '@id': 'https://thejonmartin.com/#website' },
+				mainEntity: {
+					'@type': 'ItemList',
+					itemListElement: posts.map((post, i) => ({
+						'@type': 'ListItem',
+						position: i + 1,
+						url: new URL(`/writing/${post.id}`, Astro.site).href,
+					})),
+				},
+			}
+		: undefined;
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} schema={schema}>
 	<main id="main">
 		<section class="hero">
 			<p class="label kicker"><a href="/">Jon Martin</a></p>
