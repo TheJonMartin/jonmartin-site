@@ -15,10 +15,15 @@ export function runTechnicalSeoRules(pages, { config, siteMap, robotsTxt, assetR
 
 	for (const page of contentPages) {
 		const { route } = page;
+		// Title/description *length* is purely a search-snippet-display concern —
+		// a noindex page never gets a snippet, so nitpicking its length here is
+		// noise. "Missing entirely" still matters everywhere (og:description
+		// still drives social link previews regardless of indexability).
+		const isNoindexed = config.expectedNoindex.includes(route);
 
 		if (!page.title) {
 			findings.push(finding('missing-title', 'P0', route, 'Missing <title>', 'The page has no <title> element.', 'Add a title via the Base layout\'s `title` or `seoTitle` prop.'));
-		} else {
+		} else if (!isNoindexed) {
 			const len = page.title.length;
 			if (len < config.thresholds.titleMin || len > config.thresholds.titleMax) {
 				findings.push(finding('title-length', 'P1', route, 'Title length outside recommended range',
@@ -31,7 +36,7 @@ export function runTechnicalSeoRules(pages, { config, siteMap, robotsTxt, assetR
 			findings.push(finding('missing-description', 'P1', route, 'Missing meta description',
 				'No <meta name="description"> found — search engines and AI answer engines will fall back to pulling arbitrary text from the page.',
 				'Pass a `description` prop to Base.astro.'));
-		} else {
+		} else if (!isNoindexed) {
 			const len = page.metaDescription.length;
 			if (len < config.thresholds.descriptionMin || len > config.thresholds.descriptionMax) {
 				findings.push(finding('description-length', 'P2', route, 'Meta description length outside recommended range',

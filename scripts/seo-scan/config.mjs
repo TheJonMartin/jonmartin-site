@@ -27,6 +27,13 @@ export const config = {
 			excludeFromContentChecks: ['/404', '/admin'],
 			expectedNoindex: ['/thanks', '/thanks-contact', '/404'],
 			runContentGapRules: true,
+			// Pages that are short by design, not by neglect: interactive tools
+			// whose value is the tool rather than surrounding prose, and a
+			// contact form. Padding these with filler to satisfy a word-count
+			// heuristic would make them worse for the person using them —
+			// exempt them from the thin-content check specifically rather than
+			// generate content nobody asked for.
+			thinContentExempt: ['/contact', '/flow-formula-calculator', '/part8-flow-diagnostic'],
 		},
 	],
 

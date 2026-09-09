@@ -50,11 +50,12 @@ export function runAeoRules(pages, { config, hasLlmsTxt }) {
 				'Rename to describe the specific claim the section makes.'));
 		}
 
-		if (page.wordCount > 0 && page.wordCount < config.thresholds.veryThinContentWords) {
+		const exemptFromThinContent = (config.thinContentExempt ?? []).includes(route);
+		if (!exemptFromThinContent && page.wordCount > 0 && page.wordCount < config.thresholds.veryThinContentWords) {
 			findings.push(finding('very-thin-content', 'P1', route, 'Very thin content',
 				`~${page.wordCount} words. Both classic SEO and answer engines need enough substance to establish topical authority.`,
 				'Expand with concrete detail, or consolidate into a page that already covers this ground.'));
-		} else if (page.wordCount > 0 && page.wordCount < config.thresholds.thinContentWords) {
+		} else if (!exemptFromThinContent && page.wordCount > 0 && page.wordCount < config.thresholds.thinContentWords) {
 			findings.push(finding('thin-content', 'P2', route, 'Thin content',
 				`~${page.wordCount} words, below the ${config.thresholds.thinContentWords}-word guideline.`,
 				'Consider expanding if this page is meant to rank/be cited on its own.'));

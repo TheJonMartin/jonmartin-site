@@ -42,6 +42,7 @@ async function scanSite(site) {
 		siteUrl: site.siteUrl,
 		excludeFromContentChecks: site.excludeFromContentChecks,
 		expectedNoindex: site.expectedNoindex,
+		thinContentExempt: site.thinContentExempt ?? [],
 		thresholds: config.thresholds,
 		targetTopics: config.targetTopics,
 	};
