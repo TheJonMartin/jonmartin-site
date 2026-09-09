@@ -41,48 +41,45 @@ const schema = {
 
 <Base title={title} description={description} schema={schema}>
 	<main id="main">
-		<section class="head">
-			<p class="label kicker">{about.kicker}</p>
-			<h1>{about.heroTitle}</h1>
-			<p class="subhead">{about.subhead}</p>
-		</section>
+		<div class="shell">
+			<section class="head">
+				<p class="label kicker">{about.kicker}</p>
+				<h1>{about.heroTitle}</h1>
+				<p class="subhead">{about.subhead}</p>
+			</section>
 
-		<hr class="hairline" />
+			<hr class="hairline" />
 
-		{about.sections.map((section, i) => (
-			<Fragment>
-				<section>
-					<h2>{section.heading}</h2>
-					{section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
-				</section>
-				{i < about.sections.length - 1 && <hr class="hairline" />}
-			</Fragment>
-		))}
-
-		<hr class="hairline" />
-
-		<footer>
-			<p class="links">
-				<a href="/writing">Writing</a>
-				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
-			</p>
-			<p class="copyright">© {about.copyrightYear} Jon Martin.</p>
-		</footer>
+			{about.sections.map((section, i) => (
+				<Fragment>
+					<section>
+						<span class="label section-number">{String(i + 1).padStart(2, '0')}</span>
+						<div class="rule" />
+						<h2>{section.heading}</h2>
+						{section.paragraphs.map((paragraph) => <p set:html={paragraph} />)}
+					</section>
+					{i < about.sections.length - 1 && <hr class="hairline" />}
+				</Fragment>
+			))}
+		</div>
 	</main>
 </Base>
 
 <style>
-	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-	.head { display: flex; flex-direction: column; gap: 1.5rem; padding-bottom: 3rem; }
+	main { padding: 2.5rem 0 4rem; }
+	.shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.head { display: flex; flex-direction: column; gap: 1.5rem; padding-bottom: 3rem; max-width: 62ch; }
 	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
-	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; }
+	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); }
 	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0; }
-	section { padding: 3rem 0; }
+	section { padding: 3rem 0; max-width: 68ch; }
+	.section-number { font-size: 11px; color: var(--sage); display: block; margin-bottom: 0.6rem; }
+	.rule { width: 40px; height: 2px; background: var(--mustard); margin-bottom: 1.25rem; }
 	h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
 	p { margin: 0 0 1.1rem; }
 	p:last-child { margin-bottom: 0; }
-	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-	.links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-	footer a { font-family: "Courier New", Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
-	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
+
+	@media (max-width: 720px) {
+		.shell { padding: 0 20px; }
+	}
 </style>

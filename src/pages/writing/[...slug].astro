@@ -1,20 +1,28 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { readingTime, entryNumbers, filedUnder } from '../../lib/writing';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('writing', ({ data }) => !data.draft);
-	return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+	const numbers = entryNumbers(posts);
+	const byDate = [...posts].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	return byDate.map((post, i) => ({
+		params: { slug: post.id },
+		props: { post, entryNumber: numbers.get(post.id)!, next: byDate[i + 1] },
+	}));
 }
 
-type Props = { post: CollectionEntry<'writing'> };
-const { post } = Astro.props;
-const { Content } = await render(post);
+type Props = { post: CollectionEntry<'writing'>; entryNumber: string; next?: CollectionEntry<'writing'> };
+const { post, entryNumber, next } = Astro.props;
+const { Content, headings } = await render(post);
+const toc = headings.filter((h) => h.depth === 2);
 
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const canonical = new URL(`/writing/${post.id}`, Astro.site).href;
+const category = filedUnder(post.data);
 
 // BlogPosting rather than Article: it's the narrower type, and the narrower
 // type is always the better answer when it fits. datePublished/dateModified are
@@ -46,88 +54,253 @@ const schema = {
 >
 	<main id="main">
 		<article>
-			<header class="head">
-				<p class="label kicker"><a href="/writing">Writing</a></p>
-				<h1>{post.data.title}</h1>
-				<p class="label date">
-					{fmt(post.data.pubDate)}
-					{post.data.updatedDate && <span> · updated {fmt(post.data.updatedDate)}</span>}
-				</p>
-			</header>
+			<!-- Title block -->
+			<div class="shell titleblock">
+				<div class="grid">
+					<div class="rail">
+						<div class="metaledger">
+							<div class="mrow">
+								<span class="label mlabel">Entry</span>
+								<span class="mvalue">{entryNumber}</span>
+							</div>
+							<div class="mrow">
+								<span class="label mlabel">Published</span>
+								<span class="mvalue">{fmt(post.data.pubDate)}</span>
+							</div>
+							<div class="mrow">
+								<span class="label mlabel">Reading</span>
+								<span class="mvalue">{readingTime(post.body ?? '')}</span>
+							</div>
+							{category && (
+								<div class="mrow last">
+									<span class="label mlabel">Filed under</span>
+									<span class="mvalue filed">{category}</span>
+								</div>
+							)}
+						</div>
+					</div>
+					<div class="content">
+						<h1>{post.data.title}</h1>
+						<p class="dek">{post.data.description}</p>
+					</div>
+				</div>
+			</div>
 
 			<hr class="hairline" />
 
-			<div class="prose">
-				<Content />
+			<!-- Body -->
+			<div class="shell bodyblock">
+				<div class="grid">
+					<div class="rail">
+						{toc.length > 0 && (
+							<>
+								<span class="label toc-label">Contents</span>
+								<ul class="toc">
+									{toc.map((h) => (
+										<li><a href={`#${h.slug}`}>{h.text}</a></li>
+									))}
+								</ul>
+							</>
+						)}
+					</div>
+					<div class="prose">
+						<Content />
+					</div>
+				</div>
 			</div>
 
 			{post.data.tags.length > 0 && (
-				<p class="label tags">{post.data.tags.join(' · ')}</p>
+				<div class="shell">
+					<p class="label tags">{post.data.tags.join(' · ')}</p>
+				</div>
 			)}
 		</article>
 
-		<hr class="hairline" />
+		<!-- CTA band -->
+		<section class="band cta">
+			<div class="shell ctarow">
+				<p class="offer">Bring me the mess. I'd rather look at the actual spreadsheets than a polished summary of them.</p>
+				<a class="btn" href="/#notify">Join the waitlist &rarr;</a>
+			</div>
+		</section>
 
-		<footer>
-			<p><a href="/writing">&larr; All writing</a></p>
-			<p class="copyright">© 2026 Jon Martin.</p>
-		</footer>
+		{next && (
+			<div class="shell">
+				<a class="nextrow" href={`/writing/${next.id}`}>
+					<span class="label next-n">Next</span>
+					<h3>{next.data.title}</h3>
+				</a>
+			</div>
+		)}
 	</main>
 </Base>
 
 <style>
-	/* Top padding was 5rem before the site had a persistent header nav; trimmed
-	   to 2.5rem so content doesn't sit stacked below both the nav's own
-	   padding and this. */
-	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-	.head { display: flex; flex-direction: column; gap: 1rem; padding-bottom: 2.5rem; }
-	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
-	.kicker a { color: var(--sage); text-decoration: none; }
-	.kicker a:hover { border-bottom: 1px solid var(--sage); }
-	h1 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 400; }
-	.date { font-size: 0.8rem; color: var(--sage); margin: 0; }
-	.prose { padding: 2.5rem 0; }
-	.tags { font-size: 0.75rem; color: var(--sage); margin: 0 0 2.5rem; }
-	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-	footer a { font-family: 'Courier New', Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
-	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
+	main { padding: 0 0 4rem; }
+	.shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.grid { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
+
+	.titleblock { padding: 64px 0 44px; }
+	.metaledger { border-top: 2px solid var(--mustard); }
+	.mrow { padding: 12px 0; border-bottom: 1px solid rgba(74, 51, 82, 0.16); }
+	.mrow.last { border-bottom: none; }
+	.mlabel { font-size: 10px; letter-spacing: 0.18em; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+	.mvalue { font-family: 'Courier New', Cousine, monospace; font-size: 13px; color: var(--plum); }
+	.mvalue.filed { color: var(--dark-mustard); }
+
+	h1 { font-size: clamp(32px, 5vw, 60px); line-height: 1.06; letter-spacing: -0.02em; max-width: 26ch; margin: 0 0 1rem; }
+	.dek { font-size: 21px; line-height: 1.5; max-width: 56ch; margin: 0; color: var(--charcoal); }
+
+	.bodyblock { padding: 56px 0 40px; }
+	.toc-label { font-size: 11px; color: var(--sage); display: block; margin-bottom: 0.75rem; }
+	.toc { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; position: sticky; top: 24px; }
+	.toc a { font-size: 12px; color: var(--plum); text-decoration: none; border-bottom: 1px solid transparent; }
+	.toc a:hover { border-bottom-color: var(--mustard); }
+
+	.prose { max-width: 68ch; display: flex; flex-direction: column; gap: 32px; }
+	.prose :global(p) { font-size: 19px; line-height: 1.68; margin: 0; }
+
+	.tags { font-size: 0.75rem; color: var(--sage); margin: 2rem 0 0; }
+
+	/* ---- CTA band ---- */
+	.cta { background: var(--mustard); padding: 56px 0; margin-top: 4rem; }
+	.ctarow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: center; }
+	.offer { font-family: Georgia, Gelasio, serif; font-size: clamp(24px, 3.2vw, 36px); max-width: 24ch; color: var(--charcoal); margin: 0; }
+	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; justify-self: start; background: var(--plum); color: var(--cream); }
+	.btn:hover { background: var(--charcoal); }
+
+	/* ---- Next ---- */
+	.nextrow { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; padding: 32px 0; border-top: 1px solid var(--hairline); text-decoration: none; color: inherit; }
+	.nextrow:hover { background: var(--white); }
+	.next-n { font-size: 12px; color: var(--sage); }
+	.nextrow h3 { font-size: clamp(20px, 2.4vw, 27px); margin: 0; }
+
+	@media (max-width: 720px) {
+		.shell { padding: 0 20px; }
+		.grid { grid-template-columns: 1fr; gap: 20px; }
+		.toc { position: static; }
+	}
 </style>
 
 <style is:global>
-	/* Markdown output. Scoped styles can't reach <Content /> children, so these
-	   are global but namespaced under .prose. */
-	.prose h2 { font-size: 1.4rem; margin: 2.5rem 0 1rem; }
-	.prose h3 { font-size: 1.15rem; margin: 2rem 0 0.75rem; }
-	.prose p { margin: 0 0 1.1rem; }
-	.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.4rem; }
+	/* Numbered H2s — 01/02/03 via CSS counters rather than touching markdown
+	   content or adding a remark plugin. decimal-leading-zero matches the
+	   rest of the site's zero-padded numbering (rail labels, entry number). */
+	.prose { counter-reset: h2count; }
+	.prose h2 {
+		counter-increment: h2count;
+		font-family: Georgia, Gelasio, serif;
+		font-size: clamp(24px, 2.8vw, 32px);
+		line-height: 1.2;
+		color: var(--plum);
+		margin: 0;
+	}
+	.prose h2::before {
+		content: counter(h2count, decimal-leading-zero) '\00A0\00A0';
+		color: var(--sage);
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 0.55em;
+		vertical-align: middle;
+	}
+	.prose h3 { font-family: Georgia, Gelasio, serif; font-size: 1.15rem; color: var(--plum); margin: 0; }
+	.prose ul, .prose ol { margin: 0; padding-left: 1.4rem; }
 	.prose li { margin-bottom: 0.4rem; }
+
+	/* Plain blockquote — a quoted line from someone else, not a pull-quote
+	   from the post's own argument. Opt into .pullquote (raw HTML in the
+	   markdown source) for the dramatic plum treatment below. */
 	.prose blockquote {
-		margin: 1.5rem 0;
+		margin: 0;
 		padding-left: 1.2rem;
 		border-left: 2px solid var(--sage);
-		font-family: 'Courier New', Courier, monospace;
+		font-family: 'Courier New', Cousine, monospace;
 		font-size: 0.95rem;
 	}
 	.prose code {
-		font-family: 'Courier New', Courier, monospace;
+		font-family: 'Courier New', Cousine, monospace;
 		font-size: 0.92em;
-		background: rgba(46, 42, 38, 0.06);
+		background: rgba(74, 51, 82, 0.06);
 		padding: 0.1em 0.3em;
-		border-radius: 2px;
 	}
 	.prose pre {
-		background: rgba(46, 42, 38, 0.06);
+		background: rgba(74, 51, 82, 0.06);
 		padding: 1rem;
-		border-radius: 2px;
 		overflow-x: auto;
 	}
 	.prose pre code { background: none; padding: 0; }
-	.prose hr { border: none; border-top: 1px solid rgba(46, 42, 38, 0.15); margin: 2.5rem 0; }
+	.prose hr { border: none; border-top: 1px solid var(--hairline); margin: 0; }
 	.prose img { max-width: 100%; height: auto; }
+
+	/* ---- Optional, markdown-driven enhancements ----
+	   None of the site's existing posts use these yet — they render only
+	   when a post's own markdown opts in with the matching class, via raw
+	   HTML directly in the .md source (Astro's markdown renderer passes raw
+	   HTML blocks through unchanged). Not force-filled on every post. */
+
+	/* Pull quote: <blockquote class="pullquote"><p>...</p><cite>...</cite></blockquote> */
+	.prose blockquote.pullquote {
+		background: var(--plum);
+		color: var(--cream);
+		padding: 28px 32px;
+		border-left: none;
+		font-family: inherit;
+		font-size: inherit;
+	}
+	.prose blockquote.pullquote p {
+		font-family: Georgia, Gelasio, serif;
+		font-size: clamp(22px, 2.8vw, 30px);
+		line-height: 1.26;
+		max-width: 30ch;
+		margin: 0 0 0.75rem;
+	}
+	.prose blockquote.pullquote cite {
+		display: block;
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--mustard);
+		font-style: normal;
+	}
+
+	/* Two-column comparison:
+	   <div class="comparison">
+	     <div><span class="label">A</span><p>...</p></div>
+	     <div><span class="label">B</span><p>...</p></div>
+	   </div> */
+	.prose .comparison {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		border: 1px solid var(--hairline);
+	}
+	.prose .comparison > div { padding: 24px; }
+	.prose .comparison > div:first-child { background: var(--white); }
+	.prose .comparison > div:first-child .label { color: var(--muted); }
+	.prose .comparison > div:last-child { background: var(--cream); }
+	.prose .comparison > div:last-child .label { color: var(--dark-mustard); }
+	.prose .comparison p { font-size: 17px; line-height: 1.5; margin: 0.75rem 0 0; }
+
+	/* Sources: <div class="sources"><p><em>Title</em>, Author...</p></div> */
+	.prose .sources {
+		padding: 28px 0;
+		border-top: 1px solid var(--hairline);
+		border-bottom: 1px solid var(--hairline);
+	}
+	.prose .sources::before {
+		content: 'Sources';
+		display: block;
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--sage);
+		margin-bottom: 0.75rem;
+	}
+	.prose .sources p { font-size: 16px; line-height: 1.6; margin: 0; }
 
 	/* Wide reference tables. The base table.ledger style lives in
 	   shared/styles/field-and-ledger.css; everything here is the responsive
-	   behaviour that only matters in a 680px prose column.
+	   behaviour that only matters in the prose column.
 
 	   A six-column matrix cannot be a grid on a phone — at ~360px each column
 	   gets 60px, which wraps every cell to one word per line and makes the
@@ -139,7 +312,7 @@ const schema = {
 
 	   Any post using this must put data-label on every <td>. A missing one
 	   renders as a value with no label on mobile. */
-	.prose table.matrix { margin: 2rem 0; font-size: 0.9rem; }
+	.prose table.matrix { margin: 0; font-size: 0.9rem; }
 	.prose table.matrix th { font-size: 0.85rem; }
 
 	/* Mustard marks the outlier row — the system-admin tier that breaks the
@@ -164,7 +337,6 @@ const schema = {
 			display: block;
 			margin-bottom: 1.5rem;
 			border: 1px solid var(--hairline);
-			border-radius: 2px;
 			padding: 0.25rem 0;
 		}
 		.prose table.matrix tr.outlier { border-color: var(--mustard); }
@@ -177,7 +349,7 @@ const schema = {
 		}
 		.prose table.matrix td::before {
 			content: attr(data-label);
-			font-family: 'Courier New', Courier, monospace;
+			font-family: 'Courier New', Cousine, monospace;
 			font-size: 0.7rem;
 			letter-spacing: 0.04em;
 			text-transform: uppercase;
@@ -190,7 +362,7 @@ const schema = {
 			display: block;
 			background: var(--sage);
 			color: var(--cream);
-			font-family: Georgia, 'Times New Roman', serif;
+			font-family: Georgia, Gelasio, serif;
 			padding: 0.5rem 0.75rem;
 			margin-bottom: 0.35rem;
 		}
@@ -200,10 +372,9 @@ const schema = {
 	/* End-of-post resource block. Deliberately not a form: gating a one-page
 	   PDF behind an email address costs more trust than the address is worth. */
 	.prose .download {
-		margin: 3rem 0 0;
+		margin: 0;
 		padding: 1.75rem;
 		border: 1px solid var(--hairline);
-		border-radius: 2px;
 	}
 	.prose .download .label {
 		font-size: 0.75rem;
@@ -216,7 +387,6 @@ const schema = {
 		font-size: 1rem;
 		color: var(--cream);
 		background: var(--plum);
-		border-radius: 2px;
 		padding: 0.7rem 1.5rem;
 		text-decoration: none;
 	}

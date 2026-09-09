@@ -1,0 +1,63 @@
+---
+import Wordmark from './Wordmark.astro';
+
+// One footer for every main-site page (Home, About, Contact-equivalent,
+// Writing index, individual posts) — previously each page hand-rolled a
+// slightly different one (some said "Home", some "Writing", some omitted
+// the email). The brand/visual-system handoff specs one consistent footer
+// everywhere, which is also just less to maintain.
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<div class="inner">
+		<div class="left">
+			<Wordmark size={20} />
+			<a href="/writing">Writing</a>
+			<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
+		</div>
+		<p class="copyright">© {year} Jon Martin.</p>
+	</div>
+</footer>
+
+<style>
+	footer {
+		background: var(--cream);
+		border-top: 1px solid var(--hairline);
+	}
+	.inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 32px 40px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 24px;
+	}
+	.left {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 24px;
+	}
+	.left a,
+	.copyright {
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 12px;
+		color: var(--muted);
+		text-decoration: none;
+	}
+	.left a:hover {
+		color: var(--plum);
+	}
+	.copyright {
+		margin: 0;
+	}
+
+	@media (max-width: 720px) {
+		.inner {
+			padding: 24px 20px;
+		}
+	}
+</style>

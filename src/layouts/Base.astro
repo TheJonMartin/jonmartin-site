@@ -20,6 +20,10 @@ interface Props {
 	 * See src/pages/index.astro for the Person + WebSite example.
 	 */
 	schema?: Record<string, unknown> | Record<string, unknown>[];
+	/** False only on the homepage — the plum hero band directly below the
+	 * header supplies its own visual edge there, so the header's own hairline
+	 * would be a redundant second line right above it. */
+	navBordered?: boolean;
 }
 const {
 	title,
@@ -28,13 +32,15 @@ const {
 	seoTitle,
 	ogImage = '/og.png',
 	schema,
+	navBordered = true,
 } = Astro.props;
 
-// Field & Ledger tokens and base element styles. Shared verbatim with the Four
-// Laws site (src-fourlaws/layouts/Base.astro) so the two can't drift — edit
+// Field & Ledger tokens and base element styles. Shared with
+// FourLawsLayout.astro so the two can't drift — edit
 // shared/styles/field-and-ledger.css, not a copy in here.
 import '../../shared/styles/field-and-ledger.css';
 import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import { GA_MAIN } from '../../shared/analytics';
 
@@ -107,7 +113,8 @@ const headTitle = seoTitle ?? title;
 		<Analytics id={GA_MAIN} />
 	</head>
 	<body>
-		<Nav />
+		<Nav bordered={navBordered} />
 		<slot />
+		<Footer />
 	</body>
 </html>

@@ -1,19 +1,30 @@
 /*
- * Field & Ledger — the single source of truth for both sites.
+ * Field & Ledger — the single source of truth for the whole site.
  *
- * Imported by src/layouts/Base.astro (thejonmartin.com) and
- * src-fourlaws/layouts/Base.astro (fourlaws.thejonmartin.com). It lives outside
- * both srcDir trees on purpose: neither site owns it, so neither can quietly
- * drift from the other. Change a token here and both sites move together.
+ * Imported by src/layouts/Base.astro and src/layouts/FourLawsLayout.astro —
+ * both now build from this one Astro project (see docs/site-consolidation.md;
+ * this file's old comment about two separate srcDir trees predates that
+ * merge). It still lives outside src/ on purpose: no single layout owns it,
+ * so none can quietly drift from another. Change a token here and every page
+ * moves together.
+ *
+ * v2 (the "ledger grid" visual-system update, see the brand/visual-system
+ * design handoff): --hairline moved from a charcoal tint to a plum tint,
+ * --muted became a flat hex, mustard/cream got accent and on-plum variants,
+ * and two rules below were revised. Everything else in this header is
+ * unchanged from v1.
  *
  * The rules, for anything added below:
- *   - Mustard is an accent, not a color. One use per page, reserved for a
- *     genuine highlight or outlier. If two things on a page are mustard,
- *     neither reads as important.
- *   - Never pure black (#000) or pure white (#fff). Charcoal and cream are the
- *     extremes of the range.
+ *   - Mustard is an accent, not a color. Reserved for a genuine highlight or
+ *     outlier — except full-bleed color bands (hero-adjacent offer/CTA
+ *     bands), a deliberate, confirmed exception to "mustard is never a large
+ *     fill." One departure, not a precedent for more.
+ *   - Never pure black (#000). Charcoal is the dark extreme; --white exists
+ *     now for the one section that deliberately isn't cream (see the
+ *     capacity/range diagram), not as a general substitute for cream.
  *   - Dividers are hairlines. No heavy rules, no boxes-within-boxes.
- *   - Two font families, plus Courier New strictly for labels, tags, and
+ *   - Two font families, plus Courier New (Cousine as its open-source
+ *     metric-compatible fallback) strictly for labels, tags, and
  *     pull-quotes. Courier is never body copy.
  */
 
@@ -23,11 +34,27 @@
 	--mustard: #e8a93b;
 	--cream: #faf6ef;
 	--charcoal: #2e2a26;
+	--white: #ffffff;
 
-	/* Derived from --charcoal so tinted rules and muted text stay in the same
-	   family as body copy instead of drifting toward a neutral grey. */
-	--hairline: rgba(46, 42, 38, 0.15);
-	--muted: rgba(46, 42, 38, 0.7);
+	/* Accent text/border variants of mustard — mustard itself fails 4.5:1 at
+	   body size on cream, so anywhere mustard would carry small text (bar
+	   borders, "filed under" values, link hover) uses one of these instead. */
+	--dark-mustard: #a8791e;
+	/* Label text on a full mustard fill only (the offer band, the article CTA
+	   band) — mustard-on-mustard obviously doesn't work, and dark-mustard
+	   still doesn't clear contrast on mustard itself. */
+	--mustard-shade: #6b4e0f;
+
+	/* Plum-tinted, not charcoal-tinted (a v2 System Update): rules and muted
+	   text now read as part of the ink family rather than a neutral grey. */
+	--hairline: rgba(74, 51, 82, 0.2);
+	--muted: #6b6560;
+
+	/* Cream-on-plum variants for the hero/waitlist bands — same cream at
+	   different opacities rather than a second color family. */
+	--hairline-on-plum: rgba(250, 246, 239, 0.16);
+	--body-on-plum: rgba(250, 246, 239, 0.9);
+	--label-on-plum: rgba(250, 246, 239, 0.72);
 }
 
 * { box-sizing: border-box; }
@@ -38,13 +65,14 @@ body {
 	margin: 0;
 	background: var(--cream);
 	color: var(--charcoal);
-	font-family: Calibri, "Carlito", sans-serif;
-	font-size: 18px;
+	font-family: Calibri, "Carlito", Lato, sans-serif;
+	font-size: 17px;
 	line-height: 1.6;
 }
 
 h1, h2, h3 {
-	font-family: Georgia, "Times New Roman", serif;
+	font-family: Georgia, Gelasio, serif;
+	font-weight: 400;
 	color: var(--plum);
 	line-height: 1.2;
 	margin: 0;
@@ -53,7 +81,7 @@ h1, h2, h3 {
 /* Courier New's one sanctioned use: eyebrow labels, tags, and pull-quote
    attributions. Applying this to a paragraph is a design-system violation. */
 .label {
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Courier New", Cousine, monospace;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
 }
@@ -75,7 +103,7 @@ table.ledger {
 table.ledger th {
 	background: var(--sage);
 	color: var(--cream);
-	font-family: Georgia, "Times New Roman", serif;
+	font-family: Georgia, Gelasio, serif;
 	font-weight: normal;
 	text-align: left;
 	padding: 0.6rem 0.75rem;

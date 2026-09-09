@@ -1,0 +1,27 @@
+---
+// The site's first real brand mark — a deliberate, confirmed exception to
+// the Field & Ledger design system's "no iconography" rule (see the brand/
+// visual-system design handoff). Two rects: a tall plum bar and a wide
+// mustard bar, meeting at a corner — reads as an abstract "range" gauge
+// (the homepage's own thesis: a tall narrow bar is capacity, a wide bar
+// crossing it is range) without literally illustrating anything.
+//
+// Used at 26px in both site navs and 20px in the homepage footer — same
+// SVG, just a different `size`.
+interface Props {
+	size?: number;
+}
+const { size = 26 } = Astro.props;
+---
+
+<svg
+	width={size}
+	height={size}
+	viewBox="0 0 26 26"
+	xmlns="http://www.w3.org/2000/svg"
+	role="img"
+	aria-label="Jon Martin"
+>
+	<rect x="0" y="2" width="6" height="22" fill="#4A3352" />
+	<rect x="9" y="14" width="17" height="6" fill="#E8A93B" />
+</svg>

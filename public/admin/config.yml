@@ -51,6 +51,12 @@ collections:
           default: false,
         }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
+      - {
+          label: 'Filed under (optional — the article page\'s single "Filed under" value; falls back to the last tag when unset)',
+          name: "category",
+          widget: "string",
+          required: false,
+        }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "four-laws"
@@ -116,12 +122,52 @@ collections:
               name: "tagline",
               widget: "text",
             }
+          - label: "Hero metadata strip (small labels above the headline, e.g. \"Field report\", \"No. 001\")"
+            name: "heroMeta"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Mustard accent", name: "accent", widget: "boolean", default: false, required: false }
           - { label: '"Who this is for" heading', name: "whoHeading", widget: "string" }
           - label: '"Who this is for" paragraphs'
             name: "whoParagraphs"
             widget: "list"
             field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: '"Who this is for" spec table (right-hand rows, e.g. Revenue / $3-5M)'
+            name: "specTable"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Value", name: "value", widget: "string" }
+          - { label: "Offer statement (mustard band)", name: "offerStatement", widget: "text" }
+          - { label: '"Four fixes" heading', name: "fourFixesHeading", widget: "string" }
+          - label: "Four fixes (each its own numbered row)"
+            name: "fourFixes"
+            widget: "list"
+            field: { label: "Fix", name: "fix", widget: "text" }
+          - {
+              label: "Convergence line (closes the four fixes section)",
+              name: "convergenceLine",
+              widget: "text",
+            }
+          - { label: '"Distinction" section heading', name: "distinctionHeading", widget: "text" }
+          - { label: "Capacity bar-diagram label", name: "capacityLabel", widget: "string" }
+          - { label: "Capacity bar-diagram caption", name: "capacityCaption", widget: "text" }
+          - { label: "Range bar-diagram label", name: "rangeLabel", widget: "string" }
+          - { label: "Range bar-diagram caption", name: "rangeCaption", widget: "text" }
+          - { label: '"Writing" section heading', name: "writingHeading", widget: "string" }
           - { label: "Copyright year", name: "copyrightYear", widget: "number", value_type: "int" }
+
+      - name: "writing-index"
+        label: "Writing Index Page"
+        file: "src/content/pages/writing.json"
+        format: "json"
+        fields:
+          - {
+              label: "Standfirst (intro paragraph under the Writing heading)",
+              name: "standfirst",
+              widget: "text",
+            }
 
       - name: "about"
         label: "About Page"

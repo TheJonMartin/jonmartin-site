@@ -15,12 +15,21 @@
 // deliberately different — a field sharing the form's name collides on submit.
 //
 // Submissions land in Netlify → Project → Forms → waitlist.
+//
+// `variant="band"` (the homepage's plum 05/Waitlist section) swaps the boxed
+// cream-ground inputs for underline-only ones in cream-on-plum, per the brand/
+// visual-system handoff. The "Not bookable yet" kicker moved to the section's
+// own rail chip (see index.astro) — this component no longer renders its own,
+// to avoid saying it twice.
+interface Props {
+	variant?: 'default' | 'band';
+}
+const { variant = 'default' } = Astro.props;
 ---
 
-<section class="notify" id="notify">
-	<p class="label kicker">Not bookable yet</p>
+<section class="notify" id="notify" class:list={{ band: variant === 'band' }}>
 	<h2>Tell me when it's ready.</h2>
-	<p>
+	<p class="dek">
 		I'm writing the first diagnoses now. Leave your email and you'll get the
 		sample when it's finished — and the price when there is one.
 	</p>
@@ -37,14 +46,15 @@
 			<label>Leave this empty if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
 		</p>
 
-		<div class="row">
-			<label for="email">Email</label>
-			<input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com" />
-		</div>
-
-		<div class="row">
-			<label for="company">Company <span class="opt">(optional)</span></label>
-			<input type="text" id="company" name="company" autocomplete="organization" />
+		<div class="row row-pair">
+			<div class="field">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required autocomplete="email" placeholder="you@company.com" />
+			</div>
+			<div class="field">
+				<label for="company">Company <span class="opt">(optional)</span></label>
+				<input type="text" id="company" name="company" autocomplete="organization" />
+			</div>
 		</div>
 
 		<fieldset class="row">
@@ -76,12 +86,12 @@
 </section>
 
 <style>
-	.notify { padding: 3rem 0; }
-	.kicker { font-size: 0.8rem; color: var(--sage); margin: 0 0 0.5rem; }
-	h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
-	.notify > p { margin: 0 0 2rem; }
-	form { display: flex; flex-direction: column; gap: 1.5rem; }
+	.notify { max-width: 62ch; }
+	h2 { font-size: 1.4rem; margin-bottom: 1rem; }
+	.dek { margin: 0 0 2rem; }
+	form { display: flex; flex-direction: column; gap: 26px; }
 	.row { display: flex; flex-direction: column; gap: 0.4rem; }
+	.row-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
 	label, legend { font-size: 0.95rem; font-weight: bold; color: var(--charcoal); padding: 0; }
 	.opt { font-weight: normal; opacity: 0.65; }
 	input[type='email'],
@@ -93,8 +103,7 @@
 		font-size: 1rem;
 		color: var(--charcoal);
 		background: #fffdf9;
-		border: 1px solid rgba(46, 42, 38, 0.3);
-		border-radius: 2px;
+		border: 1px solid rgba(74, 51, 82, 0.3);
 	}
 	input:focus-visible,
 	textarea:focus-visible {
@@ -103,29 +112,68 @@
 		border-color: var(--plum);
 	}
 	textarea { resize: vertical; line-height: 1.5; }
-	fieldset { border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+	fieldset { border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
 	.radio {
-		display: flex;
-		gap: 0.6rem;
-		align-items: flex-start;
+		display: grid;
+		grid-template-columns: 20px minmax(0, 1fr);
+		gap: 14px;
+		align-items: start;
 		font-size: 0.95rem;
 		font-weight: normal;
 		line-height: 1.45;
 		cursor: pointer;
+		padding: 14px 0;
+		border-top: 1px solid var(--hairline);
 	}
-	.radio input { margin-top: 0.3rem; accent-color: var(--plum); }
+	.radio input { margin-top: 5px; accent-color: var(--plum); }
 	button {
 		align-self: flex-start;
-		font: inherit;
-		font-size: 1rem;
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 0.16em;
 		color: var(--cream);
 		background: var(--plum);
 		border: none;
-		border-radius: 2px;
-		padding: 0.7rem 1.5rem;
+		padding: 16px 30px;
 		cursor: pointer;
 	}
 	button:hover { background: #3c2a43; }
 	button:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 2px; }
 	.hp { position: absolute; left: -9999px; }
+
+	/* ---- band variant: cream text on plum, underline-only inputs ---- */
+	.notify.band h2 { color: var(--cream); }
+	.notify.band .dek { color: var(--body-on-plum); }
+	.notify.band label,
+	.notify.band legend { color: var(--label-on-plum); font-family: 'Courier New', Cousine, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; font-weight: normal; }
+	.notify.band .opt { color: var(--label-on-plum); }
+	.notify.band .radio { color: var(--body-on-plum); border-top-color: var(--hairline-on-plum); }
+	.notify.band .radio input { accent-color: var(--mustard); }
+	.notify.band input[type='email'],
+	.notify.band input[type='text'] {
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid var(--hairline-on-plum);
+		padding: 9px 0;
+		color: var(--cream);
+	}
+	.notify.band textarea {
+		background: rgba(250, 246, 239, 0.06);
+		border: 1px solid rgba(250, 246, 239, 0.3);
+		padding: 12px;
+		color: var(--cream);
+	}
+	.notify.band input:focus-visible,
+	.notify.band textarea:focus-visible {
+		outline: none;
+		border-color: var(--mustard);
+	}
+	.notify.band button {
+		background: var(--mustard);
+		color: var(--plum);
+	}
+	.notify.band button:hover {
+		background: var(--cream);
+	}
 </style>

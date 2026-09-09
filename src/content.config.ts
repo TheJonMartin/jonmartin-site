@@ -25,6 +25,12 @@ const writing = defineCollection({
 		updatedDate: z.coerce.date().optional(),
 		draft: z.boolean().default(false),
 		tags: z.array(z.string()).default([]),
+
+		// The article template's single "filed under" value (see
+		// src/lib/writing.ts's filedUnder helper). Optional — falls back to the
+		// last tag when unset, so existing posts don't all need editing just to
+		// pick up the new template.
+		category: z.string().optional(),
 	}),
 });
 
