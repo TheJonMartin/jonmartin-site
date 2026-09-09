@@ -1,23 +1,23 @@
 ---
+import { fourLawsGroups } from '../lib/four-laws-links';
+
 // The one nav for the whole site — main pages and Four Laws pages alike.
 //
-// Four Laws used to have its own separate, grouped Explore/Tools/Reference
-// nav (FourLawsNav.astro, now deleted) carrying all thirteen content pages
-// and three tools in the page header itself. On a phone that was a screen
-// and a half of links before any actual content, and its big serif
-// "Four Laws of Complex System Design" wordmark linked to this site's
-// homepage — a jarring mismatch, since that page is about Jon's consulting,
-// not Four Laws. Confusing on both counts.
-//
-// Fixed by going the other direction: one slim nav everywhere, and the full
-// Four Laws link list moved to FourLawsFooter.astro — still fully reachable
-// on every Four Laws page, just after the content instead of blocking it.
+// "Four Laws of Complex System Design" is a dropdown (native <details>/
+// <summary>, no JavaScript) rather than a plain link, so its full
+// Explore/Tools/Reference link list (see src/lib/four-laws-links.ts, shared
+// with FourLawsFooter.astro's sitemap-style repeat of the same list) is
+// reachable from every page on the site with one click, not just from the
+// bottom of a Four Laws page. <details> was chosen over a hover menu on
+// purpose: hover doesn't exist on touch devices, so a menu that only opens
+// on hover needs separate JS-driven tap handling to work on mobile at all.
+// <details> opens on click/tap identically everywhere, needs no JS, and
+// keyboard users get Enter/Space-to-toggle for free from the browser.
 //
 // `section="four-laws"` (passed only by FourLawsLayout.astro) highlights the
-// "Four Laws of Complex System Design" link as the current section even
-// though it points at one specific page (the Full Reference) rather than
-// whichever Four Laws page you're actually on — same "current section, not
-// literally current page" treatment "Writing" already gets below.
+// summary as the current section even though it's not literally one single
+// page — same "current section, not literally current page" treatment
+// "Writing" already gets below.
 interface Props {
 	section?: 'four-laws';
 }
@@ -54,13 +54,27 @@ const isCurrent = (href: string) => {
 						{link.text}
 					</a>
 				))}
-				<a
-					class="crosssite"
-					href="/four-laws-complex-system-design-full"
-					aria-current={section === 'four-laws' ? 'page' : undefined}
-				>
-					Four Laws of Complex System Design
-				</a>
+				<details class="four-laws">
+					<summary aria-current={section === 'four-laws' ? 'page' : undefined}>
+						Four Laws of Complex System Design
+					</summary>
+					<div class="panel">
+						{fourLawsGroups.map((group) => (
+							<div class="group">
+								<span class="label group-label">{group.label}</span>
+								<ul>
+									{group.links.map((link) => (
+										<li>
+											<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
+												{link.text}
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+				</details>
 			</div>
 		</div>
 	</nav>
@@ -84,11 +98,20 @@ const isCurrent = (href: string) => {
 
 	header {
 		border-bottom: 1px solid var(--hairline);
+		z-index: 5;
 	}
+	/* position: relative here (not on the narrow .four-laws trigger itself)
+	   is what the dropdown panel below anchors to. nav's own max-width keeps
+	   it from ever exceeding the viewport, which is what keeps the panel
+	   from overflowing off-screen on narrow viewports — anchoring to the
+	   trigger element instead (an earlier version of this) let the panel's
+	   left edge run off the left of the screen on mobile, since the trigger
+	   itself isn't as wide as the panel that needs to hang off it. */
 	nav {
 		max-width: 680px;
 		margin: 0 auto;
 		padding: 1.25rem 1.5rem;
+		position: relative;
 	}
 
 	.masthead {
@@ -111,32 +134,96 @@ const isCurrent = (href: string) => {
 		align-items: baseline;
 		gap: 0.5rem 1.5rem;
 	}
-	.links a {
+	.links > a {
 		font-size: 0.95rem;
 		text-decoration: none;
 		border-bottom: 1px solid transparent;
 	}
-	.links a:hover {
+	.links > a:hover {
 		border-bottom-color: var(--plum);
 	}
 	/* Mustard's single appearance in the chrome: it marks where you are, which
 	   is a genuine outlier among a list of places you aren't. */
-	.links a[aria-current='page'] {
+	.links > a[aria-current='page'] {
 		border-bottom-color: var(--mustard);
 	}
 
-	/* A different kind of destination than "Writing" — the whole Four Laws
-	   reference, not another page in the same register — so it's set apart
-	   with a hairline rule rather than folded into the same unbroken list. */
-	.crosssite {
+	/* A different kind of destination than "Writing" — a dropdown onto the
+	   whole Four Laws reference, not another page in the same register — so
+	   it's set apart with a hairline rule rather than folded into the same
+	   unbroken list. */
+	.four-laws {
 		padding-left: 1.5rem;
 		border-left: 1px solid var(--hairline);
-		color: var(--sage);
 	}
-	.crosssite:hover {
+	summary {
+		font-size: 0.95rem;
+		color: var(--sage);
+		cursor: pointer;
+		list-style: none;
+		border-bottom: 1px solid transparent;
+	}
+	/* Hide the native disclosure triangle (Safari/Chrome use the pseudo-
+	   element below; list-style:none above handles Firefox) so the custom
+	   chevron is the only marker, consistent across browsers. */
+	summary::-webkit-details-marker {
+		display: none;
+	}
+	summary::after {
+		content: '▾';
+		display: inline-block;
+		margin-left: 0.35em;
+		font-size: 0.8em;
+		transition: transform 0.15s ease;
+	}
+	details[open] summary::after {
+		transform: rotate(180deg);
+	}
+	summary:hover {
 		border-bottom-color: var(--sage);
 	}
-	.crosssite[aria-current='page'] {
+	summary[aria-current='page'] {
+		border-bottom-color: var(--mustard);
+	}
+
+	.panel {
+		position: absolute;
+		top: calc(100% + 0.75rem);
+		right: 1.5rem;
+		width: min(calc(100vw - 3rem), 30rem);
+		background: var(--cream);
+		border: 1px solid var(--hairline);
+		border-radius: 4px;
+		padding: 1.25rem;
+		box-shadow: 0 4px 16px rgba(46, 42, 38, 0.12);
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+	.group-label {
+		font-size: 0.72rem;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	.panel ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+	.panel li a {
+		font-size: 0.9rem;
+		color: var(--charcoal);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	.panel li a:hover {
+		border-bottom-color: var(--plum);
+	}
+	.panel li a[aria-current='page'] {
 		border-bottom-color: var(--mustard);
 	}
 </style>

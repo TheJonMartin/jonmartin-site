@@ -1,45 +1,13 @@
 ---
-// The full Explore/Tools/Reference link list used to live in the page
-// header (FourLawsNav.astro), repeated above every single piece of content
-// — a screen and a half of links on a phone before you reached anything to
-// read. Moved here instead: still fully reachable on every Four Laws page,
-// just after the content rather than blocking it. See Nav.astro for the
-// slim replacement header.
-//
-// Kept as a flat data structure rather than hand-written markup so adding a
-// page is a matter of editing this list, not hunting through nested <ul>s.
-const groups: { label: string; links: { href: string; text: string }[] }[] = [
-	{
-		label: 'Explore',
-		links: [
-			{ href: '/four-laws-flow-and-constraints', text: 'Flow Deck' },
-			{ href: '/conways-law-revops-team-structure', text: "RevOps & Conway's Law" },
-			{ href: '/conways-law-ai-agents-revops', text: "AI Agents & Conway's Law" },
-			{ href: '/stakeholder-decision-bottlenecks', text: 'Stakeholder Decision Stalls' },
-			{ href: '/wip-limits-vs-theory-of-constraints', text: 'WIP Limits vs. ToC' },
-			{ href: '/vsm-ai-system-4', text: 'AI, System 4 & VSM' },
-			{ href: '/applied-examples', text: 'More Applied Examples' },
-		],
-	},
-	{
-		label: 'Tools',
-		links: [
-			{ href: '/part8-flow-diagnostic', text: 'Diagnostic Tool' },
-			{ href: '/flow-formula-calculator', text: 'Calculator' },
-			{ href: '/stakeholder-decision-checklist', text: 'Decision Stall Checklist' },
-		],
-	},
-	{
-		label: 'Reference',
-		links: [
-			{ href: '/four-laws-complex-system-design-full', text: 'Full Reference' },
-			{ href: '/glossary', text: 'Glossary' },
-			{ href: '/faq', text: 'FAQ' },
-			{ href: '/contact', text: 'Contact' },
-		],
-	},
-];
+import { fourLawsGroups } from '../lib/four-laws-links';
 
+// The full Explore/Tools/Reference link list is also reachable from every
+// page via the "Four Laws of Complex System Design" dropdown in Nav.astro
+// (both read from the same src/lib/four-laws-links.ts). Repeated here as a
+// plain, always-visible sitemap at the bottom of every Four Laws page too —
+// standard practice, and useful for anyone who'd rather scan a full list
+// than open a menu.
+//
 // build.format 'file' means Astro.url.pathname is e.g. '/glossary.html' —
 // strip it, same as Nav.astro, or aria-current never matches.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
@@ -60,7 +28,7 @@ const year = new Date().getFullYear();
 	<hr class="hairline" />
 	<div class="inner">
 		<nav aria-label="Four Laws sections">
-			{groups.map((group) => (
+			{fourLawsGroups.map((group) => (
 				<div class="group">
 					<span class="label group-label">{group.label}</span>
 					<ul>
