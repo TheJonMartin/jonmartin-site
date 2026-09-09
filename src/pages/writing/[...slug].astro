@@ -14,7 +14,7 @@ const { Content } = await render(post);
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-const canonical = new URL(`/writing/${post.id}/`, Astro.site).href;
+const canonical = new URL(`/writing/${post.id}`, Astro.site).href;
 
 // BlogPosting rather than Article: it's the narrower type, and the narrower
 // type is always the better answer when it fits. datePublished/dateModified are
@@ -47,7 +47,7 @@ const schema = {
 	<main id="main">
 		<article>
 			<header class="head">
-				<p class="label kicker"><a href="/writing/">Writing</a></p>
+				<p class="label kicker"><a href="/writing">Writing</a></p>
 				<h1>{post.data.title}</h1>
 				<p class="label date">
 					{fmt(post.data.pubDate)}
@@ -69,7 +69,7 @@ const schema = {
 		<hr class="hairline" />
 
 		<footer>
-			<p><a href="/writing/">&larr; All writing</a></p>
+			<p><a href="/writing">&larr; All writing</a></p>
 			<p class="copyright">© 2026 Jon Martin.</p>
 		</footer>
 	</main>

@@ -26,7 +26,7 @@ export const GET: APIRoute = async ({ site }) => {
 
 	const items = posts
 		.map((post) => {
-			const url = new URL(`/writing/${post.id}/`, site).href;
+			const url = new URL(`/writing/${post.id}`, site).href;
 			return `		<item>
 			<title>${esc(post.data.title)}</title>
 			<link>${url}</link>
@@ -45,7 +45,7 @@ export const GET: APIRoute = async ({ site }) => {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Jon Martin — Writing</title>
-		<link>${new URL('/writing/', site).href}</link>
+		<link>${new URL('/writing', site).href}</link>
 		<atom:link href="${new URL('/rss.xml', site).href}" rel="self" type="application/rss+xml" />
 		<description>Notes on org design, systems, and why the things you built keep breaking.</description>
 		<language>en-us</language>

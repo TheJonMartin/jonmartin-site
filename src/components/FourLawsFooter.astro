@@ -1,12 +1,12 @@
 ---
-// The cross-domain link back to thejonmartin.com also lives in the nav
-// (Nav.astro's .crosssite link) so it's reachable from every page, not just
-// after scrolling to the bottom. It stays here too, with a name attached
-// ("Written by Jon Martin"), as the sign-off a reader sees after finishing
-// the material — nav gets you there quickly, footer closes the piece.
+// "Written by Jon Martin" now links to /about rather than the site root —
+// from the two-site era, this used to be the cross-domain jump back to
+// thejonmartin.com; now it's the same site, so a bare link to "/" would be a
+// no-op. /about is the more useful destination a reader who wants to know
+// who wrote this would actually want.
 //
-// The sign-off below matches the main site's exactly. A longer rights notice
-// used to trail this line and nothing on thejonmartin.com — two different
+// The sign-off matches the main site's exactly. A longer rights notice used
+// to trail this line and nothing on thejonmartin.com — two different
 // copyright notices across one brand read as two different operations.
 //
 // Keep notes like this in the frontmatter, not in an HTML comment: Astro emits
@@ -22,7 +22,7 @@ const year = new Date().getFullYear();
 			Four Laws of Complex System Design &copy; {year} Jon Martin.
 		</p>
 		<p class="crosslink">
-			Written by <a href="https://thejonmartin.com">Jon Martin</a>.
+			Written by <a href="/about">Jon Martin</a>.
 		</p>
 	</div>
 </footer>

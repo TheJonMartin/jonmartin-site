@@ -18,8 +18,12 @@ const { title, description } = home;
 //
 // `knowsAbout` and `sameAs` are the two fields that do real work here: the first
 // is the topical claim, the second is how an engine reconciles this Person with
-// the same person elsewhere on the web. Add profile URLs to sameAs as they
-// become worth claiming.
+// the same person elsewhere on the web. sameAs is for genuinely separate
+// identities (a LinkedIn profile, a GitHub account) — the Four Laws material
+// used to be listed here back when it was a separate domain
+// (fourlaws.thejonmartin.com), but it's just pages on this site now, so it
+// isn't a distinct identity to reconcile anymore. Add real external profile
+// URLs here as they become worth claiming.
 const schema = {
 	'@context': 'https://schema.org',
 	'@graph': [
@@ -41,7 +45,6 @@ const schema = {
 				"Conway's Law",
 				"Ashby's Law of Requisite Variety",
 			],
-			sameAs: ['https://fourlaws.thejonmartin.com/'],
 		},
 		{
 			'@type': 'WebSite',
@@ -85,7 +88,7 @@ const schema = {
 
 		<footer>
 			<p class="links">
-				<a href="/writing/">Writing</a>
+				<a href="/writing">Writing</a>
 				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
 			</p>
 			<p class="copyright">© {home.copyrightYear} Jon Martin.</p>

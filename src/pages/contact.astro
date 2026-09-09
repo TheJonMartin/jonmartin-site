@@ -1,24 +1,24 @@
 ---
-import Base from '../layouts/Base.astro';
+import FourLawsLayout from '../layouts/FourLawsLayout.astro';
 
 // Hand-built rather than a collection entry: this page is a form, and a form is
 // markup and behaviour, not prose. Everything else in the reference is markdown.
 //
-// Netlify detects forms from the built HTML at deploy time, which works with a
-// static build provided two things are true:
-//   1. Forms are ENABLED on the Four Laws Netlify project (a separate project
-//      from jonmartin-mvp, so enabling it there does nothing here).
-//   2. The hidden form-name input matches the form's name attribute.
+// Netlify detects forms from the built HTML at deploy time. Forms are already
+// enabled on jonmartin-mvp (done when the main site's own waitlist form was
+// wired up), so nothing extra needed here beyond the hidden form-name input
+// matching the form's name attribute.
 //
-// The form is named "fourlaws-contact", deliberately distinct from the main
-// site's "waitlist" form. They're different projects so the names can't actually
-// collide, but submissions landing in a bucket named after the site they came
-// from is worth more than the two seconds saved reusing a name.
+// The form is named "fourlaws-contact", distinct from the main site's
+// "waitlist" form — this used to just be good hygiene (they were different
+// Netlify projects, so the names couldn't actually collide); now that both
+// forms live in the same project, the distinct name is what keeps their
+// submissions in separate buckets in the Netlify dashboard.
 //
-// Submissions land in Netlify → the Four Laws project → Forms → fourlaws-contact.
+// Submissions land in Netlify → jonmartin-mvp → Forms → fourlaws-contact.
 ---
 
-<Base
+<FourLawsLayout
 	title="Contact"
 	seoTitle="Contact Jon Martin | Four Laws of Complex System Design"
 	description="Get in touch about the Four Laws framework, a speaking or consulting engagement, or a correction to the site — a short form, no account required."
@@ -35,7 +35,7 @@ import Base from '../layouts/Base.astro';
 	<form
 		name="fourlaws-contact"
 		method="POST"
-		action="/thanks"
+		action="/thanks-contact"
 		data-netlify="true"
 		netlify-honeypot="bot-field"
 	>
@@ -66,7 +66,7 @@ import Base from '../layouts/Base.astro';
 
 		<button type="submit">Send message &rarr;</button>
 	</form>
-</Base>
+</FourLawsLayout>
 
 <style>
 	.eyebrow { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.4rem; }

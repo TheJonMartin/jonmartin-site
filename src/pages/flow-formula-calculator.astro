@@ -1,5 +1,5 @@
 ---
-import Base from '../layouts/Base.astro';
+import FourLawsLayout from '../layouts/FourLawsLayout.astro';
 import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 
 // Ported from the original inline <script> on fourlaws.netlify.app, captured in
@@ -12,7 +12,7 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 // on other pages of this site and in the diagnostic tool.
 ---
 
-<Base
+<FourLawsLayout
 	title="Flow Formula Calculator"
 	description="Interactive calculators for Little's Law, Kingman's formula, and Weinberg's context-switching numbers — plug in engagement numbers to see what they predict."
 >
@@ -160,7 +160,7 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 	</p>
 
 	<CrossSiteCTA />
-</Base>
+</FourLawsLayout>
 
 <script>
 	// ---------- Little's Law ----------

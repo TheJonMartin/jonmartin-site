@@ -1,6 +1,7 @@
 /*
- * JSON-LD builders for the two Four Laws pages whose shape search engines have
- * a specific vocabulary for.
+ * JSON-LD builders for the Four Laws content pages whose shape search engines
+ * have a specific vocabulary for. Lives at src/lib/schema.ts — shared with the
+ * rest of the (now single) site rather than a separate source tree.
  *
  * These parse the page's own markdown rather than duplicating the content in
  * front matter. That's the whole point: a schema block maintained by hand
@@ -143,7 +144,10 @@ export function articleSchema(title: string, description: string, url: string) {
 		url,
 		author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
 		publisher: { '@id': 'https://thejonmartin.com/#jon' },
-		isPartOf: { '@id': 'https://fourlaws.thejonmartin.com/#website' },
+		// Was its own WebSite entity's #website id back when this was a separate
+		// domain (fourlaws.thejonmartin.com). Now these pages are part of the one
+		// WebSite entity declared on the homepage (src/pages/index.astro).
+		isPartOf: { '@id': 'https://thejonmartin.com/#website' },
 	};
 }
 

@@ -123,7 +123,7 @@ This is a starting position, not a deliverable. Four things I'd do with it on a 
 
 None of the four matter if nobody on your side owns the plan. A communication matrix with no named owner degrades into whoever happens to be writing the status doc that week — which is exactly the failure mode it was built to prevent.
 
-There's a related failure worth knowing about: the decisions you route *to* executives form a queue, and queues have math. I wrote about that separately in [why executive decisions stall on client projects](https://fourlaws.thejonmartin.com/stakeholder-decision-bottlenecks) — Little's Law and Kingman's formula applied to the steering committee. Getting the communication plan right and still missing the queueing problem is a common way to be surprised on schedule.
+There's a related failure worth knowing about: the decisions you route *to* executives form a queue, and queues have math. I wrote about that separately in [why executive decisions stall on client projects](/stakeholder-decision-bottlenecks) — Little's Law and Kingman's formula applied to the steering committee. Getting the communication plan right and still missing the queueing problem is a common way to be surprised on schedule.
 
 Seniority tells you who to invite. It doesn't tell you what to say.
 

@@ -1,31 +1,34 @@
 ---
-// This site is two pages deep (home, writing), so it doesn't need Four Laws'
-// grouped multi-section nav — a single row is enough. Structure and class
-// names still mirror src-fourlaws/components/Nav.astro (skip link, hairline
-// header, wordmark) so the two sites read as one family rather than two
-// unrelated designs.
+// Main-page nav: home, writing, about. Four Laws' own content (thirteen
+// pages, three tools) has a separate, grouped nav — see FourLawsNav.astro —
+// used only on those pages, since a flat single row doesn't scale to that
+// much material. Structure and class names still mirror FourLawsNav.astro
+// (skip link, hairline header, wordmark) so the two read as one family
+// rather than two unrelated designs, even though only one of them appears on
+// any given page.
 //
-// The link to Four Laws is the cross-site jump: this site and
-// fourlaws.thejonmartin.com are both "thejonmartin.com" in the reader's head
-// even though they're two Netlify projects under the hood, so getting from
-// one to the other should take one click from any page, not just a footer
-// link on the far side. Four Laws' own nav carries the matching link back —
-// see src-fourlaws/components/Nav.astro.
+// The link to Four Laws goes to the Full Reference — the natural deep-dive
+// entry point into that material (same page the About page's "Where the
+// framework comes from" section links to). It's visually set apart with a
+// hairline rule because it's a different kind of destination than "Writing"
+// — a deep reference document, not another page in the same register.
 const links: { href: string; text: string }[] = [
-	{ href: '/writing/', text: 'Writing' },
-	{ href: '/about/', text: 'About' },
+	{ href: '/writing', text: 'Writing' },
+	{ href: '/about', text: 'About' },
 ];
 
-const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+// build.format 'file' (astro.config.mjs) means Astro.url.pathname here is
+// e.g. '/writing.html' — strip it the same way FourLawsNav.astro and
+// Base.astro's canonical logic do, or aria-current never matches.
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
 // Writing needs prefix matching because individual posts live beneath it and
 // should still mark the section as current. About is a single page, so an exact
 // match is correct — and prefix-matching a one-page section is how you end up
 // highlighting it on /about-something-else later.
 const isCurrent = (href: string) => {
-	const target = href.replace(/\/$/, '');
-	if (target === '/writing') return path === '/writing' || path.startsWith('/writing/');
-	return path === target;
+	if (href === '/writing') return path === '/writing' || path.startsWith('/writing/');
+	return path === href;
 };
 ---
 
@@ -41,7 +44,7 @@ const isCurrent = (href: string) => {
 						{link.text}
 					</a>
 				))}
-				<a class="crosssite" href="https://fourlaws.thejonmartin.com">
+				<a class="crosssite" href="/four-laws-complex-system-design-full">
 					Four Laws of Complex System Design
 				</a>
 			</div>
@@ -108,9 +111,10 @@ const isCurrent = (href: string) => {
 		border-bottom-color: var(--mustard);
 	}
 
-	/* The cross-site link is a different kind of destination than "Writing" —
-	   a whole other reference site, not another page here — so it's set apart
-	   with a hairline rule rather than folded into the same unbroken list. */
+	/* A different kind of destination than "Writing" — a deep reference
+	   document with its own grouped nav on the far side of it, not another
+	   page in the same register — so it's set apart with a hairline rule
+	   rather than folded into the same unbroken list. */
 	.crosssite {
 		padding-left: 1.5rem;
 		border-left: 1px solid var(--hairline);

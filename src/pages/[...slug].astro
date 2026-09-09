@@ -1,14 +1,14 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Base from '../layouts/Base.astro';
+import FourLawsLayout from '../layouts/FourLawsLayout.astro';
 import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 import { articleSchema, faqSchema, glossarySchema } from '../lib/schema';
 
-// One route for every markdown page in the collection. The entry id is the
-// filename without extension, which is also the URL — see the note in
-// src-fourlaws/content.config.ts about why those are deliberately the same.
+// One route for every markdown page in the fourLaws collection. The entry id
+// is the filename without extension, which is also the URL — see the note in
+// src/content.config.ts about why those are deliberately the same.
 export async function getStaticPaths() {
-	const pages = await getCollection('pages', ({ data }) => !data.draft);
+	const pages = await getCollection('fourLaws', ({ data }) => !data.draft);
 	return pages.map((page) => ({
 		params: { slug: page.id },
 		props: { page },
@@ -41,7 +41,7 @@ if (page.id === 'faq') {
 const showCTA = page.data.group !== 'meta';
 ---
 
-<Base
+<FourLawsLayout
 	title={page.data.title}
 	seoTitle={page.data.seoTitle}
 	description={page.data.description}
@@ -54,7 +54,7 @@ const showCTA = page.data.group !== 'meta';
 	</article>
 
 	{showCTA && <CrossSiteCTA />}
-</Base>
+</FourLawsLayout>
 
 <style>
 	.eyebrow {

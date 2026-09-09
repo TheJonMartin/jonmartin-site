@@ -20,12 +20,12 @@ const fmt = (d: Date) =>
 				{posts.map((post) => (
 					<li>
 						<p class="label date">{fmt(post.data.pubDate)}</p>
-						<h2><a href={`/writing/${post.id}/`}>{post.data.title}</a></h2>
+						<h2><a href={`/writing/${post.id}`}>{post.data.title}</a></h2>
 						<p class="desc">{post.data.description}</p>
 					</li>
 				))}
 			</ul>
-			<p class="all"><a href="/writing/">All writing &rarr;</a></p>
+			<p class="all"><a href="/writing">All writing &rarr;</a></p>
 		</section>
 	)
 }

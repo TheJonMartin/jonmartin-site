@@ -6,6 +6,11 @@
 // Kept as a flat data structure rather than hand-written markup so that porting
 // the remaining pages is a matter of editing this list, not hunting through
 // nested <ul>s in every layout.
+//
+// One deliberate change from the two-site era: the old .crosssite link to
+// thejonmartin.com is gone. This nav now lives on thejonmartin.com itself, so
+// that link and the wordmark below would point at the same place — the
+// wordmark alone covers "take me home" now.
 const groups: { label: string; links: { href: string; text: string }[] }[] = [
 	{
 		label: 'Explore',
@@ -49,7 +54,6 @@ const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 			<a class="wordmark" href="/">Four Laws of Complex System Design</a>
 			<div class="masthead-links">
 				<a class="full-ref" href="/four-laws-complex-system-design-full">Full Reference</a>
-				<a class="crosssite" href="https://thejonmartin.com">thejonmartin.com</a>
 			</div>
 		</div>
 
@@ -118,20 +122,6 @@ const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 	}
 	.full-ref {
 		font-size: 0.95rem;
-	}
-	/* The cross-site link back to thejonmartin.com used to live only in the
-	   footer (see Footer.astro) so a reader would finish the material before
-	   being pointed at the offer. It's in the nav now too, on request, so the
-	   two sites are reachable from each other on every page, not just after
-	   scrolling to the bottom of one. */
-	.crosssite {
-		font-size: 0.95rem;
-		color: var(--sage);
-		text-decoration: none;
-		border-bottom: 1px solid transparent;
-	}
-	.crosssite:hover {
-		border-bottom-color: var(--sage);
 	}
 
 	.groups {

@@ -53,6 +53,51 @@ collections:
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "four-laws"
+    label: "Four Laws"
+    folder: "src/content/four-laws"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "SEO title (optional — used verbatim, no site-name suffix added)",
+          name: "seoTitle",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Nav group",
+          name: "group",
+          widget: "select",
+          options: ["reference", "explore", "meta"],
+          hint: "Reference = Full Reference and its companions (glossary, FAQ). Explore = the standalone applied essays. Meta isn't used by any page today — the one page that was meta (About) now lives on the main site's own /about.",
+        }
+      - {
+          label: "Sort order within its group",
+          name: "order",
+          widget: "number",
+          value_type: "int",
+          default: 100,
+          hint: "Sparse numbering (10, 20, 30...) so a page can be slotted between two others without renumbering the whole set.",
+        }
+      - {
+          label: "Draft (keeps it off the published site)",
+          name: "draft",
+          widget: "boolean",
+          default: false,
+        }
+      - {
+          label: "Updated date (optional)",
+          name: "updatedDate",
+          widget: "datetime",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "pages"
     label: "Pages"
     files:

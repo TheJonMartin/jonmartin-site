@@ -1,9 +1,36 @@
 # Old HubSpot URLs. Order matters — Netlify stops at the first match.
 # The blog now lives at /writing, so legacy /blog links land there rather than
 # on the homepage — closer to what the visitor was actually looking for.
+#
+# /contact used to redirect here too, to the homepage's #notify anchor — that
+# was fine when there was no real contact page. The Four Laws site merge
+# (see docs/site-consolidation.md) added a real one at /contact, so that rule
+# was removed rather than silently shadowing the new page.
 
-/contact             /#notify    301
-/blog                /writing/   301
-/blog/*              /writing/   301
+/blog                /writing    301
+/blog/*               /writing   301
 /starter-package     /           301
 /premium-package     /           301
+
+# Site-consolidation merge (Four Laws + main site into one Astro project,
+# build.format switched from 'directory' to 'file' sitewide — see
+# docs/site-consolidation.md). This site's own pages used to serve with a
+# trailing slash (/writing/, /writing/<slug>/, /about/); anyone with an old
+# link, bookmark, or search-indexed URL in that form should still land
+# correctly rather than 404. Four Laws' own URLs never had a trailing slash —
+# that's exactly what this whole merge was careful to preserve — so they need
+# no equivalent rule here.
+#
+# Individual posts (/writing/<slug>/) deliberately have NO explicit rule
+# below: Netlify's splat (*) can only sit at the end of a pattern, so
+# "/writing/*/ -> /writing/:splat" isn't expressible as a single working rule
+# — it would just echo the trailing slash straight back. Relying instead on
+# Netlify's documented pretty-URL normalization (a request for
+# /writing/foo/ falls through to the /writing/foo.html asset the same way
+# /writing/foo does) — confirm this actually holds on the real deploy before
+# trusting it; if it doesn't, this needs Netlify Edge Functions or one
+# explicit rule per post rather than a guessed-at generic pattern.
+/writing/             /writing    301
+/about/               /about      301
+/contact/             /contact    301
+/thanks/              /thanks     301

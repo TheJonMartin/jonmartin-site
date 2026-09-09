@@ -9,9 +9,6 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "dev:fourlaws": "astro dev --config astro.config.fourlaws.mjs",
-    "build:fourlaws": "astro build --config astro.config.fourlaws.mjs",
-    "preview:fourlaws": "astro preview --config astro.config.fourlaws.mjs",
     "cms": "npx decap-server"
   },
   "dependencies": {
