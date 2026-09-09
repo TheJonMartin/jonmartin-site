@@ -29,19 +29,23 @@ export async function listStaticAssetRoutes(distDir) {
 }
 
 // Astro's static output shape depends on `build.format` in the site's astro
-// config. The main site uses the default 'directory' format (every route is
-// <route>/index.html, trailing slash in URLs). Four Laws uses 'file'
-// (<route>.html served slash-less, root at index.html) because its URLs were
-// frozen before outreach links went out — see astro.config.fourlaws.mjs.
+// config. 'file' (astro.config.mjs, sitewide since the site-consolidation —
+// see docs/site-consolidation.md) emits <route>.html served slash-less,
+// including 404.html — Base.astro/FourLawsLayout.astro strip the .html for
+// canonical purposes exactly like every other page, so 404 needs no special
+// case here either. 'directory' (Astro's default, kept for any future site
+// this scanner might cover) emits <route>/index.html with a trailing slash,
+// except 404.html which static hosts require at that exact top-level path
+// regardless of format.
 function filePathToRoute(distDir, filePath, urlFormat) {
 	let rel = path.relative(distDir, filePath).replace(/\\/g, '/');
-	if (rel === '404.html') return '/404.html';
 
 	if (urlFormat === 'file') {
 		if (rel === 'index.html') return '/';
 		return '/' + rel.replace(/\.html$/, '');
 	}
 
+	if (rel === '404.html') return '/404';
 	if (rel === 'index.html') return '/';
 	if (rel.endsWith('/index.html')) rel = rel.slice(0, -'index.html'.length);
 	else rel = rel.replace(/\.html$/, '/');
@@ -52,7 +56,7 @@ function filePathToRoute(distDir, filePath, urlFormat) {
 // site's own convention (see Base.astro in each source tree).
 function expectedCanonicalFor(route, siteUrl, urlFormat) {
 	if (urlFormat === 'file') {
-		if (route === '/' || route === '/404.html') return new URL(route, siteUrl).href.replace(/\/$/, '');
+		if (route === '/') return new URL(route, siteUrl).href.replace(/\/$/, '');
 		return new URL(route, siteUrl).href;
 	}
 	return new URL(route, siteUrl).href;

@@ -19,19 +19,22 @@ export function buildTodoFindings(todoMarkers) {
 	);
 }
 
-export function runContentGapRules(pages, { config, writingPosts }) {
+export function runContentGapRules(pages, { config, writingPosts, fourLawsPosts = [] }) {
 	const findings = [];
 
 	// Topic coverage: tags used across published posts vs. the target list.
 	const publishedPosts = writingPosts.filter((p) => !p.draft);
 	const usedTags = new Set(publishedPosts.flatMap((p) => p.tags.map((t) => t.toLowerCase())));
 	const uncovered = config.targetTopics.filter((topic) => {
-		const words = topic.toLowerCase().split(/[\s&/-]+/).filter(Boolean);
-		return ![...usedTags].some((tag) => words.some((w) => tag.includes(w) || w.includes(tag)));
+		const words = topic.name.toLowerCase().split(/[\s&/-]+/).filter(Boolean);
+		const aliases = (topic.aliases ?? []).map((a) => a.toLowerCase());
+		return ![...usedTags].some(
+			(tag) => aliases.includes(tag) || words.some((w) => tag.includes(w) || w.includes(tag))
+		);
 	});
 	if (uncovered.length > 0) {
 		findings.push(finding('topic-gaps', 'P2', null, 'Target topics with no published post',
-			`No post touches: ${uncovered.join(', ')}.`,
+			`No post touches: ${uncovered.map((t) => t.name).join(', ')}.`,
 			'Not urgent individually, but worth keeping on the writing backlog so coverage doesn\'t skew entirely toward whatever\'s top of mind.'));
 	}
 
@@ -47,10 +50,14 @@ export function runContentGapRules(pages, { config, writingPosts }) {
 		}
 	}
 
-	// Drafts sitting unpublished.
-	const drafts = writingPosts.filter((p) => p.draft);
-	for (const draft of drafts) {
-		findings.push(finding(`unpublished-draft-${draft.slug}`, 'P2', `/writing/${draft.slug}/`, 'Draft sitting unpublished',
+	// Drafts sitting unpublished — both content collections use the same
+	// draft: true convention, so check both rather than just the blog.
+	const draftSources = [
+		...writingPosts.filter((p) => p.draft).map((p) => ({ ...p, route: `/writing/${p.slug}` })),
+		...fourLawsPosts.filter((p) => p.draft).map((p) => ({ ...p, route: `/${p.slug}` })),
+	];
+	for (const draft of draftSources) {
+		findings.push(finding(`unpublished-draft-${draft.route}`, 'P2', draft.route, 'Draft sitting unpublished',
 			`"${draft.title ?? draft.slug}" is marked draft: true and isn\'t live.`,
 			'Finish it or delete it — an old draft with no path forward is just backlog noise.'));
 	}

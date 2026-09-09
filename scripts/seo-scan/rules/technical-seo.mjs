@@ -1,4 +1,4 @@
-import { matchesAnyRoute } from '../util.mjs';
+import { matchesAnyRoute, isExcludedRoute } from '../util.mjs';
 
 // Each rule returns findings as { id, priority, category, page, title, detail, fix }.
 // `id` must be stable week over week (no timestamps, no counts) so the
@@ -11,7 +11,7 @@ function finding(id, priority, page, title, detail, fix) {
 
 export function runTechnicalSeoRules(pages, { config, siteMap, robotsTxt, assetRoutes = [] }) {
 	const findings = [];
-	const contentPages = pages.filter((p) => !config.excludeFromContentChecks.includes(p.route));
+	const contentPages = pages.filter((p) => !isExcludedRoute(p.route, config.excludeFromContentChecks));
 
 	for (const page of contentPages) {
 		const { route } = page;

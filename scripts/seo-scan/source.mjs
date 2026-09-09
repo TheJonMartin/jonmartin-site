@@ -28,28 +28,34 @@ function parseFrontmatter(raw) {
 	return data;
 }
 
-export async function readWritingSource(writingDir) {
+// Generic reader for the flat, one-file-per-entry markdown collections this
+// repo uses (src/content/writing/, src/content/four-laws/) — each collection
+// has its own Zod schema in src/content.config.ts, but every field in it is
+// still just a frontmatter scalar or bracketed array, so one parser covers
+// both. Returns the raw frontmatter plus slug/file; callers pick the fields
+// their schema actually has.
+export async function readMarkdownCollection(dir) {
 	let entries;
 	try {
-		entries = await readdir(writingDir);
+		entries = await readdir(dir);
 	} catch {
 		return [];
 	}
-	const posts = [];
+	const items = [];
 	for (const name of entries) {
 		if (!name.endsWith('.md') || name.startsWith('_')) continue;
-		const raw = await readFile(path.join(writingDir, name), 'utf-8');
+		const raw = await readFile(path.join(dir, name), 'utf-8');
 		const data = parseFrontmatter(raw);
-		posts.push({
+		items.push({
 			slug: name.replace(/\.md$/, ''),
-			file: path.join(writingDir, name),
+			file: path.join(dir, name),
 			draft: data.draft === 'true' || data.draft === true,
 			title: data.title ?? null,
 			pubDate: data.pubDate ?? null,
 			tags: Array.isArray(data.tags) ? data.tags : [],
 		});
 	}
-	return posts;
+	return items;
 }
 
 // Scans known source files for TODO/FIXME markers left as a note-to-self —

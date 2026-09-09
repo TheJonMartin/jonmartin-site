@@ -1,22 +1,29 @@
 # Weekly SEO & AEO scan
 
-Scans both sites built from this repo — thejonmartin.com and
-fourlaws.thejonmartin.com — for technical SEO issues, AEO (answer-engine)
-gaps, and content gaps, then writes one prioritized checklist.
+Scans the built site for technical SEO issues, AEO (answer-engine) gaps, and
+content gaps, then writes one prioritized checklist.
+
+thejonmartin.com and fourlaws.thejonmartin.com used to be two separate Astro
+builds in this repo; they were consolidated into one site on 9 September
+2026 (see `docs/site-consolidation.md`). `config.mjs` still describes the
+site as one entry in a `sites` list rather than a single object, purely
+because the crawler and rules are written against that shape generically —
+if this repo ever builds a second property again, that's the only place to
+add it.
 
 ## What it checks
 
 - **Technical SEO** — titles, meta descriptions, canonicals, H1/heading
   hierarchy, image alt text, Open Graph tags, sitemap coverage, robots.txt
-  sanity, broken internal links (including links between the two sites, and
-  links to static files like the stakeholder-matrix PDF), broken external
-  links.
+  sanity, broken internal links (including links to static files like the
+  stakeholder-matrix PDF), broken external links.
 - **AEO** — structured data (JSON-LD) presence and validity, content depth,
   generic section headings, content freshness, llms.txt.
-- **Content gaps** (main site only — this is the blog collection) — target
-  topics with no published post, publishing cadence, unpublished drafts, and
-  `TODO` markers left in shipped source (e.g. an About page that ships with
-  its own "still missing" checklist).
+- **Content gaps** — target topics with no published post, publishing
+  cadence, and unpublished drafts, checked across both content collections
+  (`src/content/writing/` and `src/content/four-laws/`); `TODO` markers left
+  in shipped source anywhere under `src/` (e.g. an About page that ships
+  with its own "still missing" checklist).
 
 Findings are ranked P0 (broken) / P1 (high priority) / P2 (opportunity).
 
@@ -26,7 +33,7 @@ Findings are ranked P0 (broken) / P1 (high priority) / P2 (opportunity).
 npm run seo-scan
 ```
 
-This builds both sites and runs the scan. With `GITHUB_TOKEN` and
+This builds the site and runs the scan. With `GITHUB_TOKEN` and
 `GITHUB_REPOSITORY` set (as they are in the scheduled workflow), it creates
 or updates a single GitHub issue labeled `seo-scan`. Without them, it prints
 the report and writes it to `seo-scan-report.md` (gitignored) at the repo

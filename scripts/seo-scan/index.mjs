@@ -3,91 +3,79 @@ import { writeFile } from 'node:fs/promises';
 import { config } from './config.mjs';
 import { crawlDist, readStaticFile, pathExists, listStaticAssetRoutes } from './crawl.mjs';
 import { readSitemapUrls } from './sitemap.mjs';
-import { readWritingSource, findTodoMarkers } from './source.mjs';
+import { readMarkdownCollection, findTodoMarkers } from './source.mjs';
 import { runTechnicalSeoRules } from './rules/technical-seo.mjs';
 import { runAeoRules } from './rules/aeo.mjs';
 import { runContentGapRules, buildTodoFindings } from './rules/content-gaps.mjs';
-import { resolveSiblingLinks } from './sibling-links.mjs';
 import { checkExternalLinks } from './external-links.mjs';
 import { buildReport, parsePreviousData } from './report.mjs';
 import { findOpenIssue, upsertScanIssue } from './github-issue.mjs';
 
+// One entry per site this repo builds — see config.mjs. Consolidated to a
+// single site in September 2026 (docs/site-consolidation.md); kept as a map
+// keyed by site.key rather than hard-coded in case that ever changes again.
 const TODO_SCAN_DIRS = {
-	main: ['src/pages', 'src/content', 'src/components', 'src/layouts'],
-	fourlaws: ['src-fourlaws/pages', 'src-fourlaws/content', 'src-fourlaws/components', 'src-fourlaws/layouts'],
+	main: ['src/pages', 'src/content', 'src/components', 'src/layouts', 'src/lib'],
 };
 
 function withId(f) {
 	return { ...f, id: `${f.site}::${f.id}` };
 }
 
-async function crawlSite(site) {
+async function scanSite(site) {
 	if (!(await pathExists(site.distDir))) {
 		console.warn(`Skipping ${site.label}: ${site.distDir} not built. Run the site's build script first.`);
-		return null;
+		return { pages: [], findings: [] };
 	}
+
 	const pages = await crawlDist(site.distDir, site.siteUrl, {
 		urlFormat: site.urlFormat,
 		site: site.key,
 		siteLabel: site.label,
 	});
-	return {
-		pages,
-		siteMap: await readSitemapUrls(site.distDir),
-		robotsTxt: await readStaticFile(site.distDir, 'robots.txt'),
-		hasLlmsTxt: Boolean(await readStaticFile(site.distDir, 'llms.txt')),
-		assetRoutes: await listStaticAssetRoutes(site.distDir),
+	const siteMap = await readSitemapUrls(site.distDir);
+	const robotsTxt = await readStaticFile(site.distDir, 'robots.txt');
+	const hasLlmsTxt = Boolean(await readStaticFile(site.distDir, 'llms.txt'));
+	const assetRoutes = await listStaticAssetRoutes(site.distDir);
+
+	const siteConfig = {
+		siteUrl: site.siteUrl,
+		excludeFromContentChecks: site.excludeFromContentChecks,
+		expectedNoindex: site.expectedNoindex,
+		thresholds: config.thresholds,
+		targetTopics: config.targetTopics,
 	};
+
+	const findings = [
+		...runTechnicalSeoRules(pages, { config: siteConfig, siteMap, robotsTxt, assetRoutes }),
+		...runAeoRules(pages, { config: siteConfig, hasLlmsTxt }),
+	];
+
+	if (site.runContentGapRules) {
+		const writingPosts = await readMarkdownCollection(config.writingContentDir);
+		const fourLawsPosts = await readMarkdownCollection(config.fourLawsContentDir);
+		findings.push(...runContentGapRules(pages, { config: siteConfig, writingPosts, fourLawsPosts }));
+	}
+
+	const todoMarkers = await findTodoMarkers(TODO_SCAN_DIRS[site.key] ?? []);
+	findings.push(...buildTodoFindings(todoMarkers));
+
+	return { pages, findings: findings.map((f) => withId({ ...f, site: site.key, siteLabel: site.label })) };
 }
 
 async function main() {
-	// Crawl every site first — sibling-link resolution below needs the full
-	// route set of every site before any single site's rules can run.
-	const crawled = new Map();
-	for (const site of config.sites) {
-		const result = await crawlSite(site);
-		if (result) crawled.set(site.key, result);
-	}
-
-	const allPages = [...crawled.values()].flatMap((c) => c.pages);
-	const activeSites = config.sites.filter((s) => crawled.has(s.key));
-	const { findings: siblingFindings, pages: pagesWithSiblingsResolved } = resolveSiblingLinks(allPages, activeSites);
-
+	const allPages = [];
 	const allFindings = [];
 	const siteSummaries = [];
 
-	for (const site of activeSites) {
-		const { siteMap, robotsTxt, hasLlmsTxt, assetRoutes } = crawled.get(site.key);
-		const pages = pagesWithSiblingsResolved.filter((p) => p.site === site.key);
-		siteSummaries.push({ label: site.label, pageCount: pages.length });
-
-		const siteConfig = {
-			siteUrl: site.siteUrl,
-			excludeFromContentChecks: site.excludeFromContentChecks,
-			expectedNoindex: site.expectedNoindex,
-			thresholds: config.thresholds,
-			targetTopics: config.targetTopics,
-		};
-
-		const findings = [
-			...runTechnicalSeoRules(pages, { config: siteConfig, siteMap, robotsTxt, assetRoutes }),
-			...runAeoRules(pages, { config: siteConfig, hasLlmsTxt }),
-		];
-
-		if (site.runContentGapRules) {
-			const writingPosts = await readWritingSource(config.writingContentDir);
-			findings.push(...runContentGapRules(pages, { config: siteConfig, writingPosts }));
-		}
-
-		const todoMarkers = await findTodoMarkers(TODO_SCAN_DIRS[site.key] ?? []);
-		findings.push(...buildTodoFindings(todoMarkers));
-
-		allFindings.push(...findings.map((f) => withId({ ...f, site: site.key, siteLabel: site.label })));
+	for (const site of config.sites) {
+		const { pages, findings } = await scanSite(site);
+		allPages.push(...pages);
+		allFindings.push(...findings);
+		if (pages.length > 0) siteSummaries.push({ label: site.label, pageCount: pages.length });
 	}
 
-	allFindings.push(...siblingFindings.map(withId));
-
-	const externalLinkFindings = await checkExternalLinks(pagesWithSiblingsResolved, config.externalLinks);
+	const externalLinkFindings = await checkExternalLinks(allPages, config.externalLinks);
 	allFindings.push(...externalLinkFindings.map((f) => ({ ...f, id: `links::${f.id}` })));
 
 	const scannedAt = new Date().toISOString().slice(0, 10);

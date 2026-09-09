@@ -1,11 +1,13 @@
-// Tunable knobs for the weekly SEO & AEO scan. Edit these as the sites and
+// Tunable knobs for the weekly SEO & AEO scan. Edit these as the site and
 // Jon's goals change — nothing else in scripts/seo-scan/ should need touching
-// to adjust thresholds, targets, or which sites get scanned.
+// to adjust thresholds, targets, or which routes get scanned.
 //
-// This repo builds two independent static sites from two Astro configs (see
-// astro.config.mjs and astro.config.fourlaws.mjs) — thejonmartin.com and
-// fourlaws.thejonmartin.com. Both get scanned; `sites` is how each one's
-// build output and URL conventions are described to the crawler.
+// This used to describe two separate Astro builds (thejonmartin.com and
+// fourlaws.thejonmartin.com). They were consolidated into one Astro project
+// on 9 September 2026 — see docs/site-consolidation.md — so there's one
+// entry below. `sites` stays a list (rather than a single object) because
+// the crawler and rules are written against it generically; if this repo
+// ever builds a second property again, that's the only shape to extend.
 export const config = {
 	sites: [
 		{
@@ -13,29 +15,23 @@ export const config = {
 			label: 'thejonmartin.com',
 			siteUrl: 'https://thejonmartin.com',
 			distDir: 'dist',
-			// Astro's default output: every route is <route>/index.html.
-			urlFormat: 'directory',
-			excludeFromContentChecks: ['/admin/', '/404.html'],
-			expectedNoindex: ['/thanks/', '/404.html'],
-			// Only the main site has the /writing blog collection that topic
-			// coverage, cadence, and draft checks make sense against.
-			runContentGapRules: true,
-		},
-		{
-			key: 'fourlaws',
-			label: 'fourlaws.thejonmartin.com',
-			siteUrl: 'https://fourlaws.thejonmartin.com',
-			distDir: 'dist-fourlaws',
-			// build.format: 'file' — <route>.html served slash-less; URLs were
-			// frozen before outreach links went out, see astro.config.fourlaws.mjs.
+			// build.format: 'file' sitewide — <route>.html served slash-less.
+			// Four Laws' URLs had to stay byte-identical to its pre-merge
+			// address, which forced this for the whole project (Astro doesn't
+			// support two output formats in one build). See astro.config.mjs.
 			urlFormat: 'file',
-			excludeFromContentChecks: ['/404.html'],
-			expectedNoindex: ['/thanks', '/404.html'],
-			runContentGapRules: false,
+			// Prefix-matched (see util.mjs isExcludedRoute) — '/admin' catches
+			// the Decap CMS shell (public/admin/, a static file Astro doesn't
+			// route, so its built route string isn't as predictable as a real
+			// page's).
+			excludeFromContentChecks: ['/404', '/admin'],
+			expectedNoindex: ['/thanks', '/thanks-contact', '/404'],
+			runContentGapRules: true,
 		},
 	],
 
 	writingContentDir: 'src/content/writing',
+	fourLawsContentDir: 'src/content/four-laws',
 
 	thresholds: {
 		titleMin: 10,
@@ -57,18 +53,22 @@ export const config = {
 
 	// Topics Jon's work actually covers. A post that touches none of these
 	// isn't a defect, but a topic with zero posts is a content-gap worth
-	// surfacing. Edit freely as positioning shifts.
+	// surfacing. Edit freely as positioning shifts. `aliases` covers
+	// abbreviations/spellings that won't share a word with `name` (plain
+	// word-overlap matching alone would miss "RevOps" as a match for
+	// "Revenue Operations", for example) — add one whenever a real post gets
+	// flagged as a gap it isn't.
 	targetTopics: [
-		'Revenue Operations',
-		'Systems Integration',
-		'Subscription Management',
-		'CPQ',
-		'Quote-to-Cash',
-		'Billing & Churn',
-		'Presales',
-		'SaaS',
-		'Professional Services',
-		'Systems Thinking',
+		{ name: 'Revenue Operations', aliases: ['revops'] },
+		{ name: 'Systems Integration' },
+		{ name: 'Subscription Management' },
+		{ name: 'CPQ' },
+		{ name: 'Quote-to-Cash', aliases: ['qtc'] },
+		{ name: 'Billing & Churn' },
+		{ name: 'Presales' },
+		{ name: 'SaaS' },
+		{ name: 'Professional Services' },
+		{ name: 'Systems Thinking' },
 	],
 
 	externalLinks: {

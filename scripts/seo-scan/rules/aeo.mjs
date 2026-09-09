@@ -1,3 +1,5 @@
+import { isExcludedRoute } from '../util.mjs';
+
 // AEO ("answer engine optimization") checks: signals that help an AI system
 // (Google's AI Overviews, ChatGPT browsing, Perplexity, etc.) confidently
 // lift an accurate answer or citation from a page, on top of plain SEO.
@@ -21,7 +23,7 @@ export function runAeoRules(pages, { config, hasLlmsTxt }) {
 	// search and answer engines entirely, so content-depth/structured-data
 	// signals on them aren't real findings — nothing will ever read them.
 	const contentPages = pages.filter(
-		(p) => !config.excludeFromContentChecks.includes(p.route) && !config.expectedNoindex.includes(p.route)
+		(p) => !isExcludedRoute(p.route, config.excludeFromContentChecks) && !config.expectedNoindex.includes(p.route)
 	);
 
 	for (const page of contentPages) {
