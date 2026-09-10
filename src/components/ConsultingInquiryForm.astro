@@ -14,6 +14,11 @@
 // Netlify dashboard rather than mixing with either.
 //
 // Submissions land in Netlify → jonmartin-mvp → Forms → consulting-inquiry.
+//
+// Styled to the v2 "ledger grid" visual system (see
+// shared/styles/field-and-ledger.css) — the same row-pair grid and
+// Courier-New uppercase button as NotifyForm.astro, so a form embedded
+// mid-page doesn't read as a different design system than the page around it.
 ---
 
 <form
@@ -28,22 +33,23 @@
 		<label>Leave this empty if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
 	</p>
 
-	<div class="row">
-		<label for="ci-name">Name</label>
-		<input type="text" id="ci-name" name="name" required autocomplete="name" />
+	<div class="row row-pair">
+		<div class="field">
+			<label for="ci-name">Name</label>
+			<input type="text" id="ci-name" name="name" required autocomplete="name" />
+		</div>
+		<div class="field">
+			<label for="ci-email">Email</label>
+			<input type="email" id="ci-email" name="email" required autocomplete="email" placeholder="you@company.com" />
+		</div>
 	</div>
 
-	<div class="row">
-		<label for="ci-email">Email</label>
-		<input type="email" id="ci-email" name="email" required autocomplete="email" placeholder="you@company.com" />
-	</div>
-
-	<div class="row">
+	<div class="field">
 		<label for="ci-company">Company <span class="opt">(optional)</span></label>
 		<input type="text" id="ci-company" name="company" autocomplete="organization" />
 	</div>
 
-	<div class="row">
+	<div class="field">
 		<label for="ci-message">What's going on?</label>
 		<textarea id="ci-message" name="message" rows="5" required
 			placeholder="What's breaking, what you've already tried, or what a second opinion would need to cover."></textarea>
@@ -53,8 +59,9 @@
 </form>
 
 <style>
-	form { display: flex; flex-direction: column; gap: 1.5rem; }
-	.row { display: flex; flex-direction: column; gap: 0.4rem; }
+	form { display: flex; flex-direction: column; gap: 26px; margin-top: 1.75rem; }
+	.row-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+	.field { display: flex; flex-direction: column; gap: 0.4rem; }
 	label { font-size: 0.95rem; font-weight: bold; color: var(--charcoal); }
 	.opt { font-weight: normal; opacity: 0.65; }
 	input[type='text'],
@@ -66,8 +73,7 @@
 		font-size: 1rem;
 		color: var(--charcoal);
 		background: #fffdf9;
-		border: 1px solid rgba(46, 42, 38, 0.3);
-		border-radius: 2px;
+		border: 1px solid rgba(74, 51, 82, 0.3);
 	}
 	input:focus-visible,
 	textarea:focus-visible {
@@ -78,13 +84,14 @@
 	textarea { resize: vertical; line-height: 1.5; }
 	button {
 		align-self: flex-start;
-		font: inherit;
-		font-size: 1rem;
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 0.16em;
 		color: var(--cream);
 		background: var(--plum);
 		border: none;
-		border-radius: 2px;
-		padding: 0.7rem 1.5rem;
+		padding: 16px 30px;
 		cursor: pointer;
 	}
 	button:hover { background: #3c2a43; }
