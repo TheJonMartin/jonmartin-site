@@ -22,8 +22,8 @@
     {
       "heading": "Where the framework comes from",
       "paragraphs": [
-        "Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement.",
-        "<a href=\"/four-laws-complex-system-design-full\">Four Laws of Complex System Design &rarr;</a>"
+        "Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement, and separately as a plain-language series for anyone who'd rather start there.",
+        "<a href=\"/four-laws-complex-system-design-full\">Four Laws of Complex System Design &rarr;</a> &middot; <a href=\"/writing/complex-isnt-complicated\">Start the writing series &rarr;</a>"
       ]
     },
     {

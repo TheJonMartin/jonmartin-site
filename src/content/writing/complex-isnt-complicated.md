@@ -68,3 +68,5 @@ A complicated system needs a better process. A complex system needs a different 
 ---
 
 *This is Part 1 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Next up: why some problems can be solved once and others never stay solved — the difference between a rugged landscape and a dancing one.*
+
+[Next: Three Landscapes →](/writing/three-landscapes)
