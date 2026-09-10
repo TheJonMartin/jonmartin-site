@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import writingPage from '../../content/pages/writing.json';
+import { readingTime, entryNumbers } from '../../lib/writing';
 
 const title = 'Writing — Jon Martin';
 const description =
@@ -10,9 +12,12 @@ const description =
 const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+const numbers = entryNumbers(posts);
 
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const entryWord = posts.length === 1 ? 'entry' : 'entries';
 
 const canonical = new URL('/writing', Astro.site).href;
 
@@ -43,17 +48,20 @@ const schema =
 
 <Base title={title} description={description} schema={schema}>
 	<main id="main">
-		<section class="hero">
-			<p class="label kicker"><a href="/">Jon Martin</a></p>
-			<h1>Writing</h1>
-			<p class="subhead">
-				Notes on org design, systems, and why the things you built keep breaking.
-			</p>
-		</section>
+		<div class="shell">
+			<section class="masthead">
+				<div class="rail">
+					<span class="label index-word">Index</span>
+					<span class="label count">{posts.length} {entryWord}</span>
+				</div>
+				<div class="content">
+					<h1>Writing</h1>
+					<p class="standfirst">{writingPage.standfirst}</p>
+				</div>
+			</section>
 
-		<hr class="hairline" />
+			<hr class="hairline" />
 
-		<section>
 			{
 				posts.length === 0 ? (
 					<p class="empty">Nothing published yet. The first pieces are being written.</p>
@@ -61,49 +69,64 @@ const schema =
 					<ul class="list">
 						{posts.map((post) => (
 							<li>
-								<p class="label date">{fmt(post.data.pubDate)}</p>
-								<h2><a href={`/writing/${post.id}`}>{post.data.title}</a></h2>
-								<p class="desc">{post.data.description}</p>
-								{post.data.tags.length > 0 && (
-									<p class="label tags">{post.data.tags.join(' · ')}</p>
-								)}
+								<a class="postrow" href={`/writing/${post.id}`}>
+									<div class="rail">
+										<span class="label post-n">{numbers.get(post.id)}</span>
+										<span class="label post-date">{fmt(post.data.pubDate)}</span>
+										<span class="label post-time">{readingTime(post.body ?? '')}</span>
+									</div>
+									<div class="content">
+										<h2>{post.data.title}</h2>
+										<p class="desc">{post.data.description}</p>
+										<span class="label read-more">Read &rarr;</span>
+									</div>
+								</a>
 							</li>
 						))}
 					</ul>
 				)
 			}
-		</section>
-
-		<hr class="hairline" />
-
-		<footer>
-			<p><a href="/">&larr; Back to the homepage</a></p>
-			<p class="copyright">© 2026 Jon Martin.</p>
-		</footer>
+		</div>
 	</main>
 </Base>
 
 <style>
-	/* Top padding was 5rem before the site had a persistent header nav; trimmed
-	   to 2.5rem so content doesn't sit stacked below both the nav's own
-	   padding and this. */
-	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-	.hero { display: flex; flex-direction: column; gap: 1.25rem; padding-bottom: 3rem; }
-	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
-	.kicker a { color: var(--sage); text-decoration: none; }
-	.kicker a:hover { border-bottom: 1px solid var(--sage); }
-	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; }
-	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0; }
-	section { padding: 3rem 0; }
-	.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2.5rem; }
-	.date { font-size: 0.8rem; color: var(--sage); margin: 0 0 0.35rem; }
-	h2 { font-size: 1.3rem; margin: 0 0 0.5rem; }
-	h2 a { text-decoration: none; border-bottom: 1px solid rgba(74, 51, 82, 0.3); }
-	h2 a:hover { border-bottom-color: var(--plum); }
-	.desc { margin: 0; }
-	.tags { font-size: 0.75rem; color: var(--sage); margin: 0.5rem 0 0; }
-	.empty { font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; opacity: 0.75; margin: 0; }
-	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-	footer a { font-family: 'Courier New', Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
-	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
+	main { padding: 2.5rem 0 4rem; }
+	.shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+	.masthead { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; align-items: end; padding: 40px 0 48px; }
+	.masthead .rail { display: flex; flex-direction: column; gap: 0.5rem; }
+	.index-word { font-size: 11px; color: var(--sage); }
+	.count { font-size: 11px; color: var(--muted); }
+	h1 { font-size: clamp(38px, 6vw, 72px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 0.75rem; }
+	.standfirst { font-size: 20px; line-height: 1.55; max-width: 56ch; margin: 0; }
+
+	.list { list-style: none; margin: 0; padding: 0; }
+	.postrow {
+		display: grid;
+		grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr);
+		gap: 56px;
+		padding: 40px 0;
+		border-top: 1px solid var(--hairline);
+		align-items: start;
+		text-decoration: none;
+		color: inherit;
+	}
+	li:first-child .postrow { border-top: none; }
+	.postrow:hover { background: var(--white); }
+	.postrow .rail { display: flex; flex-direction: column; gap: 10px; }
+	.post-n { font-size: 12px; color: var(--sage); }
+	.post-date { font-size: 11px; color: var(--muted); }
+	.post-time { font-size: 11px; color: var(--dark-mustard); }
+	h2 { font-size: clamp(24px, 3.2vw, 38px); line-height: 1.16; max-width: 34ch; margin: 0 0 0.75rem; }
+	.desc { font-size: 18px; line-height: 1.55; max-width: 64ch; margin: 0 0 1rem; color: var(--charcoal); }
+	.read-more { font-size: 12px; color: var(--plum); border-bottom: 1px solid var(--mustard); padding-bottom: 2px; width: fit-content; display: block; }
+
+	.empty { font-family: 'Courier New', Cousine, monospace; font-size: 0.9rem; color: var(--muted); margin: 2rem 0; }
+
+	@media (max-width: 720px) {
+		.shell { padding: 0 20px; }
+		.masthead,
+		.postrow { grid-template-columns: 1fr; gap: 20px; align-items: start; }
+	}
 </style>

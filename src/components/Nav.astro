@@ -1,27 +1,38 @@
 ---
+import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 
-// The one nav for the whole site — main pages and Four Laws pages alike.
+// The one nav for the whole site. Rebuilt to the brand/visual-system design
+// handoff's header spec: wordmark + "Jon Martin" on the left, Writing / About
+// / Four Laws / Waitlist on the right, Courier New uppercase, reserved-space
+// hover underline.
 //
-// "Four Laws of Complex System Design" is a dropdown (native <details>/
-// <summary>, no JavaScript) rather than a plain link, so its full
-// Explore/Tools/Reference link list (see src/lib/four-laws-links.ts, shared
-// with FourLawsFooter.astro's sitemap-style repeat of the same list) is
-// reachable from every page on the site with one click, not just from the
-// bottom of a Four Laws page. <details> was chosen over a hover menu on
-// purpose: hover doesn't exist on touch devices, so a menu that only opens
-// on hover needs separate JS-driven tap handling to work on mobile at all.
-// <details> opens on click/tap identically everywhere, needs no JS, and
-// keyboard users get Enter/Space-to-toggle for free from the browser.
+// "Four Laws of Complex System Design" stays a dropdown (native <details>/
+// <summary>, restyled to the new tokens) rather than the handoff's flat link
+// to the old pre-consolidation fourlaws.thejonmartin.com — the handoff
+// predates both the site consolidation and the dropdown shipped immediately
+// before this redesign work started, and reverting to a flat link would be a
+// straight regression from something just explicitly requested. See
+// src/lib/four-laws-links.ts (shared with FourLawsFooter.astro's repeat of
+// the same list).
 //
-// `section="four-laws"` (passed only by FourLawsLayout.astro) highlights the
-// summary as the current section even though it's not literally one single
-// page — same "current section, not literally current page" treatment
-// "Writing" already gets below.
+// "About" points at the real /about page — the handoff's own nav uses
+// `#about`, an in-page anchor, because its prototype file has no other pages
+// to link to. "Waitlist" points at /#notify — the handoff calls this anchor
+// `#waitlist`, but the live site's existing waitlist section
+// (NotifyForm.astro) is `id="notify"` already, linked from several other
+// places, so the nav link was adapted to match the existing id rather than
+// renaming the id everywhere to match a design mockup's placeholder name.
+//
+// `bordered` — false only on the homepage, where the plum hero band directly
+// below the header supplies its own visual edge; every other page keeps the
+// hairline. `section="four-laws"` (passed only by FourLawsLayout.astro)
+// highlights the Four Laws summary as the current section.
 interface Props {
 	section?: 'four-laws';
+	bordered?: boolean;
 }
-const { section } = Astro.props;
+const { section, bordered = true } = Astro.props;
 
 const links: { href: string; text: string }[] = [
 	{ href: '/writing', text: 'Writing' },
@@ -33,9 +44,8 @@ const links: { href: string; text: string }[] = [
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
 // Writing needs prefix matching because individual posts live beneath it and
-// should still mark the section as current. About is a single page, so an exact
-// match is correct — and prefix-matching a one-page section is how you end up
-// highlighting it on /about-something-else later.
+// should still mark the section as current. About is a single page, so an
+// exact match is correct.
 const isCurrent = (href: string) => {
 	if (href === '/writing') return path === '/writing' || path.startsWith('/writing/');
 	return path === href;
@@ -44,10 +54,13 @@ const isCurrent = (href: string) => {
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header>
+<header class:list={{ bordered }}>
 	<nav aria-label="Primary">
 		<div class="masthead">
-			<a class="wordmark" href="/">Jon Martin</a>
+			<a class="wordmark" href="/">
+				<Wordmark size={26} />
+				<span>Jon Martin</span>
+			</a>
 			<div class="links">
 				{links.map((link) => (
 					<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
@@ -56,7 +69,7 @@ const isCurrent = (href: string) => {
 				))}
 				<details class="four-laws">
 					<summary aria-current={section === 'four-laws' ? 'page' : undefined}>
-						Four Laws of Complex System Design
+						Four Laws
 					</summary>
 					<div class="panel">
 						{fourLawsGroups.map((group) => (
@@ -75,6 +88,7 @@ const isCurrent = (href: string) => {
 						))}
 					</div>
 				</details>
+				<a class="waitlist" href="/#notify">Waitlist</a>
 			</div>
 		</div>
 	</nav>
@@ -97,33 +111,31 @@ const isCurrent = (href: string) => {
 	}
 
 	header {
-		border-bottom: 1px solid var(--hairline);
 		z-index: 5;
 	}
-	/* position: relative here (not on the narrow .four-laws trigger itself)
-	   is what the dropdown panel below anchors to. nav's own max-width keeps
-	   it from ever exceeding the viewport, which is what keeps the panel
-	   from overflowing off-screen on narrow viewports — anchoring to the
-	   trigger element instead (an earlier version of this) let the panel's
-	   left edge run off the left of the screen on mobile, since the trigger
-	   itself isn't as wide as the panel that needs to hang off it. */
+	header.bordered {
+		border-bottom: 1px solid var(--hairline);
+	}
 	nav {
-		max-width: 680px;
+		max-width: 1200px;
 		margin: 0 auto;
-		padding: 1.25rem 1.5rem;
+		padding: 22px 40px;
 		position: relative;
 	}
 
 	.masthead {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
-		gap: 0.75rem 1.5rem;
+		gap: 14px 24px;
 	}
 	.wordmark {
-		font-family: Georgia, "Times New Roman", serif;
-		font-size: 1.15rem;
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		font-family: Georgia, Gelasio, serif;
+		font-size: 21px;
 		color: var(--plum);
 		text-decoration: none;
 	}
@@ -131,41 +143,46 @@ const isCurrent = (href: string) => {
 	.links {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.5rem 1.5rem;
+		align-items: center;
+		gap: 22px;
 	}
-	.links > a {
-		font-size: 0.95rem;
+	.links > a,
+	summary {
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--plum);
 		text-decoration: none;
+		padding-bottom: 3px;
 		border-bottom: 1px solid transparent;
 	}
-	.links > a:hover {
-		border-bottom-color: var(--plum);
+	.links > a:hover,
+	summary:hover {
+		border-bottom-color: var(--mustard);
 	}
-	/* Mustard's single appearance in the chrome: it marks where you are, which
-	   is a genuine outlier among a list of places you aren't. */
-	.links > a[aria-current='page'] {
+	/* Mustard's single small-scale appearance in the chrome: it marks where
+	   you are, a genuine outlier among a list of places you aren't. */
+	.links > a[aria-current='page'],
+	summary[aria-current='page'] {
+		border-bottom-color: var(--mustard);
+	}
+	.waitlist {
+		color: var(--sage);
+		border-bottom-color: var(--sage);
+	}
+	.waitlist:hover {
+		color: var(--plum);
 		border-bottom-color: var(--mustard);
 	}
 
-	/* A different kind of destination than "Writing" — a dropdown onto the
-	   whole Four Laws reference, not another page in the same register — so
-	   it's set apart with a hairline rule rather than folded into the same
-	   unbroken list. */
 	.four-laws {
-		padding-left: 1.5rem;
-		border-left: 1px solid var(--hairline);
+		position: static;
 	}
 	summary {
-		font-size: 0.95rem;
-		color: var(--sage);
 		cursor: pointer;
 		list-style: none;
-		border-bottom: 1px solid transparent;
 	}
-	/* Hide the native disclosure triangle (Safari/Chrome use the pseudo-
-	   element below; list-style:none above handles Firefox) so the custom
-	   chevron is the only marker, consistent across browsers. */
 	summary::-webkit-details-marker {
 		display: none;
 	}
@@ -173,38 +190,32 @@ const isCurrent = (href: string) => {
 		content: '▾';
 		display: inline-block;
 		margin-left: 0.35em;
-		font-size: 0.8em;
+		font-size: 0.9em;
 		transition: transform 0.15s ease;
 	}
 	details[open] summary::after {
 		transform: rotate(180deg);
 	}
-	summary:hover {
-		border-bottom-color: var(--sage);
-	}
-	summary[aria-current='page'] {
-		border-bottom-color: var(--mustard);
-	}
 
 	.panel {
 		position: absolute;
 		top: calc(100% + 0.75rem);
-		right: 1.5rem;
+		right: 40px;
 		width: min(calc(100vw - 3rem), 30rem);
 		background: var(--cream);
 		border: 1px solid var(--hairline);
-		border-radius: 4px;
 		padding: 1.25rem;
 		box-shadow: 0 4px 16px rgba(46, 42, 38, 0.12);
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1.5rem;
+		z-index: 20;
 	}
 	.group-label {
-		font-size: 0.72rem;
+		font-size: 11px;
 		color: var(--muted);
 		display: block;
-		margin-bottom: 0.35rem;
+		margin-bottom: 0.5rem;
 	}
 	.panel ul {
 		list-style: none;
@@ -212,18 +223,34 @@ const isCurrent = (href: string) => {
 		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.4rem;
+		gap: 0.5rem;
 	}
 	.panel li a {
+		font-family: Calibri, Carlito, Lato, sans-serif;
 		font-size: 0.9rem;
+		text-transform: none;
+		letter-spacing: normal;
 		color: var(--charcoal);
-		text-decoration: none;
 		border-bottom: 1px solid transparent;
+		padding-bottom: 1px;
 	}
 	.panel li a:hover {
 		border-bottom-color: var(--plum);
 	}
 	.panel li a[aria-current='page'] {
 		border-bottom-color: var(--mustard);
+	}
+
+	@media (max-width: 720px) {
+		nav {
+			padding: 16px 20px;
+		}
+		/* Keeps the panel's right edge aligned with the trigger at the
+		   reduced mobile padding above — without this it stays anchored to
+		   the desktop 40px value while nav's own content sits 20px in,
+		   leaving a visible gap between the trigger and the panel below it. */
+		.panel {
+			right: 20px;
+		}
 	}
 </style>

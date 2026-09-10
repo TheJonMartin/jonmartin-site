@@ -1,19 +1,23 @@
 ---
-title: 'Complex Isn''t Complicated — And That Distinction Is Costing You'
-description: 'Complicated systems have parts; complex systems have parts that adapt — and that''s why documentation alone stops working once a RevOps process scales.'
-seoTitle: 'Complex Isn''t Complicated — Jon Martin'
+title: Complex Isn't Complicated — And That Distinction Is Costing You
+description: Complicated systems have parts; complex systems have parts that
+  adapt — and that's why documentation alone stops working once a RevOps process
+  scales.
+seoTitle: Complex Isn't Complicated — Jon Martin
 pubDate: 2026-09-08
 draft: false
-tags: ['Systems', 'RevOps', 'Complexity']
+tags:
+  - Systems
+  - RevOps
+  - Complexity
 ---
-
 ![Complex Isn't Complicated — And That Distinction Is Costing You](/images/writing/01-complex-isnt-complicated.svg)
 
 Every RevOps leader I've talked to in the last decade has said some version of the same sentence: "our systems are so complicated."
 
 Most of the time, that's the wrong word. What's actually happening is complexity, not complication — and it's a different failure mode entirely. One that no amount of documentation fixes.
 
-I spent 18 years building and running RevOps functions before I heard this distinction named properly. Founded two firms, scaled both, sold both. Now I spend my days at Process Pro helping SaaS and professional services companies through the same moment, over and over: a system that ran clean at $2M ARR starts fighting back at $20M, and nobody can quite explain why. The team didn't get worse. The tools didn't get worse. Something else changed.
+I spent 12 years building and running RevOps functions before I heard this distinction named properly. Founded two firms, scaled both, sold both. Now I spend my days at Process Pro helping SaaS and professional services companies through the same moment, over and over: a system that ran clean at $2M ARR starts fighting back at $20M, and nobody can quite explain why. The team didn't get worse. The tools didn't get worse. Something else changed.
 
 Here's the something else, borrowed from Scott Page's *Understanding Complexity* lecture series — a complexity scientist's language for a problem I'd been circling for years without a name for it.
 
@@ -65,7 +69,7 @@ If reps, managers, or customers are adapting their behavior in response to the p
 
 A complicated system needs a better process. A complex system needs a different kind of attention entirely.
 
----
+- - -
 
 *This is Part 1 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Next up: why some problems can be solved once and others never stay solved — the difference between a rugged landscape and a dancing one.*
 

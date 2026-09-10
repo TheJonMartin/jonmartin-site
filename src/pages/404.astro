@@ -15,43 +15,46 @@ import Base from '../layouts/Base.astro';
 	noindex
 >
 	<main id="main">
-		<p class="label kicker">404</p>
-		<h1>That page isn't here.</h1>
-		<p class="subhead">
-			Either the link was wrong, or it used to be something else. Both are
-			fixable — here's where things actually are.
-		</p>
+		<div class="shell">
+			<p class="label kicker">404</p>
+			<h1>That page isn't here.</h1>
+			<p class="subhead">
+				Either the link was wrong, or it used to be something else. Both are
+				fixable — here's where things actually are.
+			</p>
 
-		<hr class="hairline" />
+			<hr class="hairline" />
 
-		<ul class="ways">
-			<li>
-				<a href="/">The homepage</a>
-				<span>What I do and who it's for.</span>
-			</li>
-			<li>
-				<a href="/writing">Writing</a>
-				<span>Notes on org design, systems, and why things keep breaking.</span>
-			</li>
-			<li>
-				<a href="/four-laws-complex-system-design-full">Four Laws of Complex System Design</a>
-				<span>The reference material — Ashby, Conway, Brooks, Reverse Conway, Beer's VSM.</span>
-			</li>
-		</ul>
+			<ul class="ways">
+				<li>
+					<a href="/">The homepage</a>
+					<span>What I do and who it's for.</span>
+				</li>
+				<li>
+					<a href="/writing">Writing</a>
+					<span>Notes on org design, systems, and why things keep breaking.</span>
+				</li>
+				<li>
+					<a href="/four-laws-complex-system-design-full">Four Laws of Complex System Design</a>
+					<span>The reference material — Ashby, Conway, Brooks, Reverse Conway, Beer's VSM.</span>
+				</li>
+			</ul>
 
-		<hr class="hairline" />
+			<hr class="hairline" />
 
-		<p class="closing">
-			Landed here from a link that should have worked?
-			<a href="mailto:jon@thejonmartin.com">Tell me</a> and I'll fix it.
-		</p>
+			<p class="closing">
+				Landed here from a link that should have worked?
+				<a href="mailto:jon@thejonmartin.com">Tell me</a> and I'll fix it.
+			</p>
+		</div>
 	</main>
 </Base>
 
 <style>
-	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+	main { padding: 2.5rem 0 4rem; }
+	.shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0 0 1.75rem; }
-	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; margin-bottom: 1.75rem; }
+	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); margin-bottom: 1.75rem; }
 	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0 0 3rem; }
 
 	.ways { list-style: none; padding: 0; margin: 0; }
@@ -68,4 +71,8 @@ import Base from '../layouts/Base.astro';
 	.ways span { font-size: 0.95rem; color: var(--muted); }
 
 	.closing { margin-top: 2rem; font-size: 0.95rem; color: var(--muted); }
+
+	@media (max-width: 720px) {
+		.shell { padding: 0 20px; }
+	}
 </style>

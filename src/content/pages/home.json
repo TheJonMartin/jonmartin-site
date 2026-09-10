@@ -5,10 +5,36 @@
 	"heroTitle": "You are the only person in your company with enough range to handle what comes at it.",
 	"subhead": "Every fix you've tried — the hire, the software, the SOP, the management layer — has added capacity without adding range. That's why it kept breaking anyway.",
 	"tagline": "I don't build it. I tell you <span class=\"accent\">why</span> the last three things you built didn't work.",
+	"heroMeta": [
+		{ "label": "Field report", "accent": true },
+		{ "label": "No. 001" },
+		{ "label": "Second opinion" },
+		{ "label": "Status: waitlist" }
+	],
 	"whoHeading": "Who this is for",
 	"whoParagraphs": [
-		"Founders of professional services businesses doing $3–5M in revenue — agencies, consultancies, MSPs, engineering and design firms. Somewhere between twenty and fifty people. Still founder-led, still founder-dependent: you're still the best seller, often still the best deliverer, and still in the loop on everything that matters.",
-		"You hired someone senior and they can't operate without you. You bought software and nobody trusts what it reports. You wrote SOPs and nobody follows them. You added a layer of management and it turned into a game of telephone. Each of those looks like a separate problem. It isn't."
+		"Founders of professional services businesses doing $3–5M in revenue — agencies, consultancies, MSPs, engineering and design firms. Somewhere between twenty and fifty people. Still founder-led, still founder-dependent: you're still the best seller, often still the best deliverer, and still in the loop on everything that matters."
 	],
+	"specTable": [
+		{ "label": "Revenue", "value": "$3–5M" },
+		{ "label": "Headcount", "value": "20–50" },
+		{ "label": "Shape", "value": "Founder-led" },
+		{ "label": "Constraint", "value": "You" }
+	],
+	"offerStatement": "I don't build it. I tell you why the last three things you built didn't work.",
+	"fourFixesHeading": "The four fixes",
+	"fourFixes": [
+		"You hired someone senior and they can't operate without you.",
+		"You bought software and nobody trusts what it reports.",
+		"You wrote SOPs and nobody follows them.",
+		"You added a layer of management and it turned into a game of telephone."
+	],
+	"convergenceLine": "Each of those looks like a separate problem. It isn't. They are four readings of the same missing thing.",
+	"distinctionHeading": "Capacity is more of what you already do. Range is more of what you can absorb.",
+	"capacityLabel": "Adding capacity",
+	"capacityCaption": "Seven of the same response. Handles more volume of what you've already seen.",
+	"rangeLabel": "Adding range",
+	"rangeCaption": "Seven different responses. Handles the kinds of thing you haven't seen yet.",
+	"writingHeading": "Writing",
 	"copyrightYear": 2026
 }

@@ -1,12 +1,26 @@
 ---
 import Base from '../layouts/Base.astro';
 import NotifyForm from '../components/NotifyForm.astro';
-import RecentWriting from '../components/RecentWriting.astro';
 import home from '../content/pages/home.json';
+import { getCollection } from 'astro:content';
 
 // Copy lives in src/content/pages/home.json so it's editable through the
 // Decap CMS at /admin without touching this template. See docs/cms-setup.md.
 const { title, description } = home;
+
+const recentPosts = (await getCollection('writing', ({ data }) => !data.draft))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
+
+const fmt = (d: Date) =>
+	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Range diagram bar heights (px) — schematic, not measured data (see the
+// "Diagram — schematic, not measured" disclaimer below the box). Preserved
+// exactly as specced so the "uneven vs even" reading survives; do not tune
+// these toward anything that looks like real numbers.
+const capacityBars = [88, 88, 88, 88, 88, 88, 88];
+const rangeBars = [34, 62, 140, 88, 110, 52, 124];
 
 // Person + WebSite, emitted as a @graph so both entities share one script block
 // and can reference each other by @id.
@@ -59,68 +73,235 @@ const schema = {
 };
 ---
 
-<Base title={title} description={description} schema={schema}>
+<Base title={title} description={description} schema={schema} navBordered={false}>
 	<main id="main">
-		<section class="hero">
-			<p class="label kicker">{home.kicker}</p>
-			<h1>{home.heroTitle}</h1>
-			<p class="subhead">{home.subhead}</p>
-			<hr class="hairline" />
-			<p class="tagline" set:html={home.tagline} />
+		<!-- Hero band -->
+		<section class="band hero">
+			<div class="inner">
+				<div class="edge">
+					<div class="meta">
+						{home.heroMeta.map((cell) => (
+							<div class="cell" class:list={{ accent: cell.accent }}>{cell.label}</div>
+						))}
+					</div>
+
+					<h1 set:html={home.heroTitle.replace(/\brange\b/, '<span class="range">range</span>')} />
+
+					<div class="herorow">
+						<p class="dek">{home.subhead}</p>
+						<a class="btn btn-primary" href="/#notify">Join the waitlist &rarr;</a>
+					</div>
+				</div>
+			</div>
 		</section>
 
-		<hr class="hairline" />
-
-		<section class="who">
-			<h2>{home.whoHeading}</h2>
-			{home.whoParagraphs.map((paragraph) => <p set:html={paragraph} />)}
+		<!-- Offer band -->
+		<section class="band offer">
+			<div class="inner">
+				<p class="label offer-label">The offer</p>
+				<p class="offer-statement">{home.offerStatement}</p>
+			</div>
 		</section>
 
-		<hr class="hairline" />
+		<!-- 01 / Who this is for -->
+		<section class="band" id="about">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">01 / {home.whoHeading}</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					{home.whoParagraphs.map((p) => <p class="lede" set:html={p} />)}
 
-		<RecentWriting />
+					<div class="spectable">
+						{home.specTable.map((cell) => (
+							<div class="spec">
+								<span class="label spec-label">{cell.label}</span>
+								<span class="spec-value">{cell.value}</span>
+							</div>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
 
-		<hr class="hairline" />
+		<!-- 02 / The four fixes -->
+		<section class="band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">02 / {home.fourFixesHeading}</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					{home.fourFixes.map((fix, i) => (
+						<div class="fixrow">
+							<span class="label fix-n">{String(i + 1).padStart(2, '0')}</span>
+							<p>{fix}</p>
+						</div>
+					))}
+					<div class="convergence">
+						<span></span>
+						<div class="bracket"></div>
+						<p>{home.convergenceLine}</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-		<NotifyForm />
+		<!-- 03 / The distinction -->
+		<section class="band distinction">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">03 / The distinction</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<h2>{home.distinctionHeading}</h2>
 
-		<hr class="hairline" />
+					<div class="diagram">
+						<div class="panel capacity">
+							<span class="label panel-label">{home.capacityLabel}</span>
+							<div class="bars">
+								{capacityBars.map((h) => <div class="bar capacity-bar" style={`height:${h}px`}></div>)}
+							</div>
+							<p class="caption">{home.capacityCaption}</p>
+						</div>
+						<div class="panel range">
+							<span class="label panel-label range-panel-label">{home.rangeLabel}</span>
+							<div class="bars">
+								{rangeBars.map((h) => <div class="bar range-bar" style={`height:${h}px`}></div>)}
+							</div>
+							<p class="caption">{home.rangeCaption}</p>
+						</div>
+					</div>
+					<p class="label disclaimer">Diagram — schematic, not measured.</p>
+				</div>
+			</div>
+		</section>
 
-		<footer>
-			<p class="links">
-				<a href="/writing">Writing</a>
-				<a href="mailto:jon@thejonmartin.com">jon@thejonmartin.com</a>
-			</p>
-			<p class="copyright">© {home.copyrightYear} Jon Martin.</p>
-		</footer>
+		<!-- 04 / Writing -->
+		<section class="band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">04 / {home.writingHeading}</span>
+					<div class="rule"></div>
+					<a class="label all-writing" href="/writing">All writing &rarr;</a>
+				</div>
+				<div class="content">
+					{recentPosts.map((post, i) => (
+						<a class="postrow" href={`/writing/${post.id}`}>
+							<span class="label post-n">{String(i + 1).padStart(2, '0')}</span>
+							<div>
+								<p class="label post-date">{fmt(post.data.pubDate)}</p>
+								<h3>{post.data.title}</h3>
+								<p class="post-desc">{post.data.description}</p>
+							</div>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- 05 / Waitlist -->
+		<section class="band waitlist-band" id="waitlist">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label waitlist-label">05 / Waitlist</span>
+					<div class="rule"></div>
+					<span class="label chip">Not bookable yet</span>
+				</div>
+				<div class="content">
+					<NotifyForm variant="band" />
+				</div>
+			</div>
+		</section>
 	</main>
 </Base>
 
 <style>
-	/* Top padding was 5rem before the site had a persistent header nav (added
-	   alongside src/components/Nav.astro); trimmed to 2.5rem so the hero
-	   doesn't sit stacked below both the nav's own padding and this. */
-	main { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-	.hero { display: flex; flex-direction: column; gap: 1.75rem; padding-top: 0; padding-bottom: 3rem; }
-	.kicker { font-size: 0.85rem; color: var(--sage); margin: 0; }
-	h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 400; }
-	.subhead { font-size: 1.15rem; max-width: 56ch; margin: 0; }
-	.tagline { font-size: 1.3rem; font-family: Georgia, serif; color: var(--plum); margin: 0; }
-	/* Mustard on cream is 1.92:1 — far below the 4.5:1 minimum, so it can't
-	   carry text. The emphasis moves to plum italic (10.33:1, AAA) and mustard
-	   becomes a decorative underline, where contrast rules don't apply. Same
-	   brand moment, actually readable. */
-	.accent {
-		color: var(--plum);
-		font-style: italic;
-		border-bottom: 2px solid var(--mustard);
+	.band { padding: 88px 0; border-top: 1px solid var(--hairline); }
+	.band:first-child { border-top: none; }
+	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+	/* Ledger grid: a rail (section label) and a content column, used by every
+	   section from 01 onward. The hero and offer bands don't use it — they're
+	   single-column statements, not rail+content sections. */
+	.ledger { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
+	.rail { position: sticky; top: 24px; align-self: start; }
+	.section-label { font-size: 12px; color: var(--sage); display: block; margin-bottom: 0.75rem; }
+	.rule { width: 40px; height: 2px; background: var(--mustard); }
+	.all-writing { display: block; margin-top: 1.25rem; font-size: 12px; color: var(--plum); border-bottom: 1px solid var(--mustard); padding-bottom: 2px; width: fit-content; text-decoration: none; }
+
+	/* ---- Hero ---- */
+	.hero { background: var(--plum); color: var(--cream); padding: 72px 0 80px; }
+	.hero .edge { border-left: 1px solid var(--hairline-on-plum); padding-left: 18px; }
+	.meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-bottom: 1px solid var(--hairline-on-plum); margin-bottom: 40px; }
+	.cell { padding: 14px 18px; font-family: 'Courier New', Cousine, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--label-on-plum); border-right: 1px solid var(--hairline-on-plum); }
+	.cell.accent { color: var(--mustard); }
+	.hero h1 { color: var(--cream); font-size: clamp(38px, 6.4vw, 84px); font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; max-width: 16ch; text-wrap: pretty; margin: 0 0 40px; }
+	.hero :global(.range) { color: var(--mustard); }
+	.herorow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; }
+	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
+
+	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; justify-self: start; }
+	.btn-primary { background: var(--mustard); color: var(--plum); }
+	.btn-primary:hover { background: var(--cream); color: var(--plum); }
+
+	/* ---- Offer ---- */
+	.offer { background: var(--mustard); padding: 56px 0; border-top: none; }
+	.offer-label { font-size: 11px; letter-spacing: 0.18em; color: var(--mustard-shade); margin: 0 0 0.75rem; }
+	.offer-statement { font-family: Georgia, Gelasio, serif; font-size: clamp(26px, 4vw, 46px); line-height: 1.14; max-width: 26ch; color: var(--charcoal); margin: 0; }
+
+	/* ---- 01 spec table ---- */
+	.lede { font-size: 21px; line-height: 1.55; max-width: 60ch; margin: 0 0 2rem; }
+	.spectable { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+	.spec { padding: 18px 0; }
+	.spec-label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.spec-value { font-family: Georgia, Gelasio, serif; font-size: 28px; color: var(--plum); }
+
+	/* ---- 02 four fixes ---- */
+	.fixrow { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; padding: 26px 0; border-top: 1px solid var(--hairline); align-items: start; }
+	.fixrow:first-child { border-top: none; }
+	.fix-n { font-size: 13px; color: var(--sage); padding-top: 6px; }
+	.fixrow p { font-family: Georgia, Gelasio, serif; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.3; color: var(--plum); max-width: 44ch; margin: 0; }
+	.convergence { display: grid; grid-template-columns: 64px 40px minmax(0, 1fr); border-top: 1px solid var(--hairline); padding-top: 28px; align-items: center; }
+	.bracket { border-left: 2px solid var(--mustard); min-height: 60px; }
+	.convergence p { padding-left: 22px; font-size: 20px; line-height: 1.5; max-width: 46ch; margin: 0; }
+
+	/* ---- 03 distinction ---- */
+	.distinction { background: var(--white); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+	.distinction h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.15; max-width: 26ch; margin: 0 0 2.5rem; }
+	.diagram { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; border: 1px solid var(--hairline); }
+	.panel { padding: 28px; }
+	.panel.range { background: var(--cream); }
+	.panel-label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 1rem; }
+	.range-panel-label { color: var(--dark-mustard); }
+	.bars { height: 140px; display: flex; align-items: flex-end; gap: 8px; }
+	.bar { width: 16px; }
+	.capacity-bar { background: var(--plum); }
+	.range-bar { background: var(--mustard); border: 1px solid var(--dark-mustard); }
+	.caption { font-size: 16px; line-height: 1.5; margin: 1rem 0 0; }
+	.disclaimer { font-size: 12px; color: var(--muted); margin: 1.25rem 0 0; }
+
+	/* ---- 04 writing ---- */
+	.postrow { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; padding: 28px 0; border-top: 1px solid var(--hairline); text-decoration: none; color: inherit; }
+	.postrow:first-child { border-top: none; }
+	.postrow:hover { background: var(--white); }
+	.post-n { font-size: 12px; color: var(--sage); }
+	.post-date { font-size: 11px; color: var(--muted); margin: 0 0 0.35rem; }
+	.postrow h3 { font-family: Georgia, Gelasio, serif; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.22; color: var(--plum); max-width: 36ch; margin: 0 0 0.4rem; }
+	.post-desc { font-size: 17px; line-height: 1.55; max-width: 62ch; margin: 0; color: var(--charcoal); }
+
+	/* ---- 05 waitlist ---- */
+	.waitlist-band { background: var(--plum); color: var(--cream); }
+	.waitlist-band .rule { background: var(--mustard); }
+	.waitlist-label { color: var(--mustard); }
+	.chip { display: inline-block; margin-top: 1rem; color: var(--cream); border: 1px solid var(--hairline-on-plum); padding: 6px 10px; font-size: 11px; }
+
+	@media (max-width: 720px) {
+		.inner { padding: 0 20px; }
+		.band { padding: 56px 0; }
+		.ledger { grid-template-columns: 1fr; gap: 28px; }
+		.rail { position: static; }
 	}
-	section { padding: 3rem 0; }
-	h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
-	p { margin: 0 0 1.1rem; }
-	p:last-child { margin-bottom: 0; }
-	footer { padding: 3rem 0 0; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; }
-	.links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-	footer a { font-family: "Courier New", Courier, monospace; text-decoration: none; border-bottom: 1px solid var(--plum); }
-	.copyright { font-size: 0.85rem; opacity: 0.6; margin: 0; }
 </style>
