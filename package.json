@@ -9,10 +9,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "cms": "npx decap-server"
+    "cms": "npx decap-server",
+    "seo-scan": "npm run build && node scripts/seo-scan/index.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "astro": "^7.1.6"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.13"
   }
 }

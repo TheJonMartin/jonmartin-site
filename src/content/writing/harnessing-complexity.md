@@ -66,3 +66,5 @@ You don't get to control a complex system. You get to understand it well enough 
 ---
 
 *This closes the eight-part series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. One more piece is coming — connecting all of this to a framework built from a completely different lineage: Ashby, Conway, Brooks, and Beer. Different field, no contact with this one, and somehow the same physics underneath.*
+
+[← Previous: The Small Event That Wasn't Actually Small](/writing/feedback-and-cascades) · [Next: Two Fields, Converging on the Same Physics →](/writing/capstone-four-laws)

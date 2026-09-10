@@ -1,0 +1,29 @@
+name: Weekly SEO & AEO scan
+
+on:
+  schedule:
+    # 13:00 UTC Monday — mid-morning US Central. Adjust to taste; cron is UTC.
+    - cron: '0 13 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Scan thejonmartin.com and fourlaws.thejonmartin.com
+        run: npm run seo-scan
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

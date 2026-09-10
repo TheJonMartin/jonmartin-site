@@ -37,8 +37,8 @@ export default defineConfig({
 			// here: a sitemap that advertises a page the page itself tells robots to
 			// skip is a contradiction crawlers report as an error. Keep this filter
 			// in sync with every `noindex` prop passed to Base.astro/FourLawsLayout —
-			// today that's /thanks, /thanks-contact, and /404.
-			filter: (page) => !/\/(thanks|thanks-contact|404)(\.html)?$/.test(page),
+			// today that's /thanks, /thanks-contact, /thanks-consulting, and /404.
+			filter: (page) => !/\/(thanks|thanks-contact|thanks-consulting|404)(\.html)?$/.test(page),
 
 			// build.format 'file' makes Astro emit e.g. /glossary.html into the
 			// sitemap, while the canonical every layout actually builds (see the

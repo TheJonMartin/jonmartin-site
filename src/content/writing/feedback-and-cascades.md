@@ -39,3 +39,5 @@ The reframe that actually matters here: the big, ugly quarter that seems to come
 ---
 
 *This is Part 7 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Last one: what actually separates genuine randomness from the output of a complex system — and what you can do about a system you can't fully control.*
+
+[← Previous: What Shows Up Without Anyone Designing It](/writing/emergence-and-networks) · [Next: Harnessing What You Can't Control →](/writing/harnessing-complexity)
