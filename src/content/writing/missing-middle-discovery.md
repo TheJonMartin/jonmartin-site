@@ -1,6 +1,6 @@
 ---
 title: 'The Missing Middle of Discovery'
-description: 'Discovery fails in the gap between pain and configuration. Requirements live at four altitudes, and the usable one almost never arrives in the client's words.'
+description: 'Discovery fails in the gap between pain and configuration. Requirements live at four altitudes, and the usable one almost never arrives in the client\'s words.'
 seoTitle: 'The Missing Middle of Discovery — Jon Martin'
 pubDate: 2026-09-19
 draft: true
@@ -36,6 +36,8 @@ The test for each is simple:
 - L3 can be resolved without another conversation with the client.
 
 L0 and L1 arrive in the client's voice. L3 arrives if you wait long enough, or if an architect is in the room. L2 almost never arrives on its own. Clients speak outcomes and processes. L2 is constructed by the practitioner from those two, then confirmed. That construction step is the missing middle.
+
+This is why "just one more discovery workshop" does not settle the number. A coastline has no single length. The length you get depends on the size of the ruler, who is holding it, and which wiggles you agree to count. L0 is the island. L1 is the outline you can see from altitude. L2 is the map scale you can sell. L3 is walking every inlet. Finer questions on a quote-to-cash shore usually add surface. That added surface is often scope revelation, not moral scope creep — but only if you already named the ruler. Without an L2, you are measuring with a stick you have not admitted you are using.
 
 ## Three ways the middle disappears
 
