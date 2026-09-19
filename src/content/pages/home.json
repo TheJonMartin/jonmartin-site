@@ -1,9 +1,9 @@
 {
 	"title": "Jon Martin — Field Report & Second Opinion",
-	"description": "I don't build it. I tell you why the last three things you built didn't work — written diagnoses for founders of $3–5M professional services businesses.",
+	"description": "Capacity is more of what you already do. Range is more of what you can absorb. Founder-led $3–5M professional services firms keep breaking because the last hire, tool, SOP, and manager added capacity without adding range.",
 	"kicker": "Jon Martin",
 	"heroTitle": "You are the only person in your company with enough range to handle what comes at it.",
-	"subhead": "Every fix you've tried — the hire, the software, the SOP, the management layer — has added capacity without adding range. That's why it kept breaking anyway.",
+	"subhead": "Capacity is more of what you already do. Range is more of what you can absorb. Every fix you've tried — the hire, the software, the SOP, the management layer — added capacity. That's why it kept breaking anyway.",
 	"tagline": "I don't build it. I tell you <span class=\"accent\">why</span> the last three things you built didn't work.",
 	"heroMeta": [
 		{ "label": "Field report", "accent": true },
@@ -13,7 +13,8 @@
 	],
 	"whoHeading": "Who this is for",
 	"whoParagraphs": [
-		"Founders of professional services businesses doing $3–5M in revenue — agencies, consultancies, MSPs, engineering and design firms. Somewhere between twenty and fifty people. Still founder-led, still founder-dependent: you're still the best seller, often still the best deliverer, and still in the loop on everything that matters."
+		"Founders of professional services businesses doing $3–5M in revenue — agencies, consultancies, MSPs, engineering and design firms. Somewhere between twenty and fifty people. Still founder-led, still founder-dependent: you're still the best seller, often still the best deliverer, and still in the loop on everything that matters.",
+		"This is not a build engagement, an implementation partner, or a coaching package. If the last three things you built didn't hold, the next hire or tool will fail in the same place unless the constraint is named first."
 	],
 	"specTable": [
 		{ "label": "Revenue", "value": "$3–5M" },
@@ -22,14 +23,14 @@
 		{ "label": "Constraint", "value": "You" }
 	],
 	"offerStatement": "I don't build it. I tell you why the last three things you built didn't work.",
-	"fourFixesHeading": "The four fixes",
+	"fourFixesHeading": "Why did the last four fixes fail?",
 	"fourFixes": [
 		"You hired someone senior and they can't operate without you.",
 		"You bought software and nobody trusts what it reports.",
 		"You wrote SOPs and nobody follows them.",
 		"You added a layer of management and it turned into a game of telephone."
 	],
-	"convergenceLine": "Each of those looks like a separate problem. It isn't. They are four readings of the same missing thing.",
+	"convergenceLine": "Each of those looks like a separate problem. It isn't. They are four readings of the same missing thing: range.",
 	"distinctionHeading": "Capacity is more of what you already do. Range is more of what you can absorb.",
 	"capacityLabel": "Adding capacity",
 	"capacityCaption": "Seven of the same response. Handles more volume of what you've already seen.",

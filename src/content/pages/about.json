@@ -1,26 +1,26 @@
 {
   "title": "About — Jon Martin",
-  "description": "Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms — and why the fixes didn't hold.",
+  "description": "Jon Martin diagnoses why systems and org structures keep breaking in founder-led $3–5M professional services firms. The deliverable is a written second opinion, not an implementation project.",
   "kicker": "About",
   "heroTitle": "I diagnose. I don't implement.",
-  "subhead": "Most people who get called into a broken business are there to build something. That's the problem — the last three things you built are why you're calling.",
+  "subhead": "Capacity is more of what you already do. Range is more of what you can absorb. Most people called into a broken business are there to build something — which is how the last three things you built became the reason you're calling.",
   "sections": [
     {
-      "heading": "What I actually do",
+      "heading": "What is the work?",
       "paragraphs": [
         "I work in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies. The job looks like tooling from the outside. It isn't. It's variety management: deciding what complexity a business should absorb, what it should refuse, and whether the answer is new tooling or a redrawn boundary.",
         "That distinction is the whole reason this site exists. A company that can't quote consistently doesn't have a CPQ problem. A company whose reports nobody trusts doesn't have a dashboard problem. Those are symptoms of a structure that produces them reliably, and replacing the tool leaves the structure intact — which is why the new tool breaks in the same place the old one did."
       ]
     },
     {
-      "heading": "Why a second opinion, and not a project",
+      "heading": "Why a second opinion, and not a project?",
       "paragraphs": [
         "The highest-leverage move in operations is usually to move a team boundary, and that's almost never available to the person brought in to fix the process. I do a lot of my work as an external designer — hired to fix the system, not to redraw the org.",
         "So the deliverable is a written diagnosis: here's what's actually breaking, here's the constraint you can't remove, here's what it costs you a year, and here's the best system available inside it. Naming a constraint you can't remove isn't failure. Pretending you can automate around it is."
       ]
     },
     {
-      "heading": "Where the framework comes from",
+      "heading": "Where does the framework come from?",
       "paragraphs": [
         "Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement, and separately as a plain-language series for anyone who'd rather start there.",
         "<a href=\"/four-laws-complex-system-design-full\">Four Laws of Complex System Design &rarr;</a> &middot; <a href=\"/writing/complex-isnt-complicated\">Start the writing series &rarr;</a>"
