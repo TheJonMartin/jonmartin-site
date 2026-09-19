@@ -17,7 +17,7 @@ Here is how I'd answer it, using four systems laws I keep coming back to.
 
 ## Ashby: you're not managing efficiency, you're managing variety
 
-Ashby's Law of Requisite Variety says that a control system must have at least as much variety as the thing it's trying to control. If your customers can generate forty kinds of situation and your process can handle twelve, the other twenty-eight leak out as escalations, spreadsheets, Slack threads, and someone named Rachel who "just knows how to handle those."
+[Ashby's Law of Requisite Variety](/four-laws-complex-system-design-full#s21) says that a control system must have at least as much variety as the thing it's trying to control. If your customers can generate forty kinds of situation and your process can handle twelve, the other twenty-eight leak out as escalations, spreadsheets, Slack threads, and someone named Rachel who "just knows how to handle those."
 
 That's the real definition of the job. Operations is variety management.
 
@@ -32,7 +32,7 @@ And notice what's missing from both levers: "work harder" and "document it bette
 
 ## Conway: the process you were hired to fix is a picture of the org chart
 
-Conway's Law: organizations produce designs that mirror their own communication structures.
+[Conway's Law](/four-laws-complex-system-design-full#s22): organizations produce designs that mirror their own communication structures.
 
 It was written about software, but it's more obviously true of business process than of code. The reason quote-to-cash takes nine days isn't that anyone is slow. It's that quoting lives in sales, approval lives in finance, provisioning lives in delivery, and invoicing lives in accounting — so the process has four handoffs, because the company has four teams. The handoffs are the org chart. You are looking at a diagram of who talks to whom, rendered as a workflow.
 
@@ -42,7 +42,7 @@ It also explains why process improvement projects so often produce a beautiful n
 
 ## Brooks: the reflex fix makes it worse
 
-Brooks's Law: adding people to a late project makes it later. Communication paths grow roughly as n(n-1)/2, so every new person adds coordination cost faster than they add capacity.
+[Brooks's Law](/four-laws-complex-system-design-full#s23): adding people to a late project makes it later. Communication paths grow roughly as n(n-1)/2, so every new person adds coordination cost faster than they add capacity.
 
 The operations version of this shows up constantly. A process is straining, so the company hires a coordinator to manage the handoffs. Now there are five parties instead of four, and the new person's entire job is absorbing variety by hand — which means the variety never gets designed out, it gets staffed around. A year later the coordinator is indispensable, undocumented, and the actual bottleneck.
 
@@ -50,7 +50,7 @@ Brooks is the reason "just add headcount" is not the same as "increase regulator
 
 ## Reverse Conway: the lever most people never reach for
 
-If structure produces process, then the way to change process is to change structure. That's the Reverse Conway Maneuver: deliberately reshape team boundaries so the system you want becomes the natural output.
+If structure produces process, then the way to change process is to change structure. That's the [Reverse Conway Maneuver](/four-laws-complex-system-design-full#s24): deliberately reshape team boundaries so the system you want becomes the natural output.
 
 Give one team end-to-end ownership of quote through first invoice, and the four handoffs collapse — not because anyone optimized them, but because they stopped being handoffs. The seam disappeared when the boundary moved.
 
@@ -60,7 +60,7 @@ You often won't control team boundaries. I do a lot of my work as an external de
 
 ## A note on Beer's VSM
 
-If you want a fuller model of how an organization stays viable under all this, Stafford Beer's Viable System Model is the natural next step. It isn't a fifth law on equal footing — it's an operationalization of Ashby's second lever at the organizational level, showing where variety gets absorbed, where it should be amplified, and which parts of a business are responsible for adaptation rather than execution. Worth reading once you've got the four laws in your hands.
+If you want a fuller model of how an organization stays viable under all this, Stafford Beer's [Viable System Model](/four-laws-complex-system-design-full#p6) is the natural next step. It isn't a fifth law on equal footing — it's an operationalization of Ashby's second lever at the organizational level, showing where variety gets absorbed, where it should be amplified, and which parts of a business are responsible for adaptation rather than execution. Worth reading once you've got the four laws in your hands — or see the [Glossary](/glossary) for short definitions of all four plus VSM.
 
 ## So how do you define the role?
 
@@ -73,3 +73,5 @@ Not by function. By which lever you'll be allowed to pull. Three questions I'd a
 **"Where is work waiting?"** Not where it's slow — where it's waiting. Every wait state is a team boundary. Ask what's on either side of it.
 
 So, to answer the original question directly: yes, this is what I do. But I'd stop describing it as making processes more efficient. It's deciding what variety a business should absorb, what it should refuse, and whether the answer requires new tooling or a redrawn boundary. That's a definable job. "Efficiency" isn't.
+
+*I later found these same four laws converging, independently, with an entirely different field's complexity science — see [Two Fields That Never Talked to Each Other, Converging on the Same Physics](/writing/capstone-four-laws).*

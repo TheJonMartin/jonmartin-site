@@ -51,3 +51,5 @@ Which kind of diversity are you actually looking at right now — the kind worth
 ---
 
 *This is Part 4 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Next up: the explore/exploit trade-off — why some problems deserve a permanent testing budget instead of a finished answer.*
+
+[← Previous: The Interesting In-Between](/writing/interesting-in-between) · [Next: Why Some Things Should Never Fully Ship →](/writing/explore-exploit)

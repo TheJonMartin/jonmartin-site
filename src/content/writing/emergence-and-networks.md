@@ -47,3 +47,5 @@ Do you know what your hub nodes are, or only that the system has mostly held up 
 ---
 
 *This is Part 6 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Next up: why highly connected systems don't just risk failure from an outside shock — they can build toward states where an ordinary small event triggers a cascade on its own.*
+
+[← Previous: Why Some Things Should Never Fully Ship](/writing/explore-exploit) · [Next: The Small Event That Wasn't Actually Small →](/writing/feedback-and-cascades)

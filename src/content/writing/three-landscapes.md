@@ -53,3 +53,5 @@ What landscape are you standing on right now, and does your effort actually matc
 ---
 
 *This is Part 2 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Next up: the four dials that determine whether a system produces genuine complexity or just falls apart — and why the answer is never found at the extremes.*
+
+[← Previous: Complex Isn't Complicated](/writing/complex-isnt-complicated) · [Next: The Interesting In-Between →](/writing/interesting-in-between)

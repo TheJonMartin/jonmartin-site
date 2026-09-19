@@ -416,19 +416,19 @@ In practice, the VSM's most immediate value is diagnostic. Before asking how to 
 
 The VSM does not sit alongside the four laws as a parallel framework. It intersects with each of them, and in some cases reveals a deeper layer of what those laws are actually describing.
 
-##### VSM and Ashby
+#### VSM and Ashby
 
 The VSM is Ashby's second lever — reduce the variety the regulator must absorb — built into organizational architecture as a structural requirement rather than a situational tactic. Attenuation and amplification across the recursive levels are not coping strategies; they are load-bearing components of the design. When the attenuation chain is broken at any level, the Ashby problem resurfaces immediately: the node above that level absorbs more variety than it is equipped to handle. The VSM makes Ashby's framework actionable by specifying *where* the attenuation and amplification should happen (at each level boundary) and *how* (through the specific functions of S1, S2, S3, S4, and S5).
 
-##### VSM and Conway's Law
+#### VSM and Conway's Law
 
 Conway's Law says systems mirror the communication structure of the organizations that build them. The VSM reveals that this mirroring is not just a top-level effect — it operates at every level of recursion. If the firm-level communication structure is well-designed (appropriate S2, clean boundaries between S1 units) but the team-level communication structure is not (no S2 within the team, no defined interfaces between roles), the system produced by the team will carry the dysfunction of the team's structure even if the firm-level structure is correct. **Recursive coherence is the demand that Conway's Law is addressed at every level, not just the level where the org design decision was most visible.**
 
-##### VSM and Brooks's Law
+#### VSM and Brooks's Law
 
 S2's function maps directly onto the problem that Brooks's Law describes. Brooks's communication overhead (n(n−1)/2 pairs) is precisely what happens when S1 units must coordinate without a formal S2 mechanism — every unit communicates directly with every other unit, and the overhead grows combinatorially. S2 is the structural solution: routing coordination through defined channels so that the communication graph is no longer fully connected. A well-designed S2 does not eliminate coordination overhead — it contains and structures it. The absence of S2 is the structural condition in which Brooks's Law operates at maximum severity.
 
-##### VSM and Reverse Conway
+#### VSM and Reverse Conway
 
 The Reverse Conway Maneuver is typically applied as a one-time design decision: design the team structure to produce the architecture you want. The VSM makes this a **continuous practice** rather than a one-time act. S4's function — scanning the external environment and translating what it finds into adaptation — means that the variety profile of the domain is always changing. Team boundaries that were correct for the current domain may not be correct for the domain six months from now. S4 is the function that detects when the boundaries need to move, and S5 is the function that authorizes moving them. Without S4 and S5 functioning properly, the Reverse Conway Maneuver is a one-time design exercise that goes stale. With them functioning, it becomes an adaptive organizational capability.
 

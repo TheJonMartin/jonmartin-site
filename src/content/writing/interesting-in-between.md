@@ -60,3 +60,5 @@ Most fixes fail because someone reaches for the whole toolbox when the actual pr
 ---
 
 *This is Part 3 of a series working through Scott Page's* Understanding Complexity *(The Great Courses, 2009) applied to RevOps at scaling companies. Next up: diversity, taken apart — the four different ways to measure it, and why most "we need more diversity" conversations are arguing about the wrong one.*
+
+[← Previous: Three Landscapes](/writing/three-landscapes) · [Next: Diversity, Deconstructed →](/writing/diversity-deconstructed)

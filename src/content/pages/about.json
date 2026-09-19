@@ -1,6 +1,6 @@
 {
   "title": "About — Jon Martin",
-  "description": "Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms — and why the last three fixes did not hold.",
+  "description": "Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms — and why the fixes didn't hold.",
   "kicker": "About",
   "heroTitle": "I diagnose. I don't implement.",
   "subhead": "Most people who get called into a broken business are there to build something. That's the problem — the last three things you built are why you're calling.",
@@ -22,14 +22,15 @@
     {
       "heading": "Where the framework comes from",
       "paragraphs": [
-        "Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement.",
-        "<a href=\"/four-laws-complex-system-design-full\">Four Laws of Complex System Design &rarr;</a>"
+        "Four systems laws do most of the work: Ashby's Law of Requisite Variety, Conway's Law, Brooks's Law, and the Reverse Conway Maneuver — with Beer's Viable System Model behind them. I've written the whole thing up as a standing reference rather than re-explaining it per engagement, and separately as a plain-language series for anyone who'd rather start there.",
+        "<a href=\"/four-laws-complex-system-design-full\">Four Laws of Complex System Design &rarr;</a> &middot; <a href=\"/writing/complex-isnt-complicated\">Start the writing series &rarr;</a>"
       ]
     },
     {
+      "id": "contact",
       "heading": "Getting in touch",
       "paragraphs": [
-        "Nothing is bookable yet. I'm writing the first diagnoses now — if you want the sample when it's finished, <a href=\"/#notify\">the waitlist is on the homepage</a>. Otherwise: <a href=\"mailto:jon@thejonmartin.com\">jon@thejonmartin.com</a>."
+        "Nothing is packaged as a productized offer yet — I'm writing the first diagnoses now. If you want to talk through a consulting engagement, an advisory conversation, or a second opinion on something specific, send a note below. I read and reply to these myself."
       ]
     },
     {
