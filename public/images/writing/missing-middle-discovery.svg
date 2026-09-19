@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#FAF6EF"/>
+  <text x="48" y="52" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="26" fill="#4A3352">The Missing Middle</text>
+  <text x="48" y="76" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="15" fill="#7C9473">Four altitudes. Only one is scopable.</text>
+  <line x1="48" y1="92" x2="752" y2="92" stroke="#4A3352" stroke-width="1"/>
+  <rect x="48" y="112" width="704" height="72" fill="#EDE6D9" stroke="#4A3352" stroke-width="1"/>
+  <text x="64" y="140" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="18" fill="#4A3352">L0  ·  Island</text>
+  <text x="64" y="164" font-family="Calibri, 'Segoe UI', sans-serif" font-size="15" fill="#2E2A26">Business outcome. Pain, goal, success. No system named.</text>
+  <text x="736" y="154" font-family="'Courier New', monospace" font-size="12" fill="#7C9473" text-anchor="end">CLIENT SPEAKS</text>
+  <rect x="48" y="192" width="704" height="72" fill="#E4E9DC" stroke="#4A3352" stroke-width="1"/>
+  <text x="64" y="220" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="18" fill="#4A3352">L1  ·  Outline</text>
+  <text x="64" y="244" font-family="Calibri, 'Segoe UI', sans-serif" font-size="15" fill="#2E2A26">Process and actors. Swimlanes with no vendor on the boxes.</text>
+  <text x="736" y="234" font-family="'Courier New', monospace" font-size="12" fill="#7C9473" text-anchor="end">CLIENT SPEAKS</text>
+  <rect x="44" y="270" width="712" height="88" fill="#F3E2B8" stroke="#E8A93B" stroke-width="3"/>
+  <text x="64" y="300" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="18" fill="#4A3352">L2  ·  Map you can sell</text>
+  <text x="64" y="324" font-family="Calibri, 'Segoe UI', sans-serif" font-size="15" fill="#2E2A26">What the system must do. Authored, then confirmed. The ruler.</text>
+  <text x="736" y="314" font-family="'Courier New', monospace" font-size="12" fill="#4A3352" text-anchor="end">YOU AUTHOR</text>
+  <rect x="48" y="366" width="704" height="72" fill="#EDE6D9" stroke="#4A3352" stroke-width="1"/>
+  <text x="64" y="394" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="18" fill="#4A3352">L3  ·  Every inlet</text>
+  <text x="64" y="418" font-family="Calibri, 'Segoe UI', sans-serif" font-size="15" fill="#2E2A26">Fields, APIs, exact rules. Only after an L2 exists.</text>
+  <text x="736" y="408" font-family="'Courier New', monospace" font-size="12" fill="#7C9473" text-anchor="end">PREMATURE WITHOUT L2</text>
+  <text x="752" y="480" font-family="'Courier New', monospace" font-size="11" fill="#7C9473" text-anchor="end">NO L3 UNTIL THERE IS AN L2</text>
+</svg>

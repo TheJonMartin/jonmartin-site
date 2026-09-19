@@ -3,10 +3,12 @@ title: 'The Missing Middle of Discovery'
 description: 'Discovery fails in the gap between pain and configuration. Requirements live at four altitudes, and the usable one almost never arrives in the client\'s words.'
 seoTitle: 'The Missing Middle of Discovery — Jon Martin'
 pubDate: 2026-09-19
-draft: true
+draft: false
 tags: ['Systems', 'RevOps', 'Client Delivery']
 category: 'Client Delivery'
 ---
+
+![The Missing Middle of Discovery](/images/writing/missing-middle-discovery.svg)
 
 A discovery call can go well and still produce nothing you can scope.
 
