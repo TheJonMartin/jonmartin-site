@@ -1,0 +1,283 @@
+---
+import Base from '../layouts/Base.astro';
+import ConsultingInquiryForm from '../components/ConsultingInquiryForm.astro';
+
+const title = 'HubSpot-Facing Review — Jon Martin';
+const seoTitle = 'HubSpot Product & Positioning Review — Jon Martin';
+const description =
+	"A written diagnosis of what HubSpot users, operators, and partners actually hear in your product — for founders, PMs, and product marketers. I don't build the integration.";
+
+const faq = [
+	{
+		q: 'Do you implement HubSpot or build the integration?',
+		a: 'No. I diagnose. Current implementation work lives elsewhere. This page is the written review only.',
+	},
+	{
+		q: 'Who is this for?',
+		a: 'A founder, PM, or product marketer of a product that integrates with HubSpot or is sold to HubSpot users.',
+	},
+	{
+		q: 'What do I get?',
+		a: 'A written diagnosis and a 60-minute readout. Not a deck. Not a build.',
+	},
+	{
+		q: 'How much?',
+		a: 'The first five reviews are $3,000. After the founding set, price is on the reply.',
+	},
+	{
+		q: 'How long does it take?',
+		a: 'Intake the week you send the packet. Written piece and readout in one working block after that — usually a Saturday or two weekday mornings.',
+	},
+	{
+		q: 'Is this the same as the waitlist on the homepage?',
+		a: 'No. The homepage is a diagnosis for founder-led professional services firms. This page is for HubSpot-facing products.',
+	},
+];
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Offer',
+			'@id': 'https://thejonmartin.com/hubspot-facing#offer',
+			name: 'HubSpot-Facing Review',
+			description,
+			url: 'https://thejonmartin.com/hubspot-facing',
+			price: '3000',
+			priceCurrency: 'USD',
+			availability: 'https://schema.org/LimitedAvailability',
+			seller: { '@id': 'https://thejonmartin.com/#jon' },
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': 'https://thejonmartin.com/hubspot-facing#faq',
+			mainEntity: faq.map((item) => ({
+				'@type': 'Question',
+				name: item.q,
+				acceptedAnswer: { '@type': 'Answer', text: item.a },
+			})),
+		},
+	],
+};
+---
+
+<Base title={title} seoTitle={seoTitle} description={description} schema={schema} navBordered={false}>
+	<main id="main">
+		<section class="band hero">
+			<div class="inner">
+				<div class="edge">
+					<div class="meta">
+						<div class="cell accent">Offer</div>
+						<div class="cell">No. 002</div>
+						<div class="cell">HubSpot-facing</div>
+						<div class="cell">Status: founding 5</div>
+					</div>
+					<h1>HubSpot users don't buy the integration.</h1>
+					<div class="herorow">
+						<p class="dek">
+							They buy a job that has to finish inside a portal they already half-distrust. Most listings, decks, and roadmaps describe the connector you built. I write down the gap. I don't implement HubSpot, and I don't build the integration.
+						</p>
+						<a class="btn btn-primary" href="#ask">Ask about a founding review &rarr;</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="band offer">
+			<div class="inner">
+				<p class="label offer-label">The offer</p>
+				<p class="offer-statement">I don't build the connector. I tell you which product the HubSpot operator thought they were buying.</p>
+			</div>
+		</section>
+
+		<section class="band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">01 / Who this is for</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<p class="lede">Founders, PMs, and product marketers whose product integrates with HubSpot — or is sold to people who live there. Pre-listing through the first few hundred installs, or a listing that exists and has gone quiet.</p>
+					<p class="lede">You are close enough to the product to change the sentence. You are not looking for someone to administer a portal or ship the next endpoint.</p>
+					<div class="spectable">
+						<div class="spec"><span class="label spec-label">Reader</span><span class="spec-value">Founder / PM / PMM</span></div>
+						<div class="spec"><span class="label spec-label">Terrain</span><span class="spec-value">HubSpot-facing</span></div>
+						<div class="spec"><span class="label spec-label">Stage</span><span class="spec-value">Listing → 500 installs</span></div>
+						<div class="spec"><span class="label spec-label">Constraint</span><span class="spec-value">The sentence</span></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">02 / The four misses</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<div class="fixrow"><span class="label fix-n">01</span><p>You treated the HubSpot marketplace as a discovery engine. It is a confirmation page for a buyer who already has a job in mind.</p></div>
+					<div class="fixrow"><span class="label fix-n">02</span><p>You mapped fields and called it a workflow. Operators do not buy objects. They buy a job that survives the next handoff.</p></div>
+					<div class="fixrow"><span class="label fix-n">03</span><p>You positioned against a HubSpot object the buyer thinks they already paid for. Until that collision is named, every demo is a feature argument.</p></div>
+					<div class="fixrow"><span class="label fix-n">04</span><p>You wrote partner and AE enablement as a product brochure. A Solutions Partner only hands over a page that protects their own deal.</p></div>
+					<div class="convergence">
+						<span></span>
+						<div class="bracket"></div>
+						<p>Each of those looks like a marketing problem. It isn't. They are four readings of a missing L2 sentence — what the integration is contractually responsible for, for whom, after install.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="band distinction">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">03 / The distinction</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<h2>The listing describes what you built. The operator is trying to finish a job.</h2>
+					<div class="diagram">
+						<div class="panel capacity">
+							<span class="label panel-label">What you shipped</span>
+							<p class="caption">Endpoints, objects, a “works with HubSpot” badge, a listing that looks complete.</p>
+						</div>
+						<div class="panel range">
+							<span class="label panel-label range-panel-label">What they heard</span>
+							<p class="caption">Who owns the record after install, whether this replaces something they already pay HubSpot for, and what breaks when sales, marketing, and success all touch the same contact.</p>
+						</div>
+					</div>
+					<p class="label disclaimer">Schematic, not a screenshot of your app.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">04 / What you get</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<p class="lede">A written review. Not a workshop. Not an implementation plan dressed as strategy.</p>
+					<p><strong>You send, before the call:</strong> the marketplace listing and/or the product page that mentions HubSpot; the one-pager or deck used with partners or AEs, if it exists; a 20-minute loom or live walkthrough of the integration as a user sees it; up to three customer or lost-deal quotes, even messy ones; the sentence you currently use for “why HubSpot.”</p>
+					<p><strong>You get back:</strong> a written diagnosis, six to ten pages; the L2 sentence the product is actually making, versus the one the listing claims; where the product collides with native HubSpot — fatal, containable, or the real wedge; what a HubSpot operator, a Solutions Partner, and a HubSpot AE each hear; what not to build next; a 60-minute readout the same day as the written piece.</p>
+					<p>Not included: finished listing copy, partner-program paperwork, build work, Slack after the readout.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">05 / Founding set</span>
+					<div class="rule"></div>
+					<span class="label chip-inline">First 5 · $3,000</span>
+				</div>
+				<div class="content">
+					<p class="lede">The first five reviews are $3,000. After that the founding price closes and the next price is named on the reply, not on this page.</p>
+					<p>One review is one product surface. A second product, a listing rewrite, or a partner one-pager is a new sentence, not a continuation of this one.</p>
+					<p>I take these in Saturday or weekday-morning blocks. I do not sell a retainer on this page. I do not implement.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="band" id="faq">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">FAQ</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					{faq.map((item) => (
+						<div class="faqrow">
+							<h3>{item.q}</h3>
+							<p>{item.a}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<section class="band waitlist-band" id="ask">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label waitlist-label">06 / Ask</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<p class="ask-lede">If the four misses sound like last quarter, send a note. Say what the product is, where HubSpot sits in the story, and which miss is loudest. I read these myself. If it is not this offer, I will say so.</p>
+					<ConsultingInquiryForm
+						offer="hubspot-facing"
+						placeholder="What the product is, where HubSpot sits in the story, and which miss is loudest."
+					/>
+				</div>
+			</div>
+		</section>
+	</main>
+</Base>
+
+<style>
+	.band { padding: 88px 0; border-top: 1px solid var(--hairline); }
+	.band:first-child { border-top: none; }
+	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.ledger { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
+	.rail { position: sticky; top: 24px; align-self: start; }
+	.section-label { font-size: 12px; color: var(--sage); display: block; margin-bottom: 0.75rem; }
+	.rule { width: 40px; height: 2px; background: var(--mustard); }
+	.chip-inline { display: inline-block; margin-top: 1rem; font-size: 11px; color: var(--plum); border: 1px solid var(--hairline); padding: 6px 10px; }
+	.hero { background: var(--plum); color: var(--cream); padding: 72px 0 80px; }
+	.hero .edge { border-left: 1px solid var(--hairline-on-plum); padding-left: 18px; }
+	.meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-bottom: 1px solid var(--hairline-on-plum); margin-bottom: 40px; }
+	.cell { padding: 14px 18px; font-family: 'Courier New', Cousine, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--label-on-plum); border-right: 1px solid var(--hairline-on-plum); }
+	.cell.accent { color: var(--mustard); }
+	.hero h1 { color: var(--cream); font-size: clamp(38px, 6.4vw, 84px); font-weight: 400; line-height: 1.02; letter-spacing: -0.02em; max-width: 16ch; text-wrap: pretty; margin: 0 0 40px; }
+	.herorow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; }
+	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
+	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; justify-self: start; }
+	.btn-primary { background: var(--mustard); color: var(--plum); }
+	.btn-primary:hover { background: var(--cream); color: var(--plum); }
+	.offer { background: var(--mustard); padding: 56px 0; border-top: none; }
+	.offer-label { font-size: 11px; letter-spacing: 0.18em; color: var(--mustard-shade); margin: 0 0 0.75rem; }
+	.offer-statement { font-family: Georgia, Gelasio, serif; font-size: clamp(26px, 4vw, 46px); line-height: 1.14; max-width: 26ch; color: var(--charcoal); margin: 0; }
+	.lede { font-size: 21px; line-height: 1.55; max-width: 60ch; margin: 0 0 1.25rem; }
+	.content p { font-size: 18px; line-height: 1.55; max-width: 62ch; margin: 0 0 1.1rem; }
+	.spectable { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+	.spec { padding: 18px 0; }
+	.spec-label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.spec-value { font-family: Georgia, Gelasio, serif; font-size: 22px; color: var(--plum); }
+	.fixrow { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; padding: 26px 0; border-top: 1px solid var(--hairline); align-items: start; }
+	.fixrow:first-child { border-top: none; }
+	.fix-n { font-size: 13px; color: var(--sage); padding-top: 6px; }
+	.fixrow p { font-family: Georgia, Gelasio, serif; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.3; color: var(--plum); max-width: 44ch; margin: 0; }
+	.convergence { display: grid; grid-template-columns: 64px 40px minmax(0, 1fr); border-top: 1px solid var(--hairline); padding-top: 28px; align-items: center; }
+	.bracket { border-left: 2px solid var(--mustard); min-height: 60px; }
+	.convergence p { padding-left: 22px; font-size: 20px; line-height: 1.5; max-width: 46ch; margin: 0; }
+	.distinction { background: var(--white); }
+	.distinction h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.15; max-width: 26ch; margin: 0 0 2.5rem; }
+	.diagram { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; border: 1px solid var(--hairline); }
+	.panel { padding: 28px; }
+	.panel.range { background: var(--cream); }
+	.panel-label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 1rem; }
+	.range-panel-label { color: var(--dark-mustard); }
+	.caption { font-size: 16px; line-height: 1.5; margin: 0; }
+	.disclaimer { font-size: 12px; color: var(--muted); margin: 1.25rem 0 0; }
+	.faqrow { padding: 22px 0; border-top: 1px solid var(--hairline); }
+	.faqrow:first-child { border-top: none; }
+	.faqrow h3 { font-size: 1.15rem; margin: 0 0 0.5rem; color: var(--plum); }
+	.faqrow p { margin: 0; }
+	.waitlist-band { background: var(--plum); color: var(--cream); }
+	.waitlist-band .rule { background: var(--mustard); }
+	.waitlist-label { color: var(--mustard); }
+	.ask-lede { font-size: 19px; line-height: 1.55; max-width: 56ch; margin: 0 0 0.5rem; color: var(--cream); }
+	.waitlist-band :global(label) { color: var(--cream); }
+	.waitlist-band :global(.opt) { color: var(--label-on-plum); }
+	.waitlist-band :global(button) { background: var(--mustard); color: var(--plum); }
+	.waitlist-band :global(button:hover) { background: var(--cream); color: var(--plum); }
+	@media (max-width: 720px) {
+		.inner { padding: 0 20px; }
+		.band { padding: 56px 0; }
+		.ledger { grid-template-columns: 1fr; gap: 28px; }
+		.rail { position: static; }
+	}
+</style>

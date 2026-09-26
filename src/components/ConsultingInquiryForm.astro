@@ -1,24 +1,9 @@
 ---
-// Netlify Forms capture for general consulting inquiries, linked from the
-// About page. Distinct from NotifyForm.astro's "waitlist" (a pre-launch
-// research signup with no reply promised) — this one is a real "get in
-// touch about work" form, closer in shape to Four Laws' own contact.astro.
-//
-// Netlify detects forms from the built HTML at deploy time. Two
-// requirements for that to keep working:
-//   1. Forms must stay ENABLED on the Netlify project (jonmartin-mvp).
-//   2. The hidden form-name input below must match the form's name attribute.
-//
-// Named "consulting-inquiry" — distinct from "waitlist" and
-// "fourlaws-contact" so submissions land in their own bucket in the
-// Netlify dashboard rather than mixing with either.
-//
-// Submissions land in Netlify → jonmartin-mvp → Forms → consulting-inquiry.
-//
-// Styled to the v2 "ledger grid" visual system (see
-// shared/styles/field-and-ledger.css) — the same row-pair grid and
-// Courier-New uppercase button as NotifyForm.astro, so a form embedded
-// mid-page doesn't read as a different design system than the page around it.
+interface Props {
+	offer?: string;
+	placeholder?: string;
+}
+const { offer, placeholder } = Astro.props;
 ---
 
 <form
@@ -29,6 +14,7 @@
 	netlify-honeypot="bot-field"
 >
 	<input type="hidden" name="form-name" value="consulting-inquiry" />
+	{offer && <input type="hidden" name="offer" value={offer} />}
 	<p class="hp">
 		<label>Leave this empty if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
 	</p>
@@ -52,7 +38,7 @@
 	<div class="field">
 		<label for="ci-message">What's going on?</label>
 		<textarea id="ci-message" name="message" rows="5" required
-			placeholder="What's breaking, what you've already tried, or what a second opinion would need to cover."></textarea>
+			placeholder={placeholder ?? "What's breaking, what you've already tried, or what a second opinion would need to cover."}></textarea>
 	</div>
 
 	<button type="submit">Send &rarr;</button>
@@ -96,7 +82,5 @@
 	}
 	button:hover { background: #3c2a43; }
 	button:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 2px; }
-	/* Off-screen rather than display:none — some bots skip hidden fields,
-	   which defeats the point of having one. */
 	.hp { position: absolute; left: -9999px; }
 </style>
