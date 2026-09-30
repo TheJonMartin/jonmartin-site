@@ -59,6 +59,50 @@ collections:
         }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  - name: "altitude"
+    label: "Requirements Altitude"
+    folder: "src/content/altitude"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - {
+          label: "SEO title (optional — used verbatim, no site-name suffix added)",
+          name: "seoTitle",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Nav group",
+          name: "group",
+          widget: "select",
+          options: ["core", "practice", "delivery", "reference"],
+          hint: "Core = modules 1–7. Practice = drills, call playbook, capstone, field card. Delivery = document, design levels, drift, recovery. Reference = frameworks, async sources, special conditions, assessment, facilitator notes.",
+        }
+      - {
+          label: "Sort order within its group",
+          name: "order",
+          widget: "number",
+          value_type: "int",
+          default: 100,
+        }
+      - {
+          label: "Draft (keeps it off the published site)",
+          name: "draft",
+          widget: "boolean",
+          default: false,
+        }
+      - {
+          label: "Updated date (optional)",
+          name: "updatedDate",
+          widget: "datetime",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
   - name: "four-laws"
     label: "Four Laws"
     folder: "src/content/four-laws"
