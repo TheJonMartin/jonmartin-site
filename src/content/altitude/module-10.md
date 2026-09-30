@@ -1,5 +1,5 @@
 ---
-title: Module 10: From Tagged Notes to the Requirements Document
+title: "Module 10: From Tagged Notes to the Requirements Document"
 description: "How tagged, sourced statements become a document a scoping team can actually use."
 seoTitle: "Module 10 | Requirements Altitude"
 group: delivery

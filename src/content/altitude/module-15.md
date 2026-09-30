@@ -1,5 +1,5 @@
 ---
-title: Module 15: Applying the Framework to Written and Asynchronous Sources
+title: "Module 15: Applying the Framework to Written and Asynchronous Sources"
 description: "The same diagnostic on decks, tickets, Slack threads, and recorded walkthroughs."
 seoTitle: "Module 15 | Requirements Altitude"
 group: reference

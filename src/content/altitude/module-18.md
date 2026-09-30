@@ -1,5 +1,5 @@
 ---
-title: Module 18: Assessment and the Proficiency Model
+title: "Module 18: Assessment and the Proficiency Model"
 description: "Five proficiency levels and a capstone rubric for the written guide and any later course."
 seoTitle: "Module 18 | Requirements Altitude"
 group: reference

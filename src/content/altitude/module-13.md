@@ -1,5 +1,5 @@
 ---
-title: Module 13: Capstone
+title: "Module 13: Capstone"
 description: "One end-to-end pass: tag, bridge, map stakeholders, trace vertically, write the document."
 seoTitle: "Module 13: Capstone | Requirements Altitude"
 group: practice

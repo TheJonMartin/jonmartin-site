@@ -1,5 +1,5 @@
 ---
-title: Module 7: Multi-Stakeholder Altitude Mapping
+title: "Module 7: Multi-Stakeholder Altitude Mapping"
 description: "Every statement has an altitude and a source. Conflict is not the same as a gap."
 seoTitle: "Module 7 | Requirements Altitude"
 group: core

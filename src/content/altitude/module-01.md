@@ -1,5 +1,5 @@
 ---
-title: Module 1: The Problem — Why Smart People Still Miss the Middle
+title: "Module 1: The Problem — Why Smart People Still Miss the Middle"
 description: "Why discovery can sound competent and still produce unusable requirements."
 seoTitle: "Module 1: The Problem | Requirements Altitude"
 group: core

@@ -1,5 +1,5 @@
 ---
-title: Module 9: Applying It in Discovery Calls
+title: "Module 9: Applying It in Discovery Calls"
 description: "Before, during, and after the call: how the framework sits in a real discovery motion."
 seoTitle: "Module 9 | Requirements Altitude"
 group: practice

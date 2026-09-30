@@ -1,5 +1,5 @@
 ---
-title: Module 17: Special Conditions
+title: "Module 17: Special Conditions"
 description: "Edge cases that change how the ladder runs without changing the altitudes themselves."
 seoTitle: "Module 17: Special Conditions | Requirements Altitude"
 group: reference

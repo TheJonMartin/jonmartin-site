@@ -1,5 +1,5 @@
 ---
-title: Appendix C: Gold-Standard Worked Example
+title: "Appendix C: Gold-Standard Worked Example"
 description: "Placeholder for a single real transcript run through all eighteen modules."
 seoTitle: "Appendix C | Requirements Altitude"
 group: reference

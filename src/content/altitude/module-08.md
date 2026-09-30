@@ -1,5 +1,5 @@
 ---
-title: Module 8: Practice Drills
+title: "Module 8: Practice Drills"
 description: "Tagging, translation, live-fire, and conflict-mapping drills with worked transcripts."
 seoTitle: "Module 8: Practice Drills | Requirements Altitude"
 group: practice

@@ -1,5 +1,5 @@
 ---
-title: Module 2: The Altitude Model
+title: "Module 2: The Altitude Model"
 description: "L0 through L3: what each level commits to, who authors it, and how to tell them apart."
 seoTitle: "Module 2: The Altitude Model | Requirements Altitude"
 group: core
