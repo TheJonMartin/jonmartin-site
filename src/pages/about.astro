@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import about from '../content/pages/about.json';
 import ConsultingInquiryForm from '../components/ConsultingInquiryForm.astro';
+import { personSchema } from '../lib/schema';
 
 // Written from what's already public on this site, the Four Laws material,
 // and the essay in /writing. Deliberately does not name an employer — Jon's
@@ -16,14 +17,22 @@ import ConsultingInquiryForm from '../components/ConsultingInquiryForm.astro';
 
 const { title, description } = about;
 
+// AboutPage + the full Person (shared with the homepage via src/lib/schema.ts)
+// in one @graph, so /about describes Jon on its own rather than only
+// pointing at an @id defined elsewhere.
 const schema = {
 	'@context': 'https://schema.org',
-	'@type': 'AboutPage',
-	'@id': 'https://thejonmartin.com/about/',
-	url: 'https://thejonmartin.com/about/',
-	name: title,
-	description,
-	mainEntity: { '@id': 'https://thejonmartin.com/#jon' },
+	'@graph': [
+		{
+			'@type': 'AboutPage',
+			'@id': 'https://thejonmartin.com/about/',
+			url: 'https://thejonmartin.com/about/',
+			name: title,
+			description,
+			mainEntity: { '@id': 'https://thejonmartin.com/#jon' },
+		},
+		personSchema,
+	],
 };
 ---
 
