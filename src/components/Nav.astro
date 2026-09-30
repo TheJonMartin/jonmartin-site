@@ -1,6 +1,7 @@
 ---
 import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
+import { altitudeGroups } from '../lib/altitude-links';
 
 // The one nav for the whole site. Rebuilt to the brand/visual-system design
 // handoff's header spec: wordmark + "Jon Martin" on the left, Writing / About
@@ -26,10 +27,9 @@ import { fourLawsGroups } from '../lib/four-laws-links';
 //
 // `bordered` — false only on the homepage, where the plum hero band directly
 // below the header supplies its own visual edge; every other page keeps the
-// hairline. `section="four-laws"` (passed only by FourLawsLayout.astro)
-// highlights the Four Laws summary as the current section.
+// hairline. `section` highlights the matching dropdown as current.
 interface Props {
-	section?: 'four-laws';
+	section?: 'four-laws' | 'altitude';
 	bordered?: boolean;
 }
 const { section, bordered = true } = Astro.props;
@@ -67,12 +67,33 @@ const isCurrent = (href: string) => {
 						{link.text}
 					</a>
 				))}
-				<details class="four-laws">
+				<details class="menu four-laws">
 					<summary aria-current={section === 'four-laws' ? 'page' : undefined}>
 						Four Laws
 					</summary>
 					<div class="panel">
 						{fourLawsGroups.map((group) => (
+							<div class="group">
+								<span class="label group-label">{group.label}</span>
+								<ul>
+									{group.links.map((link) => (
+										<li>
+											<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
+												{link.text}
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+				</details>
+				<details class="menu altitude">
+					<summary aria-current={section === 'altitude' || path === '/altitude' || path.startsWith('/altitude/') ? 'page' : undefined}>
+						Altitude
+					</summary>
+					<div class="panel">
+						{altitudeGroups.map((group) => (
 							<div class="group">
 								<span class="label group-label">{group.label}</span>
 								<ul>
@@ -176,7 +197,7 @@ const isCurrent = (href: string) => {
 		border-bottom-color: var(--mustard);
 	}
 
-	.four-laws {
+	.menu {
 		position: static;
 	}
 	summary {
