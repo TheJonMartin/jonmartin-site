@@ -1,0 +1,105 @@
+---
+import Wordmark from './Wordmark.astro';
+import { altitudeGroups } from '../lib/altitude-links';
+
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const year = new Date().getFullYear();
+---
+
+<footer>
+	<hr class="hairline" />
+	<div class="inner">
+		<nav aria-label="Requirements Altitude sections">
+			{altitudeGroups.map((group) => (
+				<div class="group">
+					<span class="label group-label">{group.label}</span>
+					<ul>
+						{group.links.map((link) => (
+							<li>
+								<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
+									{link.text}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</nav>
+
+		<hr class="hairline" />
+
+		<div class="colophon-row">
+			<div class="brand">
+				<Wordmark size={18} />
+				<p class="colophon">Requirements Altitude © {year} Jon Martin.</p>
+			</div>
+			<p class="crosslink">
+				Written by <a href="/about">Jon Martin</a>. Companion framework: <a href="/four-laws-complex-system-design-full">Four Laws</a>.
+			</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.inner {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2.5rem 40px 1.5rem;
+	}
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+	.group-label {
+		font-size: 0.72rem;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 0.35rem;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 1rem;
+	}
+	li a {
+		font-size: 0.9rem;
+		color: var(--charcoal);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	li a:hover {
+		border-bottom-color: var(--plum);
+	}
+	li a[aria-current='page'] {
+		border-bottom-color: var(--mustard);
+	}
+	.inner hr.hairline {
+		margin: 1.5rem 0;
+	}
+	.colophon-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 2rem;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+	.colophon-row p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--muted);
+	}
+	@media (max-width: 720px) {
+		.inner {
+			padding: 2rem 20px 1.5rem;
+		}
+	}
+</style>

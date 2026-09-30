@@ -1,12 +1,13 @@
 # Jon Martin
 
-> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work.
+> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work. Requirements Altitude is the companion written guide for classifying discovery statements (L0–L3) so requirements stay scopeable.
 
 ## Main pages
 
 - [Home](https://thejonmartin.com/): Who this site is for and what a written diagnosis/second opinion is.
 - [About](https://thejonmartin.com/about): What Jon does, why a second opinion rather than a project, and where the Four Laws framework comes from.
 - [Writing](https://thejonmartin.com/writing): Essays on systems, complexity, and revenue operations.
+- [Requirements Altitude](https://thejonmartin.com/altitude): Written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.
 - [Contact](https://thejonmartin.com/contact): Questions about the Four Laws framework, a correction to the reference material, or a consulting/speaking conversation.
 
 ## Writing
@@ -22,6 +23,14 @@
 - [Two Fields That Never Talked to Each Other, Converging on the Same Physics](https://thejonmartin.com/writing/capstone-four-laws)
 - [A Field-Tested Stakeholder Communication Matrix](https://thejonmartin.com/writing/stakeholder-communication-matrix)
 - ["I Want to Make Processes More Efficient" — What That Actually Means](https://thejonmartin.com/writing/what-more-efficient-actually-means)
+
+## Requirements Altitude
+
+- [Overview](https://thejonmartin.com/altitude): The four altitudes, the core discipline, and the full module index.
+- [The Altitude Model](https://thejonmartin.com/altitude/module-02): L0 business outcome, L1 process, L2 functional requirement, L3 configuration.
+- [The Diagnostic](https://thejonmartin.com/altitude/module-03): Live classification ladder, including speaker/source as step 0.
+- [The L2 Bridge Rule](https://thejonmartin.com/altitude/module-05): How the missing-middle sentence is authored.
+- [Field Card](https://thejonmartin.com/altitude/appendix-a): One-page card for use on an actual call.
 
 ## Four Laws of Complex System Design — Reference
 
