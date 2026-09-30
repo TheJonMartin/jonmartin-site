@@ -1,0 +1,91 @@
+---
+import { getCollection, render } from 'astro:content';
+import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
+import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
+import { articleSchema } from '../../lib/schema';
+
+export async function getStaticPaths() {
+	const pages = await getCollection('altitude', ({ data, id }) => !data.draft && !id.startsWith('_'));
+	const ordered = [...pages].sort((a, b) => a.id.localeCompare(b.id));
+	return ordered.map((page, i) => ({
+		params: { slug: page.id },
+		props: {
+			page,
+			prev: i > 0 ? ordered[i - 1] : undefined,
+			next: i < ordered.length - 1 ? ordered[i + 1] : undefined,
+		},
+	}));
+}
+
+const { page, prev, next } = Astro.props;
+const { Content } = await render(page);
+const canonical = new URL(`/altitude/${page.id}`, Astro.site).href.replace(/\/$/, '');
+---
+
+<AltitudeLayout
+	title={page.data.title}
+	seoTitle={page.data.seoTitle}
+	description={page.data.description}
+	schema={articleSchema(page.data.title, page.data.description, canonical)}
+>
+	<article>
+		<span class="label eyebrow">{page.data.group}</span>
+		<h1>{page.data.title}</h1>
+		<Content />
+	</article>
+
+	<nav class="pager" aria-label="Guide sequence">
+		{prev ? (
+			<a class="prev" href={`/altitude/${prev.id}`}>
+				<span class="dir">Previous</span>
+				{prev.data.title}
+			</a>
+		) : (
+			<a class="prev" href="/altitude">
+				<span class="dir">Previous</span>
+				Overview
+			</a>
+		)}
+		{next ? (
+			<a class="next" href={`/altitude/${next.id}`}>
+				<span class="dir">Next</span>
+				{next.data.title}
+			</a>
+		) : (
+			<a class="next" href="/altitude">
+				<span class="dir">Next</span>
+				Back to overview
+			</a>
+		)}
+	</nav>
+
+	<CrossSiteCTA />
+</AltitudeLayout>
+
+<style>
+	.eyebrow { font-size: 0.72rem; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.pager {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1.25rem;
+		margin: 2.75rem 0 0;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--hairline);
+	}
+	.pager a { text-decoration: none; font-size: 0.95rem; color: var(--charcoal); border-bottom: none; }
+	.pager .next { text-align: right; }
+	.dir {
+		display: block;
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-bottom: 0.25rem;
+	}
+	.pager a:hover { color: var(--plum); }
+	@media (max-width: 560px) {
+		.pager { grid-template-columns: 1fr; }
+		.pager .next { text-align: left; }
+	}
+</style>
