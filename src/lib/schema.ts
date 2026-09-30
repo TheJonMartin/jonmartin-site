@@ -171,3 +171,45 @@ export function breadcrumbSchema(pageTitle: string, pageUrl: string, siteUrl: st
 		],
 	};
 }
+
+/**
+ * The one Person entity for Jon, emitted on both the homepage and /about so
+ * either page is enough for a crawler to resolve "#jon". Every other schema on
+ * the site (BlogPosting, TechArticle, Offer) points at this same @id.
+ *
+ * sameAs is how engines tell this Jon Martin apart from others with the same
+ * name. Each URL was checked to resolve to Jon's own profile; the handles match
+ * the ones linked from the About page copy. Keep it to identities that are
+ * genuinely his.
+ *
+ * Deliberately no worksFor/employer — see the note in src/pages/about.astro.
+ * No `image` yet: the site doesn't host a headshot. Add one here (absolute URL)
+ * once a photo lives in public/.
+ */
+export const personSchema = {
+	'@type': 'Person',
+	'@id': 'https://thejonmartin.com/#jon',
+	name: 'Jon Martin',
+	url: 'https://thejonmartin.com/',
+	email: 'mailto:jon@thejonmartin.com',
+	jobTitle: 'Revenue Operations Solutions Architect',
+	description:
+		'Writes diagnoses of why systems, processes, and org structures keep breaking in founder-led professional services firms.',
+	knowsAbout: [
+		'Revenue Operations',
+		'Organizational Design',
+		'Systems Thinking',
+		'Subscription Management',
+		'Systems Integration',
+		"Conway's Law",
+		"Ashby's Law of Requisite Variety",
+	],
+	sameAs: [
+		'https://www.linkedin.com/in/jonmartinco/',
+		'https://x.com/TheJonMartin',
+		'https://www.instagram.com/jonmartin.co/',
+		'https://www.threads.com/@jonmartin.co',
+		'https://bio.site/thejonmartin',
+		'https://github.com/TheJonMartin',
+	],
+};
