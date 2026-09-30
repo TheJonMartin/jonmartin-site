@@ -183,14 +183,15 @@ export function breadcrumbSchema(pageTitle: string, pageUrl: string, siteUrl: st
  * genuinely his.
  *
  * Deliberately no worksFor/employer — see the note in src/pages/about.astro.
- * No `image` yet: the site doesn't host a headshot. Add one here (absolute URL)
- * once a photo lives in public/.
+ * `image` is the headshot in public/images/jon-martin.jpg (800x1200), as an
+ * absolute URL.
  */
 export const personSchema = {
 	'@type': 'Person',
 	'@id': 'https://thejonmartin.com/#jon',
 	name: 'Jon Martin',
 	url: 'https://thejonmartin.com/',
+	image: 'https://thejonmartin.com/images/jon-martin.jpg',
 	email: 'mailto:jon@thejonmartin.com',
 	jobTitle: 'Revenue Operations Solutions Architect',
 	description:
