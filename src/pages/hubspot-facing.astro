@@ -6,3 +6,57 @@ const title = 'HubSpot-Facing Review — Jon Martin';
 const seoTitle = 'HubSpot Product & Positioning Review — Jon Martin';
 const description =
 	"A written diagnosis of what HubSpot operators hear in your product — for founders, PMs, and PMMs. I don't build the integration.";
+
+const faq = [
+	{
+		q: 'Do you implement HubSpot or build the integration?',
+		a: 'No. I diagnose. Current implementation work lives elsewhere. This page is the written review only.',
+	},
+	{
+		q: 'Who is this for?',
+		a: 'A founder, PM, or product marketer of a product that integrates with HubSpot or is sold to HubSpot users.',
+	},
+	{
+		q: 'What do I get?',
+		a: 'A written diagnosis and a 60-minute readout. Not a deck. Not a build.',
+	},
+	{
+		q: 'How much?',
+		a: 'The first five reviews are $3,000. After the founding set, price is on the reply.',
+	},
+	{
+		q: 'How long does it take?',
+		a: 'Intake the week you send the packet. Written piece and readout in one working block after that — usually a Saturday or two weekday mornings.',
+	},
+	{
+		q: 'Is this the same as the waitlist on the homepage?',
+		a: 'No. The homepage is a diagnosis for founder-led professional services firms. This page is for HubSpot-facing products.',
+	},
+];
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'Offer',
+			'@id': 'https://thejonmartin.com/hubspot-facing#offer',
+			name: 'HubSpot-Facing Review',
+			description,
+			url: 'https://thejonmartin.com/hubspot-facing',
+			price: '3000',
+			priceCurrency: 'USD',
+			availability: 'https://schema.org/LimitedAvailability',
+			seller: { '@id': 'https://thejonmartin.com/#jon' },
+		},
+		{
+			'@type': 'FAQPage',
+			'@id': 'https://thejonmartin.com/hubspot-facing#faq',
+			mainEntity: faq.map((item) => ({
+				'@type': 'Question',
+				name: item.q,
+				acceptedAnswer: { '@type': 'Answer', text: item.a },
+			})),
+		},
+	],
+};
+---
