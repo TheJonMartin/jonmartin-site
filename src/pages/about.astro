@@ -7,10 +7,18 @@ import { personSchema } from '../lib/schema';
 // Written from what's already public on this site, the Four Laws material,
 // and the essay in /writing. Deliberately does not name an employer — Jon's
 // current engagement is outside the scope of what this site represents, and
-// that's a considered choice, not an oversight. Years in the field, concrete
-// (anonymized) engagement examples, and whether the pastoral/seminary track
-// belongs here are Jon's to add later; nothing here should be read as a gap
-// waiting on a decision.
+// that's a considered choice, not an oversight. Concrete (anonymized)
+// engagement examples, and whether the pastoral/seminary track belongs here,
+// are Jon's to add later; nothing here should be read as a gap waiting on a
+// decision.
+//
+// The first section ("The short version") is a plain bio for search and answer
+// engines. Every fact in it is already stated elsewhere on the site: the job
+// title is personSchema.jobTitle (src/lib/schema.ts); the 12 years and the two
+// firms founded, scaled, and sold come from /writing/complex-isnt-complicated;
+// the systems integration / subscription management / variety-management line
+// paraphrases "What I actually do" below; the last sentence is this page's own
+// meta description. Keep it that way: no new claims, no employer.
 //
 // Copy lives in src/content/pages/about.json so it's editable through the
 // Decap CMS at /admin without touching this template. See docs/cms-setup.md.
@@ -25,8 +33,10 @@ const schema = {
 	'@graph': [
 		{
 			'@type': 'AboutPage',
-			'@id': 'https://thejonmartin.com/about/',
-			url: 'https://thejonmartin.com/about/',
+			// No trailing slash: matches this page's canonical and its sitemap
+			// entry (/about/ itself 301s to /about).
+			'@id': 'https://thejonmartin.com/about',
+			url: 'https://thejonmartin.com/about',
 			name: title,
 			description,
 			mainEntity: { '@id': 'https://thejonmartin.com/#jon' },
