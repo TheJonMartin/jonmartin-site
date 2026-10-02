@@ -20,6 +20,12 @@ interface Props {
 	 * See src/pages/index.astro for the Person + WebSite example.
 	 */
 	schema?: Record<string, unknown> | Record<string, unknown>[];
+	/** og:type. 'website' by default; /writing posts pass 'article'. */
+	ogType?: string;
+	/** ISO dates for article:published_time / article:modified_time. Only
+	 * emitted when ogType is 'article'. */
+	publishedTime?: string;
+	modifiedTime?: string;
 	/** False only on the homepage — the plum hero band directly below the
 	 * header supplies its own visual edge there, so the header's own hairline
 	 * would be a redundant second line right above it. */
@@ -32,6 +38,9 @@ const {
 	seoTitle,
 	ogImage = '/og.png',
 	schema,
+	ogType = 'website',
+	publishedTime,
+	modifiedTime,
 	navBordered = true,
 } = Astro.props;
 
@@ -94,12 +103,20 @@ const headTitle = seoTitle ?? title;
 		<meta property="og:site_name" content="Jon Martin" />
 		<meta property="og:title" content={headTitle} />
 		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={ogType} />
 		<meta property="og:url" content={canonical} />
 		<meta property="og:image" content={ogImageUrl} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
+		{ogType === 'article' && publishedTime && (
+			<meta property="article:published_time" content={publishedTime} />
+		)}
+		{ogType === 'article' && modifiedTime && (
+			<meta property="article:modified_time" content={modifiedTime} />
+		)}
 		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={headTitle} />
+		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={ogImageUrl} />
 
 		{schema && (

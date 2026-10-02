@@ -4,7 +4,7 @@ import { fourLawsGroups } from '../lib/four-laws-links';
 
 // The one nav for the whole site. Rebuilt to the brand/visual-system design
 // handoff's header spec: wordmark + "Jon Martin" on the left, Writing / About
-// / Four Laws / Waitlist on the right, Courier New uppercase, reserved-space
+// / HubSpot Review / Four Laws / Waitlist on the right, Courier New uppercase, reserved-space
 // hover underline.
 //
 // "Four Laws of Complex System Design" stays a dropdown (native <details>/
@@ -37,6 +37,10 @@ const { section, bordered = true } = Astro.props;
 const links: { href: string; text: string }[] = [
 	{ href: '/writing', text: 'Writing' },
 	{ href: '/about', text: 'About' },
+	// The packaged offer page (title "HubSpot-Facing Review"). Before this it
+	// was linked only from /about's "Getting in touch" section, which left the
+	// one paid-offer page on the site with a single internal inlink.
+	{ href: '/hubspot-facing', text: 'HubSpot Review' },
 ];
 
 // build.format 'file' (astro.config.mjs) means Astro.url.pathname here is
@@ -44,8 +48,8 @@ const links: { href: string; text: string }[] = [
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
 // Writing needs prefix matching because individual posts live beneath it and
-// should still mark the section as current. About is a single page, so an
-// exact match is correct.
+// should still mark the section as current. About and HubSpot Review are
+// single pages, so an exact match is correct.
 const isCurrent = (href: string) => {
 	if (href === '/writing') return path === '/writing' || path.startsWith('/writing/');
 	return path === href;
