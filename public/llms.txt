@@ -1,6 +1,6 @@
 # Jon Martin
 
-> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. He also offers a written HubSpot-Facing Review for products that integrate with HubSpot or are sold to HubSpot users. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work.
+> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. He also offers a written HubSpot-Facing Review for products that integrate with HubSpot or are sold to HubSpot users. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work. Requirements Altitude is the companion written guide for classifying discovery statements (L0–L3) so requirements stay scopeable.
 
 Every public page on the site is listed below. Descriptions are taken from each page's own content.
 
@@ -10,6 +10,7 @@ Every public page on the site is listed below. Descriptions are taken from each 
 - [About](https://thejonmartin.com/about): Who Jon is and what he does — revenue operations as variety management, why the deliverable is a written diagnosis rather than a project, and where the Four Laws framework comes from.
 - [HubSpot-Facing Review](https://thejonmartin.com/hubspot-facing): A written diagnosis and 60-minute readout of what HubSpot operators hear in your product and listing, for founders, PMs, and PMMs of HubSpot-facing products. Diagnosis only — Jon doesn't implement HubSpot or build the integration.
 - [Writing](https://thejonmartin.com/writing): The essay archive — notes on org design, systems, and why the things you built keep breaking.
+- [Requirements Altitude](https://thejonmartin.com/altitude): Written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.
 - [Contact](https://thejonmartin.com/contact): A short form for questions about the Four Laws framework, a speaking or consulting engagement, or a correction to the site.
 
 ## Writing
@@ -28,6 +29,15 @@ Every public page on the site is listed below. Descriptions are taken from each 
 - [The Missing Middle of Discovery](https://thejonmartin.com/writing/missing-middle-discovery): Discovery fails in the gap between pain and configuration — requirements live at four altitudes, and the usable one almost never arrives in the client's words.
 - [The Reset Is the Project](https://thejonmartin.com/writing/the-reset-is-the-project): Scope resets aren't vendor failure; they happen when a signed L2 requirement is quietly renegotiated in Slack, UAT, and one more edge case.
 - [Coastline Scoping](https://thejonmartin.com/writing/coastline-scoping): A RevOps project has no single length — a published estimate is a length at a stated altitude, from named sources, against a stated reference.
+
+
+## Requirements Altitude
+
+- [Overview](https://thejonmartin.com/altitude): The four altitudes, the core discipline, and the full module index.
+- [The Altitude Model](https://thejonmartin.com/altitude/module-02): L0 business outcome, L1 process, L2 functional requirement, L3 configuration.
+- [The Diagnostic](https://thejonmartin.com/altitude/module-03): Live classification ladder, including speaker/source as step 0.
+- [The L2 Bridge Rule](https://thejonmartin.com/altitude/module-05): How the missing-middle sentence is authored.
+- [Field Card](https://thejonmartin.com/altitude/appendix-a): One-page card for use on an actual call.
 
 ## Four Laws of Complex System Design — Reference
 

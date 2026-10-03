@@ -1,0 +1,157 @@
+---
+import { getCollection } from 'astro:content';
+import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
+import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
+import { articleSchema } from '../../lib/schema';
+
+const pages = (await getCollection('altitude', ({ data, id }) => !data.draft && !id.startsWith('_')))
+	.sort((a, b) => a.id.localeCompare(b.id));
+
+const groups: { key: string; label: string }[] = [
+	{ key: 'core', label: 'The model' },
+	{ key: 'practice', label: 'In the field' },
+	{ key: 'delivery', label: 'After the call' },
+	{ key: 'reference', label: 'Reference' },
+];
+
+const title = 'Requirements Altitude';
+const description =
+	'A written guide for classifying discovery statements at the right altitude — L0 outcomes, L1 process, L2 functional requirements, L3 configuration — so scope stops being a pile of notes.';
+const canonical = new URL('/altitude', Astro.site).href.replace(/\/$/, '');
+---
+
+<AltitudeLayout
+	title={title}
+	seoTitle="Requirements Altitude"
+	description={description}
+	ogType="website"
+	schema={articleSchema(title, description, canonical)}
+>
+	<article>
+		<span class="label eyebrow">Written guide</span>
+		<h1>Requirements Altitude</h1>
+		<p class="lede">
+			People taking discovery usually cannot tell what altitude a piece of information is at. They
+			chase configuration-level detail with no filter, collect goals and process notes that never
+			become anything scopeable, or force premature confirmations. The missing piece is almost always
+			the mid-level: a specific, technology-agnostic statement of what the system must do.
+		</p>
+		<p>
+			This is the written guide. Eighteen modules, three appendices. Same altitude as the
+			<a href="/four-laws-complex-system-design-full">Four Laws</a> — a standing reference, not a
+			brochure. A paid course can sit on top of this later. The writing is the product until then.
+		</p>
+
+		<h2>The four altitudes</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Level</th>
+					<th>Name</th>
+					<th>What it captures</th>
+					<th>Test</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>L0</td>
+					<td>Business Outcome</td>
+					<td>Goal, pain, success criteria — no system named.</td>
+					<td>True regardless of system used.</td>
+				</tr>
+				<tr>
+					<td>L1</td>
+					<td>Process / Capability</td>
+					<td>Workflow, actors, sequence — still system-agnostic.</td>
+					<td>Diagrammable with no system named.</td>
+				</tr>
+				<tr>
+					<td>L2</td>
+					<td>Functional Requirement</td>
+					<td>Specific, scopeable capability. The missing middle.</td>
+					<td>Two engineers would agree on scope.</td>
+				</tr>
+				<tr>
+					<td>L3</td>
+					<td>Detail / Configuration</td>
+					<td>Fields, APIs, exact rules, edge cases.</td>
+					<td>Resolvable without further client input.</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			<strong>The core discipline:</strong> no L3 question on a topic thread until an L2 bridge
+			statement exists for it. L2 is authored by the practitioner. It is not transcribed from the
+			client.
+		</p>
+		<p>
+			Every statement also has a source. Tagging altitude without tagging who said it averages
+			together people who do not actually agree. Start at
+			<a href="/altitude/module-02">the model</a>, keep
+			<a href="/altitude/appendix-a">the field card</a> visible on calls, or read the problem
+			statement that opens the guide.
+		</p>
+		<p>
+			The public essays <a href="/writing/missing-middle-discovery">The Missing Middle</a> and
+			<a href="/writing/the-reset-is-the-project">The Reset Is the Project</a> are the short versions
+			of modules 1 and 12. This section is the full argument.
+		</p>
+
+		<h2>The guide</h2>
+		{groups.map(({ key, label }) => {
+			const items = pages.filter((p) => p.data.group === key).sort((a, b) => a.data.order - b.data.order);
+			return (
+				<section class="group-block">
+					<h3>{label}</h3>
+					<ul>
+						{items.map((p) => (
+							<li>
+								<a href={`/altitude/${p.id}`}>{p.data.title}</a>
+								<span class="desc">{p.data.description}</span>
+							</li>
+						))}
+					</ul>
+				</section>
+			);
+		})}
+	</article>
+
+	<CrossSiteCTA />
+</AltitudeLayout>
+
+<style>
+	.eyebrow {
+		font-size: 0.72rem;
+		color: var(--muted);
+		display: block;
+		margin-bottom: 0.4rem;
+	}
+	.lede {
+		font-size: 1.15rem;
+	}
+	.group-block ul {
+		list-style: none;
+		margin: 0 0 1.75rem;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+	}
+	.group-block li {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+	.group-block a {
+		text-decoration: none;
+		border-bottom: 1px solid var(--hairline);
+		width: fit-content;
+	}
+	.group-block a:hover {
+		border-bottom-color: var(--plum);
+	}
+	.desc {
+		font-size: 0.92rem;
+		color: var(--muted);
+	}
+</style>
