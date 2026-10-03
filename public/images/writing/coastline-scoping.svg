@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#FAF6EF"/>
+
+  <text x="48" y="48" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="26" fill="#4A3352">Coastline Scoping</text>
+  <text x="48" y="72" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="15" fill="#7C9473">The island did not grow. The stick got shorter.</text>
+  <line x1="48" y1="88" x2="752" y2="88" stroke="#4A3352" stroke-width="1"/>
+
+  <rect x="48" y="104" width="704" height="328" fill="#F7F3EA" stroke="#4A3352" stroke-width="1"/>
+
+  <!-- land mass: ragged shore, same overall footprint -->
+  <path d="M208 176
+           L 222 154 L 236 170 L 248 146 L 268 166
+           L 286 140 L 304 162 L 322 148 L 338 170
+           L 356 136 L 372 160 L 390 146 L 408 168
+           L 424 150 L 442 172 L 456 156 L 470 178
+           L 486 164 L 498 186 L 508 174 L 516 198
+           L 502 208 L 528 214 L 518 226 L 546 232
+           L 534 246 L 568 250 L 556 262 L 586 268
+           L 592 268 L 624 278 L 610 294 L 640 306
+           L 622 322 L 648 338 L 628 352 L 642 370
+           L 616 378 L 630 396 L 602 392 L 588 412
+           L 566 398 L 548 420 L 528 404 L 510 422
+           L 492 406 L 474 422 L 454 410 L 438 424
+           L 418 412 L 400 426 L 382 414 L 364 422
+           L 348 408 L 328 424 L 312 402 L 294 418
+           L 276 396 L 256 414 L 240 392 L 222 406
+           L 210 384 L 188 376 L 204 358 L 178 348
+           L 196 332 L 172 322 L 190 306 L 166 296
+           L 184 280 L 162 268 L 182 254 L 158 244
+           L 176 228 L 160 214 L 180 200 L 166 186
+           L 186 176 L 198 160 L 208 176 Z"
+        fill="#E4E9DC" stroke="#4A3352" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- Ruler A: coarse, skips the inlets -->
+  <polyline points="218,176 330,178 470,186 580,268 620,360 430,398 230,348 218,176"
+            fill="none" stroke="#E8A93B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <g fill="#E8A93B" stroke="#4A3352" stroke-width="1">
+    <circle cx="218" cy="176" r="5"/>
+    <circle cx="330" cy="178" r="5"/>
+    <circle cx="470" cy="186" r="5"/>
+    <circle cx="580" cy="268" r="5"/>
+    <circle cx="620" cy="360" r="5"/>
+    <circle cx="430" cy="398" r="5"/>
+    <circle cx="230" cy="348" r="5"/>
+  </g>
+
+  <!-- Ruler B: follows the shore, does not trace it -->
+  <path d="M214 172
+           C 232 150, 268 152, 298 160
+           C 328 142, 360 138, 392 156
+           C 422 144, 452 158, 478 174
+           C 500 168, 518 188, 526 210
+           C 548 224, 572 240, 590 262
+           C 618 278, 638 308, 636 338
+           C 634 362, 620 382, 592 392
+           C 562 412, 528 408, 498 414
+           C 468 422, 438 418, 410 410
+           C 382 422, 350 416, 322 404
+           C 292 416, 262 404, 238 388
+           C 210 372, 188 350, 184 322
+           C 178 292, 168 268, 176 244
+           C 182 220, 176 196, 198 180
+           C 206 174, 210 174, 214 172"
+        fill="none" stroke="#7C9473" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- legend -->
+  <rect x="520" y="120" width="212" height="78" fill="#FAF6EF" stroke="#4A3352" stroke-width="1"/>
+  <line x1="536" y1="144" x2="574" y2="144" stroke="#E8A93B" stroke-width="5" stroke-linecap="round"/>
+  <text x="586" y="148" font-family="Calibri, 'Segoe UI', sans-serif" font-size="13" fill="#2E2A26">Ruler A — L2</text>
+  <line x1="536" y1="172" x2="574" y2="172" stroke="#7C9473" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="586" y="176" font-family="Calibri, 'Segoe UI', sans-serif" font-size="13" fill="#2E2A26">Ruler B — L2 + L3</text>
+
+  <text x="400" y="268" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="13" fill="#4A3352" text-anchor="middle">ISLAND</text>
+  <text x="400" y="286" font-family="Calibri, 'Segoe UI', sans-serif" font-size="11" fill="#2E2A26" text-anchor="middle">L0 outcome</text>
+
+  <text x="48" y="464" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="14" fill="#4A3352">Same shore. Different sticks. Two lengths.</text>
+  <text x="752" y="484" font-family="'Courier New', monospace" font-size="11" fill="#7C9473" text-anchor="end">PUBLISH THE RULER WITH THE NUMBER</text>
+</svg>

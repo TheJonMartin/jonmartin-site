@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import NotifyForm from '../components/NotifyForm.astro';
 import home from '../content/pages/home.json';
 import { getCollection } from 'astro:content';
+import { personSchema } from '../lib/schema';
 
 // Copy lives in src/content/pages/home.json so it's editable through the
 // Decap CMS at /admin without touching this template. See docs/cms-setup.md.
@@ -30,7 +31,8 @@ const rangeBars = [34, 62, 140, 88, 110, 52, 124];
 // re-describing him, which is what lets a crawler understand the posts and the
 // person as one thing rather than several.
 //
-// `knowsAbout` and `sameAs` are the two fields that do real work here: the first
+// The Person object itself lives in src/lib/schema.ts (personSchema) so /about
+// emits the identical entity. `knowsAbout` and `sameAs` are the two fields that do real work here: the first
 // is the topical claim, the second is how an engine reconciles this Person with
 // the same person elsewhere on the web. sameAs is for genuinely separate
 // identities (a LinkedIn profile, a GitHub account) — the Four Laws material
@@ -41,25 +43,7 @@ const rangeBars = [34, 62, 140, 88, 110, 52, 124];
 const schema = {
 	'@context': 'https://schema.org',
 	'@graph': [
-		{
-			'@type': 'Person',
-			'@id': 'https://thejonmartin.com/#jon',
-			name: 'Jon Martin',
-			url: 'https://thejonmartin.com/',
-			email: 'mailto:jon@thejonmartin.com',
-			jobTitle: 'Revenue Operations Solutions Architect',
-			description:
-				'Writes diagnoses of why systems, processes, and org structures keep breaking in founder-led professional services firms.',
-			knowsAbout: [
-				'Revenue Operations',
-				'Organizational Design',
-				'Systems Thinking',
-				'Subscription Management',
-				'Systems Integration',
-				"Conway's Law",
-				"Ashby's Law of Requisite Variety",
-			],
-		},
+		personSchema,
 		{
 			'@type': 'WebSite',
 			'@id': 'https://thejonmartin.com/#website',

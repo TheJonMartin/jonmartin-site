@@ -6,6 +6,12 @@
   "subhead": "Most people who get called into a broken business are there to build something. That's the problem \u2014 the last three things you built are why you're calling.",
   "sections": [
     {
+      "heading": "The short version",
+      "paragraphs": [
+        "I'm Jon Martin, a revenue operations solutions architect. I spent 12 years building and running RevOps functions, and I founded two firms, scaled both, and sold both. Today I work in systems integration and subscription management, mostly for SaaS and professional services companies, and I treat the job as variety management, not tooling. What I write here are diagnoses of why systems and org structures keep breaking in founder-led professional services firms, and why the fixes didn't hold."
+      ]
+    },
+    {
       "heading": "What I actually do",
       "paragraphs": [
         "I work in revenue operations \u2014 systems integration and subscription management, mostly for SaaS and professional services companies. The job looks like tooling from the outside. It isn't. It's variety management: deciding what complexity a business should absorb, what it should refuse, and whether the answer is new tooling or a redrawn boundary.",

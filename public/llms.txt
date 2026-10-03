@@ -1,28 +1,35 @@
 # Jon Martin
 
-> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work. Requirements Altitude is the companion written guide for classifying discovery statements (L0–L3) so requirements stay scopeable.
+> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. He also offers a written HubSpot-Facing Review for products that integrate with HubSpot or are sold to HubSpot users. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work. Requirements Altitude is the companion written guide for classifying discovery statements (L0–L3) so requirements stay scopeable.
+
+Every public page on the site is listed below. Descriptions are taken from each page's own content.
 
 ## Main pages
 
-- [Home](https://thejonmartin.com/): Who this site is for and what a written diagnosis/second opinion is.
-- [About](https://thejonmartin.com/about): What Jon does, why a second opinion rather than a project, and where the Four Laws framework comes from.
-- [Writing](https://thejonmartin.com/writing): Essays on systems, complexity, and revenue operations.
+- [Home](https://thejonmartin.com/): Written diagnoses (a "field report" and second opinion) for founders of $3–5M, 20–50 person, founder-led professional services businesses — why the hire, the software, the SOP, and the management layer each added capacity without adding range.
+- [About](https://thejonmartin.com/about): Who Jon is and what he does — revenue operations as variety management, why the deliverable is a written diagnosis rather than a project, and where the Four Laws framework comes from.
+- [HubSpot-Facing Review](https://thejonmartin.com/hubspot-facing): A written diagnosis and 60-minute readout of what HubSpot operators hear in your product and listing, for founders, PMs, and PMMs of HubSpot-facing products. Diagnosis only — Jon doesn't implement HubSpot or build the integration.
+- [Writing](https://thejonmartin.com/writing): The essay archive — notes on org design, systems, and why the things you built keep breaking.
 - [Requirements Altitude](https://thejonmartin.com/altitude): Written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.
-- [Contact](https://thejonmartin.com/contact): Questions about the Four Laws framework, a correction to the reference material, or a consulting/speaking conversation.
+- [Contact](https://thejonmartin.com/contact): A short form for questions about the Four Laws framework, a speaking or consulting engagement, or a correction to the site.
 
 ## Writing
 
-- [Complex Isn't Complicated — And That Distinction Is Costing You](https://thejonmartin.com/writing/complex-isnt-complicated)
-- [Three Landscapes: Fuji, Rugged, and Dancing](https://thejonmartin.com/writing/three-landscapes)
-- [The Interesting In-Between](https://thejonmartin.com/writing/interesting-in-between)
-- [Diversity, Deconstructed](https://thejonmartin.com/writing/diversity-deconstructed)
-- [Why Some Things Should Never Fully Ship](https://thejonmartin.com/writing/explore-exploit)
-- [What Shows Up Without Anyone Designing It](https://thejonmartin.com/writing/emergence-and-networks)
-- [The Small Event That Wasn't Actually Small](https://thejonmartin.com/writing/feedback-and-cascades)
-- [Harnessing What You Can't Control](https://thejonmartin.com/writing/harnessing-complexity)
-- [Two Fields That Never Talked to Each Other, Converging on the Same Physics](https://thejonmartin.com/writing/capstone-four-laws)
-- [A Field-Tested Stakeholder Communication Matrix](https://thejonmartin.com/writing/stakeholder-communication-matrix)
-- ["I Want to Make Processes More Efficient" — What That Actually Means](https://thejonmartin.com/writing/what-more-efficient-actually-means)
+- [Complex Isn't Complicated — And That Distinction Is Costing You](https://thejonmartin.com/writing/complex-isnt-complicated): Complicated systems have parts; complex systems have parts that adapt — which is why documentation alone stops working once a RevOps process scales.
+- [Three Landscapes: Fuji, Rugged, and Dancing](https://thejonmartin.com/writing/three-landscapes): Scott Page's landscape metaphor for solvability — Mount Fuji, rugged, and dancing terrain — and why each shape calls for a different strategy.
+- [The Interesting In-Between](https://thejonmartin.com/writing/interesting-in-between): Good complexity doesn't come from maximizing integration and data, or from minimizing for simplicity — it lives in the middle Page calls the interesting in-between.
+- [Diversity, Deconstructed](https://thejonmartin.com/writing/diversity-deconstructed): "Diversity" isn't one thing — Scott Page breaks it into four distinct measures, and most "too much" or "too little" arguments are really about different ones.
+- [Why Some Things Should Never Fully Ship](https://thejonmartin.com/writing/explore-exploit): Dancing landscapes call for an ongoing explore/exploit discipline, borrowed from metallurgy, that most RevOps orgs never build.
+- [What Shows Up Without Anyone Designing It](https://thejonmartin.com/writing/emergence-and-networks): Half of what keeps a scaling RevOps org functioning was never designed by anyone — it emerged bottom-up, the way structure does in complex systems.
+- [The Small Event That Wasn't Actually Small](https://thejonmartin.com/writing/feedback-and-cascades): Highly connected systems can quietly organize into a shape where an ordinary event triggers a cascading failure on its own.
+- [Harnessing What You Can't Control](https://thejonmartin.com/writing/harnessing-complexity): A complex system can't be controlled the way a complicated one can — the real skill is recognizing it accurately and responding to match.
+- [Two Fields That Never Talked to Each Other, Converging on the Same Physics](https://thejonmartin.com/writing/capstone-four-laws): Ashby, Conway, Brooks, and Beer's systems theory and Scott Page's complexity science never cited each other, yet converge on the same mechanisms.
+- [A Field-Tested Stakeholder Communication Matrix](https://thejonmartin.com/writing/stakeholder-communication-matrix): A six-tier communication matrix for systems integration and subscription management engagements — detail level should track decision-making need, not seniority.
+- ["I Want to Make Processes More Efficient" — What That Actually Means](https://thejonmartin.com/writing/what-more-efficient-actually-means): Operations is variety management, not efficiency work — four systems laws (Ashby, Conway, Brooks, Reverse Conway) that make an ambiguous job definable.
+- [The Missing Middle of Discovery](https://thejonmartin.com/writing/missing-middle-discovery): Discovery fails in the gap between pain and configuration — requirements live at four altitudes, and the usable one almost never arrives in the client's words.
+- [The Reset Is the Project](https://thejonmartin.com/writing/the-reset-is-the-project): Scope resets aren't vendor failure; they happen when a signed L2 requirement is quietly renegotiated in Slack, UAT, and one more edge case.
+- [Coastline Scoping](https://thejonmartin.com/writing/coastline-scoping): A RevOps project has no single length — a published estimate is a length at a stated altitude, from named sources, against a stated reference.
+
 
 ## Requirements Altitude
 
@@ -34,22 +41,27 @@
 
 ## Four Laws of Complex System Design — Reference
 
-- [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM.
-- [Glossary](https://thejonmartin.com/glossary): Definitions of every term used across the reference.
-- [FAQ](https://thejonmartin.com/faq): Frequently asked questions about the framework.
+- [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM — how they interact and apply to team boundaries.
+- [Glossary](https://thejonmartin.com/glossary): Definitions of every term used across the reference — Ashby's, Conway's, and Brooks's Laws, Reverse Conway, Team Topologies, Beer's VSM, Little's Law, and the Theory of Constraints.
+- [FAQ](https://thejonmartin.com/faq): Direct answers on Conway's Law vs. Team Topologies, Brooks's Law under Agile, Little's Law for knowledge work, and WIP limits vs. the Theory of Constraints.
 
 ## Four Laws — Applied essays
 
-- [Applied Examples: The Four Laws Across Revenue Teams](https://thejonmartin.com/applied-examples)
-- [Managing Process: Flow & Constraints](https://thejonmartin.com/four-laws-flow-and-constraints)
-- [Conway's Law and Your RevOps Team Structure](https://thejonmartin.com/conways-law-revops-team-structure)
-- [Conway's Law in the AI Agent Era](https://thejonmartin.com/conways-law-ai-agents-revops)
-- [Why Executive Decisions Stall on Client Projects](https://thejonmartin.com/stakeholder-decision-bottlenecks)
-- [AI, System 4, and Beer's VSM](https://thejonmartin.com/vsm-ai-system-4)
-- [WIP Limits vs. the Theory of Constraints](https://thejonmartin.com/wip-limits-vs-theory-of-constraints)
+- [Applied Examples: The Four Laws Across Revenue Teams](https://thejonmartin.com/applied-examples): Ten worked examples of Ashby's, Conway's, and Brooks's Laws applied to Marketing, Sales, CS, Finance, and RevOps in SaaS and professional services teams.
+- [Managing Process: Flow & Constraints](https://thejonmartin.com/four-laws-flow-and-constraints): A walkthrough of Little's Law and the Theory of Constraints — how work actually flows through the team structure the first three laws create together.
+- [Conway's Law and Your RevOps Team Structure](https://thejonmartin.com/conways-law-revops-team-structure): Why CRM, CPQ, and billing systems mirror the RevOps org chart, and how to redraw team boundaries around quote-to-cash using the Reverse Conway Maneuver.
+- [Conway's Law in the AI Agent Era](https://thejonmartin.com/conways-law-ai-agents-revops): AI agents inherit your team boundaries, not just your tasks — why an AI SDR or billing-exceptions agent fails exactly where the org chart already had a seam.
+- [Why Executive Decisions Stall on Client Projects](https://thejonmartin.com/stakeholder-decision-bottlenecks): Little's Law, Kingman's formula, and Weinberg's context-switching numbers applied to the steering committee — why the same sign-off takes six weeks.
+- [AI, System 4, and Beer's VSM](https://thejonmartin.com/vsm-ai-system-4): AI can supercharge System 4 environmental scanning, but faster signals without a functioning System 5 just produce organizational paralysis, faster.
+- [WIP Limits vs. the Theory of Constraints](https://thejonmartin.com/wip-limits-vs-theory-of-constraints): A WIP limit is a Kanban practice; the Theory of Constraints tells you where to put it — and why conflating them leaves throughput where it started.
 
 ## Four Laws — Interactive tools
 
-- [Flow Formula Calculator](https://thejonmartin.com/flow-formula-calculator): Interactive Little's Law, Kingman's formula, and Weinberg's context-switching calculators.
-- [Flow & Constraint Diagnostic](https://thejonmartin.com/part8-flow-diagnostic): A five-step guided diagnostic that produces a personalized Five Focusing Steps writeup.
-- [Stakeholder Decision Checklist](https://thejonmartin.com/stakeholder-decision-checklist): A checklist for diagnosing why a decision is stalled on a client engagement.
+- [Flow Formula Calculator](https://thejonmartin.com/flow-formula-calculator): Interactive calculators for Little's Law, Kingman's formula, and Weinberg's context-switching numbers — plug in engagement numbers to see what they predict.
+- [Flow & Constraint Diagnostic](https://thejonmartin.com/part8-flow-diagnostic): A five-step guided diagnostic — enter WIP, throughput, and constraint details for a personalized Five Focusing Steps writeup.
+- [Stakeholder Decision Stall Checklist](https://thejonmartin.com/stakeholder-decision-checklist): Check off what's true of a stalled engagement to see whether it's a Little's Law queue problem, a Kingman utilization problem, or Weinberg signal distortion.
+
+## Optional
+
+- [Stakeholder Communication Matrix (PDF)](https://thejonmartin.com/stakeholder-communication-matrix.pdf): The downloadable reference template from the matrix essay — frequency, channel, and depth of communication for six client-side stakeholder tiers.
+- [RSS feed](https://thejonmartin.com/rss.xml): Feed of the Writing archive.
