@@ -6,7 +6,7 @@ import { readingTime, entryNumbers } from '../../lib/writing';
 
 const title = 'Writing — Jon Martin';
 const description =
-	'Notes on org design, systems, and why the things you built keep breaking.';
+	'Working notes on why organizations break in the same four ways, and what the systems literature says about it.';
 
 // Drafts never render. Newest first.
 const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
