@@ -33,12 +33,28 @@ Every public page on the site is listed below. Descriptions are taken from each 
 
 ## Requirements Altitude
 
-- [Overview](https://thejonmartin.com/altitude): The four altitudes, the core discipline, and the full module index.
-- [The Altitude Model](https://thejonmartin.com/altitude/module-02): L0 business outcome, L1 process, L2 functional requirement, L3 configuration.
-- [The Diagnostic](https://thejonmartin.com/altitude/module-03): Live classification ladder, including speaker/source as step 0.
-- [The L2 Bridge Rule](https://thejonmartin.com/altitude/module-05): How the missing-middle sentence is authored.
-- [Field Card](https://thejonmartin.com/altitude/appendix-a): One-page card for use on an actual call.
-
+- [Overview](https://thejonmartin.com/altitude): A written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.
+- [Module 1: The Problem — Why Smart People Still Miss the Middle](https://thejonmartin.com/altitude/module-01): Why discovery can sound competent and still produce unusable requirements.
+- [Module 2: The Altitude Model](https://thejonmartin.com/altitude/module-02): L0 through L3: what each level commits to, who authors it, and how to tell them apart.
+- [Module 3: The Diagnostic — Classifying Statements in Real Time](https://thejonmartin.com/altitude/module-03): A ladder you can run live: note the speaker, then classify altitude without stopping the call.
+- [Module 4: The Three Failure Modes, In Depth](https://thejonmartin.com/altitude/module-04): Detail spelunking, altitude blindness, and bridge overuse — and why all three feel like progress.
+- [Module 5: The L2 Bridge Rule](https://thejonmartin.com/altitude/module-05): How to construct the missing-middle sentence, when to deploy it, and the overuse guardrail.
+- [Module 6: The Advisory Layer — When a Correct Requirement Is the Wrong Requirement](https://thejonmartin.com/altitude/module-06): Vertical traceability: a confirmed L2 can still fail the L0 it is supposed to serve.
+- [Module 7: Multi-Stakeholder Altitude Mapping](https://thejonmartin.com/altitude/module-07): Every statement has an altitude and a source. Conflict is not the same as a gap.
+- [Module 8: Practice Drills](https://thejonmartin.com/altitude/module-08): Tagging, translation, live-fire, and conflict-mapping drills with worked transcripts.
+- [Module 9: Applying It in Discovery Calls](https://thejonmartin.com/altitude/module-09): Before, during, and after the call: how the framework sits in a real discovery motion.
+- [Module 10: From Tagged Notes to the Requirements Document](https://thejonmartin.com/altitude/module-10): How tagged, sourced statements become a document a scoping team can actually use.
+- [Module 11: The Four Levels of Design — Deliverables Mapped to Altitude](https://thejonmartin.com/altitude/module-11): Wishlist, process map, functional spec, and configuration design — each at its altitude.
+- [Module 12: Requirements Drift in Delivery](https://thejonmartin.com/altitude/module-12): What happens after discovery when new statements arrive and L2 is treated as optional.
+- [Module 13: Capstone](https://thejonmartin.com/altitude/module-13): One end-to-end pass: tag, bridge, map stakeholders, trace vertically, write the document.
+- [Module 14: Common Frameworks Mapped to Altitude](https://thejonmartin.com/altitude/module-14): JTBD, user stories, epics, impact maps, and use cases read against L0–L3.
+- [Module 15: Applying the Framework to Written and Asynchronous Sources](https://thejonmartin.com/altitude/module-15): The same diagnostic on decks, tickets, Slack threads, and recorded walkthroughs.
+- [Module 16: Recovery — Closing Gaps After the Fact](https://thejonmartin.com/altitude/module-16): What to do when you notice a missing L2 after discovery is already supposed to be over.
+- [Module 17: Special Conditions](https://thejonmartin.com/altitude/module-17): Edge cases that change how the ladder runs without changing the altitudes themselves.
+- [Module 18: Assessment and the Proficiency Model](https://thejonmartin.com/altitude/module-18): Five proficiency levels and a capstone rubric for the written guide and any later course.
+- [Appendix A: The Field Card](https://thejonmartin.com/altitude/appendix-a): One-page call card: speaker, ladder, bridge, three tells, vertical check.
+- [Appendix B: Facilitator Guide](https://thejonmartin.com/altitude/appendix-b): Sequencing, drill debriefs, and the resistance point that shows up in every cohort.
+- [Appendix C: Gold-Standard Worked Example](https://thejonmartin.com/altitude/appendix-c): Placeholder for a single real transcript run through all eighteen modules.
 ## Four Laws of Complex System Design — Reference
 
 - [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM — how they interact and apply to team boundaries.
