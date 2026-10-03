@@ -1,0 +1,6 @@
+# fourlaws-thejonmartin is a 301 splat only. It is linked to this repo, so
+# Netlify was building Deploy Previews of the Astro app there and failing
+# (build script exit 2). Skip those previews. jonmartin-mvp still builds.
+# Exit 0 skips the build. Exit 1 continues it.
+[context.deploy-preview]
+  ignore = "if [ \"$SITE_NAME\" = \"fourlaws-thejonmartin\" ]; then exit 0; else exit 1; fi"
