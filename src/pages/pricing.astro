@@ -36,6 +36,7 @@ const plans = [
 		features: [
 			'Monthly audit and health score',
 			'Credit & Seat Watch: a credit and seat report, with alerts',
+			'Monthly digest of new HubSpot betas and updates for your hubs and edition',
 			'Data cleanup: findings only (no writes)',
 			'Product email support within 2 business days',
 		],
@@ -54,6 +55,7 @@ const plans = [
 		features: [
 			'Weekly audits and health score',
 			'Same-day credit and seat alerts, with inactive-seat flags',
+			'Weekly beta digest, each item flagged for whether it fits your portal and what it would affect',
 			'Auto-fixes from a set catalog, up to 500 records a month, read back and logged',
 			'5 catalog fix requests a month',
 			'Product email support within 2 business days',
@@ -77,6 +79,7 @@ const plans = [
 			'15 catalog fix requests a month',
 			'Priority support',
 			'Grok CRM Assistant included',
+			'Grok CRM Assistant answers “should we turn this on?” with an opt-in checklist you follow yourself',
 		],
 		// TODO(payment-links): Assist payment link goes here.
 		checkoutHref: '#',
@@ -228,6 +231,7 @@ const schema = {
 				<p class="label offer-label" id="not-heading">What this is not</p>
 				<p class="offer-statement">An automated product. No consulting, no builds, no retainers.</p>
 				<p class="offer-detail">No plan includes custom builds, implementation or onboarding projects, strategy consulting, or hourly or retainer service work.</p>
+				<p class="offer-detail">We never turn on betas for you; you opt in yourself.</p>
 			</div>
 		</section>
 
@@ -307,6 +311,7 @@ const schema = {
 	.offer-label { font-size: 11px; letter-spacing: 0.18em; color: var(--mustard-shade); margin: 0 0 0.75rem; }
 	.offer-statement { font-family: Georgia, Gelasio, serif; font-size: clamp(26px, 4vw, 44px); line-height: 1.14; max-width: 28ch; color: var(--charcoal); margin: 0 0 1rem; }
 	.offer-detail { font-size: 18px; line-height: 1.55; max-width: 62ch; color: var(--charcoal); margin: 0; }
+	.offer-detail + .offer-detail { margin-top: 0.75rem; }
 
 	.fixrow { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid var(--hairline); align-items: start; }
 	.fixrow:first-child { border-top: none; }
