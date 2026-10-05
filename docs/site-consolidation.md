@@ -86,9 +86,8 @@ host changes.
 - Clean `npm run build` — 31 pages, zero route-collision errors (Astro
   throws on those, so a clean build is itself a real signal here, not just
   an absence-of-error-message).
-- Adapted both check scripts from `capture/fourlaws/README.md`'s original
-  migration (missing-page, missing-anchor) against the merged `dist/` — both
-  clean.
+- Adapted both check scripts (missing-page, missing-anchor) against the
+  merged `dist/` — both clean.
 - All 49 documented Full Reference anchor ids independently confirmed
   present (`#p1`–`#p8`, `#s21`–`#s837`).
 - Canonical URLs, `og:url`, sitemap entries, and JSON-LD `@id`s all resolve
