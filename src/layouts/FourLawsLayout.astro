@@ -13,17 +13,11 @@ interface Props {
 	description: string;
 	/** Utility pages that shouldn't appear in search. */
 	noindex?: boolean;
-	/**
-	 * Overrides the <title> and og:title without changing the on-page <h1>.
-	 * Note this bypasses the "| Four Laws…" suffix logic below — an seoTitle is
-	 * taken as the complete, final title.
-	 */
+	/** Full <title>/og:title; bypasses the "| Four Laws…" suffix. */
 	seoTitle?: string;
-	/** Per-page social card, root-relative. Defaults to the Four Laws og image. */
+	/** Root-relative social card. Defaults to /four-laws-og.png. */
 	ogImage?: string;
-	/** Page-level og:type. 'website' for the home page, 'article' for content. */
 	ogType?: string;
-	/** JSON-LD emitted in <head>. Pass a plain object; serialized here. */
 	schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 const {
@@ -86,8 +80,7 @@ const year = new Date().getFullYear();
 </html>
 
 <style is:global>
-	/* Figures: hairline frame + Field & Ledger caption. Four Laws only —
-	   Altitude pages don't use figures the same way. */
+	/* Figures: hairline frame + Field & Ledger caption (Four Laws only). */
 	main figure {
 		margin: 2rem 0;
 		padding: 1.25rem;

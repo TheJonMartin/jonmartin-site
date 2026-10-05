@@ -2,33 +2,19 @@
 interface Props {
 	title: string;
 	description: string;
-	/** Set on utility pages (e.g. /thanks) that shouldn't appear in search. */
+	/** Utility pages (e.g. /thanks) that shouldn't appear in search. */
 	noindex?: boolean;
-	/**
-	 * Overrides the <title> and og:title without touching the on-page <h1>.
-	 * Use it when the headline that reads well on the page runs past the ~60
-	 * characters Google will actually display. Falls back to `title`.
-	 */
+	/** Full <title>/og:title when the on-page h1 is too long for SERP display. */
 	seoTitle?: string;
-	/**
-	 * Per-page social card, as a site-root-relative path (e.g. '/og-writing.png').
-	 * Defaults to the site-wide card in public/og.png.
-	 */
+	/** Root-relative social card. Defaults to /og.png. */
 	ogImage?: string;
-	/**
-	 * JSON-LD to emit in <head>. Pass a plain object; it's serialized here.
-	 * See src/pages/index.astro for the Person + WebSite example.
-	 */
 	schema?: Record<string, unknown> | Record<string, unknown>[];
-	/** og:type. 'website' by default; /writing posts pass 'article'. */
+	/** og:type. /writing posts pass 'article'. */
 	ogType?: string;
-	/** ISO dates for article:published_time / article:modified_time. Only
-	 * emitted when ogType is 'article'. */
+	/** ISO dates for article:* times; only emitted when ogType is 'article'. */
 	publishedTime?: string;
 	modifiedTime?: string;
-	/** False only on the homepage — the plum hero band directly below the
-	 * header supplies its own visual edge there, so the header's own hairline
-	 * would be a redundant second line right above it. */
+	/** False on the homepage — plum hero supplies the edge; header hairline would double it. */
 	navBordered?: boolean;
 }
 const {
@@ -50,13 +36,7 @@ import Footer from '../components/Footer.astro';
 import SeoHead from '../components/SeoHead.astro';
 import { GA_MAIN } from '../../shared/analytics';
 
-// Requires `site` to be set in astro.config.mjs — without it Astro.site is
-// undefined and this throws at build time rather than silently emitting a
-// broken canonical.
-//
-// build.format is 'file' (astro.config.mjs), so Astro.url.pathname here is
-// e.g. '/about.html' — but the URL Netlify actually serves at, and the one
-// every internal link and the sitemap use, is '/about'. Strip .html.
+// build.format 'file' → pathname is e.g. '/about.html'; strip so canonical matches the served URL.
 const cleanPath = Astro.url.pathname
 	.replace(/index\.html$/, '')
 	.replace(/\.html$/, '');
