@@ -2,40 +2,34 @@
 // Jon's goals change — nothing else in scripts/seo-scan/ should need touching
 // to adjust thresholds, targets, or which routes get scanned.
 //
-// This used to describe two separate Astro builds (thejonmartin.com and
-// fourlaws.thejonmartin.com). They were consolidated into one Astro project
-// on 9 September 2026 — see docs/site-consolidation.md — so there's one
-// entry below. `sites` stays a list (rather than a single object) because
-// the crawler and rules are written against it generically; if this repo
-// ever builds a second property again, that's the only shape to extend.
+// One Astro project (thejonmartin.com) since the Sep 2026 consolidation —
+// see docs/site-consolidation.md.
 export const config = {
-	sites: [
-		{
-			key: 'main',
-			label: 'thejonmartin.com',
-			siteUrl: 'https://thejonmartin.com',
-			distDir: 'dist',
-			// build.format: 'file' sitewide — <route>.html served slash-less.
-			// Four Laws' URLs had to stay byte-identical to its pre-merge
-			// address, which forced this for the whole project (Astro doesn't
-			// support two output formats in one build). See astro.config.mjs.
-			urlFormat: 'file',
-			// Prefix-matched (see util.mjs isExcludedRoute) — '/admin' catches
-			// the Decap CMS shell (public/admin/, a static file Astro doesn't
-			// route, so its built route string isn't as predictable as a real
-			// page's).
-			excludeFromContentChecks: ['/404', '/admin'],
-			expectedNoindex: ['/thanks', '/thanks-contact', '/thanks-consulting', '/404'],
-			runContentGapRules: true,
-			// Pages that are short by design, not by neglect: interactive tools
-			// whose value is the tool rather than surrounding prose, and a
-			// contact form. Padding these with filler to satisfy a word-count
-			// heuristic would make them worse for the person using them —
-			// exempt them from the thin-content check specifically rather than
-			// generate content nobody asked for.
-			thinContentExempt: ['/contact', '/flow-formula-calculator', '/part8-flow-diagnostic'],
-		},
-	],
+	site: {
+		key: 'main',
+		label: 'thejonmartin.com',
+		siteUrl: 'https://thejonmartin.com',
+		distDir: 'dist',
+		// build.format: 'file' sitewide — <route>.html served slash-less.
+		// Four Laws' URLs had to stay byte-identical to its pre-merge
+		// address, which forced this for the whole project (Astro doesn't
+		// support two output formats in one build). See astro.config.mjs.
+		urlFormat: 'file',
+		// Prefix-matched (see util.mjs isExcludedRoute) — '/admin' catches
+		// the Decap CMS shell (public/admin/, a static file Astro doesn't
+		// route, so its built route string isn't as predictable as a real
+		// page's).
+		excludeFromContentChecks: ['/404', '/admin'],
+		expectedNoindex: ['/thanks', '/thanks-contact', '/thanks-consulting', '/404'],
+		runContentGapRules: true,
+		// Pages that are short by design, not by neglect: interactive tools
+		// whose value is the tool rather than surrounding prose, and a
+		// contact form. Padding these with filler to satisfy a word-count
+		// heuristic would make them worse for the person using them —
+		// exempt them from the thin-content check specifically rather than
+		// generate content nobody asked for.
+		thinContentExempt: ['/contact', '/flow-formula-calculator', '/part8-flow-diagnostic'],
+	},
 
 	writingContentDir: 'src/content/writing',
 	fourLawsContentDir: 'src/content/four-laws',

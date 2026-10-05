@@ -2,7 +2,7 @@
 import Nav from '../components/Nav.astro';
 import FourLawsFooter from '../components/FourLawsFooter.astro';
 import Analytics from '../components/Analytics.astro';
-import { GA_FOURLAWS } from '../../shared/analytics';
+import { GA_MAIN } from '../../shared/analytics';
 import { breadcrumbSchema } from '../lib/schema';
 
 // Field & Ledger tokens, shared with the main site. Editing a copy of these in
@@ -127,7 +127,7 @@ const schemaList = [
 			/>
 		))}
 
-		<Analytics id={GA_FOURLAWS} />
+		<Analytics id={GA_MAIN} />
 	</head>
 	<body>
 		<Nav section="four-laws" />
