@@ -9,8 +9,5 @@
  * writing → waitlist path is one session.
  */
 
-/** thejonmartin.com — main layout (home, writing, hubspot-facing, etc.). */
+/** thejonmartin.com — one stream for main and Four Laws layouts. */
 export const GA_MAIN = 'G-5F47YFG0JW';
-
-/** Four Laws layout on the same host. Same stream as GA_MAIN. */
-export const GA_FOURLAWS = 'G-5F47YFG0JW';

@@ -28,37 +28,19 @@ export async function listStaticAssetRoutes(distDir) {
 	return files.filter((f) => !f.endsWith('.html')).map((f) => '/' + path.relative(distDir, f).replace(/\\/g, '/'));
 }
 
-// Astro's static output shape depends on `build.format` in the site's astro
-// config. 'file' (astro.config.mjs, sitewide since the site-consolidation —
-// see docs/site-consolidation.md) emits <route>.html served slash-less,
-// including 404.html — Base.astro/FourLawsLayout.astro strip the .html for
-// canonical purposes exactly like every other page, so 404 needs no special
-// case here either. 'directory' (Astro's default, kept for any future site
-// this scanner might cover) emits <route>/index.html with a trailing slash,
-// except 404.html which static hosts require at that exact top-level path
-// regardless of format.
-function filePathToRoute(distDir, filePath, urlFormat) {
-	let rel = path.relative(distDir, filePath).replace(/\\/g, '/');
-
-	if (urlFormat === 'file') {
-		if (rel === 'index.html') return '/';
-		return '/' + rel.replace(/\.html$/, '');
-	}
-
-	if (rel === '404.html') return '/404';
+// Astro build.format is 'file' sitewide (astro.config.mjs) — emits
+// <route>.html served slash-less, including 404.html. Base.astro /
+// FourLawsLayout.astro strip the .html for canonical purposes.
+function filePathToRoute(distDir, filePath) {
+	const rel = path.relative(distDir, filePath).replace(/\\/g, '/');
 	if (rel === 'index.html') return '/';
-	if (rel.endsWith('/index.html')) rel = rel.slice(0, -'index.html'.length);
-	else rel = rel.replace(/\.html$/, '/');
-	return '/' + rel.replace(/^\/+/, '');
+	return '/' + rel.replace(/\.html$/, '');
 }
 
-// What <link rel="canonical"> should read for a given route, matching each
-// site's own convention (see Base.astro in each source tree).
-function expectedCanonicalFor(route, siteUrl, urlFormat) {
-	if (urlFormat === 'file') {
-		if (route === '/') return new URL(route, siteUrl).href.replace(/\/$/, '');
-		return new URL(route, siteUrl).href;
-	}
+// What <link rel="canonical"> should read for a given route (file-format,
+// no trailing slash except that home is bare origin).
+function expectedCanonicalFor(route, siteUrl) {
+	if (route === '/') return new URL(route, siteUrl).href.replace(/\/$/, '');
 	return new URL(route, siteUrl).href;
 }
 
@@ -85,13 +67,13 @@ function countWords(text) {
 	return trimmed ? trimmed.split(/\s+/).length : 0;
 }
 
-export async function crawlDist(distDir, siteUrl, { urlFormat = 'directory', site = 'main', siteLabel = site } = {}) {
+export async function crawlDist(distDir, siteUrl, { site = 'main', siteLabel = site } = {}) {
 	const files = (await findAllFiles(distDir)).filter((f) => f.endsWith('.html'));
 	const pages = [];
 
 	for (const file of files) {
-		const route = filePathToRoute(distDir, file, urlFormat);
-		const expectedCanonical = expectedCanonicalFor(route, siteUrl, urlFormat);
+		const route = filePathToRoute(distDir, file);
+		const expectedCanonical = expectedCanonicalFor(route, siteUrl);
 		const html = await readFile(file, 'utf-8');
 		const { document } = parseHTML(html);
 
