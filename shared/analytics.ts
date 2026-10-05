@@ -1,12 +1,6 @@
 /*
- * Google Analytics 4 — measurement IDs.
- *
- * Both Base layouts import this. If an ID is an empty string, NO analytics
- * script is emitted at all.
- *
- * Four Laws pages now live on thejonmartin.com (the old fourlaws subdomain
- * is a 301 splat). One data stream covers both layouts so a glossary →
- * writing → waitlist path is one session.
+ * GA4 measurement IDs. Empty string → Analytics.astro emits nothing.
+ * Both layouts share one stream so a Four Laws → writing → waitlist path is one session.
  */
 
 /** thejonmartin.com — one stream for main and Four Laws layouts. */

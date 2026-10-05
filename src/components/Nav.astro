@@ -3,33 +3,12 @@ import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import { altitudeGroups } from '../lib/altitude-links';
 
-// The one nav for the whole site. Rebuilt to the brand/visual-system design
-// handoff's header spec: wordmark + "Jon Martin" on the left, Writing / About
-// / HubSpot Review / Four Laws / Waitlist on the right, Courier New uppercase, reserved-space
-// hover underline.
-//
-// "Four Laws of Complex System Design" stays a dropdown (native <details>/
-// <summary>, restyled to the new tokens) rather than the handoff's flat link
-// to the old pre-consolidation fourlaws.thejonmartin.com — the handoff
-// predates both the site consolidation and the dropdown shipped immediately
-// before this redesign work started, and reverting to a flat link would be a
-// straight regression from something just explicitly requested. See
-// src/lib/four-laws-links.ts (shared with SectionFooter.astro's repeat of
-// the same list).
-//
-// "About" points at the real /about page — the handoff's own nav uses
-// `#about`, an in-page anchor, because its prototype file has no other pages
-// to link to. "Waitlist" points at /#notify — the handoff calls this anchor
-// `#waitlist`, but the live site's existing waitlist section
-// (NotifyForm.astro) is `id="notify"` already, linked from several other
-// places, so the nav link was adapted to match the existing id rather than
-// renaming the id everywhere to match a design mockup's placeholder name.
-//
-// `bordered` — false only on the homepage, where the plum hero band directly
-// below the header supplies its own visual edge; every other page keeps the
-// hairline. `section` highlights the matching dropdown as current.
+// Site nav: wordmark + Writing / About / HubSpot Review / Four Laws / Altitude / Waitlist.
+// Four Laws & Altitude stay <details> dropdowns (shared link lists in four-laws-links / altitude-links).
+// Waitlist → /#notify (existing NotifyForm id, not the design mock's #waitlist).
 interface Props {
 	section?: 'four-laws' | 'altitude';
+	/** False on homepage — plum hero supplies the edge. */
 	bordered?: boolean;
 }
 const { section, bordered = true } = Astro.props;
@@ -37,19 +16,13 @@ const { section, bordered = true } = Astro.props;
 const links: { href: string; text: string }[] = [
 	{ href: '/writing', text: 'Writing' },
 	{ href: '/about', text: 'About' },
-	// The packaged offer page (title "HubSpot-Facing Review"). Before this it
-	// was linked only from /about's "Getting in touch" section, which left the
-	// one paid-offer page on the site with a single internal inlink.
 	{ href: '/hubspot-facing', text: 'HubSpot Review' },
 ];
 
-// build.format 'file' (astro.config.mjs) means Astro.url.pathname here is
-// e.g. '/writing.html' — strip it, or aria-current never matches.
+// build.format 'file' → pathname may be '/writing.html'; strip or aria-current never matches.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
-// Writing needs prefix matching because individual posts live beneath it and
-// should still mark the section as current. About and HubSpot Review are
-// single pages, so an exact match is correct.
+// Writing: prefix match so posts mark the section current. Others: exact.
 const isCurrent = (href: string) => {
 	if (href === '/writing') return path === '/writing' || path.startsWith('/writing/');
 	return path === href;
@@ -120,8 +93,7 @@ const isCurrent = (href: string) => {
 </header>
 
 <style>
-	/* Visible only when tabbed to — keyboard users get the escape hatch without
-	   it occupying layout for everyone else. */
+	/* Skip link: off-screen until focused. */
 	.skip {
 		position: absolute;
 		left: -9999px;
@@ -186,8 +158,7 @@ const isCurrent = (href: string) => {
 	summary:hover {
 		border-bottom-color: var(--mustard);
 	}
-	/* Mustard's single small-scale appearance in the chrome: it marks where
-	   you are, a genuine outlier among a list of places you aren't. */
+	/* Mustard marks current page only. */
 	.links > a[aria-current='page'],
 	summary[aria-current='page'] {
 		border-bottom-color: var(--mustard);
@@ -270,10 +241,7 @@ const isCurrent = (href: string) => {
 		nav {
 			padding: 16px 20px;
 		}
-		/* Keeps the panel's right edge aligned with the trigger at the
-		   reduced mobile padding above — without this it stays anchored to
-		   the desktop 40px value while nav's own content sits 20px in,
-		   leaving a visible gap between the trigger and the panel below it. */
+		/* Match panel right edge to mobile nav padding (20px). */
 		.panel {
 			right: 20px;
 		}
