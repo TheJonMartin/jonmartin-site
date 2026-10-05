@@ -11,9 +11,7 @@ import { checkExternalLinks } from './external-links.mjs';
 import { buildReport, parsePreviousData } from './report.mjs';
 import { findOpenIssue, upsertScanIssue } from './github-issue.mjs';
 
-// One entry per site this repo builds — see config.mjs. Consolidated to a
-// single site in September 2026 (docs/site-consolidation.md); kept as a map
-// keyed by site.key rather than hard-coded in case that ever changes again.
+// Dirs scanned for TODO markers — see config.mjs.
 const TODO_SCAN_DIRS = {
 	main: ['src/pages', 'src/content', 'src/components', 'src/layouts', 'src/lib'],
 };
@@ -29,7 +27,6 @@ async function scanSite(site) {
 	}
 
 	const pages = await crawlDist(site.distDir, site.siteUrl, {
-		urlFormat: site.urlFormat,
 		site: site.key,
 		siteLabel: site.label,
 	});
@@ -69,12 +66,11 @@ async function main() {
 	const allFindings = [];
 	const siteSummaries = [];
 
-	for (const site of config.sites) {
-		const { pages, findings } = await scanSite(site);
-		allPages.push(...pages);
-		allFindings.push(...findings);
-		if (pages.length > 0) siteSummaries.push({ label: site.label, pageCount: pages.length });
-	}
+	const site = config.site;
+	const { pages, findings } = await scanSite(site);
+	allPages.push(...pages);
+	allFindings.push(...findings);
+	if (pages.length > 0) siteSummaries.push({ label: site.label, pageCount: pages.length });
 
 	const externalLinkFindings = await checkExternalLinks(allPages, config.externalLinks);
 	allFindings.push(...externalLinkFindings.map((f) => ({ ...f, id: `links::${f.id}` })));

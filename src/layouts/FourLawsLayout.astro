@@ -2,7 +2,7 @@
 import Nav from '../components/Nav.astro';
 import SectionFooter from '../components/SectionFooter.astro';
 import SeoHead from '../components/SeoHead.astro';
-import { GA_FOURLAWS } from '../../shared/analytics';
+import { GA_MAIN } from '../../shared/analytics';
 import { breadcrumbSchema } from '../lib/schema';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import '../../shared/styles/field-and-ledger.css';
@@ -67,7 +67,7 @@ const year = new Date().getFullYear();
 			siteName={siteName}
 			schema={schemaList}
 			noindex={noindex}
-			analyticsId={GA_FOURLAWS}
+			analyticsId={GA_MAIN}
 		/>
 	</head>
 	<body>

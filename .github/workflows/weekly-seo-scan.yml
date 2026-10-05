@@ -23,7 +23,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Scan thejonmartin.com and fourlaws.thejonmartin.com
+      - name: Scan thejonmartin.com
         run: npm run seo-scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
