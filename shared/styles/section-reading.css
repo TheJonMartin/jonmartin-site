@@ -1,0 +1,30 @@
+/* Reading measure for Four Laws / Altitude long-form pages.
+   Imported by those layouts only — Base must not get this. */
+main {
+	max-width: 44rem;
+	margin: 0 auto;
+	padding: 2.5rem 1.5rem 3.5rem;
+}
+main h1 {
+	font-size: 2.1rem;
+	margin-bottom: 0.75rem;
+}
+main h2 {
+	font-size: 1.45rem;
+	margin: 2.25rem 0 0.5rem;
+}
+main h3 {
+	font-size: 1.15rem;
+	margin: 1.5rem 0 0.35rem;
+}
+main blockquote {
+	margin: 1.5rem 0;
+	padding-left: 1rem;
+	border-left: 2px solid var(--sage);
+	font-family: 'Courier New', Cousine, monospace;
+	font-size: 0.95rem;
+}
+main code {
+	font-family: 'Courier New', Cousine, monospace;
+	font-size: 0.95em;
+}

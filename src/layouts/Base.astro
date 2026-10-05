@@ -44,13 +44,10 @@ const {
 	navBordered = true,
 } = Astro.props;
 
-// Field & Ledger tokens and base element styles. Shared with
-// FourLawsLayout.astro so the two can't drift — edit
-// shared/styles/field-and-ledger.css, not a copy in here.
 import '../../shared/styles/field-and-ledger.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import Analytics from '../components/Analytics.astro';
+import SeoHead from '../components/SeoHead.astro';
 import { GA_MAIN } from '../../shared/analytics';
 
 // Requires `site` to be set in astro.config.mjs — without it Astro.site is
@@ -59,75 +56,31 @@ import { GA_MAIN } from '../../shared/analytics';
 //
 // build.format is 'file' (astro.config.mjs), so Astro.url.pathname here is
 // e.g. '/about.html' — but the URL Netlify actually serves at, and the one
-// every internal link and the sitemap use, is '/about'. Canonicalising to the
-// .html form would point search engines at a second address for the same
-// page. Strip it, same as FourLawsLayout.astro does for the same reason.
+// every internal link and the sitemap use, is '/about'. Strip .html.
 const cleanPath = Astro.url.pathname
 	.replace(/index\.html$/, '')
 	.replace(/\.html$/, '');
-// A slash-less root ('') can't survive `new URL('', site).href` without the
-// trailing slash new URL forces back on — strip the one it adds for '/'.
-// Every other page's cleanPath is already slash-less, so this only ever
-// touches the home page. Same pattern as FourLawsLayout.astro.
 const canonical = new URL(cleanPath, Astro.site).href.replace(/\/$/, '');
-
-// og:image must be an absolute URL. Relative paths are silently dropped by
-// most scrapers rather than resolved, which is the failure mode that leaves
-// you wondering why the card is blank.
-const ogImageUrl = new URL(ogImage, Astro.site).href;
 
 const headTitle = seoTitle ?? title;
 ---
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{headTitle}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={canonical} />
-		{noindex && <meta name="robots" content="noindex, follow" />}
-
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<meta name="theme-color" content="#4A3352" />
-
-		<link
-			rel="alternate"
-			type="application/rss+xml"
-			title="Jon Martin — Writing"
-			href={new URL('/rss.xml', Astro.site).href}
+		<SeoHead
+			title={headTitle}
+			description={description}
+			canonical={canonical}
+			ogImage={ogImage}
+			ogType={ogType}
+			siteName="Jon Martin"
+			schema={schema}
+			noindex={noindex}
+			analyticsId={GA_MAIN}
+			publishedTime={publishedTime}
+			modifiedTime={modifiedTime}
+			rss={{ title: 'Jon Martin — Writing', href: new URL('/rss.xml', Astro.site).href }}
 		/>
-
-		<meta property="og:site_name" content="Jon Martin" />
-		<meta property="og:title" content={headTitle} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content={ogType} />
-		<meta property="og:url" content={canonical} />
-		<meta property="og:image" content={ogImageUrl} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		{ogType === 'article' && publishedTime && (
-			<meta property="article:published_time" content={publishedTime} />
-		)}
-		{ogType === 'article' && modifiedTime && (
-			<meta property="article:modified_time" content={modifiedTime} />
-		)}
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={headTitle} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={ogImageUrl} />
-
-		{schema && (
-			<script
-				type="application/ld+json"
-				is:inline
-				set:html={JSON.stringify(schema)}
-			/>
-		)}
-
-		<Analytics id={GA_MAIN} />
 	</head>
 	<body>
 		<Nav bordered={navBordered} />

@@ -1,13 +1,12 @@
 ---
 import Nav from '../components/Nav.astro';
-import FourLawsFooter from '../components/FourLawsFooter.astro';
-import Analytics from '../components/Analytics.astro';
+import SectionFooter from '../components/SectionFooter.astro';
+import SeoHead from '../components/SeoHead.astro';
 import { GA_FOURLAWS } from '../../shared/analytics';
 import { breadcrumbSchema } from '../lib/schema';
-
-// Field & Ledger tokens, shared with the main site. Editing a copy of these in
-// here instead of in shared/ is how the two sites start to drift.
+import { fourLawsGroups } from '../lib/four-laws-links';
 import '../../shared/styles/field-and-ledger.css';
+import '../../shared/styles/section-reading.css';
 
 interface Props {
 	title: string;
@@ -16,17 +15,11 @@ interface Props {
 	noindex?: boolean;
 	/**
 	 * Overrides the <title> and og:title without changing the on-page <h1>.
-	 * Several pages here have headlines that read well but run past the ~60
-	 * characters Google displays; this is how they get a short search title
-	 * without shortening the page itself. Falls back to `title`.
-	 *
 	 * Note this bypasses the "| Four Laws…" suffix logic below — an seoTitle is
-	 * taken as the complete, final title, because the whole point of setting one
-	 * is to control the exact length.
+	 * taken as the complete, final title.
 	 */
 	seoTitle?: string;
-	/** Per-page social card, root-relative. Defaults to the Four Laws og image
-	 * (distinct from the main site's own /og.png). */
+	/** Per-page social card, root-relative. Defaults to the Four Laws og image. */
 	ogImage?: string;
 	/** Page-level og:type. 'website' for the home page, 'article' for content. */
 	ogType?: string;
@@ -43,141 +36,58 @@ const {
 	schema,
 } = Astro.props;
 
-// Astro.site is 'https://thejonmartin.com' (astro.config.mjs) — these pages
-// used to build from a separate config with site set to
-// 'https://fourlaws.thejonmartin.com', back when this was a second Netlify
-// project on its own subdomain. That's now the one thing that changed for
-// these pages in the merge: same path, same content, new host. Everything
-// below (title suffix, canonical stripping, schema) still works exactly as
-// it did — none of it depended on which domain it was building for.
-//
-// build.format is 'file' sitewide (kept specifically for this page set — see
-// astro.config.mjs), so Astro.url.pathname here is '/glossary.html' — but the
-// URL Netlify actually serves, and the one every existing inbound link uses,
-// is '/glossary'. Canonicalising to the .html form would point search engines
-// and shared links at a second address for the same page. Strip it.
 const cleanPath = Astro.url.pathname
 	.replace(/index\.html$/, '')
 	.replace(/\.html$/, '');
-// Every non-root canonical is already slash-less (cleanPath never ends in
-// '/' for a real subpage) — but new URL('', site).href can't produce a
-// slash-less origin for the root, so strip the one trailing slash it forces.
-// This also matches the sitemap, which the 'file' build format and its
-// serialize hook (astro.config.fourlaws.mjs) likewise emit without one.
 const canonical = new URL(cleanPath, Astro.site).href.replace(/\/$/, '');
 
-// Titles read "<page> | Four Laws of Complex System Design", matching the live
-// site — except where the title already opens with the site name, which is the
-// home page and the Full Reference ("Four Laws of Complex System Design — Full
-// Reference"). Appending the suffix to those would stutter.
 const siteName = 'Four Laws of Complex System Design';
 const fullTitle =
 	seoTitle ?? (title.startsWith(siteName) ? title : `${title} | ${siteName}`);
 
-// og:image must be absolute — most scrapers drop a relative path rather than
-// resolving it, which is why a card silently comes back blank.
-const ogImageUrl = new URL(ogImage, Astro.site).href;
-
-// Every page gets a Home > Page breadcrumb except home itself, where a
-// breadcrumb would be a single-item list pointing at the page you're already
-// on — not useful and not how any site actually implements this.
-// Merged with any page-specific schema (FAQPage, DefinedTermSet) into one
-// array, since a page can legitimately carry more than one JSON-LD block.
 const isHome = cleanPath === '' || cleanPath === '/';
 const breadcrumb = isHome ? undefined : breadcrumbSchema(title, canonical, Astro.site!.href);
 const schemaList = [
 	breadcrumb,
 	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
 ].filter((s): s is Record<string, unknown> => Boolean(s));
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{fullTitle}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={canonical} />
-		{noindex && <meta name="robots" content="noindex, follow" />}
-
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<meta name="theme-color" content="#4A3352" />
-
-		<meta property="og:site_name" content="Four Laws of Complex System Design" />
-		<meta property="og:title" content={fullTitle} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content={ogType} />
-		<meta property="og:url" content={canonical} />
-		<meta property="og:image" content={ogImageUrl} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={fullTitle} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={ogImageUrl} />
-
-		{schemaList.map((s) => (
-			<script
-				type="application/ld+json"
-				is:inline
-				set:html={JSON.stringify(s)}
-			/>
-		))}
-
-		<Analytics id={GA_FOURLAWS} />
+		<SeoHead
+			title={fullTitle}
+			description={description}
+			canonical={canonical}
+			ogImage={ogImage}
+			ogType={ogType}
+			siteName={siteName}
+			schema={schemaList}
+			noindex={noindex}
+			analyticsId={GA_FOURLAWS}
+		/>
 	</head>
 	<body>
 		<Nav section="four-laws" />
 		<main id="main">
 			<slot />
 		</main>
-		<FourLawsFooter />
+		<SectionFooter
+			groups={fourLawsGroups}
+			label="Four Laws sections"
+			colophon={`Four Laws of Complex System Design &copy; ${year} Jon Martin.`}
+		>
+			Written by <a href="/about">Jon Martin</a>.
+		</SectionFooter>
 	</body>
 </html>
 
 <style is:global>
-	/* Reading measure for the reference prose. Four Laws pages are long-form
-	   documents, not marketing pages — the constraint that matters is line
-	   length, not viewport width. */
-	main {
-		max-width: 44rem;
-		margin: 0 auto;
-		padding: 2.5rem 1.5rem 3.5rem;
-	}
-	main h1 {
-		font-size: 2.1rem;
-		margin-bottom: 0.75rem;
-	}
-	main h2 {
-		font-size: 1.45rem;
-		margin: 2.25rem 0 0.5rem;
-	}
-	main h3 {
-		font-size: 1.15rem;
-		margin: 1.5rem 0 0.35rem;
-	}
-	main blockquote {
-		margin: 1.5rem 0;
-		padding-left: 1rem;
-		border-left: 2px solid var(--sage);
-		font-family: 'Courier New', Cousine, monospace;
-		font-size: 0.95rem;
-	}
-	main code {
-		font-family: 'Courier New', Cousine, monospace;
-		font-size: 0.95em;
-	}
-
-	/* Figures: a hairline frame around the diagram, caption set per the Field &
-	   Ledger spec's "Caption / meta" role (Calibri italic, muted, small). No
-	   border-radius — the v2 system is explicit that corners are square
-	   everywhere, no exceptions. The figures themselves are SVGs with their
-	   colors hardcoded — an <img>-embedded SVG can't inherit the page's CSS
-	   variables, so the palette is duplicated by hex value inside each file
-	   rather than referenced from here. */
+	/* Figures: hairline frame + Field & Ledger caption. Four Laws only —
+	   Altitude pages don't use figures the same way. */
 	main figure {
 		margin: 2rem 0;
 		padding: 1.25rem;

@@ -1,10 +1,12 @@
 ---
 import Nav from '../components/Nav.astro';
-import AltitudeFooter from '../components/AltitudeFooter.astro';
-import Analytics from '../components/Analytics.astro';
+import SectionFooter from '../components/SectionFooter.astro';
+import SeoHead from '../components/SeoHead.astro';
 import { GA_MAIN } from '../../shared/analytics';
 import { breadcrumbSchema } from '../lib/schema';
+import { altitudeGroups } from '../lib/altitude-links';
 import '../../shared/styles/field-and-ledger.css';
+import '../../shared/styles/section-reading.css';
 
 interface Props {
 	title: string;
@@ -32,89 +34,55 @@ const canonical = new URL(cleanPath, Astro.site).href.replace(/\/$/, '');
 
 const siteName = 'Requirements Altitude';
 const fullTitle = seoTitle ?? (title.startsWith(siteName) ? title : `${title} | ${siteName}`);
-const ogImageUrl = new URL(ogImage, Astro.site).href;
 
 const isHub = cleanPath === '/altitude';
+const altitudeHubUrl = new URL('/altitude', Astro.site).href.replace(/\/$/, '');
 const breadcrumb = isHub
 	? breadcrumbSchema(title, canonical, Astro.site!.href)
-	: {
-			'@context': 'https://schema.org',
-			'@type': 'BreadcrumbList',
-			itemListElement: [
-				{ '@type': 'ListItem', position: 1, name: 'Home', item: Astro.site!.href },
-				{
-					'@type': 'ListItem',
-					position: 2,
-					name: 'Requirements Altitude',
-					item: new URL('/altitude', Astro.site).href.replace(/\/$/, ''),
-				},
-				{ '@type': 'ListItem', position: 3, name: title, item: canonical },
-			],
-		};
+	: breadcrumbSchema(title, canonical, Astro.site!.href, {
+			name: 'Requirements Altitude',
+			url: altitudeHubUrl,
+		});
 const schemaList = [
 	breadcrumb,
 	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
 ].filter((s): s is Record<string, unknown> => Boolean(s));
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{fullTitle}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href={canonical} />
-		{noindex && <meta name="robots" content="noindex, follow" />}
-
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-		<meta name="theme-color" content="#4A3352" />
-
-		<meta property="og:site_name" content="Requirements Altitude" />
-		<meta property="og:title" content={fullTitle} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content={ogType} />
-		<meta property="og:url" content={canonical} />
-		<meta property="og:image" content={ogImageUrl} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:image" content={ogImageUrl} />
-
-		{schemaList.map((s) => (
-			<script type="application/ld+json" is:inline set:html={JSON.stringify(s)} />
-		))}
-
-		<Analytics id={GA_MAIN} />
+		<SeoHead
+			title={fullTitle}
+			description={description}
+			canonical={canonical}
+			ogImage={ogImage}
+			ogType={ogType}
+			siteName={siteName}
+			schema={schemaList}
+			noindex={noindex}
+			analyticsId={GA_MAIN}
+		/>
 	</head>
 	<body>
 		<Nav section="altitude" />
 		<main id="main">
 			<slot />
 		</main>
-		<AltitudeFooter />
+		<SectionFooter
+			groups={altitudeGroups}
+			label="Requirements Altitude sections"
+			colophon={`Requirements Altitude © ${year} Jon Martin.`}
+		>
+			Written by <a href="/about">Jon Martin</a>. Companion framework: <a href="/four-laws-complex-system-design-full">Four Laws</a>.
+		</SectionFooter>
 	</body>
 </html>
 
 <style is:global>
-	main {
-		max-width: 44rem;
-		margin: 0 auto;
-		padding: 2.5rem 1.5rem 3.5rem;
-	}
-	main h1 { font-size: 2.1rem; margin-bottom: 0.75rem; }
-	main h2 { font-size: 1.45rem; margin: 2.25rem 0 0.5rem; }
-	main h3 { font-size: 1.15rem; margin: 1.5rem 0 0.35rem; }
-	main blockquote {
-		margin: 1.5rem 0;
-		padding-left: 1rem;
-		border-left: 2px solid var(--sage);
-		font-family: 'Courier New', Cousine, monospace;
-		font-size: 0.95rem;
-	}
-	main code { font-family: 'Courier New', Cousine, monospace; font-size: 0.95em; }
+	/* Altitude-only extras on top of shared/styles/section-reading.css */
 	main pre {
 		overflow-x: auto;
 		padding: 1rem 1.1rem;

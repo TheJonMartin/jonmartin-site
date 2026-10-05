@@ -152,23 +152,40 @@ export function articleSchema(title: string, description: string, url: string) {
 }
 
 /**
- * A two-level Home > Page breadcrumb, applied site-wide from Base.astro.
+ * BreadcrumbList: Home > Page by default, or Home > parent > Page when an
+ * optional parent crumb is passed (Altitude module pages).
  *
- * Deliberately not Home > Section > Page. The nav's three groups (Explore /
- * Tools / Reference) are a visual grouping in Nav.astro, not real pages — there
- * is no /explore or /tools URL for a middle crumb to point at. A BreadcrumbList
- * ListItem without a real `item` URL is worse than no breadcrumb at all, so
- * this reflects the site's actual (flat) navigation rather than inventing a
- * URL for a section that doesn't exist as a page.
+ * Four Laws stays two-level: the nav's Explore / Tools / Reference groups are
+ * visual only — there is no /explore or /tools URL for a middle crumb.
  */
-export function breadcrumbSchema(pageTitle: string, pageUrl: string, siteUrl: string) {
+export function breadcrumbSchema(
+	pageTitle: string,
+	pageUrl: string,
+	siteUrl: string,
+	parent?: { name: string; url: string },
+) {
+	const itemListElement: {
+		'@type': 'ListItem';
+		position: number;
+		name: string;
+		item: string;
+	}[] = [{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl }];
+
+	if (parent) {
+		itemListElement.push(
+			{ '@type': 'ListItem', position: 2, name: parent.name, item: parent.url },
+			{ '@type': 'ListItem', position: 3, name: pageTitle, item: pageUrl },
+		);
+	} else {
+		itemListElement.push(
+			{ '@type': 'ListItem', position: 2, name: pageTitle, item: pageUrl },
+		);
+	}
+
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
-		itemListElement: [
-			{ '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-			{ '@type': 'ListItem', position: 2, name: pageTitle, item: pageUrl },
-		],
+		itemListElement,
 	};
 }
 

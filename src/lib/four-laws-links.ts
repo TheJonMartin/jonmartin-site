@@ -1,6 +1,6 @@
 // Single source of truth for the Four Laws content/tool link list — used by
 // both Nav.astro (the "Four Laws of Complex System Design" dropdown, visible
-// from every page) and FourLawsFooter.astro (the same list, repeated as a
+// from every page) and SectionFooter.astro (the same list, repeated as a
 // sitemap at the bottom of every Four Laws page). Previously duplicated in
 // both places by hand; centralized here so the two can't drift.
 export const fourLawsGroups: { label: string; links: { href: string; text: string }[] }[] = [
