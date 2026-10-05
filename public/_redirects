@@ -4,6 +4,10 @@
 /starter-package     /           301
 /premium-package     /           301
 
+# Portal Audit pricing lives on the audit subdomain (source of truth).
+/pricing              https://audit.thejonmartin.com/pricing  301
+/pricing/             https://audit.thejonmartin.com/pricing  301
+
 # Trailing-slash redirects after build.format 'file' (see docs/site-consolidation.md).
 # /writing/<slug>/ has no splat rule (Netlify splat is end-only); relies on pretty-URL normalization to .html.
 /writing/             /writing    301
