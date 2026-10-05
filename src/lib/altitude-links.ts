@@ -1,5 +1,5 @@
 // Single source of truth for the Altitude section link list — used by Nav.astro
-// and AltitudeFooter.astro so the two can't drift.
+// and SectionFooter.astro so the two can't drift.
 export const altitudeGroups: { label: string; links: { href: string; text: string }[] }[] = [
 	{
 		label: 'Start',
