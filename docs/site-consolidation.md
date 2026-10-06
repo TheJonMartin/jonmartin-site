@@ -41,14 +41,7 @@ host changes.
   that relies on Netlify's own pretty-URL normalization rather than an
   explicit rule, since Netlify's redirect syntax can't express "strip a
   trailing slash but keep everything else" as a single wildcard rule.
-- **Two nav/layout pairs, not unified into one.** Main pages
-  (`/`, `/about`, `/writing`, `/contact`, `/thanks`) keep `Base.astro` and
-  the single-row `Nav.astro`; Four Laws pages keep `FourLawsLayout.astro` and
-  the grouped Explore/Tools/Reference `FourLawsNav.astro`. Both already share
-  the Field & Ledger design tokens, so they read as one family without
-  needing to actually become one component — reusing two already-built nav
-  components as-is was the lowest-risk path to "main site stays primary,
-  minimal rewriting" (the decision made before this merge started).
+- **One shared nav and head.** All three layouts (`Base`, `FourLawsLayout`, `AltitudeLayout`) render `Nav.astro` and, since #19, `SeoHead.astro`; Four Laws and Altitude also share `SectionFooter.astro`, with link lists in `src/lib/four-laws-links.ts` and `src/lib/altitude-links.ts`.
 - **Route collisions resolved.** Four Laws had its own `/`, `/about`, and
   `/thanks` — all retired/merged in favor of the main site's versions (see
   git history for the reasoning on each). `/contact` had no collision (main
@@ -62,14 +55,7 @@ host changes.
   Decap-managed home.json/about.json for the main site, a different shape
   entirely, so reusing "pages" for both would have been confusing without
   actually colliding on disk.
-- **Cross-domain links became internal links.** Every hardcoded
-  `https://thejonmartin.com` / `https://fourlaws.thejonmartin.com` reference
-  in nav, footer, CTA, and schema.org markup became a root-relative link or
-  was removed where it became redundant (e.g. `FourLawsNav.astro`'s old
-  "thejonmartin.com" link, now the same destination as its own wordmark).
-  The homepage's Person schema no longer lists Four Laws under `sameAs` —
-  that field is for genuinely separate identities, and Four Laws stopped
-  being one.
+- **Cross-domain links became internal links.** Hardcoded `https://thejonmartin.com` / `https://fourlaws.thejonmartin.com` links in nav, footer, CTA, and schema.org markup became root-relative or were dropped, and the homepage Person schema no longer lists Four Laws under `sameAs`.
 - **`about.md`'s unique content** (a "Connect" section with real social
   links — LinkedIn, Instagram, Threads, X — that didn't exist anywhere on
   the main site) was folded into the main `/about` page as a new

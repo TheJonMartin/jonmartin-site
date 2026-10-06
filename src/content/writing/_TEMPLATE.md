@@ -8,7 +8,7 @@ tags: ['Systems']
 
 Copy this file, rename it to something like `why-the-senior-hire-failed.md`, and
 write. The filename becomes the URL — this one would publish at
-`/writing/why-the-senior-hire-failed/`.
+`/writing/why-the-senior-hire-failed`.
 
 Leave `draft: true` while you're working. Nothing with `draft: true` renders on
 the site or appears in the index, so you can commit half-finished pieces safely.

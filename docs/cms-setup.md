@@ -12,6 +12,7 @@ nothing to keep in sync — the CMS just edits the same files.
 | What | Where it lives | CMS collection |
 |---|---|---|
 | Writing posts | `src/content/writing/*.md` | Writing |
+| Requirements Altitude modules | `src/content/altitude/*.md` | Requirements Altitude |
 | Four Laws reference pages | `src/content/four-laws/*.md` | Four Laws |
 | Home page copy | `src/content/pages/home.json` | Pages → Home Page |
 | About page copy | `src/content/pages/about.json` | Pages → About Page |
@@ -19,11 +20,6 @@ nothing to keep in sync — the CMS just edits the same files.
 Everything else — layout, styling, nav, `robots.txt`, schema markup, and the
 three interactive Four Laws tools (they're real JavaScript applications, not
 prose) — is still code, still Claude's (or your) territory.
-
-Until [docs/site-consolidation.md](site-consolidation.md), the Four Laws
-pages lived on a separate site (fourlaws.thejonmartin.com) with their own
-Netlify project and their own copy of this same CMS setup. They're all one
-site and one `/admin` now.
 
 ## One-time setup Jon has to do by hand
 
@@ -61,8 +57,8 @@ Netlify Identity widget, and not anything Git Gateway-related.
 ### 3. Confirm you can log in
 
 Visit `https://thejonmartin.com/admin`, click **Login with GitHub**, approve
-the app. You should land in the Decap CMS editor with "Writing", "Four Laws",
-and "Pages" in the sidebar. Only GitHub accounts with write access to the
+the app. You should land in the Decap CMS editor with "Writing",
+"Requirements Altitude", "Four Laws", and "Pages" in the sidebar. Only GitHub accounts with write access to the
 repo can authenticate — right now that's just you.
 
 ## Day to day
@@ -76,20 +72,24 @@ repo can authenticate — right now that's just you.
   `draft` field exactly, same rule Claude follows). Uncheck it when it's
   ready and hit **Publish**.
 - **Edit a Four Laws page:** `/admin` → Four Laws → pick a page. Same `draft`
-  rule as Writing. The **Nav group** field (reference / explore / meta)
-  controls which group of `FourLawsNav.astro` the page appears under —
-  changing it moves the page in the nav, it doesn't change the URL. Renaming
+  rule as Writing. The **Nav group** field (reference / explore / meta) sets
+  the small label above the page title (`meta` also drops the waitlist CTA);
+  it doesn't move the page in the nav. The Four Laws dropdown in `Nav.astro`
+  (and the footer sitemap in `SectionFooter.astro`) is the hand-kept list in
+  `src/lib/four-laws-links.ts` — a new page only shows up there once it's
+  added to that file. Requirements Altitude works the same way: **Nav group**
+  and **Sort order** place a module on the `/altitude` index, and its nav
+  list is `src/lib/altitude-links.ts`. Renaming
   a page in the CMS renames its file, which changes its URL — don't do that
   for an existing published page without also adding a redirect, since these
   specific URLs have real outreach links and backlink pitches pointing at
   them (see `docs/site-consolidation.md`).
-- **Delete a post or Four Laws page:** open it in the CMS and use the delete
-  option in the editor's menu (both collections are configured with
-  `delete: true`). Home and About are single files, not deletable entries.
-- A couple of fields explicitly allow HTML — the tagline on Home (for the
-  `<span class="accent">` styling) and any paragraph that needs a link on
-  About. Everywhere else, plain text is enough; you don't need to know HTML
-  to use this.
+- **Delete a post, Altitude module, or Four Laws page:** open it in the CMS
+  and use the delete option in the editor's menu (all three collections are
+  configured with `delete: true`). Home and About are single files, not deletable entries.
+- The About page's section paragraphs explicitly allow HTML, for links.
+  Everywhere else, plain text is enough; you don't need to know HTML to use
+  this.
 
 ## Local testing (optional)
 
@@ -105,7 +105,8 @@ and in another:
 npm run dev
 ```
 
-then visit `http://localhost:4321/admin` — this bypasses GitHub login
+then visit `http://localhost:4321/admin/index.html` (the dev server 404s on
+bare `/admin`) — this bypasses GitHub login
 entirely (that's what `local_backend: true` in `public/admin/config.yml`
 does) and writes straight to your working copy, so you can review a `git
 diff` before deciding whether to commit and push.
