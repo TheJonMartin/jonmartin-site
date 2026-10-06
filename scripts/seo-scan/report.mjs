@@ -25,12 +25,12 @@ export function parsePreviousData(issueBody) {
 
 function renderFinding(f) {
 	const scope = f.page ? `\`${f.page}\`` : 'sitewide';
-	const lines = [`- [ ] **${f.title}** — ${scope} (${f.siteLabel})`, `  ${f.detail}`];
+	const lines = [`- [ ] **${f.title}** — ${scope}`, `  ${f.detail}`];
 	if (f.fix) lines.push(`  *Fix:* ${f.fix}`);
 	return lines.join('\n');
 }
 
-export function buildReport({ findings, previousData, scannedAt, siteSummaries }) {
+export function buildReport({ findings, previousData, scannedAt, site }) {
 	const counts = { P0: 0, P1: 0, P2: 0 };
 	for (const f of findings) counts[f.priority]++;
 
@@ -43,7 +43,7 @@ export function buildReport({ findings, previousData, scannedAt, siteSummaries }
 	lines.push(`# Weekly SEO & AEO Scan — ${scannedAt}`);
 	lines.push('');
 	lines.push(
-		`**${findings.length} open item(s)** across ${siteSummaries.map((s) => `${s.pageCount} page(s) on ${s.label}`).join(', ')}: ` +
+		`**${findings.length} open item(s)** across ${site.pageCount} page(s) on ${site.label}: ` +
 			`${counts.P0} critical, ${counts.P1} high priority, ${counts.P2} opportunities.`
 	);
 	lines.push('');
@@ -75,12 +75,12 @@ export function buildReport({ findings, previousData, scannedAt, siteSummaries }
 		if (newItems.length > 0) {
 			lines.push('');
 			lines.push(`**🆕 New (${newItems.length}):**`);
-			for (const f of newItems) lines.push(`- ${PRIORITY_META[f.priority].emoji} ${f.title} — ${f.page ? `\`${f.page}\`` : 'sitewide'} (${f.siteLabel})`);
+			for (const f of newItems) lines.push(`- ${PRIORITY_META[f.priority].emoji} ${f.title} — ${f.page ? `\`${f.page}\`` : 'sitewide'}`);
 		}
 		if (resolvedItems.length > 0) {
 			lines.push('');
 			lines.push(`**✅ Resolved since last week (${resolvedItems.length}):**`);
-			for (const i of resolvedItems) lines.push(`- ${i.title} — ${i.page ? `\`${i.page}\`` : 'sitewide'} (${i.siteLabel ?? ''})`);
+			for (const i of resolvedItems) lines.push(`- ${i.title} — ${i.page ? `\`${i.page}\`` : 'sitewide'}`);
 		}
 	} else if (previousData) {
 		lines.push('');
@@ -97,7 +97,7 @@ export function buildReport({ findings, previousData, scannedAt, siteSummaries }
 
 	const dataPayload = {
 		scannedAt,
-		items: findings.map((f) => ({ id: f.id, priority: f.priority, title: f.title, page: f.page, siteLabel: f.siteLabel })),
+		items: findings.map((f) => ({ id: f.id, priority: f.priority, title: f.title, page: f.page })),
 	};
 	lines.push('');
 	lines.push(`<!-- seo-scan-data: ${JSON.stringify(dataPayload)} -->`);

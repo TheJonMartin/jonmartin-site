@@ -19,7 +19,7 @@ export function buildTodoFindings(todoMarkers) {
 	);
 }
 
-export function runContentGapRules(pages, { config, writingPosts, fourLawsPosts = [] }) {
+export function runContentGapRules(pages, { config, writingPosts, fourLawsPosts }) {
 	const findings = [];
 
 	// Topic coverage: tags used across published posts vs. the target list.
