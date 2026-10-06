@@ -45,11 +45,9 @@ export async function checkExternalLinks(pages, { enabled, timeoutMs, concurrenc
 	if (!enabled) return [];
 
 	const linkToPages = new Map();
-	const linkToSiteLabels = new Map();
 	for (const page of pages) {
 		for (const url of page.externalLinks) {
 			linkToPages.set(url, [...(linkToPages.get(url) ?? []), page.route]);
-			linkToSiteLabels.set(url, new Set([...(linkToSiteLabels.get(url) ?? []), page.siteLabel]));
 		}
 	}
 
@@ -67,28 +65,18 @@ export async function checkExternalLinks(pages, { enabled, timeoutMs, concurrenc
 	const findings = [];
 	for (const [url, result] of results) {
 		const linkedFrom = linkToPages.get(url).join(', ');
-		const siteLabel = [...linkToSiteLabels.get(url)].join(' / ');
 		if (result.ok === false && isBotHostile(url)) {
-			findings.push({
-				...finding(`external-link-unverified-${url}`, 'P2', null, 'External link could not be verified',
-					`"${url}" returned HTTP ${result.status}. This host is known to block automated checks, so this is more likely bot-blocking than a real dead link. Linked from: ${linkedFrom}.`,
-					'Spot-check it manually in a browser rather than trusting this scan\'s HTTP check for this host.'),
-				siteLabel,
-			});
+			findings.push(finding(`external-link-unverified-${url}`, 'P2', null, 'External link could not be verified',
+				`"${url}" returned HTTP ${result.status}. This host is known to block automated checks, so this is more likely bot-blocking than a real dead link. Linked from: ${linkedFrom}.`,
+				'Spot-check it manually in a browser rather than trusting this scan\'s HTTP check for this host.'));
 		} else if (result.ok === false) {
-			findings.push({
-				...finding(`external-link-${url}`, 'P1', null, 'Broken external link',
-					`"${url}" returned HTTP ${result.status}. Linked from: ${linkedFrom}.`,
-					'Update or remove the link.'),
-				siteLabel,
-			});
+			findings.push(finding(`external-link-${url}`, 'P1', null, 'Broken external link',
+				`"${url}" returned HTTP ${result.status}. Linked from: ${linkedFrom}.`,
+				'Update or remove the link.'));
 		} else if (result.ok === null) {
-			findings.push({
-				...finding(`external-link-unverified-${url}`, 'P2', null, 'External link could not be verified',
-					`"${url}" didn't respond within the check window (${result.error}). Linked from: ${linkedFrom}. May just be a flaky/slow server, not necessarily broken.`,
-					'Spot-check it manually if it keeps showing up here week over week.'),
-				siteLabel,
-			});
+			findings.push(finding(`external-link-unverified-${url}`, 'P2', null, 'External link could not be verified',
+				`"${url}" didn't respond within the check window (${result.error}). Linked from: ${linkedFrom}. May just be a flaky/slow server, not necessarily broken.`,
+				'Spot-check it manually if it keeps showing up here week over week.'));
 		}
 	}
 	return findings;

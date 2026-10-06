@@ -3,14 +3,6 @@
 Scans the built site for technical SEO issues, AEO (answer-engine) gaps, and
 content gaps, then writes one prioritized checklist.
 
-thejonmartin.com and fourlaws.thejonmartin.com used to be two separate Astro
-builds in this repo; they were consolidated into one site on 9 September
-2026 (see `docs/site-consolidation.md`). `config.mjs` still describes the
-site as one entry in a `sites` list rather than a single object, purely
-because the crawler and rules are written against that shape generically —
-if this repo ever builds a second property again, that's the only place to
-add it.
-
 ## What it checks
 
 - **Technical SEO** — titles, meta descriptions, canonicals, H1/heading

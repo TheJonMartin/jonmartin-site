@@ -67,7 +67,7 @@ function countWords(text) {
 	return trimmed ? trimmed.split(/\s+/).length : 0;
 }
 
-export async function crawlDist(distDir, siteUrl, { site = 'main', siteLabel = site } = {}) {
+export async function crawlDist(distDir, siteUrl) {
 	const files = (await findAllFiles(distDir)).filter((f) => f.endsWith('.html'));
 	const pages = [];
 
@@ -124,8 +124,6 @@ export async function crawlDist(distDir, siteUrl, { site = 'main', siteLabel = s
 		const twitterCard = document.querySelector('meta[name="twitter:card"]')?.getAttribute('content') ?? null;
 
 		pages.push({
-			site,
-			siteLabel,
 			route,
 			file,
 			title: textOf(titleEl),

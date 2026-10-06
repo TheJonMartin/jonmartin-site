@@ -2,16 +2,12 @@
 // crawler and rules stay generic against `site`.
 export const config = {
 	site: {
-		key: 'main',
 		label: 'thejonmartin.com',
 		siteUrl: 'https://thejonmartin.com',
 		distDir: 'dist',
-		// build.format 'file' sitewide — see astro.config.mjs.
-		urlFormat: 'file',
 		// Prefix-matched (util.mjs isExcludedRoute); '/admin' catches Decap CMS shell.
 		excludeFromContentChecks: ['/404', '/admin'],
 		expectedNoindex: ['/thanks', '/thanks-contact', '/thanks-consulting', '/404'],
-		runContentGapRules: true,
 		// Short by design (tools / contact form) — exempt from thin-content check only.
 		thinContentExempt: ['/contact', '/flow-formula-calculator', '/part8-flow-diagnostic'],
 	},
