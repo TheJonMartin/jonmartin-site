@@ -1,26 +1,6 @@
 ---
-// Netlify Forms capture for the pre-launch site.
-//
-// Nothing is bookable yet, so this isn't a "contact me" form — it's a waitlist
-// that doubles as research. The "what's breaking" field is the valuable one:
-// free-text from people who self-identified before launch is the cheapest seed
-// data for the intake instrument.
-//
-// Netlify detects forms from the built HTML at deploy time, so this works with
-// a static Astro build. Two requirements for that to happen:
-//   1. Forms must be ENABLED on the Netlify project (jonmartin-mvp).
-//   2. The hidden form-name input below must match the form's name attribute.
-//
-// The form is named "waitlist"; the radio group is named "interest". Those are
-// deliberately different — a field sharing the form's name collides on submit.
-//
-// Submissions land in Netlify → Project → Forms → waitlist.
-//
-// `variant="band"` (the homepage's plum 05/Waitlist section) swaps the boxed
-// cream-ground inputs for underline-only ones in cream-on-plum, per the brand/
-// visual-system handoff. The "Not bookable yet" kicker moved to the section's
-// own rail chip (see index.astro) — this component no longer renders its own,
-// to avoid saying it twice.
+// Hidden form-name input must match the form's name attribute ("waitlist").
+// The radio group ("interest") must not share the form's name, or they collide on submit.
 interface Props {
 	variant?: 'default' | 'band';
 }

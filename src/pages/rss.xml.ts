@@ -1,14 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 
-// Hand-rolled rather than @astrojs/rss. The package would work, but it's a
-// dependency for about thirty lines of string building, and this site is
-// deliberately zero-JavaScript with a two-package dependency tree. If the feed
-// ever needs enclosures, categories, or full content, swap this for the package
-// rather than growing it.
-//
-// Served at /rss.xml. The autodiscovery <link> lives in src/layouts/Base.astro,
-// so feed readers find it from any page on the site.
+// Hand-rolled to avoid a dependency; swap for @astrojs/rss if the feed needs more.
 
 const esc = (s: string) =>
 	s
