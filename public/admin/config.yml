@@ -52,7 +52,7 @@ collections:
         }
       - { label: "Tags", name: "tags", widget: "list", default: [] }
       - {
-          label: 'Filed under (optional — the article page\'s single "Filed under" value; falls back to the last tag when unset)',
+          label: 'Filed under (optional — the article page''s single "Filed under" value; falls back to the last tag when unset)',
           name: "category",
           widget: "string",
           required: false,
