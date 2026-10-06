@@ -105,7 +105,8 @@ and in another:
 npm run dev
 ```
 
-then visit `http://localhost:4321/admin` — this bypasses GitHub login
+then visit `http://localhost:4321/admin/index.html` (the dev server 404s on
+bare `/admin`) — this bypasses GitHub login
 entirely (that's what `local_backend: true` in `public/admin/config.yml`
 does) and writes straight to your working copy, so you can review a `git
 diff` before deciding whether to commit and push.
