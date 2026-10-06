@@ -11,25 +11,13 @@ import { checkExternalLinks } from './external-links.mjs';
 import { buildReport, parsePreviousData } from './report.mjs';
 import { findOpenIssue, upsertScanIssue } from './github-issue.mjs';
 
-// Dirs scanned for TODO markers — see config.mjs.
-const TODO_SCAN_DIRS = {
-	main: ['src/pages', 'src/content', 'src/components', 'src/layouts', 'src/lib'],
-};
+const TODO_SCAN_DIRS = ['src/pages', 'src/content', 'src/components', 'src/layouts', 'src/lib'];
 
-function withId(f) {
-	return { ...f, id: `${f.site}::${f.id}` };
-}
+async function main() {
+	const { site } = config;
+	if (!(await pathExists(site.distDir))) throw new Error(`${site.distDir} not built. Run npm run build first.`);
 
-async function scanSite(site) {
-	if (!(await pathExists(site.distDir))) {
-		console.warn(`Skipping ${site.label}: ${site.distDir} not built. Run the site's build script first.`);
-		return { pages: [], findings: [] };
-	}
-
-	const pages = await crawlDist(site.distDir, site.siteUrl, {
-		site: site.key,
-		siteLabel: site.label,
-	});
+	const pages = await crawlDist(site.distDir, site.siteUrl);
 	const siteMap = await readSitemapUrls(site.distDir);
 	const robotsTxt = await readStaticFile(site.distDir, 'robots.txt');
 	const hasLlmsTxt = Boolean(await readStaticFile(site.distDir, 'llms.txt'));
@@ -44,37 +32,22 @@ async function scanSite(site) {
 		targetTopics: config.targetTopics,
 	};
 
-	const findings = [
+	const writingPosts = await readMarkdownCollection(config.writingContentDir);
+	const fourLawsPosts = await readMarkdownCollection(config.fourLawsContentDir);
+	const todoMarkers = await findTodoMarkers(TODO_SCAN_DIRS);
+
+	// Ids keep the `main::` prefix from the multi-site days so the weekly issue still matches them.
+	const allFindings = [
 		...runTechnicalSeoRules(pages, { config: siteConfig, siteMap, robotsTxt, assetRoutes }),
 		...runAeoRules(pages, { config: siteConfig, hasLlmsTxt }),
-	];
+		...runContentGapRules(pages, { config: siteConfig, writingPosts, fourLawsPosts }),
+		...buildTodoFindings(todoMarkers),
+	].map((f) => ({ ...f, id: `main::${f.id}` }));
 
-	if (site.runContentGapRules) {
-		const writingPosts = await readMarkdownCollection(config.writingContentDir);
-		const fourLawsPosts = await readMarkdownCollection(config.fourLawsContentDir);
-		findings.push(...runContentGapRules(pages, { config: siteConfig, writingPosts, fourLawsPosts }));
-	}
-
-	const todoMarkers = await findTodoMarkers(TODO_SCAN_DIRS[site.key] ?? []);
-	findings.push(...buildTodoFindings(todoMarkers));
-
-	return { pages, findings: findings.map((f) => withId({ ...f, site: site.key, siteLabel: site.label })) };
-}
-
-async function main() {
-	const allPages = [];
-	const allFindings = [];
-	const siteSummaries = [];
-
-	const site = config.site;
-	const { pages, findings } = await scanSite(site);
-	allPages.push(...pages);
-	allFindings.push(...findings);
-	if (pages.length > 0) siteSummaries.push({ label: site.label, pageCount: pages.length });
-
-	const externalLinkFindings = await checkExternalLinks(allPages, config.externalLinks);
+	const externalLinkFindings = await checkExternalLinks(pages, config.externalLinks);
 	allFindings.push(...externalLinkFindings.map((f) => ({ ...f, id: `links::${f.id}` })));
 
+	const scanned = { label: site.label, pageCount: pages.length };
 	const scannedAt = new Date().toISOString().slice(0, 10);
 	const priorityRank = { P0: 0, P1: 1, P2: 2 };
 	allFindings.sort((a, b) => priorityRank[a.priority] - priorityRank[b.priority] || a.category.localeCompare(b.category));
@@ -90,7 +63,7 @@ async function main() {
 			findings: allFindings,
 			previousData,
 			scannedAt,
-			siteSummaries,
+			site: scanned,
 		});
 
 		const changeSummary =
@@ -109,7 +82,7 @@ async function main() {
 		});
 		console.log(`${created ? 'Created' : 'Updated'} issue #${issue.number}: ${issue.html_url}`);
 	} else {
-		const { markdown } = buildReport({ findings: allFindings, previousData: null, scannedAt, siteSummaries });
+		const { markdown } = buildReport({ findings: allFindings, previousData: null, scannedAt, site: scanned });
 		await writeFile('seo-scan-report.md', markdown, 'utf-8');
 		console.log(markdown);
 		console.log('\n(No GITHUB_TOKEN/GITHUB_REPOSITORY in env — wrote seo-scan-report.md locally instead of updating a GitHub issue.)');
