@@ -158,14 +158,8 @@ collections:
         fields:
           - { label: "Page title (browser tab / search results)", name: "title", widget: "string" }
           - { label: "Meta description (search results)", name: "description", widget: "text" }
-          - { label: "Kicker (small label above the headline)", name: "kicker", widget: "string" }
           - { label: "Headline (H1)", name: "heroTitle", widget: "text" }
           - { label: "Subhead", name: "subhead", widget: "text" }
-          - {
-              label: 'Tagline (HTML allowed — the accent word is wrapped like <span class="accent">why</span>)',
-              name: "tagline",
-              widget: "text",
-            }
           - label: "Hero metadata strip (small labels above the headline, e.g. \"Field report\", \"No. 001\")"
             name: "heroMeta"
             widget: "list"
@@ -200,7 +194,6 @@ collections:
           - { label: "Range bar-diagram label", name: "rangeLabel", widget: "string" }
           - { label: "Range bar-diagram caption", name: "rangeCaption", widget: "text" }
           - { label: '"Writing" section heading', name: "writingHeading", widget: "string" }
-          - { label: "Copyright year", name: "copyrightYear", widget: "number", value_type: "int" }
 
       - name: "writing-index"
         label: "Writing Index Page"
@@ -232,4 +225,3 @@ collections:
                 name: "paragraphs"
                 widget: "list"
                 field: { label: "Paragraph", name: "paragraph", widget: "text" }
-          - { label: "Copyright year", name: "copyrightYear", widget: "number", value_type: "int" }

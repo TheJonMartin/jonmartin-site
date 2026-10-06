@@ -1,10 +1,8 @@
 {
 	"title": "Jon Martin — Field Report & Second Opinion",
 	"description": "I don't build it. I tell you why the last three things you built didn't work — written diagnoses for founders of $3–5M professional services businesses.",
-	"kicker": "Jon Martin",
 	"heroTitle": "You are the only person in your company with enough range to handle what comes at it.",
 	"subhead": "Every fix you've tried — the hire, the software, the SOP, the management layer — has added capacity without adding range. That's why it kept breaking anyway.",
-	"tagline": "I don't build it. I tell you <span class=\"accent\">why</span> the last three things you built didn't work.",
 	"heroMeta": [
 		{ "label": "Field report", "accent": true },
 		{ "label": "No. 001" },
@@ -35,6 +33,5 @@
 	"capacityCaption": "Seven of the same response. Handles more volume of what you've already seen.",
 	"rangeLabel": "Adding range",
 	"rangeCaption": "Seven different responses. Handles the kinds of thing you haven't seen yet.",
-	"writingHeading": "Writing",
-	"copyrightYear": 2026
+	"writingHeading": "Writing"
 }
