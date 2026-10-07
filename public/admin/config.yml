@@ -95,12 +95,6 @@ collections:
           widget: "boolean",
           default: false,
         }
-      - {
-          label: "Updated date (optional)",
-          name: "updatedDate",
-          widget: "datetime",
-          required: false,
-        }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "four-laws"
@@ -127,24 +121,10 @@ collections:
           hint: "Reference = Full Reference and its companions (glossary, FAQ). Explore = the standalone applied essays. Meta isn't used by any page today — the one page that was meta (About) now lives on the main site's own /about.",
         }
       - {
-          label: "Sort order within its group",
-          name: "order",
-          widget: "number",
-          value_type: "int",
-          default: 100,
-          hint: "Sparse numbering (10, 20, 30...) so a page can be slotted between two others without renumbering the whole set.",
-        }
-      - {
           label: "Draft (keeps it off the published site)",
           name: "draft",
           widget: "boolean",
           default: false,
-        }
-      - {
-          label: "Updated date (optional)",
-          name: "updatedDate",
-          widget: "datetime",
-          required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
 

@@ -5,8 +5,7 @@ import writingPage from '../../content/pages/writing.json';
 import { readingTime, entryNumbers } from '../../lib/writing';
 
 const title = 'Writing — Jon Martin';
-const description =
-	'Working notes on why organizations break in the same four ways, and what the systems literature says about it.';
+const description = writingPage.standfirst;
 
 // Drafts never render. Newest first.
 const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(

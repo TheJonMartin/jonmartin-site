@@ -2,7 +2,6 @@
 title: Four Laws of Complex System Design — Full Reference
 description: The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM — how they interact and apply to team boundaries.
 group: reference
-order: 10
 ---
 
 <!-- Every heading in this file carries an explicit id rather than relying on

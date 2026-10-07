@@ -3,7 +3,6 @@ title: Why Executive Decisions Stall on Client Projects
 description: Little's Law, Kingman's formula, and Weinberg's context-switching numbers, all applied to the steering committee — why the same sign-off takes six weeks.
 seoTitle: "Why Executive Decisions Stall | Four Laws Framework"
 group: explore
-order: 40
 ---
 
 <span class="label">Applied example · Client delivery</span>
