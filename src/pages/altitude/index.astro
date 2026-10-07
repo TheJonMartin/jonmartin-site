@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { altitudeGuideGroups } from '../../lib/altitude-links';
 import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
 import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
 import { articleSchema } from '../../lib/schema';
@@ -7,12 +8,7 @@ import { articleSchema } from '../../lib/schema';
 const pages = (await getCollection('altitude', ({ data }) => !data.draft))
 	.sort((a, b) => a.id.localeCompare(b.id));
 
-const groups: { key: string; label: string }[] = [
-	{ key: 'core', label: 'The model' },
-	{ key: 'practice', label: 'In the field' },
-	{ key: 'delivery', label: 'After the call' },
-	{ key: 'reference', label: 'Reference' },
-];
+const groups = altitudeGuideGroups;
 
 const title = 'Requirements Altitude';
 const description =
