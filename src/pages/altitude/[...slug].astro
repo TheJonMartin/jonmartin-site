@@ -1,8 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { altitudeGuideGroups } from '../../lib/altitude-links';
 import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
 import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
-import { altitudeGuideGroups } from '../../lib/altitude-links';
 import { articleSchema } from '../../lib/schema';
 
 export async function getStaticPaths() {
