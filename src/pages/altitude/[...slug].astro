@@ -5,7 +5,7 @@ import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
 import { articleSchema } from '../../lib/schema';
 
 export async function getStaticPaths() {
-	const pages = await getCollection('altitude', ({ data, id }) => !data.draft && !id.startsWith('_'));
+	const pages = await getCollection('altitude', ({ data }) => !data.draft);
 	const ordered = [...pages].sort((a, b) => a.id.localeCompare(b.id));
 	return ordered.map((page, i) => ({
 		params: { slug: page.id },

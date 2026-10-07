@@ -23,7 +23,7 @@ entirely — it will never appear on the site even with `draft: false`.
 deliberate: a post with no description gets a blank search snippet.
 
 `pubDate` sets the ordering on the index — newest first. `updatedDate` is
-optional; add it and the post page shows "updated [date]".
+optional; the post page uses it for JSON-LD `dateModified` and `article:modified_time`.
 
 `tags` is a list. Keep the set small so it stays useful — something like
 `Systems`, `RevOps`, `Faith`, `AuDHD`. Tags currently display but don't filter;
