@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const writing = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/writing' }),
+	loader: glob({ pattern: '**/[^_]*.md', base: './src/content/writing' }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -16,7 +16,7 @@ const writing = defineCollection({
 });
 
 const fourLaws = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/four-laws' }),
+	loader: glob({ pattern: '**/[^_]*.md', base: './src/content/four-laws' }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -30,7 +30,7 @@ const fourLaws = defineCollection({
 // — unlike Four Laws, these paths have no legacy top-level backlinks to honor,
 // and a namespace keeps a future paid-course gate from colliding with /glossary.
 const altitude = defineCollection({
-	loader: glob({ pattern: '**/*.md', base: './src/content/altitude' }),
+	loader: glob({ pattern: '**/[^_]*.md', base: './src/content/altitude' }),
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),

@@ -4,7 +4,7 @@ import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
 import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
 import { articleSchema } from '../../lib/schema';
 
-const pages = (await getCollection('altitude', ({ data, id }) => !data.draft && !id.startsWith('_')))
+const pages = (await getCollection('altitude', ({ data }) => !data.draft))
 	.sort((a, b) => a.id.localeCompare(b.id));
 
 const groups: { key: string; label: string }[] = [
