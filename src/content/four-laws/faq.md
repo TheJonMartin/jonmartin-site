@@ -3,7 +3,6 @@ title: Frequently Asked Questions
 description: Direct answers on Conway's Law vs. Team Topologies, Brooks's Law under Agile, Little's Law for knowledge work, and WIP limits vs. the Theory of Constraints.
 seoTitle: "Frequently Asked Questions | Four Laws of Complex Systems"
 group: reference
-order: 30
 ---
 
 Straight answers to the questions that come up most when people first meet Ashby's Law, Conway's Law, Brooks's Law, Team Topologies, Beer's VSM, Little's Law, and the Theory of Constraints — and where each idea starts to bump into the others.

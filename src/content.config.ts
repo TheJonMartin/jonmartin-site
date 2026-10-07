@@ -22,9 +22,7 @@ const fourLaws = defineCollection({
 		description: z.string(),
 		seoTitle: z.string().optional(),
 		group: z.enum(['reference', 'explore', 'meta']),
-		order: z.number().default(100),
 		draft: z.boolean().default(false),
-		updatedDate: z.coerce.date().optional(),
 	}),
 });
 
@@ -40,7 +38,6 @@ const altitude = defineCollection({
 		group: z.enum(['core', 'practice', 'delivery', 'reference']),
 		order: z.number().default(100),
 		draft: z.boolean().default(false),
-		updatedDate: z.coerce.date().optional(),
 	}),
 });
 

@@ -16,6 +16,7 @@ nothing to keep in sync — the CMS just edits the same files.
 | Four Laws reference pages | `src/content/four-laws/*.md` | Four Laws |
 | Home page copy | `src/content/pages/home.json` | Pages → Home Page |
 | About page copy | `src/content/pages/about.json` | Pages → About Page |
+| Writing index page | `src/content/pages/writing.json` | Pages → Writing Index Page |
 
 Everything else — layout, styling, nav, `robots.txt`, schema markup, and the
 three interactive Four Laws tools (they're real JavaScript applications, not
@@ -79,11 +80,12 @@ repo can authenticate — right now that's just you.
   `src/lib/four-laws-links.ts` — a new page only shows up there once it's
   added to that file. Requirements Altitude works the same way: **Nav group**
   and **Sort order** place a module on the `/altitude` index, and its nav
-  list is `src/lib/altitude-links.ts`. Renaming
-  a page in the CMS renames its file, which changes its URL — don't do that
-  for an existing published page without also adding a redirect, since these
-  specific URLs have real outreach links and backlink pitches pointing at
-  them (see `docs/site-consolidation.md`).
+  list is `src/lib/altitude-links.ts`. Renaming a page in the CMS does not
+  rename its file — `slug: "{{slug}}"` sets the filename only at creation, so
+  Title edits don't change the URL. Changing a published page's URL (renaming
+  the file in git) needs a redirect, since these specific URLs have real
+  outreach links and backlink pitches pointing at them (see
+  `docs/site-consolidation.md`).
 - **Delete a post, Altitude module, or Four Laws page:** open it in the CMS
   and use the delete option in the editor's menu (all three collections are
   configured with `delete: true`). Home and About are single files, not deletable entries.
