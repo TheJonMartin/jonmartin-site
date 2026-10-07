@@ -1,10 +1,9 @@
 ---
 # Copy this file, rename it to the page's live path, delete these comments.
 #
-# The filename becomes the URL. `conways-law-revops-team-structure.md` is served
-# at /conways-law-revops-team-structure — which is exactly where it lives on
-# fourlaws.netlify.app today. Match the old path exactly; outreach links are
-# already pointing at these.
+# The filename becomes the URL: `conways-law-revops-team-structure.md` is served
+# at /conways-law-revops-team-structure. Don't rename existing pages; outreach
+# links point at these paths.
 #
 # Leading underscore keeps this template out of the build.
 title: Page title as it appears in the <h1>

@@ -23,23 +23,8 @@ const fmt = (d: Date) =>
 const capacityBars = [88, 88, 88, 88, 88, 88, 88];
 const rangeBars = [34, 62, 140, 88, 110, 52, 124];
 
-// Person + WebSite, emitted as a @graph so both entities share one script block
-// and can reference each other by @id.
-//
-// The '#jon' @id is the stable identifier for Jon-the-entity across the whole
-// site — every BlogPosting's author field points at this same @id rather than
-// re-describing him, which is what lets a crawler understand the posts and the
-// person as one thing rather than several.
-//
-// The Person object itself lives in src/lib/schema.ts (personSchema) so /about
-// emits the identical entity. `knowsAbout` and `sameAs` are the two fields that do real work here: the first
-// is the topical claim, the second is how an engine reconciles this Person with
-// the same person elsewhere on the web. sameAs is for genuinely separate
-// identities (a LinkedIn profile, a GitHub account) — the Four Laws material
-// used to be listed here back when it was a separate domain
-// (fourlaws.thejonmartin.com), but it's just pages on this site now, so it
-// isn't a distinct identity to reconcile anymore. Add real external profile
-// URLs here as they become worth claiming.
+// '#jon' is the site-wide @id for Jon; every BlogPosting author points at it
+// rather than re-describing him. The Person itself lives in src/lib/schema.ts.
 const schema = {
 	'@context': 'https://schema.org',
 	'@graph': [

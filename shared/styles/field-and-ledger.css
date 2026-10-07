@@ -1,20 +1,5 @@
 /*
- * Field & Ledger — the single source of truth for the whole site.
- *
- * Imported by src/layouts/Base.astro and src/layouts/FourLawsLayout.astro —
- * both now build from this one Astro project (see docs/site-consolidation.md;
- * this file's old comment about two separate srcDir trees predates that
- * merge). It still lives outside src/ on purpose: no single layout owns it,
- * so none can quietly drift from another. Change a token here and every page
- * moves together.
- *
- * v2 (the "ledger grid" visual-system update, see the brand/visual-system
- * design handoff): --hairline moved from a charcoal tint to a plum tint,
- * --muted became a flat hex, mustard/cream got accent and on-plum variants,
- * and two rules below were revised. Everything else in this header is
- * unchanged from v1.
- *
- * The rules, for anything added below:
+ * Field & Ledger — site-wide tokens and base styles. Rules for anything added below:
  *   - Mustard is an accent, not a color. Reserved for a genuine highlight or
  *     outlier — except full-bleed color bands (hero-adjacent offer/CTA
  *     bands), a deliberate, confirmed exception to "mustard is never a large

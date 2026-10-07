@@ -1,12 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 
-// Astro emits this as /404.html, which Netlify serves automatically for any
-// unmatched path — no _redirects rule needed. Without it, Netlify falls back to
-// its own default page, which tells the visitor to go read Netlify's support
-// docs. On a personal-brand site that's the worst page you can ship.
-//
-// noindex because a 404 that gets indexed is a 404 that shows up in search.
+// Netlify serves /404.html for any unmatched path; without it visitors get Netlify's default page.
 ---
 
 <Base
