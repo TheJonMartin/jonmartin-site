@@ -2,11 +2,19 @@
 import { getCollection, render } from 'astro:content';
 import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
 import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
+import { altitudeGuideGroups } from '../../lib/altitude-links';
 import { articleSchema } from '../../lib/schema';
 
 export async function getStaticPaths() {
 	const pages = await getCollection('altitude', ({ data }) => !data.draft);
-	const ordered = [...pages].sort((a, b) => a.id.localeCompare(b.id));
+	const ordered = [...pages].sort((a, b) => {
+		const byGroup =
+			altitudeGuideGroups.findIndex((g) => g.key === a.data.group) -
+			altitudeGuideGroups.findIndex((g) => g.key === b.data.group);
+		if (byGroup !== 0) return byGroup;
+		if (a.data.order !== b.data.order) return a.data.order - b.data.order;
+		return a.id.localeCompare(b.id);
+	});
 	return ordered.map((page, i) => ({
 		params: { slug: page.id },
 		props: {
