@@ -2,8 +2,10 @@
 // Brand mark — exception to Field & Ledger "no iconography": plum + mustard rects as abstract range gauge.
 interface Props {
 	size?: number;
+	/** Hide the mark from AT when the same control already has a visible name. */
+	decorative?: boolean;
 }
-const { size = 26 } = Astro.props;
+const { size = 26, decorative = false } = Astro.props;
 ---
 
 <svg
@@ -11,8 +13,9 @@ const { size = 26 } = Astro.props;
 	height={size}
 	viewBox="0 0 26 26"
 	xmlns="http://www.w3.org/2000/svg"
-	role="img"
-	aria-label="Jon Martin"
+	role={decorative ? undefined : 'img'}
+	aria-label={decorative ? undefined : 'Jon Martin'}
+	aria-hidden={decorative ? 'true' : undefined}
 >
 	<rect x="0" y="2" width="6" height="22" fill="#4A3352" />
 	<rect x="9" y="14" width="17" height="6" fill="#E8A93B" />

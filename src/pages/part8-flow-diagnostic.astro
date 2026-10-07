@@ -24,7 +24,7 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 		conversation.
 	</p>
 
-	<div class="progress" id="progress" role="progressbar" aria-label="Diagnostic progress"></div>
+	<div class="progress" id="progress" role="progressbar" aria-label="Diagnostic progress" aria-valuemin="0" aria-valuemax="4"></div>
 
 	<!-- STEP 0 -->
 	<section class="step active" data-step="0">
@@ -179,6 +179,7 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 	const progressEl = document.getElementById('progress') as HTMLElement;
 
 	function renderProgress(current: number) {
+		progressEl.setAttribute('aria-valuenow', String(current));
 		progressEl.innerHTML = '';
 		for (let i = 0; i < totalSteps; i++) {
 			const seg = document.createElement('div');
