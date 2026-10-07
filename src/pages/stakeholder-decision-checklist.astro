@@ -2,18 +2,7 @@
 import FourLawsLayout from '../layouts/FourLawsLayout.astro';
 import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 
-// Scoring logic is unchanged: five items per category, highest count wins, an
-// exact tie between two or three categories produces the "mixed signal" verdict.
-// The verdict copy is verbatim.
-//
-// Two deliberate changes from the original:
-//   1. The original used inline onclick="resetAll()". Astro bundles this script
-//      as a module, so nothing is on `window` — the buttons are wired with
-//      addEventListener instead. Same behaviour, no globals.
-//   2. The original colour-coded the three categories (cyan / purple / amber).
-//      Field & Ledger reserves mustard for a genuine outlier, so all three bars
-//      are sage and mustard marks whichever is currently leading — which is the
-//      one thing on the page actually worth pointing at.
+// Five items per category, highest count wins, an exact tie between two or three categories produces the "mixed signal" verdict. The verdict copy is verbatim.
 
 const sections = [
 	{
