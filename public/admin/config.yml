@@ -200,6 +200,11 @@ collections:
             name: "sections"
             widget: "list"
             fields:
+              - label: "Section id (optional)"
+                name: "id"
+                widget: "string"
+                required: false
+                hint: '"contact" places the consulting inquiry form under this section.'
               - { label: "Heading", name: "heading", widget: "string" }
               - label: 'Paragraphs (HTML allowed, e.g. <a href="...">link text</a>)'
                 name: "paragraphs"
