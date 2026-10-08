@@ -21,7 +21,7 @@ const fourLaws = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		seoTitle: z.string().optional(),
-		group: z.enum(['reference', 'explore', 'meta']),
+		group: z.enum(['reference', 'explore']),
 		draft: z.boolean().default(false),
 	}),
 });
