@@ -6,7 +6,7 @@ group: reference
 order: 40
 draft: false
 ---
-### Five Proficiency Levels
+## Five Proficiency Levels
 | Level | Name | What it looks like |
 | --- | --- | --- |
 | 1 | Novice | Can tag statements by altitude when given time and no live pressure; doesn't yet do it inside a real conversation |
@@ -15,7 +15,7 @@ draft: false
 | 4 | Advisory-Capable | Runs vertical traceability ([Module 6](/altitude/module-06)) unprompted; can raise a stenographer-failure concern without damaging the relationship |
 | 5 | Facilitator | Can shadow and debrief other practitioners (Drill 3/4), calibrate answer keys, and teach the framework itself |
 Most working practitioners should target Level 3–4. Level 5 is specifically the bar for anyone who'll run this training for others.
-### Capstone Rubric
+## Capstone Rubric
 Score the [Module 13](/altitude/module-13) capstone against:
 - **Tagging accuracy** — correct altitude and speaker attribution throughout
 - **L2 construction quality** — bridge statements are genuinely earned (enough L0/L1 material), not reflexive
