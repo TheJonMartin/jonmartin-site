@@ -34,13 +34,14 @@ async function main() {
 
 	const writingPosts = await readMarkdownCollection(config.writingContentDir);
 	const fourLawsPosts = await readMarkdownCollection(config.fourLawsContentDir);
+	const altitudePosts = await readMarkdownCollection(config.altitudeContentDir);
 	const todoMarkers = await findTodoMarkers(TODO_SCAN_DIRS);
 
 	// Ids keep the `main::` prefix from the multi-site days so the weekly issue still matches them.
 	const allFindings = [
 		...runTechnicalSeoRules(pages, { config: siteConfig, siteMap, robotsTxt, assetRoutes }),
 		...runAeoRules(pages, { config: siteConfig, hasLlmsTxt }),
-		...runContentGapRules(pages, { config: siteConfig, writingPosts, fourLawsPosts }),
+		...runContentGapRules({ config: siteConfig, writingPosts, fourLawsPosts, altitudePosts }),
 		...buildTodoFindings(todoMarkers),
 	].map((f) => ({ ...f, id: `main::${f.id}` }));
 

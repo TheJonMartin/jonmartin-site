@@ -1,16 +1,17 @@
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
-// Minimal frontmatter reader for the fixed shape used in
-// src/content/writing/*.md (see src/content.config.ts for the schema this
-// mirrors). Not a general YAML parser — only handles single-line scalars and
-// bracketed arrays, which is all this content ever uses.
+// Minimal frontmatter reader for the markdown collections under src/content/
+// (schemas in src/content.config.ts). Not a general YAML parser — single-line
+// scalars, bracketed arrays, and block lists (`key:` followed by `  - item`).
+// That's every shape this scan reads.
 function parseFrontmatter(raw) {
 	const match = raw.match(/^---\n([\s\S]*?)\n---/);
 	if (!match) return {};
+	const lines = match[1].split('\n');
 	const data = {};
-	for (const line of match[1].split('\n')) {
-		const lineMatch = line.match(/^(\w+):\s*(.*)$/);
+	for (let i = 0; i < lines.length; i++) {
+		const lineMatch = lines[i].match(/^(\w+):\s*(.*)$/);
 		if (!lineMatch) continue;
 		const [, key, rawValue] = lineMatch;
 		let value = rawValue.trim();
@@ -20,6 +21,13 @@ function parseFrontmatter(raw) {
 				.split(',')
 				.map((s) => s.trim().replace(/^['"]|['"]$/g, ''))
 				.filter(Boolean);
+		} else if (value === '') {
+			const items = [];
+			while (i + 1 < lines.length && /^\s+-\s+/.test(lines[i + 1])) {
+				i += 1;
+				items.push(lines[i].replace(/^\s+-\s+/, '').trim().replace(/^['"]|['"]$/g, ''));
+			}
+			if (items.length > 0) value = items;
 		} else {
 			value = value.replace(/^['"]|['"]$/g, '');
 		}
@@ -28,12 +36,9 @@ function parseFrontmatter(raw) {
 	return data;
 }
 
-// Generic reader for the flat, one-file-per-entry markdown collections this
-// repo uses (src/content/writing/, src/content/four-laws/) — each collection
-// has its own Zod schema in src/content.config.ts, but every field in it is
-// still just a frontmatter scalar or bracketed array, so one parser covers
-// both. Returns the raw frontmatter plus slug/file; callers pick the fields
-// their schema actually has.
+// Generic reader for the flat, one-file-per-entry markdown collections
+// (src/content/writing/, src/content/four-laws/, src/content/altitude/).
+// Returns slug/file plus the frontmatter fields the scan uses.
 export async function readMarkdownCollection(dir) {
 	let entries;
 	try {
@@ -49,7 +54,7 @@ export async function readMarkdownCollection(dir) {
 		items.push({
 			slug: name.replace(/\.md$/, ''),
 			file: path.join(dir, name),
-			draft: data.draft === 'true' || data.draft === true,
+			draft: data.draft === 'true',
 			title: data.title ?? null,
 			pubDate: data.pubDate ?? null,
 			tags: Array.isArray(data.tags) ? data.tags : [],
@@ -58,7 +63,7 @@ export async function readMarkdownCollection(dir) {
 	return items;
 }
 
-// Scans known source files for TODO/FIXME markers left as a note-to-self —
+// Scans known source files for TODO markers left as a note-to-self —
 // these are usually incomplete content sitting on the live site (e.g. an
 // About page shipped with a TODO block listing what's still missing).
 export async function findTodoMarkers(roots) {
