@@ -19,7 +19,7 @@ export function buildTodoFindings(todoMarkers) {
 	);
 }
 
-export function runContentGapRules(pages, { config, writingPosts, fourLawsPosts }) {
+export function runContentGapRules({ config, writingPosts, fourLawsPosts, altitudePosts }) {
 	const findings = [];
 
 	// Topic coverage: tags used across published posts vs. the target list.
@@ -50,11 +50,12 @@ export function runContentGapRules(pages, { config, writingPosts, fourLawsPosts 
 		}
 	}
 
-	// Drafts sitting unpublished — both content collections use the same
-	// draft: true convention, so check both rather than just the blog.
+	// Drafts sitting unpublished. Writing, Four Laws, and Altitude share the
+	// draft: true convention.
 	const draftSources = [
 		...writingPosts.filter((p) => p.draft).map((p) => ({ ...p, route: `/writing/${p.slug}` })),
 		...fourLawsPosts.filter((p) => p.draft).map((p) => ({ ...p, route: `/${p.slug}` })),
+		...altitudePosts.filter((p) => p.draft).map((p) => ({ ...p, route: `/altitude/${p.slug}` })),
 	];
 	for (const draft of draftSources) {
 		findings.push(finding(`unpublished-draft-${draft.route}`, 'P2', draft.route, 'Draft sitting unpublished',
