@@ -117,8 +117,8 @@ collections:
           label: "Nav group",
           name: "group",
           widget: "select",
-          options: ["reference", "explore", "meta"],
-          hint: "Reference = Full Reference and its companions (glossary, FAQ). Explore = the standalone applied essays. Meta isn't used by any page today — the one page that was meta (About) now lives on the main site's own /about.",
+          options: ["reference", "explore"],
+          hint: "Reference = Full Reference and its companions (glossary, FAQ). Explore = the standalone applied essays.",
         }
       - {
           label: "Draft (keeps it off the published site)",
