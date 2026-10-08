@@ -73,9 +73,8 @@ repo can authenticate — right now that's just you.
   `draft` field exactly, same rule Claude follows). Uncheck it when it's
   ready and hit **Publish**.
 - **Edit a Four Laws page:** `/admin` → Four Laws → pick a page. Same `draft`
-  rule as Writing. The **Nav group** field (reference / explore / meta) sets
-  the small label above the page title (`meta` also drops the waitlist CTA);
-  it doesn't move the page in the nav. The Four Laws dropdown in `Nav.astro`
+  rule as Writing. The **Nav group** field (reference / explore) sets
+  the small label above the page title; it doesn't move the page in the nav. The Four Laws dropdown in `Nav.astro`
   (and the footer sitemap in `SectionFooter.astro`) is the hand-kept list in
   `src/lib/four-laws-links.ts` — a new page only shows up there once it's
   added to that file. Requirements Altitude works the same way: **Nav group**
