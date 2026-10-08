@@ -91,6 +91,7 @@ repo can authenticate — right now that's just you.
 - The About page's section paragraphs explicitly allow HTML, for links.
   Everywhere else, plain text is enough; you don't need to know HTML to use
   this.
+- An About section's optional id `contact` places the consulting inquiry form under that section.
 
 ## Local testing (optional)
 
