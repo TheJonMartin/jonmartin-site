@@ -7,12 +7,12 @@ order: 10
 draft: false
 ---
 The goal of these drills is to move the diagnostic ([Module 3](/altitude/module-03)) and the bridge rule ([Module 5](/altitude/module-05)) from something you apply deliberately to something that runs in the background.
-### Drill 1 — Tagging
+## Drill 1 — Tagging
 **Setup:** A real (sanitized), multi-stakeholder discovery-call transcript, broken into individual statements.
 **Task:** Tag every statement's altitude (L0–L3) and source/speaker, using the ladder from [Module 3](/altitude/module-03).
 **Check:** Compare against an answer key. Disagreements are the valuable part.
 This drill now has three worked transcripts below: one sanitized from an actual client working session, and two reconstructed from real meeting notes.
-### Worked Example — Sanitized Real Transcript (Drill 1 Candidate)
+## Worked Example — Sanitized Real Transcript (Drill 1 Candidate)
 **Source note:** derived from an actual client discovery/architecture call, anonymized — company, people, and internal tool names replaced; personal conversation and scheduling logistics removed; substantive discussion preserved and lightly condensed.
 **Scenario:** Meridian Tax Advisory (bookkeeping/tax services for startups) is mid-project on a contracts and billing system rebuild. Attendees: **Andre Silva** (Client PM/Operations Lead), **Devon Osei** (Client Integration Lead), **Miguel Torres** (Client Finance Ops), **Jenna Marsh** (Lead Consultant), **Casey Moreno** (Solutions Architect).
 ---
@@ -44,7 +44,7 @@ This drill now has three worked transcripts below: one sanitized from an actual 
 *Tagging note: a real L2 candidate ("consolidate products, make year a field not a separate SKU") that is explicitly not-yet-confirmed — Andre names both standing ("engineering has to sign off") and status ("not broadly shared") in the same breath. Good real-world instance of the provisional status flag from [Module 10](/altitude/module-10).*
 ---
 **Facilitator note:** this transcript is unusually good for Drill 1 because several of the tells described abstractly in [Module 4](/altitude/module-04) and [Module 6](/altitude/module-06) appear in the client's own words rather than needing to be constructed. Consider using it as the first transcript trainees see, specifically to show that these patterns aren't an invented taxonomy — they're how real discovery conversations actually sound.
-### Worked Example — Reconstructed from Real Meeting Notes (Drill 1, Transcript 2)
+## Worked Example — Reconstructed from Real Meeting Notes (Drill 1, Transcript 2)
 **Source note:** unlike the transcript above, this is reconstructed dialogue built from real structured meeting notes (a Gemini-generated summary of an actual client working session), not a transcription of verbatim quotes. Company and people fully fictionalized; the decisions, numbers, and structure are faithful to what was actually discussed and decided.
 **Scenario:** Bright Path Learning, a corporate training company, is restructuring their contract and pricing data model. Attendees: **Jamie Ortiz** (Client VP of Programs), **Alex Rivera** (Lead Solutions Architect), **Sam Chen** (Solutions Architect).
 ---
@@ -63,7 +63,7 @@ This drill now has three worked transcripts below: one sanitized from an actual 
 **Sam:** One more — travel expenses. Quoted up front, or billed as incurred?
 **Jamie:** Billed as incurred, always. Flights, hotel, ground transport, tagged to the specific session, shown as line items on the invoice — never baked into the quote.
 *Tagging note: clean L2, confirmed without hesitation — full standing, unambiguous material.*
-### Worked Example — Reconstructed from Real Meeting Notes (Drill 1, Transcript 3)
+## Worked Example — Reconstructed from Real Meeting Notes (Drill 1, Transcript 3)
 **Source note:** same caveat as above — reconstructed from real structured notes, not verbatim quotes.
 **Scenario:** Wexford & Cole, a multi-region professional services firm, is rebuilding CRM compliance and lead-scoring processes. Attendees: **Renata Fields** (Client Marketing Ops Lead), **Tobias Wren** (Client IT/Security), **Morgan Ellis** (Consultant).
 ---
@@ -84,20 +84,20 @@ This drill now has three worked transcripts below: one sanitized from an actual 
 *Tagging note: a real moment of resisting a topic-jump mid-thread — explicitly deferring rather than letting the conversation fragment.*
 ---
 **Facilitator note:** transcripts 2 and 3 are weaker than transcript 1 for showing raw, unfiltered failure-mode moments (since they're reconstructed from decisions already reached, not live struggle), but stronger for practicing clean standing/bridge mechanics once trainees have the basic pattern down. Consider sequencing transcript 1 first, these two second.
-### Drill 2 — Translation
+## Drill 2 — Translation
 **Setup:** A single statement at a given level.
 **Task:** Write the statement one level up and one level down.
-### Drill 3 — Live-Fire with an Altitude Buddy
+## Drill 3 — Live-Fire with an Altitude Buddy
 **Setup:** A trainee conducts a real (or realistic simulated), ideally multi-stakeholder, discovery call. A second person shadows silently.
 **Task:** The shadow flags any moment where the conversation drifts into any of the three failure modes, and any moment a bridge attempt would be well-placed.
 **Debrief:** Compare the trainee's own sense of how the call went against the shadow's log.
-### Drill 4 — Conflict Mapping (New)
+## Drill 4 — Conflict Mapping (New)
 **Setup:** A transcript or scenario involving two or more stakeholders making statements on the same topic, at least one pair of which conflicts.
 **Task:** Tag each statement's altitude, source, and standing. Identify whether any conflicts are genuine (requiring escalation) or apparent (resolvable by stepping up to L1 and mapping the full process).
 **Check:** Compare against an answer key specifying which conflicts were genuine vs. apparent, and the correct escalation contact for genuine ones.
-### Sequencing
+## Sequencing
 Tagging and translation should precede live-fire. Conflict Mapping (Drill 4) should follow Drills 1–3, since it depends on tagging and translation being solid before adding the stakeholder-attribution layer.
-### Worked Example — Drill 2 (Composite)
+## Worked Example — Drill 2 (Composite)
 **Given statement (L1):** "When a deal closes, billing needs to be notified and set up."
 **One level up (L0):** "Deal terms should be reflected accurately and quickly enough that customers aren't billed incorrectly."
 **One level down (L2):** "When a deal is marked Closed Won in Salesforce, the billing system must automatically create a subscription with the approved plan, price, discount, and start date, without manual re-entry."
