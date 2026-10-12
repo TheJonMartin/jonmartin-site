@@ -99,8 +99,7 @@ export function glossarySchema(body: string, url: string, siteUrl: string) {
 
 /**
  * TechArticle for long-form collection pages (fallback in [...slug].astro).
- * Omits datePublished/dateModified — content.config has no publish date and
- * updatedDate is unset; a wrong date misleads, no date does not.
+ * Omits datePublished/dateModified — a wrong date misleads, no date does not.
  */
 export function articleSchema(title: string, description: string, url: string) {
 	return {

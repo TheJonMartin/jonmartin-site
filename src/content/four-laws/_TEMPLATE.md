@@ -8,8 +8,7 @@
 # Leading underscore keeps this template out of the build.
 title: Page title as it appears in the <h1>
 description: One or two sentences. Used for the meta description and the card on the home page, so write it for a stranger scanning search results.
-group: explore # reference | explore | meta
-order: 100 # sparse numbering — 10, 20, 30 — so pages can be slotted in later
+group: explore # reference | explore
 draft: true # flip to false to publish
 ---
 
