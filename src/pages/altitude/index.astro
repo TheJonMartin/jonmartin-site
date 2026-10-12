@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import { altitudeGuideGroups } from '../../lib/altitude-links';
 import AltitudeLayout from '../../layouts/AltitudeLayout.astro';
 import CrossSiteCTA from '../../components/CrossSiteCTA.astro';
-import { articleSchema } from '../../lib/schema';
 
 const pages = (await getCollection('altitude', ({ data }) => !data.draft))
 	.sort((a, b) => a.id.localeCompare(b.id));
@@ -14,6 +13,36 @@ const title = 'Requirements Altitude';
 const description =
 	'A written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.';
 const canonical = new URL('/altitude', Astro.site).href.replace(/\/$/, '');
+
+// Built from the same sections the hub renders, in that order, rather than
+// hand-maintained separately — a listing's ItemList that could drift from
+// the list a visitor actually sees would be worse than no schema at all.
+const sections = groups.map(({ key, label }) => ({
+	label,
+	items: pages.filter((p) => p.data.group === key).sort((a, b) => a.data.order - b.data.order),
+}));
+const listed = sections.flatMap((section) => section.items);
+
+const schema =
+	listed.length > 0
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'CollectionPage',
+				'@id': canonical,
+				name: title,
+				description,
+				url: canonical,
+				isPartOf: { '@id': 'https://thejonmartin.com/#website' },
+				mainEntity: {
+					'@type': 'ItemList',
+					itemListElement: listed.map((page, i) => ({
+						'@type': 'ListItem',
+						position: i + 1,
+						url: new URL(`/altitude/${page.id}`, Astro.site).href,
+					})),
+				},
+			}
+		: undefined;
 ---
 
 <AltitudeLayout
@@ -21,7 +50,7 @@ const canonical = new URL('/altitude', Astro.site).href.replace(/\/$/, '');
 	seoTitle="Requirements Altitude"
 	description={description}
 	ogType="website"
-	schema={articleSchema(title, description, canonical)}
+	schema={schema}
 >
 	<article>
 		<span class="label eyebrow">Written guide</span>
@@ -94,22 +123,19 @@ const canonical = new URL('/altitude', Astro.site).href.replace(/\/$/, '');
 		</p>
 
 		<h2>The guide</h2>
-		{groups.map(({ key, label }) => {
-			const items = pages.filter((p) => p.data.group === key).sort((a, b) => a.data.order - b.data.order);
-			return (
-				<section class="group-block">
-					<h3>{label}</h3>
-					<ul>
-						{items.map((p) => (
-							<li>
-								<a href={`/altitude/${p.id}`}>{p.data.title}</a>
-								<span class="desc">{p.data.description}</span>
-							</li>
-						))}
-					</ul>
-				</section>
-			);
-		})}
+		{sections.map(({ label, items }) => (
+			<section class="group-block">
+				<h3>{label}</h3>
+				<ul>
+					{items.map((p) => (
+						<li>
+							<a href={`/altitude/${p.id}`}>{p.data.title}</a>
+							<span class="desc">{p.data.description}</span>
+						</li>
+					))}
+				</ul>
+			</section>
+		))}
 	</article>
 
 	<CrossSiteCTA />
