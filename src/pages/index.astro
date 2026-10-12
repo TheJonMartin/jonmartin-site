@@ -162,7 +162,7 @@ const schema = {
 							<span class="label post-n">{String(i + 1).padStart(2, '0')}</span>
 							<div>
 								<p class="label post-date">{fmt(post.data.pubDate)}</p>
-								<h3>{post.data.title}</h3>
+								<h2>{post.data.title}</h2>
 								<p class="post-desc">{post.data.description}</p>
 							</div>
 						</a>
@@ -258,7 +258,7 @@ const schema = {
 	.postrow:hover { background: var(--white); }
 	.post-n { font-size: 12px; color: var(--sage); }
 	.post-date { font-size: 11px; color: var(--muted); margin: 0 0 0.35rem; }
-	.postrow h3 { font-family: Georgia, Gelasio, serif; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.22; color: var(--plum); max-width: 36ch; margin: 0 0 0.4rem; }
+	.postrow h2 { font-family: Georgia, Gelasio, serif; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.22; color: var(--plum); max-width: 36ch; margin: 0 0 0.4rem; }
 	.post-desc { font-size: 17px; line-height: 1.55; max-width: 62ch; margin: 0; color: var(--charcoal); }
 
 	/* ---- 05 waitlist ---- */
