@@ -14,6 +14,7 @@ export const config = {
 
 	writingContentDir: 'src/content/writing',
 	fourLawsContentDir: 'src/content/four-laws',
+	altitudeContentDir: 'src/content/altitude',
 
 	thresholds: {
 		titleMin: 10,

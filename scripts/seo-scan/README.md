@@ -12,10 +12,11 @@ content gaps, then writes one prioritized checklist.
 - **AEO** — structured data (JSON-LD) presence and validity, content depth,
   generic section headings, content freshness, llms.txt.
 - **Content gaps** — target topics with no published post, publishing
-  cadence, and unpublished drafts, checked across both content collections
-  (`src/content/writing/` and `src/content/four-laws/`); `TODO` markers left
-  in shipped source anywhere under `src/` (e.g. an About page that ships
-  with its own "still missing" checklist).
+  cadence, and unpublished drafts, checked across the writing, Four Laws,
+  and Altitude collections (`src/content/writing/`, `src/content/four-laws/`,
+  and `src/content/altitude/`); `TODO` markers left in shipped source
+  anywhere under `src/` (e.g. an About page that ships with its own
+  "still missing" checklist).
 
 Findings are ranked P0 (broken) / P1 (high priority) / P2 (opportunity).
 
@@ -46,8 +47,7 @@ should need touching to change what counts as a finding.
 ## Adding a check
 
 Each rule module (`rules/technical-seo.mjs`, `rules/aeo.mjs`,
-`rules/content-gaps.mjs`) exports a function that takes crawled pages and
-returns findings shaped like:
+`rules/content-gaps.mjs`) exports a function that returns findings shaped like:
 
 ```js
 { id, priority, category, page, title, detail, fix }
