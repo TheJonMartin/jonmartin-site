@@ -210,8 +210,7 @@ const schema = {
 	.prose li { margin-bottom: 0.4rem; }
 
 	/* Plain blockquote — a quoted line from someone else, not a pull-quote
-	   from the post's own argument. Opt into .pullquote (raw HTML in the
-	   markdown source) for the dramatic plum treatment below. */
+	   from the post's own argument. */
 	.prose blockquote {
 		margin: 0;
 		padding-left: 1.2rem;
@@ -233,73 +232,6 @@ const schema = {
 	.prose pre code { background: none; padding: 0; }
 	.prose hr { border: none; border-top: 1px solid var(--hairline); margin: 0; }
 	.prose img { max-width: 100%; height: auto; }
-
-	/* ---- Optional, markdown-driven enhancements ----
-	   None of the site's existing posts use these yet — they render only
-	   when a post's own markdown opts in with the matching class, via raw
-	   HTML directly in the .md source (Astro's markdown renderer passes raw
-	   HTML blocks through unchanged). Not force-filled on every post. */
-
-	/* Pull quote: <blockquote class="pullquote"><p>...</p><cite>...</cite></blockquote> */
-	.prose blockquote.pullquote {
-		background: var(--plum);
-		color: var(--cream);
-		padding: 28px 32px;
-		border-left: none;
-		font-family: inherit;
-		font-size: inherit;
-	}
-	.prose blockquote.pullquote p {
-		font-family: Georgia, Gelasio, serif;
-		font-size: clamp(22px, 2.8vw, 30px);
-		line-height: 1.26;
-		max-width: 30ch;
-		margin: 0 0 0.75rem;
-	}
-	.prose blockquote.pullquote cite {
-		display: block;
-		font-family: 'Courier New', Cousine, monospace;
-		font-size: 11px;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--mustard);
-		font-style: normal;
-	}
-
-	/* Two-column comparison:
-	   <div class="comparison">
-	     <div><span class="label">A</span><p>...</p></div>
-	     <div><span class="label">B</span><p>...</p></div>
-	   </div> */
-	.prose .comparison {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		border: 1px solid var(--hairline);
-	}
-	.prose .comparison > div { padding: 24px; }
-	.prose .comparison > div:first-child { background: var(--white); }
-	.prose .comparison > div:first-child .label { color: var(--muted); }
-	.prose .comparison > div:last-child { background: var(--cream); }
-	.prose .comparison > div:last-child .label { color: var(--dark-mustard); }
-	.prose .comparison p { font-size: 17px; line-height: 1.5; margin: 0.75rem 0 0; }
-
-	/* Sources: <div class="sources"><p><em>Title</em>, Author...</p></div> */
-	.prose .sources {
-		padding: 28px 0;
-		border-top: 1px solid var(--hairline);
-		border-bottom: 1px solid var(--hairline);
-	}
-	.prose .sources::before {
-		content: 'Sources';
-		display: block;
-		font-family: 'Courier New', Cousine, monospace;
-		font-size: 11px;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		color: var(--sage);
-		margin-bottom: 0.75rem;
-	}
-	.prose .sources p { font-size: 16px; line-height: 1.6; margin: 0; }
 
 	/* Wide reference tables. The base table.ledger style lives in
 	   shared/styles/field-and-ledger.css; everything here is the responsive
