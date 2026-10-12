@@ -55,7 +55,7 @@ Every public page on the site is listed below. Descriptions are taken from each 
 - [Module 18: Assessment and the Proficiency Model](https://thejonmartin.com/altitude/module-18): Five proficiency levels and a capstone rubric for the written guide and any later course.
 - [Appendix A: The Field Card](https://thejonmartin.com/altitude/appendix-a): One-page call card: speaker, ladder, bridge, three tells, vertical check.
 - [Appendix B: Facilitator Guide](https://thejonmartin.com/altitude/appendix-b): Sequencing, drill debriefs, and the resistance point that shows up in every cohort.
-- [Appendix C: Gold-Standard Worked Example](https://thejonmartin.com/altitude/appendix-c): Placeholder for a single real transcript run through all eighteen modules.
+
 ## Four Laws of Complex System Design — Reference
 
 - [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM — how they interact and apply to team boundaries.
