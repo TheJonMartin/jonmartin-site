@@ -39,8 +39,7 @@ const siteName = 'Four Laws of Complex System Design';
 const fullTitle =
 	seoTitle ?? (title.startsWith(siteName) ? title : `${title} | ${siteName}`);
 
-const isHome = cleanPath === '' || cleanPath === '/';
-const breadcrumb = isHome ? undefined : breadcrumbSchema(title, canonical, Astro.site!.href);
+const breadcrumb = breadcrumbSchema(title, canonical, Astro.site!.href);
 const schemaList = [
 	breadcrumb,
 	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
