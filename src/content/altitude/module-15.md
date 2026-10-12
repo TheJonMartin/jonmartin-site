@@ -15,7 +15,7 @@ Everything so far assumes a live conversation where a bridge statement gets an i
 3. Draft written bridge statements for every topic that has enough material to justify one — batched into a single follow-up (questionnaire, email, or a scheduled call), not sent as they're discovered.
 4. Explicitly flag anything that reads as L2 or L3 in the source document but has no visible L0/L1 justification — RFPs in particular are full of specific-sounding requirements with no visible reasoning behind them, which is detail spelunking baked into the source material before you ever touched it.
 **A written-source-specific risk:** an RFP requirement that sounds precise (L2/L3-shaped) often originates from a template, a competitor's spec, or a consultant who wrote the RFP without full context — not from an actual stakeholder with standing. Treat RFP language as provisional by default until a real stakeholder confirms it, even when the wording sounds authoritative.
-### Worked Example (Composite RFP Excerpt)
+## Worked Example (Composite RFP Excerpt)
 > *3.2 Billing Integration: The proposed solution must support automated synchronization of subscription terms between the CRM and billing platform.*
 > *3.2.1 The system shall support multi-currency invoicing for international subsidiaries.*
 > *3.2.2 The system shall provide role-based approval workflows for discount thresholds exceeding 15%.*

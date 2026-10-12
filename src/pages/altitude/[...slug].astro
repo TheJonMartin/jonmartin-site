@@ -28,6 +28,10 @@ export async function getStaticPaths() {
 const { page, prev, next } = Astro.props;
 const { Content } = await render(page);
 const canonical = new URL(`/altitude/${page.id}`, Astro.site).href.replace(/\/$/, '');
+
+// Modules 1–12 and 14–18 open their sections one level under the page h1.
+// Module 13 and the appendices have no section headings; leave them alone.
+const moduleSectionHeadings = /^module-(?:0[1-9]|1[0-2]|1[4-8])$/.test(page.id);
 ---
 
 <AltitudeLayout
@@ -36,7 +40,21 @@ const canonical = new URL(`/altitude/${page.id}`, Astro.site).href.replace(/\/$/
 	description={page.data.description}
 	schema={articleSchema(page.data.title, page.data.description, canonical)}
 >
-	<article>
+	{
+		moduleSectionHeadings && (
+			<style is:inline>
+				/* Section titles are h2 under the page h1. Match shared main h3
+				   (section-reading.css), scoped like .prose h2 on writing posts.
+				   A paragraph that markdown already turns into an h2 — it sits
+				   on a trailing --- — contains a link or strong and keeps main h2. */
+				main article.prose h2:not(:has(a)):not(:has(strong)) {
+					font-size: 1.15rem;
+					margin: 1.5rem 0 0.35rem;
+				}
+			</style>
+		)
+	}
+	<article class={moduleSectionHeadings ? 'prose' : undefined}>
 		<span class="label eyebrow">{page.data.group}</span>
 		<h1>{page.data.title}</h1>
 		<Content />
