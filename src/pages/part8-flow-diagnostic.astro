@@ -211,12 +211,14 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 	computeCycleTime();
 
 	// ---------- highlight selected choice ----------
-	document.querySelectorAll('.choice').forEach((group) => {
-		group.addEventListener('change', () => {
-			group.querySelectorAll('.opt').forEach((o) => o.classList.remove('checked'));
-			const checked = group.querySelector('input:checked');
-			if (checked) checked.closest('.opt')!.classList.add('checked');
+	function syncChoiceClasses(group: Element) {
+		group.querySelectorAll('.opt').forEach((opt) => {
+			const input = opt.querySelector('input');
+			opt.classList.toggle('checked', Boolean(input && (input as HTMLInputElement).checked));
 		});
+	}
+	document.querySelectorAll('.choice').forEach((group) => {
+		group.addEventListener('change', () => syncChoiceClasses(group));
 	});
 
 	const typeCopy: Record<string, { label: string; exploit: string; elevate: string }> = {
@@ -247,14 +249,21 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 		},
 	};
 
+	// Summary markup is assigned with innerHTML. Location is free text, so it has
+	// to be escaped before interpolation (textContent is the escaping step).
+	function escapeHtml(value: string) {
+		const el = document.createElement('span');
+		el.textContent = value;
+		return el.innerHTML;
+	}
+
 	function buildSummary() {
 		const wip = (document.getElementById('d-wip') as HTMLInputElement).value;
 		const tp = (document.getElementById('d-throughput') as HTMLInputElement).value;
 		const unit = (document.getElementById('d-unit') as HTMLSelectElement).value;
 		const cycletime = (document.getElementById('d-cycletime') as HTMLElement).textContent;
-		const location =
-			(document.getElementById('d-location') as HTMLInputElement).value ||
-			'the location you identified';
+		const rawLocation = (document.getElementById('d-location') as HTMLInputElement).value;
+		const location = rawLocation ? escapeHtml(rawLocation) : 'the location you identified';
 		const moves = (document.querySelector('input[name="moves"]:checked') as HTMLInputElement).value;
 		const ctype = (document.querySelector('input[name="ctype"]:checked') as HTMLInputElement).value;
 		const info = typeCopy[ctype];
@@ -291,7 +300,19 @@ import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 	});
 
 	document.querySelector('[data-action="restart"]')!.addEventListener('click', () => {
-		(document.getElementById('d-location') as HTMLInputElement).value = '';
+		document.querySelectorAll<HTMLInputElement | HTMLSelectElement>('.step input, .step select').forEach((el) => {
+			if (el instanceof HTMLSelectElement) {
+				for (const option of el.options) option.selected = option.defaultSelected;
+			} else if (el.type === 'radio' || el.type === 'checkbox') {
+				el.checked = el.defaultChecked;
+			} else {
+				el.value = el.defaultValue;
+			}
+		});
+		document.querySelectorAll('.choice').forEach((group) => syncChoiceClasses(group));
+		computeCycleTime();
+		(document.getElementById('d-final-stats') as HTMLElement).textContent = '';
+		(document.getElementById('d-summary') as HTMLElement).textContent = '';
 		goTo(0);
 	});
 
