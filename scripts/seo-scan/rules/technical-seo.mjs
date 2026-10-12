@@ -12,6 +12,15 @@ function finding(id, priority, page, title, detail, fix) {
 export function runTechnicalSeoRules(pages, { config, siteMap, robotsTxt, assetRoutes = [] }) {
 	const findings = [];
 	const contentPages = pages.filter((p) => !isExcludedRoute(p.route, config.excludeFromContentChecks));
+	// On-page checks below, including title and headings, use `contentPages`,
+	// so /404 and /admin stay out of them. Thin-content checks live in the AEO
+	// rules and use the same exclusion list. noindex and sitemap still run for
+	// an excluded route when it is expected to be noindex (/404). /admin is
+	// excluded and is not on that list, so it stays out of every check.
+	const indexabilityPages = pages.filter((page) => {
+		if (!isExcludedRoute(page.route, config.excludeFromContentChecks)) return true;
+		return config.expectedNoindex.includes(page.route);
+	});
 
 	for (const page of contentPages) {
 		const { route } = page;
@@ -88,7 +97,10 @@ export function runTechnicalSeoRules(pages, { config, siteMap, robotsTxt, assetR
 		if (!page.viewport) {
 			findings.push(finding('missing-viewport', 'P0', route, 'Missing viewport meta tag', 'No <meta name="viewport"> found — page will not be treated as mobile-friendly.', 'Add the standard viewport meta tag (should come from Base.astro).'));
 		}
+	}
 
+	for (const page of indexabilityPages) {
+		const { route } = page;
 		if (page.robotsMeta?.includes('noindex') && !config.expectedNoindex.includes(route)) {
 			findings.push(finding('unexpected-noindex', 'P0', route, 'Unexpected noindex', 'This page is marked noindex but isn\'t in the expected noindex list.', 'Check the `noindex` prop wasn\'t left on by mistake.'));
 		}
@@ -131,7 +143,7 @@ export function runTechnicalSeoRules(pages, { config, siteMap, robotsTxt, assetR
 	// Sitemap coverage.
 	if (siteMap) {
 		const sitemapPaths = new Set(siteMap.map((u) => new URL(u).pathname));
-		for (const page of contentPages) {
+		for (const page of indexabilityPages) {
 			const shouldBeIndexed = !config.expectedNoindex.includes(page.route);
 			const inSitemap =
 				sitemapPaths.has(page.route) ||

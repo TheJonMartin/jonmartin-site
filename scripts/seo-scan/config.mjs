@@ -6,6 +6,9 @@ export const config = {
 		siteUrl: 'https://thejonmartin.com',
 		distDir: 'dist',
 		// Prefix-matched (util.mjs isExcludedRoute); '/admin' catches Decap CMS shell.
+		// Both skip title, heading, and thin-content checks. /404 is still an
+		// expected-noindex route, so noindex and sitemap checks still run for it.
+		// /admin is not expected-noindex, so it stays out of those too.
 		excludeFromContentChecks: ['/404', '/admin'],
 		expectedNoindex: ['/thanks', '/thanks-contact', '/thanks-consulting', '/404'],
 		// Short by design (tools / contact form) — exempt from thin-content check only.
@@ -27,20 +30,6 @@ export const config = {
 		staleContentDays: 365,
 		targetCadenceDays: 21,
 	},
-
-	// Topic gaps for the content-gap rule. `aliases` covers spellings that won't word-overlap `name`.
-	targetTopics: [
-		{ name: 'Revenue Operations', aliases: ['revops'] },
-		{ name: 'Systems Integration' },
-		{ name: 'Subscription Management' },
-		{ name: 'CPQ' },
-		{ name: 'Quote-to-Cash', aliases: ['qtc'] },
-		{ name: 'Billing & Churn' },
-		{ name: 'Presales' },
-		{ name: 'SaaS' },
-		{ name: 'Professional Services' },
-		{ name: 'Systems Thinking' },
-	],
 
 	externalLinks: {
 		enabled: true,

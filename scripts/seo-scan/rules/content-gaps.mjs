@@ -22,23 +22,8 @@ export function buildTodoFindings(todoMarkers) {
 export function runContentGapRules({ config, writingPosts, fourLawsPosts, altitudePosts }) {
 	const findings = [];
 
-	// Topic coverage: tags used across published posts vs. the target list.
-	const publishedPosts = writingPosts.filter((p) => !p.draft);
-	const usedTags = new Set(publishedPosts.flatMap((p) => p.tags.map((t) => t.toLowerCase())));
-	const uncovered = config.targetTopics.filter((topic) => {
-		const words = topic.name.toLowerCase().split(/[\s&/-]+/).filter(Boolean);
-		const aliases = (topic.aliases ?? []).map((a) => a.toLowerCase());
-		return ![...usedTags].some(
-			(tag) => aliases.includes(tag) || words.some((w) => tag.includes(w) || w.includes(tag))
-		);
-	});
-	if (uncovered.length > 0) {
-		findings.push(finding('topic-gaps', 'P2', null, 'Target topics with no published post',
-			`No post touches: ${uncovered.map((t) => t.name).join(', ')}.`,
-			'Not urgent individually, but worth keeping on the writing backlog so coverage doesn\'t skew entirely toward whatever\'s top of mind.'));
-	}
-
 	// Publishing cadence.
+	const publishedPosts = writingPosts.filter((p) => !p.draft);
 	const dates = publishedPosts.map((p) => p.pubDate).filter(Boolean).sort();
 	const lastPubDate = dates.at(-1);
 	if (lastPubDate) {
@@ -46,7 +31,7 @@ export function runContentGapRules({ config, writingPosts, fourLawsPosts, altitu
 		if (age !== null && age > config.thresholds.targetCadenceDays) {
 			findings.push(finding('cadence-overdue', 'P1', null, 'Publishing cadence has slipped',
 				`${age} days since the last published post (target: every ${config.thresholds.targetCadenceDays} days). Consistent publishing is itself an AEO/SEO signal — engines and readers both weight active sites higher.`,
-				'Pick one topic from the gap list above, or from an existing draft, and ship it.'));
+				'Ship a post — finish an existing draft, or write something new — so the site doesn\'t go quiet.'));
 		}
 	}
 
