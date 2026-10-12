@@ -11,12 +11,12 @@ content gaps, then writes one prioritized checklist.
   stakeholder-matrix PDF), broken external links.
 - **AEO** — structured data (JSON-LD) presence and validity, content depth,
   generic section headings, content freshness, llms.txt.
-- **Content gaps** — target topics with no published post, publishing
-  cadence, and unpublished drafts, checked across the writing, Four Laws,
-  and Altitude collections (`src/content/writing/`, `src/content/four-laws/`,
-  and `src/content/altitude/`); `TODO` markers left in shipped source
-  anywhere under `src/` (e.g. an About page that ships with its own
-  "still missing" checklist).
+- **Content gaps** — publishing cadence and unpublished drafts, checked
+  across the writing, Four Laws, and Altitude collections
+  (`src/content/writing/`, `src/content/four-laws/`, and
+  `src/content/altitude/`); `TODO` markers left in shipped source anywhere
+  under `src/` (e.g. an About page that ships with its own "still missing"
+  checklist).
 
 Findings are ranked P0 (broken) / P1 (high priority) / P2 (opportunity).
 
@@ -39,10 +39,10 @@ filling up with near-duplicates.
 
 ## Tuning
 
-Everything adjustable lives in `config.mjs`: word-count thresholds, target
-topics, publishing cadence, which routes are expected to be `noindex`, and
-whether external-link checking runs at all. Nothing else in this directory
-should need touching to change what counts as a finding.
+Everything adjustable lives in `config.mjs`: word-count thresholds,
+publishing cadence, which routes are expected to be `noindex`, which routes
+skip content checks, and whether external-link checking runs at all. Nothing
+else in this directory should need touching to change what counts as a finding.
 
 ## Adding a check
 

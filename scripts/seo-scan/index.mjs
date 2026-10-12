@@ -29,7 +29,6 @@ async function main() {
 		expectedNoindex: site.expectedNoindex,
 		thinContentExempt: site.thinContentExempt ?? [],
 		thresholds: config.thresholds,
-		targetTopics: config.targetTopics,
 	};
 
 	const writingPosts = await readMarkdownCollection(config.writingContentDir);

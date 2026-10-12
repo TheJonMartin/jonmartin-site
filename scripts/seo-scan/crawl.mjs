@@ -121,7 +121,6 @@ export async function crawlDist(distDir, siteUrl) {
 			description: document.querySelector('meta[property="og:description"]')?.getAttribute('content') ?? null,
 			image: document.querySelector('meta[property="og:image"]')?.getAttribute('content') ?? null,
 		};
-		const twitterCard = document.querySelector('meta[name="twitter:card"]')?.getAttribute('content') ?? null;
 
 		pages.push({
 			route,
@@ -140,7 +139,6 @@ export async function crawlDist(distDir, siteUrl) {
 			jsonLd: parseJsonLd(document),
 			wordCount,
 			og,
-			twitterCard,
 		});
 	}
 
