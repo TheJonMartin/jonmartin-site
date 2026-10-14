@@ -439,6 +439,201 @@ export const tools: Tool[] = [
 			{ text: 'Zapier, HubSpot + Trainual integrations', href: 'https://zapier.com/apps/hubspot/integrations/trainual' },
 		],
 	},
+
+	{
+		slug: 'adcreative-ai',
+		name: 'AdCreative.ai',
+		title: 'AdCreative.ai and HubSpot — Jon Martin',
+		seoTitle: 'AdCreative.ai and HubSpot: Where AI Ad Creative Fits — Jon Martin',
+		description:
+			"AdCreative.ai makes banners, ad copy, and short video ads. For HubSpot teams it sits upstream of the CRM. What it does, who it fits, and what to set up first.",
+		h1: 'AdCreative.ai sits upstream of HubSpot.',
+		dek: [
+			'AdCreative.ai makes ads. Banners, ad copy, product photos, short video ads.',
+			"That's useful for a performance marketing team. For a RevOps or HubSpot admin audience, it's a weak fit. It sits upstream of HubSpot, in the ad platforms, not in your CRM.",
+		],
+		category: 'AI ad creative',
+		facts: [
+			{ label: 'Category', value: 'AI ad creative' },
+			{ label: 'Native HubSpot integration', value: 'None confirmed', flag: true },
+			{ label: 'Credits used', value: 'When you download' },
+			{ label: 'Where it sits', value: 'Upstream, in the ad platforms' },
+		],
+		sections: [
+			{
+				label: "Who it's for",
+				blocks: [
+					{
+						type: 'ul',
+						items: [
+							"Small businesses and e-commerce brands running paid social and search that don't have a designer.",
+							'Agencies producing a lot of ad variations for clients.',
+							'In-house marketers who need to test more creative, faster.',
+						],
+					},
+					{ type: 'p', html: '<strong>Not for:</strong> anyone looking for a tool that improves HubSpot data, reporting, or process.' },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: "Per AdCreative.ai's homepage:" },
+					{
+						type: 'ol',
+						items: [
+							'<strong>Ad creatives.</strong> Generates ad banners and variations in many sizes for different platforms.',
+							'<strong>Ad text.</strong> Writes headlines and copy using copywriting frameworks.',
+							'<strong>Product photoshoots and video ads.</strong> Turns product photos into studio-style images and short videos.',
+							'<strong>Creative Scoring AI.</strong> Scores creatives before you spend money. AdCreative claims over 90% accuracy on performance prediction. Treat that as a vendor claim.',
+							"<strong>Competitor Insights AI.</strong> Looks at competitors' best-performing ads.",
+							'<strong>Buyer personas.</strong> Generated from your website data.',
+							'<strong>Brand import.</strong> Pulls your logo, colors, and fonts so outputs stay on brand.',
+						],
+					},
+					{ type: 'p', html: 'Credits are used when you download a creative, not when you generate one, per their FAQ.' },
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: "AdCreative.ai's own homepage describes integrations as connecting your <strong>ad accounts</strong> to your brands, which tunes the AI to your account." },
+					{ type: 'p', html: "I didn't find a HubSpot integration confirmed on AdCreative.ai's site or a HubSpot Marketplace listing. Some third-party pages say one exists. I'm not counting those." },
+					{ type: 'p', html: 'Realistically, the HubSpot connection is indirect:' },
+					{
+						type: 'steps',
+						items: [
+							'AdCreative makes the ad',
+							'The ad runs on Meta, Google, or wherever',
+							'HubSpot captures the lead and reports on the campaign',
+						],
+					},
+					{ type: 'p', html: "HubSpot doesn't need to know AdCreative exists for that to work." },
+				],
+			},
+		],
+		pros: [
+			'Fast creative output without a designer.',
+			'Lots of variations for A/B testing.',
+			'Brand import keeps things consistent.',
+			'Credits only burn on downloads, so you can explore before you commit.',
+		],
+		cons: [
+			'Not a HubSpot tool. No confirmed integration.',
+			'Performance claims on the homepage ("up to 14x more conversions," 90%+ scoring accuracy) are vendor claims. Test against your own numbers.',
+			'Heavy e-commerce and consumer tilt in the examples. B2B teams may need to work harder to get useful output.',
+			'AI-generated creative still needs a human with taste to review it.',
+		],
+		after: [
+			{
+				label: 'If you buy it anyway',
+				blocks: [
+					{ type: 'p', html: "Make sure your HubSpot campaign tracking is set up first. Better ads don't help if you can't see which ones produced pipeline." },
+				],
+			},
+		],
+		closing: 'Creative is upstream. Attribution is the part that tells you if it worked.',
+		cta: { label: 'Try AdCreative.ai', href: 'https://free-trial.adcreative.ai/fwji4dybiz2t' },
+		sources: [
+			{ text: 'AdCreative.ai homepage (features, FAQ, integrations description)', href: 'https://www.adcreative.ai/' },
+		],
+	},
+
+	{
+		slug: 'unitel-voice',
+		name: 'Unitel Voice',
+		title: 'Unitel Voice and HubSpot — Jon Martin',
+		seoTitle: 'Unitel Voice and HubSpot: A Small-Business Phone Line, Not a RevOps Tool — Jon Martin',
+		description:
+			"Unitel Voice is a business phone service for solo founders and small teams. No HubSpot integration confirmed. Who it fits, who should look elsewhere, and why.",
+		h1: 'A business number for your cell, not a RevOps tool.',
+		dek: [
+			'Unitel Voice is a good fit for a solo founder who needs a business number on their cell.',
+			"For a HubSpot-driven sales or service team, it's a weak fit. I couldn't confirm a HubSpot integration on Unitel's site, and for RevOps the integration is the whole point.",
+		],
+		category: 'Small-business phone',
+		facts: [
+			{ label: 'Category', value: 'Small-business phone service' },
+			{ label: 'HubSpot integration', value: 'None confirmed', flag: true },
+			{ label: 'Best for', value: 'Solo founders, 1-3 person teams' },
+			{ label: 'Desk phones', value: 'Office plan only' },
+		],
+		sections: [
+			{
+				label: "Who it's for",
+				blocks: [
+					{ type: 'p', html: 'Per Unitel, it\'s built for "bootstrappers and business builders": solo entrepreneurs, startup teams, and small businesses.' },
+					{ type: 'p', html: '<strong>Good fit:</strong>' },
+					{
+						type: 'ul',
+						items: [
+							'A one-to-three person business that wants a toll-free, local, or vanity number without carrying a second phone.',
+							'Small teams that want calls answered professionally, with greetings and routing.',
+							'Owners who want a real human on the support line. Unitel leans hard on its US-based support.',
+						],
+					},
+					{ type: 'p', html: '<strong>Weak fit:</strong>' },
+					{
+						type: 'ul',
+						items: ['Any team that needs every call logged to a HubSpot contact, deal, or ticket automatically.'],
+					},
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: "From Unitel's homepage and its Office plan page:" },
+					{
+						type: 'ul',
+						items: [
+							'<strong>Business numbers:</strong> local, toll-free, or vanity, usable on your existing devices.',
+							'<strong>Custom greetings</strong> by business hours, and routing to available people or voicemail.',
+							'<strong>Mobile app</strong> on every plan (iOS and Android).',
+							'<strong>Office plan:</strong> IP desk phones, softphone, presence (see who\'s on a call), team messaging and file sharing.',
+							'<strong>Office Plus plan:</strong> video conferencing and screen sharing.',
+							'<strong>Outage rerouting.</strong> Unitel says if your internet or power goes out, calls reroute to the mobile app or voicemail.',
+							'<strong>Concierge phone setup.</strong> Unitel says it pre-configures IP phones before shipping.',
+						],
+					},
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: "It doesn't, as far as I could confirm." },
+					{ type: 'p', html: "I didn't find a HubSpot integration on the Unitel Voice pages I opened, and I didn't find a HubSpot Marketplace listing." },
+					{ type: 'p', html: "Without it, calls happen outside HubSpot. Reps would have to log them by hand. That's exactly the gap that breaks activity reporting." },
+					{ type: 'p', html: 'If HubSpot call logging matters, look at a calling tool with a confirmed HubSpot integration. Aircall is one. It\'s on my <a href="/tools/aircall">Aircall page</a>.' },
+				],
+			},
+		],
+		pros: [
+			'Simple. Unitel\'s whole pitch is "no tech headaches."',
+			"Human support is the core of Unitel's pitch, and it's what the testimonials on its homepage keep mentioning.",
+			'Works with the phones you already have.',
+			'Separates business and personal calls on one device.',
+		],
+		cons: [
+			"No HubSpot integration I could confirm.",
+			"Built for small businesses. Not a contact-center or sales-floor tool.",
+			'Desk phones and softphones are Office-plan only; other plans are mobile app and forwarding.',
+			'Plan structure (which features sit on which tier) takes a minute to sort out.',
+		],
+		after: [
+			{
+				label: 'Bottom line for RevOps',
+				blocks: [
+					{ type: 'p', html: "If the phone system doesn't write to HubSpot, your activity reports are guesses." },
+					{ type: 'p', html: "Unitel is fine for a small business phone line. It's not a RevOps tool." },
+				],
+			},
+		],
+		closing: 'Pick the phone system after you decide where the call record lives.',
+		cta: { label: 'Try Unitel Voice', href: 'https://unitelvoice.partnerlinks.io/jp010yb97vom' },
+		sources: [
+			{ text: 'Unitel Voice homepage', href: 'https://www.unitelvoice.com/' },
+			{ text: 'Unitel Voice, Office plan (business VoIP) page', href: 'https://www.unitelvoice.com/product/business-voip-phone-service/' },
+		],
+	},
 ];
 
 export const disclosure =
