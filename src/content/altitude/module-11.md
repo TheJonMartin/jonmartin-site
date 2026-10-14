@@ -2,6 +2,7 @@
 title: "Module 11: The Four Levels of Design — Deliverables Mapped to Altitude"
 description: "Wishlist, process map, functional spec, and configuration design — each at its altitude."
 seoTitle: "Module 11: The Four Levels of Design | Requirements Altitude"
+seoDescription: "The four levels of design, from wishlist to configuration design, mapped to altitude, and how to treat Level 0 documents as a source, not a requirement."
 group: delivery
 order: 20
 draft: false

@@ -7,7 +7,7 @@ draft: false
 tags: ['Systems', 'RevOps', 'Complexity', 'Frameworks']
 ---
 
-![Two Fields That Never Talked to Each Other, Converging on the Same Physics](/images/writing/09-capstone-four-laws.svg)
+<img src="/images/writing/09-capstone-four-laws.svg" alt="Two Fields That Never Talked to Each Other, Converging on the Same Physics" width="800" height="500">
 
 I built a framework out of cybernetics and software engineering theory — Ashby, Conway, Brooks, Beer — to explain why RevOps delivery breaks down at scale. None of those four ever cited Scott Page. Page's complexity science, decades later, never cited them either. Two lineages with no contact.
 

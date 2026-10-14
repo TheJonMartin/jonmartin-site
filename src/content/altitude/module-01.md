@@ -2,6 +2,7 @@
 title: "Module 1: The Problem — Why Smart People Still Miss the Middle"
 description: "Why discovery can sound competent and still produce unusable requirements."
 seoTitle: "Module 1: The Problem | Requirements Altitude"
+seoDescription: "Why discovery can sound competent and still produce unusable requirements, and where the cost of missing the middle level actually lands."
 group: core
 order: 10
 draft: false

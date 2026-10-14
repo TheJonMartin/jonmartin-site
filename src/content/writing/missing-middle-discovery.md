@@ -8,7 +8,7 @@ tags: ['Systems', 'RevOps', 'Client Delivery']
 category: 'Client Delivery'
 ---
 
-![The Missing Middle of Discovery](/images/writing/missing-middle-discovery.svg)
+<img src="/images/writing/missing-middle-discovery.svg" alt="The Missing Middle of Discovery" width="800" height="500">
 
 A discovery call can go well and still produce nothing you can scope.
 

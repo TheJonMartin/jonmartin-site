@@ -2,6 +2,7 @@
 title: "Module 14: Common Frameworks Mapped to Altitude"
 description: "JTBD, user stories, epics, impact maps, and use cases read against L0–L3."
 seoTitle: "Module 14 | Requirements Altitude"
+seoDescription: "Common requirements frameworks read against the altitude levels: Jobs to Be Done, user stories, epics, impact maps, use cases and Gherkin."
 group: reference
 order: 10
 draft: false

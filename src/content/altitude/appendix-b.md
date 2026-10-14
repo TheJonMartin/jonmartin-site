@@ -2,6 +2,7 @@
 title: "Appendix B: Facilitator Guide"
 description: "Sequencing, drill debriefs, and the resistance point that shows up in every cohort."
 seoTitle: "Appendix B | Requirements Altitude"
+seoDescription: "A facilitator guide for Requirements Altitude: how to sequence the material, debrief the drills, and handle the resistance point that shows up in every cohort."
 group: reference
 order: 50
 draft: false

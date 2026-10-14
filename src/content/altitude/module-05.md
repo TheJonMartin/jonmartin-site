@@ -2,6 +2,7 @@
 title: "Module 5: The L2 Bridge Rule"
 description: "How to construct the missing-middle sentence, when to deploy it, and the overuse guardrail."
 seoTitle: "Module 5: The L2 Bridge Rule | Requirements Altitude"
+seoDescription: "The L2 Bridge Rule: how to build the missing-middle sentence, when to use it, and the overuse guardrail that keeps it from becoming a habit."
 group: core
 order: 50
 draft: false

@@ -2,6 +2,7 @@
 title: "Module 3: The Diagnostic — Classifying Statements in Real Time"
 description: "A ladder you can run live: note the speaker, then classify altitude without stopping the call."
 seoTitle: "Module 3: The Diagnostic | Requirements Altitude"
+seoDescription: "A ladder you can run live on a discovery call: note the speaker, then classify each statement's altitude without stopping the conversation."
 group: core
 order: 30
 draft: false

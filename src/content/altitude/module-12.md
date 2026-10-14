@@ -2,6 +2,7 @@
 title: "Module 12: Requirements Drift in Delivery"
 description: "What happens after discovery when new statements arrive and L2 is treated as optional."
 seoTitle: "Module 12 | Requirements Altitude"
+seoDescription: "Requirements drift in delivery: what happens when new statements arrive after discovery and L2 gets treated as optional, and how to cross-check."
 group: delivery
 order: 30
 draft: false

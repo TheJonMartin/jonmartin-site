@@ -2,6 +2,7 @@
 title: "Module 16: Recovery — Closing Gaps After the Fact"
 description: "What to do when you notice a missing L2 after discovery is already supposed to be over."
 seoTitle: "Module 16: Recovery | Requirements Altitude"
+seoDescription: "Recovery: what to do when you notice a missing L2 requirement after discovery was supposed to be over, and how to close the gap without a reset."
 group: delivery
 order: 40
 draft: false

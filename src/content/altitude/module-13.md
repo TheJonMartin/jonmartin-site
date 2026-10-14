@@ -2,6 +2,7 @@
 title: "Module 13: Capstone"
 description: "One end-to-end pass: tag, bridge, map stakeholders, trace vertically, write the document."
 seoTitle: "Module 13: Capstone | Requirements Altitude"
+seoDescription: "The Requirements Altitude capstone: one end-to-end pass through tagging, bridging, stakeholder mapping, vertical tracing and writing the document."
 group: practice
 order: 30
 draft: false

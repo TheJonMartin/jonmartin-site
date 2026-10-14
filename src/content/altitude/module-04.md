@@ -2,6 +2,7 @@
 title: "Module 4: The Three Failure Modes, In Depth"
 description: "Detail spelunking, altitude blindness, and bridge overuse — and why all three feel like progress."
 seoTitle: "Module 4 | Requirements Altitude"
+seoDescription: "The three discovery failure modes in depth: detail spelunking, altitude blindness and bridge overuse, and why all three feel like progress."
 group: core
 order: 40
 draft: false

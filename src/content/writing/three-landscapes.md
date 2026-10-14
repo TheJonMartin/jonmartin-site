@@ -6,7 +6,7 @@ draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
-![Three Landscapes: Fuji, Rugged, and Dancing](/images/writing/02-three-landscapes.svg)
+<img src="/images/writing/02-three-landscapes.svg" alt="Three Landscapes: Fuji, Rugged, and Dancing" width="800" height="500">
 
 Once you know you're looking at a complex problem and not just a complicated one, a second question matters just as much: can this actually be solved, or am I chasing something that won't hold still long enough to be solved?
 

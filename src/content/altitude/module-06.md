@@ -2,6 +2,7 @@
 title: "Module 6: The Advisory Layer — When a Correct Requirement Is the Wrong Requirement"
 description: "Vertical traceability: a confirmed L2 can still fail the L0 it is supposed to serve."
 seoTitle: "Module 6: The Advisory Layer | Requirements Altitude"
+seoDescription: "The advisory layer: how a confirmed L2 requirement can still fail the L0 outcome it serves, and how to raise that without burning trust."
 group: core
 order: 60
 draft: false

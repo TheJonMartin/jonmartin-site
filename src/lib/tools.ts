@@ -19,6 +19,7 @@ export interface Section {
 
 export interface Tool {
 	slug: string;
+	related?: string[];
 	/** Display name used in the CTA button and schema. */
 	name: string;
 	title: string;
@@ -45,6 +46,7 @@ export const PUBLISHED = '2026-10-14';
 export const tools: Tool[] = [
 	{
 		slug: 'aircall',
+		related: ['unitel-voice', 'elevenlabs'],
 		name: 'Aircall',
 		title: 'Aircall for HubSpot Teams — Jon Martin',
 		seoTitle: 'Aircall HubSpot Integration: What It Does and Who It Fits',
@@ -138,6 +140,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'apollo-io',
+		related: ['seamless-ai', 'aircall'],
 		name: 'Apollo.io',
 		title: 'Apollo.io for HubSpot Teams — Jon Martin',
 		seoTitle: 'Apollo.io HubSpot Integration: Push Rules to Set First',
@@ -239,6 +242,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'capsule-and-transpond',
+		related: ['trainual', 'apollo-io'],
 		name: 'Capsule and Transpond',
 		title: 'Capsule and Transpond with HubSpot — Jon Martin',
 		seoTitle: 'Capsule CRM and Transpond with HubSpot: Do You Need Them?',
@@ -334,6 +338,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'trainual',
+		related: ['gamma', 'capsule-and-transpond'],
 		name: 'Trainual',
 		title: 'Trainual for HubSpot Process Docs — Jon Martin',
 		seoTitle: 'Trainual for HubSpot Teams: Document How You Use HubSpot',
@@ -442,6 +447,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'adcreative-ai',
+		related: ['whatconverts', 'gamma'],
 		name: 'AdCreative.ai',
 		title: 'AdCreative.ai and HubSpot — Jon Martin',
 		seoTitle: 'AdCreative.ai and HubSpot: Where AI Ad Creative Fits',
@@ -540,6 +546,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'unitel-voice',
+		related: ['aircall', 'elevenlabs'],
 		name: 'Unitel Voice',
 		title: 'Unitel Voice and HubSpot — Jon Martin',
 		seoTitle: 'Unitel Voice and HubSpot: A Phone Line, Not a RevOps Tool',
@@ -637,10 +644,11 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'seamless-ai',
+		related: ['apollo-io', 'aircall'],
 		name: 'Seamless.AI',
 		title: 'Seamless.AI and HubSpot — Jon Martin',
 		seoTitle: 'Seamless.AI and HubSpot: Import Rules Before You Connect',
-		description: `Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent connection. The fine print, and the governance questions to answer first.`,
+		description: `Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent link. The fine print and the governance questions to settle first.`,
 		h1: `What happens to your database when reps click import.`,
 		dek: [
 			`Seamless.AI is a contact data tool.`,
@@ -731,6 +739,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'whatconverts',
+		related: ['aircall', 'adcreative-ai'],
 		name: 'WhatConverts',
 		title: 'WhatConverts and HubSpot — Jon Martin',
 		seoTitle: 'WhatConverts and HubSpot: Call Attribution Through Zapier',
@@ -829,10 +838,11 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'elevenlabs',
+		related: ['aircall', 'unitel-voice'],
 		name: 'ElevenLabs',
 		title: 'ElevenLabs and HubSpot — Jon Martin',
 		seoTitle: 'ElevenLabs Agents and HubSpot: What the Build Involves',
-		description: `ElevenLabs' agent platform can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and the questions to settle first.`,
+		description: `ElevenLabs agents can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and what to settle first.`,
 		h1: `ElevenLabs agents can act in HubSpot. It's a build.`,
 		dek: [
 			`ElevenLabs started with AI voices. Its agent platform, ElevenAgents, is the part a HubSpot team should care about: voice and chat agents that can read and write CRM records mid-conversation.`,
@@ -933,10 +943,11 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'gamma',
+		related: ['trainual', 'adcreative-ai'],
 		name: 'Gamma',
 		title: 'Gamma and HubSpot — Jon Martin',
 		seoTitle: 'Gamma HubSpot App: Win/Loss and QBR Decks From Your CRM Data',
-		description: `Gamma builds presentations with AI, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a good first test.`,
+		description: `Gamma builds AI presentations, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a first test.`,
 		h1: `Gamma's HubSpot app is aimed at the QBR deck loop.`,
 		dek: [
 			`Every QBR deck starts the same way. Export from HubSpot. Paste into slides. Fix the formatting. Repeat next quarter.`,
@@ -1032,6 +1043,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'plesk',
+		related: ['quicksigner', 'whatconverts'],
 		name: 'Plesk',
 		title: 'Plesk and HubSpot — Jon Martin',
 		seoTitle: 'Plesk and HubSpot: A Hosting Control Panel for Agencies',
@@ -1128,6 +1140,7 @@ export const tools: Tool[] = [
 
 	{
 		slug: 'quicksigner',
+		related: ['trainual', 'plesk'],
 		name: 'QuickSigner',
 		title: 'QuickSigner and HubSpot — Jon Martin',
 		seoTitle: 'QuickSigner and HubSpot: E-Signature Through the API',

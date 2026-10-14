@@ -2,6 +2,7 @@
 title: "Appendix A: The Field Card"
 description: "One-page call card: speaker, ladder, bridge, three tells, vertical check."
 seoTitle: "Appendix A | Requirements Altitude"
+seoDescription: "The one-page Field Card for Requirements Altitude: speaker, ladder, bridge, three tells and the vertical check, built to keep open during a call."
 group: practice
 order: 40
 draft: false

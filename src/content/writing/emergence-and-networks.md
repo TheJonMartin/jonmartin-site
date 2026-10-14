@@ -6,7 +6,7 @@ draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
-![What Shows Up Without Anyone Designing It](/images/writing/06-emergence-and-networks.svg)
+<img src="/images/writing/06-emergence-and-networks.svg" alt="What Shows Up Without Anyone Designing It" width="800" height="500">
 
 Last post, I said dancing landscapes need a standing practice instead of a finish line. Here's the harder question underneath that: who's actually running that practice? Not on the org chart — in reality. Half the time, the real system managing a dancing problem isn't the one anyone designed. It's one that showed up on its own.
 
