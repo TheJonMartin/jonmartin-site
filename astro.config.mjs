@@ -11,7 +11,7 @@ for (const f of readdirSync('./src/content/writing')) {
 	if (d) lastmod.set(`/writing/${f.replace(/\.md$/, '')}`, d);
 }
 const toolsSrc = readFileSync('./src/lib/tools.ts', 'utf8');
-const toolsDate = /export const PUBLISHED = '([\d-]+)'/.exec(toolsSrc)?.[1];
+const toolsDate = /export const MODIFIED = '([\d-]+)'/.exec(toolsSrc)?.[1];
 for (const m of toolsSrc.matchAll(/^\t\tslug: '([^']+)'/gm)) if (toolsDate) lastmod.set(`/tools/${m[1]}`, toolsDate);
 if (toolsDate) lastmod.set('/tools', toolsDate);
 

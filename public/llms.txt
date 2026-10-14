@@ -33,6 +33,23 @@ Every public page on the site is listed below. Descriptions are taken from each 
 - [Coastline Scoping](https://thejonmartin.com/writing/coastline-scoping): A RevOps project has no single length — a published estimate is a length at a stated altitude, from named sources, against a stated reference.
 
 
+## Tools
+
+Affiliate links, disclosed on each page. Each page covers what the tool does, how it fits a HubSpot stack, and where it doesn't.
+
+- [Aircall](https://thejonmartin.com/tools/aircall): Aircall is a cloud phone system with one of the deepest HubSpot calling integrations. What it logs, what it costs you in setup, and who should skip it.
+- [Apollo.io](https://thejonmartin.com/tools/apollo-io): Apollo can fill your HubSpot with contacts fast. The two integrations, the push and write rules that matter, and the review score you should read before buying.
+- [Capsule and Transpond](https://thejonmartin.com/tools/capsule-and-transpond): Capsule is a simple CRM and Transpond is its email tool. For most HubSpot teams that's a second CRM. Who they actually fit, and how the HubSpot sync works.
+- [Trainual](https://thejonmartin.com/tools/trainual): Trainual isn't a HubSpot tool. It's where you write down lifecycle rules, deal stage criteria, and property ownership. What it does and how Zapier connects it.
+- [AdCreative.ai](https://thejonmartin.com/tools/adcreative-ai): AdCreative.ai makes banners, ad copy, and short video ads. For HubSpot teams it sits upstream of the CRM. What it does, who it fits, and what to set up first.
+- [Unitel Voice](https://thejonmartin.com/tools/unitel-voice): Unitel Voice is a business phone service for solo founders and small teams. No HubSpot integration confirmed. Who it fits, who should look elsewhere, and why.
+- [Seamless.AI](https://thejonmartin.com/tools/seamless-ai): Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent link. The fine print and the governance questions to settle first.
+- [WhatConverts](https://thejonmartin.com/tools/whatconverts): WhatConverts tracks calls, forms, and chats back to their marketing source. Its HubSpot link runs through Zapier. How the two flows work and where they break.
+- [ElevenLabs](https://thejonmartin.com/tools/elevenlabs): ElevenLabs agents can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and what to settle first.
+- [Gamma](https://thejonmartin.com/tools/gamma): Gamma builds AI presentations, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a first test.
+- [Plesk](https://thejonmartin.com/tools/plesk): Plesk is a hosting and server control panel. It doesn't touch your CRM. The narrow case where it matters to a HubSpot agency, and who should skip it.
+- [QuickSigner](https://thejonmartin.com/tools/quicksigner): QuickSigner is a simple, lower-cost e-signature tool. No native HubSpot integration found, so the connection is an API build. What it takes and who it suits.
+
 ## Requirements Altitude
 
 - [Overview](https://thejonmartin.com/altitude): A written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.

@@ -42,6 +42,8 @@ export interface Tool {
 
 export const CHECKED = 'Oct 13, 2026';
 export const PUBLISHED = '2026-10-14';
+/** Date the pages were last edited (CHECKED is when vendor facts were verified). Update when you change a page. */
+export const MODIFIED = '2026-10-14';
 
 export const tools: Tool[] = [
 	{
