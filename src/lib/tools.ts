@@ -634,6 +634,597 @@ export const tools: Tool[] = [
 			{ text: 'Unitel Voice, Office plan (business VoIP) page', href: 'https://www.unitelvoice.com/product/business-voip-phone-service/' },
 		],
 	},
+
+	{
+		slug: 'seamless-ai',
+		name: 'Seamless.AI',
+		title: 'Seamless.AI and HubSpot — Jon Martin',
+		seoTitle: 'Seamless.AI and HubSpot: Import Rules to Set Before You Connect — Jon Martin',
+		description: `Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent connection. The fine print, and the governance questions to answer first.`,
+		h1: `What happens to your database when reps click import.`,
+		dek: [
+			`Seamless.AI is a contact data tool.`,
+			`The question for a HubSpot team isn't "is the data good." It's "what happens to my database when reps start clicking import."`,
+		],
+		category: 'Contact data',
+		facts: [
+			{ label: 'Category', value: 'Contact and company data' },
+			{ label: 'HubSpot connections', value: 'Import, and Breeze Prospecting Agent' },
+			{ label: 'Agent needs', value: 'Sales Hub (any tier)' },
+			{ label: 'Agent data sources', value: 'One at a time', flag: true },
+		],
+		sections: [
+			{
+				label: `Who it's for`,
+				blocks: [
+					{ type: 'p', html: `Outbound sales teams on HubSpot that need verified emails and direct dials for list building.` },
+					{ type: 'p', html: `It's also worth a look if you're on HubSpot Sales Hub and want a data source for HubSpot's Breeze Prospecting Agent.` },
+					{ type: 'p', html: `If your pipeline is mostly inbound, you probably don't need a dedicated prospecting database.` },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: `Seamless finds contacts and companies and returns verified emails and phone numbers. It enriches records with company details and, per Seamless, 100+ additional data points.` },
+					{ type: 'p', html: `It also says it can identify look-alike contacts and accounts that match your ideal customer profile, and surface decision-makers inside accounts you already have.` },
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: `Seamless confirms two HubSpot connections on its own pages:` },
+					{
+						type: 'ol',
+						items: [
+							`<strong>The HubSpot integration.</strong> Import contacts and companies into HubSpot in a few clicks. You control what gets imported, set match scores to avoid duplicate entries, and customize import mappings.`,
+							`<strong>A data source for HubSpot's Breeze Prospecting Agent.</strong> Seamless says it's a native data source for the agent. Once connected, the agent can source contacts that match enrolled accounts and ICP criteria, enrich them, enroll them into plays, and sync activity back to HubSpot.`,
+						],
+					},
+					{ type: 'p', html: `The fine print on the Prospecting Agent connection, from Seamless's help article:` },
+					{
+						type: 'ul',
+						items: [
+							`You need HubSpot Sales Hub (Starter, Professional, or Enterprise).`,
+							`HubSpot supports <strong>one external data source at a time</strong> in the Prospecting Agent. Connect Seamless and you're switching away from whatever you had.`,
+							`You need to be a Super Admin or have Prospecting Agent permissions.`,
+							`Your inbox needs to be connected and AI settings enabled first.`,
+						],
+					},
+				],
+			},
+		],
+		pros: [
+			`Direct import into HubSpot with mapping and duplicate matching controls.`,
+			`Works inside HubSpot's own Prospecting Agent, so reps don't have to leave HubSpot.`,
+			`Enrichment can feed lead scoring with more firmographic data.`,
+		],
+		cons: [
+			`The Prospecting Agent only takes one data source. If you also run Apollo or another provider there, you have to pick.`,
+			`Import tools are only as clean as your match settings. Bad match scores mean duplicates.`,
+			`Seamless's marketing pages are heavy on outcome claims. Judge it on a trial against your own ICP, not the testimonials.`,
+			`More contacts in HubSpot can mean more cost and more cleanup. Decide who gets imported before anyone imports.`,
+		],
+		after: [
+			{
+				label: 'Questions to answer before you connect it',
+				blocks: [
+					{
+						type: 'ol',
+						items: [
+							`Which HubSpot properties will Seamless be allowed to overwrite?`,
+							`What match score counts as "same company"?`,
+							`Who's allowed to auto-import, and who has to review first?`,
+							`If you use the Prospecting Agent, is Seamless your one data source?`,
+						],
+					},
+					{ type: 'p', html: `None of those are Seamless questions. They're governance questions. Answer them anyway.` },
+				],
+			},
+		],
+		closing: `Data tools don't make databases messy. Unwritten import rules do.`,
+		cta: { label: 'Try Seamless.AI', href: 'https://get.seamless.ai/625is3pk44k6' },
+		sources: [
+			{ text: 'Seamless.AI, HubSpot integration page', href: 'https://seamless.ai/products/integrations/hubspot' },
+			{ text: `Seamless.AI help, "Using Seamless with HubSpot's Breeze Prospecting Agent"`, href: 'https://seamless.ai/customers/education/articles/hubspot-and-seamless-data-source-integration' },
+		],
+	},
+
+	{
+		slug: 'whatconverts',
+		name: 'WhatConverts',
+		title: 'WhatConverts and HubSpot — Jon Martin',
+		seoTitle: 'WhatConverts and HubSpot: Call Attribution Through Zapier — Jon Martin',
+		description: `WhatConverts tracks calls, forms, and chats back to their marketing source. Its HubSpot link runs through Zapier. How the two flows work and where they break.`,
+		h1: `Which campaign drove that deal?`,
+		dek: [
+			`"Which campaign drove that deal?" is the question every marketing team gets asked and few can answer when the lead came in by phone.`,
+			`WhatConverts is built for that gap. Just know going in that its HubSpot connection runs through Zapier.`,
+		],
+		category: 'Call tracking and attribution',
+		facts: [
+			{ label: 'Category', value: 'Lead and call tracking' },
+			{ label: 'HubSpot connection', value: 'Through Zapier, not native', flag: true },
+			{ label: 'Sync timing', value: 'Zapier polling, 1 to 15 minutes' },
+			{ label: 'Free trial', value: '14 days (as of Oct 13, 2026)' },
+		],
+		sections: [
+			{
+				label: `Who it's for`,
+				blocks: [
+					{ type: 'p', html: `Marketing agencies and in-house marketers running paid search, SEO, or local campaigns where a big share of leads call instead of filling out a form.` },
+					{ type: 'p', html: `WhatConverts lists agencies, franchises, and service businesses like HVAC, legal, dental, and medical as core audiences.` },
+					{ type: 'p', html: `For a pure B2B SaaS team where almost everything comes through forms and demos, HubSpot's own attribution may be enough.` },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: `WhatConverts tracks leads across calls, forms, chat, and e-commerce, with the marketing source attached.` },
+					{ type: 'p', html: `Call tracking uses dynamic number insertion, which swaps the number on your site for tracking numbers, plus call recording.` },
+					{ type: 'p', html: `Leads land in one place where you can search, qualify, and put a value on them. Reports show which channels and keywords produce the best leads.` },
+					{ type: 'p', html: `Per its homepage, there's a 14-day free trial (as of Oct 13, 2026).` },
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: `WhatConverts' help center is clear: the HubSpot integration works through Zapier, not a direct native connection.` },
+					{ type: 'p', html: `Two separate flows:` },
+					{
+						type: 'ol',
+						items: [
+							`<strong>WhatConverts → HubSpot.</strong> A new lead (call, form, or chat) creates a HubSpot contact. The WhatConverts Lead ID gets stored in a custom HubSpot property.`,
+							`<strong>HubSpot → WhatConverts.</strong> When a deal stage changes or a deal updates, Zapier reads the Lead ID from the associated contact and sends the deal value and status back to WhatConverts.`,
+						],
+					},
+					{ type: 'p', html: `That second flow is the point. It closes the loop from marketing source to closed revenue.` },
+					{ type: 'p', html: `The limitations, straight from WhatConverts' docs:` },
+					{
+						type: 'ul',
+						items: [
+							`You build and maintain each Zap yourself.`,
+							`You need a Zapier account, and the Zaps count against your Zapier usage.`,
+							`You create the custom Lead ID property in HubSpot by hand.`,
+							`Not real-time. Sync follows Zapier polling, 1 to 15 minutes depending on your Zapier plan.`,
+							`The deal has to be associated with a contact that has the Lead ID, or the update can't find its lead.`,
+						],
+					},
+				],
+			},
+		],
+		pros: [
+			`Call attribution with marketing source, which HubSpot forms alone won't give you for phone leads.`,
+			`Revenue flows back to the marketing source, so agencies can show ROI in dollars.`,
+			`Clear docs about how the integration works and where it breaks.`,
+		],
+		cons: [
+			`Not a native HubSpot integration. Zapier is a dependency with its own cost and failure points.`,
+			`Deal-to-contact association has to be clean for revenue to flow back. Messy associations break the loop.`,
+			`Polling delay means it's not instant.`,
+			`Someone has to own the Zaps when they break.`,
+		],
+		after: [
+			{
+				label: 'What to check first',
+				blocks: [
+					{
+						type: 'steps',
+						items: [
+							`Is your deal-to-contact association reliable today?`,
+							`Who owns the Zapier account?`,
+							`What share of your leads actually come in by phone?`,
+						],
+					},
+					{ type: 'p', html: `If the third answer is "almost none," skip it.` },
+				],
+			},
+		],
+		closing: `Attribution only works if the association data underneath it is clean.`,
+		cta: { label: 'Try WhatConverts', href: 'https://partners.whatconverts.com/srs1hg1mn12z' },
+		sources: [
+			{ text: 'WhatConverts homepage', href: 'https://www.whatconverts.com/' },
+			{ text: `WhatConverts help, "Understand the HubSpot Integration" (updated May 26, 2026)`, href: 'https://www.whatconverts.com/help/docs/integrations/customer-relationship-management-integrations/hubspot/understand-the-hubspot-integration/' },
+		],
+	},
+
+	{
+		slug: 'elevenlabs',
+		name: 'ElevenLabs',
+		title: 'ElevenLabs and HubSpot — Jon Martin',
+		seoTitle: 'ElevenLabs Agents and HubSpot: What the Build Involves — Jon Martin',
+		description: `ElevenLabs' agent platform can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and the questions to settle first.`,
+		h1: `ElevenLabs agents can act in HubSpot. It's a build.`,
+		dek: [
+			`ElevenLabs started with AI voices. Its agent platform, ElevenAgents, is the part a HubSpot team should care about: voice and chat agents that can read and write CRM records mid-conversation.`,
+			`That's powerful. It's also a build, not a toggle.`,
+		],
+		category: 'AI voice and chat agents',
+		facts: [
+			{ label: 'Category', value: 'AI voice and chat agents' },
+			{ label: 'HubSpot connection', value: 'API build, first-party guide' },
+			{ label: 'Setup level', value: 'Intermediate, per ElevenLabs' },
+			{ label: 'Listed setup time', value: '10 to 15 minutes', flag: true },
+		],
+		sections: [
+			{
+				label: `Who it's for`,
+				blocks: [
+					{
+						type: 'ul',
+						items: [
+							`Service teams that want an AI agent to handle inbound calls, look up the customer, and open a ticket.`,
+							`Sales teams that want inbound lead qualification over the phone or chat, with results written back to HubSpot.`,
+							`Teams with someone technical enough to set up a HubSpot private app and API tools. ElevenLabs rates the HubSpot setup "Intermediate."`,
+						],
+					},
+					{ type: 'p', html: `<strong>Not for:</strong> a team looking for a plug-and-play HubSpot app. This is closer to a project.` },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: `Per ElevenLabs' agents page:` },
+					{
+						type: 'ul',
+						items: [
+							`<strong>Voice and chat agents</strong> across phone, web, mobile, WhatsApp, SMS, and email, keeping context across channels.`,
+							`<strong>90+ languages,</strong> with the ability to switch mid-conversation.`,
+							`<strong>Workflows:</strong> triage and route conversations to sub-agents.`,
+							`<strong>Guardrails, simulations, and automated tests</strong> before anything reaches a customer.`,
+							`<strong>Analytics:</strong> resolution rate, CSAT, transcripts, debug logs.`,
+							`<strong>Bring your own LLM,</strong> plus connections through MCP, APIs, and webhooks.`,
+							`<strong>Compliance.</strong> ElevenLabs lists SOC 2 Type II, ISO 27001, PCI DSS Level 1, HIPAA, and GDPR.`,
+						],
+					},
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: `ElevenLabs has a first-party HubSpot integration page. Setup, per that page:` },
+					{
+						type: 'ol',
+						items: [
+							`Create a <strong>HubSpot private app</strong> with scopes for contacts, companies, deals, tickets, and conversations.`,
+							`Store the access token and Hub ID in <strong>ElevenLabs Secrets Manager.</strong>`,
+							`Build <strong>API tools</strong> for the agent: search contact, create deal, update contact, create ticket, each pointed at HubSpot's CRM API.`,
+							`<strong>Map properties.</strong> Decide which HubSpot properties the agent can read and write, and set association rules.`,
+						],
+					},
+					{ type: 'p', html: `ElevenLabs says this enables real-time CRM lookups during calls, record updates, ticket creation, and triggering HubSpot workflows from conversation outcomes. Listed setup time: 10 to 15 minutes. Realistic setup time for a production agent with governance: longer.` },
+					{ type: 'p', html: `I didn't confirm a HubSpot Marketplace listing for ElevenLabs. This is an API-based integration.` },
+				],
+			},
+			{
+				label: 'The RevOps questions',
+				blocks: [
+					{ type: 'p', html: `This is where I'd slow down.` },
+					{
+						type: 'ol',
+						items: [
+							`<strong>Which properties can the agent write?</strong> Lock it to a short list. An agent that can update any contact property will.`,
+							`<strong>What creates a deal vs a ticket?</strong> Write the rule before the agent does it 500 times.`,
+							`<strong>Who owns the private app token?</strong> It's a credential. Treat it like one.`,
+							`<strong>How do you test?</strong> ElevenLabs has simulations and tests. Use them against a sandbox portal first.`,
+						],
+					},
+				],
+			},
+		],
+		pros: [
+			`Agents can actually act in HubSpot (look up, create, update), not just talk.`,
+			`Strong voice quality is ElevenLabs' core business.`,
+			`Testing and guardrails are built in.`,
+			`Works across channels with one context.`,
+		],
+		cons: [
+			`It's an API build. Private apps, tokens, endpoints, property mapping.`,
+			`An agent with write access can create bad data fast if rules are loose.`,
+			`Hard to evaluate without a pilot. Demos don't show your edge cases.`,
+			`Overkill if what you need is better call logging. A calling tool with a native HubSpot integration is simpler.`,
+		],
+		closing: `An agent with write access is only as safe as the property list you give it.`,
+		cta: { label: 'Try ElevenLabs', href: 'https://try.elevenlabs.io/38w4z4aw3o33' },
+		sources: [
+			{ text: 'ElevenLabs, ElevenAgents overview', href: 'https://elevenlabs.io/agents' },
+			{ text: 'ElevenLabs, HubSpot integration page', href: 'https://elevenlabs.io/agents/integrations/hubspot' },
+		],
+	},
+
+	{
+		slug: 'gamma',
+		name: 'Gamma',
+		title: 'Gamma and HubSpot — Jon Martin',
+		seoTitle: 'Gamma HubSpot App: Win/Loss and QBR Decks From Your CRM Data — Jon Martin',
+		description: `Gamma builds presentations with AI, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a good first test.`,
+		h1: `Gamma's HubSpot app is aimed at the QBR deck loop.`,
+		dek: [
+			`Every QBR deck starts the same way. Export from HubSpot. Paste into slides. Fix the formatting. Repeat next quarter.`,
+			`Gamma's HubSpot app is aimed right at that loop.`,
+		],
+		category: 'AI presentations',
+		facts: [
+			{ label: 'Category', value: 'AI decks, docs, and sites' },
+			{ label: 'HubSpot app', value: 'Marketplace connector, 100+ installs' },
+			{ label: 'Access', value: 'Read-only, per user' },
+			{ label: 'Marketplace reviews', value: 'None yet (as of Oct 13, 2026)', flag: true },
+		],
+		sections: [
+			{
+				label: `Who it's for`,
+				blocks: [
+					{
+						type: 'ul',
+						items: [
+							`Account managers and CSMs building renewal decks and QBRs from deal and account data.`,
+							`Sales leaders doing win/loss reviews.`,
+							`Marketers turning campaign reports into recap decks.`,
+							`RevOps folks who get asked for "a quick deck on pipeline" more than they'd like.`,
+						],
+					},
+					{ type: 'p', html: `Good fit for teams that already keep their data in HubSpot. If the data's wrong in HubSpot, the deck will be wrong faster.` },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: `Gamma is an AI tool for presentations, documents, and websites. You describe what you need and it builds the layout and design.` },
+					{ type: 'p', html: `It exports to PDF, PPTX, PNG, and Google Slides, and imports PDF and PPTX, per the HubSpot listing (as of Oct 13, 2026).` },
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: `Confirmed on the HubSpot Marketplace (checked Oct 13, 2026): a <strong>Gamma</strong> connector, built by Gamma, 100+ installs.` },
+					{ type: 'p', html: `The listing's features:` },
+					{
+						type: 'ol',
+						items: [
+							`<strong>Pull deal and account data into a gamma.</strong> Deal, account, and contact details, no copy-paste.`,
+							`<strong>Analyze closed-won and closed-lost deals.</strong> Turn a quarter of closed deals into a win/loss deck.`,
+							`<strong>Turn campaign reports into a recap deck.</strong>`,
+							`<strong>Pull a HubSpot marketing dashboard into a card:</strong> traffic, conversions, campaign performance.`,
+						],
+					},
+					{ type: 'p', html: `From Gamma's help center on connectors:` },
+					{
+						type: 'ul',
+						items: [
+							`<strong>Read-only.</strong> Gamma says it never writes to, deletes from, or shares content from a connected tool.`,
+							`<strong>Per-user access.</strong> Each person connects their own account, and Gamma can only read what that user can already see in HubSpot.`,
+							`<strong>Only when referenced.</strong> Data gets pulled when you reference the source in a prompt, not in the background.`,
+							`<strong>Admin control on Enterprise.</strong> Workspace admins can allow or block connectors.`,
+							`<strong>No extra charge for connectors.</strong> Generations still use credits as usual.`,
+						],
+					},
+					{ type: 'p', html: `The HubSpot listing shows access type "Personal" and says no HubSpot permissions are required, though Gamma may request more while connecting.` },
+				],
+			},
+		],
+		pros: [
+			`Read-only by design. It can't mess up your CRM.`,
+			`Respects HubSpot permissions, since it acts as the connecting user.`,
+			`Win/loss and QBR use cases are real, recurring work.`,
+			`Exports to the formats people actually send around.`,
+		],
+		cons: [
+			`AI-built decks still need a human check. Numbers pulled into a narrative can get framed wrong.`,
+			`Per-user connections mean each person sets it up. Fine for a small team, more coordination for a big one.`,
+			`The HubSpot listing had zero reviews as of Oct 13, 2026. It's new.`,
+			`Garbage in, garbage out. Incomplete close reasons make a useless win/loss deck.`,
+		],
+		after: [
+			{
+				label: 'A good first test',
+				blocks: [
+					{ type: 'p', html: `Pick last quarter's closed-lost deals. Ask Gamma for a win/loss deck. Then check every number against the HubSpot report.` },
+					{ type: 'p', html: `If close reasons are blank on half the deals, you've found your real problem.` },
+				],
+			},
+		],
+		closing: `The deck is only as honest as the close reasons behind it.`,
+		cta: { label: 'Try Gamma', href: 'https://try.gamma.app/1fj0ceqtkde6' },
+		sources: [
+			{ text: 'HubSpot Marketplace, Gamma listing (rendered Oct 13, 2026)', href: 'https://ecosystem.hubspot.com/marketplace/listing/gamma-app' },
+			{ text: `Gamma Help Center, "How do I use Gamma with inbound connectors?"`, href: 'https://help.gamma.app/en/articles/15675394-how-do-i-use-gamma-with-inbound-connectors' },
+		],
+	},
+
+	{
+		slug: 'plesk',
+		name: 'Plesk',
+		title: 'Plesk and HubSpot — Jon Martin',
+		seoTitle: 'Plesk and HubSpot: A Hosting Control Panel for Agencies — Jon Martin',
+		description: `Plesk is a hosting and server control panel. It doesn't touch your CRM. The narrow case where it matters to a HubSpot agency, and who should skip it.`,
+		h1: `Plesk is a server control panel, not a RevOps tool.`,
+		dek: [
+			`Plain answer: Plesk is a weak fit for RevOps and HubSpot teams.`,
+			`It's a hosting and server control panel. It helps whoever runs your web servers. It doesn't touch your CRM, your pipeline, or your reporting.`,
+			`I'm including it because some readers run agencies or manage client websites. If that's you, keep reading. If not, this isn't your tool.`,
+		],
+		category: 'Hosting control panel',
+		facts: [
+			{ label: 'Category', value: 'Hosting and server control panel' },
+			{ label: 'HubSpot integration', value: 'None found', flag: true },
+			{ label: 'Built for', value: 'Hosts, IT admins, agencies' },
+			{ label: 'Overlap with HubSpot', value: 'Narrow' },
+		],
+		sections: [
+			{
+				label: `Who it's for`,
+				blocks: [
+					{ type: 'p', html: `Per Plesk, it's built for:` },
+					{
+						type: 'ul',
+						items: [
+							`Infrastructure and hosting providers`,
+							`IT admins`,
+							`Developers`,
+							`Digital agencies managing many client sites`,
+							`Content managers`,
+						],
+					},
+					{ type: 'p', html: `The overlap with a HubSpot audience is narrow: agencies or consultants who also host WordPress sites for clients outside HubSpot's CMS.` },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: `From Plesk's homepage:` },
+					{
+						type: 'ol',
+						items: [
+							`<strong>One dashboard</strong> to build and manage multiple sites, run updates, and monitor performance.`,
+							`<strong>Security</strong> across OS, network, and apps, built into the core and extended through security partners.`,
+							`<strong>WP Toolkit.</strong> Install, manage, update, and secure WordPress sites. Plesk lists AI-powered regression testing, cloning, staging, and backup and restore.`,
+							`<strong>100+ extensions.</strong> Plesk names tools like DigiCert SSL, CloudLinux, Cloudflare, Let's Encrypt, Git, NodeJS, PHP, NGINX, ImunifyAV, and Backup to Cloud Pro.`,
+							`<strong>Runs on many platforms.</strong> Plesk says it works across virtualization and container platforms and major clouds like AWS, Google, Azure, Alibaba, and DigitalOcean.`,
+							`<strong>Full root access</strong> via SSH on Plesk-powered VPS and dedicated servers.`,
+							`<strong>SolusVM</strong> for virtualization and VPS hosting.`,
+						],
+					},
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: `It doesn't, directly.` },
+					{ type: 'p', html: `I didn't find a HubSpot integration on Plesk's site or a HubSpot Marketplace listing.` },
+					{ type: 'p', html: `The only realistic connection: if a client's marketing site runs on WordPress on a Plesk-managed server, HubSpot tracking code and forms live on that site. Plesk keeps the site up. HubSpot captures what happens on it. They don't talk to each other.` },
+				],
+			},
+		],
+		pros: [
+			`One panel for many sites, which matters if you manage a lot of them.`,
+			`WP Toolkit covers the boring, important WordPress work: updates, staging, backups.`,
+			`Big extension catalog.`,
+			`Runs on most hosting setups.`,
+		],
+		cons: [
+			`Not a RevOps tool. No HubSpot connection.`,
+			`Built for people comfortable with servers. Root access and SSH aren't features most marketers want.`,
+			`If your site is on HubSpot's CMS, you don't need this at all.`,
+		],
+		after: [
+			{
+				label: 'Where it might make sense',
+				blocks: [
+					{
+						type: 'ul',
+						items: [
+							`An agency hosting a dozen client WordPress sites`,
+							`Each site runs HubSpot tracking and forms`,
+							`Plesk keeps those sites patched and backed up`,
+						],
+					},
+					{ type: 'p', html: `That's the whole fit. It's real, but it's narrow.` },
+				],
+			},
+		],
+		closing: `Right tool, different job.`,
+		cta: { label: 'Try Plesk', href: 'https://try.plesk.com/uohmer32q2su' },
+		sources: [{ text: 'Plesk homepage', href: 'https://www.plesk.com/' }],
+	},
+
+	{
+		slug: 'quicksigner',
+		name: 'QuickSigner',
+		title: 'QuickSigner and HubSpot — Jon Martin',
+		seoTitle: 'QuickSigner and HubSpot: E-Signature Through the API — Jon Martin',
+		description: `QuickSigner is a simple, lower-cost e-signature tool. No native HubSpot integration found, so the connection is an API build. What it takes and who it suits.`,
+		h1: `E-signature is the last mile of the deal.`,
+		dek: [
+			`The contract gets signed, and then someone has to remember to move the deal to Closed Won.`,
+			`QuickSigner is a simple, lower-cost e-signature tool. The catch for HubSpot teams: I couldn't confirm a native HubSpot integration. You'd connect it through its API.`,
+		],
+		category: 'E-signature',
+		facts: [
+			{ label: 'Category', value: 'E-signature' },
+			{ label: 'HubSpot integration', value: 'None confirmed', flag: true },
+			{ label: 'Connects through', value: 'REST API and webhooks' },
+			{ label: 'Signer account', value: 'Not required' },
+		],
+		sections: [
+			{
+				label: `Who it's for`,
+				blocks: [
+					{
+						type: 'ul',
+						items: [
+							`Small businesses and small teams that send contracts, NDAs, and order forms and don't want per-envelope limits.`,
+							`Teams that want to replace a bigger e-signature tool for basic signing.`,
+							`Teams with a developer, or a consultant, who can wire signing events into HubSpot.`,
+						],
+					},
+					{ type: 'p', html: `Moderate fit. Good tool for signing. HubSpot connection is a build.` },
+				],
+			},
+			{
+				label: 'What it does',
+				blocks: [
+					{ type: 'p', html: `Per QuickSigner's homepage and API page:` },
+					{
+						type: 'ol',
+						items: [
+							`<strong>Upload, add signers, send.</strong> PDF or Word. Signers get a secure link and don't need an account.`,
+							`<strong>Templates</strong> with fields and recipient roles already placed.`,
+							`<strong>Signing order:</strong> sequential or parallel.`,
+							`<strong>Reminders, tracking, and an audit trail.</strong>`,
+							`<strong>Legal and security.</strong> QuickSigner says signatures use PAdES with an Adobe Approved Trust List (AATL) certificate, that it's ISO/IEC 27001:2022 certified and GDPR compliant, and that signatures are recognized under the US ESIGN Act, UETA, and eIDAS.`,
+							`<strong>Unlimited documents on paid plans,</strong> per QuickSigner (as of Oct 13, 2026).`,
+							`<strong>A REST API</strong> with templates, embedded signing, field tags, and webhooks.`,
+						],
+					},
+				],
+			},
+			{
+				label: 'How it fits a HubSpot stack',
+				blocks: [
+					{ type: 'p', html: `I didn't find a HubSpot integration on quicksigner.com or a QuickSigner HubSpot Marketplace listing.` },
+					{ type: 'p', html: `One trap while researching: a Swedish product called QuickSign (quicksign.se) advertises a HubSpot integration. It's a different domain. Don't confuse the two.` },
+					{ type: 'p', html: `What QuickSigner does have, per its API page:` },
+					{
+						type: 'ul',
+						items: [
+							`Webhooks: <strong>RECIPIENT_SIGNED</strong> for each signer and <strong>REQUEST_COMPLETED</strong> when the document is sealed.`,
+							`Templates you can send by ID, so you don't have to upload a file each time.`,
+							`Embedded signing in an iframe.`,
+							`QuickSigner itself lists "a 'send contract' button in a CRM" as a typical API use.`,
+						],
+					},
+					{ type: 'p', html: `So a HubSpot connection would look like:` },
+					{
+						type: 'steps',
+						items: [
+							`Rep clicks a custom action on a HubSpot deal`,
+							`Your integration creates a QuickSigner request from a template`,
+							`REQUEST_COMPLETED webhook fires`,
+							`Your integration updates the deal stage and attaches the signed PDF`,
+						],
+					},
+					{ type: 'p', html: `That's a real build. Someone owns it.` },
+				],
+			},
+		],
+		pros: [
+			`Simple signing. No account needed for signers.`,
+			`Strong standards story (PAdES, AATL, ISO 27001), per QuickSigner.`,
+			`API is clearly documented, with webhooks built for "signed" events.`,
+			`Templates cut repeat setup.`,
+		],
+		cons: [
+			`No native HubSpot integration I could confirm.`,
+			`No official SDKs, per the API page. Plain REST.`,
+			`Younger product. Reviewers on its homepage mention features being added after feedback, and one calls it "not as sophisticated as the more established services."`,
+			`If you already use HubSpot's own quote or signing tools, check whether you need this at all.`,
+		],
+		closing: `A signed contract that doesn't update the deal is half a close.`,
+		cta: { label: 'Try QuickSigner', href: 'https://get.quicksigner.com/mvxowii17iqr' },
+		sources: [
+			{ text: 'QuickSigner homepage', href: 'https://www.quicksigner.com/' },
+			{ text: 'QuickSigner, eSignature API page (states "Prices and features as of October 7, 2026")', href: 'https://www.quicksigner.com/esignature-api/' },
+		],
+	},
 ];
 
 export const disclosure =
