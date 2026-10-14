@@ -1,0 +1,243 @@
+---
+import Base from '../../layouts/Base.astro';
+import { tools, disclosure, CHECKED, PUBLISHED, type Block } from '../../lib/tools';
+
+export function getStaticPaths() {
+	return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } }));
+}
+
+const { tool } = Astro.props;
+const canonical = new URL(`/tools/${tool.slug}`, Astro.site).href;
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const allSections = [...tool.sections, { label: 'Pros and cons', blocks: [] as Block[], proscons: true }, ...(tool.after ?? [])];
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	'@id': canonical,
+	headline: tool.h1,
+	name: tool.title,
+	description: tool.description,
+	url: canonical,
+	datePublished: PUBLISHED,
+	author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	publisher: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	image: new URL('/og.png', Astro.site).href,
+	inLanguage: 'en-US',
+	about: { '@type': 'Thing', name: tool.name },
+	mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+};
+---
+
+<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={schema} navBordered={false}>
+	<main id="main">
+		<section class="band hero">
+			<div class="inner">
+				<div class="edge">
+					<div class="meta">
+						<div class="cell accent">Tool review</div>
+						<div class="cell">{tool.category}</div>
+						<div class="cell">Checked {CHECKED}</div>
+						<div class="cell">Affiliate link</div>
+					</div>
+					<h1>{tool.h1}</h1>
+					<div class="dekcol">
+						{tool.dek.map((line) => <p class="dek">{line}</p>)}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="disclosure-bar">
+			<div class="inner">
+				<p class="label disclosure-top"><span class="d-tag">Disclosure</span> {disclosure}</p>
+			</div>
+		</div>
+
+		<section class="band facts">
+			<div class="inner">
+				<div class="spectable">
+					{tool.facts.map((f) => (
+						<div class="spec">
+							<span class="label spec-label">{f.label}</span>
+							<span class:list={['spec-value', { flag: f.flag }]}>{f.value}</span>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		{allSections.map((section, i) => (
+			<section class="band">
+				<div class="inner ledger">
+					<div class="rail">
+						<span class="label section-label">{pad(i + 1)} / {section.label}</span>
+						<div class="rule"></div>
+					</div>
+					<div class="content">
+						{'proscons' in section ? (
+							<div class="proscons">
+								<div class="pc">
+									<span class="label pc-label pro">Pros</span>
+									<ul class="rows">
+										{tool.pros.map((item) => <li>{item}</li>)}
+									</ul>
+								</div>
+								<div class="pc">
+									<span class="label pc-label con">Cons</span>
+									<ul class="rows">
+										{tool.cons.map((item) => <li>{item}</li>)}
+									</ul>
+								</div>
+							</div>
+						) : (
+							section.blocks.map((block) => {
+								if (block.type === 'p') return <p set:html={block.html} />;
+								if (block.type === 'ul')
+									return <ul class="rows">{block.items.map((item) => <li set:html={item} />)}</ul>;
+								return (
+									<ol class="numbered">
+										{block.items.map((item, n) => (
+											<li>
+												<span class="label n">{block.type === 'steps' ? `Step ${n + 1}` : pad(n + 1)}</span>
+												<span class="item" set:html={item} />
+											</li>
+										))}
+									</ol>
+								);
+							})
+						)}
+					</div>
+				</div>
+			</section>
+		))}
+
+		<section class="band offer">
+			<div class="inner">
+				<p class="label offer-label">The short version</p>
+				<p class="offer-statement">{tool.closing}</p>
+			</div>
+		</section>
+
+		<section class="band try" id="try">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label try-label">Try it</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<p class="try-lede">If this fits your stack, you can start with {tool.name} here.</p>
+					<a class="btn btn-primary" href={tool.cta.href} target="_blank" rel="sponsored noopener noreferrer">{tool.cta.label} &rarr;</a>
+					<p class="try-disclosure"><strong>Affiliate disclosure.</strong> {disclosure}</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="band sources">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label">Sources opened</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<ul class="srcs">
+						{tool.sources.map((s) => (
+							<li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.text}</a></li>
+						))}
+					</ul>
+					<p class="disclaimer">Figures and listing details were checked on {CHECKED} and can change. Confirm current plans and pricing on the vendor's site before you buy.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</Base>
+
+<style>
+	.band { padding: 80px 0; border-top: 1px solid var(--hairline); }
+	.band:first-child { border-top: none; }
+	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.ledger { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
+	.rail { position: sticky; top: 24px; align-self: start; }
+	.section-label { font-size: 12px; color: var(--sage); display: block; margin-bottom: 0.75rem; }
+	.rule { width: 40px; height: 2px; background: var(--mustard); }
+
+	/* hero */
+	.hero { background: var(--plum); color: var(--cream); padding: 72px 0 80px; }
+	.hero .edge { border-left: 1px solid var(--hairline-on-plum); padding-left: 18px; }
+	.meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-bottom: 1px solid var(--hairline-on-plum); margin-bottom: 40px; }
+	.cell { padding: 14px 18px; font-family: 'Courier New', Cousine, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--label-on-plum); border-right: 1px solid var(--hairline-on-plum); }
+	.cell.accent { color: var(--mustard); }
+	.hero h1 { color: var(--cream); font-size: clamp(36px, 5.6vw, 72px); font-weight: 400; line-height: 1.04; letter-spacing: -0.02em; max-width: 20ch; text-wrap: balance; margin: 0 0 36px; }
+	.dekcol { display: grid; gap: 14px; max-width: 62ch; }
+	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
+
+	/* disclosure under hero */
+	.disclosure-bar { border-bottom: 1px solid var(--hairline); padding: 14px 0; background: var(--white); }
+	.disclosure-top { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0; letter-spacing: 0.06em; }
+	.d-tag { color: var(--plum); margin-right: 0.5rem; }
+
+	/* fact strip */
+	.facts { padding: 40px 0; border-top: none; }
+	.spectable { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 28px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+	.spec { padding: 18px 0; }
+	.spec-label { font-size: 11px; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+	.spec-value { font-family: Georgia, Gelasio, serif; font-size: 20px; line-height: 1.3; color: var(--plum); }
+	.spec-value.flag { color: var(--dark-mustard); }
+
+	/* body */
+	.content p { font-size: 18px; line-height: 1.6; max-width: 62ch; margin: 0 0 1.1rem; }
+	.content p:last-child { margin-bottom: 0; }
+	.content :global(strong) { color: var(--plum); font-weight: 700; }
+
+	.rows { list-style: none; margin: 0 0 1.25rem; padding: 0; max-width: 66ch; }
+	.rows li { font-size: 18px; line-height: 1.55; padding: 16px 0; border-top: 1px solid var(--hairline); }
+	.rows li:first-child { border-top: none; padding-top: 0; }
+	.rows li:last-child { padding-bottom: 0; }
+
+	.numbered { list-style: none; margin: 0 0 1.25rem; padding: 0; max-width: 70ch; }
+	.numbered li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 20px; padding: 22px 0; border-top: 1px solid var(--hairline); align-items: start; }
+	.numbered li:first-child { border-top: none; padding-top: 0; }
+	.numbered li:last-child { padding-bottom: 0; }
+	.n { font-size: 13px; color: var(--sage); padding-top: 4px; }
+	.item { font-size: 18px; line-height: 1.55; }
+
+	.proscons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
+	.pc { min-width: 0; }
+	.pc-label { font-size: 12px; display: block; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--hairline); }
+	.pc-label.pro { color: var(--sage); }
+	.pc-label.con { color: var(--dark-mustard); }
+	.pc .rows li { font-size: 17px; }
+
+	/* closing band */
+	.offer { background: var(--mustard); padding: 56px 0; border-top: none; }
+	.offer-label { font-size: 11px; letter-spacing: 0.18em; color: var(--mustard-shade); margin: 0 0 0.75rem; }
+	.offer-statement { font-family: Georgia, Gelasio, serif; font-size: clamp(26px, 4vw, 44px); line-height: 1.14; max-width: 26ch; color: var(--charcoal); margin: 0; text-wrap: balance; }
+
+	/* try it */
+	.try { background: var(--plum); color: var(--cream); border-top: none; }
+	.try-label { color: var(--mustard); }
+	.try .content p.try-lede { font-size: 21px; color: var(--cream); margin: 0 0 1.5rem; }
+	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; }
+	.btn-primary { background: var(--mustard); color: var(--plum); }
+	.btn-primary:hover { background: var(--cream); color: var(--plum); }
+	.btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+	.try .content p.try-disclosure { font-size: 15px; color: var(--body-on-plum); margin: 1.5rem 0 0; }
+	.try-disclosure :global(strong) { color: var(--cream); }
+
+	/* sources */
+	.sources { padding: 56px 0 72px; }
+	.srcs { list-style: none; margin: 0 0 1rem; padding: 0; }
+	.srcs li { padding: 10px 0; border-top: 1px solid var(--hairline); font-size: 16px; overflow-wrap: anywhere; }
+	.srcs li:first-child { border-top: none; padding-top: 0; }
+	.disclaimer { font-size: 13px !important; color: var(--muted); }
+
+	@media (max-width: 720px) {
+		.inner { padding: 0 20px; }
+		.band { padding: 56px 0; }
+		.ledger { grid-template-columns: 1fr; gap: 28px; }
+		.rail { position: static; }
+		.numbered li { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; }
+		.cell { border-right: none; }
+	}
+</style>

@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+import { tools } from '../../lib/tools';
+
+const title = 'Tools — Jon Martin';
+const standfirst =
+	'HubSpot-adjacent tools I have read up on, with what each one does, where it fits a HubSpot stack, and where it does not.';
+const disclosure =
+	'The pages linked below contain affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.';
+const description = `${standfirst} Pages contain affiliate links.`;
+
+const canonical = new URL('/tools', Astro.site).href;
+const pad = (n: number) => String(n).padStart(2, '0');
+const countWord = tools.length === 1 ? 'page' : 'pages';
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'CollectionPage',
+	'@id': canonical,
+	name: title,
+	description,
+	url: canonical,
+	isPartOf: { '@id': 'https://thejonmartin.com/#website' },
+	mainEntity: {
+		'@type': 'ItemList',
+		itemListElement: tools.map((tool, i) => ({
+			'@type': 'ListItem',
+			position: i + 1,
+			url: new URL(`/tools/${tool.slug}`, Astro.site).href,
+			name: tool.name,
+		})),
+	},
+};
+---
+
+<Base title={title} description={description} schema={schema}>
+	<main id="main">
+		<div class="shell">
+			<section class="masthead">
+				<div class="rail">
+					<span class="label index-word">Index</span>
+					<span class="label count">{tools.length} {countWord}</span>
+				</div>
+				<div class="content">
+					<h1>Tools</h1>
+					<p class="standfirst">{standfirst}</p>
+					<p class="label disclosure"><span class="d-tag">Disclosure</span> {disclosure}</p>
+				</div>
+			</section>
+
+			<hr class="hairline" />
+
+			<ul class="list">
+				{tools.map((tool, i) => (
+					<li>
+						<a class="toolrow" href={`/tools/${tool.slug}`}>
+							<div class="rail">
+								<span class="label row-n">{pad(i + 1)}</span>
+								<span class="label row-cat">{tool.category}</span>
+							</div>
+							<div class="content">
+								<h2>{tool.name}</h2>
+								<p class="desc">{tool.description}</p>
+								<span class="label read-more">Read &rarr;</span>
+							</div>
+						</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</main>
+</Base>
+
+<style>
+	main { padding: 0 0 4rem; }
+	.shell { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.masthead, .toolrow { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
+	.masthead { padding: 64px 0 48px; }
+	.rail { display: flex; flex-direction: column; gap: 0.4rem; }
+	.index-word { font-size: 12px; color: var(--sage); }
+	.count { font-size: 11px; color: var(--muted); }
+
+	h1 { font-size: clamp(36px, 5.5vw, 64px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 1rem; }
+	.standfirst { font-size: 21px; line-height: 1.5; max-width: 56ch; margin: 0 0 1.25rem; }
+	.disclosure { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0; max-width: 80ch; letter-spacing: 0.06em; }
+	.d-tag { color: var(--plum); margin-right: 0.5rem; }
+
+	.list { list-style: none; margin: 0; padding: 0; }
+	.list li { border-top: 1px solid var(--hairline); }
+	.list li:first-child { border-top: none; }
+	.toolrow { padding: 36px 0; text-decoration: none; color: inherit; }
+	.toolrow:hover { background: var(--white); }
+	.toolrow:focus-visible { outline: 2px solid var(--plum); outline-offset: 2px; }
+	.row-n { font-size: 12px; color: var(--sage); }
+	.row-cat { font-size: 11px; color: var(--muted); }
+	.toolrow h2 { font-size: clamp(24px, 3vw, 34px); margin: 0 0 0.5rem; }
+	.desc { font-size: 18px; line-height: 1.55; max-width: 60ch; margin: 0 0 0.75rem; }
+	.read-more { font-size: 12px; color: var(--plum); border-bottom: 1px solid var(--mustard); padding-bottom: 2px; }
+
+	@media (max-width: 720px) {
+		.shell { padding: 0 20px; }
+		.masthead, .toolrow { grid-template-columns: 1fr; gap: 14px; }
+		.masthead { padding: 44px 0 32px; }
+		.rail { flex-direction: row; gap: 1rem; flex-wrap: wrap; }
+	}
+</style>
