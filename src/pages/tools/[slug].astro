@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { tools, disclosure, CHECKED, PUBLISHED, type Block } from '../../lib/tools';
+import { tools, disclosure, CHECKED, PUBLISHED, MODIFIED, type Block } from '../../lib/tools';
 
 export function getStaticPaths() {
 	return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } }));
@@ -8,6 +8,7 @@ export function getStaticPaths() {
 
 const { tool } = Astro.props;
 const canonical = new URL(`/tools/${tool.slug}`, Astro.site).href;
+const ogImage = `/og/tools/${tool.slug}.png`;
 const pad = (n: number) => String(n).padStart(2, '0');
 
 const relatedTools = (tool.related ?? [])
@@ -35,16 +36,17 @@ const schema = {
 	description: tool.description,
 	url: canonical,
 	datePublished: PUBLISHED,
+	dateModified: MODIFIED,
 	author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
 	publisher: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
-	image: new URL('/og.png', Astro.site).href,
+	image: new URL(ogImage, Astro.site).href,
 	inLanguage: 'en-US',
 	about: { '@type': 'Thing', name: tool.name },
 	mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
 };
 ---
 
-<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={[breadcrumb, schema]} navBordered={false}>
+<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={[breadcrumb, schema]} navBordered={false} ogImage={ogImage} ogType="article" publishedTime={PUBLISHED} modifiedTime={MODIFIED}>
 	<main id="main">
 		<section class="band hero">
 			<div class="inner">
