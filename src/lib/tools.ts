@@ -47,7 +47,7 @@ export const tools: Tool[] = [
 		slug: 'aircall',
 		name: 'Aircall',
 		title: 'Aircall for HubSpot Teams — Jon Martin',
-		seoTitle: 'Aircall HubSpot Integration: What It Does and Who It Fits — Jon Martin',
+		seoTitle: 'Aircall HubSpot Integration: What It Does and Who It Fits',
 		description:
 			'Aircall is a cloud phone system with one of the deepest HubSpot calling integrations. What it logs, what it costs you in setup, and who should skip it.',
 		h1: 'Calls that land on the HubSpot record.',
@@ -140,7 +140,7 @@ export const tools: Tool[] = [
 		slug: 'apollo-io',
 		name: 'Apollo.io',
 		title: 'Apollo.io for HubSpot Teams — Jon Martin',
-		seoTitle: 'Apollo.io HubSpot Integration: Push Rules to Set First — Jon Martin',
+		seoTitle: 'Apollo.io HubSpot Integration: Push Rules to Set First',
 		description:
 			"Apollo can fill your HubSpot with contacts fast. The two integrations, the push and write rules that matter, and the review score you should read before buying.",
 		h1: 'Apollo fills HubSpot fast. Set the rules first.',
@@ -241,7 +241,7 @@ export const tools: Tool[] = [
 		slug: 'capsule-and-transpond',
 		name: 'Capsule and Transpond',
 		title: 'Capsule and Transpond with HubSpot — Jon Martin',
-		seoTitle: 'Capsule CRM and Transpond with HubSpot: Do You Need Them? — Jon Martin',
+		seoTitle: 'Capsule CRM and Transpond with HubSpot: Do You Need Them?',
 		description:
 			"Capsule is a simple CRM and Transpond is its email tool. For most HubSpot teams that's a second CRM. Who they actually fit, and how the HubSpot sync works.",
 		h1: "You probably don't need Capsule.",
@@ -336,7 +336,7 @@ export const tools: Tool[] = [
 		slug: 'trainual',
 		name: 'Trainual',
 		title: 'Trainual for HubSpot Process Docs — Jon Martin',
-		seoTitle: 'Trainual for HubSpot Teams: Document How You Use HubSpot — Jon Martin',
+		seoTitle: 'Trainual for HubSpot Teams: Document How You Use HubSpot',
 		description:
 			"Trainual isn't a HubSpot tool. It's where you write down lifecycle rules, deal stage criteria, and property ownership. What it does and how Zapier connects it.",
 		h1: 'Get the HubSpot rules out of one person’s head.',
@@ -444,7 +444,7 @@ export const tools: Tool[] = [
 		slug: 'adcreative-ai',
 		name: 'AdCreative.ai',
 		title: 'AdCreative.ai and HubSpot — Jon Martin',
-		seoTitle: 'AdCreative.ai and HubSpot: Where AI Ad Creative Fits — Jon Martin',
+		seoTitle: 'AdCreative.ai and HubSpot: Where AI Ad Creative Fits',
 		description:
 			"AdCreative.ai makes banners, ad copy, and short video ads. For HubSpot teams it sits upstream of the CRM. What it does, who it fits, and what to set up first.",
 		h1: 'AdCreative.ai sits upstream of HubSpot.',
@@ -542,7 +542,7 @@ export const tools: Tool[] = [
 		slug: 'unitel-voice',
 		name: 'Unitel Voice',
 		title: 'Unitel Voice and HubSpot — Jon Martin',
-		seoTitle: 'Unitel Voice and HubSpot: A Small-Business Phone Line, Not a RevOps Tool — Jon Martin',
+		seoTitle: 'Unitel Voice and HubSpot: A Phone Line, Not a RevOps Tool',
 		description:
 			"Unitel Voice is a business phone service for solo founders and small teams. No HubSpot integration confirmed. Who it fits, who should look elsewhere, and why.",
 		h1: 'A business number for your cell, not a RevOps tool.',
@@ -639,7 +639,7 @@ export const tools: Tool[] = [
 		slug: 'seamless-ai',
 		name: 'Seamless.AI',
 		title: 'Seamless.AI and HubSpot — Jon Martin',
-		seoTitle: 'Seamless.AI and HubSpot: Import Rules to Set Before You Connect — Jon Martin',
+		seoTitle: 'Seamless.AI and HubSpot: Import Rules Before You Connect',
 		description: `Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent connection. The fine print, and the governance questions to answer first.`,
 		h1: `What happens to your database when reps click import.`,
 		dek: [
@@ -733,7 +733,7 @@ export const tools: Tool[] = [
 		slug: 'whatconverts',
 		name: 'WhatConverts',
 		title: 'WhatConverts and HubSpot — Jon Martin',
-		seoTitle: 'WhatConverts and HubSpot: Call Attribution Through Zapier — Jon Martin',
+		seoTitle: 'WhatConverts and HubSpot: Call Attribution Through Zapier',
 		description: `WhatConverts tracks calls, forms, and chats back to their marketing source. Its HubSpot link runs through Zapier. How the two flows work and where they break.`,
 		h1: `Which campaign drove that deal?`,
 		dek: [
@@ -831,7 +831,7 @@ export const tools: Tool[] = [
 		slug: 'elevenlabs',
 		name: 'ElevenLabs',
 		title: 'ElevenLabs and HubSpot — Jon Martin',
-		seoTitle: 'ElevenLabs Agents and HubSpot: What the Build Involves — Jon Martin',
+		seoTitle: 'ElevenLabs Agents and HubSpot: What the Build Involves',
 		description: `ElevenLabs' agent platform can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and the questions to settle first.`,
 		h1: `ElevenLabs agents can act in HubSpot. It's a build.`,
 		dek: [
@@ -935,7 +935,7 @@ export const tools: Tool[] = [
 		slug: 'gamma',
 		name: 'Gamma',
 		title: 'Gamma and HubSpot — Jon Martin',
-		seoTitle: 'Gamma HubSpot App: Win/Loss and QBR Decks From Your CRM Data — Jon Martin',
+		seoTitle: 'Gamma HubSpot App: Win/Loss and QBR Decks From Your CRM Data',
 		description: `Gamma builds presentations with AI, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a good first test.`,
 		h1: `Gamma's HubSpot app is aimed at the QBR deck loop.`,
 		dek: [
@@ -1034,7 +1034,7 @@ export const tools: Tool[] = [
 		slug: 'plesk',
 		name: 'Plesk',
 		title: 'Plesk and HubSpot — Jon Martin',
-		seoTitle: 'Plesk and HubSpot: A Hosting Control Panel for Agencies — Jon Martin',
+		seoTitle: 'Plesk and HubSpot: A Hosting Control Panel for Agencies',
 		description: `Plesk is a hosting and server control panel. It doesn't touch your CRM. The narrow case where it matters to a HubSpot agency, and who should skip it.`,
 		h1: `Plesk is a server control panel, not a RevOps tool.`,
 		dek: [
@@ -1130,7 +1130,7 @@ export const tools: Tool[] = [
 		slug: 'quicksigner',
 		name: 'QuickSigner',
 		title: 'QuickSigner and HubSpot — Jon Martin',
-		seoTitle: 'QuickSigner and HubSpot: E-Signature Through the API — Jon Martin',
+		seoTitle: 'QuickSigner and HubSpot: E-Signature Through the API',
 		description: `QuickSigner is a simple, lower-cost e-signature tool. No native HubSpot integration found, so the connection is an API build. What it takes and who it suits.`,
 		h1: `E-signature is the last mile of the deal.`,
 		dek: [
