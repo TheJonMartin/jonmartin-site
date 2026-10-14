@@ -72,20 +72,20 @@ const schema = {
 			<section class="band">
 				<div class="inner ledger">
 					<div class="rail">
-						<span class="label section-label">{pad(i + 1)} / {section.label}</span>
+						<h2 class="label section-label">{pad(i + 1)} / {section.label}</h2>
 						<div class="rule"></div>
 					</div>
 					<div class="content">
 						{'proscons' in section ? (
 							<div class="proscons">
 								<div class="pc">
-									<span class="label pc-label pro">Pros</span>
+									<h3 class="label pc-label pro">Pros</h3>
 									<ul class="rows">
 										{tool.pros.map((item) => <li>{item}</li>)}
 									</ul>
 								</div>
 								<div class="pc">
-									<span class="label pc-label con">Cons</span>
+									<h3 class="label pc-label con">Cons</h3>
 									<ul class="rows">
 										{tool.cons.map((item) => <li>{item}</li>)}
 									</ul>
@@ -123,7 +123,7 @@ const schema = {
 		<section class="band try" id="try">
 			<div class="inner ledger">
 				<div class="rail">
-					<span class="label section-label try-label">Try it</span>
+					<h2 class="label section-label try-label">Try it</h2>
 					<div class="rule"></div>
 				</div>
 				<div class="content">
@@ -137,7 +137,7 @@ const schema = {
 		<section class="band sources">
 			<div class="inner ledger">
 				<div class="rail">
-					<span class="label section-label">Sources opened</span>
+					<h2 class="label section-label">Sources opened</h2>
 					<div class="rule"></div>
 				</div>
 				<div class="content">
@@ -159,7 +159,7 @@ const schema = {
 	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 	.ledger { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
 	.rail { position: sticky; top: 24px; align-self: start; }
-	.section-label { font-size: 12px; color: var(--sage); display: block; margin-bottom: 0.75rem; }
+	.section-label { font-size: 12px; font-weight: 400; line-height: 1.4; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); display: block; margin: 0 0 0.75rem; }
 	.rule { width: 40px; height: 2px; background: var(--mustard); }
 
 	/* hero */
@@ -204,7 +204,7 @@ const schema = {
 
 	.proscons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
 	.pc { min-width: 0; }
-	.pc-label { font-size: 12px; display: block; margin-bottom: 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--hairline); }
+	.pc-label { font-size: 12px; font-weight: 400; line-height: 1.4; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin: 0 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--hairline); }
 	.pc-label.pro { color: var(--sage); }
 	.pc-label.con { color: var(--dark-mustard); }
 	.pc .rows li { font-size: 17px; }
