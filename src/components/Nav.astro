@@ -3,7 +3,7 @@ import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import { altitudeGroups } from '../lib/altitude-links';
 
-// Site nav: wordmark + Writing / About / HubSpot Review / Four Laws / Altitude / Waitlist.
+// Site nav: wordmark + Writing / About / HubSpot Review / Tools / Four Laws / Altitude / Waitlist.
 // Four Laws & Altitude stay <details> dropdowns (shared link lists in four-laws-links / altitude-links).
 // Waitlist → /#notify (existing NotifyForm id, not the design mock's #waitlist).
 interface Props {
@@ -17,6 +17,7 @@ const links: { href: string; text: string }[] = [
 	{ href: '/writing', text: 'Writing' },
 	{ href: '/about', text: 'About' },
 	{ href: '/hubspot-facing', text: 'HubSpot Review' },
+	{ href: '/tools', text: 'Tools' },
 ];
 
 // build.format 'file' → pathname may be '/writing.html'; strip or aria-current never matches.
@@ -25,6 +26,7 @@ const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/'
 // Writing: prefix match so posts mark the section current. Others: exact.
 const isCurrent = (href: string) => {
 	if (href === '/writing') return path === '/writing' || path.startsWith('/writing/');
+	if (href === '/tools') return path === '/tools' || path.startsWith('/tools/');
 	return path === href;
 };
 ---
