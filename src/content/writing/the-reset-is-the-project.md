@@ -8,7 +8,7 @@ tags: ['Systems', 'RevOps', 'Client Delivery']
 category: 'Client Delivery'
 ---
 
-![The Reset Is the Project](/images/writing/the-reset-is-the-project.svg)
+<img src="/images/writing/the-reset-is-the-project.svg" alt="The Reset Is the Project" width="800" height="500">
 
 They signed sixty percent of the scope. They kept one hundred percent of the picture in their head.
 

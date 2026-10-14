@@ -6,7 +6,7 @@ draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
-![Harnessing What You Can't Control](/images/writing/08-harnessing-complexity.svg)
+<img src="/images/writing/08-harnessing-complexity.svg" alt="Harnessing What You Can't Control" width="800" height="500">
 
 Seven posts in, here's the harder question underneath all of it: once you've named a problem complex instead of complicated, mapped its landscape, tuned its dials, and understood how it emerges and cascades — what do you actually do with any of that? You still have a quarter to hit.
 

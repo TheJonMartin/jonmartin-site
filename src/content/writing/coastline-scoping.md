@@ -8,7 +8,7 @@ tags: ['Systems', 'RevOps', 'Client Delivery']
 category: 'Client Delivery'
 ---
 
-![Coastline Scoping](/images/writing/coastline-scoping.svg)
+<img src="/images/writing/coastline-scoping.svg" alt="Coastline Scoping" width="800" height="500">
 
 Two teams looked at the same quote-to-cash work and published two numbers.
 

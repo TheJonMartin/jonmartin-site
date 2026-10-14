@@ -6,7 +6,7 @@ draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
-![The Interesting In-Between](/images/writing/03-interesting-in-between.svg)
+<img src="/images/writing/03-interesting-in-between.svg" alt="The Interesting In-Between" width="800" height="500">
 
 Here's a question that sounds simple and isn't: why do some RevOps systems produce genuine, useful complexity — the kind that adapts intelligently and gets better over time — while others either calcify into dead process or spiral into a mess nobody can manage?
 

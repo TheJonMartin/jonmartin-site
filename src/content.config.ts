@@ -35,6 +35,7 @@ const altitude = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		seoTitle: z.string().optional(),
+		seoDescription: z.string().optional(),
 		group: z.enum(['core', 'practice', 'delivery', 'reference']),
 		order: z.number().default(100),
 		draft: z.boolean().default(false),

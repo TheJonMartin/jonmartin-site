@@ -1,12 +1,12 @@
 ---
 title: 'Diversity, Deconstructed'
-description: '"Diversity" isn''t one thing — Scott Page breaks it into four distinct measures, and most "too much" or "too little" arguments are really about different ones.'
+description: '"Diversity" isn''t one thing. Scott Page breaks it into four measures, and most "too much" or "too little" arguments are about different ones.'
 pubDate: 2026-09-08
 draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
-![Diversity, Deconstructed](/images/writing/04-diversity-deconstructed.svg)
+<img src="/images/writing/04-diversity-deconstructed.svg" alt="Diversity, Deconstructed" width="800" height="500">
 
 "We need more diversity in our segmentation." "Our stack has gotten too diverse — too many tools doing overlapping things." I've heard both sentences from the same leadership team in the same quarter, and neither one meant anything precise, because diversity isn't one thing. It's at least four different things, and most "we have too much" or "we need more" conversations are really an argument between people measuring different quantities without realizing it.
 

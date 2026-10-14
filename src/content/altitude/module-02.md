@@ -2,6 +2,7 @@
 title: "Module 2: The Altitude Model"
 description: "L0 through L3: what each level commits to, who authors it, and how to tell them apart."
 seoTitle: "Module 2: The Altitude Model | Requirements Altitude"
+seoDescription: "The Altitude Model, L0 through L3: what each level commits to, who authors it, and how to tell a business outcome from a configuration detail."
 group: core
 order: 20
 draft: false

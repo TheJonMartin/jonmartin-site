@@ -37,8 +37,8 @@ const moduleSectionHeadings = /^module-(?:0[1-9]|1[0-2]|1[4-8])$/.test(page.id);
 <AltitudeLayout
 	title={page.data.title}
 	seoTitle={page.data.seoTitle}
-	description={page.data.description}
-	schema={articleSchema(page.data.title, page.data.description, canonical)}
+	description={page.data.seoDescription ?? page.data.description}
+	schema={articleSchema(page.data.title, page.data.seoDescription ?? page.data.description, canonical)}
 >
 	{
 		moduleSectionHeadings && (

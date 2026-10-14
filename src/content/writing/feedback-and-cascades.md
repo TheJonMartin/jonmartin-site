@@ -6,7 +6,7 @@ draft: false
 tags: ['Systems', 'RevOps', 'Complexity']
 ---
 
-![The Small Event That Wasn't Actually Small](/images/writing/07-feedback-and-cascades.svg)
+<img src="/images/writing/07-feedback-and-cascades.svg" alt="The Small Event That Wasn't Actually Small" width="800" height="500">
 
 Last post ended on hub-node fragility — what happens when someone or something knocks out the one connection everything else depends on. Here's the part that's harder to sit with: sometimes nobody has to knock anything out. Highly connected systems can build toward a state where an entirely ordinary, unremarkable event triggers a cascade all on its own. Nothing attacked anything. The system had just quietly organized itself into a shape where that was always going to happen eventually.
 

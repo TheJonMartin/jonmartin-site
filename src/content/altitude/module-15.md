@@ -2,6 +2,7 @@
 title: "Module 15: Applying the Framework to Written and Asynchronous Sources"
 description: "The same diagnostic on decks, tickets, Slack threads, and recorded walkthroughs."
 seoTitle: "Module 15 | Requirements Altitude"
+seoDescription: "Applying the altitude diagnostic to written and asynchronous sources such as decks, tickets, RFPs, Slack threads and recorded walkthroughs."
 group: reference
 order: 20
 draft: false

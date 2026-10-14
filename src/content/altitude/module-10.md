@@ -2,6 +2,7 @@
 title: "Module 10: From Tagged Notes to the Requirements Document"
 description: "How tagged, sourced statements become a document a scoping team can actually use."
 seoTitle: "Module 10 | Requirements Altitude"
+seoDescription: "How tagged, sourced statements become a requirements document a scoping team can use, and why status flags and the lower levels must stay in it."
 group: delivery
 order: 10
 draft: false

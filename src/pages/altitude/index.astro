@@ -12,6 +12,8 @@ const groups = altitudeGuideGroups;
 const title = 'Requirements Altitude';
 const description =
 	'A written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.';
+const seoDescription =
+	'A written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes, with 18 modules, practice drills and a field card.';
 const canonical = new URL('/altitude', Astro.site).href.replace(/\/$/, '');
 
 // Built from the same sections the hub renders, in that order, rather than
@@ -47,8 +49,8 @@ const schema =
 
 <AltitudeLayout
 	title={title}
-	seoTitle="Requirements Altitude"
-	description={description}
+	seoTitle="Requirements Altitude: Classify Discovery Statements L0–L3"
+	description={seoDescription}
 	ogType="website"
 	schema={schema}
 >

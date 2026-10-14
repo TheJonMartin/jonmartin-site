@@ -2,6 +2,7 @@
 title: "Module 17: Special Conditions"
 description: "Edge cases that change how the ladder runs without changing the altitudes themselves."
 seoTitle: "Module 17: Special Conditions | Requirements Altitude"
+seoDescription: "Special conditions that change how the altitude ladder runs without changing the altitudes: time-pressured discovery and difficult stakeholder dynamics."
 group: reference
 order: 30
 draft: false

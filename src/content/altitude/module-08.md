@@ -2,6 +2,7 @@
 title: "Module 8: Practice Drills"
 description: "Tagging, translation, live-fire, and conflict-mapping drills with worked transcripts."
 seoTitle: "Module 8: Practice Drills | Requirements Altitude"
+seoDescription: "Practice drills for Requirements Altitude: tagging, translation, live-fire and conflict-mapping exercises, with worked transcripts to learn from."
 group: practice
 order: 10
 draft: false

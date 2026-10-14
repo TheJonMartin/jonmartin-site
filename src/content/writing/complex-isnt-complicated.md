@@ -11,7 +11,7 @@ tags:
   - RevOps
   - Complexity
 ---
-![Complex Isn't Complicated — And That Distinction Is Costing You](/images/writing/01-complex-isnt-complicated.svg)
+<img src="/images/writing/01-complex-isnt-complicated.svg" alt="Complex Isn't Complicated — And That Distinction Is Costing You" width="800" height="500">
 
 Every RevOps leader I've talked to in the last decade has said some version of the same sentence: "our systems are so complicated."
 

@@ -10,6 +10,20 @@ const { tool } = Astro.props;
 const canonical = new URL(`/tools/${tool.slug}`, Astro.site).href;
 const pad = (n: number) => String(n).padStart(2, '0');
 
+const relatedTools = (tool.related ?? [])
+	.map((slug) => tools.find((t) => t.slug === slug))
+	.filter((t): t is (typeof tools)[number] => Boolean(t));
+
+const breadcrumb = {
+	'@context': 'https://schema.org',
+	'@type': 'BreadcrumbList',
+	itemListElement: [
+		{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
+		{ '@type': 'ListItem', position: 2, name: 'Tools', item: new URL('/tools', Astro.site).href },
+		{ '@type': 'ListItem', position: 3, name: tool.name, item: canonical },
+	],
+};
+
 const allSections = [...tool.sections, { label: 'Pros and cons', blocks: [] as Block[], proscons: true }, ...(tool.after ?? [])];
 
 const schema = {
@@ -30,7 +44,7 @@ const schema = {
 };
 ---
 
-<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={schema} navBordered={false}>
+<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={[breadcrumb, schema]} navBordered={false}>
 	<main id="main">
 		<section class="band hero">
 			<div class="inner">
@@ -150,6 +164,27 @@ const schema = {
 				</div>
 			</div>
 		</section>
+			{relatedTools.length > 0 && (
+				<section class="band related">
+					<div class="inner ledger">
+						<div class="rail">
+							<h2 class="label section-label">Related tools</h2>
+							<div class="rule"></div>
+						</div>
+						<div class="content">
+							<ul class="rows relrows">
+								{relatedTools.map((r) => (
+									<li>
+										<a href={`/tools/${r.slug}`}><strong>{r.name}</strong></a>
+										<span class="reldesc">{r.description}</span>
+									</li>
+								))}
+								<li><a class="allrow" href="/tools">All tools <span aria-hidden="true">&rarr;</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			)}
 	</main>
 </Base>
 
@@ -231,6 +266,14 @@ const schema = {
 	.srcs li { padding: 10px 0; border-top: 1px solid var(--hairline); font-size: 16px; overflow-wrap: anywhere; }
 	.srcs li:first-child { border-top: none; padding-top: 0; }
 	.disclaimer { font-size: 13px !important; color: var(--muted); }
+
+	/* related tools */
+	.related { padding: 56px 0 72px; }
+	.relrows a { color: var(--plum); text-decoration: none; border-bottom: 1px solid var(--mustard); }
+	.relrows a:hover { background: var(--white); }
+	.relrows a:focus-visible { outline: 2px solid var(--plum); outline-offset: 2px; }
+	.relrows .allrow { font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; }
+	.reldesc { display: block; font-size: 16px; line-height: 1.5; color: var(--muted); margin-top: 0.35rem; }
 
 	@media (max-width: 720px) {
 		.inner { padding: 0 20px; }
