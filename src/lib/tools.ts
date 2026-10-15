@@ -43,7 +43,7 @@ export interface Tool {
 export const CHECKED = 'Oct 13, 2026';
 export const PUBLISHED = '2026-10-14';
 /** Date the pages were last edited (CHECKED is when vendor facts were verified). Update when you change a page. */
-export const MODIFIED = '2026-10-14';
+export const MODIFIED = '2026-10-15';
 
 export const tools: Tool[] = [
 	{
@@ -342,29 +342,29 @@ export const tools: Tool[] = [
 		slug: 'trainual',
 		related: ['gamma', 'capsule-and-transpond'],
 		name: 'Trainual',
-		title: 'Trainual for HubSpot Process Docs — Jon Martin',
-		seoTitle: 'Trainual for HubSpot Teams: Document How You Use HubSpot',
+		title: 'Trainual for Team Training and Change Management — Jon Martin',
+		seoTitle: 'Trainual: Train Your Team and Manage Change',
 		description:
-			"Trainual isn't a HubSpot tool. It's where you write down lifecycle rules, deal stage criteria, and property ownership. What it does and how Zapier connects it.",
-		h1: 'Get the HubSpot rules out of one person’s head.',
+			'Trainual turns SOPs into assigned training with tests and completion tracking. How I use it to roll out process changes so they stick, and where it falls short.',
+		h1: 'A new process only counts if your team actually learns it.',
 		dek: [
-			"A lot of HubSpot portals share the same gap: the process lives in someone's head. Lifecycle stage rules. Deal stage exit criteria. Who's allowed to create properties.",
-			"Trainual isn't a HubSpot tool. It's where you write that stuff down so it stops living in one person's head.",
+			"Most process changes fail the same way. Someone announces it, someone posts a doc, and three weeks later half the team is still doing it the old way.",
+			"Trainual is where you write the process down, assign it to the right people, and see who has actually learned it.",
 		],
 		category: 'Process documentation and training',
 		facts: [
 			{ label: 'Category', value: 'SOPs and training' },
-			{ label: 'Native HubSpot integration', value: 'None confirmed', flag: true },
-			{ label: 'Connects through', value: 'Zapier' },
-			{ label: 'Fit', value: 'Indirect' },
+			{ label: 'Best for', value: 'Onboarding and change rollouts' },
+			{ label: 'Core idea', value: 'Assign, test, track' },
+			{ label: 'HubSpot needed', value: 'No' },
 		],
 		sections: [
 			{
 				label: "Who it's for",
 				blocks: [
-					{ type: 'p', html: 'Operations and RevOps leaders at growing companies who keep answering the same process questions over and over.' },
-					{ type: 'p', html: 'Sales managers onboarding new reps who need "how we use HubSpot here" documented and assigned.' },
-					{ type: 'p', html: "Fit is indirect. You won't buy Trainual for the HubSpot integration. You'd buy it to document how your team uses HubSpot." },
+					{ type: 'p', html: 'Operations leaders and managers at growing companies who keep answering the same process questions over and over.' },
+					{ type: 'p', html: 'Anyone rolling out a change (a new sales process, a new tool, a new policy) who needs to know it landed, not just that it was announced.' },
+					{ type: 'p', html: "Teams of any kind. This isn't a HubSpot tool, and it doesn't need to be one." },
 				],
 			},
 			{
@@ -388,40 +388,32 @@ export const tools: Tool[] = [
 				],
 			},
 			{
-				label: 'How it fits a HubSpot stack',
+				label: 'How it helps with change',
 				blocks: [
-					{ type: 'p', html: "I didn't find a native HubSpot integration on Trainual's site or a HubSpot Marketplace listing." },
-					{ type: 'p', html: "What is confirmed is a Zapier connection. Zapier's HubSpot + Trainual page lists:" },
-					{
-						type: 'ul',
-						items: [
-							'<strong>Trainual triggers:</strong> Subject Completed, Topic Completed, All Subjects Completed, Test Passed, Test Failed.',
-							'<strong>Trainual actions:</strong> Invite New User, Assign Roles, Assign Subjects, Archive and Unarchive User, and more.',
-						],
-					},
-					{ type: 'p', html: "Paired with HubSpot's Zapier triggers and actions, that opens up a few useful patterns:" },
+					{ type: 'p', html: 'Change management is mostly three questions. Does everyone know what changed? Do they understand it? Are they doing it?' },
 					{
 						type: 'ol',
 						items: [
-							'A rep passes the "HubSpot deal stages" test → Zapier updates a HubSpot record or adds a contact to a workflow.',
-							'A role changes → Zapier assigns that role\'s Trainual subjects.',
-							'Someone leaves → Zapier archives their Trainual user.',
+							'<strong>Know:</strong> assign the new process to the roles it affects, so it lands in front of the right people instead of a channel they may not read.',
+							'<strong>Understand:</strong> add a short test. A wrong answer shows you what the rollout failed to explain.',
+							"<strong>Do:</strong> completion tracking shows who hasn't finished. That's your follow-up list.",
 						],
 					},
-					{ type: 'p', html: 'These are Zapier builds, not one-click features. Someone has to own them.' },
+					{ type: 'p', html: 'It also helps after the rollout. Version history and stale-content reminders keep the written process matching what the team really does.' },
+					{ type: 'p', html: "Trainual can't make people follow a process. It makes it obvious who hasn't learned it yet, which is the part managers usually guess at." },
 				],
 			},
 		],
 		pros: [
-			'Gets process out of people\'s heads and into something you can assign and track.',
-			'Tests and completion tracking give you proof someone read the rules, not just a shared doc link.',
+			'Moves process out of people\'s heads and into something you can assign and track.',
+			'Tests and completion tracking give you proof someone learned the change, not just a shared doc link.',
+			'Role-based paths mean new hires and changed roles get the right material without a manual checklist.',
 			'Stale-content reminders help with the biggest documentation problem: it goes out of date.',
-			'Zapier triggers make it possible to tie training to HubSpot events.',
 		],
 		cons: [
-			'No native HubSpot integration that I could confirm. Zapier only.',
 			"It's another tool to maintain. If nobody owns the content, it becomes a graveyard of old SOPs.",
 			'Broad scope. Training, goals, meetings, KPIs: you may only need one piece.',
+			"Tracking shows completion, not behavior. You still need a manager checking the work.",
 		],
 		after: [
 			{
@@ -430,20 +422,22 @@ export const tools: Tool[] = [
 					{
 						type: 'steps',
 						items: [
-							'Document your lifecycle stage definitions',
-							'Document deal stage entry and exit criteria',
-							'Document who can create properties and why',
-							'Assign all three to every new HubSpot user',
+							'Pick one change you are about to roll out',
+							'Write it as a short subject: what changed, why, what to do now',
+							'Add a three to five question test',
+							'Assign it to the affected roles and set a due date',
+							'Follow up with whoever is still open after the deadline',
 						],
 					},
+					{ type: 'p', html: 'Trainual also connects to other tools through Zapier, if you later want training events to trigger something. Start without it.' },
 				],
 			},
 		],
-		closing: "A process that only one person knows isn't a process. It's a dependency.",
+		closing: "A change nobody can prove they learned isn't a rollout. It's an announcement.",
 		cta: { label: 'Try Trainual', href: 'https://start.trainual.com/7kqqclprayt4' },
 		sources: [
 			{ text: 'Trainual homepage', href: 'https://trainual.com/' },
-			{ text: 'Zapier, HubSpot + Trainual integrations', href: 'https://zapier.com/apps/hubspot/integrations/trainual' },
+			{ text: 'Zapier, Trainual integrations', href: 'https://zapier.com/apps/trainual/integrations' },
 		],
 	},
 
