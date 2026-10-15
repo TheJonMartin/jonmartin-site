@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import NotifyForm from '../components/NotifyForm.astro';
 import home from '../content/pages/home.json';
 import { getCollection } from 'astro:content';
 import { personSchema } from '../lib/schema';
@@ -170,7 +169,7 @@ const schema = {
 		<section class="band start-band">
 			<div class="inner ledger">
 				<div class="rail">
-					<span class="label section-label">05 / Start</span>
+					<span class="label section-label start-label">05 / Start</span>
 					<div class="rule"></div>
 				</div>
 				<div class="content">
@@ -180,21 +179,6 @@ const schema = {
 						<a class="btn btn-primary" href={APP_URL}>Run my free audit &rarr;</a>
 						<a class="start-link" href="/pricing">See plans &rarr;</a>
 					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- 06 / Diagnoses waitlist (kept: essay and Four Laws pages link to /#notify) -->
-		<section class="band waitlist-band">
-			<div class="inner ledger">
-				<div class="rail">
-					<span class="label section-label waitlist-label">06 / Diagnoses</span>
-					<div class="rule"></div>
-					<span class="label chip">Not bookable yet</span>
-				</div>
-				<div class="content">
-					<p class="lede waitlist-lead">{home.waitlistLead}</p>
-					<NotifyForm />
 				</div>
 			</div>
 		</section>
@@ -273,17 +257,14 @@ const schema = {
 	.postrow h2 { font-family: Georgia, Gelasio, serif; font-size: clamp(21px, 2.4vw, 30px); line-height: 1.22; color: var(--plum); max-width: 36ch; margin: 0 0 0.4rem; }
 	.post-desc { font-size: 17px; line-height: 1.55; max-width: 62ch; margin: 0; color: var(--charcoal); }
 
-	/* ---- 05 waitlist ---- */
-	.waitlist-band { background: var(--plum); color: var(--cream); }
-	.waitlist-band .rule { background: var(--mustard); }
-	.waitlist-label { color: var(--mustard); }
-	.start-band { background: var(--white); }
-	.start-h { color: var(--plum); font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 0 0 1rem; }
-	.start-body { font-size: 20px; line-height: 1.55; color: var(--charcoal); max-width: 52ch; margin: 0 0 2rem; }
+	/* ---- 05 start ---- */
+	.start-band { background: var(--plum); color: var(--cream); }
+	.start-band .rule { background: var(--mustard); }
+	.start-label { color: var(--mustard); }
+	.start-h { color: var(--cream); font-size: clamp(30px, 4vw, 48px); line-height: 1.1; margin: 0 0 1rem; }
+	.start-body { font-size: 20px; line-height: 1.55; color: var(--body-on-plum); max-width: 52ch; margin: 0 0 2rem; }
 	.start-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 28px; }
-	.start-link { font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--plum); border-bottom: 1px solid var(--mustard); padding-bottom: 2px; text-decoration: none; }
-	.waitlist-lead { margin-bottom: 1.5rem; color: var(--cream); }
-	.chip { display: inline-block; margin-top: 1rem; color: var(--cream); border: 1px solid var(--hairline-on-plum); padding: 6px 10px; font-size: 11px; }
+	.start-link { font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--cream); border-bottom: 1px solid var(--mustard); padding-bottom: 2px; text-decoration: none; }
 
 	@media (max-width: 720px) {
 		.inner { padding: 0 20px; }

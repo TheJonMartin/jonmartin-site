@@ -4,10 +4,19 @@
 	"heroTitle": "Know what's wrong in your HubSpot portal. Then fix it.",
 	"subhead": "Portal Audit reads your portal and hands you a scored report and a 90-day plan. It never changes anything. Portal Fixer then applies the safe cleanup items from that plan, and shows you every change before it happens.",
 	"heroMeta": [
-		{ "label": "HubSpot health audit", "accent": true },
-		{ "label": "Read-only" },
-		{ "label": "First audit free" },
-		{ "label": "Fixer: free beta" }
+		{
+			"label": "HubSpot health audit",
+			"accent": true
+		},
+		{
+			"label": "Read-only"
+		},
+		{
+			"label": "First audit free"
+		},
+		{
+			"label": "Fixer: free beta"
+		}
 	],
 	"offerStatement": "The audit never changes your portal. Fixes are optional, and you see every change first.",
 	"whoHeading": "Who this is for",
@@ -16,10 +25,22 @@
 		"Agencies and consultants who manage HubSpot for clients. The first audit for each portal is free, so run it on a client portal before you scope the work."
 	],
 	"specTable": [
-		{ "label": "Audit", "value": "Read-only" },
-		{ "label": "First audit", "value": "Free" },
-		{ "label": "Report", "value": "Scored + 90-day plan" },
-		{ "label": "Fixer", "value": "Free beta" }
+		{
+			"label": "Audit",
+			"value": "Read-only"
+		},
+		{
+			"label": "First audit",
+			"value": "Free"
+		},
+		{
+			"label": "Report",
+			"value": "Scored + 90-day plan"
+		},
+		{
+			"label": "Fixer",
+			"value": "Free beta"
+		}
 	],
 	"checksHeading": "What the audit checks",
 	"checks": [
@@ -47,6 +68,5 @@
 	"fixerNote": "Fixer covers a short, published list of fixes. Anything else on the report stays with you. Independent apps, not made or endorsed by HubSpot.",
 	"writingHeading": "Writing",
 	"startHeading": "Run the audit first.",
-	"startBody": "It's free for your first portal and starts with one install. Fixer comes after, if the plan has fixes you want applied.",
-	"waitlistLead": "Separate from the audit: I also write diagnoses for founder-led professional services firms. Leave your email to hear when they're ready."
+	"startBody": "It's free for your first portal and starts with one install. Fixer comes after, if the plan has fixes you want applied."
 }

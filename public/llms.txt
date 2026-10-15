@@ -6,7 +6,7 @@ Every public page on the site is listed below. Descriptions are taken from each 
 
 ## Main pages
 
-- [Home](https://thejonmartin.com/): Portal Audit and Portal Fixer. A free, read-only HubSpot health check with a scored report and a 90-day plan, then optional fixes applied with a preview of every change. For HubSpot admins at smaller companies and agencies or consultants who manage HubSpot for clients. Also hosts a waitlist for written diagnoses for founder-led professional services firms.
+- [Home](https://thejonmartin.com/): Portal Audit and Portal Fixer. A free, read-only HubSpot health check with a scored report and a 90-day plan, then optional fixes applied with a preview of every change. For HubSpot admins at smaller companies and agencies or consultants who manage HubSpot for clients.
 - [About](https://thejonmartin.com/about): Who Jon is and what he does — revenue operations as variety management, why the deliverable is a written diagnosis rather than a project, and where the Four Laws framework comes from.
 - [HubSpot-Facing Review](https://thejonmartin.com/hubspot-facing): A written diagnosis and 60-minute readout of what HubSpot operators hear in your product and listing, for founders, PMs, and PMMs of HubSpot-facing products. Diagnosis only — Jon doesn't implement HubSpot or build the integration.
 - [Pricing](https://audit.thejonmartin.com/pricing): Plans for the automated HubSpot health subscription: Pulse $100/mo, Guard $250/mo (+$99 one-time onboarding), Assist $500/mo (+$299 one-time onboarding); annual plans are 10x monthly, paid upfront. An automated product, with no consulting, builds or retainers. Source of truth on audit.thejonmartin.com; thejonmartin.com/pricing 301s there.
