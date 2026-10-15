@@ -1041,21 +1041,21 @@ export const tools: Tool[] = [
 		slug: 'plesk',
 		related: ['quicksigner', 'whatconverts'],
 		name: 'Plesk',
-		title: 'Plesk and HubSpot — Jon Martin',
-		seoTitle: 'Plesk and HubSpot: A Hosting Control Panel for Agencies',
-		description: `Plesk is a hosting and server control panel. It doesn't touch your CRM. The narrow case where it matters to a HubSpot agency, and who should skip it.`,
-		h1: `Plesk is a server control panel, not a RevOps tool.`,
+		title: 'Plesk for Sites Not Hosted on HubSpot — Jon Martin',
+		seoTitle: 'Plesk for Sites Not Hosted on HubSpot',
+		description: `Most SMB sites aren't hosted on HubSpot. Plesk is a control panel for running WordPress sites that still use HubSpot tracking and forms. Who it fits.`,
+		h1: `Most small business sites don't live on HubSpot. Someone still has to run them.`,
 		dek: [
-			`Plain answer: Plesk is a weak fit for RevOps and HubSpot teams.`,
-			`It's a hosting and server control panel. It helps whoever runs your web servers. It doesn't touch your CRM, your pipeline, or your reporting.`,
-			`I'm including it because some readers run agencies or manage client websites. If that's you, keep reading. If not, this isn't your tool.`,
+			`A lot of HubSpot customers never put their website on HubSpot. The site runs on WordPress or another host, and HubSpot tracking and forms get added to it.`,
+			`Plesk is a hosting and server control panel for running those sites. It isn't a RevOps tool and it doesn't touch your CRM. This page is for the people who manage the site underneath it.`,
 		],
 		category: 'Hosting control panel',
 		facts: [
 			{ label: 'Category', value: 'Hosting and server control panel' },
 			{ label: 'HubSpot integration', value: 'None found', flag: true },
+			{ label: 'Fits sites', value: 'Hosted outside HubSpot' },
 			{ label: 'Built for', value: 'Hosts, IT admins, agencies' },
-			{ label: 'Overlap with HubSpot', value: 'Narrow' },
+			
 		],
 		sections: [
 			{
@@ -1072,7 +1072,7 @@ export const tools: Tool[] = [
 							`Content managers`,
 						],
 					},
-					{ type: 'p', html: `The overlap with a HubSpot audience is narrow: agencies or consultants who also host WordPress sites for clients outside HubSpot's CMS.` },
+					{ type: 'p', html: `For a HubSpot audience, that means agencies, consultants and in-house teams who run WordPress sites outside HubSpot's CMS. That's common in the SMB segment.` },
 				],
 			},
 			{
@@ -1094,11 +1094,11 @@ export const tools: Tool[] = [
 				],
 			},
 			{
-				label: 'How it fits a HubSpot stack',
+				label: 'How it fits when your site is not on HubSpot',
 				blocks: [
-					{ type: 'p', html: `It doesn't, directly.` },
-					{ type: 'p', html: `I didn't find a HubSpot integration on Plesk's site or a HubSpot Marketplace listing.` },
-					{ type: 'p', html: `The only realistic connection: if a client's marketing site runs on WordPress on a Plesk-managed server, HubSpot tracking code and forms live on that site. Plesk keeps the site up. HubSpot captures what happens on it. They don't talk to each other.` },
+					{ type: 'p', html: `There's no direct connection. I didn't find a HubSpot integration on Plesk's site or a HubSpot Marketplace listing.` },
+					{ type: 'p', html: `The practical link is the site itself. When the marketing site runs on WordPress on a Plesk-managed server, the HubSpot tracking code and forms live on that site. Plesk keeps the site up, patched and backed up. HubSpot captures what happens on it. They don't talk to each other.` },
+					{ type: 'p', html: `That matters because a broken or half-updated site quietly breaks lead capture. Staging and backups protect the forms your pipeline depends on.` },
 				],
 			},
 		],
@@ -1111,25 +1111,26 @@ export const tools: Tool[] = [
 		cons: [
 			`Not a RevOps tool. No HubSpot connection.`,
 			`Built for people comfortable with servers. Root access and SSH aren't features most marketers want.`,
-			`If your site is on HubSpot's CMS, you don't need this at all.`,
+			`If your site is on HubSpot's CMS, you don't need this. Hosting is handled for you.`,
 		],
 		after: [
 			{
-				label: 'Where it might make sense',
+				label: 'Where it makes sense',
 				blocks: [
 					{
 						type: 'ul',
 						items: [
-							`An agency hosting a dozen client WordPress sites`,
+							`An agency or consultant hosting a handful to a few dozen client WordPress sites`,
+							`A company running its own WordPress site on a VPS or dedicated server`,
 							`Each site runs HubSpot tracking and forms`,
-							`Plesk keeps those sites patched and backed up`,
+							`Plesk keeps those sites patched, staged and backed up`,
 						],
 					},
-					{ type: 'p', html: `That's the whole fit. It's real, but it's narrow.` },
+					{ type: 'p', html: `If someone else hosts your site for you, you don't need to pick this. It's for whoever does the hosting.` },
 				],
 			},
 		],
-		closing: `Right tool, different job.`,
+		closing: `Your CRM captures the lead. Something still has to keep the form working.`,
 		cta: { label: 'Try Plesk', href: 'https://try.plesk.com/uohmer32q2su' },
 		sources: [{ text: 'Plesk homepage', href: 'https://www.plesk.com/' }],
 	},
