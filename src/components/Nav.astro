@@ -3,7 +3,7 @@ import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import { altitudeGroups } from '../lib/altitude-links';
 
-// Site nav: wordmark + Writing (dropdown) / Tools / About / Audit & Fixer (dropdown).
+// Site nav: wordmark + Writing (dropdown) / Tools / About / Audit & Fixer (one external link).
 // Writing is a <details> dropdown with three sections: All writing, Four Laws, Altitude
 // (shared link lists in four-laws-links / altitude-links).
 interface Props {
@@ -16,18 +16,14 @@ const { section, bordered = true } = Astro.props;
 const links: { href: string; text: string }[] = [
 	{ href: '/tools', text: 'Tools' },
 	{ href: '/about', text: 'About' },
+	// Portal Audit + Fixer are one product from the visitor's side; it lives on its own subdomain.
+	{ href: 'https://fix.thejonmartin.com', text: 'Audit & Fixer' },
 ];
 
 const writingSections = [
 	{ key: 'four-laws', label: 'The Four Laws', groups: fourLawsGroups },
 	{ key: 'altitude', label: 'Requirements Altitude', groups: altitudeGroups },
 ];
-// Portal Audit and Fixer live on their own subdomains (separate apps), so these are plain external links.
-const appLinks: { href: string; text: string; note: string }[] = [
-	{ href: 'https://audit.thejonmartin.com', text: 'Health Audit', note: 'A read-only check of your HubSpot portal.' },
-	{ href: 'https://fix.thejonmartin.com', text: 'Fixer', note: 'Paid plans that fix what the audit finds.' },
-];
-
 // build.format 'file' → pathname may be '/writing.html'; strip or aria-current never matches.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
 
@@ -91,19 +87,6 @@ const isCurrent = (href: string) => {
 						{link.text}
 					</a>
 				))}
-				<details class="menu apps">
-					<summary>Audit &amp; Fixer</summary>
-					<div class="panel narrow">
-						<ul>
-							{appLinks.map((link) => (
-								<li>
-									<a href={link.href}>{link.text}</a>
-									<span class="note">{link.note}</span>
-								</li>
-							))}
-						</ul>
-					</div>
-				</details>
 			</div>
 		</div>
 	</nav>
@@ -247,17 +230,6 @@ const isCurrent = (href: string) => {
 	.section .all:hover,
 	.section .all[aria-current='page'] {
 		border-bottom-color: var(--mustard);
-	}
-	.panel.narrow {
-		width: min(calc(100vw - 3rem), 18rem);
-	}
-	.panel li .note {
-		display: block;
-		font-family: Calibri, Carlito, Lato, sans-serif;
-		font-size: 0.8rem;
-		line-height: 1.4;
-		color: var(--muted);
-		margin-top: 0.15rem;
 	}
 	.group-label {
 		font-size: 11px;
