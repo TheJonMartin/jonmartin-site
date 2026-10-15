@@ -1,37 +1,52 @@
 {
-	"title": "Jon Martin — Field Report & Second Opinion",
-	"description": "I don't build it. I tell you why the last three things you built didn't work — written diagnoses for founders of $3–5M professional services businesses.",
-	"heroTitle": "You are the only person in your company with enough range to handle what comes at it.",
-	"subhead": "I founded, scaled, and sold two firms, and spent 12 years building and running RevOps functions. Every fix you've tried — the hire, the software, the SOP, the management layer — added capacity without adding range. That's why it kept breaking anyway.",
+	"title": "Jon Martin — Free HubSpot Health Audit and Fixer",
+	"description": "A free, read-only HubSpot health check with a scored report and a 90-day plan. Then Fixer applies safe cleanup, with a preview of every change.",
+	"heroTitle": "Know what's wrong in your HubSpot portal. Then fix it.",
+	"subhead": "Portal Audit reads your portal and hands you a scored report and a 90-day plan. It never changes anything. Portal Fixer then applies the safe cleanup items from that plan, and shows you every change before it happens.",
 	"heroMeta": [
-		{ "label": "Field report", "accent": true },
-		{ "label": "No. 001" },
-		{ "label": "Second opinion" },
-		{ "label": "Status: waitlist" }
+		{ "label": "HubSpot health audit", "accent": true },
+		{ "label": "Read-only" },
+		{ "label": "First audit free" },
+		{ "label": "Fixer: free beta" }
 	],
+	"offerStatement": "The audit never changes your portal. Fixes are optional, and you see every change first.",
 	"whoHeading": "Who this is for",
 	"whoParagraphs": [
-		"Founders of professional services businesses doing $3–5M in revenue — agencies, consultancies, MSPs, engineering and design firms. Somewhere between twenty and fifty people. Still founder-led, still founder-dependent: you're still the best seller, often still the best deliverer, and still in the loop on everything that matters."
+		"HubSpot admins at smaller companies who inherited the portal, or run it next to another job, and want a straight answer on what needs attention.",
+		"Agencies and consultants who manage HubSpot for clients. The first audit for each portal is free, so run it on a client portal before you scope the work."
 	],
 	"specTable": [
-		{ "label": "Revenue", "value": "$3–5M" },
-		{ "label": "Headcount", "value": "20–50" },
-		{ "label": "Shape", "value": "Founder-led" },
-		{ "label": "Constraint", "value": "You" }
+		{ "label": "Audit", "value": "Read-only" },
+		{ "label": "First audit", "value": "Free" },
+		{ "label": "Report", "value": "Scored + 90-day plan" },
+		{ "label": "Fixer", "value": "Free beta" }
 	],
-	"offerStatement": "I don't build it. I tell you why the last three things you built didn't work.",
-	"fourFixesHeading": "The four fixes",
-	"fourFixes": [
-		"You hired someone senior and they can't operate without you.",
-		"You bought software and nobody trusts what it reports.",
-		"You wrote SOPs and nobody follows them.",
-		"You added a layer of management and it turned into a game of telephone."
+	"checksHeading": "What the audit checks",
+	"checks": [
+		"Data model: unused and duplicate-looking properties, custom objects, association labels.",
+		"Pipelines: your deal and ticket stages.",
+		"Data quality: how complete the key fields are on contacts, companies, deals and tickets. It uses counts, not copies of your records.",
+		"People and access: owners, roles, super admins, and paid seats nobody has used in 90 days.",
+		"Marketing and automation: lists, forms, emails and workflows, if your plan includes them.",
+		"Security and limits: login activity, an audit-log summary, and account limits."
 	],
-	"convergenceLine": "Each of those looks like a separate problem. It isn't. They are four readings of the same missing thing.",
-	"distinctionHeading": "Capacity is more of what you already do. Range is more of what you can absorb.",
-	"capacityLabel": "Adding capacity",
-	"capacityCaption": "Seven of the same response. Handles more volume of what you've already seen.",
-	"rangeLabel": "Adding range",
-	"rangeCaption": "Seven different responses. Handles the kinds of thing you haven't seen yet.",
-	"writingHeading": "Writing"
+	"checksConvergence": "46 automated checks and 37 best-practice tests, ending in a plan for the first 30, 60 and 90 days.",
+	"fixerHeading": "The audit reads. Fixer writes, and only what you approve.",
+	"auditLabel": "Portal Audit",
+	"auditPoints": [
+		"Reads your settings and counts records.",
+		"Never creates, changes or deletes anything.",
+		"Gives you a scored report and a 90-day plan."
+	],
+	"fixerLabel": "Portal Fixer",
+	"fixerPoints": [
+		"Re-reads the portal and shows a dry-run preview of the change.",
+		"Reads each value back after writing, and restores the snapshot if it doesn't match.",
+		"Never deletes or merges records, turns on a workflow, or sends email."
+	],
+	"fixerNote": "Fixer covers a short, published list of fixes. Anything else on the report stays with you. Independent apps, not made or endorsed by HubSpot.",
+	"writingHeading": "Writing",
+	"startHeading": "Run the audit first.",
+	"startBody": "It's free for your first portal and starts with one install. Fixer comes after, if the plan has fixes you want applied.",
+	"waitlistLead": "Separate from the audit: I also write diagnoses for founder-led professional services firms. Leave your email to hear when they're ready."
 }
