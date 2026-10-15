@@ -43,7 +43,7 @@ export interface Tool {
 export const CHECKED = 'Oct 13, 2026';
 export const PUBLISHED = '2026-10-14';
 /** Date the pages were last edited (CHECKED is when vendor facts were verified). Update when you change a page. */
-export const MODIFIED = '2026-10-14';
+export const MODIFIED = '2026-10-15';
 
 export const tools: Tool[] = [
 	{
@@ -342,29 +342,29 @@ export const tools: Tool[] = [
 		slug: 'trainual',
 		related: ['gamma', 'capsule-and-transpond'],
 		name: 'Trainual',
-		title: 'Trainual for HubSpot Process Docs — Jon Martin',
-		seoTitle: 'Trainual for HubSpot Teams: Document How You Use HubSpot',
+		title: 'Trainual for Team Training and Change Management — Jon Martin',
+		seoTitle: 'Trainual: Train Your Team and Manage Change',
 		description:
-			"Trainual isn't a HubSpot tool. It's where you write down lifecycle rules, deal stage criteria, and property ownership. What it does and how Zapier connects it.",
-		h1: 'Get the HubSpot rules out of one person’s head.',
+			'Trainual turns SOPs into assigned training with tests and completion tracking. How I use it to roll out process changes so they stick, and where it falls short.',
+		h1: 'A new process only counts if your team actually learns it.',
 		dek: [
-			"A lot of HubSpot portals share the same gap: the process lives in someone's head. Lifecycle stage rules. Deal stage exit criteria. Who's allowed to create properties.",
-			"Trainual isn't a HubSpot tool. It's where you write that stuff down so it stops living in one person's head.",
+			"Most process changes fail the same way. Someone announces it, someone posts a doc, and three weeks later half the team is still doing it the old way.",
+			"Trainual is where you write the process down, assign it to the right people, and see who has actually learned it.",
 		],
 		category: 'Process documentation and training',
 		facts: [
 			{ label: 'Category', value: 'SOPs and training' },
-			{ label: 'Native HubSpot integration', value: 'None confirmed', flag: true },
-			{ label: 'Connects through', value: 'Zapier' },
-			{ label: 'Fit', value: 'Indirect' },
+			{ label: 'Best for', value: 'Onboarding and change rollouts' },
+			{ label: 'Core idea', value: 'Assign, test, track' },
+			{ label: 'HubSpot needed', value: 'No' },
 		],
 		sections: [
 			{
 				label: "Who it's for",
 				blocks: [
-					{ type: 'p', html: 'Operations and RevOps leaders at growing companies who keep answering the same process questions over and over.' },
-					{ type: 'p', html: 'Sales managers onboarding new reps who need "how we use HubSpot here" documented and assigned.' },
-					{ type: 'p', html: "Fit is indirect. You won't buy Trainual for the HubSpot integration. You'd buy it to document how your team uses HubSpot." },
+					{ type: 'p', html: 'Operations leaders and managers at growing companies who keep answering the same process questions over and over.' },
+					{ type: 'p', html: 'Anyone rolling out a change (a new sales process, a new tool, a new policy) who needs to know it landed, not just that it was announced.' },
+					{ type: 'p', html: "Teams of any kind. This isn't a HubSpot tool, and it doesn't need to be one." },
 				],
 			},
 			{
@@ -388,40 +388,32 @@ export const tools: Tool[] = [
 				],
 			},
 			{
-				label: 'How it fits a HubSpot stack',
+				label: 'How it helps with change',
 				blocks: [
-					{ type: 'p', html: "I didn't find a native HubSpot integration on Trainual's site or a HubSpot Marketplace listing." },
-					{ type: 'p', html: "What is confirmed is a Zapier connection. Zapier's HubSpot + Trainual page lists:" },
-					{
-						type: 'ul',
-						items: [
-							'<strong>Trainual triggers:</strong> Subject Completed, Topic Completed, All Subjects Completed, Test Passed, Test Failed.',
-							'<strong>Trainual actions:</strong> Invite New User, Assign Roles, Assign Subjects, Archive and Unarchive User, and more.',
-						],
-					},
-					{ type: 'p', html: "Paired with HubSpot's Zapier triggers and actions, that opens up a few useful patterns:" },
+					{ type: 'p', html: 'Change management is mostly three questions. Does everyone know what changed? Do they understand it? Are they doing it?' },
 					{
 						type: 'ol',
 						items: [
-							'A rep passes the "HubSpot deal stages" test → Zapier updates a HubSpot record or adds a contact to a workflow.',
-							'A role changes → Zapier assigns that role\'s Trainual subjects.',
-							'Someone leaves → Zapier archives their Trainual user.',
+							'<strong>Know:</strong> assign the new process to the roles it affects, so it lands in front of the right people instead of a channel they may not read.',
+							'<strong>Understand:</strong> add a short test. A wrong answer shows you what the rollout failed to explain.',
+							"<strong>Do:</strong> completion tracking shows who hasn't finished. That's your follow-up list.",
 						],
 					},
-					{ type: 'p', html: 'These are Zapier builds, not one-click features. Someone has to own them.' },
+					{ type: 'p', html: 'It also helps after the rollout. Version history and stale-content reminders keep the written process matching what the team really does.' },
+					{ type: 'p', html: "Trainual can't make people follow a process. It makes it obvious who hasn't learned it yet, which is the part managers usually guess at." },
 				],
 			},
 		],
 		pros: [
-			'Gets process out of people\'s heads and into something you can assign and track.',
-			'Tests and completion tracking give you proof someone read the rules, not just a shared doc link.',
+			'Moves process out of people\'s heads and into something you can assign and track.',
+			'Tests and completion tracking give you proof someone learned the change, not just a shared doc link.',
+			'Role-based paths mean new hires and changed roles get the right material without a manual checklist.',
 			'Stale-content reminders help with the biggest documentation problem: it goes out of date.',
-			'Zapier triggers make it possible to tie training to HubSpot events.',
 		],
 		cons: [
-			'No native HubSpot integration that I could confirm. Zapier only.',
 			"It's another tool to maintain. If nobody owns the content, it becomes a graveyard of old SOPs.",
 			'Broad scope. Training, goals, meetings, KPIs: you may only need one piece.',
+			"Tracking shows completion, not behavior. You still need a manager checking the work.",
 		],
 		after: [
 			{
@@ -430,20 +422,22 @@ export const tools: Tool[] = [
 					{
 						type: 'steps',
 						items: [
-							'Document your lifecycle stage definitions',
-							'Document deal stage entry and exit criteria',
-							'Document who can create properties and why',
-							'Assign all three to every new HubSpot user',
+							'Pick one change you are about to roll out',
+							'Write it as a short subject: what changed, why, what to do now',
+							'Add a three to five question test',
+							'Assign it to the affected roles and set a due date',
+							'Follow up with whoever is still open after the deadline',
 						],
 					},
+					{ type: 'p', html: 'Trainual also connects to other tools through Zapier, if you later want training events to trigger something. Start without it.' },
 				],
 			},
 		],
-		closing: "A process that only one person knows isn't a process. It's a dependency.",
+		closing: "A change nobody can prove they learned isn't a rollout. It's an announcement.",
 		cta: { label: 'Try Trainual', href: 'https://start.trainual.com/7kqqclprayt4' },
 		sources: [
 			{ text: 'Trainual homepage', href: 'https://trainual.com/' },
-			{ text: 'Zapier, HubSpot + Trainual integrations', href: 'https://zapier.com/apps/hubspot/integrations/trainual' },
+			{ text: 'Zapier, Trainual integrations', href: 'https://zapier.com/apps/trainual/integrations' },
 		],
 	},
 
@@ -1047,21 +1041,21 @@ export const tools: Tool[] = [
 		slug: 'plesk',
 		related: ['quicksigner', 'whatconverts'],
 		name: 'Plesk',
-		title: 'Plesk and HubSpot — Jon Martin',
-		seoTitle: 'Plesk and HubSpot: A Hosting Control Panel for Agencies',
-		description: `Plesk is a hosting and server control panel. It doesn't touch your CRM. The narrow case where it matters to a HubSpot agency, and who should skip it.`,
-		h1: `Plesk is a server control panel, not a RevOps tool.`,
+		title: 'Plesk for Sites Not Hosted on HubSpot — Jon Martin',
+		seoTitle: 'Plesk for Sites Not Hosted on HubSpot',
+		description: `Most SMB sites aren't hosted on HubSpot. Plesk is a control panel for running WordPress sites that still use HubSpot tracking and forms. Who it fits.`,
+		h1: `Most small business sites don't live on HubSpot. Someone still has to run them.`,
 		dek: [
-			`Plain answer: Plesk is a weak fit for RevOps and HubSpot teams.`,
-			`It's a hosting and server control panel. It helps whoever runs your web servers. It doesn't touch your CRM, your pipeline, or your reporting.`,
-			`I'm including it because some readers run agencies or manage client websites. If that's you, keep reading. If not, this isn't your tool.`,
+			`A lot of HubSpot customers never put their website on HubSpot. The site runs on WordPress or another host, and HubSpot tracking and forms get added to it.`,
+			`Plesk is a hosting and server control panel for running those sites. It isn't a RevOps tool and it doesn't touch your CRM. This page is for the people who manage the site underneath it.`,
 		],
 		category: 'Hosting control panel',
 		facts: [
 			{ label: 'Category', value: 'Hosting and server control panel' },
 			{ label: 'HubSpot integration', value: 'None found', flag: true },
+			{ label: 'Fits sites', value: 'Hosted outside HubSpot' },
 			{ label: 'Built for', value: 'Hosts, IT admins, agencies' },
-			{ label: 'Overlap with HubSpot', value: 'Narrow' },
+			
 		],
 		sections: [
 			{
@@ -1078,7 +1072,7 @@ export const tools: Tool[] = [
 							`Content managers`,
 						],
 					},
-					{ type: 'p', html: `The overlap with a HubSpot audience is narrow: agencies or consultants who also host WordPress sites for clients outside HubSpot's CMS.` },
+					{ type: 'p', html: `For a HubSpot audience, that means agencies, consultants and in-house teams who run WordPress sites outside HubSpot's CMS. That's common in the SMB segment.` },
 				],
 			},
 			{
@@ -1100,11 +1094,11 @@ export const tools: Tool[] = [
 				],
 			},
 			{
-				label: 'How it fits a HubSpot stack',
+				label: 'How it fits when your site is not on HubSpot',
 				blocks: [
-					{ type: 'p', html: `It doesn't, directly.` },
-					{ type: 'p', html: `I didn't find a HubSpot integration on Plesk's site or a HubSpot Marketplace listing.` },
-					{ type: 'p', html: `The only realistic connection: if a client's marketing site runs on WordPress on a Plesk-managed server, HubSpot tracking code and forms live on that site. Plesk keeps the site up. HubSpot captures what happens on it. They don't talk to each other.` },
+					{ type: 'p', html: `There's no direct connection. I didn't find a HubSpot integration on Plesk's site or a HubSpot Marketplace listing.` },
+					{ type: 'p', html: `The practical link is the site itself. When the marketing site runs on WordPress on a Plesk-managed server, the HubSpot tracking code and forms live on that site. Plesk keeps the site up, patched and backed up. HubSpot captures what happens on it. They don't talk to each other.` },
+					{ type: 'p', html: `That matters because a broken or half-updated site quietly breaks lead capture. Staging and backups protect the forms your pipeline depends on.` },
 				],
 			},
 		],
@@ -1117,25 +1111,26 @@ export const tools: Tool[] = [
 		cons: [
 			`Not a RevOps tool. No HubSpot connection.`,
 			`Built for people comfortable with servers. Root access and SSH aren't features most marketers want.`,
-			`If your site is on HubSpot's CMS, you don't need this at all.`,
+			`If your site is on HubSpot's CMS, you don't need this. Hosting is handled for you.`,
 		],
 		after: [
 			{
-				label: 'Where it might make sense',
+				label: 'Where it makes sense',
 				blocks: [
 					{
 						type: 'ul',
 						items: [
-							`An agency hosting a dozen client WordPress sites`,
+							`An agency or consultant hosting a handful to a few dozen client WordPress sites`,
+							`A company running its own WordPress site on a VPS or dedicated server`,
 							`Each site runs HubSpot tracking and forms`,
-							`Plesk keeps those sites patched and backed up`,
+							`Plesk keeps those sites patched, staged and backed up`,
 						],
 					},
-					{ type: 'p', html: `That's the whole fit. It's real, but it's narrow.` },
+					{ type: 'p', html: `If someone else hosts your site for you, you don't need to pick this. It's for whoever does the hosting.` },
 				],
 			},
 		],
-		closing: `Right tool, different job.`,
+		closing: `Your CRM captures the lead. Something still has to keep the form working.`,
 		cta: { label: 'Try Plesk', href: 'https://try.plesk.com/uohmer32q2su' },
 		sources: [{ text: 'Plesk homepage', href: 'https://www.plesk.com/' }],
 	},
