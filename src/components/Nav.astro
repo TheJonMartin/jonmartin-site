@@ -3,9 +3,9 @@ import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import { altitudeGroups } from '../lib/altitude-links';
 
-// Site nav: wordmark + Writing / About / HubSpot Review / Tools / Audit & Fixer / Four Laws / Altitude / Waitlist.
-// Four Laws & Altitude stay <details> dropdowns (shared link lists in four-laws-links / altitude-links).
-// Waitlist → /#notify (existing NotifyForm id, not the design mock's #waitlist).
+// Site nav: wordmark + Writing (dropdown) / Tools / About / Audit & Fixer (dropdown).
+// Writing is a <details> dropdown with three sections: All writing, Four Laws, Altitude
+// (shared link lists in four-laws-links / altitude-links).
 interface Props {
 	section?: 'four-laws' | 'altitude';
 	/** False on homepage — plum hero supplies the edge. */
@@ -14,12 +14,14 @@ interface Props {
 const { section, bordered = true } = Astro.props;
 
 const links: { href: string; text: string }[] = [
-	{ href: '/writing', text: 'Writing' },
-	{ href: '/about', text: 'About' },
-	{ href: '/hubspot-facing', text: 'HubSpot Review' },
 	{ href: '/tools', text: 'Tools' },
+	{ href: '/about', text: 'About' },
 ];
 
+const writingSections = [
+	{ key: 'four-laws', label: 'The Four Laws', groups: fourLawsGroups },
+	{ key: 'altitude', label: 'Requirements Altitude', groups: altitudeGroups },
+];
 // Portal Audit and Fixer live on their own subdomains (separate apps), so these are plain external links.
 const appLinks: { href: string; text: string; note: string }[] = [
 	{ href: 'https://audit.thejonmartin.com', text: 'Health Audit', note: 'A read-only check of your HubSpot portal.' },
@@ -28,6 +30,14 @@ const appLinks: { href: string; text: string; note: string }[] = [
 
 // build.format 'file' → pathname may be '/writing.html'; strip or aria-current never matches.
 const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+
+// Writing dropdown is current on essays, Four Laws pages and Altitude pages.
+const inWriting =
+	section !== undefined ||
+	path === '/writing' ||
+	path.startsWith('/writing/') ||
+	path === '/altitude' ||
+	path.startsWith('/altitude/');
 
 // Writing: prefix match so posts mark the section current. Others: exact.
 const isCurrent = (href: string) => {
@@ -47,6 +57,35 @@ const isCurrent = (href: string) => {
 				<span>Jon Martin</span>
 			</a>
 			<div class="links">
+				<details class="menu writing">
+					<summary aria-current={inWriting ? 'page' : undefined}>Writing</summary>
+					<div class="panel wide">
+						<div class="section">
+							<a class="all" href="/writing" aria-current={path === '/writing' ? 'page' : undefined}>All writing →</a>
+						</div>
+						{writingSections.map((sec) => (
+							<div class="section">
+								<span class="label section-label">{sec.label}</span>
+								<div class="groups">
+									{sec.groups.map((group) => (
+										<div class="group">
+											<span class="label group-label">{group.label}</span>
+											<ul>
+												{group.links.map((link) => (
+													<li>
+														<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
+															{link.text}
+														</a>
+													</li>
+												))}
+											</ul>
+										</div>
+									))}
+								</div>
+							</div>
+						))}
+					</div>
+				</details>
 				{links.map((link) => (
 					<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
 						{link.text}
@@ -65,49 +104,6 @@ const isCurrent = (href: string) => {
 						</ul>
 					</div>
 				</details>
-				<details class="menu four-laws">
-					<summary aria-current={section === 'four-laws' ? 'page' : undefined}>
-						Four Laws
-					</summary>
-					<div class="panel">
-						{fourLawsGroups.map((group) => (
-							<div class="group">
-								<span class="label group-label">{group.label}</span>
-								<ul>
-									{group.links.map((link) => (
-										<li>
-											<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
-												{link.text}
-											</a>
-										</li>
-									))}
-								</ul>
-							</div>
-						))}
-					</div>
-				</details>
-				<details class="menu altitude">
-					<summary aria-current={section === 'altitude' || path === '/altitude' || path.startsWith('/altitude/') ? 'page' : undefined}>
-						Altitude
-					</summary>
-					<div class="panel">
-						{altitudeGroups.map((group) => (
-							<div class="group">
-								<span class="label group-label">{group.label}</span>
-								<ul>
-									{group.links.map((link) => (
-										<li>
-											<a href={link.href} aria-current={path === link.href ? 'page' : undefined}>
-												{link.text}
-											</a>
-										</li>
-									))}
-								</ul>
-							</div>
-						))}
-					</div>
-				</details>
-				<a class="waitlist" href="/#notify">Waitlist</a>
 			</div>
 		</div>
 	</nav>
@@ -184,15 +180,6 @@ const isCurrent = (href: string) => {
 	summary[aria-current='page'] {
 		border-bottom-color: var(--mustard);
 	}
-	.waitlist {
-		color: var(--sage);
-		border-bottom-color: var(--sage);
-	}
-	.waitlist:hover {
-		color: var(--plum);
-		border-bottom-color: var(--mustard);
-	}
-
 	.menu {
 		position: static;
 	}
@@ -227,6 +214,39 @@ const isCurrent = (href: string) => {
 		flex-wrap: wrap;
 		gap: 1.5rem;
 		z-index: 20;
+	}
+	.panel.wide {
+		width: min(calc(100vw - 3rem), 52rem);
+		flex-direction: column;
+		gap: 1.25rem;
+		max-height: calc(100vh - 8rem);
+		overflow-y: auto;
+	}
+	.section-label {
+		font-size: 12px;
+		color: var(--plum);
+		display: block;
+		margin-bottom: 0.6rem;
+		padding-bottom: 0.4rem;
+		border-bottom: 1px solid var(--hairline);
+	}
+	.groups {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5rem 2rem;
+	}
+	.section .all {
+		font-family: 'Courier New', Cousine, monospace;
+		font-size: 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		color: var(--plum);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+	}
+	.section .all:hover,
+	.section .all[aria-current='page'] {
+		border-bottom-color: var(--mustard);
 	}
 	.panel.narrow {
 		width: min(calc(100vw - 3rem), 18rem);
