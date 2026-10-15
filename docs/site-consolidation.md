@@ -47,7 +47,7 @@ host changes.
   git history for the reasoning on each). `/contact` had no collision (main
   had no dedicated contact page before this) and moved over unchanged. The
   Four Laws contact form now posts to its own `/thanks-contact` rather than
-  sharing `/thanks` with the main site's waitlist form — they made different
+  sharing `/thanks` with a main-site form (since removed) — they made different
   promises in their copy, and diluting either into generic language wasn't
   worth the one file saved.
 - **Content collection renamed `pages` → `fourLaws`** in `content.config.ts`,
