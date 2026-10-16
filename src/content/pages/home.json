@@ -1,6 +1,6 @@
 {
 	"title": "Jon Martin — Free HubSpot Health Audit and Fixer",
-	"description": "A free, read-only HubSpot health check with a scored report and a 90-day plan. Then Fixer applies safe cleanup, with a preview of every change.",
+	"description": "A free HubSpot health check with a scored report and a 90-day plan. It never changes anything in your portal unless you turn on fixes.",
 	"heroTitle": "Know what's wrong in your HubSpot portal. Then fix it.",
 	"subhead": "Portal Audit reads your portal and hands you a scored report and a 90-day plan. It never changes anything. Portal Fixer then applies the safe cleanup items from that plan, and shows you every change before it happens.",
 	"heroMeta": [
