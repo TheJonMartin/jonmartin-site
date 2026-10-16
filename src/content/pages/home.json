@@ -9,7 +9,7 @@
 			"accent": true
 		},
 		{
-			"label": "Read-only"
+			"label": "No changes to your portal"
 		},
 		{
 			"label": "First audit free"
@@ -27,7 +27,7 @@
 	"specTable": [
 		{
 			"label": "Audit",
-			"value": "Read-only"
+			"value": "No changes to your portal"
 		},
 		{
 			"label": "First audit",
