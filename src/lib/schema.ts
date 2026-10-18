@@ -119,6 +119,13 @@ export function articleSchema(title: string, description: string, url: string) {
 	};
 }
 
+/** Coerces the optional schema prop (single object, array, or undefined) into an array. */
+export function toSchemaList(
+	schema?: Record<string, unknown> | Record<string, unknown>[],
+): Record<string, unknown>[] {
+	return Array.isArray(schema) ? schema : schema ? [schema] : [];
+}
+
 /**
  * BreadcrumbList: Home > Page, or Home > parent > Page when parent is passed
  * (Altitude modules). Four Laws stays two-level — nav groups have no URL.

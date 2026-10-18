@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { tools, disclosure, CHECKED, PUBLISHED, MODIFIED, type Block } from '../../lib/tools';
+import { breadcrumbSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
 	return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } }));
@@ -15,15 +16,10 @@ const relatedTools = (tool.related ?? [])
 	.map((slug) => tools.find((t) => t.slug === slug))
 	.filter((t): t is (typeof tools)[number] => Boolean(t));
 
-const breadcrumb = {
-	'@context': 'https://schema.org',
-	'@type': 'BreadcrumbList',
-	itemListElement: [
-		{ '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', Astro.site).href },
-		{ '@type': 'ListItem', position: 2, name: 'Tools', item: new URL('/tools', Astro.site).href },
-		{ '@type': 'ListItem', position: 3, name: tool.name, item: canonical },
-	],
-};
+const breadcrumb = breadcrumbSchema(tool.name, canonical, Astro.site!.href, {
+	name: 'Tools',
+	url: new URL('/tools', Astro.site).href,
+});
 
 const allSections = [...tool.sections, { label: 'Pros and cons', blocks: [] as Block[], proscons: true }, ...(tool.after ?? [])];
 

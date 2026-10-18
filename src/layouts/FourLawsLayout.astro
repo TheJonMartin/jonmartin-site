@@ -3,7 +3,7 @@ import Nav from '../components/Nav.astro';
 import SectionFooter from '../components/SectionFooter.astro';
 import SeoHead from '../components/SeoHead.astro';
 import { GA_MAIN } from '../../shared/analytics';
-import { breadcrumbSchema } from '../lib/schema';
+import { breadcrumbSchema, toSchemaList } from '../lib/schema';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import '../../shared/styles/field-and-ledger.css';
 import '../../shared/styles/section-reading.css';
@@ -40,10 +40,9 @@ const fullTitle =
 	seoTitle ?? (title.startsWith(siteName) ? title : `${title} | ${siteName}`);
 
 const breadcrumb = breadcrumbSchema(title, canonical, Astro.site!.href);
-const schemaList = [
-	breadcrumb,
-	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
-].filter((s): s is Record<string, unknown> => Boolean(s));
+const schemaList = [breadcrumb, ...toSchemaList(schema)].filter(
+	(s): s is Record<string, unknown> => Boolean(s),
+);
 
 const year = new Date().getFullYear();
 ---

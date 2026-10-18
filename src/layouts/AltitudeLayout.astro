@@ -3,7 +3,7 @@ import Nav from '../components/Nav.astro';
 import SectionFooter from '../components/SectionFooter.astro';
 import SeoHead from '../components/SeoHead.astro';
 import { GA_MAIN } from '../../shared/analytics';
-import { breadcrumbSchema } from '../lib/schema';
+import { breadcrumbSchema, toSchemaList } from '../lib/schema';
 import { altitudeGroups } from '../lib/altitude-links';
 import '../../shared/styles/field-and-ledger.css';
 import '../../shared/styles/section-reading.css';
@@ -43,10 +43,9 @@ const breadcrumb = isHub
 			name: 'Requirements Altitude',
 			url: altitudeHubUrl,
 		});
-const schemaList = [
-	breadcrumb,
-	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
-].filter((s): s is Record<string, unknown> => Boolean(s));
+const schemaList = [breadcrumb, ...toSchemaList(schema)].filter(
+	(s): s is Record<string, unknown> => Boolean(s),
+);
 
 const year = new Date().getFullYear();
 ---
