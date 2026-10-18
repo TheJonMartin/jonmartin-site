@@ -302,13 +302,14 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 				<h2 class="st-h2" id="pricing-h">Simple monthly pricing</h2>
 				<div class="st-price-card">
 					<div class="st-price-reg">
-						<span class="st-price-label">{offerActive ? 'Regular price' : 'Price'}</span>
+						<span class="st-price-label" id="st-price-label">{offerActive ? 'Regular price' : 'Price'}</span>
 						<span class="st-price-amt">$49/month</span>
+						<span class="st-price-fee">$199 one-time sign-up fee, includes HubSpot sync setup</span>
 					</div>
 					{offerActive && (
 						/* TODO(after 2026-11-01): remove this launch-offer callout block */
 						<div class="st-offer" data-offer-ends="2026-11-01T00:00:00-04:00">
-							<p class="st-offer-text">October launch offer: <strong>$39/month</strong>, locked in for as long as you stay subscribed. Sign up by October 31, 2026.</p>
+							<p class="st-offer-text">October launch offer: <strong>$39/month</strong>, locked in for as long as you stay subscribed. Sign up by October 31, 2026. No long-term commitment.</p>
 						</div>
 					)}
 				</div>
@@ -324,7 +325,11 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 				var offer = document.querySelector('[data-offer-ends]');
 				if (!offer) return;
 				var ends = new Date(offer.getAttribute('data-offer-ends'));
-				if (new Date() >= ends) offer.remove();
+				if (new Date() >= ends) {
+					offer.remove();
+					var label = document.getElementById('st-price-label');
+					if (label) label.textContent = 'Price';
+				}
 			})();
 		</script>
 
@@ -953,6 +958,12 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 		font-weight: 800;
 		letter-spacing: -0.02em;
 		color: var(--ink);
+	}
+	.steward .st-price-fee {
+		font-size: 14px;
+		font-weight: 600;
+		color: var(--muted);
+		text-align: center;
 	}
 	.steward .st-offer {
 		margin-top: 18px;
