@@ -304,12 +304,13 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 					<div class="st-price-reg">
 						<span class="st-price-label" id="st-price-label">{offerActive ? 'Regular price' : 'Price'}</span>
 						<span class="st-price-amt">$49/month</span>
-						<span class="st-price-fee">$199 one-time sign-up fee, includes HubSpot sync setup</span>
+						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes HubSpot sync setup</span>
+						<span class="st-price-terms">No long-term commitment.</span>
 					</div>
 					{offerActive && (
 						/* TODO(after 2026-11-01): remove this launch-offer callout block */
 						<div class="st-offer" data-offer-ends="2026-11-01T00:00:00-04:00">
-							<p class="st-offer-text">October launch offer: <strong>$39/month</strong>, locked in for as long as you stay subscribed. Sign up by October 31, 2026. No long-term commitment.</p>
+							<p class="st-offer-text">October launch offer: <strong>$39/month</strong>, locked in for as long as you stay subscribed. Sign up by October 31, 2026.</p>
 						</div>
 					)}
 				</div>
@@ -339,7 +340,7 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 				<div class="st-form-side">
 					<span class="st-eyebrow">Request information</span>
 					<h2 class="st-h2" id="form-h">See if Steward Ledger fits your team</h2>
-					<p class="st-lede">Tell us a little about your organization. We'll follow up to answer questions or set up a demo.</p>
+					<p class="st-lede">Tell us a little about your organization. I'll follow up to answer questions or set up a demo.</p>
 					<ul class="st-list">
 						<li>A walkthrough built around your events and packages</li>
 						<li>Straight answers about the HubSpot sync</li>
@@ -960,6 +961,12 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 		color: var(--ink);
 	}
 	.steward .st-price-fee {
+		font-size: 14px;
+		font-weight: 600;
+		color: var(--muted);
+		text-align: center;
+	}
+	.steward .st-price-terms {
 		font-size: 14px;
 		font-weight: 600;
 		color: var(--muted);
