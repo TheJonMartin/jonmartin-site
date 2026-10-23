@@ -34,7 +34,7 @@ let schema: Record<string, unknown> | undefined;
 if (page.id === 'faq') {
 	schema = faqSchema(page.body ?? '', canonical);
 } else if (page.id === 'glossary') {
-	schema = glossarySchema(page.body ?? '', canonical, Astro.site!.href);
+	schema = glossarySchema(page.body ?? '', canonical);
 } else {
 	schema = articleSchema(page.data.title, page.data.description, canonical);
 }
