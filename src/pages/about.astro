@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import about from '../content/pages/about.json';
 import ConsultingInquiryForm from '../components/ConsultingInquiryForm.astro';
-import { personSchema } from '../lib/schema';
 
 // "The short version" bio only restates facts already on this site and names no
 // employer (deliberate). Keep it that way: no new claims, no employer.
@@ -12,9 +11,9 @@ import { personSchema } from '../lib/schema';
 
 const { title, description } = about;
 
-// AboutPage + the full Person (shared with the homepage via src/lib/schema.ts)
-// in one @graph, so /about describes Jon on its own rather than only
-// pointing at an @id defined elsewhere.
+// AboutPage. The full Person (#jon) and Organization (#org) are emitted on
+// every page by SeoHead (src/lib/schema.ts), so /about still describes Jon on
+// its own; mainEntity points at that node.
 const schema = {
 	'@context': 'https://schema.org',
 	'@graph': [
@@ -28,7 +27,6 @@ const schema = {
 			description,
 			mainEntity: { '@id': 'https://thejonmartin.com/#jon' },
 		},
-		personSchema,
 	],
 };
 ---

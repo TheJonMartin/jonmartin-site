@@ -1,5 +1,6 @@
 ---
 import Analytics from './Analytics.astro';
+import { siteEntitiesSchema } from '../lib/schema';
 
 interface Props {
 	title: string;
@@ -34,7 +35,9 @@ const {
 } = Astro.props;
 
 const ogImageUrl = new URL(ogImage, Astro.site).href;
+// Organization (#org) + Person (#jon) on every page; page schema follows.
 const schemaList = [
+	siteEntitiesSchema,
 	...(Array.isArray(schema) ? schema : schema ? [schema] : []),
 ];
 ---

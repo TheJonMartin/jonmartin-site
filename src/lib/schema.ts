@@ -1,5 +1,5 @@
 /*
- * JSON-LD builders for Four Laws content. Parse page markdown rather than
+ * JSON-LD builders. Four Laws content builders Parse page markdown rather than
  * duplicating in front matter — hand-maintained schema drifts; silent absence
  * (parser returns nothing) beats a malformed block.
  */
@@ -182,3 +182,123 @@ export const personSchema = {
 		'https://github.com/TheJonMartin',
 	],
 };
+
+/**
+ * Organization for the site (#org). Only facts already on the site: name is the
+ * domain/handle, logo is the JM monogram icon (public/apple-touch-icon.png,
+ * 180x180), email is the footer address, sameAs are the profiles linked from
+ * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
+ * ratings or employee counts: none are published.
+ */
+export const organizationSchema = {
+	'@type': 'Organization',
+	'@id': 'https://thejonmartin.com/#org',
+	name: 'TheJonMartin',
+	url: 'https://thejonmartin.com/',
+	logo: {
+		'@type': 'ImageObject',
+		url: 'https://thejonmartin.com/apple-touch-icon.png',
+		width: 180,
+		height: 180,
+	},
+	email: 'mailto:jon@thejonmartin.com',
+	founder: { '@id': 'https://thejonmartin.com/#jon' },
+	sameAs: [
+		'https://x.com/TheJonMartin',
+		'https://www.instagram.com/jonmartin.co/',
+		'https://www.threads.com/@jonmartin.co',
+	],
+};
+
+/**
+ * Sitewide entity block, emitted on every page by SeoHead.astro so each page
+ * can resolve #org and #jon on its own. Pages reference them by @id instead of
+ * repeating the nodes.
+ */
+export const siteEntitiesSchema = {
+	'@context': 'https://schema.org',
+	'@graph': [organizationSchema, personSchema],
+};
+
+/**
+ * Portal Audit as a Service (homepage). Prices are the approved ones only:
+ * free audit (one per portal), Watch $19/mo, Fix free during beta then $49/mo.
+ * No annual prices, no onboarding fee. Keep in step with public/llms.txt.
+ * Never describe the app as "read-only".
+ */
+export function portalAuditSchema(description: string) {
+	const pricing = 'https://audit.thejonmartin.com/pricing';
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'Service',
+		'@id': 'https://thejonmartin.com/#portal-audit',
+		name: 'Portal Audit',
+		serviceType: 'HubSpot portal health audit',
+		description,
+		url: 'https://audit.thejonmartin.com/',
+		provider: { '@id': 'https://thejonmartin.com/#org' },
+		brand: { '@id': 'https://thejonmartin.com/#org' },
+		offers: [
+			{
+				'@type': 'Offer',
+				name: 'Free audit',
+				description: 'One free audit per portal.',
+				price: '0',
+				priceCurrency: 'USD',
+				url: pricing,
+			},
+			{
+				'@type': 'Offer',
+				name: 'Watch',
+				price: '19',
+				priceCurrency: 'USD',
+				priceSpecification: {
+					'@type': 'UnitPriceSpecification',
+					price: '19',
+					priceCurrency: 'USD',
+					unitCode: 'MON',
+					unitText: 'month',
+				},
+				url: pricing,
+			},
+			{
+				'@type': 'Offer',
+				name: 'Fix',
+				description: 'Free during beta, then $49/mo.',
+				price: '0',
+				priceCurrency: 'USD',
+				priceSpecification: [
+					{
+						'@type': 'UnitPriceSpecification',
+						name: 'During beta',
+						price: '0',
+						priceCurrency: 'USD',
+					},
+					{
+						'@type': 'UnitPriceSpecification',
+						name: 'After beta',
+						price: '49',
+						priceCurrency: 'USD',
+						unitCode: 'MON',
+						unitText: 'month',
+					},
+				],
+				url: pricing,
+			},
+		],
+	};
+}
+
+/** FAQPage from {q, a} pairs that are also rendered visibly on the page. */
+export function faqPairsSchema(pairs: { q: string; a: string }[], url: string) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		'@id': url,
+		mainEntity: pairs.map(({ q, a }) => ({
+			'@type': 'Question',
+			name: q,
+			acceptedAnswer: { '@type': 'Answer', text: a },
+		})),
+	};
+}
