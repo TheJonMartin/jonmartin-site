@@ -8,7 +8,9 @@
 # Security headers. Netlify applies every rule whose path matches, so /admin/*
 # gets both blocks. The enforced CSP only sets framing/base/object/form rules;
 # script/style/connect rules are Report-Only (browser console warnings, nothing
-# blocked) until they've been checked on a deploy preview.
+# blocked) until they've been checked on a deploy preview. Decap CMS needs
+# 'unsafe-eval' on /admin. On deploy previews only, the Netlify drawer
+# (app.netlify.com iframe) shows up as a frame-src warning; ignore it.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -22,4 +24,4 @@
 [[headers]]
   for = "/admin/*"
   [headers.values]
-    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob: https://avatars.githubusercontent.com https://raw.githubusercontent.com; connect-src 'self' https://api.github.com https://api.netlify.com https://unpkg.com; font-src 'self' data: https://unpkg.com; frame-src 'self' blob:"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: blob: https://avatars.githubusercontent.com https://raw.githubusercontent.com; connect-src 'self' https://api.github.com https://api.netlify.com https://unpkg.com; font-src 'self' data: https://unpkg.com; frame-src 'self' blob:"
