@@ -1,8 +1,10 @@
 /*
- * JSON-LD builders for Four Laws content. Parse page markdown rather than
+ * JSON-LD builders. Four Laws content builders Parse page markdown rather than
  * duplicating in front matter — hand-maintained schema drifts; silent absence
  * (parser returns nothing) beats a malformed block.
  */
+
+import { termSlug } from './glossary-anchors';
 
 /** Strips markdown links/emphasis/code to plain text for crawlers. */
 function plain(md: string): string {
@@ -51,10 +53,12 @@ export function faqSchema(body: string, url: string) {
 /**
  * DefinedTermSet from `**Term**` lines + definition beneath.
  * Convention in glossary.md: bold-only line = term, next line = definition,
- * `[Full Reference … →](…)` closes the entry.
+ * `[Full Reference … →](…)` closes the entry (kept as a visible link only).
+ * Each term's url/@id is its own anchor on the glossary (url#<slug>, id added
+ * by withTermAnchors on the page), so the definitions point at this page.
  */
-export function glossarySchema(body: string, url: string, siteUrl: string) {
-	const terms: { '@type': 'DefinedTerm'; name: string; description: string; inDefinedTermSet: string; url?: string }[] = [];
+export function glossarySchema(body: string, url: string, _siteUrl: string) {
+	const terms: { '@type': 'DefinedTerm'; '@id': string; name: string; description: string; inDefinedTermSet: string; url: string }[] = [];
 
 	const lines = body.split('\n');
 	for (let i = 0; i < lines.length; i++) {
@@ -63,23 +67,23 @@ export function glossarySchema(body: string, url: string, siteUrl: string) {
 
 		const name = plain(m[1]);
 		let description = '';
-		let anchor: string | undefined;
 		for (let j = i + 1; j < lines.length; j++) {
 			const line = lines[j].trim();
 			if (!line) { if (description) break; else continue; }
 			if (/^\*\*(.+?)\*\*$/.test(line)) break;
-			const linkOnly = line.match(/^\[.*?\]\((\/[^)]*)\)$/);
-			if (linkOnly) { anchor = linkOnly[1]; break; }
+			if (/^\[.*?\]\((\/[^)]*)\)$/.test(line)) break;
 			description += (description ? ' ' : '') + line;
 		}
 
 		if (name && description) {
+			const termUrl = `${url}#${termSlug(name)}`;
 			terms.push({
 				'@type': 'DefinedTerm',
+				'@id': termUrl,
 				name,
 				description: plain(description),
 				inDefinedTermSet: url,
-				...(anchor ? { url: new URL(anchor, siteUrl).href } : {}),
+				url: termUrl,
 			});
 		}
 	}
@@ -182,3 +186,140 @@ export const personSchema = {
 		'https://github.com/TheJonMartin',
 	],
 };
+
+/**
+ * Organization for the site (#org). Only facts already on the site: name is the
+ * domain/handle, logo is the JM monogram icon (public/apple-touch-icon.png,
+ * 180x180), email is the footer address, sameAs are the profiles linked from
+ * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
+ * ratings or employee counts: none are published.
+ */
+export const organizationSchema = {
+	'@type': 'Organization',
+	'@id': 'https://thejonmartin.com/#org',
+	name: 'TheJonMartin',
+	url: 'https://thejonmartin.com/',
+	logo: {
+		'@type': 'ImageObject',
+		url: 'https://thejonmartin.com/apple-touch-icon.png',
+		width: 180,
+		height: 180,
+	},
+	email: 'mailto:jon@thejonmartin.com',
+	founder: { '@id': 'https://thejonmartin.com/#jon' },
+	sameAs: [
+		'https://x.com/TheJonMartin',
+		'https://www.instagram.com/jonmartin.co/',
+		'https://www.threads.com/@jonmartin.co',
+	],
+};
+
+/**
+ * Sitewide entity block, emitted on every page by SeoHead.astro so each page
+ * can resolve #org and #jon on its own. Pages reference them by @id instead of
+ * repeating the nodes.
+ */
+export const siteEntitiesSchema = {
+	'@context': 'https://schema.org',
+	'@graph': [organizationSchema, personSchema],
+};
+
+/**
+ * Portal Audit as a Service (homepage). Prices are the approved ones only:
+ * free audit (one per portal), Watch $19/mo or $190/yr, Fix free during beta
+ * then $49/mo or $490/yr (annual is 10x monthly, Jon 2026-10-23). No onboarding fee. Keep in step with public/llms.txt.
+ * Never describe the app as "read-only".
+ */
+export function portalAuditSchema(description: string) {
+	const pricing = 'https://audit.thejonmartin.com/pricing';
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'Service',
+		'@id': 'https://thejonmartin.com/#portal-audit',
+		name: 'Portal Audit',
+		serviceType: 'HubSpot portal health audit',
+		description,
+		url: 'https://audit.thejonmartin.com/',
+		provider: { '@id': 'https://thejonmartin.com/#org' },
+		brand: { '@id': 'https://thejonmartin.com/#org' },
+		offers: [
+			{
+				'@type': 'Offer',
+				name: 'Free audit',
+				description: 'One free audit per portal.',
+				price: '0',
+				priceCurrency: 'USD',
+				url: pricing,
+			},
+			{
+				'@type': 'Offer',
+				name: 'Watch',
+				price: '19',
+				priceCurrency: 'USD',
+				priceSpecification: [
+					{
+						'@type': 'UnitPriceSpecification',
+						price: '19',
+						priceCurrency: 'USD',
+						unitCode: 'MON',
+						unitText: 'month',
+					},
+					{
+						'@type': 'UnitPriceSpecification',
+						price: '190',
+						priceCurrency: 'USD',
+						unitCode: 'ANN',
+						unitText: 'year',
+					},
+				],
+				url: pricing,
+			},
+			{
+				'@type': 'Offer',
+				name: 'Fix',
+				description: 'Free during beta, then $49/mo or $490/yr.',
+				price: '0',
+				priceCurrency: 'USD',
+				priceSpecification: [
+					{
+						'@type': 'UnitPriceSpecification',
+						name: 'During beta',
+						price: '0',
+						priceCurrency: 'USD',
+					},
+					{
+						'@type': 'UnitPriceSpecification',
+						name: 'After beta',
+						price: '49',
+						priceCurrency: 'USD',
+						unitCode: 'MON',
+						unitText: 'month',
+					},
+					{
+						'@type': 'UnitPriceSpecification',
+						name: 'After beta (annual)',
+						price: '490',
+						priceCurrency: 'USD',
+						unitCode: 'ANN',
+						unitText: 'year',
+					},
+				],
+				url: pricing,
+			},
+		],
+	};
+}
+
+/** FAQPage from {q, a} pairs that are also rendered visibly on the page. */
+export function faqPairsSchema(pairs: { q: string; a: string }[], url: string) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		'@id': url,
+		mainEntity: pairs.map(({ q, a }) => ({
+			'@type': 'Question',
+			name: q,
+			acceptedAnswer: { '@type': 'Answer', text: a },
+		})),
+	};
+}

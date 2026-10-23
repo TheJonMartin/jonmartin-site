@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { faqPairsSchema } from '../lib/schema';
 
 const title = 'Steward Ledger';
 const seoTitle = 'Steward Ledger: the staff-only gift ledger for nonprofits';
@@ -9,9 +10,35 @@ const description =
 // TODO(after 2026-11-01): remove the October launch offer markup, OFFER_ENDS and the expiry script from this page.
 const OFFER_ENDS = new Date('2026-11-01T00:00:00-04:00'); // midnight Nov 1, 2026 America/New_York (still EDT then)
 const offerActive = Date.now() < OFFER_ENDS.getTime();
+
+// "Common questions" (section 7). One list feeds both the visible FAQ and the
+// FAQPage JSON-LD, so the two can't drift apart.
+const faqs = [
+	{
+		q: 'Do our donors need to create an account?',
+		a: 'No. Steward Ledger is staff only. Your team signs in; donors never do.',
+	},
+	{
+		q: 'Does Steward replace HubSpot?',
+		a: "No. Steward is a gift ledger, not a full CRM. It sends contacts, companies, deals and products into HubSpot. The sync is one way, so changes made in HubSpot don't flow back into Steward.",
+	},
+	{
+		q: 'How is the deductible amount calculated?',
+		a: "It's the gift amount minus the good-faith estimate of the benefits the donor received, taken from the benefit lines on the sponsorship package. Your organization sets those estimates. Steward does the math; it doesn't give tax advice.",
+	},
+	{
+		q: 'What if someone enters a gift wrong?',
+		a: 'Void it with a reason instead of deleting it. The voided gift and its full change history stay on the record, so anyone can see what happened.',
+	},
+	{
+		q: 'Can we get our data out?',
+		a: 'Yes. You can export your records to CSV at any time.',
+	},
+];
+const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 ---
 
-<Base title={title} seoTitle={seoTitle} description={description} ogImage="/og/steward-ledger.png">
+<Base title={title} seoTitle={seoTitle} description={description} ogImage="/og/steward-ledger.png" schema={schema}>
 	<div class="steward">
 		<!-- ===== 1. HERO ===== -->
 		<section class="st-hero" aria-labelledby="hero-h">
@@ -261,36 +288,12 @@ const offerActive = Date.now() < OFFER_ENDS.getTime();
 			</div>
 			<div class="st-wrap">
 				<div class="st-faq">
-					<details>
-						<summary>Do our donors need to create an account?</summary>
-						<p>No. Steward Ledger is staff only. Your team signs in; donors never do.</p>
-					</details>
-					<details>
-						<summary>Does Steward replace HubSpot?</summary>
-						<p>
-							No. Steward is a gift ledger, not a full CRM. It sends contacts, companies, deals and products
-							into HubSpot. The sync is one way, so changes made in HubSpot don't flow back into Steward.
-						</p>
-					</details>
-					<details>
-						<summary>How is the deductible amount calculated?</summary>
-						<p>
-							It's the gift amount minus the good-faith estimate of the benefits the donor received, taken
-							from the benefit lines on the sponsorship package. Your organization sets those estimates.
-							Steward does the math; it doesn't give tax advice.
-						</p>
-					</details>
-					<details>
-						<summary>What if someone enters a gift wrong?</summary>
-						<p>
-							Void it with a reason instead of deleting it. The voided gift and its full change history stay
-							on the record, so anyone can see what happened.
-						</p>
-					</details>
-					<details>
-						<summary>Can we get our data out?</summary>
-						<p>Yes. You can export your records to CSV at any time.</p>
-					</details>
+					{faqs.map(({ q, a }) => (
+						<details>
+							<summary>{q}</summary>
+							<p>{a}</p>
+						</details>
+					))}
 				</div>
 			</div>
 		</section>

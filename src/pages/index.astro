@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import home from '../content/pages/home.json';
 import { getCollection } from 'astro:content';
-import { personSchema } from '../lib/schema';
+import { portalAuditSchema } from '../lib/schema';
 
 // Copy lives in src/content/pages/home.json so it's editable through the
 // Decap CMS at /admin without touching this template. See docs/cms-setup.md.
@@ -17,25 +17,24 @@ const fmt = (d: Date) =>
 
 // Portal Audit + Fixer are presented as one product; both buttons go to the app.
 // One constant so the destination is a one-line change.
-const APP_URL = 'https://fix.thejonmartin.com';
+const APP_URL = 'https://audit.thejonmartin.com';
 
-// '#jon' is the site-wide @id for Jon; every BlogPosting author points at it
-// rather than re-describing him. The Person itself lives in src/lib/schema.ts.
-const schema = {
+// '#jon' (Person) and '#org' (Organization) are emitted sitewide by SeoHead
+// from src/lib/schema.ts; pages point at them by @id rather than re-describing.
+const schema = [{
 	'@context': 'https://schema.org',
 	'@graph': [
-		personSchema,
 		{
 			'@type': 'WebSite',
 			'@id': 'https://thejonmartin.com/#website',
 			url: 'https://thejonmartin.com/',
 			name: 'Jon Martin',
 			description,
-			publisher: { '@id': 'https://thejonmartin.com/#jon' },
+			publisher: { '@id': 'https://thejonmartin.com/#org' },
 			inLanguage: 'en-US',
 		},
 	],
-};
+}, portalAuditSchema(description)];
 ---
 
 <Base title={title} description={description} schema={schema} navBordered={false}>
@@ -142,11 +141,28 @@ const schema = {
 			</div>
 		</section>
 
-		<!-- 04 / Writing -->
+		<!-- 04 / Start -->
+		<section class="band start-band">
+			<div class="inner ledger">
+				<div class="rail">
+					<span class="label section-label start-label">04 / Start</span>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<h2 class="start-h">{home.startHeading}</h2>
+					<p class="start-body">{home.startBody}</p>
+					<div class="start-actions">
+						<a class="btn btn-primary" href={APP_URL}>Run my free audit &rarr;</a>
+						<a class="start-link" href="/pricing">See plans &rarr;</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 05 / Writing -->
 		<section class="band">
 			<div class="inner ledger">
 				<div class="rail">
-					<span class="label section-label">04 / {home.writingHeading}</span>
+					<span class="label section-label">05 / {home.writingHeading}</span>
 					<div class="rule"></div>
 					<a class="label all-writing" href="/writing">All writing &rarr;</a>
 				</div>
@@ -165,23 +181,6 @@ const schema = {
 			</div>
 		</section>
 
-		<!-- 05 / Start -->
-		<section class="band start-band">
-			<div class="inner ledger">
-				<div class="rail">
-					<span class="label section-label start-label">05 / Start</span>
-					<div class="rule"></div>
-				</div>
-				<div class="content">
-					<h2 class="start-h">{home.startHeading}</h2>
-					<p class="start-body">{home.startBody}</p>
-					<div class="start-actions">
-						<a class="btn btn-primary" href={APP_URL}>Run my free audit &rarr;</a>
-						<a class="start-link" href="/pricing">See plans &rarr;</a>
-					</div>
-				</div>
-			</div>
-		</section>
 	</main>
 </Base>
 

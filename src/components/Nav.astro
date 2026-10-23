@@ -3,7 +3,7 @@ import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import { altitudeGroups } from '../lib/altitude-links';
 
-// Site nav: wordmark + Writing (dropdown) / Tools / About / Audit & Fixer (one external link).
+// Site nav: wordmark + Writing (dropdown) / Tools / About / Portal Audit (one external link).
 // Writing is a <details> dropdown with three sections: All writing, Four Laws, Altitude
 // (shared link lists in four-laws-links / altitude-links).
 interface Props {
@@ -16,8 +16,8 @@ const { section, bordered = true } = Astro.props;
 const links: { href: string; text: string }[] = [
 	{ href: '/tools', text: 'Tools' },
 	{ href: '/about', text: 'About' },
-	// Portal Audit + Fixer are one product from the visitor's side; it lives on its own subdomain.
-	{ href: 'https://fix.thejonmartin.com', text: 'Audit & Fixer' },
+	// Portal Audit (with Fixer) lives on its own subdomain.
+	{ href: 'https://audit.thejonmartin.com', text: 'Portal Audit' },
 ];
 
 const writingSections = [
