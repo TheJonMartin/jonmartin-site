@@ -85,6 +85,10 @@ const schema =
 					</ul>
 				)
 			}
+
+			<p class="related">
+				Related: <a href="/conways-law-revops-team-structure">Conway’s Law and Your RevOps Team Structure</a>
+			</p>
 		</div>
 	</main>
 </Base>
@@ -101,6 +105,8 @@ const schema =
 	.standfirst { font-size: 20px; line-height: 1.55; max-width: 56ch; margin: 0; }
 
 	.list { list-style: none; margin: 0; padding: 0; }
+	.related { border-top: 1px solid var(--hairline); padding-top: 24px; margin: 0; font-size: 16px; color: var(--muted); }
+	.related a { color: inherit; }
 	.postrow {
 		display: grid;
 		grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr);
