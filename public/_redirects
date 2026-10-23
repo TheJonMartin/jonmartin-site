@@ -1,5 +1,13 @@
+# www HubSpot-era URLs: go straight to the final page in one hop (keep above the path rules).
+https://www.thejonmartin.com/blog/author/*     https://thejonmartin.com/about     301!
+https://www.thejonmartin.com/blog              https://thejonmartin.com/writing   301!
+https://www.thejonmartin.com/blog/*            https://thejonmartin.com/writing   301!
+https://www.thejonmartin.com/starter-package   https://thejonmartin.com/          301!
+https://www.thejonmartin.com/premium-package   https://thejonmartin.com/          301!
+
 # Old HubSpot URLs. Order matters — Netlify stops at the first match. /blog → /writing.
 /blog                /writing    301
+/blog/author/*        /about      301
 /blog/*               /writing   301
 /starter-package     /           301
 /premium-package     /           301
