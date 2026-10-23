@@ -17,3 +17,8 @@
 /thanks/              /           301
 /tools/               /tools      301
 /steward-ledger/      /steward-ledger 301
+
+# Retired HubSpot-Facing Review (Oct 23, 2026) -> Portal Audit.
+/hubspot-facing       https://audit.thejonmartin.com  301
+/hubspot-facing/      https://audit.thejonmartin.com  301
+/hubspot-facing.html  https://audit.thejonmartin.com  301
