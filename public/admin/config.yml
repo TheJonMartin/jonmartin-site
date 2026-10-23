@@ -11,6 +11,8 @@ backend:
   name: github
   repo: TheJonMartin/jonmartin-site
   branch: main
+  # The repo is public, so the CMS only needs public_repo, not the default repo scope (all repos).
+  auth_scope: public_repo
 
 # Lets `npx decap-server` run a local git proxy so changes can be tested with
 # `npm run dev` without going through GitHub OAuth at all. Only used when

@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.1.6"
+    "astro": "^7.4.1"
   },
   "devDependencies": {
     "linkedom": "^0.18.13"
