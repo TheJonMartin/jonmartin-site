@@ -35,7 +35,6 @@ const cleanPath = Astro.url.pathname
 	.replace(/\.html$/, '');
 const canonical = new URL(cleanPath, Astro.site).href.replace(/\/$/, '');
 
-// Title suffix only. og:site_name is "Jon Martin" so the entity matches the rest of the site.
 const siteName = 'Four Laws of Complex System Design';
 const fullTitle =
 	seoTitle ?? (title.startsWith(siteName) ? title : `${title} | ${siteName}`);
@@ -58,7 +57,7 @@ const year = new Date().getFullYear();
 			canonical={canonical}
 			ogImage={ogImage}
 			ogType={ogType}
-			siteName="Jon Martin"
+			siteName={siteName}
 			schema={schemaList}
 			noindex={noindex}
 			analyticsId={GA_MAIN}
