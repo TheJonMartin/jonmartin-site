@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import FourLawsLayout from '../layouts/FourLawsLayout.astro';
 import CrossSiteCTA from '../components/CrossSiteCTA.astro';
 import { articleSchema, faqSchema, glossarySchema } from '../lib/schema';
+import { withTermAnchors } from '../lib/glossary-anchors';
 
 // One route for every markdown page in the fourLaws collection; the entry id
 // (filename without extension) is the URL.
@@ -18,6 +19,11 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 
 const canonical = new URL(`/${page.id}`, Astro.site).href;
+
+// /glossary: same rendered markdown, plus an id on each term so the
+// DefinedTerm url/@id (glossary#<slug>) resolves on the page.
+const glossaryHtml =
+	page.id === 'glossary' && page.rendered?.html ? withTermAnchors(page.rendered.html) : undefined;
 
 // Schema is derived from the page's own markdown/front matter (see
 // lib/schema.ts) rather than declared per-page, so it can't drift from the
@@ -43,7 +49,7 @@ if (page.id === 'faq') {
 	<article>
 		<span class="label eyebrow">{page.data.group}</span>
 		<h1>{page.data.title}</h1>
-		<Content />
+		{glossaryHtml ? <Fragment set:html={glossaryHtml} /> : <Content />}
 	</article>
 
 	<CrossSiteCTA />

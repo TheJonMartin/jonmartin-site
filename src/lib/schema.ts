@@ -4,6 +4,8 @@
  * (parser returns nothing) beats a malformed block.
  */
 
+import { termSlug } from './glossary-anchors';
+
 /** Strips markdown links/emphasis/code to plain text for crawlers. */
 function plain(md: string): string {
 	return md
@@ -51,10 +53,12 @@ export function faqSchema(body: string, url: string) {
 /**
  * DefinedTermSet from `**Term**` lines + definition beneath.
  * Convention in glossary.md: bold-only line = term, next line = definition,
- * `[Full Reference … →](…)` closes the entry.
+ * `[Full Reference … →](…)` closes the entry (kept as a visible link only).
+ * Each term's url/@id is its own anchor on the glossary (url#<slug>, id added
+ * by withTermAnchors on the page), so the definitions point at this page.
  */
-export function glossarySchema(body: string, url: string, siteUrl: string) {
-	const terms: { '@type': 'DefinedTerm'; name: string; description: string; inDefinedTermSet: string; url?: string }[] = [];
+export function glossarySchema(body: string, url: string, _siteUrl: string) {
+	const terms: { '@type': 'DefinedTerm'; '@id': string; name: string; description: string; inDefinedTermSet: string; url: string }[] = [];
 
 	const lines = body.split('\n');
 	for (let i = 0; i < lines.length; i++) {
@@ -63,23 +67,23 @@ export function glossarySchema(body: string, url: string, siteUrl: string) {
 
 		const name = plain(m[1]);
 		let description = '';
-		let anchor: string | undefined;
 		for (let j = i + 1; j < lines.length; j++) {
 			const line = lines[j].trim();
 			if (!line) { if (description) break; else continue; }
 			if (/^\*\*(.+?)\*\*$/.test(line)) break;
-			const linkOnly = line.match(/^\[.*?\]\((\/[^)]*)\)$/);
-			if (linkOnly) { anchor = linkOnly[1]; break; }
+			if (/^\[.*?\]\((\/[^)]*)\)$/.test(line)) break;
 			description += (description ? ' ' : '') + line;
 		}
 
 		if (name && description) {
+			const termUrl = `${url}#${termSlug(name)}`;
 			terms.push({
 				'@type': 'DefinedTerm',
+				'@id': termUrl,
 				name,
 				description: plain(description),
 				inDefinedTermSet: url,
-				...(anchor ? { url: new URL(anchor, siteUrl).href } : {}),
+				url: termUrl,
 			});
 		}
 	}
