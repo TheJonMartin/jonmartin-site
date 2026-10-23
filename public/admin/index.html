@@ -7,10 +7,12 @@
 		<title>Content Manager — Jon Martin</title>
 	</head>
 	<body>
-		<!-- Loaded from unpkg per Decap's own quickstart docs — this is the
-		     standard way to run it, no build step or npm dependency needed.
-		     The ^3.0.0 range is Decap's own recommendation so patch/minor
-		     fixes arrive automatically; see docs/cms-setup.md. -->
-		<script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+		<!-- Loaded from unpkg per Decap's own quickstart docs — no build step
+		     or npm dependency needed. Pinned to an exact version with a
+		     Subresource Integrity hash; to upgrade, change the version and
+		     recompute the hash with:
+		     curl -sL https://unpkg.com/decap-cms@X.Y.Z/dist/decap-cms.js | openssl dgst -sha384 -binary | openssl base64 -A
+		     (prefix the result with sha384-). -->
+		<script src="https://unpkg.com/decap-cms@3.17.1/dist/decap-cms.js" integrity="sha384-d2pbrhjc5asvSK35gKkrgRIk0Wq+2CQynWnXtSsYWQawXCgBXhcAK737jBAKXT4T" crossorigin="anonymous"></script>
 	</body>
 </html>
