@@ -30,3 +30,6 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 /hubspot-facing       https://audit.thejonmartin.com  301
 /hubspot-facing/      https://audit.thejonmartin.com  301
 /hubspot-facing.html  https://audit.thejonmartin.com  301
+
+# Dead WordPress-era posts: gone for good.
+/2011/*               /404.html   410
