@@ -6,7 +6,7 @@
  *     fill." One departure, not a precedent for more.
  *   - Never pure black (#000). Charcoal is the dark extreme; --white exists
  *     now for the one section that deliberately isn't cream (see the
- *     capacity/range diagram), not as a general substitute for cream.
+ *     audit/Fixer two-panel diagram), not as a general substitute for cream.
  *   - Dividers are hairlines. No heavy rules, no boxes-within-boxes.
  *   - Two font families, plus Courier New (Cousine as its open-source
  *     metric-compatible fallback) strictly for labels, tags, and
@@ -35,8 +35,8 @@
 	--hairline: rgba(74, 51, 82, 0.2);
 	--muted: #6b6560;
 
-	/* Cream-on-plum variants for the hero/waitlist bands — same cream at
-	   different opacities rather than a second color family. */
+	/* Cream-on-plum variants for the hero and other plum-background bands —
+	   same cream at different opacities rather than a second color family. */
 	--hairline-on-plum: rgba(250, 246, 239, 0.16);
 	--body-on-plum: rgba(250, 246, 239, 0.9);
 	--label-on-plum: rgba(250, 246, 239, 0.72);

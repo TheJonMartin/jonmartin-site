@@ -10,7 +10,7 @@ export const config = {
 		// expected-noindex route, so noindex and sitemap checks still run for it.
 		// /admin is not expected-noindex, so it stays out of those too.
 		excludeFromContentChecks: ['/404', '/admin'],
-		expectedNoindex: ['/thanks', '/thanks-contact', '/thanks-consulting', '/404'],
+		expectedNoindex: ['/thanks-contact', '/thanks-consulting', '/thanks-steward', '/404'],
 		// Short by design (tools / contact form) — exempt from thin-content check only.
 		thinContentExempt: ['/contact', '/flow-formula-calculator', '/part8-flow-diagnostic'],
 	},
