@@ -16,7 +16,7 @@ const faqs = [
 	},
 	{
 		q: 'Does Steward replace HubSpot?',
-		a: "No. Steward is a gift ledger, not a full CRM. It syncs contacts, companies, deals and products with HubSpot in both directions, so changes made in either place show up in the other.",
+		a: "No. Steward is a gift ledger, not a full CRM. It sends people, organizations, gifts (as deals) and sponsorship packages to HubSpot. You can also opt in to two-way sync for contact and company details. It's off by default, and gift amounts never change from HubSpot.",
 	},
 	{
 		q: 'How is the deductible amount calculated?',
@@ -55,7 +55,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 					<ul class="st-pills" aria-label="At a glance">
 						<li>Staff only</li>
 						<li>Donors never sign in</li>
-						<li>Two-way sync with HubSpot</li>
+						<li>HubSpot sync, opt-in two-way</li>
 					</ul>
 				</div>
 				<div class="st-card" aria-label="Example sponsorship gift (illustration)">
@@ -172,8 +172,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 						<div class="st-ico">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 5v14"/></svg>
 						</div>
-						<h3>Two-way sync with HubSpot</h3>
-						<p>Contacts, companies, deals and products stay in sync between Steward and HubSpot, both directions. Send a HubSpot payment link for any sponsorship package.</p>
+						<h3>HubSpot sync</h3>
+						<p>Steward sends people, organizations, gifts (as deals) and sponsorship packages to HubSpot. Optional two-way sync, off by default, brings contact and company detail changes back. Gift amounts never change from HubSpot.</p>
 					</article>
 					<article class="st-feat">
 						<div class="st-ico">
@@ -263,8 +263,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 							every change is logged.
 						</li>
 						<li>
-							<strong>Your CRM stays your CRM</strong>Steward is a gift ledger, not a full CRM. It keeps
-							contacts, companies, deals and products in sync with HubSpot, both ways.
+							<strong>Your CRM stays your CRM</strong>Steward is a gift ledger, not a full CRM. It sends people,
+							organizations, gifts and packages to HubSpot, with optional two-way sync for contact and company details.
 						</li>
 					</ul>
 					<p class="st-fine">
@@ -304,7 +304,6 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 						<span class="st-price-label">Price</span>
 						<span class="st-price-amt">$29/month</span>
 						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes HubSpot sync setup</span>
-						<span class="st-price-terms">No long-term commitment.</span>
 					</div>
 				</div>
 				<div class="st-ctas st-center">
