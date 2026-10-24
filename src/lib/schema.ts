@@ -234,7 +234,8 @@ export const siteEntitiesSchema = {
 
 /**
  * Portal Audit as a Service (homepage). Prices are the approved ones only:
- * free audit (one per portal), Watch $19/mo or $190/yr, Fix free during beta
+ * free audit (one per portal), Watch $19/mo or $190/yr, Watch Weekly $29/mo or
+ * $290/yr (weekly audits, Jon 2026-10-24), Fix free during beta
  * then $49/mo or $490/yr (annual is 10x monthly, Jon 2026-10-23). No onboarding fee. Keep in step with public/llms.txt.
  * Never describe the app as "read-only".
  */
@@ -275,6 +276,30 @@ export function portalAuditSchema(description: string) {
 					{
 						'@type': 'UnitPriceSpecification',
 						price: '190',
+						priceCurrency: 'USD',
+						unitCode: 'ANN',
+						unitText: 'year',
+					},
+				],
+				url: pricing,
+			},
+			{
+				'@type': 'Offer',
+				name: 'Watch Weekly',
+				description: 'Weekly audits.',
+				price: '29',
+				priceCurrency: 'USD',
+				priceSpecification: [
+					{
+						'@type': 'UnitPriceSpecification',
+						price: '29',
+						priceCurrency: 'USD',
+						unitCode: 'MON',
+						unitText: 'month',
+					},
+					{
+						'@type': 'UnitPriceSpecification',
+						price: '290',
 						priceCurrency: 'USD',
 						unitCode: 'ANN',
 						unitText: 'year',
