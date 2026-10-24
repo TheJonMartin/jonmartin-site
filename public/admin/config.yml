@@ -148,6 +148,7 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Mustard accent", name: "accent", widget: "boolean", default: false, required: false }
+          - { label: "Offer statement (mustard band)", name: "offerStatement", widget: "text" }
           - { label: '"Who this is for" heading', name: "whoHeading", widget: "string" }
           - label: '"Who this is for" paragraphs'
             name: "whoParagraphs"
@@ -159,22 +160,30 @@ collections:
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Value", name: "value", widget: "string" }
-          - { label: "Offer statement (mustard band)", name: "offerStatement", widget: "text" }
-          - { label: '"Four fixes" heading', name: "fourFixesHeading", widget: "string" }
-          - label: "Four fixes (each its own numbered row)"
-            name: "fourFixes"
+          - { label: '"What the audit checks" heading', name: "checksHeading", widget: "string" }
+          - label: "Audit checks (each its own numbered row)"
+            name: "checks"
             widget: "list"
-            field: { label: "Fix", name: "fix", widget: "text" }
+            field: { label: "Check", name: "check", widget: "text" }
           - {
-              label: "Convergence line (closes the four fixes section)",
-              name: "convergenceLine",
+              label: "Checks convergence line (closes the checks section)",
+              name: "checksConvergence",
               widget: "text",
             }
-          - { label: '"Distinction" section heading', name: "distinctionHeading", widget: "text" }
-          - { label: "Capacity bar-diagram label", name: "capacityLabel", widget: "string" }
-          - { label: "Capacity bar-diagram caption", name: "capacityCaption", widget: "text" }
-          - { label: "Range bar-diagram label", name: "rangeLabel", widget: "string" }
-          - { label: "Range bar-diagram caption", name: "rangeCaption", widget: "text" }
+          - { label: '"How fixes work" heading', name: "fixerHeading", widget: "text" }
+          - { label: "Audit panel label", name: "auditLabel", widget: "string" }
+          - label: "Audit panel bullet points"
+            name: "auditPoints"
+            widget: "list"
+            field: { label: "Point", name: "point", widget: "text" }
+          - { label: "Fixer panel label", name: "fixerLabel", widget: "string" }
+          - label: "Fixer panel bullet points"
+            name: "fixerPoints"
+            widget: "list"
+            field: { label: "Point", name: "point", widget: "text" }
+          - { label: "Fixer disclaimer", name: "fixerNote", widget: "text" }
+          - { label: '"Start" section heading', name: "startHeading", widget: "text" }
+          - { label: "Start section body", name: "startBody", widget: "text" }
           - { label: '"Writing" section heading', name: "writingHeading", widget: "string" }
 
       - name: "writing-index"
