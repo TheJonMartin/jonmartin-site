@@ -33,8 +33,8 @@ export const altitudeGroups: { label: string; links: { href: string; text: strin
 	},
 ];
 
-// Guide section order (key + label). The /altitude hub and the Previous/Next
-// pager both import this so the two can't drift.
+// Guide section order (key + label) for the /altitude hub. The Previous/Next
+// pager follows module number instead (see pages/altitude/[...slug].astro).
 export const altitudeGuideGroups: { key: string; label: string }[] = [
 	{ key: 'core', label: 'The model' },
 	{ key: 'practice', label: 'In the field' },
