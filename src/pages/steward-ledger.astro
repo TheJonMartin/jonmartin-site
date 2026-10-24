@@ -7,10 +7,6 @@ const seoTitle = 'Steward Ledger: the staff-only gift ledger for nonprofits';
 const description =
 	"Steward Ledger is a staff-only ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts, preview receipts and keep HubSpot up to date.";
 
-// TODO(after 2026-11-01): remove the October launch offer markup, OFFER_ENDS and the expiry script from this page.
-const OFFER_ENDS = new Date('2026-11-01T00:00:00-04:00'); // midnight Nov 1, 2026 America/New_York (still EDT then)
-const offerActive = Date.now() < OFFER_ENDS.getTime();
-
 // "Common questions" (section 7). One list feeds both the visible FAQ and the
 // FAQPage JSON-LD, so the two can't drift apart.
 const faqs = [
@@ -20,7 +16,7 @@ const faqs = [
 	},
 	{
 		q: 'Does Steward replace HubSpot?',
-		a: "No. Steward is a gift ledger, not a full CRM. It sends contacts, companies, deals and products into HubSpot. The sync is one way, so changes made in HubSpot don't flow back into Steward.",
+		a: "No. Steward is a gift ledger, not a full CRM. It syncs contacts, companies, deals and products with HubSpot in both directions, so changes made in either place show up in the other.",
 	},
 	{
 		q: 'How is the deductible amount calculated?',
@@ -59,7 +55,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 					<ul class="st-pills" aria-label="At a glance">
 						<li>Staff only</li>
 						<li>Donors never sign in</li>
-						<li>One-way sync to HubSpot</li>
+						<li>Two-way sync with HubSpot</li>
 					</ul>
 				</div>
 				<div class="st-card" aria-label="Example sponsorship gift (illustration)">
@@ -176,8 +172,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 						<div class="st-ico">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 5v14"/></svg>
 						</div>
-						<h3>One-way sync into HubSpot</h3>
-						<p>Contacts, companies, deals and products flow from Steward into HubSpot. Send a HubSpot payment link for any sponsorship package.</p>
+						<h3>Two-way sync with HubSpot</h3>
+						<p>Contacts, companies, deals and products stay in sync between Steward and HubSpot, both directions. Send a HubSpot payment link for any sponsorship package.</p>
 					</article>
 					<article class="st-feat">
 						<div class="st-ico">
@@ -267,8 +263,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 							every change is logged.
 						</li>
 						<li>
-							<strong>Your CRM stays your CRM</strong>Steward is a gift ledger, not a full CRM. It sends
-							contacts, companies, deals and products to HubSpot, one way.
+							<strong>Your CRM stays your CRM</strong>Steward is a gift ledger, not a full CRM. It keeps
+							contacts, companies, deals and products in sync with HubSpot, both ways.
 						</li>
 					</ul>
 					<p class="st-fine">
@@ -305,37 +301,17 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 				<h2 class="st-h2" id="pricing-h">Simple monthly pricing</h2>
 				<div class="st-price-card">
 					<div class="st-price-reg">
-						<span class="st-price-label" id="st-price-label">{offerActive ? 'Regular price' : 'Price'}</span>
-						<span class="st-price-amt">$49/month</span>
+						<span class="st-price-label">Price</span>
+						<span class="st-price-amt">$29/month</span>
 						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes HubSpot sync setup</span>
 						<span class="st-price-terms">No long-term commitment.</span>
 					</div>
-					{offerActive && (
-						/* TODO(after 2026-11-01): remove this launch-offer callout block */
-						<div class="st-offer" data-offer-ends="2026-11-01T00:00:00-04:00">
-							<p class="st-offer-text">October launch offer: <strong>$39/month</strong>, locked in for as long as you stay subscribed. Sign up by October 31, 2026.</p>
-						</div>
-					)}
 				</div>
 				<div class="st-ctas st-center">
 					<a class="st-btn st-btn-primary" href="#request">Request information &rarr;</a>
 				</div>
 			</div>
 		</section>
-
-		<script is:inline>
-			// TODO(after 2026-11-01): remove this expiry script along with the launch-offer markup above.
-			(function () {
-				var offer = document.querySelector('[data-offer-ends]');
-				if (!offer) return;
-				var ends = new Date(offer.getAttribute('data-offer-ends'));
-				if (new Date() >= ends) {
-					offer.remove();
-					var label = document.getElementById('st-price-label');
-					if (label) label.textContent = 'Price';
-				}
-			})();
-		</script>
 
 		<!-- ===== 8. REQUEST INFORMATION FORM ===== -->
 		<section class="st-section st-form-sec" id="request" aria-labelledby="form-h">
@@ -974,22 +950,6 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 		font-weight: 600;
 		color: var(--muted);
 		text-align: center;
-	}
-	.steward .st-offer {
-		margin-top: 18px;
-		background: linear-gradient(135deg, var(--accent), #e8b93a);
-		border-radius: 16px;
-		padding: 22px 26px;
-		text-align: center;
-	}
-	.steward .st-offer-text {
-		font-size: 16px;
-		font-weight: 600;
-		color: var(--ink);
-		margin: 0;
-	}
-	.steward .st-offer-text strong {
-		font-size: 19px;
 	}
 
 	/* Form */
