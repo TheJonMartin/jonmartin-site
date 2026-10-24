@@ -1,7 +1,8 @@
 /*
- * JSON-LD builders. Four Laws content builders Parse page markdown rather than
- * duplicating in front matter — hand-maintained schema drifts; silent absence
- * (parser returns nothing) beats a malformed block.
+ * JSON-LD builders: sitewide Organization/Person/Service plus the Four Laws
+ * faqSchema/glossarySchema. The latter two parse page markdown rather than
+ * duplicating front matter — hand-maintained schema drifts, and silent
+ * absence (parser returns nothing) beats a malformed block.
  */
 
 import { termSlug } from './glossary-anchors';
@@ -57,7 +58,7 @@ export function faqSchema(body: string, url: string) {
  * Each term's url/@id is its own anchor on the glossary (url#<slug>, id added
  * by withTermAnchors on the page), so the definitions point at this page.
  */
-export function glossarySchema(body: string, url: string, _siteUrl: string) {
+export function glossarySchema(body: string, url: string) {
 	const terms: { '@type': 'DefinedTerm'; '@id': string; name: string; description: string; inDefinedTermSet: string; url: string }[] = [];
 
 	const lines = body.split('\n');
