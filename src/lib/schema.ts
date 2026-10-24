@@ -30,7 +30,7 @@ export function faqSchema(body: string, url: string) {
 		const [headingLine, ...rest] = block.split('\n');
 		const question = plain(headingLine);
 		const answer = plain(
-			rest.join('\n').split(/^#{1,3}\s+/m)[0] ?? '',
+			rest.join('\n').split(/^#{1,3}\s+|^---\s*$/m)[0] ?? '',
 		);
 		if (question && answer) {
 			entities.push({
