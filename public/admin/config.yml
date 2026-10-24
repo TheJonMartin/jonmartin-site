@@ -78,6 +78,12 @@ collections:
           required: false,
         }
       - {
+          label: "SEO description (optional — used verbatim as the meta description)",
+          name: "seoDescription",
+          widget: "text",
+          required: false,
+        }
+      - {
           label: "Nav group",
           name: "group",
           widget: "select",
