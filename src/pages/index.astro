@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import home from '../content/pages/home.json';
+import about from '../content/pages/about.json';
 import { getCollection } from 'astro:content';
 import { portalAuditSchema } from '../lib/schema';
 
@@ -29,7 +30,9 @@ const schema = [{
 			'@id': 'https://thejonmartin.com/#website',
 			url: 'https://thejonmartin.com/',
 			name: 'Jon Martin',
-			description,
+			// Site identity uses the About description (consulting/diagnosis), not the
+			// homepage's Portal Audit pitch, which stays on the page and its Service node.
+			description: about.description,
 			publisher: { '@id': 'https://thejonmartin.com/#org' },
 			inLanguage: 'en-US',
 		},

@@ -184,6 +184,14 @@ export const personSchema = {
 		'Systems Integration',
 		"Conway's Law",
 		"Ashby's Law of Requisite Variety",
+		"Brooks's Law",
+		'Reverse Conway Maneuver',
+		'Viable System Model',
+		'Theory of Constraints',
+		'Team Topologies',
+		'Requirements Altitude',
+		// HubSpot stays one item among the process/RevOps topics, not the lead.
+		'HubSpot',
 	],
 	sameAs: [
 		'https://www.linkedin.com/in/jonmartinco/',
