@@ -5,7 +5,7 @@ import { faqPairsSchema } from '../lib/schema';
 const title = 'Steward Ledger';
 const seoTitle = 'Steward Ledger: the staff-only gift ledger for nonprofits';
 const description =
-	"Steward Ledger is a staff-only ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts, preview receipts and keep HubSpot up to date.";
+	"Steward Ledger is a staff-only ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts and preview receipts. Works on its own, with an optional HubSpot connection.";
 
 // "Common questions" (section 7). One list feeds both the visible FAQ and the
 // FAQPage JSON-LD, so the two can't drift apart.
@@ -15,8 +15,12 @@ const faqs = [
 		a: 'No. Steward Ledger is staff only. Your team signs in; donors never do.',
 	},
 	{
+		q: 'Do we need HubSpot?',
+		a: 'No. Steward works on its own. Without HubSpot, staff record every gift offline (check, cash or other) and still get receipts, year-end statements, events and sponsorship packages, goals, and CSV export. Connecting HubSpot adds online payment links, recurring gifts and CRM sync. Online payments currently run through HubSpot Payments.',
+	},
+	{
 		q: 'Does Steward replace HubSpot?',
-		a: "No. Steward is a gift ledger, not a full CRM. It sends people, organizations, gifts (as deals) and sponsorship packages to HubSpot. You can also opt in to two-way sync for contact and company details. It's off by default, and gift amounts never change from HubSpot.",
+		a: "No. Steward is a gift ledger, not a full CRM. If you connect HubSpot, Steward sends people, organizations, gifts (as deals) and sponsorship packages to it. You can also opt in to two-way sync for contact and company details. It's off by default, and gift amounts never change from HubSpot.",
 	},
 	{
 		q: 'How is the deductible amount calculated?',
@@ -34,7 +38,7 @@ const faqs = [
 const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 ---
 
-<Base title={title} seoTitle={seoTitle} description={description} ogImage="/og/steward-ledger-v2.png" schema={schema}>
+<Base title={title} seoTitle={seoTitle} description={description} ogImage="/og/steward-ledger-v3.png" schema={schema}>
 	<div class="steward">
 		<!-- ===== 1. HERO ===== -->
 		<section class="st-hero" aria-labelledby="hero-h">
@@ -45,8 +49,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 					<h1 id="hero-h">One ledger for every gift, sponsor and <span class="st-mark">thank-you</span>.</h1>
 					<p class="st-sub">
 						Steward Ledger is a staff-only gift ledger for nonprofits. Record gifts, run event sponsorships with
-						clear deductible amounts, preview receipts, and keep HubSpot up to date. Donors never need another
-						login.
+						clear deductible amounts, and preview receipts. Use it on its own, or connect HubSpot. Donors never
+						need another login.
 					</p>
 					<div class="st-ctas">
 						<a class="st-btn st-btn-primary" href="#request">Request information &rarr;</a>
@@ -55,7 +59,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 					<ul class="st-pills" aria-label="At a glance">
 						<li>Staff only</li>
 						<li>Donors never sign in</li>
-						<li>HubSpot sync, opt-in two-way</li>
+						<li>Optional HubSpot connection</li>
 					</ul>
 				</div>
 				<div class="st-card" aria-label="Example sponsorship gift (illustration)">
@@ -77,7 +81,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 			<div class="st-wrap st-center">
 				<span class="st-eyebrow">See it in a minute</span>
 				<h2 class="st-h2" id="video-h">A quick tour of Steward Ledger</h2>
-				<p class="st-lede">Gifts, sponsorships, goals and the HubSpot sync, start to finish.</p>
+				<p class="st-lede">Gifts, sponsorships and goals, start to finish, plus the optional HubSpot sync.</p>
 				<div class="st-frame">
 					<video
 						controls
@@ -124,7 +128,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 							<li>Your team records each gift once, in one staff-only ledger.</li>
 							<li>Packages carry their benefit lines, so the deductible amount is figured for you.</li>
 							<li>Mistakes are voided with a reason, never deleted, and every change is in the history.</li>
-							<li>Goal progress sits on the Home screen, and HubSpot gets the updates.</li>
+							<li>Goal progress sits on the Home screen. If you connect HubSpot, it gets the updates too.</li>
 						</ul>
 					</div>
 				</div>
@@ -172,8 +176,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 						<div class="st-ico">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 5v14"/></svg>
 						</div>
-						<h3>HubSpot sync</h3>
-						<p>Steward sends people, organizations, gifts (as deals) and sponsorship packages to HubSpot. Optional two-way sync, off by default, brings contact and company detail changes back. Gift amounts never change from HubSpot.</p>
+						<h3>Optional HubSpot connection</h3>
+						<p>Steward works on its own: without HubSpot, staff record every gift offline (check, cash or other). Connect HubSpot to add online card and bank transfer payment links, recurring gifts, and syncing of people, organizations, gifts (as deals) and packages. Online payments currently run through HubSpot Payments. Two-way sync is optional and off by default, and gift amounts never change from HubSpot.</p>
 					</article>
 					<article class="st-feat">
 						<div class="st-ico">
@@ -231,8 +235,8 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 						<p>Log each gift from a person or organization. Steward figures the deductible amount and keeps the history.</p>
 					</li>
 					<li>
-						<h3>Thank, report and sync</h3>
-						<p>Preview receipts and year-end statements, watch the goal card on Home, export to CSV, and let HubSpot pick up the updates.</p>
+						<h3>Thank and report</h3>
+						<p>Preview receipts and year-end statements, watch the goal card on Home, and export to CSV. If you connect HubSpot, it picks up the updates.</p>
 					</li>
 				</ol>
 			</div>
@@ -263,8 +267,9 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 							every change is logged.
 						</li>
 						<li>
-							<strong>Your CRM stays your CRM</strong>Steward is a gift ledger, not a full CRM. It sends people,
-							organizations, gifts and packages to HubSpot, with optional two-way sync for contact and company details.
+							<strong>Your CRM stays your CRM</strong>Works with or without a CRM. Steward is a gift ledger, not a full CRM.
+							On its own, it records every gift offline. Connect HubSpot and it sends people, organizations, gifts
+							and packages there, with optional two-way sync for contact and company details.
 						</li>
 					</ul>
 					<p class="st-fine">
@@ -303,7 +308,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 					<div class="st-price-reg">
 						<span class="st-price-label">Price</span>
 						<span class="st-price-amt">$29/month</span>
-						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes HubSpot sync setup</span>
+						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes setup, and HubSpot connection if you use it</span>
 					</div>
 				</div>
 				<div class="st-ctas st-center">
