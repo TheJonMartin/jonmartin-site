@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { faqPairsSchema } from '../lib/schema';
+import { breadcrumbSchema, faqPairsSchema, stewardLedgerSchema } from '../lib/schema';
 
 const title = 'Steward Ledger';
 const seoTitle = 'Steward Ledger: the staff-only gift ledger for nonprofits';
@@ -35,10 +35,16 @@ const faqs = [
 		a: 'Yes. You can export your records to CSV at any time.',
 	},
 ];
-const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
+const pageUrl = 'https://thejonmartin.com/steward-ledger';
+const schema = [
+	stewardLedgerSchema(description),
+	breadcrumbSchema(title, pageUrl, 'https://thejonmartin.com/'),
+	faqPairsSchema(faqs, pageUrl),
+];
 ---
 
 <Base title={title} seoTitle={seoTitle} description={description} ogImage="/og/steward-ledger-v3.png" schema={schema}>
+	<main id="main">
 	<div class="steward">
 		<!-- ===== 1. HERO ===== -->
 		<section class="st-hero" aria-labelledby="hero-h">
@@ -411,6 +417,7 @@ const schema = faqPairsSchema(faqs, 'https://thejonmartin.com/steward-ledger');
 			HubSpot is a trademark of HubSpot, Inc. Steward Ledger is not made or endorsed by HubSpot. Not tax advice.
 		</p>
 	</div>
+	</main>
 </Base>
 
 <style is:global>

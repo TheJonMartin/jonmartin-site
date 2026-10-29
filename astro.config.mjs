@@ -12,7 +12,14 @@ for (const f of readdirSync('./src/content/writing')) {
 }
 const toolsSrc = readFileSync('./src/lib/tools.ts', 'utf8');
 const toolsDate = /export const MODIFIED = '([\d-]+)'/.exec(toolsSrc)?.[1];
-for (const m of toolsSrc.matchAll(/^\t\tslug: '([^']+)'/gm)) if (toolsDate) lastmod.set(`/tools/${m[1]}`, toolsDate);
+// A tool entry's own `modified` (newer pages) wins over the shared MODIFIED date.
+const toolSlugs = [...toolsSrc.matchAll(/^\t\tslug: '([^']+)'/gm)];
+toolSlugs.forEach((m, i) => {
+	const block = toolsSrc.slice(m.index, toolSlugs[i + 1]?.index);
+	const own = /^\t\tmodified: ['"]([\d-]+)['"]/m.exec(block)?.[1];
+	const d = own ?? toolsDate;
+	if (d) lastmod.set(`/tools/${m[1]}`, d);
+});
 if (toolsDate) lastmod.set('/tools', toolsDate);
 
 export default defineConfig({
