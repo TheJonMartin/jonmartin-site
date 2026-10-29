@@ -196,8 +196,11 @@ export const personSchema = {
 };
 
 /**
- * Organization for the site (#org). Only facts already on the site: name is the
- * domain/handle, logo is the JM monogram icon (public/apple-touch-icon.png,
+ * Organization for the site (#org). Only facts already on the site: name matches
+ * the WebSite name and Base siteName ("Jon Martin"); the TheJonMartin handle is
+ * kept as alternateName. The description leads with the consulting/diagnosis
+ * work, not HubSpot; Portal Audit and Steward Ledger are listed as products in
+ * hasOfferCatalog (their full nodes live on / and /steward-ledger). logo is the JM monogram icon (public/apple-touch-icon.png,
  * 180x180), email is the footer address, sameAs are the profiles linked from
  * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
  * ratings or employee counts: none are published.
@@ -205,8 +208,11 @@ export const personSchema = {
 export const organizationSchema = {
 	'@type': 'Organization',
 	'@id': 'https://thejonmartin.com/#org',
-	name: 'TheJonMartin',
+	name: 'Jon Martin',
+	alternateName: 'TheJonMartin',
 	url: 'https://thejonmartin.com/',
+	description:
+		'Revenue operations consulting and written diagnoses of why systems, processes, and org structures keep breaking in founder-led professional services firms, grounded in the Four Laws of Complex System Design.',
 	logo: {
 		'@type': 'ImageObject',
 		url: 'https://thejonmartin.com/apple-touch-icon.png',
@@ -215,7 +221,32 @@ export const organizationSchema = {
 	},
 	email: 'mailto:jon@thejonmartin.com',
 	founder: { '@id': 'https://thejonmartin.com/#jon' },
+	hasOfferCatalog: {
+		'@type': 'OfferCatalog',
+		name: 'Products',
+		itemListElement: [
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'Service',
+					'@id': 'https://thejonmartin.com/#portal-audit',
+					name: 'Portal Audit',
+					url: 'https://audit.thejonmartin.com/',
+				},
+			},
+			{
+				'@type': 'Offer',
+				itemOffered: {
+					'@type': 'SoftwareApplication',
+					'@id': 'https://thejonmartin.com/steward-ledger#software',
+					name: 'Steward Ledger',
+					url: 'https://thejonmartin.com/steward-ledger',
+				},
+			},
+		],
+	},
 	sameAs: [
+		'https://www.linkedin.com/in/jonmartinco/',
 		'https://x.com/TheJonMartin',
 		'https://www.instagram.com/jonmartin.co/',
 		'https://www.threads.com/@jonmartin.co',
@@ -354,5 +385,49 @@ export function faqPairsSchema(pairs: { q: string; a: string }[], url: string) {
 			name: q,
 			acceptedAnswer: { '@type': 'Answer', text: a },
 		})),
+	};
+}
+
+/**
+ * Steward Ledger as a SoftwareApplication (/steward-ledger). Prices are copied
+ * from the page's own pricing card: $29/month, plus a $199 one-time sign-up fee
+ * that includes setup (and the HubSpot connection if used). Change both
+ * together. No operatingSystem, ratings or reviews: none are published.
+ */
+export function stewardLedgerSchema(description: string) {
+	const url = 'https://thejonmartin.com/steward-ledger';
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'SoftwareApplication',
+		'@id': `${url}#software`,
+		name: 'Steward Ledger',
+		applicationCategory: 'BusinessApplication',
+		description,
+		url,
+		image: 'https://thejonmartin.com/og/steward-ledger-v3.png',
+		audience: { '@type': 'Audience', audienceType: 'Nonprofits' },
+		publisher: { '@id': 'https://thejonmartin.com/#org' },
+		offers: {
+			'@type': 'Offer',
+			price: '29',
+			priceCurrency: 'USD',
+			url: `${url}#pricing`,
+			priceSpecification: [
+				{
+					'@type': 'UnitPriceSpecification',
+					name: 'Monthly',
+					price: '29',
+					priceCurrency: 'USD',
+					unitCode: 'MON',
+					unitText: 'month',
+				},
+				{
+					'@type': 'UnitPriceSpecification',
+					name: 'One-time sign-up fee (includes setup)',
+					price: '199',
+					priceCurrency: 'USD',
+				},
+			],
+		},
 	};
 }
