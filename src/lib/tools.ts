@@ -2,14 +2,18 @@
  * Affiliate tool pages — one entry per page under /tools/<slug>.
  * Copy comes from the Notion drafts of Oct 13, 2026. Strings in `html` blocks are
  * trusted, hand-written markup (rendered with set:html); keep user input out of them.
- * Every page states the affiliate relationship twice: under the hero and above the footer.
+ * Every page states the affiliate relationship under the hero, and again under the Try-it button unless `disclosureOnce` is set.
  */
 
 export type Block =
 	| { type: 'p'; html: string }
 	| { type: 'ul'; items: string[] }
 	| { type: 'ol'; items: string[] }
-	| { type: 'steps'; items: string[] };
+	| { type: 'steps'; items: string[] }
+	/** Subhead inside a section (renders as h3). */
+	| { type: 'h3'; text: string }
+	/** Table. Cells are trusted HTML. `caption` renders as a bold label above it. */
+	| { type: 'table'; caption?: string; head: string[]; rows: string[][] };
 
 export interface Section {
 	/** Rail label, without the number (the template adds "01 / "). */
@@ -31,13 +35,42 @@ export interface Tool {
 	/** Four label/value pairs for the spec strip. `flag` marks an outlier (dark mustard). */
 	facts: { label: string; value: string; flag?: boolean }[];
 	sections: Section[];
+	/** Leave both empty to drop the Pros and cons section (comparison pages). */
 	pros: string[];
 	cons: string[];
 	/** Sections that come after Pros / Cons. */
 	after?: Section[];
 	closing: string;
 	cta: { label: string; href: string };
-	sources: { text: string; href: string }[];
+	sources: { text: string; href: string; also?: { text: string; href: string }[] }[];
+
+	/* Optional per-page overrides. Pages that leave these out render exactly as before. */
+	/** Hero meta cells in place of "Tool review · category · Checked · Affiliate link". First cell is the accent. */
+	metaCells?: string[];
+	/** Vendor facts checked on (defaults to CHECKED). */
+	checked?: string;
+	published?: string;
+	modified?: string;
+	/** Page-specific disclosure text (defaults to `disclosure`). */
+	disclosure?: string;
+	/** Show the disclosure once, under the hero, above the first affiliate link (drops the copy under the Try-it button). */
+	disclosureOnce?: boolean;
+	/** Comparison strip in place of the label/value `facts` strip. Cells are plain text. */
+	factsTable?: { head: string[]; rows: string[][] };
+	/** Paragraph above the closing statement in "The short version". */
+	closingIntro?: string;
+	/** Try-it lede. `null` hides it. Default: "If this fits your stack, you can start with {name} here." */
+	tryLede?: string | null;
+	/** Extra Try-it buttons after `cta`, same visual weight. */
+	moreCtas?: { label: string; href: string }[];
+	/** Render sources as a numbered list (for pages that cite [1], [2]). */
+	sourcesNumbered?: boolean;
+	/** Text under the sources (defaults to the standard checked-on line). */
+	disclaimer?: string;
+	/** Schema.org `about` names (defaults to [name]). */
+	about?: string[];
+	/** Visible FAQ, also emitted as FAQPage JSON-LD from the same list. Answers are plain text. */
+	faq?: { q: string; a: string }[];
 }
 
 export const CHECKED = 'Oct 13, 2026';
@@ -1233,6 +1266,722 @@ export const tools: Tool[] = [
 		sources: [
 			{ text: 'QuickSigner homepage', href: 'https://www.quicksigner.com/' },
 			{ text: 'QuickSigner, eSignature API page (states "Prices and features as of October 7, 2026")', href: 'https://www.quicksigner.com/esignature-api/' },
+		],
+	},
+	{
+		slug: 'instantly',
+		related: [
+			"instantly-vs-lemlist",
+			"apollo-io",
+			"seamless-ai",
+		],
+		name: "Instantly",
+		title: "Instantly — Jon Martin",
+		seoTitle: "Instantly HubSpot Integration: What Syncs, What Doesn't, and What to Set Up First",
+		description: "How Instantly connects to HubSpot: list import, Automations both ways, and when you need a sync tool to log replies. Checked Oct 28, 2026.",
+		h1: "Instantly HubSpot Integration: What Syncs, What Doesn't, and What to Set Up First",
+		dek: [
+			"Instantly can send a lot of cold email. Whether HubSpot stays clean while it does is up to how you connect the two.",
+			"Instantly connects to HubSpot natively. You can import HubSpot lists into campaigns, and Instantly Automations can react to HubSpot contact and deal changes and write contacts, tasks or notes back. To log every send and reply on the HubSpot timeline, Instantly's own docs point to a sync tool like OutboundSync or Zapier.",
+		],
+		category: "Cold email and outbound",
+		facts: [
+			{
+				label: "Category",
+				value: "Cold email and outbound",
+			},
+			{
+				label: "Connects to HubSpot",
+				value: "Native (built by Instantly), plus a sync tool for full timeline logging",
+			},
+			{
+				label: "Plan needed",
+				value: "Automations are on all Outbound plans, per Instantly. The import plan isn't stated",
+			},
+			{
+				label: "Free trial",
+				value: "14 days, no credit card",
+			},
+		],
+		sections: [
+			{
+				label: "Who it's for",
+				blocks: [
+					{
+						type: "p",
+						html: "Firms sending real cold email volume across several inboxes that need warmup on all of them. Agencies, consultancies, MSPs. HubSpot is the CRM and it's staying the CRM.",
+					},
+					{
+						type: "p",
+						html: "Instantly's Growth plan is $47 a month and includes unlimited email accounts and unlimited warmup. That's the reason people pick it. You can add sending inboxes without the bill climbing per seat.",
+					},
+					{
+						type: "p",
+						html: "Who it's not for: a founder sending 20 personal follow-ups a week. If you already pay for HubSpot Sales Hub, sequences may cover that. Plain Gmail might too. Don't buy a volume tool for a volume problem you don't have.",
+					},
+				],
+			},
+			{
+				label: "What it does",
+				blocks: [
+					{
+						type: "p",
+						html: "<a href=\"https://refer.instantly.ai/wwmtfom0192k\" target=\"_blank\" rel=\"sponsored noopener noreferrer\">Instantly</a> is cold email software. It sends across many mailboxes, warms them up, includes a B2B lead database called Lead Finder, and pulls replies into one inbox it calls Unibox.",
+					},
+					{
+						type: "p",
+						html: "The trial is 14 days and starts when you sign up. No card. You get 2 email accounts, 250 uploaded leads, 1,000 campaign emails and 1,000 welcome credits. When it ends, warmup, accounts and campaigns pause and nothing is charged. One thing to know: Instantly says a trial account that's never upgraded gets deleted after it expires. Don't build your only copy of a list in there.",
+					},
+					{
+						type: "p",
+						html: "Pricing: Outreach plans start at $47 a month (Growth). The <a href=\"https://instantly.ai/pricing\" target=\"_blank\" rel=\"noopener noreferrer\">pricing page</a> splits things into Outreach plans, Credits plans and Bundles, so read it slowly before you pick.",
+					},
+				],
+			},
+			{
+				label: "How it fits a HubSpot stack",
+				blocks: [
+					{
+						type: "p",
+						html: "This is the part that decides whether Instantly helps your HubSpot or quietly makes a mess of it.",
+					},
+					{
+						type: "p",
+						html: "There are two HubSpot connections inside Instantly's Integrations settings, and they do different jobs:",
+					},
+					{
+						type: "ol",
+						items: [
+							"<strong>\"Old HubSpot\"</strong> is for importing leads from HubSpot into Instantly.",
+							"<strong>\"New HubSpot\"</strong> is for exporting Lead Finder leads to HubSpot and for using HubSpot inside Automations.",
+						],
+					},
+					{
+						type: "p",
+						html: "If import works but your automation can't see HubSpot, you probably connected only one of them.",
+					},
+					{
+						type: "h3",
+						text: "Getting HubSpot contacts into Instantly",
+					},
+					{
+						type: "p",
+						html: "You build a list in HubSpot, then pick it from \"Import from HubSpot\" inside a campaign. You map each column: Email to Email, personalization fields to custom variables, everything else to \"Do Not Import.\"",
+					},
+					{
+						type: "p",
+						html: "There's a duplicate check across campaigns and lists. Leave it on. You can also verify emails during import for 0.25 credits per lead.",
+					},
+					{
+						type: "p",
+						html: "Map only the fields the campaign actually uses. Every extra field is one more thing to keep straight later.",
+					},
+					{
+						type: "h3",
+						text: "Automations with HubSpot triggers and actions",
+					},
+					{
+						type: "p",
+						html: "This is the native connection doing real work. Instantly calls it two-way.",
+					},
+					{
+						type: "ul",
+						items: [
+							"<strong>HubSpot triggers:</strong> contact created, updated or deleted. Deal created, updated or deleted. Deal association changed. Tasks, notes and communications created.",
+							"<strong>HubSpot actions:</strong> create or update a contact, create a task, create a note, find a contact, and a few more.",
+							"<strong>Instantly triggers:</strong> lead replies, lead interest status changed, email bounced, email sent, and others.",
+						],
+					},
+					{
+						type: "p",
+						html: "A pattern that keeps HubSpot honest: lead marked Interested in Instantly → create or update the HubSpot contact → create a task for the owner. Only people who said yes land in your CRM.",
+					},
+					{
+						type: "p",
+						html: "Instantly also says automations only fire on events after you turn them on. Nothing backfills.",
+					},
+					{
+						type: "h3",
+						text: "Logging sends and replies on the HubSpot timeline",
+					},
+					{
+						type: "p",
+						html: "If you want every sent email and every reply on the contact record, the native Automations aren't the whole answer. Instantly's help center walks you through OutboundSync for that. It's a third-party HubSpot app that takes Instantly webhooks and logs sent emails, replies and lead status changes into HubSpot. Instantly also has a Zapier recipe that creates a HubSpot contact when a lead is marked Interested.",
+					},
+					{
+						type: "p",
+						html: "OutboundSync, which sells the alternative, says Instantly's native activity sync is one-way. It also says it needs Instantly's Hypergrowth plan or higher because it relies on webhooks and the API. I haven't confirmed that plan requirement on Instantly's own pages. Ask Instantly before you buy for it.",
+					},
+					{
+						type: "p",
+						html: "One more from OutboundSync's own FAQ: if you run their sync and Instantly's native connector for activity at the same time, you can double-log events on the same contact. Pick one source for timeline activity.",
+					},
+					{
+						type: "table",
+						caption: "Three ways to connect Instantly and HubSpot",
+						head: [
+							"Method",
+							"Direction",
+							"What moves",
+							"Who builds it",
+							"Extra cost",
+							"Source",
+						],
+						rows: [
+							[
+								"Native import (\"Old HubSpot\")",
+								"HubSpot → Instantly",
+								"Contacts from a HubSpot list, mapped fields",
+								"Instantly",
+								"Optional verification, 0.25 credits per lead",
+								"Instantly help: Importing leads from HubSpot",
+							],
+							[
+								"Native Automations (\"New HubSpot\")",
+								"Both directions, event-based",
+								"HubSpot triggers and actions above. Contacts, tasks, notes",
+								"Instantly",
+								"Automations are on all Outbound plans, per Instantly",
+								"Instantly help: Automations; HubSpot Integration in Automations; How to Connect HubSpot",
+							],
+							[
+								"OutboundSync or Zapier",
+								"Instantly → HubSpot",
+								"OutboundSync: sends, replies, status changes on the timeline. Zapier: the steps you build",
+								"Third party",
+								"Separate subscription. Price not checked",
+								"Instantly help: OutboundSync; Zapier recipe",
+							],
+						],
+					},
+					{
+						type: "h3",
+						text: "What I'd set up first",
+					},
+					{
+						type: "ol",
+						items: [
+							"<strong>Decide which system owns lifecycle stage.</strong> One. If Instantly automations and HubSpot workflows both write it, you'll never trust that field again.",
+							"<strong>Build a HubSpot \"do not contact\" list.</strong> Customers and anyone in an open deal. Keep those people out of every campaign. A cold email to a current customer is the fastest way to find out who's watching.",
+							"<strong>Map only the fields you'll use.</strong> First name, company, the one personalization field. Not 40 properties.",
+							"<strong>Create HubSpot contacts on a positive reply, not on every send.</strong> That's my recommendation, not an Instantly rule. If every lead you email becomes a HubSpot contact, your database fills with people who never answered, and your contact counts go up with them.",
+						],
+					},
+					{
+						type: "p",
+						html: "If your portal already has duplicates or lifecycle stages nobody's touched in two years, fix that before you connect anything.",
+					},
+				],
+			},
+		],
+		pros: [
+			"Unlimited email accounts and warmup on the $47 Growth plan.",
+			"No-card 14-day trial that pauses instead of charging you.",
+			"Native HubSpot triggers and actions in Automations, so a reply can create a task for the owner without a third tool.",
+			"Duplicate checks on HubSpot import.",
+		],
+		cons: [
+			"Full activity logging on the HubSpot timeline means adding a sync tool. Another bill, another connection to maintain.",
+			"Two HubSpot connections with different jobs. Easy to connect the wrong one.",
+			"Instantly doesn't spell out which plan covers the HubSpot import connection.",
+			"Pricing is split into Outreach, Credits and Bundles. It takes a minute to figure out what you're actually buying.",
+		],
+		after: [
+			{
+				label: "Before you buy",
+				blocks: [
+					{
+						type: "ul",
+						items: [
+							"Clean your HubSpot contacts and lifecycle stages first",
+							"Buy separate sending domains, not your main one",
+							"Decide who owns replies, and where they get worked",
+							"Ask Instantly support which plan includes the HubSpot connection you need",
+						],
+					},
+					{
+						type: "p",
+						html: "Two honest alternatives:",
+					},
+					{
+						type: "ul",
+						items: [
+							"If you want HubSpot to log sends and replies natively without a sync tool, look at <a href=\"https://get.lemlist.com/25fqpl724zci\" target=\"_blank\" rel=\"sponsored noopener noreferrer\">lemlist</a> (also an affiliate link). Its HubSpot integration logs sent emails and replies as HubSpot email activity. The full side-by-side is on <a href=\"/tools/instantly-vs-lemlist\">Instantly vs lemlist</a>.",
+							"If you need a contact database more than sending volume, <a href=\"/tools/apollo-io\">Apollo</a> is the better starting point.",
+						],
+					},
+				],
+			},
+		],
+		closingIntro: "Instantly fits firms that send multi-inbox cold email and live in HubSpot. Import and Automations are native. If you need every email on the timeline, plan on a sync tool.",
+		closing: "Clean the portal before you connect the pipe.",
+		tryLede: "If this fits your stack, you can start with Instantly's 14-day trial here.",
+		cta: {
+			label: "Try Instantly free for 14 days",
+			href: "https://refer.instantly.ai/wwmtfom0192k",
+		},
+		sources: [
+			{
+				text: "Instantly, Pricing",
+				href: "https://instantly.ai/pricing",
+			},
+			{
+				text: "Instantly, HubSpot integration page",
+				href: "https://instantly.ai/marketplace/hubspot",
+			},
+			{
+				text: "Instantly Help Center, Instantly Free Trial",
+				href: "https://help.instantly.ai/en/articles/13941298-instantly-free-trial",
+			},
+			{
+				text: "Instantly Help Center, Importing leads from HubSpot",
+				href: "https://help.instantly.ai/en/articles/8849953-importing-leads-from-hubspot",
+			},
+			{
+				text: "Instantly Help Center, How to Connect HubSpot to Instantly",
+				href: "https://help.instantly.ai/en/articles/8848886",
+			},
+			{
+				text: "Instantly Help Center, Automations",
+				href: "https://help.instantly.ai/en/articles/12838955-automations",
+			},
+			{
+				text: "Instantly Help Center, HubSpot Integration in Automations",
+				href: "https://help.instantly.ai/en/articles/13342530",
+			},
+			{
+				text: "Instantly Help Center, Salesforce and HubSpot Integration via OutboundSync",
+				href: "https://help.instantly.ai/en/articles/10536090",
+			},
+			{
+				text: "Instantly Help Center, Zapier: create a HubSpot contact when a lead is marked Interested",
+				href: "https://help.instantly.ai/en/articles/6664975",
+			},
+			{
+				text: "OutboundSync, Instantly + HubSpot (third-party; claims attributed)",
+				href: "https://outboundsync.com/integrations/instantly-hubspot/",
+			},
+		],
+		checked: "Oct 28, 2026",
+		published: "2026-10-28",
+		modified: "2026-10-28",
+		disclosure: "This page contains affiliate links for Instantly and lemlist. If you sign up through one, I earn a commission. It costs you nothing extra.",
+		disclosureOnce: true,
+		disclaimer: "Figures and plan details were checked on Oct 28, 2026 and can change. Confirm current plans and pricing on the vendor's site before you buy.",
+		faq: [
+			{
+				q: "Does Instantly integrate with HubSpot?",
+				a: "Yes. Instantly has a native HubSpot integration that it built itself. You can import HubSpot lists into campaigns and run Automations that react to HubSpot contact or deal changes. To log every sent email and reply on HubSpot contact timelines, Instantly's help center points to a sync tool such as OutboundSync, or a Zapier setup.",
+			},
+			{
+				q: "Is the Instantly HubSpot sync two-way?",
+				a: "Partly. Instantly describes its HubSpot Automations as two-way: HubSpot events can trigger Instantly actions, and Instantly events like a reply can create HubSpot contacts, tasks or notes. Logging every send and reply on the timeline is a separate job. Instantly's docs hand that to OutboundSync, and OutboundSync calls Instantly's native activity sync one-way.",
+			},
+			{
+				q: "Can I import a HubSpot list into Instantly?",
+				a: "Yes. Connect the \"Old HubSpot\" integration, build a list in HubSpot, then choose \"Import from HubSpot\" inside a campaign. You map each field and can skip duplicates across campaigns and lists. Verifying emails during import costs 0.25 credits per lead. Exclude customers and open deals before you send anything.",
+			},
+			{
+				q: "Do I need HubSpot Sales Hub to use Instantly?",
+				a: "Instantly doesn't publish a HubSpot edition requirement, so check with Instantly support for your setup. Its import and Automations work with HubSpot contacts and deals. If you already pay for Sales Hub sequences and you only send a handful of personal follow-ups a week, you may not need Instantly at all.",
+			},
+			{
+				q: "Is there an Instantly free trial?",
+				a: "Yes. It's 14 days, starts when you sign up, and needs no credit card. You get two email accounts, 250 uploaded leads, 1,000 campaign emails and 1,000 credits. When it ends, accounts and campaigns pause and nothing is charged. Instantly says trial accounts that never upgrade are deleted after they expire.",
+			},
+			{
+				q: "Instantly or HubSpot sequences: which should I use?",
+				a: "Use HubSpot sequences for low-volume, personal follow-up from the inbox you already have. Use Instantly when you're sending cold email at volume across several warmed-up mailboxes on separate domains. Plenty of teams run both: Instantly for the first touch, HubSpot for the deal once someone replies.",
+			},
+		],
+	},
+	{
+		slug: 'instantly-vs-lemlist',
+		related: [
+			"instantly",
+			"apollo-io",
+		],
+		name: "Instantly vs lemlist",
+		title: "Instantly vs lemlist — Jon Martin",
+		seoTitle: "Instantly vs lemlist for HubSpot Users: Which Cold Email Tool Fits a Small Team?",
+		description: "Instantly vs lemlist if you use HubSpot: entry prices, what each logs to HubSpot, and which fits a 3–30 person firm. Checked Oct 28, 2026.",
+		h1: "Instantly vs lemlist for HubSpot Users: Which Cold Email Tool Fits a Small Team?",
+		dek: [
+			"The real difference between Instantly and lemlist isn't sending. It's how much each one writes into HubSpot without you building anything.",
+			"Pick lemlist if you want HubSpot to record every email and reply on its own. Its native integration logs sends and replies as HubSpot email activity and syncs fields in the direction you choose. Pick Instantly if you mainly need cheap email volume across many inboxes. Its entry plan is $47 a month, but full activity logging needs a sync tool.",
+		],
+		category: "Cold email and outbound",
+		metaCells: [
+			"Comparison",
+			"Checked Oct 28, 2026",
+			"Affiliate links",
+		],
+		facts: [],
+		factsTable: {
+			head: [
+				"",
+				"Instantly",
+				"lemlist",
+			],
+			rows: [
+				[
+					"Entry price shown",
+					"Growth, $47/mo",
+					"Email plan, shows $69 and $55/mo (billing split not stated)",
+				],
+				[
+					"Free trial",
+					"14 days, no credit card",
+					"14 days, Multichannel features, 200 credits",
+				],
+				[
+					"HubSpot",
+					"Native import and Automations. Full activity logging through OutboundSync or Zapier",
+					"Native two-way contact sync with activity logging",
+				],
+				[
+					"Channels",
+					"Email",
+					"Email plan: email. Multichannel plan adds LinkedIn, SMS and a call dialer",
+				],
+			],
+		},
+		sections: [
+			{
+				label: "The short answer",
+				blocks: [
+					{
+						type: "ul",
+						items: [
+							"<strong>You want every email and reply on the HubSpot timeline without extra tools:</strong> lemlist.",
+							"<strong>You want the most sending inboxes for the lowest entry price, and HubSpot only needs replies and deals:</strong> Instantly.",
+							"<strong>You send a few dozen personal follow-ups a week and already pay for HubSpot Sales Hub:</strong> maybe neither. Try HubSpot sequences first.",
+						],
+					},
+					{
+						type: "table",
+						caption: "Instantly vs lemlist at a glance",
+						head: [
+							"",
+							"Instantly",
+							"lemlist",
+						],
+						rows: [
+							[
+								"Entry price shown",
+								"$47/mo, Growth outreach plan [1]",
+								"$69/mo, or $55, on the Email plan. Billing split not stated [5]",
+							],
+							[
+								"Free trial",
+								"14 days, no card. 2 email accounts, 250 leads, 1,000 campaign emails [2]",
+								"14 days. Multichannel features except in-app calls, 200 credits [5]",
+							],
+							[
+								"Unlimited senders on the entry plan",
+								"Yes: unlimited email accounts and warmup on Growth [1]",
+								"Email plan lists unlimited users and email senders [5]",
+							],
+							[
+								"HubSpot connection type",
+								"Native, built by Instantly: list import plus Automations [3][4]",
+								"Native, contact-level, two-way sync [6][7]",
+							],
+							[
+								"Sends and replies on the HubSpot timeline",
+								"Not through the native import. Instantly's docs point to OutboundSync, which logs them via webhooks [4]",
+								"Yes. Sent emails and replies log as HubSpot Email activity [8]",
+							],
+							[
+								"Field sync direction",
+								"Import maps HubSpot → Instantly. Automations can write contacts, tasks and notes back [3][4]",
+								"Set per field: both ways, HubSpot wins, lemlist wins, or off [7]",
+							],
+							[
+								"Auto-stop on HubSpot changes",
+								"No built-in rule published. HubSpot triggers exist in Automations; confirm which actions fit your plan [4]",
+								"Yes. Leads exit when lifecycle stage changes, a deal is created, or they leave the list filter [6]",
+							],
+							[
+								"Lead database",
+								"Lead Finder [1][3]",
+								"650M+ leads, per lemlist [5]",
+							],
+							[
+								"Best for",
+								"Volume across many inboxes, HubSpot for replies and deals",
+								"Small teams that want HubSpot to show everything",
+							],
+						],
+					},
+				],
+			},
+			{
+				label: "Price for a small team",
+				blocks: [
+					{
+						type: "p",
+						html: "<a href=\"https://refer.instantly.ai/wwmtfom0192k\" target=\"_blank\" rel=\"sponsored noopener noreferrer\">Instantly</a>'s Growth outreach plan is $47 a month. That covers unlimited email accounts, unlimited warmup, 1,000 uploaded contacts and 5,000 emails a month. Instantly's pricing page also has Credits plans and Bundles, so check which one you're actually buying.",
+					},
+					{
+						type: "p",
+						html: "<a href=\"https://get.lemlist.com/25fqpl724zci\" target=\"_blank\" rel=\"sponsored noopener noreferrer\">lemlist</a>'s Email plan shows two prices on its pricing page, $69 and $55 a month. The page doesn't say in plain text whether $55 is the annual rate. The plan lists unlimited users and email senders, an email and phone finder, warmup (lemlist calls it lemwarm) and CRM integrations including HubSpot. The Multichannel plan shows $109 and $87 a month and adds LinkedIn and SMS automation and a built-in call dialer.",
+					},
+					{
+						type: "p",
+						html: "One thing on lemlist's page doesn't add up. The Email plan says unlimited users, but the same page says pricing is based on the number of users. Ask lemlist which applies to your team before you buy.",
+					},
+					{
+						type: "p",
+						html: "I'm not going to total per-seat costs or yearly savings. The billing terms aren't clear enough to do that honestly.",
+					},
+					{
+						type: "p",
+						html: "Count the whole cost for Instantly, though. If you add a sync tool to log activity in HubSpot, its subscription is part of the bill.",
+					},
+				],
+			},
+			{
+				label: "How each one works with HubSpot",
+				blocks: [
+					{
+						type: "p",
+						html: "This is the section that matters if HubSpot is your system of record.",
+					},
+					{
+						type: "h3",
+						text: "lemlist",
+					},
+					{
+						type: "p",
+						html: "lemlist's HubSpot integration syncs at the contact level, in both directions. You set the direction for each field: sync both ways, HubSpot wins, lemlist wins, or off. If you're not sure, lemlist's own help center says to make HubSpot the source of truth. Good advice.",
+					},
+					{
+						type: "p",
+						html: "What it writes into HubSpot:",
+					},
+					{
+						type: "ul",
+						items: [
+							"<strong>Sent emails and replies:</strong> HubSpot Email activity.",
+							"<strong>Opens, clicks, bounces, unsubscribes and campaign events:</strong> Notes.",
+							"<strong>LinkedIn messages sent and replied:</strong> LinkedIn Message activity. Other LinkedIn actions go to Notes.",
+							"<strong>Calls made in lemlist:</strong> Call activity.",
+						],
+					},
+					{
+						type: "p",
+						html: "Details worth knowing before you connect:",
+					},
+					{
+						type: "ul",
+						items: [
+							"Sync usually takes 2 to 10 minutes.",
+							"Field mapping isn't retroactive. Contacts already in HubSpot don't get backfilled.",
+							"lemlist checks for an existing HubSpot contact by email before it creates one.",
+							"Unsubscribes you add by hand in lemlist don't push to HubSpot. Only ones the lead triggers do.",
+							"Call recording links lemlist logs are public and permanent. Think about that before you record client calls.",
+							"One HubSpot account can't connect to more than one lemlist team.",
+							"lemlist says the integration works with all paid HubSpot plans and needs HubSpot admin access. It doesn't say free HubSpot works.",
+						],
+					},
+					{
+						type: "p",
+						html: "You can also import from any active HubSpot list or view, with dedup by email and company. Leads can drop out of a campaign on their own when their lifecycle stage changes, a deal is created, or they stop matching the list filter. That's the feature that stops a sales email from landing on someone who signed yesterday.",
+					},
+					{
+						type: "h3",
+						text: "Instantly",
+					},
+					{
+						type: "p",
+						html: "Instantly connects to HubSpot natively. It does two jobs:",
+					},
+					{
+						type: "ol",
+						items: [
+							"<strong>Import.</strong> Pull a HubSpot list into a campaign, map fields, and skip duplicates across campaigns and lists.",
+							"<strong>Automations.</strong> HubSpot events like contact or deal changes can trigger Instantly steps. Instantly events like a reply or a status change can create or update HubSpot contacts, tasks and notes. Instantly calls this two-way.",
+						],
+					},
+					{
+						type: "p",
+						html: "To put every send and reply on the HubSpot timeline, Instantly's help center walks you through OutboundSync, a third-party app that logs activity via Instantly webhooks. Instantly also documents a Zapier recipe that creates a HubSpot contact when a lead is marked Interested.",
+					},
+					{
+						type: "p",
+						html: "Two details trip people up. Instantly has two separate HubSpot connections: \"Old HubSpot\" for importing leads, and \"New HubSpot\" for Automations and for exporting Lead Finder leads. Connect the one that matches the job. And automations only fire on events after you switch them on. Nothing that already happened gets pushed to HubSpot.",
+					},
+					{
+						type: "p",
+						html: "The full Instantly setup, including the two separate HubSpot connections and what to configure first, is on <a href=\"/tools/instantly\">/tools/instantly</a>.",
+					},
+					{
+						type: "h3",
+						text: "What this means for your portal",
+					},
+					{
+						type: "p",
+						html: "lemlist puts more into HubSpot by default. That's good for visibility. Your rep sees the whole thread on the contact. It also means a lot of Notes, because every open and click is one.",
+					},
+					{
+						type: "p",
+						html: "Instantly puts in only what you automate. That's cleaner, but HubSpot shows less unless you add a sync tool.",
+					},
+					{
+						type: "p",
+						html: "Neither is wrong. Decide what you want to see on a contact record, then pick the tool that writes that and not much else.",
+					},
+					{
+						type: "p",
+						html: "Either way, check your portal first. Duplicates and messy lifecycle stages get worse once a sending tool starts writing to them.",
+					},
+				],
+			},
+			{
+				label: "Which one fits which firm",
+				blocks: [
+					{
+						type: "ul",
+						items: [
+							"<strong>An agency doing outbound for itself with one or two senders, and it wants everything in HubSpot:</strong> lemlist. Native logging means nobody has to remember to log anything.",
+							"<strong>A firm sending to large lists across many inboxes and domains, using HubSpot only for replies and deals:</strong> Instantly. Unlimited accounts on the entry plan is the point.",
+							"<strong>A founder sending under about 50 personal emails a week, already on HubSpot Sales Hub:</strong> HubSpot sequences may be enough. No affiliate link here because there's nothing to sell you.",
+							"<strong>A firm that needs contact data more than sending:</strong> start with <a href=\"/tools/apollo-io\">Apollo</a>.",
+						],
+					},
+				],
+			},
+			{
+				label: "Before you buy either",
+				blocks: [
+					{
+						type: "ul",
+						items: [
+							"Send from separate domains, not your main one",
+							"Give new inboxes time to warm up before real volume",
+							"Build a HubSpot \"do not contact\" list from customers and open deals",
+							"Decide which system owns lifecycle stage. One",
+							"Run both trials side by side on the same small, clean list",
+						],
+					},
+					{
+						type: "p",
+						html: "Both trials are 14 days. That's enough to see what each one writes into HubSpot before you pay for either.",
+					},
+					{
+						type: "p",
+						html: "How I'd run the side-by-side:",
+					},
+					{
+						type: "ol",
+						items: [
+							"<strong>Pick 20 to 50 contacts you're allowed to email.</strong> Not customers. Not anyone in an open deal.",
+							"<strong>Make a test HubSpot list</strong> and connect each tool to it, not to your whole database.",
+							"<strong>Send a short sequence from each tool.</strong> Same copy, same list size.",
+							"<strong>Open five of those contacts in HubSpot after a few days.</strong> Look at what's on the timeline, what landed in Notes, and whether any fields changed that you didn't expect.",
+							"<strong>Then decide.</strong> The tool whose HubSpot record you'd actually want to read is the one to keep.",
+						],
+					},
+				],
+			},
+		],
+		pros: [],
+		cons: [],
+		closing: "lemlist logs more into HubSpot on its own. Instantly gives you more inboxes for less money. Choose based on what you need HubSpot to show.",
+		tryLede: null,
+		cta: {
+			label: "Try Instantly free for 14 days",
+			href: "https://refer.instantly.ai/wwmtfom0192k",
+		},
+		moreCtas: [
+			{
+				label: "Try lemlist free for 14 days",
+				href: "https://get.lemlist.com/25fqpl724zci",
+			},
+		],
+		sourcesNumbered: true,
+		sources: [
+			{
+				text: "Instantly, Pricing",
+				href: "https://instantly.ai/pricing",
+			},
+			{
+				text: "Instantly Help Center, Instantly Free Trial",
+				href: "https://help.instantly.ai/en/articles/13941298-instantly-free-trial",
+			},
+			{
+				text: "Instantly Help Center, Importing leads from HubSpot",
+				href: "https://help.instantly.ai/en/articles/8849953-importing-leads-from-hubspot",
+				also: [
+					{
+						text: "How to Connect HubSpot",
+						href: "https://help.instantly.ai/en/articles/8848886",
+					},
+				],
+			},
+			{
+				text: "Instantly Help Center, HubSpot Integration in Automations",
+				href: "https://help.instantly.ai/en/articles/13342530",
+				also: [
+					{
+						text: "OutboundSync",
+						href: "https://help.instantly.ai/en/articles/10536090",
+					},
+					{
+						text: "Zapier recipe",
+						href: "https://help.instantly.ai/en/articles/6664975",
+					},
+				],
+			},
+			{
+				text: "lemlist, Pricing",
+				href: "https://www.lemlist.com/pricing",
+			},
+			{
+				text: "lemlist, HubSpot integration",
+				href: "https://www.lemlist.com/integrations/hubspot",
+			},
+			{
+				text: "lemlist Help Center, HubSpot integration (sync and field mapping)",
+				href: "https://help.lemlist.com/en/articles/10308771",
+			},
+			{
+				text: "lemlist Help Center, Map lemlist activities to HubSpot",
+				href: "https://help.lemlist.com/en/articles/8735296",
+			},
+		],
+		checked: "Oct 28, 2026",
+		published: "2026-10-28",
+		modified: "2026-10-28",
+		disclosure: "This page contains affiliate links for both Instantly and lemlist. If you sign up through one, I earn a commission. It costs you nothing extra.",
+		disclosureOnce: true,
+		disclaimer: "Figures and plan details were checked on Oct 28, 2026 and can change. Confirm current plans and pricing on the vendor's site before you buy.",
+		about: [
+			"Instantly",
+			"lemlist",
+		],
+		faq: [
+			{
+				q: "Is lemlist or Instantly better for HubSpot?",
+				a: "lemlist has the deeper native HubSpot integration. It syncs contact fields both ways and logs sent emails and replies as HubSpot email activity. Instantly connects natively for imports and event-based Automations, and its docs point to OutboundSync or Zapier for full activity logging. If timeline visibility matters most, lemlist is simpler.",
+			},
+			{
+				q: "Which is cheaper, Instantly or lemlist?",
+				a: "On published entry prices, Instantly's Growth outreach plan is $47 a month. lemlist's Email plan shows $69 a month and $55, and the page doesn't spell out which billing term each is. Both change pricing, so check both pages the day you buy. Count any sync tool you'd add to Instantly as part of its cost.",
+			},
+			{
+				q: "Do both have free trials?",
+				a: "Yes. Instantly's is 14 days with no credit card and includes two email accounts, 250 leads and 1,000 campaign emails. lemlist's is 14 days with Multichannel features, except in-app calls, and 200 credits. Run both on the same small, clean list before you decide, and watch what each writes into HubSpot.",
+			},
+			{
+				q: "Can I use HubSpot sequences instead?",
+				a: "Sometimes. If you already pay for a Sales Hub seat that includes sequences and you send a modest number of personal emails from your own inbox, sequences may be enough. Instantly and lemlist are built for higher volume across several warmed-up sending inboxes on separate domains. Start with what you already pay for.",
+			},
+			{
+				q: "Will these tools create duplicate contacts in HubSpot?",
+				a: "They can if mapping is loose. lemlist checks for an existing contact by email before creating one, but its field mapping doesn't backfill records already in HubSpot. Instantly's HubSpot import has a duplicate check across campaigns and lists. Use email as the one key, decide who owns lifecycle stage, and clean duplicates before connecting either.",
+			},
 		],
 	},
 ];
