@@ -9,7 +9,8 @@ export function getStaticPaths() {
 
 const { tool } = Astro.props;
 const canonical = new URL(`/tools/${tool.slug}`, Astro.site).href;
-const ogImage = `/og/tools/${tool.slug}.png`;
+// -v2: re-rendered Oct 28 without the HubSpot line; new name busts cached previews (old files kept).
+const ogImage = `/og/tools/${tool.slug}-v2.png`;
 const pad = (n: number) => String(n).padStart(2, '0');
 
 const relatedTools = (tool.related ?? [])

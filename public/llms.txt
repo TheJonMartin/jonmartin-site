@@ -1,6 +1,6 @@
 # Jon Martin
 
-> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. Consulting engagements, advisory conversations and second opinions start from the About page. He also runs two products: Portal Audit (https://audit.thejonmartin.com), a free HubSpot health check, automated via AI, that never changes anything in your portal unless you turn fixes on; and Steward Ledger (https://thejonmartin.com/steward-ledger), a staff-only gift ledger for nonprofits. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work. Requirements Altitude is the companion written guide for classifying discovery statements (L0–L3) so requirements stay scopeable.
+> Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms. He works in revenue operations — systems integration and subscription management, mostly for SaaS and professional services companies — and treats the job as variety management, not tooling. Consulting engagements, advisory conversations and second opinions start from the About page. He also runs two products: Portal Audit (https://audit.thejonmartin.com), a free HubSpot health check, automated via AI, that never changes anything in your portal unless you turn fixes on; and GiftKeep (https://thejonmartin.com/giftkeep), a staff-only gift ledger for nonprofits. The Four Laws of Complex System Design is his standing reference on the systems theory (Ashby, Conway, Brooks, the Reverse Conway Maneuver, Beer's Viable System Model) behind that diagnosis work. Requirements Altitude is the companion written guide for classifying discovery statements (L0–L3) so requirements stay scopeable.
 
 Every public page on the site is listed below. Descriptions are taken from each page's own content.
 
@@ -12,7 +12,7 @@ Every public page on the site is listed below. Descriptions are taken from each 
 - [Tools](https://thejonmartin.com/tools): HubSpot-adjacent tool write-ups (Aircall, Apollo.io, Capsule and Transpond, Trainual, AdCreative.ai, Unitel Voice, Seamless.AI, WhatConverts, ElevenLabs, Gamma, Plesk, QuickSigner): what each does, how it fits a HubSpot stack, and where it doesn't. Pages contain affiliate links, disclosed on each page.
 - [Writing](https://thejonmartin.com/writing): The essay archive — notes on org design, systems, and why the things you built keep breaking.
 - [Requirements Altitude](https://thejonmartin.com/altitude): Written guide for classifying discovery statements at L0–L3 so scope stops being a pile of notes.
-- [Steward Ledger](https://thejonmartin.com/steward-ledger): A staff-only gift ledger for nonprofits; donors never sign in. For development staff, executive directors and treasurers. Record each gift from a person or organization once; run event sponsorships with packages and benefit lines, so the deductible amount (gift minus the good-faith estimate of benefits) is calculated; preview receipts and year-end statements; track fiscal-year and event goals; void mistakes with a reason instead of deleting, with a full change history; export to CSV. Works on its own. Connecting HubSpot is optional: it adds online payment links, recurring gifts and CRM sync. A gift ledger, not a full CRM. Pricing: $29/month, plus a $199 one-time sign-up fee that includes setup and the HubSpot connection if you use it. Record-keeping software, not tax advice.
+- [GiftKeep](https://thejonmartin.com/giftkeep): A staff-only gift ledger for nonprofits; donors never sign in. For development staff, executive directors and treasurers. Record each gift from a person or organization once; run event sponsorships with packages and benefit lines, so the deductible amount (gift minus the good-faith estimate of benefits) is calculated; preview receipts and year-end statements; track fiscal-year and event goals; void mistakes with a reason instead of deleting, with a full change history; export to CSV. Works on its own. Connecting HubSpot is optional: it adds online payment links, recurring gifts and CRM sync. A gift ledger, not a full CRM. Pricing: $29/month, plus a $199 one-time sign-up fee that includes setup and the HubSpot connection if you use it. Record-keeping software, not tax advice.
 - [Contact](https://thejonmartin.com/contact): A short form for questions about the Four Laws framework or a correction to the site.
 
 ## Writing
@@ -33,22 +33,27 @@ Every public page on the site is listed below. Descriptions are taken from each 
 - [Coastline Scoping](https://thejonmartin.com/writing/coastline-scoping): A RevOps project has no single length — a published estimate is a length at a stated altitude, from named sources, against a stated reference.
 
 
-## Tools
+## Four Laws of Complex System Design — Reference
 
-Affiliate links, disclosed on each page. Each page covers what the tool does, how it fits a HubSpot stack, and where it doesn't.
+- [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM — how they interact and apply to team boundaries.
+- [Glossary](https://thejonmartin.com/glossary): Definitions of every term used across the reference — Ashby's, Conway's, and Brooks's Laws, Reverse Conway, Team Topologies, Beer's VSM, Little's Law, and the Theory of Constraints.
+- [FAQ](https://thejonmartin.com/faq): Direct answers on Conway's Law vs. Team Topologies, Brooks's Law under Agile, Little's Law for knowledge work, and WIP limits vs. the Theory of Constraints.
 
-- [Aircall](https://thejonmartin.com/tools/aircall): Aircall is a cloud phone system with one of the deepest HubSpot calling integrations. What it logs, what it costs you in setup, and who should skip it.
-- [Apollo.io](https://thejonmartin.com/tools/apollo-io): Apollo can fill your HubSpot with contacts fast. The two integrations, the push and write rules that matter, and the review score you should read before buying.
-- [Capsule and Transpond](https://thejonmartin.com/tools/capsule-and-transpond): Capsule is a simple CRM and Transpond is its email tool. For most HubSpot teams that's a second CRM. Who they actually fit, and how the HubSpot sync works.
-- [Trainual](https://thejonmartin.com/tools/trainual): Trainual turns SOPs into assigned training with tests and completion tracking. How I use it to roll out process changes so they stick, and where it falls short.
-- [AdCreative.ai](https://thejonmartin.com/tools/adcreative-ai): AdCreative.ai makes banners, ad copy, and short video ads. For HubSpot teams it sits upstream of the CRM. What it does, who it fits, and what to set up first.
-- [Unitel Voice](https://thejonmartin.com/tools/unitel-voice): Unitel Voice is a business phone service for solo founders and small teams. No HubSpot integration confirmed. Who it fits, who should look elsewhere, and why.
-- [Seamless.AI](https://thejonmartin.com/tools/seamless-ai): Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent link. The fine print and the governance questions to settle first.
-- [WhatConverts](https://thejonmartin.com/tools/whatconverts): WhatConverts tracks calls, forms, and chats back to their marketing source. Its HubSpot link runs through Zapier. How the two flows work and where they break.
-- [ElevenLabs](https://thejonmartin.com/tools/elevenlabs): ElevenLabs agents can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and what to settle first.
-- [Gamma](https://thejonmartin.com/tools/gamma): Gamma builds AI presentations, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a first test.
-- [Plesk](https://thejonmartin.com/tools/plesk): Most SMB sites aren't hosted on HubSpot. Plesk is a control panel for running WordPress sites that still use HubSpot tracking and forms. Who it fits.
-- [QuickSigner](https://thejonmartin.com/tools/quicksigner): QuickSigner is a simple, lower-cost e-signature tool. No native HubSpot integration found, so the connection is an API build. What it takes and who it suits.
+## Four Laws — Applied essays
+
+- [Applied Examples: The Four Laws Across Revenue Teams](https://thejonmartin.com/applied-examples): Ten worked examples of Ashby's, Conway's, and Brooks's Laws applied to Marketing, Sales, CS, Finance, and RevOps in SaaS and professional services teams.
+- [Managing Process: Flow & Constraints](https://thejonmartin.com/four-laws-flow-and-constraints): A walkthrough of Little's Law and the Theory of Constraints — how work actually flows through the team structure the first three laws create together.
+- [Conway's Law and Your RevOps Team Structure](https://thejonmartin.com/conways-law-revops-team-structure): Why CRM, CPQ, and billing systems mirror the RevOps org chart, and how to redraw team boundaries around quote-to-cash using the Reverse Conway Maneuver.
+- [Conway's Law in the AI Agent Era](https://thejonmartin.com/conways-law-ai-agents-revops): AI agents inherit your team boundaries, not just your tasks — why an AI SDR or billing-exceptions agent fails exactly where the org chart already had a seam.
+- [Why Executive Decisions Stall on Client Projects](https://thejonmartin.com/stakeholder-decision-bottlenecks): Little's Law, Kingman's formula, and Weinberg's context-switching numbers applied to the steering committee — why the same sign-off takes six weeks.
+- [AI, System 4, and Beer's VSM](https://thejonmartin.com/vsm-ai-system-4): AI can supercharge System 4 environmental scanning, but faster signals without a functioning System 5 just produce organizational paralysis, faster.
+- [WIP Limits vs. the Theory of Constraints](https://thejonmartin.com/wip-limits-vs-theory-of-constraints): A WIP limit is a Kanban practice; the Theory of Constraints tells you where to put it — and why conflating them leaves throughput where it started.
+
+## Four Laws — Interactive tools
+
+- [Flow Formula Calculator](https://thejonmartin.com/flow-formula-calculator): Interactive calculators for Little's Law, Kingman's formula, and Weinberg's context-switching numbers — plug in engagement numbers to see what they predict.
+- [Flow & Constraint Diagnostic](https://thejonmartin.com/part8-flow-diagnostic): A five-step guided diagnostic — enter WIP, throughput, and constraint details for a personalized Five Focusing Steps writeup.
+- [Stakeholder Decision Stall Checklist](https://thejonmartin.com/stakeholder-decision-checklist): Check off what's true of a stalled engagement to see whether it's a Little's Law queue problem, a Kingman utilization problem, or Weinberg signal distortion.
 
 ## Requirements Altitude
 
@@ -74,27 +79,22 @@ Affiliate links, disclosed on each page. Each page covers what the tool does, ho
 - [Appendix A: The Field Card](https://thejonmartin.com/altitude/appendix-a): One-page call card: speaker, ladder, bridge, three tells, vertical check.
 - [Appendix B: Facilitator Guide](https://thejonmartin.com/altitude/appendix-b): Sequencing, drill debriefs, and the resistance point that shows up in every cohort.
 
-## Four Laws of Complex System Design — Reference
+## Tools
 
-- [Full Reference](https://thejonmartin.com/four-laws-complex-system-design-full): The complete reference on Ashby's, Conway's, and Brooks's Laws, the Reverse Conway Maneuver, and Beer's VSM — how they interact and apply to team boundaries.
-- [Glossary](https://thejonmartin.com/glossary): Definitions of every term used across the reference — Ashby's, Conway's, and Brooks's Laws, Reverse Conway, Team Topologies, Beer's VSM, Little's Law, and the Theory of Constraints.
-- [FAQ](https://thejonmartin.com/faq): Direct answers on Conway's Law vs. Team Topologies, Brooks's Law under Agile, Little's Law for knowledge work, and WIP limits vs. the Theory of Constraints.
+Affiliate links, disclosed on each page. Each page covers what the tool does, how it fits a HubSpot stack, and where it doesn't.
 
-## Four Laws — Applied essays
-
-- [Applied Examples: The Four Laws Across Revenue Teams](https://thejonmartin.com/applied-examples): Ten worked examples of Ashby's, Conway's, and Brooks's Laws applied to Marketing, Sales, CS, Finance, and RevOps in SaaS and professional services teams.
-- [Managing Process: Flow & Constraints](https://thejonmartin.com/four-laws-flow-and-constraints): A walkthrough of Little's Law and the Theory of Constraints — how work actually flows through the team structure the first three laws create together.
-- [Conway's Law and Your RevOps Team Structure](https://thejonmartin.com/conways-law-revops-team-structure): Why CRM, CPQ, and billing systems mirror the RevOps org chart, and how to redraw team boundaries around quote-to-cash using the Reverse Conway Maneuver.
-- [Conway's Law in the AI Agent Era](https://thejonmartin.com/conways-law-ai-agents-revops): AI agents inherit your team boundaries, not just your tasks — why an AI SDR or billing-exceptions agent fails exactly where the org chart already had a seam.
-- [Why Executive Decisions Stall on Client Projects](https://thejonmartin.com/stakeholder-decision-bottlenecks): Little's Law, Kingman's formula, and Weinberg's context-switching numbers applied to the steering committee — why the same sign-off takes six weeks.
-- [AI, System 4, and Beer's VSM](https://thejonmartin.com/vsm-ai-system-4): AI can supercharge System 4 environmental scanning, but faster signals without a functioning System 5 just produce organizational paralysis, faster.
-- [WIP Limits vs. the Theory of Constraints](https://thejonmartin.com/wip-limits-vs-theory-of-constraints): A WIP limit is a Kanban practice; the Theory of Constraints tells you where to put it — and why conflating them leaves throughput where it started.
-
-## Four Laws — Interactive tools
-
-- [Flow Formula Calculator](https://thejonmartin.com/flow-formula-calculator): Interactive calculators for Little's Law, Kingman's formula, and Weinberg's context-switching numbers — plug in engagement numbers to see what they predict.
-- [Flow & Constraint Diagnostic](https://thejonmartin.com/part8-flow-diagnostic): A five-step guided diagnostic — enter WIP, throughput, and constraint details for a personalized Five Focusing Steps writeup.
-- [Stakeholder Decision Stall Checklist](https://thejonmartin.com/stakeholder-decision-checklist): Check off what's true of a stalled engagement to see whether it's a Little's Law queue problem, a Kingman utilization problem, or Weinberg signal distortion.
+- [Aircall](https://thejonmartin.com/tools/aircall): Aircall is a cloud phone system with one of the deepest HubSpot calling integrations. What it logs, what it costs you in setup, and who should skip it.
+- [Apollo.io](https://thejonmartin.com/tools/apollo-io): Apollo can fill your HubSpot with contacts fast. The two integrations, the push and write rules that matter, and the review score you should read before buying.
+- [Capsule and Transpond](https://thejonmartin.com/tools/capsule-and-transpond): Capsule is a simple CRM and Transpond is its email tool. For most HubSpot teams that's a second CRM. Who they actually fit, and how the HubSpot sync works.
+- [Trainual](https://thejonmartin.com/tools/trainual): Trainual turns SOPs into assigned training with tests and completion tracking. How I use it to roll out process changes so they stick, and where it falls short.
+- [AdCreative.ai](https://thejonmartin.com/tools/adcreative-ai): AdCreative.ai makes banners, ad copy, and short video ads. For HubSpot teams it sits upstream of the CRM. What it does, who it fits, and what to set up first.
+- [Unitel Voice](https://thejonmartin.com/tools/unitel-voice): Unitel Voice is a business phone service for solo founders and small teams. No HubSpot integration confirmed. Who it fits, who should look elsewhere, and why.
+- [Seamless.AI](https://thejonmartin.com/tools/seamless-ai): Seamless.AI is a contact data tool with a HubSpot import and a Breeze Prospecting Agent link. The fine print and the governance questions to settle first.
+- [WhatConverts](https://thejonmartin.com/tools/whatconverts): WhatConverts tracks calls, forms, and chats back to their marketing source. Its HubSpot link runs through Zapier. How the two flows work and where they break.
+- [ElevenLabs](https://thejonmartin.com/tools/elevenlabs): ElevenLabs agents can read and write HubSpot records mid-conversation. It's an API build, not a toggle. The setup, the risks, and what to settle first.
+- [Gamma](https://thejonmartin.com/tools/gamma): Gamma builds AI presentations, and its HubSpot app reads deal, account, and campaign data into decks. What it does, how access works, and a first test.
+- [Plesk](https://thejonmartin.com/tools/plesk): Most SMB sites aren't hosted on HubSpot. Plesk is a control panel for running WordPress sites that still use HubSpot tracking and forms. Who it fits.
+- [QuickSigner](https://thejonmartin.com/tools/quicksigner): QuickSigner is a simple, lower-cost e-signature tool. No native HubSpot integration found, so the connection is an API build. What it takes and who it suits.
 
 ## Optional
 

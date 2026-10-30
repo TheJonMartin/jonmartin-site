@@ -184,6 +184,14 @@ export const personSchema = {
 		'Systems Integration',
 		"Conway's Law",
 		"Ashby's Law of Requisite Variety",
+		"Brooks's Law",
+		'Reverse Conway Maneuver',
+		'Viable System Model',
+		'Theory of Constraints',
+		'Team Topologies',
+		'Requirements Altitude',
+		// HubSpot stays one item among the process/RevOps topics, not the lead.
+		'HubSpot',
 	],
 	sameAs: [
 		'https://www.linkedin.com/in/jonmartinco/',
@@ -199,8 +207,8 @@ export const personSchema = {
  * Organization for the site (#org). Only facts already on the site: name matches
  * the WebSite name and Base siteName ("Jon Martin"); the TheJonMartin handle is
  * kept as alternateName. The description leads with the consulting/diagnosis
- * work, not HubSpot; Portal Audit and Steward Ledger are listed as products in
- * hasOfferCatalog (their full nodes live on / and /steward-ledger). logo is the JM monogram icon (public/apple-touch-icon.png,
+ * work, not HubSpot; Portal Audit and GiftKeep are listed as products in
+ * hasOfferCatalog (their full nodes live on / and /giftkeep). logo is the JM monogram icon (public/apple-touch-icon.png,
  * 180x180), email is the footer address, sameAs are the profiles linked from
  * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
  * ratings or employee counts: none are published.
@@ -238,9 +246,9 @@ export const organizationSchema = {
 				'@type': 'Offer',
 				itemOffered: {
 					'@type': 'SoftwareApplication',
-					'@id': 'https://thejonmartin.com/steward-ledger#software',
-					name: 'Steward Ledger',
-					url: 'https://thejonmartin.com/steward-ledger',
+					'@id': 'https://thejonmartin.com/giftkeep#software',
+					name: 'GiftKeep',
+					url: 'https://thejonmartin.com/giftkeep',
 				},
 			},
 		],
@@ -389,22 +397,22 @@ export function faqPairsSchema(pairs: { q: string; a: string }[], url: string) {
 }
 
 /**
- * Steward Ledger as a SoftwareApplication (/steward-ledger). Prices are copied
+ * GiftKeep as a SoftwareApplication (/giftkeep). Prices are copied
  * from the page's own pricing card: $29/month, plus a $199 one-time sign-up fee
  * that includes setup (and the HubSpot connection if used). Change both
  * together. No operatingSystem, ratings or reviews: none are published.
  */
-export function stewardLedgerSchema(description: string) {
-	const url = 'https://thejonmartin.com/steward-ledger';
+export function giftKeepSchema(description: string) {
+	const url = 'https://thejonmartin.com/giftkeep';
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'SoftwareApplication',
 		'@id': `${url}#software`,
-		name: 'Steward Ledger',
+		name: 'GiftKeep',
 		applicationCategory: 'BusinessApplication',
 		description,
 		url,
-		image: 'https://thejonmartin.com/og/steward-ledger-v3.png',
+		image: 'https://thejonmartin.com/og/giftkeep-v1.png',
 		audience: { '@type': 'Audience', audienceType: 'Nonprofits' },
 		publisher: { '@id': 'https://thejonmartin.com/#org' },
 		offers: {
