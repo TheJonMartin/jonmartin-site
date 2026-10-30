@@ -3,7 +3,7 @@ import Wordmark from './Wordmark.astro';
 import { fourLawsGroups } from '../lib/four-laws-links';
 import { altitudeGroups } from '../lib/altitude-links';
 
-// Site nav: wordmark + Writing (dropdown) / Tools / About / Portal Audit (one external link).
+// Site nav: wordmark + Writing (dropdown) / Products (dropdown) / Tools / About.
 // Writing is a <details> dropdown with three sections: All writing, Four Laws, Altitude
 // (shared link lists in four-laws-links / altitude-links).
 interface Props {
@@ -16,8 +16,13 @@ const { section, bordered = true } = Astro.props;
 const links: { href: string; text: string }[] = [
 	{ href: '/tools', text: 'Tools' },
 	{ href: '/about', text: 'About' },
+];
+
+// Jon's own products. Add a new product here as one line.
+const products: { href: string; text: string }[] = [
 	// Portal Audit (with Fixer) lives on its own subdomain.
 	{ href: 'https://audit.thejonmartin.com', text: 'Portal Audit' },
+	{ href: '/steward-ledger', text: 'Steward Ledger' },
 ];
 
 const writingSections = [
@@ -34,6 +39,8 @@ const inWriting =
 	path.startsWith('/writing/') ||
 	path === '/altitude' ||
 	path.startsWith('/altitude/');
+
+const inProducts = products.some((p) => p.href === path);
 
 // Writing: prefix match so posts mark the section current. Others: exact.
 const isCurrent = (href: string) => {
@@ -82,6 +89,20 @@ const isCurrent = (href: string) => {
 						))}
 					</div>
 				</details>
+				<details class="menu products">
+					<summary aria-current={inProducts ? 'page' : undefined}>Products</summary>
+					<div class="panel">
+						<ul>
+							{products.map((p) => (
+								<li>
+									<a href={p.href} aria-current={path === p.href ? 'page' : undefined}>
+										{p.text}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
+				</details>
 				{links.map((link) => (
 					<a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
 						{link.text}
@@ -91,6 +112,16 @@ const isCurrent = (href: string) => {
 		</div>
 	</nav>
 </header>
+
+<script>
+	// Only one nav dropdown open at a time (panels share the same spot).
+	const menus = document.querySelectorAll<HTMLDetailsElement>('header details.menu');
+	menus.forEach((menu) =>
+		menu.addEventListener('toggle', () => {
+			if (menu.open) menus.forEach((m) => m !== menu && (m.open = false));
+		}),
+	);
+</script>
 
 <style>
 	/* Skip link: off-screen until focused. */

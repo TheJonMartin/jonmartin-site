@@ -22,7 +22,22 @@ const breadcrumb = breadcrumbSchema(tool.name, canonical, Astro.site!.href, {
 	url: new URL('/tools', Astro.site).href,
 });
 
-const allSections = [...tool.sections, { label: 'Pros and cons', blocks: [] as Block[], proscons: true }, ...(tool.after ?? [])];
+const hasProsCons = tool.pros.length > 0 || tool.cons.length > 0;
+const allSections = [
+	...tool.sections,
+	...(hasProsCons ? [{ label: 'Pros and cons', blocks: [] as Block[], proscons: true }] : []),
+	...(tool.after ?? []),
+];
+
+// Per-page overrides; pages without them use the shared defaults.
+const checked = tool.checked ?? CHECKED;
+const published = tool.published ?? PUBLISHED;
+const modified = tool.modified ?? MODIFIED;
+const disclosureText = tool.disclosure ?? disclosure;
+const metaCells = tool.metaCells ?? ['Tool review', tool.category, `Checked ${checked}`, 'Affiliate link'];
+const tryLede = tool.tryLede === undefined ? `If this fits your stack, you can start with ${tool.name} here.` : tool.tryLede;
+const ctas = [tool.cta, ...(tool.moreCtas ?? [])];
+const faq = tool.faq ?? [];
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -32,27 +47,36 @@ const schema = {
 	name: tool.title,
 	description: tool.description,
 	url: canonical,
-	datePublished: PUBLISHED,
-	dateModified: MODIFIED,
+	datePublished: published,
+	dateModified: modified,
 	author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
 	publisher: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
 	image: new URL(ogImage, Astro.site).href,
 	inLanguage: 'en-US',
-	about: { '@type': 'Thing', name: tool.name },
+	about: tool.about ? tool.about.map((name) => ({ '@type': 'Thing', name })) : { '@type': 'Thing', name: tool.name },
 	mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
 };
+
+// One list renders the visible FAQ and the JSON-LD, so the text always matches.
+const faqSchema =
+	faq.length > 0
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'FAQPage',
+				'@id': `${canonical}#faq`,
+				mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+			}
+		: null;
+const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schema];
 ---
 
-<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={[breadcrumb, schema]} navBordered={false} ogImage={ogImage} ogType="article" publishedTime={PUBLISHED} modifiedTime={MODIFIED}>
+<Base title={tool.title} seoTitle={tool.seoTitle} description={tool.description} schema={schemas} navBordered={false} ogImage={ogImage} ogType="article" publishedTime={published} modifiedTime={modified}>
 	<main id="main">
 		<section class="band hero">
 			<div class="inner">
 				<div class="edge">
 					<div class="meta">
-						<div class="cell accent">Tool review</div>
-						<div class="cell">{tool.category}</div>
-						<div class="cell">Checked {CHECKED}</div>
-						<div class="cell">Affiliate link</div>
+						{metaCells.map((c, n) => <div class:list={['cell', { accent: n === 0 }]}>{c}</div>)}
 					</div>
 					<h1>{tool.h1}</h1>
 					<div class="dekcol">
@@ -64,20 +88,38 @@ const schema = {
 
 		<div class="disclosure-bar">
 			<div class="inner">
-				<p class="label disclosure-top"><span class="d-tag">Disclosure</span> {disclosure}</p>
+				<p class="label disclosure-top"><span class="d-tag">Disclosure</span> {disclosureText}</p>
 			</div>
 		</div>
 
 		<section class="band facts">
 			<div class="inner">
-				<div class="spectable">
-					{tool.facts.map((f) => (
-						<div class="spec">
-							<span class="label spec-label">{f.label}</span>
-							<span class:list={['spec-value', { flag: f.flag }]}>{f.value}</span>
-						</div>
-					))}
-				</div>
+				{tool.factsTable ? (
+					<div class="tablewrap">
+						<table class="cmp facts-cmp">
+							<thead>
+								<tr>{tool.factsTable.head.map((h) => <th scope="col">{h}</th>)}</tr>
+							</thead>
+							<tbody>
+								{tool.factsTable.rows.map((r) => (
+									<tr>
+										<th scope="row" class="label">{r[0]}</th>
+										{r.slice(1).map((c) => <td>{c}</td>)}
+									</tr>
+								))}
+							</tbody>
+						</table>
+					</div>
+				) : (
+					<div class="spectable">
+						{tool.facts.map((f) => (
+							<div class="spec">
+								<span class="label spec-label">{f.label}</span>
+								<span class:list={['spec-value', { flag: f.flag }]}>{f.value}</span>
+							</div>
+						))}
+					</div>
+				)}
 			</div>
 		</section>
 
@@ -107,6 +149,28 @@ const schema = {
 						) : (
 							section.blocks.map((block) => {
 								if (block.type === 'p') return <p set:html={block.html} />;
+								if (block.type === 'h3') return <h3 class="subhead">{block.text}</h3>;
+								if (block.type === 'table')
+									return (
+										<figure class="tablefig">
+											{block.caption && <figcaption class="tcap">{block.caption}</figcaption>}
+											<div class="tablewrap">
+												<table class="cmp">
+													<thead>
+														<tr>{block.head.map((h) => <th scope="col">{h}</th>)}</tr>
+													</thead>
+													<tbody>
+														{block.rows.map((r) => (
+															<tr>
+																<th scope="row" set:html={r[0]} />
+																{r.slice(1).map((c) => <td set:html={c} />)}
+															</tr>
+														))}
+													</tbody>
+												</table>
+											</div>
+										</figure>
+									);
 								if (block.type === 'ul')
 									return <ul class="rows">{block.items.map((item) => <li set:html={item} />)}</ul>;
 								return (
@@ -126,9 +190,31 @@ const schema = {
 			</section>
 		))}
 
+		{faq.length > 0 && (
+			<section class="band faq" id="faq">
+				<div class="inner ledger">
+					<div class="rail">
+						<h2 class="label section-label">Common questions</h2>
+						<div class="rule"></div>
+					</div>
+					<div class="content">
+						<div class="faqlist">
+							{faq.map((f) => (
+								<div class="qa">
+									<h3 class="q">{f.q}</h3>
+									<p class="a">{f.a}</p>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+		)}
+
 		<section class="band offer">
 			<div class="inner">
 				<p class="label offer-label">The short version</p>
+				{tool.closingIntro && <p class="offer-intro">{tool.closingIntro}</p>}
 				<p class="offer-statement">{tool.closing}</p>
 			</div>
 		</section>
@@ -140,9 +226,17 @@ const schema = {
 					<div class="rule"></div>
 				</div>
 				<div class="content">
-					<p class="try-lede">If this fits your stack, you can start with {tool.name} here.</p>
-					<a class="btn btn-primary" href={tool.cta.href} target="_blank" rel="sponsored noopener noreferrer">{tool.cta.label} &rarr;</a>
-					<p class="try-disclosure"><strong>Affiliate disclosure.</strong> {disclosure}</p>
+					{tryLede && <p class="try-lede">{tryLede}</p>}
+					{tool.moreCtas ? (
+						<div class="ctas">
+							{ctas.map((c) => (
+								<a class="btn btn-primary" href={c.href} target="_blank" rel="sponsored noopener noreferrer">{c.label} &rarr;</a>
+							))}
+						</div>
+					) : (
+						<a class="btn btn-primary" href={tool.cta.href} target="_blank" rel="sponsored noopener noreferrer">{tool.cta.label} &rarr;</a>
+					)}
+					{!tool.disclosureOnce && <p class="try-disclosure"><strong>Affiliate disclosure.</strong> {disclosureText}</p>}
 				</div>
 			</div>
 		</section>
@@ -154,12 +248,32 @@ const schema = {
 					<div class="rule"></div>
 				</div>
 				<div class="content">
-					<ul class="srcs">
-						{tool.sources.map((s) => (
-							<li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.text}</a></li>
-						))}
-					</ul>
-					<p class="disclaimer">Figures and listing details were checked on {CHECKED} and can change. Confirm current plans and pricing on the vendor's site before you buy.</p>
+					{tool.sourcesNumbered ? (
+						<ol class="srcs numbered">
+							{tool.sources.map((s) => (
+								<li>
+									<a href={s.href} target="_blank" rel="noopener noreferrer">{s.text}</a>
+									{(s.also ?? []).map((a) => (
+										<>
+											{' · '}
+											<a href={a.href} target="_blank" rel="noopener noreferrer">{a.text}</a>
+										</>
+									))}
+								</li>
+							))}
+						</ol>
+					) : (
+						<ul class="srcs">
+							{tool.sources.map((s) => (
+								<li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.text}</a></li>
+							))}
+						</ul>
+					)}
+					{tool.disclaimer ? (
+						<p class="disclaimer">{tool.disclaimer}</p>
+					) : (
+						<p class="disclaimer">Figures and listing details were checked on {checked} and can change. Confirm current plans and pricing on the vendor's site before you buy.</p>
+					)}
 				</div>
 			</div>
 		</section>
@@ -236,6 +350,29 @@ const schema = {
 	.n { font-size: 13px; color: var(--sage); padding-top: 4px; }
 	.item { font-size: 18px; line-height: 1.55; }
 
+	.subhead { font-family: Georgia, Gelasio, serif; font-size: 24px; font-weight: 400; line-height: 1.25; color: var(--plum); margin: 2.25rem 0 0.9rem; }
+	.content .subhead:first-child { margin-top: 0; }
+
+	/* tables (comparison strip and in-section tables) */
+	.tablefig { margin: 1.75rem 0; }
+	.tcap { font-family: Georgia, Gelasio, serif; font-weight: 700; font-size: 18px; color: var(--plum); margin: 0 0 0.75rem; }
+	.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+	.cmp { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+	.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 12px 14px 12px 0; border-top: 1px solid var(--hairline); }
+	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); border-top: none; padding-top: 0; }
+	.cmp tbody th { font-weight: 700; color: var(--plum); }
+	.facts-cmp { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+	.facts-cmp thead th { padding-top: 14px; }
+	.facts-cmp tbody th { font-family: 'Courier New', Cousine, monospace; font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); width: 18%; }
+	.facts-cmp td { font-family: Georgia, Gelasio, serif; font-size: 18px; line-height: 1.35; color: var(--plum); width: 41%; }
+
+	/* FAQ */
+	.faqlist { max-width: 66ch; }
+	.qa { padding: 22px 0; border-top: 1px solid var(--hairline); }
+	.qa:first-child { border-top: none; padding-top: 0; }
+	.q { font-family: Georgia, Gelasio, serif; font-size: 21px; font-weight: 400; line-height: 1.3; color: var(--plum); margin: 0 0 0.6rem; }
+	.content p.a { font-size: 17px; margin: 0; }
+
 	.proscons { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; }
 	.pc { min-width: 0; }
 	.pc-label { font-size: 12px; font-weight: 400; line-height: 1.4; letter-spacing: 0.16em; text-transform: uppercase; display: block; margin: 0 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--hairline); }
@@ -246,6 +383,7 @@ const schema = {
 	/* closing band */
 	.offer { background: var(--mustard); padding: 56px 0; border-top: none; }
 	.offer-label { font-size: 11px; letter-spacing: 0.18em; color: var(--mustard-shade); margin: 0 0 0.75rem; }
+	.offer-intro { font-size: 19px; line-height: 1.55; max-width: 60ch; color: var(--charcoal); margin: 0 0 1.25rem; }
 	.offer-statement { font-family: Georgia, Gelasio, serif; font-size: clamp(26px, 4vw, 44px); line-height: 1.14; max-width: 26ch; color: var(--charcoal); margin: 0; text-wrap: balance; }
 
 	/* try it */
@@ -256,6 +394,7 @@ const schema = {
 	.btn-primary { background: var(--mustard); color: var(--plum); }
 	.btn-primary:hover { background: var(--cream); color: var(--plum); }
 	.btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+	.ctas { display: flex; flex-wrap: wrap; gap: 14px; }
 	.try .content p.try-disclosure { font-size: 15px; color: var(--body-on-plum); margin: 1.5rem 0 0; }
 	.try-disclosure :global(strong) { color: var(--cream); }
 
@@ -264,6 +403,7 @@ const schema = {
 	.srcs { list-style: none; margin: 0 0 1rem; padding: 0; }
 	.srcs li { padding: 10px 0; border-top: 1px solid var(--hairline); font-size: 16px; overflow-wrap: anywhere; }
 	.srcs li:first-child { border-top: none; padding-top: 0; }
+	.srcs.numbered { list-style: decimal; padding-left: 1.6rem; }
 	.disclaimer { font-size: 13px !important; color: var(--muted); }
 
 	/* related tools */
