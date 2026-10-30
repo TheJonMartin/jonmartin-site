@@ -27,6 +27,11 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 
 # Steward Ledger renamed to GiftKeep (Oct 29, 2026). Permanent; keep these until at least 2027-10-29.
 # Old explainer/poster asset URLs follow the splat (assets moved to public/giftkeep/).
+# Explainer replaced Oct 30, 2026; old asset URLs point at the new files.
+/giftkeep/Steward-Ledger-Explainer-1080p-ElevenLabs.mp4  /giftkeep/GiftKeep-Explainer-1080p.mp4     301
+/giftkeep/poster.jpg                                     /giftkeep/GiftKeep-Explainer-poster.jpg    301
+/steward-ledger/Steward-Ledger-Explainer-1080p-ElevenLabs.mp4  /giftkeep/GiftKeep-Explainer-1080p.mp4   301
+/steward-ledger/poster.jpg                               /giftkeep/GiftKeep-Explainer-poster.jpg    301
 /steward-ledger       /giftkeep         301
 /steward-ledger/      /giftkeep         301
 /steward-ledger.html  /giftkeep         301
