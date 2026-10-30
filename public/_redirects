@@ -1,3 +1,9 @@
+# Primary Netlify subdomain serves a full 200 copy of the site. Send it to the
+# apex in one hop so Google never sees two hosts with the same pages (Oct 30, 2026:
+# GSC "Google chose different canonical" on /conways-law-revops-team-structure).
+# Deploy previews use deploy-preview-N--jonmartin-mvp.netlify.app, so they're unaffected.
+https://jonmartin-mvp.netlify.app/*   https://thejonmartin.com/:splat   301!
+
 # www HubSpot-era URLs: go straight to the final page in one hop (keep above the path rules).
 https://www.thejonmartin.com/blog/author/*     https://thejonmartin.com/about     301!
 https://www.thejonmartin.com/blog              https://thejonmartin.com/writing   301!
