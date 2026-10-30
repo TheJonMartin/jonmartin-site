@@ -30,8 +30,8 @@ export default defineConfig({
 
 	integrations: [
 		sitemap({
-			// Must match every noindex page (Base/FourLawsLayout): /thanks-contact, /thanks-consulting, /thanks-steward, /404.
-			filter: (page) => !/\/(thanks-contact|thanks-consulting|thanks-steward|404)(\.html)?$/.test(page),
+			// Must match every noindex page (Base/FourLawsLayout): /thanks-contact, /thanks-consulting, /thanks-giftkeep, /404.
+			filter: (page) => !/\/(thanks-contact|thanks-consulting|thanks-giftkeep|404)(\.html)?$/.test(page),
 
 			// build.format 'file' emits .html; strip so sitemap URLs match layout canonicals.
 			serialize(item) {
