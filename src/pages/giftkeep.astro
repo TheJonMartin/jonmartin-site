@@ -3,16 +3,16 @@ import Base from '../layouts/Base.astro';
 import { breadcrumbSchema, faqPairsSchema, giftKeepSchema } from '../lib/schema';
 
 const title = 'GiftKeep';
-const seoTitle = 'GiftKeep: the staff-only gift ledger for nonprofits';
+const seoTitle = 'GiftKeep: the gift ledger for nonprofits';
 const description =
-	"GiftKeep is a staff-only ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts and preview receipts. Works on its own, with an optional HubSpot connection.";
+	"GiftKeep is a ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts and preview receipts. Works on its own, with an optional HubSpot connection.";
 
 // "Common questions" (section 7). One list feeds both the visible FAQ and the
 // FAQPage JSON-LD, so the two can't drift apart.
 const faqs = [
 	{
 		q: 'Do our donors need to create an account?',
-		a: 'No. GiftKeep is staff only. Your team signs in; donors never do.',
+		a: 'No. Your team signs in; donors never do.',
 	},
 	{
 		q: 'Do we need HubSpot?',
@@ -314,7 +314,7 @@ const schema = [
 					<div class="st-price-reg">
 						<span class="st-price-label">Price</span>
 						<span class="st-price-amt">$29/month</span>
-						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes setup, and HubSpot connection if you use it</span>
+						<span class="st-price-fee">Every plan: $199 one-time setup fee, includes HubSpot connection if you use it</span>
 					</div>
 				</div>
 				<div class="st-ctas st-center">
