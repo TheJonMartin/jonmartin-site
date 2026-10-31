@@ -27,14 +27,26 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 
 # Steward Ledger renamed to GiftKeep (Oct 29, 2026). Permanent; keep these until at least 2027-10-29.
 # Old explainer/poster asset URLs follow the splat (assets moved to public/giftkeep/).
-/steward-ledger       /giftkeep         301
-/steward-ledger/      /giftkeep         301
-/steward-ledger.html  /giftkeep         301
+# Explainer replaced Oct 30, 2026; old asset URLs point at the new files.
+/giftkeep/Steward-Ledger-Explainer-1080p-ElevenLabs.mp4  /giftkeep/GiftKeep-Explainer-1080p.mp4     301
+/giftkeep/poster.jpg                                     /giftkeep/GiftKeep-Explainer-poster.jpg    301
+/steward-ledger/Steward-Ledger-Explainer-1080p-ElevenLabs.mp4  /giftkeep/GiftKeep-Explainer-1080p.mp4   301
+/steward-ledger/poster.jpg                               /giftkeep/GiftKeep-Explainer-poster.jpg    301
+# STW-156 (Jon, Oct 31, 2026): GiftKeep moved to its own site. The page URLs go straight to
+# https://giftkeep.app/ (no chains). The 301! forces it even though giftkeep.html is still built.
+/giftkeep             https://giftkeep.app/  301!
+/giftkeep/            https://giftkeep.app/  301!
+/giftkeep.html        https://giftkeep.app/  301!
+/thanks-giftkeep      https://giftkeep.app/  301!
+/thanks-giftkeep/     https://giftkeep.app/  301!
+/thanks-giftkeep.html https://giftkeep.app/  301!
+/steward-ledger       https://giftkeep.app/  301
+/steward-ledger/      https://giftkeep.app/  301
+/steward-ledger.html  https://giftkeep.app/  301
 /steward-ledger/*     /giftkeep/:splat  301
-/thanks-steward       /thanks-giftkeep  301
-/thanks-steward/      /thanks-giftkeep  301
-/thanks-steward.html  /thanks-giftkeep  301
-/giftkeep/            /giftkeep         301
+/thanks-steward       https://giftkeep.app/  301
+/thanks-steward/      https://giftkeep.app/  301
+/thanks-steward.html  https://giftkeep.app/  301
 
 # Retired HubSpot-Facing Review (Oct 23, 2026) -> Portal Audit.
 /hubspot-facing       https://audit.thejonmartin.com  301
