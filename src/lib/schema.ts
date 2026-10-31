@@ -166,7 +166,7 @@ export function breadcrumbSchema(
  * Person entity for Jon (#jon). sameAs identities must be genuinely his;
  * no worksFor — see about.astro. image is public/images/jon-martin.jpg.
  */
-export const personSchema = {
+const personSchema = {
 	'@type': 'Person',
 	'@id': 'https://thejonmartin.com/#jon',
 	name: 'Jon Martin',
@@ -213,7 +213,7 @@ export const personSchema = {
  * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
  * ratings or employee counts: none are published.
  */
-export const organizationSchema = {
+const organizationSchema = {
 	'@type': 'Organization',
 	'@id': 'https://thejonmartin.com/#org',
 	name: 'Jon Martin',

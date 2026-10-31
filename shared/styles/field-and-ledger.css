@@ -4,9 +4,8 @@
  *     outlier — except full-bleed color bands (hero-adjacent offer/CTA
  *     bands), a deliberate, confirmed exception to "mustard is never a large
  *     fill." One departure, not a precedent for more.
- *   - Never pure black (#000). Charcoal is the dark extreme; --white exists
- *     now for the one section that deliberately isn't cream (see the
- *     audit/Fixer two-panel diagram), not as a general substitute for cream.
+ *   - Never pure black (#000). Charcoal is the dark extreme; --white is the
+ *     hover and alt-panel background, not a general substitute for cream.
  *   - Dividers are hairlines. No heavy rules, no boxes-within-boxes.
  *   - Two font families, plus Courier New (Cousine as its open-source
  *     metric-compatible fallback) strictly for labels, tags, and
