@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-10-31",
+  "note": "Opened Oct 31, 2026 ~3:28 PM ET. refresh_method html = nightly job re-fetches source_url and looks for source_quote in page text; manual = page is JS-rendered, a bot rechecks by hand within 30 days.",
+  "products": [
+    { "slug": "close", "name": "Close", "product_type": "affiliate", "cheat_sheet_name": "Close", "site": "https://www.close.com/" },
+    { "slug": "pipedrive", "name": "Pipedrive", "product_type": "affiliate", "cheat_sheet_name": "Pipedrive", "site": "https://www.pipedrive.com/" },
+    { "slug": "capsule", "name": "Capsule", "product_type": "affiliate", "cheat_sheet_name": "Capsule / Transpond", "site": "https://capsulecrm.com/" },
+    { "slug": "folk", "name": "folk", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.folk.app/", "note": "No approved program. Listed without a link." },
+    { "slug": "portal-audit", "name": "Portal Audit", "product_type": "own_live", "owner_bot": "Boss Man", "cta_url": "https://audit.thejonmartin.com/" },
+    { "slug": "giftkeep", "name": "GiftKeep", "product_type": "own_live", "owner_bot": "GiftKeep", "cta_url": "https://giftkeep.app/" },
+    { "slug": "stripe-sync", "name": "HubSpot to Stripe sync", "product_type": "own_planned", "owner_bot": "Stripe Sync", "cta_url": "/contact" }
+  ],
+  "facts": [
+    { "id": "close.solo_price", "product": "close", "field": "Solo plan price", "value": "$9 per user per month", "number": 9, "source_url": "https://www.close.com/pricing", "source_quote": "Solo ($9/user)", "refresh_method": "html" },
+    { "id": "close.solo_limits", "product": "close", "field": "Solo plan limits", "value": "1 user, 10,000 leads, no workflows", "source_url": "https://www.close.com/pricing", "source_quote": "Limited to 10k leads", "refresh_method": "html" },
+    { "id": "close.essentials_price", "product": "close", "field": "Essentials plan price", "value": "$35 per user per month", "number": 35, "source_url": "https://www.close.com/pricing", "source_quote": "Essentials ($35/user)", "refresh_method": "html" },
+    { "id": "close.growth_price", "product": "close", "field": "Growth plan price", "value": "$99 per user per month, adds workflows and the power dialer", "number": 99, "source_url": "https://www.close.com/pricing", "source_quote": "Growth ($99/user)", "refresh_method": "html" },
+    { "id": "close.trial", "product": "close", "field": "Free trial", "value": "14 days, no credit card", "number": 14, "source_url": "https://www.close.com/pricing", "source_quote": "Try Close free for 14 Days", "refresh_method": "html" },
+    { "id": "close.money_back", "product": "close", "field": "Money-back guarantee", "value": "30 days after purchase", "number": 30, "source_url": "https://www.close.com/pricing", "source_quote": "30-day money-back guarantee", "refresh_method": "html" },
+    { "id": "close.hubspot_import", "product": "close", "field": "Migration", "value": "Built-in importers for HubSpot, Pipedrive and HighLevel", "source_url": "https://www.close.com/pricing", "source_quote": "built-in importers for platforms like HubSpot", "refresh_method": "html" },
+    { "id": "close.calling_cost", "product": "close", "field": "Calling cost", "value": "Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute", "number": 0.02, "source_url": "https://www.close.com/pricing", "source_quote": "Most outbound calls cost around $0.02/minute", "refresh_method": "html" },
+
+    { "id": "pipedrive.lite_price", "product": "pipedrive", "field": "Lite plan price", "value": "$14 per seat per month, billed annually", "number": 14, "source_url": "https://www.pipedrive.com/en/pricing", "source_quote": "One payment of US$ 168 per seat/year", "refresh_method": "manual" },
+    { "id": "pipedrive.growth_price", "product": "pipedrive", "field": "Growth plan price", "value": "$39 per seat per month, billed annually", "number": 39, "source_url": "https://www.pipedrive.com/en/pricing", "source_quote": "One payment of US$ 468 per seat/year", "refresh_method": "manual" },
+    { "id": "pipedrive.premium_price", "product": "pipedrive", "field": "Premium plan price", "value": "$59 per seat per month, billed annually", "number": 59, "source_url": "https://www.pipedrive.com/en/pricing", "source_quote": "One payment of US$ 708 per seat/year", "refresh_method": "manual" },
+    { "id": "pipedrive.trial", "product": "pipedrive", "field": "Free trial", "value": "14 days, no credit card", "number": 14, "source_url": "https://www.pipedrive.com/en/pricing", "source_quote": "Free 14-day trial. No credit card required.", "refresh_method": "manual" },
+    { "id": "pipedrive.integrations", "product": "pipedrive", "field": "Integrations", "value": "500+ apps, including Zapier, Zoom and lemlist", "number": 500, "source_url": "https://www.pipedrive.com/en/pricing", "source_quote": "Integrate with 500+ apps", "refresh_method": "manual" },
+    { "id": "pipedrive.growth_automation", "product": "pipedrive", "field": "Automation", "value": "Automations and email sequences start on Growth", "source_url": "https://www.pipedrive.com/en/pricing", "source_quote": "Automations and nurturing sequences", "refresh_method": "manual" },
+
+    { "id": "capsule.free_users", "product": "capsule", "field": "Free plan users", "value": "Up to 2 users", "number": 2, "source_url": "https://capsulecrm.com/pricing/", "source_quote": "Maximum 2 users.", "refresh_method": "html" },
+    { "id": "capsule.free_contacts", "product": "capsule", "field": "Free plan contacts", "value": "250 contacts, 1 sales pipeline", "number": 250, "source_url": "https://capsulecrm.com/pricing/", "source_quote": "250 Contacts", "refresh_method": "html" },
+    { "id": "capsule.starter_contacts", "product": "capsule", "field": "Starter plan contacts", "value": "30,000 contacts", "number": 30000, "source_url": "https://capsulecrm.com/pricing/", "source_quote": "30,000 Contacts", "refresh_method": "html" },
+    { "id": "capsule.growth_automation", "product": "capsule", "field": "Automation", "value": "Workflow automations and email sync start on Growth (60,000 contacts)", "number": 60000, "source_url": "https://capsulecrm.com/pricing/", "source_quote": "60,000 Contacts", "refresh_method": "html" },
+    { "id": "capsule.trial", "product": "capsule", "field": "Free trial", "value": "14 days on paid plans", "number": 14, "source_url": "https://capsulecrm.com/pricing/", "source_quote": "14-day trial of its paid plans", "refresh_method": "html" },
+    { "id": "capsule.setup_fee", "product": "capsule", "field": "Setup fees", "value": "None", "source_url": "https://capsulecrm.com/pricing/", "source_quote": "zero setup fees", "refresh_method": "html" },
+    { "id": "capsule.integrations", "product": "capsule", "field": "Integrations", "value": "60+ integrations, plus Zapier", "number": 60, "source_url": "https://capsulecrm.com/pricing/", "source_quote": "Capsule supports 60+ integrations", "refresh_method": "html" },
+
+    { "id": "folk.standard_price", "product": "folk", "field": "Standard plan price", "value": "$24 per member per month, billed yearly ($30 monthly)", "number": 24, "source_url": "https://www.folk.app/pricing", "source_quote": "$288", "refresh_method": "html" },
+    { "id": "folk.premium_price", "product": "folk", "field": "Premium plan price", "value": "$48 per member per month, billed yearly", "number": 48, "source_url": "https://www.folk.app/pricing", "source_quote": "$576", "refresh_method": "html" },
+    { "id": "folk.trial", "product": "folk", "field": "Free trial", "value": "2 weeks, no credit card", "source_url": "https://www.folk.app/pricing", "source_quote": "2 weeks free trial", "refresh_method": "html" },
+    { "id": "folk.linkedin", "product": "folk", "field": "LinkedIn", "value": "LinkedIn extension on Standard", "source_url": "https://www.folk.app/pricing", "source_quote": "LinkedIn extension", "refresh_method": "html" },
+    { "id": "folk.sequences", "product": "folk", "field": "Sequences", "value": "Email sequences start on Premium", "source_url": "https://www.folk.app/pricing", "source_quote": "Email sequences", "refresh_method": "html" }
+  ]
+}
