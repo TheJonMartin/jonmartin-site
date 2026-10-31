@@ -3,16 +3,16 @@ import Base from '../layouts/Base.astro';
 import { breadcrumbSchema, faqPairsSchema, giftKeepSchema } from '../lib/schema';
 
 const title = 'GiftKeep';
-const seoTitle = 'GiftKeep: the staff-only gift ledger for nonprofits';
+const seoTitle = 'GiftKeep: the gift ledger for nonprofits';
 const description =
-	"GiftKeep is a staff-only ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts and preview receipts. Works on its own, with an optional HubSpot connection.";
+	"GiftKeep is a ledger for donors, sponsors and gifts. Record gifts, run event sponsorships with clear deductible amounts and preview receipts. Works on its own, with an optional HubSpot connection.";
 
 // "Common questions" (section 7). One list feeds both the visible FAQ and the
 // FAQPage JSON-LD, so the two can't drift apart.
 const faqs = [
 	{
 		q: 'Do our donors need to create an account?',
-		a: 'No. GiftKeep is staff only. Your team signs in; donors never do.',
+		a: 'No. Your team signs in; donors never do.',
 	},
 	{
 		q: 'Do we need HubSpot?',
@@ -54,7 +54,7 @@ const schema = [
 					<span class="st-eyebrow">GiftKeep for nonprofits</span>
 					<h1 id="hero-h">One ledger for every gift, sponsor and <span class="st-mark">thank-you</span>.</h1>
 					<p class="st-sub">
-						GiftKeep is a staff-only gift ledger for nonprofits. Record gifts, run event sponsorships with
+						GiftKeep is a gift ledger for nonprofits. Record gifts, run event sponsorships with
 						clear deductible amounts, and preview receipts. Use it on its own, or connect HubSpot. Donors never
 						need another login.
 					</p>
@@ -63,7 +63,6 @@ const schema = [
 						<a class="st-btn st-btn-ghost" href="#video">Watch the 1-minute tour</a>
 					</div>
 					<ul class="st-pills" aria-label="At a glance">
-						<li>Staff only</li>
 						<li>Donors never sign in</li>
 						<li>Optional HubSpot connection</li>
 					</ul>
@@ -131,7 +130,7 @@ const schema = [
 					<div class="st-panel st-sol">
 						<h3>With GiftKeep</h3>
 						<ul class="st-list">
-							<li>Your team records each gift once, in one staff-only ledger.</li>
+							<li>Your team records each gift once, in one ledger.</li>
 							<li>Packages carry their benefit lines, so the deductible amount is figured for you.</li>
 							<li>Mistakes are voided with a reason, never deleted, and every change is in the history.</li>
 							<li>Goal progress sits on the Home screen. If you connect HubSpot, it gets the updates too.</li>
@@ -150,13 +149,6 @@ const schema = [
 			</div>
 			<div class="st-wrap">
 				<div class="st-grid">
-					<article class="st-feat">
-						<div class="st-ico">
-							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-						</div>
-						<h3>Staff only</h3>
-						<p>Only your team signs in. Donors never need an account, a password or a portal.</p>
-					</article>
 					<article class="st-feat">
 						<div class="st-ico">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5"/><rect x="14" y="10" width="7.5" height="10" rx="1"/><path d="M16.5 13h2.5M16.5 16h2.5"/></svg>
@@ -314,7 +306,7 @@ const schema = [
 					<div class="st-price-reg">
 						<span class="st-price-label">Price</span>
 						<span class="st-price-amt">$29/month</span>
-						<span class="st-price-fee">Every plan: $199 one-time sign-up fee, includes setup, and HubSpot connection if you use it</span>
+						<span class="st-price-fee">Every plan: $199 one-time setup fee, includes HubSpot connection if you use it</span>
 					</div>
 				</div>
 				<div class="st-ctas st-center">

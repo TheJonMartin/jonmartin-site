@@ -398,8 +398,8 @@ export function faqPairsSchema(pairs: { q: string; a: string }[], url: string) {
 
 /**
  * GiftKeep as a SoftwareApplication (/giftkeep). Prices are copied
- * from the page's own pricing card: $29/month, plus a $199 one-time sign-up fee
- * that includes setup (and the HubSpot connection if used). Change both
+ * from the page's own pricing card: $29/month, plus a $199 one-time setup fee
+ * (includes the HubSpot connection if used). Change both
  * together. No operatingSystem, ratings or reviews: none are published.
  */
 export function giftKeepSchema(description: string) {
@@ -431,7 +431,7 @@ export function giftKeepSchema(description: string) {
 				},
 				{
 					'@type': 'UnitPriceSpecification',
-					name: 'One-time sign-up fee (includes setup)',
+					name: 'One-time setup fee',
 					price: '199',
 					priceCurrency: 'USD',
 				},
