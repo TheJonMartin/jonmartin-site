@@ -1,0 +1,26 @@
+---
+interface Props {
+	/** Display name of the planned product. */
+	product: string;
+	/** Product slug, used to build the /contact topic. */
+	slug: string;
+}
+const { product, slug } = Astro.props;
+---
+
+<div class="waitlist">
+	<p class="waitlist-head"><span class="tag">Planned</span> {product}</p>
+	<p class="waitlist-copy">This is planned, not built yet. Join the waitlist and I'll tell you if it ships.</p>
+	<a class="btn btn-primary" href={`/contact?topic=${slug}-waitlist`}>Join the waitlist &rarr;</a>
+</div>
+
+<style>
+	.waitlist { display: grid; gap: 14px; }
+	.tag { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--mustard); border: 1px solid var(--mustard); padding: 3px 8px; margin-right: 0.6rem; }
+	.waitlist-head { font-size: 18px; margin: 0; }
+	.waitlist-copy { font-size: 15px; margin: 0; max-width: 50ch; }
+	.btn { display: inline-block; width: fit-content; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; }
+	.btn-primary { background: var(--mustard); color: var(--plum); }
+	.btn-primary:hover { background: var(--cream); color: var(--plum); }
+	.btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+</style>

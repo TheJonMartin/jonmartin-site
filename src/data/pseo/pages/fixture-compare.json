@@ -1,0 +1,41 @@
+{
+	"slug": "fixture-compare",
+	"route": "compare",
+	"template": "compare",
+	"status": "noindex",
+	"title": "Fixture page.",
+	"seoTitle": "Fixture page.",
+	"description": "Fixture page.",
+	"h1": "Fixture page.",
+	"dek": ["Fixture page."],
+	"published": "2026-10-31",
+	"modified": "2026-10-31",
+	"checked": "Oct 31, 2026",
+	"disclosure": "Fixture page. This page contains affiliate links.",
+	"niche": { "label": "Fixture page." },
+	"fitTable": {
+		"caption": "Fixture page.",
+		"head": ["Fixture page.", "Fixture page.", "Fixture page."],
+		"rows": [
+			["Fixture page.", "Fixture page.", "Fixture page."],
+			["Fixture page.", "Fixture page.", "Fixture page."]
+		]
+	},
+	"sections": [
+		{
+			"label": "Fixture page.",
+			"blocks": [{ "type": "p", "html": "Fixture page." }]
+		}
+	],
+	"faq": [{ "q": "Fixture page.", "a": "Fixture page." }],
+	"closing": "Fixture page.",
+	"ctas": [
+		{ "label": "Fixture page.", "href": "https://example.com/", "kind": "affiliate", "product": "fixture-product-a" },
+		{ "label": "Fixture page.", "href": "https://example.com/", "kind": "affiliate", "product": "fixture-product-b" }
+	],
+	"products": [
+		{ "slug": "fixture-product-a", "name": "Fixture page.", "type": "affiliate" },
+		{ "slug": "fixture-product-b", "name": "Fixture page.", "type": "affiliate" }
+	],
+	"sources": [{ "text": "Fixture page.", "href": "https://example.com/" }]
+}
