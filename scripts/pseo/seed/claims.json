@@ -1,0 +1,17 @@
+[
+  {
+    "product": "portal-audit",
+    "claim": "Portal Audit checks a HubSpot portal and lists what needs fixing.",
+    "approved_by": null
+  },
+  {
+    "product": "portal-audit",
+    "claim": "Fix is free during beta.",
+    "approved_by": null
+  },
+  {
+    "product": "stripe-sync",
+    "claim": "HubSpot to Stripe sync is planned, not built. Join the waitlist to hear if it ships.",
+    "approved_by": null
+  }
+]

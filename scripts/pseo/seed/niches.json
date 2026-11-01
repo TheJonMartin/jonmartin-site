@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "small-b2b-sales",
+    "label": "Small B2B sales teams",
+    "team_size": 5,
+    "must_haves": ["built-in calling", "email sequences", "pipeline view", "HubSpot import"]
+  },
+  {
+    "slug": "freelancers",
+    "label": "Freelancers and solo consultants",
+    "team_size": 1,
+    "must_haves": ["free or low-cost solo plan", "contact limit that fits a solo book", "simple pipeline"]
+  }
+]
