@@ -1,0 +1,16 @@
+---
+interface Props {
+	label: string;
+	href: string;
+}
+const { label, href } = Astro.props;
+---
+
+<a class="btn btn-primary" href={href}>{label} &rarr;</a>
+
+<style>
+	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; }
+	.btn-primary { background: var(--mustard); color: var(--plum); }
+	.btn-primary:hover { background: var(--cream); color: var(--plum); }
+	.btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+</style>

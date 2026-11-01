@@ -1,0 +1,26 @@
+# Mirrors the existing Render cron crn-dbj42m7lk1mc73875pb0; secrets are set in the Render dashboard.
+services:
+  - type: cron
+    name: pseo-nightly
+    runtime: node
+    region: ohio
+    plan: starter
+    schedule: "0 6 * * *"
+    branch: main
+    buildCommand: node --version
+    startCommand: "test -f scripts/pseo/run.mjs && node scripts/pseo/run.mjs || echo 'pseo engine not on main yet'"
+    envVars:
+      - key: PSEO_SUPABASE_URL
+        sync: false
+      - key: PSEO_SUPABASE_SERVICE_KEY
+        sync: false
+      - key: PSEO_NOTION_TOKEN
+        sync: false
+      - key: PSEO_CHEAT_SHEET_PAGE_ID
+        sync: false
+      - key: PSEO_GITHUB_TOKEN
+        sync: false
+      - key: PSEO_REPO
+        sync: false
+      - key: PSEO_DAILY_QUOTA
+        value: "2"

@@ -1,0 +1,37 @@
+---
+interface Props {
+	caption: string;
+	head: string[];
+	rows: string[][];
+}
+const { caption, head, rows } = Astro.props;
+---
+
+<figure class="tablefig">
+	<figcaption class="tcap">{caption}</figcaption>
+	<div class="tablewrap">
+		<table class="cmp">
+			<thead>
+				<tr>{head.map((h) => <th scope="col">{h}</th>)}</tr>
+			</thead>
+			<tbody>
+				{rows.map((r) => (
+					<tr>
+						<th scope="row">{r[0]}</th>
+						{r.slice(1).map((c) => <td>{c}</td>)}
+					</tr>
+				))}
+			</tbody>
+		</table>
+	</div>
+</figure>
+
+<style>
+	.tablefig { margin: 1.75rem 0; }
+	.tcap { font-family: Georgia, Gelasio, serif; font-weight: 700; font-size: 18px; color: var(--plum); margin: 0 0 0.75rem; }
+	.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+	.cmp { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+	.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 12px 14px 12px 0; border-top: 1px solid var(--hairline); }
+	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); border-top: none; padding-top: 0; }
+	.cmp tbody th { font-weight: 700; color: var(--plum); }
+</style>

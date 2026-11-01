@@ -1,0 +1,23 @@
+---
+interface Props {
+	text: string;
+}
+const { text } = Astro.props;
+---
+
+<div class="disclosure-bar">
+	<div class="inner">
+		<p class="label disclosure-top"><span class="d-tag">Disclosure</span> {text}</p>
+	</div>
+</div>
+
+<style>
+	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.disclosure-bar { border-bottom: 1px solid var(--hairline); padding: 14px 0; background: var(--white); }
+	.disclosure-top { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0; letter-spacing: 0.06em; }
+	.d-tag { color: var(--plum); margin-right: 0.5rem; }
+
+	@media (max-width: 720px) {
+		.inner { padding: 0 20px; }
+	}
+</style>

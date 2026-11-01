@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 
 // lastmod only where a real date exists: essays (updatedDate, else pubDate) and tool pages (checked date).
 const lastmod = new Map();
@@ -22,6 +22,22 @@ toolSlugs.forEach((m, i) => {
 });
 if (toolsDate) lastmod.set('/tools', toolsDate);
 
+// pSEO engine pages: /tools/best/<slug> and /tools/compare/<slug>, resolved JSON written by scripts/pseo/run.mjs.
+const pseoNoindex = new Set();
+const pseoPagesDir = './src/data/pseo/pages';
+if (existsSync(pseoPagesDir)) {
+	for (const f of readdirSync(pseoPagesDir)) {
+		if (!f.endsWith('.json')) continue;
+		const page = JSON.parse(readFileSync(`${pseoPagesDir}/${f}`, 'utf8'));
+		const path = `/tools/${page.route}/${page.slug}`;
+		if (page.status === 'noindex') {
+			pseoNoindex.add(path);
+		} else if (page.modified) {
+			lastmod.set(path, page.modified);
+		}
+	}
+}
+
 export default defineConfig({
 	site: 'https://thejonmartin.com',
 
@@ -30,8 +46,12 @@ export default defineConfig({
 
 	integrations: [
 		sitemap({
-			// Must match every noindex page (Base/FourLawsLayout): /thanks-contact, /thanks-consulting, /thanks-giftkeep, /404.
-			filter: (page) => !/\/(thanks-contact|thanks-consulting|thanks-giftkeep|404)(\.html)?$/.test(page),
+			// Must match every noindex page (Base/FourLawsLayout): /thanks-contact, /thanks-consulting, /thanks-giftkeep, /404, and noindex pSEO engine pages.
+			filter: (page) => {
+				if (/\/(thanks-contact|thanks-consulting|thanks-giftkeep|404)(\.html)?$/.test(page)) return false;
+				const pathname = new URL(page).pathname.replace(/\.html$/, '');
+				return !pseoNoindex.has(pathname);
+			},
 
 			// build.format 'file' emits .html; strip so sitemap URLs match layout canonicals.
 			serialize(item) {
