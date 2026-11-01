@@ -1,0 +1,73 @@
+{
+	"slug": "alpha-crm-vs-beta-crm",
+	"route": "compare",
+	"template": "compare",
+	"wave": 1,
+	"niche": {
+		"label": "teams choosing between two CRMs",
+		"team_size": "any",
+		"must_haves": []
+	},
+	"products": [
+		{ "slug": "alpha-crm", "role": "option", "link": true },
+		{ "slug": "beta-crm", "role": "option", "link": true }
+	],
+	"title": "Alpha CRM vs Beta CRM: which one should you pick",
+	"seoTitle": "Alpha CRM vs Beta CRM (2026 Comparison)",
+	"description": "A direct comparison of Alpha CRM and Beta CRM on price, trial length, and plan limits.",
+	"h1": "Alpha CRM vs Beta CRM",
+	"dek": [
+		"Two CRMs aimed at the same small-team buyer, compared line by line.",
+		"Pricing, trial length, and plan ceilings, pulled straight from each vendor's own page."
+	],
+	"sections": [
+		{
+			"label": "The short answer",
+			"blocks": [
+				{ "type": "p", "html": "Alpha CRM and Beta CRM compete for the same buyer: a small sales team that wants a pipeline without a long sales cycle to get started. The two tools land close together on price but differ in how they structure trials, free limits, and automation." },
+				{ "type": "p", "html": "If you only read one section, read the pricing table below. Everything after it is the reasoning behind each row, in case a number alone does not tell you enough about which plan fits your team." }
+			]
+		},
+		{
+			"label": "Pricing",
+			"blocks": [
+				{ "type": "p", "html": "Alpha CRM starts at {{fact:alpha.price}}. Beta CRM's Team plan starts at {{fact:beta.price}}, and Beta CRM also sells a separate automation add-on at {{fact:beta.addon_price}} for teams that want sequences and workflow rules." },
+				{ "type": "p", "html": "Stack the Beta CRM base plan and the automation add-on together and a team pays roughly {{calc:beta_bundle_price}} per seat per month, which puts it above Alpha CRM's single all-in price once automation is actually turned on." },
+				{ "type": "p", "html": "Alpha CRM does not split automation into a separate line item, so its listed price already reflects what a team would pay to use the product fully, without an upsell waiting once the pipeline gets busier." }
+			]
+		},
+		{
+			"label": "Trials and free plans",
+			"blocks": [
+				{ "type": "p", "html": "Alpha CRM offers a {{fact:alpha.trial}}, while Beta CRM's trial is shorter at {{fact:beta.trial}}. A longer trial matters more for a team that wants to load real pipeline data before deciding, rather than testing with a handful of sample deals." },
+				{ "type": "p", "html": "On the free tier, Alpha CRM's limit is that {{fact:alpha.free_cap}}, while Beta CRM is tighter, since {{fact:beta.free_cap}}. Neither free tier is meant for a real team long-term, but Alpha CRM's version survives a slightly longer evaluation." },
+				{ "type": "p", "html": "Once a team upgrades to a paid plan, Alpha CRM allows {{fact:alpha.contacts}}, well above Beta CRM's paid ceiling of {{fact:beta.contacts}}. A team with a larger contact list should weigh that gap carefully before picking Beta CRM on price alone." }
+			]
+		},
+		{
+			"label": "Integrations and support",
+			"blocks": [
+				{ "type": "p", "html": "Alpha CRM lists {{fact:alpha.integrations}}, compared with Beta CRM's {{fact:beta.integrations}}. Neither catalog is exhaustive, but Alpha CRM's is noticeably larger, which matters if your stack already includes a long tail of smaller tools." },
+				{ "type": "p", "html": "Support is where the two diverge most: Alpha CRM offers {{fact:alpha.support}}, giving teams on a lower-cost plan a path to a human if something breaks. Beta CRM does not publish an equivalent phone-support tier at all on its pricing page." },
+				{ "type": "p", "html": "Neither vendor charges extra fees to get started, and both publish every number used in this comparison on their own public pricing pages, so none of the figures above required a sales call to confirm." }
+			]
+		}
+	],
+	"faq": [
+		{ "q": "Which CRM is cheaper for a small team?", "a": "Alpha CRM is cheaper once Beta CRM's automation add-on is included, though Beta CRM's base plan alone is close in price." },
+		{ "q": "Which has the longer free trial?", "a": "Alpha CRM's trial runs longer than Beta CRM's, giving a team more time to load real pipeline data before deciding." },
+		{ "q": "Does either CRM charge a setup fee?", "a": "No, neither Alpha CRM nor Beta CRM charges a setup fee on any published plan." }
+	],
+	"closing": "Alpha CRM wins on trial length, free-plan headroom, and integration count, while Beta CRM only pulls ahead for a team that specifically wants its automation add-on and nothing else Alpha CRM offers.",
+	"computed": [{ "id": "beta_bundle_price", "label": "Beta CRM Team plus Automation combined monthly price", "expr": "beta.price + beta.addon_price" }],
+	"fitTable": {
+		"caption": "Alpha CRM vs Beta CRM at a glance",
+		"head": ["Category", "Alpha CRM", "Beta CRM"],
+		"rows": [
+			["Starting price", "{{fact:alpha.price}}", "{{fact:beta.price}}"],
+			["Free trial", "{{fact:alpha.trial}}", "{{fact:beta.trial}}"],
+			["Paid plan contact limit", "{{fact:alpha.contacts}}", "{{fact:beta.contacts}}"],
+			["Integrations", "{{fact:alpha.integrations}}", "{{fact:beta.integrations}}"]
+		]
+	}
+}

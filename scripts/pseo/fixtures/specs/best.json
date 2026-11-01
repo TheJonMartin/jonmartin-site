@@ -1,0 +1,85 @@
+{
+	"slug": "best-crm-for-small-sales-teams",
+	"route": "best",
+	"template": "best",
+	"wave": 1,
+	"niche": {
+		"label": "small sales teams",
+		"team_size": "2-10 reps",
+		"must_haves": ["Pipeline view", "Email sync", "Mobile app"]
+	},
+	"products": [
+		{ "slug": "alpha-crm", "role": "option", "link": true },
+		{ "slug": "beta-crm", "role": "option", "link": true },
+		{ "slug": "gamma-crm", "role": "option", "link": true }
+	],
+	"title": "The best CRM for small sales teams in 2026",
+	"seoTitle": "Best CRM for Small Sales Teams (2026)",
+	"description": "A side-by-side look at three CRMs built for small sales teams, with current pricing and trial terms.",
+	"h1": "The best CRM for small sales teams",
+	"dek": [
+		"Three CRMs, one straightforward comparison, no account required to read it.",
+		"Every figure below comes from the vendor's own pricing page, checked recently."
+	],
+	"sections": [
+		{
+			"label": "How we picked",
+			"blocks": [
+				{ "type": "p", "html": "Picking a CRM for a small sales team usually comes down to three questions: how fast can a rep get set up, how much does the plan cost once the whole team is on it, and how painful is it to leave later. We looked at three tools that are built with small teams in mind rather than enterprise buyers, and we read each vendor's pricing page directly instead of repeating marketing copy." },
+				{ "type": "p", "html": "We did not take a side before reading the pricing pages. Each product below gets the same treatment: starting price, free trial length, free plan limits, contact caps, and integration count. Where one tool is clearly stronger for a given team shape, we say so plainly instead of hedging." },
+				{ "type": "ul", "items": ["Pricing must be public and current", "A free trial or free tier must exist", "The product must support at least basic pipeline stages out of the box"] }
+			]
+		},
+		{
+			"label": "Alpha CRM",
+			"blocks": [
+				{ "type": "p", "html": "Alpha CRM is priced at {{fact:alpha.price}}, and the vendor offers a {{fact:alpha.trial}}. That combination makes it easy for a small team to try the product with a live pipeline before committing a credit card to anything." },
+				{ "type": "p", "html": "The free plan is limited: {{fact:alpha.free_cap}}. Once a team is ready to pay, the Starter plan raises the ceiling to {{fact:alpha.contacts}}, which is plenty of room for most small teams to grow into over a year or two without hitting a wall mid-quarter." },
+				{ "type": "p", "html": "On the integration side, Alpha CRM ships with {{fact:alpha.integrations}}, which covers most of what a small team already uses day to day. Support is split by plan: {{fact:alpha.support}}, so teams that want someone on the phone should plan to upgrade past the entry tier." },
+				{ "type": "h3", "text": "Who Alpha CRM fits" },
+				{ "type": "p", "html": "Alpha CRM fits teams that want a short trial, a reasonable free tier to test real data, and a clear upgrade path once the team outgrows the starter limits. It is a solid first pick for a team that has never used a CRM before." }
+			]
+		},
+		{
+			"label": "Beta CRM",
+			"blocks": [
+				{ "type": "p", "html": "Beta CRM's Team plan runs {{fact:beta.price}}, with an automation add-on priced separately at {{fact:beta.addon_price}}. Teams that only need pipeline tracking can skip the add-on entirely and keep the bill lower." },
+				{ "type": "p", "html": "The trial window is shorter here: {{fact:beta.trial}}, and the free plan caps out quickly too, since {{fact:beta.free_cap}}. The paid Team plan then allows {{fact:beta.contacts}}, which is noticeably tighter than Alpha CRM's paid ceiling." },
+				{ "type": "p", "html": "Beta CRM lists {{fact:beta.integrations}}, a smaller catalog than Alpha CRM but still enough to cover email, calendar, and the most common form tools a small team already relies on." },
+				{ "type": "h3", "text": "Who Beta CRM fits" },
+				{ "type": "p", "html": "Beta CRM fits a team that already knows it wants automation later and is comfortable paying for the add-on once it adopts sequences, since the base plan keeps the core pipeline lean and inexpensive on its own." }
+			]
+		},
+		{
+			"label": "Gamma CRM",
+			"blocks": [
+				{ "type": "p", "html": "Gamma CRM is the cheapest of the three at {{fact:gamma.price}}, and it backs that up with the longest trial of the group: {{fact:gamma.trial}}. For a cash-conscious team, that is a meaningful combination." },
+				{ "type": "p", "html": "The tradeoff shows up in limits. The free plan is strict, since {{fact:gamma.free_cap}}, and the paid Basic plan only allows {{fact:gamma.contacts}}, which a growing team can outgrow within a year." },
+				{ "type": "p", "html": "Gamma CRM also ships the smallest catalog of the three, with {{fact:gamma.integrations}}, and its support model is bare: {{fact:gamma.support}}. That is a reasonable trade for a team that mostly wants a cheap, simple pipeline and does not plan to lean on integrations." },
+				{ "type": "h3", "text": "Who Gamma CRM fits" },
+				{ "type": "p", "html": "Gamma CRM fits a very small or very budget-constrained team that wants the longest possible trial and the lowest possible monthly cost, and that is willing to accept a thinner feature set and self-serve support in exchange." }
+			]
+		},
+		{
+			"label": "Pricing and fit side by side",
+			"blocks": [
+				{ "type": "p", "html": "If a five-person team on Alpha CRM paid for every seat on the Starter plan for a full year, the tool would run roughly {{calc:alpha_team_annual}} across the year, which is a useful anchor when comparing it against the other two tools' paid tiers over the same stretch." },
+				{ "type": "p", "html": "None of the three tools charges a setup fee, and all three publish their pricing openly instead of gating it behind a sales call, which made this comparison possible to write without contacting anyone." },
+				{ "type": "p", "html": "The must-have table below lines up pipeline view, email sync, and mobile app support across all three products so a team can scan for the one dealbreaker that matters most to how they actually work." }
+			]
+		}
+	],
+	"faq": [
+		{ "q": "Which of these three CRMs has the longest free trial?", "a": "Gamma CRM does, with its trial running longer than either Alpha CRM or Beta CRM offers on their own pricing pages." },
+		{ "q": "Is there a free plan I can use indefinitely?", "a": "All three offer some kind of free tier, but each one is capped tightly enough that most teams will outgrow it within a few weeks of real use." },
+		{ "q": "Which CRM has the most integrations?", "a": "Alpha CRM lists the largest integration catalog of the three, ahead of Beta CRM and well ahead of Gamma CRM." },
+		{ "q": "Do any of these charge a setup fee?", "a": "No. All three publish pricing without a setup fee and without requiring a sales call to see the numbers." }
+	],
+	"closing": "For most small sales teams, Alpha CRM's balance of trial length, free-plan headroom, and integration count makes it the easiest starting point, with Gamma CRM as the budget-first alternative.",
+	"computed": [{ "id": "alpha_team_annual", "label": "Alpha CRM annual cost for a five-person team on Starter", "expr": "alpha.price * 60" }],
+	"fit": {
+		"Pipeline view": { "alpha-crm": "Drag-and-drop stages on every plan", "beta-crm": "List-based stages, no drag and drop", "gamma-crm": "Basic single-pipeline view only" },
+		"Email sync": { "alpha-crm": "Two-way Gmail and Outlook sync", "beta-crm": "One-way Gmail sync only", "gamma-crm": "Manual import, no live sync" },
+		"Mobile app": { "alpha-crm": "iOS and Android", "beta-crm": "iOS and Android", "gamma-crm": "iOS only" }
+	}
+}

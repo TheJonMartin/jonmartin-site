@@ -1,0 +1,6 @@
+[
+	{ "slug": "alpha-crm", "name": "Alpha CRM", "product_type": "affiliate" },
+	{ "slug": "beta-crm", "name": "Beta CRM", "product_type": "affiliate" },
+	{ "slug": "gamma-crm", "name": "Gamma CRM", "product_type": "affiliate" },
+	{ "slug": "delta-sync", "name": "Delta Sync", "product_type": "own_planned", "cta_url": "/contact" }
+]

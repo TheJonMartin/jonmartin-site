@@ -1,0 +1,73 @@
+{
+	"slug": "how-to-switch-from-alpha-crm-to-beta-crm",
+	"route": "compare",
+	"template": "howto",
+	"wave": 1,
+	"niche": {
+		"label": "teams switching CRMs",
+		"team_size": "any",
+		"must_haves": []
+	},
+	"products": [
+		{ "slug": "alpha-crm", "role": "option", "link": true },
+		{ "slug": "beta-crm", "role": "option", "link": true },
+		{ "slug": "delta-sync", "role": "waitlist", "link": false }
+	],
+	"title": "How to switch from Alpha CRM to Beta CRM without losing data",
+	"seoTitle": "How to Switch from Alpha CRM to Beta CRM",
+	"description": "A step-by-step walkthrough for moving a small sales team's pipeline from Alpha CRM to Beta CRM.",
+	"h1": "How to switch from Alpha CRM to Beta CRM",
+	"dek": [
+		"A practical checklist for teams migrating a live pipeline between two CRMs.",
+		"No downtime tricks, just the order of operations that avoids losing deals."
+	],
+	"sections": [
+		{
+			"label": "Before you start",
+			"blocks": [
+				{ "type": "p", "html": "Switching CRMs mid-quarter is risky mainly because open deals, not historical ones, are what a team actually loses track of during a migration. Before touching an export button, get every rep to close out their notes on active deals so nothing important lives only in someone's head." },
+				{ "type": "p", "html": "Alpha CRM's trial runs {{fact:alpha.trial}}, and Beta CRM's trial runs {{fact:beta.trial}}, so a team has a real window to run both tools side by side before cutting over fully. Use that overlap instead of switching cold on a single day." },
+				{ "type": "p", "html": "Check plan limits before migrating data rather than after. Alpha CRM's paid plan supports {{fact:alpha.contacts}}, while Beta CRM's paid plan supports {{fact:beta.contacts}}, and a list that fits comfortably in Alpha CRM might need trimming or a higher Beta CRM tier to land cleanly." }
+			]
+		},
+		{
+			"label": "The migration steps",
+			"blocks": [
+				{
+					"type": "steps",
+					"items": [
+						"Export every open deal, contact, and note from Alpha CRM using its built-in export tool, and keep a copy of the raw file before you touch anything else.",
+						"Clean the export: remove duplicate contacts, close out any deal marked won or lost that is still sitting open, and fix obviously broken email addresses.",
+						"Create the pipeline stages in Beta CRM first, matching Alpha CRM's stage names exactly so reps do not have to relearn the pipeline shape on day one.",
+						"Import contacts before deals, since Beta CRM's deal import links to existing contact records rather than creating duplicates automatically.",
+						"Import the cleaned deal list into Beta CRM, then spot-check a sample of deals against the original export to confirm dollar amounts and stages landed correctly.",
+						"Run both tools in parallel for one full sales cycle before turning off access to Alpha CRM, so a missed record surfaces before it costs a deal."
+					]
+				},
+				{ "type": "p", "html": "Automation is the one feature worth leaving for last. Beta CRM's automation add-on, priced at {{fact:beta.addon_price}} on top of the base plan, is easy to configure wrong on a rushed timeline, and a broken automation during a live migration tends to cause more damage than having no automation at all for a few weeks." }
+			]
+		},
+		{
+			"label": "What to watch for after the switch",
+			"blocks": [
+				{ "type": "p", "html": "Give the team at least two full weeks after cutover before judging whether the move was worth it, since the first week of any new tool is dominated by rep complaints about button placement rather than real problems with the data." },
+				{ "type": "p", "html": "Watch for silently dropped fields. Alpha CRM supports {{fact:alpha.integrations}}, and Beta CRM supports {{fact:beta.integrations}}, so any integration that existed only on the Alpha CRM side needs a replacement plan, or that data stream simply goes quiet after cutover." },
+				{ "type": "p", "html": "If support tickets spike after the switch, lean on whichever vendor still has you as an active customer during the overlap window. Alpha CRM offers {{fact:alpha.support}}, which is useful if a migration-related billing or access question comes up while both tools are still live." }
+			]
+		},
+		{
+			"label": "A planned tool worth knowing about",
+			"blocks": [
+				{ "type": "p", "html": "Separately, a sync between a CRM and Stripe billing data is something I get asked about often enough that I am building it as its own product, called Delta Sync. It has not shipped yet, and nothing on this page depends on it." },
+				{ "type": "p", "html": "If matching CRM deal stages to Stripe subscription events is a problem your team already has, you can join the waitlist below and I will let you know if and when it ships. There is no commitment and no charge for joining." }
+			]
+		}
+	],
+	"faq": [
+		{ "q": "Can I run Alpha CRM and Beta CRM at the same time during a migration?", "a": "Yes, and doing so for at least one full sales cycle is the safest way to catch missed records before fully cutting over." },
+		{ "q": "Should I migrate automations along with the pipeline?", "a": "No, it is safer to rebuild automations after the core pipeline migration is confirmed stable rather than moving everything at once." },
+		{ "q": "What happens to integrations that only exist on the old CRM?", "a": "Any integration unique to the old tool needs a replacement plan before cutover, or that data stream will go quiet once access is turned off." }
+	],
+	"closing": "A clean CRM migration is mostly about sequencing: export and clean first, rebuild the pipeline shape before importing, and leave automation for after the core data has proven stable in the new tool.",
+	"computed": [{ "id": "migration_overlap_days", "label": "Combined trial days available for running both tools in parallel", "expr": "alpha.trial + beta.trial" }]
+}

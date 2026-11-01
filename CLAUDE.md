@@ -21,5 +21,5 @@ Astro 7 static site, deployed by Netlify from `main` (never push to main; branch
 - Altitude modules 09/12/16/18 "Next: …" lines (open question)
 
 ## pSEO engine (branch pseo-engine; see BUILD_PLAN.md)
-- Pages: src/data/pseo/pages/*.json -> /tools/best/<slug>, /tools/compare/<slug>. Engine code: scripts/pseo/ (run.mjs nightly on Render, gate.mjs, render.mjs). Tests: `node --test scripts/pseo/`
+- Pages: src/data/pseo/pages/*.json -> /tools/best/<slug>, /tools/compare/<slug>. Engine code: scripts/pseo/ (run.mjs nightly on Render, gate.mjs, render.mjs). Tests: `node --test 'scripts/pseo/**/*.test.mjs'`
 - Copy: no prices for own products; FTC disclosure before first affiliate link; links only from the PartnerStack cheat sheet; no "Steward", no "staff-only", no "implements for clients"; Stripe sync is PLANNED (waitlist only).
