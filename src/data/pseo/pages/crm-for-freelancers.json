@@ -1,0 +1,221 @@
+{
+  "slug": "crm-for-freelancers",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "Best CRM for Freelancers and Solo Consultants — Jon Martin",
+  "seoTitle": "Best CRM for Freelancers in 2026",
+  "description": "A plain comparison of Capsule, Close, Pipedrive, and folk for freelancers who need a low-cost CRM that fits a solo book.",
+  "h1": "The best CRM for freelancers and solo consultants",
+  "dek": [
+    "Four CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+    "Every number below comes from each vendor's own pricing page, checked recently."
+  ],
+  "published": "2026-11-01",
+  "modified": "2026-11-01",
+  "checked": "Nov 1, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Freelancers and solo consultants"
+  },
+  "fitTable": {
+    "caption": "Fit for Freelancers and solo consultants",
+    "head": [
+      "Must-have",
+      "Capsule",
+      "Close",
+      "Pipedrive",
+      "folk"
+    ],
+    "rows": [
+      [
+        "free or low-cost solo plan",
+        "Free plan: Up to 2 users.",
+        "Solo: $9 per user per month.",
+        "Lite: $14 per seat per month, billed annually.",
+        "Standard: $24 per member per month, billed yearly ($30 monthly)."
+      ],
+      [
+        "contact limit that fits a solo book",
+        "Free: 250 contacts, 1 sales pipeline. Starter: 30,000 contacts.",
+        "Solo: 1 user, 10,000 leads, no workflows.",
+        "Pipedrive's pricing page doesn't publish a contact cap for the Lite plan.",
+        "No published contact cap on folk's pricing page."
+      ],
+      [
+        "simple pipeline",
+        "One pipeline on the free plan, more on paid plans.",
+        "Pipeline view ships on Solo, same as every Close plan.",
+        "Pipeline view is the core of every Pipedrive plan.",
+        "Board-style pipeline built around contacts and relationships, not just deals."
+      ]
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This is for a freelancer or solo consultant choosing a first CRM, not a team of any size. If you're hiring a rep soon, go read the small-team comparison instead; the math and the plans change once you're buying more than one seat."
+        },
+        {
+          "type": "p",
+          "html": "I'm comparing four tools that all publish a usable plan for one person: Capsule, Close, Pipedrive, and folk. I don't sell any of them, and I don't have an affiliate link for every one, which I'll call out plainly where it applies instead of pretending all four are equally easy to sign up for."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If you want the one-line version: Capsule's free plan is the easiest way to start at zero cost, Close is the strongest pick once you're ready to pay and want built-in calling, and folk is worth a look if you live in email and LinkedIn, but you'll have to go find it yourself since there's no link for it here."
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive is solid but its entry plan is built more for a small team's pipeline habits than a true one-person workflow."
+        }
+      ]
+    },
+    {
+      "label": "Plan and price breakdown",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Capsule's free plan is the place to start. Users: Up to 2 users. Limits: 250 contacts, 1 sales pipeline. That's enough to run a real solo book before paying anything. The Starter plan raises the ceiling to 30,000 contacts, and there's no setup fee on either plan (Capsule lists it as None)."
+        },
+        {
+          "type": "p",
+          "html": "Close's Solo plan runs $9 per user per month, about $108 a year. What you get: 1 user, 10,000 leads, no workflows. Pipedrive's entry Lite plan is quoted as $14 per seat per month, billed annually, so you pay for the year up front rather than month to month."
+        },
+        {
+          "type": "p",
+          "html": "folk's Standard plan: $24 per member per month, billed yearly ($30 monthly). Premium: $48 per member per month, billed yearly, and that's the tier to watch, because Email sequences start on Premium. Every one of these plans is priced for one seat, so the real question is which limit you'll hit first: contacts, leads, or features."
+        }
+      ]
+    },
+    {
+      "label": "Fit for a freelancer's book",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "The table below checks all four against what a solo book actually needs: a free or low-cost plan, a contact limit that won't choke on a few hundred relationships, and a pipeline simple enough to update between client calls."
+        },
+        {
+          "type": "p",
+          "html": "Capsule and Close both clear the bar on price. Pipedrive clears it on pipeline simplicity but costs more than Capsule's free tier out of the gate. folk clears it on simplicity too, though you're signing up directly on folk's own site since I don't have a link for it."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Capsule's free plan caps out at 250 contacts, 1 sales pipeline, which a busy freelancer can hit faster than expected once past clients get added back in. Close's Solo plan is priced well, but it comes with real limits (1 user, 10,000 leads, no workflows), so a consultant who runs workflows or sequences will have to upgrade sooner than the price alone suggests."
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive's Lite price looks competitive until you remember it's an annual commitment, not a month-to-month one, which is a bigger ask for a solo consultant than for a funded team. folk's trial (2 weeks, no credit card) is about the same length as the others, so plan your test before you start the clock."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start free on Capsule if you want to prove the habit of using a CRM before paying for one. Move to Close's Solo plan once calling or a bigger lead limit matters more than staying free."
+        },
+        {
+          "type": "p",
+          "html": "Consider Pipedrive if you already think in pipeline stages and don't mind the annual bill. Look at folk directly on its own site if email and LinkedIn are where most of your client relationships actually live, since that's the one tool here without a link to click."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is there a truly free CRM for freelancers in this group?",
+      "a": "Capsule is. Free plan users: Up to 2 users. Limits: 250 contacts, 1 sales pipeline."
+    },
+    {
+      "q": "How much does Close cost for one person over a year?",
+      "a": "Close's Solo plan runs $9 per user per month, about $108 a year."
+    },
+    {
+      "q": "Is Pipedrive's Lite plan billed monthly?",
+      "a": "No. It's quoted as $14 per seat per month, billed annually, so the monthly number is paid as one annual bill, same as Pipedrive's other plans."
+    },
+    {
+      "q": "Do you have an affiliate link for folk?",
+      "a": "No. There's no approved affiliate link for folk, so there's no link for it on this page. You'll need to sign up directly on folk's own site."
+    },
+    {
+      "q": "How long are the free trials?",
+      "a": "About the same across the board. Capsule: 14 days on paid plans. Close: 14 days, no credit card. folk: 2 weeks, no credit card. Capsule's free plan also means you can try it with no clock at all."
+    }
+  ],
+  "closing": "For most freelancers, start free on Capsule, move to Close when you need calling, and only look past both if your work already lives in email and LinkedIn.",
+  "ctas": [
+    {
+      "label": "Try Capsule",
+      "href": "https://get.capsulenow.io/x0kzganxlolo",
+      "kind": "affiliate",
+      "product": "capsule"
+    },
+    {
+      "label": "Try Close",
+      "href": "https://refer.close.com/bebtpaitxgfs",
+      "kind": "affiliate",
+      "product": "close"
+    },
+    {
+      "label": "Try Pipedrive",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "kind": "affiliate",
+      "product": "pipedrive"
+    }
+  ],
+  "products": [
+    {
+      "slug": "capsule",
+      "name": "Capsule",
+      "type": "affiliate"
+    },
+    {
+      "slug": "close",
+      "name": "Close",
+      "type": "affiliate"
+    },
+    {
+      "slug": "pipedrive",
+      "name": "Pipedrive",
+      "type": "affiliate"
+    },
+    {
+      "slug": "folk",
+      "name": "folk",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Close pricing page",
+      "href": "https://www.close.com/pricing"
+    },
+    {
+      "text": "Pipedrive pricing page",
+      "href": "https://www.pipedrive.com/en/pricing"
+    },
+    {
+      "text": "Capsule pricing page",
+      "href": "https://capsulecrm.com/pricing/"
+    },
+    {
+      "text": "folk pricing page",
+      "href": "https://www.folk.app/pricing"
+    }
+  ]
+}

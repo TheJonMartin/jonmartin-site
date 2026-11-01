@@ -6,6 +6,7 @@ import path from 'node:path';
 
 import { renderPage } from './render.mjs';
 import { gate } from './gate.mjs';
+import { loadLocal } from './seed.mjs';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 const fixturesDir = path.join(dir, 'fixtures');
@@ -115,6 +116,22 @@ test('rule 5: fails when an affiliate page has no disclosure', () => {
 	const result = gate(page, { spec: specs.best, facts, products, links, claims, runDate: RUN_DATE });
 	assert.equal(result.ok, false);
 	assert.ok(result.errors.some((e) => e.startsWith('rule 5:') && e.includes('disclosure')), result.errors.join('\n'));
+});
+
+test('real specs: close-vs-pipedrive and crm-for-freelancers pass the gate with loadLocal() data', () => {
+	const local = loadLocal();
+	const runDate = '2026-11-01';
+	const realSpecs = local.specs.filter((s) => ['close-vs-pipedrive', 'crm-for-freelancers'].includes(s.slug));
+	assert.equal(realSpecs.length, 2);
+
+	const pages = realSpecs.map((spec) => renderPage(spec, { facts: local.facts, products: local.products, links: local.links, claims: local.claims, runDate }));
+
+	realSpecs.forEach((spec, i) => {
+		const otherPages = pages.filter((_, j) => j !== i);
+		const result = gate(pages[i], { spec, facts: local.facts, products: local.products, links: local.links, claims: local.claims, otherPages, runDate });
+		assert.deepEqual(result.errors, []);
+		assert.equal(result.ok, true);
+	});
 });
 
 test('rule 7: fails when a planned product gets a live cta', () => {

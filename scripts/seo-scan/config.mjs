@@ -1,5 +1,24 @@
 // Tunable knobs for the weekly SEO & AEO scan. Adjust thresholds/targets here;
 // crawler and rules stay generic against `site`.
+import { readFileSync, readdirSync } from 'node:fs';
+import path from 'node:path';
+
+// pSEO engine pages (src/data/pseo/pages/*.json) marked noindex render a robots
+// noindex meta and are left out of the sitemap; the scan should expect that.
+function pseoNoindexRoutes() {
+	const pagesDir = 'src/data/pseo/pages';
+	let files;
+	try {
+		files = readdirSync(pagesDir).filter((f) => f.endsWith('.json'));
+	} catch {
+		return [];
+	}
+	return files
+		.map((f) => JSON.parse(readFileSync(path.join(pagesDir, f), 'utf8')))
+		.filter((page) => page.status === 'noindex')
+		.map((page) => `/tools/${page.route}/${page.slug}`);
+}
+
 export const config = {
 	site: {
 		label: 'thejonmartin.com',
@@ -10,7 +29,7 @@ export const config = {
 		// expected-noindex route, so noindex and sitemap checks still run for it.
 		// /admin is not expected-noindex, so it stays out of those too.
 		excludeFromContentChecks: ['/404', '/admin'],
-		expectedNoindex: ['/thanks-contact', '/thanks-consulting', '/thanks-giftkeep', '/404'],
+		expectedNoindex: ['/thanks-contact', '/thanks-consulting', '/thanks-giftkeep', '/404', ...pseoNoindexRoutes()],
 		// Short by design (tools / contact form) — exempt from thin-content check only.
 		thinContentExempt: ['/contact', '/flow-formula-calculator', '/part8-flow-diagnostic'],
 	},

@@ -1,0 +1,169 @@
+{
+	"slug": "close-vs-pipedrive",
+	"route": "compare",
+	"template": "compare",
+	"wave": 1,
+	"niche": {
+		"label": "Small B2B sales teams",
+		"team_size": 5,
+		"must_haves": [
+			"built-in calling",
+			"email sequences",
+			"pipeline view",
+			"HubSpot import"
+		]
+	},
+	"products": [
+		{
+			"slug": "close",
+			"role": "option",
+			"link": true
+		},
+		{
+			"slug": "pipedrive",
+			"role": "option",
+			"link": true
+		}
+	],
+	"title": "Close vs Pipedrive for a Small Sales Team — Jon Martin",
+	"seoTitle": "Close vs Pipedrive for Small Sales Teams",
+	"description": "A plain, fact-checked comparison of Close and Pipedrive on price, calling, integrations, and fit for a 5-person B2B sales team.",
+	"h1": "Close vs Pipedrive: which one fits a small sales team",
+	"dek": [
+		"Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+		"Every number below comes from each vendor's own pricing page, checked recently."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a small B2B sales team, something like five reps, trying to decide between Close and Pipedrive. If you are a solo founder or a one-person shop, the math is different; go read a guide built for freelancers instead. Both tools are built to run a sales pipeline, not to replace a full marketing stack, and both expect you already have a list of prospects to call or email."
+				},
+				{
+					"type": "p",
+					"html": "I've set up CRMs for small teams before, and I don't resell either one. Where I think a plan is a bad fit for a 5-person team, I'll say so plainly instead of hedging to keep both vendors happy."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If you want the short version: Close is the better fit for a small team that spends real time on the phone, because calling is built into the product. Pipedrive is the better fit if your team's day to day is more about moving deals through stages than dialing, and you want a deeper integration catalog."
+				},
+				{
+					"type": "p",
+					"html": "Both make it cheap to find out which camp you're in. Close's trial: {{fact:close.trial}}, and its money-back window runs {{fact:close.money_back}}. Pipedrive's trial: {{fact:pipedrive.trial}}. That's the same runway before you pay for seats."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with the two Close plans a small team actually weighs. Essentials: {{fact:close.essentials_price}}. Five seats run about {{calc:close_team_5}} a month. Growth: {{fact:close.growth_price}}, which a 5-person team usually wants once calling volume grows. Calling sits on top of either plan. Close's pricing page puts it this way: {{fact:close.calling_cost}}."
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive's plans are billed annually. Lite: {{fact:pipedrive.lite_price}}. Growth: {{fact:pipedrive.growth_price}}. Premium: {{fact:pipedrive.premium_price}}. Growth is where the workflow tools show up (in Pipedrive's words, {{fact:pipedrive.growth_automation}}). Five seats on Growth run about {{calc:pipedrive_team_5}} a month, close to five seats on Close Essentials."
+				}
+			]
+		},
+		{
+			"label": "Fit for a small B2B sales team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "The table below lines up both tools against the four things a small B2B sales team usually can't do without: built-in calling, email sequences, a pipeline view, and a way to bring over contacts from HubSpot. Close wins on calling, since dialing and SMS are part of the product rather than a bolt-on."
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive wins on integration breadth. Its marketplace lists {{fact:pipedrive.integrations}}, a bigger catalog than anything Close publishes. Neither tool sweeps all four rows, which is exactly why the table matters more than either vendor's marketing page."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Close's trial and money-back window are generous, but the entry Essentials plan doesn't include workflows, so a team that wants automation on day one has to budget for Growth right away."
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive's trial matches Close's length, but every Pipedrive plan is billed annually, which means committing to a year of seats before you know if the fourth or fifth rep is actually going to use the tool. Calling also isn't part of the Pipedrive plan prices above, so a team that dials a lot should price out calling before comparing totals."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If your reps spend more time on the phone than anywhere else, pick Close and budget for Growth once dialing volume justifies it. If your reps live in the pipeline more than the phone, and you want a wide bench of integrations, pick Pipedrive and go in knowing the year-long commitment up front."
+				},
+				{
+					"type": "p",
+					"html": "Either way, use the trial first. Two weeks is enough time to load real deals and see which pipeline view your team actually uses instead of guessing from a pricing page."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Does Close or Pipedrive include calling for free?",
+			"a": "Neither includes it in the seat price. Close's pricing page says: {{fact:close.calling_cost}}. Pipedrive's plan prices above don't include calling, so check its calling options before you compare totals."
+		},
+		{
+			"q": "Is Pipedrive really billed annually?",
+			"a": "Yes. Growth is quoted as {{fact:pipedrive.growth_price}}, and every other Pipedrive tier is billed as one annual payment too."
+		},
+		{
+			"q": "Which one is cheaper for a 5-person team?",
+			"a": "Close Essentials and Pipedrive Growth land close together for five seats: {{calc:close_team_5}} versus {{calc:pipedrive_team_5}} a month."
+		},
+		{
+			"q": "Can I move my HubSpot data into either tool?",
+			"a": "Close publishes it plainly: {{fact:close.hubspot_import}}. Pipedrive's pricing page doesn't name a HubSpot importer, so ask its sales team how a HubSpot move works before you commit."
+		},
+		{
+			"q": "What if I just want to try both first?",
+			"a": "Both have trials. Close's trial: {{fact:close.trial}}. Pipedrive's trial: {{fact:pipedrive.trial}}. That's plenty of time to compare."
+		}
+	],
+	"closing": "For a 5-person B2B sales team, pick Close if calling matters most and Pipedrive if integration breadth does.",
+	"computed": [
+		{
+			"id": "close_team_5",
+			"label": "Close Essentials cost for a 5-person team",
+			"expr": "close.essentials_price * 5"
+		},
+		{
+			"id": "pipedrive_team_5",
+			"label": "Pipedrive Growth cost for a 5-person team",
+			"expr": "pipedrive.growth_price * 5"
+		}
+	],
+	"fit": {
+		"built-in calling": {
+			"close": "Yes. {{fact:close.calling_cost}}.",
+			"pipedrive": "Not in the plan prices above; price out calling separately."
+		},
+		"email sequences": {
+			"close": "Not on Essentials; workflows arrive with Growth.",
+			"pipedrive": "{{fact:pipedrive.growth_automation}}."
+		},
+		"pipeline view": {
+			"close": "Pipeline view ships on every plan, including Essentials.",
+			"pipedrive": "Pipeline view ships on every plan; it's the core of the product."
+		},
+		"HubSpot import": {
+			"close": "Yes. {{fact:close.hubspot_import}}.",
+			"pipedrive": "No HubSpot importer named on the pricing page; ask sales."
+		}
+	}
+}

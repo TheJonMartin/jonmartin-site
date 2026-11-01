@@ -40,10 +40,10 @@ async function attempt(fetchImpl, url, method) {
 	}
 }
 
-/** HEAD first; GET fallback on network failure or a HEAD-unsupported status. Bot-blocking (403/429) counts as ok, not dead. */
+/** HEAD first; GET fallback on network failure or any HEAD status >= 400 (PartnerStack affiliate links answer HEAD with 404 but GET with 200). Bot-blocking (403/429) counts as ok, not dead. */
 export async function checkLink(url, fetchImpl = fetch) {
 	let result = await attempt(fetchImpl, url, 'HEAD');
-	if (result.failed || result.status === 405 || result.status === 501) {
+	if (result.failed || result.status >= 400) {
 		result = await attempt(fetchImpl, url, 'GET');
 	}
 	if (result.failed) return { ok: false, dead: true, status: null };
