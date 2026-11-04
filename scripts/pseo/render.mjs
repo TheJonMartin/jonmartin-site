@@ -58,9 +58,25 @@ export function computedValues(spec, facts) {
 	return out;
 }
 
-function resolveTokens(text, ctx) {
+/** Inline link to a product: affiliate link (sponsored) when approved, else the product's own site (plain). */
+function productAnchor(slug, ctx) {
+	const product = ctx.productsBySlug?.get(slug);
+	if (!product) throw new Error(`unknown product in link token: ${slug}`);
+	const specProduct = ctx.specProductsBySlug?.get(slug);
+	const affiliate = specProduct?.link ? ctx.links?.[slug] : null;
+	const name = escapeHtml(product.name);
+	if (affiliate) return `<a href="${escapeHtml(affiliate)}" target="_blank" rel="sponsored nofollow noopener noreferrer">${name}</a>`;
+	if (product.site) return `<a href="${escapeHtml(product.site)}" target="_blank" rel="noopener">${name}</a>`;
+	throw new Error(`link token for "${slug}" but it has no affiliate link and no site`);
+}
+
+function resolveTokens(text, ctx, { allowLinks = false } = {}) {
 	return text.replace(/\{\{([^}]*)\}\}/g, (match, inner) => {
 		const [kind, id] = inner.split(':');
+		if (kind === 'link') {
+			if (!allowLinks) throw new Error(`link token only allowed in paragraph html: {{${inner}}}`);
+			return productAnchor(id, ctx);
+		}
 		if (kind === 'fact') {
 			const fact = ctx.factsById.get(id);
 			if (!fact) throw new Error(`unknown fact token: {{${inner}}}`);
@@ -76,7 +92,7 @@ function resolveTokens(text, ctx) {
 }
 
 function resolveBlock(block, ctx) {
-	if (block.type === 'p') return { type: 'p', html: resolveTokens(block.html, ctx) };
+	if (block.type === 'p') return { type: 'p', html: resolveTokens(block.html, ctx, { allowLinks: true }) };
 	if (block.type === 'h3') return { type: 'h3', text: resolveTokens(block.text, ctx) };
 	if (block.type === 'table') {
 		return {
@@ -86,8 +102,17 @@ function resolveBlock(block, ctx) {
 			rows: block.rows.map((row) => row.map((cell) => resolveTokens(cell, ctx))),
 		};
 	}
+	if (block.type === 'cta') {
+		const cta = ctx.ctasByProduct?.get(block.product);
+		if (!cta) throw new Error(`cta block references a product with no link: ${block.product}`);
+		return { type: 'cta', product: block.product, label: cta.label, href: cta.href, kind: cta.kind };
+	}
 	// 'ul' | 'ol' | 'steps'
 	return { type: block.type, items: block.items.map((item) => resolveTokens(item, ctx)) };
+}
+
+function headLink(cta) {
+	return cta ? { label: cta.label, href: cta.href, kind: cta.kind } : null;
 }
 
 function buildFitTable(spec, ctx, productsBySlug) {
@@ -109,7 +134,8 @@ function buildFitTable(spec, ctx, productsBySlug) {
 		}
 		return row;
 	});
-	return { caption: `Fit for ${resolveTokens(spec.niche.label, ctx)}`, head, rows };
+	const links = [null, ...optionProducts.map((p) => headLink(ctx.ctasByProduct?.get(p.slug)))];
+	return { caption: `Fit for ${resolveTokens(spec.niche.label, ctx)}`, head, rows, links };
 }
 
 function buildCtas(spec, productsBySlug, links) {
@@ -117,8 +143,11 @@ function buildCtas(spec, productsBySlug, links) {
 	for (const p of spec.products) {
 		const product = productsBySlug.get(p.slug);
 		if (p.role === 'option') {
+			// Every option product gets a link: affiliate when approved, otherwise the product's own site (plain link).
 			if (p.link && links[p.slug]) {
 				ctas.push({ label: `Try ${product.name}`, href: links[p.slug], kind: 'affiliate', product: p.slug });
+			} else if (product.site) {
+				ctas.push({ label: `Visit ${product.name}`, href: product.site, kind: 'site', product: p.slug });
 			}
 			continue;
 		}
@@ -140,7 +169,7 @@ function buildSources(spec, facts, productsBySlug) {
 	for (const fact of facts) {
 		if (!optionSlugs.has(fact.product) || seenUrls.has(fact.source_url)) continue;
 		seenUrls.add(fact.source_url);
-		sources.push({ text: `${productsBySlug.get(fact.product).name} pricing page`, href: fact.source_url });
+		sources.push({ text: fact.source_label ?? `${productsBySlug.get(fact.product).name} pricing page`, href: fact.source_url });
 	}
 	return sources;
 }
@@ -155,7 +184,10 @@ export function renderPage(spec, { facts, products, links, claims, runDate }) {
 	const factsById = new Map(facts.map((f) => [f.id, f]));
 	const productsBySlug = new Map(products.map((p) => [p.slug, p]));
 	const computed = computedValues(spec, facts);
-	const ctx = { factsById, computed };
+	const ctas = buildCtas(spec, productsBySlug, links);
+	const ctasByProduct = new Map(ctas.map((c) => [c.product, c]));
+	const specProductsBySlug = new Map(spec.products.map((p) => [p.slug, p]));
+	const ctx = { factsById, computed, ctasByProduct, productsBySlug, specProductsBySlug, links };
 
 	const dek = spec.dek.map((line) => resolveTokens(line, ctx));
 	const sections = spec.sections.map((section) => ({
@@ -163,7 +195,6 @@ export function renderPage(spec, { facts, products, links, claims, runDate }) {
 		blocks: section.blocks.map((block) => resolveBlock(block, ctx)),
 	}));
 	const faq = (spec.faq ?? []).map((f) => ({ q: resolveTokens(f.q, ctx), a: resolveTokens(f.a, ctx) }));
-	const ctas = buildCtas(spec, productsBySlug, links);
 	const disclosure = ctas.some((c) => c.kind === 'affiliate')
 		? 'This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.'
 		: null;
@@ -190,7 +221,14 @@ export function renderPage(spec, { facts, products, links, claims, runDate }) {
 		ctas,
 		products: spec.products.map((p) => {
 			const product = productsBySlug.get(p.slug);
-			return { slug: p.slug, name: product.name, type: product.product_type };
+			const cta = ctasByProduct.get(p.slug);
+			return {
+				slug: p.slug,
+				name: product.name,
+				type: product.product_type,
+				...(p.pick ? { pick: resolveTokens(p.pick, ctx) } : {}),
+				...(p.role === 'option' && cta ? { href: cta.href, linkKind: cta.kind } : {}),
+			};
 		}),
 		sources: buildSources(spec, facts, productsBySlug),
 	};
@@ -211,9 +249,12 @@ function proseParts(page) {
 				if (block.caption) parts.push(block.caption);
 				parts.push(...block.head);
 				for (const row of block.rows) parts.push(...row.map(stripTags));
+			} else if (block.type === 'cta') {
+				// button label is covered by page.ctas in pageText
 			} else parts.push(...block.items.map(stripTags));
 		}
 	}
+	for (const p of page.products) if (p.pick) parts.push(p.pick);
 	for (const f of page.faq) parts.push(f.q, f.a);
 	parts.push(page.closing);
 	return parts.filter(Boolean);

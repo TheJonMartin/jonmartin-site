@@ -12,8 +12,8 @@
     "Every number below comes from each vendor's own pricing page, checked recently."
   ],
   "published": "2026-11-01",
-  "modified": "2026-11-01",
-  "checked": "Nov 1, 2026",
+  "modified": "2026-11-03",
+  "checked": "Nov 3, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Small B2B sales teams"
@@ -46,6 +46,19 @@
         "Yes. Built-in importers for HubSpot, Pipedrive and HighLevel.",
         "No HubSpot importer named on the pricing page; ask sales."
       ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Close",
+        "href": "https://refer.close.com/bebtpaitxgfs",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Pipedrive",
+        "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+        "kind": "affiliate"
+      }
     ]
   },
   "sections": [
@@ -79,12 +92,34 @@
       "label": "Price and plan breakdown",
       "blocks": [
         {
+          "type": "h3",
+          "text": "Close"
+        },
+        {
           "type": "p",
           "html": "Start with the two Close plans a small team actually weighs. Essentials: $35 per user per month. Five seats run about $175 a month. Growth: $99 per user per month, adds workflows and the power dialer, which a 5-person team usually wants once calling volume grows. Calling sits on top of either plan. Close's pricing page puts it this way: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute."
         },
         {
+          "type": "cta",
+          "product": "close",
+          "label": "Try Close",
+          "href": "https://refer.close.com/bebtpaitxgfs",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Pipedrive"
+        },
+        {
           "type": "p",
           "html": "Pipedrive's plans are billed annually. Lite: $14 per seat per month, billed annually. Growth: $39 per seat per month, billed annually. Premium: $59 per seat per month, billed annually. Growth is where the workflow tools show up (in Pipedrive's words, Automations and email sequences start on Growth). Five seats on Growth run about $195 a month, close to five seats on Close Essentials."
+        },
+        {
+          "type": "cta",
+          "product": "pipedrive",
+          "label": "Try Pipedrive",
+          "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+          "kind": "affiliate"
         }
       ]
     },
@@ -93,7 +128,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "The table below lines up both tools against the four things a small B2B sales team usually can't do without: built-in calling, email sequences, a pipeline view, and a way to bring over contacts from HubSpot. Close wins on calling, since dialing and SMS are part of the product rather than a bolt-on."
+          "html": "The table below lines up both tools against the four things a small B2B sales team usually can't do without: built-in calling, email sequences, a pipeline view, and a way to bring over contacts from <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Close wins on calling, since dialing and SMS are part of the product rather than a bolt-on."
         },
         {
           "type": "p",
@@ -169,11 +204,22 @@
     {
       "slug": "close",
       "name": "Close",
-      "type": "affiliate"
+      "type": "affiliate",
+      "pick": "Better fit if your team lives on the phone; calling is built in.",
+      "href": "https://refer.close.com/bebtpaitxgfs",
+      "linkKind": "affiliate"
     },
     {
       "slug": "pipedrive",
       "name": "Pipedrive",
+      "type": "affiliate",
+      "pick": "Better fit if your team works the pipeline and wants a deep integration catalog.",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
       "type": "affiliate"
     }
   ],

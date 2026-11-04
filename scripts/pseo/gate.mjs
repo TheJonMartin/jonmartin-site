@@ -1,4 +1,4 @@
-// Step 2: gate checks from BUILD_PLAN.md "Gate" section, rules 1-7.
+// Step 2: gate checks from BUILD_PLAN.md "Gate" section, rules 1-8.
 
 import { pageText, pageProse, computedValues } from './render.mjs';
 
@@ -221,6 +221,30 @@ function checkOwnProductClaims(page, claims, errors) {
 	}
 }
 
+/** Rule 8: every option product on the page is linked somewhere (affiliate link if approved, else its own site). */
+function checkEveryToolLinked(page, spec, products, links, errors) {
+	const productsBySlug = new Map((products ?? []).map((p) => [p.slug, p]));
+	for (const p of spec.products.filter((x) => x.role === 'option')) {
+		const product = productsBySlug.get(p.slug);
+		const hasAffiliate = Boolean(p.link && links?.[p.slug]);
+		const hasSite = Boolean(product?.site);
+		if (!hasAffiliate && !hasSite) {
+			errors.push(`rule 8: option product "${p.slug}" has neither an affiliate link nor a site URL`);
+			continue;
+		}
+		if (!page.ctas.some((c) => c.product === p.slug && (c.kind === 'affiliate' || c.kind === 'site'))) {
+			errors.push(`rule 8: option product "${p.slug}" has no link on the page`);
+		}
+	}	// Products only mentioned in prose (role "mention") must be linked inline via {{link:slug}}.
+	const anchors = collectHtmlFragments(page).flatMap(findAnchors);
+	for (const p of spec.products.filter((x) => x.role === 'mention')) {
+		const product = productsBySlug.get(p.slug);
+		const targets = [product?.site, p.link ? links?.[p.slug] : null].filter(Boolean);
+		if (targets.length === 0) errors.push(`rule 8: mentioned product "${p.slug}" has neither an affiliate link nor a site URL`);
+		else if (!anchors.some((a) => targets.includes(a.href))) errors.push(`rule 8: mentioned product "${p.slug}" is not linked in the page prose`);
+	}
+}
+
 export function gate(page, { spec, facts, products, links, claims, otherPages = [], runDate }) {
 	const errors = [];
 	checkOptionsCount(page, spec, errors);
@@ -230,5 +254,6 @@ export function gate(page, { spec, facts, products, links, claims, otherPages = 
 	checkDisclosureAndLinks(page, links, errors);
 	checkBannedWords(page, errors);
 	checkOwnProductClaims(page, claims, errors);
+	checkEveryToolLinked(page, spec, products, links, errors);
 	return { ok: errors.length === 0, errors };
 }

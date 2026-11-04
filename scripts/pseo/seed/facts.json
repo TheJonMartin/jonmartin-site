@@ -6,6 +6,7 @@
     { "slug": "pipedrive", "name": "Pipedrive", "product_type": "affiliate", "cheat_sheet_name": "Pipedrive", "site": "https://www.pipedrive.com/" },
     { "slug": "capsule", "name": "Capsule", "product_type": "affiliate", "cheat_sheet_name": "Capsule / Transpond", "site": "https://capsulecrm.com/" },
     { "slug": "folk", "name": "folk", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.folk.app/", "note": "No approved program. Listed without a link." },
+    { "slug": "hubspot", "name": "HubSpot", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.hubspot.com/products/crm", "note": "No affiliate program joined. Plain link to the product site, no affiliate params." },
     { "slug": "portal-audit", "name": "Portal Audit", "product_type": "own_live", "owner_bot": "Boss Man", "cta_url": "https://audit.thejonmartin.com/" },
     { "slug": "giftkeep", "name": "GiftKeep", "product_type": "own_live", "owner_bot": "GiftKeep", "cta_url": "https://giftkeep.app/" },
     { "slug": "stripe-sync", "name": "HubSpot to Stripe sync", "product_type": "own_planned", "owner_bot": "Stripe Sync", "cta_url": "/contact" }
@@ -39,6 +40,13 @@
     { "id": "folk.premium_price", "product": "folk", "field": "Premium plan price", "value": "$48 per member per month, billed yearly", "number": 48, "source_url": "https://www.folk.app/pricing", "source_quote": "$576", "refresh_method": "html" },
     { "id": "folk.trial", "product": "folk", "field": "Free trial", "value": "2 weeks, no credit card", "source_url": "https://www.folk.app/pricing", "source_quote": "2 weeks free trial", "refresh_method": "html" },
     { "id": "folk.linkedin", "product": "folk", "field": "LinkedIn", "value": "LinkedIn extension on Standard", "source_url": "https://www.folk.app/pricing", "source_quote": "LinkedIn extension", "refresh_method": "html" },
-    { "id": "folk.sequences", "product": "folk", "field": "Sequences", "value": "Email sequences start on Premium", "source_url": "https://www.folk.app/pricing", "source_quote": "Email sequences", "refresh_method": "html" }
+    { "id": "folk.sequences", "product": "folk", "field": "Sequences", "value": "Email sequences start on Premium", "source_url": "https://www.folk.app/pricing", "source_quote": "Email sequences", "refresh_method": "html" },
+
+    { "id": "hubspot.free_users", "product": "hubspot", "field": "Free CRM users", "value": "up to 2 users", "number": 2, "source_url": "https://www.hubspot.com/products/crm", "source_label": "HubSpot CRM page", "source_quote": "With up to two users", "refresh_method": "html", "checked_at": "2026-11-03" },
+    { "id": "hubspot.free_contacts", "product": "hubspot", "field": "Free CRM contact limit", "value": "1,000 contacts", "number": 1000, "source_url": "https://www.hubspot.com/products/crm", "source_label": "HubSpot CRM page", "source_quote": "With up to two users, 1,000 contacts", "refresh_method": "html", "checked_at": "2026-11-03" },
+    { "id": "hubspot.free_no_expiry", "product": "hubspot", "field": "Free CRM term", "value": "free with no expiration date", "source_url": "https://www.hubspot.com/products/crm", "source_label": "HubSpot CRM page", "source_quote": "with no expiration date", "refresh_method": "html", "checked_at": "2026-11-03" },
+    { "id": "hubspot.free_pipelines", "product": "hubspot", "field": "Pipelines on Free", "value": "deal pipelines included", "source_url": "https://www.hubspot.com/products/crm", "source_label": "HubSpot CRM page", "source_quote": "Deal pipelines", "refresh_method": "html", "checked_at": "2026-11-03" },
+    { "id": "hubspot.free_card", "product": "hubspot", "field": "Free CRM signup", "value": "no credit card required", "source_url": "https://www.hubspot.com/products/crm", "source_label": "HubSpot CRM page", "source_quote": "No credit card required", "refresh_method": "html", "checked_at": "2026-11-03" },
+    { "id": "hubspot.starter_price", "product": "hubspot", "field": "Starter plan price", "value": "starts at $15 per seat per month", "number": 15, "source_url": "https://www.hubspot.com/products/crm", "source_label": "HubSpot CRM page", "source_quote": "Starts at $15/month per seat", "refresh_method": "html", "checked_at": "2026-11-03" }
   ]
 }

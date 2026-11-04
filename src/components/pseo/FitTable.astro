@@ -1,10 +1,15 @@
 ---
+import ToolLink from './ToolLink.astro';
+import type { PseoHeadLink } from '../../lib/pseo';
+
 interface Props {
 	caption: string;
 	head: string[];
 	rows: string[][];
+	/** Optional, aligned with `head`: a link for each tool column (null for the label column). */
+	links?: (PseoHeadLink | null)[];
 }
-const { caption, head, rows } = Astro.props;
+const { caption, head, rows, links = [] } = Astro.props;
 ---
 
 <figure class="tablefig">
@@ -12,7 +17,14 @@ const { caption, head, rows } = Astro.props;
 	<div class="tablewrap">
 		<table class="cmp">
 			<thead>
-				<tr>{head.map((h) => <th scope="col">{h}</th>)}</tr>
+				<tr>
+					{head.map((h, i) => (
+						<th scope="col">
+							<span class="hname">{h}</span>
+							{links[i] && <ToolLink href={links[i]!.href} label={links[i]!.label} kind={links[i]!.kind} variant="small" />}
+						</th>
+					))}
+				</tr>
 			</thead>
 			<tbody>
 				{rows.map((r) => (
@@ -32,6 +44,7 @@ const { caption, head, rows } = Astro.props;
 	.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 	.cmp { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
 	.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 12px 14px 12px 0; border-top: 1px solid var(--hairline); }
-	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); border-top: none; padding-top: 0; }
+	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--plum); border-top: none; border-bottom: 2px solid var(--plum); padding-top: 0; padding-bottom: 12px; vertical-align: bottom; }
+	.hname { display: block; }
 	.cmp tbody th { font-weight: 700; color: var(--plum); }
 </style>

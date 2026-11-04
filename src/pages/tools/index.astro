@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { tools } from '../../lib/tools';
+import { pseoPages } from '../../lib/pseo';
 
 const title = 'Tools — Jon Martin';
 const standfirst =
@@ -11,7 +12,14 @@ const description = `${standfirst} Pages contain affiliate links.`;
 
 const canonical = new URL('/tools', Astro.site).href;
 const pad = (n: number) => String(n).padStart(2, '0');
-const countWord = tools.length === 1 ? 'page' : 'pages';
+// Every live pSEO page (src/data/pseo/pages) is listed here automatically; noindex pages are skipped.
+const pseoRoutes = pseoPages
+	.filter((page) => page.status === 'live')
+	.sort((a, b) => a.seoTitle.localeCompare(b.seoTitle))
+	.map((page) => ({ page, href: `/tools/${page.route}/${page.slug}` }));
+const pseoLabels: Record<string, string> = { best: 'Roundup', compare: 'Comparison', howto: 'How-to' };
+const totalPages = tools.length + pseoRoutes.length;
+const countWord = totalPages === 1 ? 'page' : 'pages';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -23,12 +31,10 @@ const schema = {
 	isPartOf: { '@id': 'https://thejonmartin.com/#website' },
 	mainEntity: {
 		'@type': 'ItemList',
-		itemListElement: tools.map((tool, i) => ({
-			'@type': 'ListItem',
-			position: i + 1,
-			url: new URL(`/tools/${tool.slug}`, Astro.site).href,
-			name: tool.name,
-		})),
+		itemListElement: [
+			...tools.map((tool) => ({ url: new URL(`/tools/${tool.slug}`, Astro.site).href, name: tool.name })),
+			...pseoRoutes.map(({ page, href }) => ({ url: new URL(href, Astro.site).href, name: page.seoTitle })),
+		].map((item, i) => ({ '@type': 'ListItem', position: i + 1, ...item })),
 	},
 };
 ---
@@ -39,7 +45,7 @@ const schema = {
 			<section class="masthead">
 				<div class="rail">
 					<span class="label index-word">Index</span>
-					<span class="label count">{tools.length} {countWord}</span>
+					<span class="label count">{totalPages} {countWord}</span>
 				</div>
 				<div class="content">
 					<h1>Tools</h1>
@@ -67,6 +73,39 @@ const schema = {
 					</li>
 				))}
 			</ul>
+
+			{pseoRoutes.length > 0 && (
+				<section class="pseo" id="comparisons" aria-labelledby="comparisons-heading">
+					<hr class="hairline" />
+					<div class="masthead sub">
+						<div class="rail">
+							<span class="label index-word">Compare</span>
+							<span class="label count">{pseoRoutes.length} {pseoRoutes.length === 1 ? 'page' : 'pages'}</span>
+						</div>
+						<div class="content">
+							<h2 id="comparisons-heading" class="subhead">Comparisons and roundups</h2>
+							<p class="standfirst sub">Side-by-side looks at CRMs for a specific kind of team, built from each vendor's own pricing page.</p>
+						</div>
+					</div>
+					<ul class="list">
+						{pseoRoutes.map(({ page, href }, i) => (
+							<li>
+								<a class="toolrow" href={href}>
+									<div class="rail">
+										<span class="label row-n">{pad(i + 1)}</span>
+										<span class="label row-cat">{pseoLabels[page.template] ?? page.template}</span>
+									</div>
+									<div class="content">
+										<h2>{page.seoTitle}</h2>
+										<p class="desc">{page.dek[0]}</p>
+										<span class="label read-more">Read &rarr;</span>
+									</div>
+								</a>
+							</li>
+						))}
+					</ul>
+				</section>
+			)}
 		</div>
 	</main>
 </Base>
@@ -84,6 +123,10 @@ const schema = {
 	.standfirst { font-size: 21px; line-height: 1.5; max-width: 56ch; margin: 0 0 1.25rem; }
 	.disclosure { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0; max-width: 80ch; letter-spacing: 0.06em; }
 	.d-tag { color: var(--plum); margin-right: 0.5rem; }
+
+	.masthead.sub { padding: 56px 0 32px; }
+	.subhead { font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 0.75rem; }
+	.standfirst.sub { font-size: 19px; margin: 0; }
 
 	.list { list-style: none; margin: 0; padding: 0; }
 	.list li { border-top: 1px solid var(--hairline); }
