@@ -1,3 +1,7 @@
+# Portal apps: proxied to Render (handoff 07). Keep at top.
+https://audit.thejonmartin.com/*  https://portal-audit-backend.onrender.com/:splat  200!
+https://fix.thejonmartin.com/*    https://portal-fixer.onrender.com/:splat          200!
+
 # www HubSpot-era URLs: go straight to the final page in one hop (keep above the path rules).
 https://www.thejonmartin.com/blog/author/*     https://thejonmartin.com/about     301!
 https://www.thejonmartin.com/blog              https://thejonmartin.com/writing   301!
