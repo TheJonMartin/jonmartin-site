@@ -30,6 +30,26 @@
 			"slug": "hubspot",
 			"role": "mention",
 			"link": false
+		},
+		{
+			"slug": "highlevel",
+			"role": "mention",
+			"link": false
+		},
+		{
+			"slug": "zapier",
+			"role": "mention",
+			"link": false
+		},
+		{
+			"slug": "zoom",
+			"role": "mention",
+			"link": false
+		},
+		{
+			"slug": "lemlist",
+			"role": "mention",
+			"link": true
 		}
 	],
 	"title": "Close vs Pipedrive for a Small Sales Team — Jon Martin",

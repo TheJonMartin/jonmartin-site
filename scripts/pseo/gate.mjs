@@ -78,6 +78,8 @@ function collectHtmlFragments(page) {
 			} else if (block.type === 'ul' || block.type === 'ol' || block.type === 'steps') out.push(...block.items);
 		}
 	}
+	for (const row of page.fitTable?.rowsHtml ?? []) out.push(...row);
+	for (const f of page.faq ?? []) if (f.aHtml) out.push(f.aHtml);
 	return out;
 }
 
@@ -242,6 +244,23 @@ function checkEveryToolLinked(page, spec, products, links, errors) {
 		const targets = [product?.site, p.link ? links?.[p.slug] : null].filter(Boolean);
 		if (targets.length === 0) errors.push(`rule 8: mentioned product "${p.slug}" has neither an affiliate link nor a site URL`);
 		else if (!anchors.some((a) => targets.includes(a.href))) errors.push(`rule 8: mentioned product "${p.slug}" is not linked in the page prose`);
+	}
+	// Any catalog tool named in the page text must be on the spec (option or mention) and linked somewhere on the page.
+	const specSlugs = new Set(spec.products.map((p) => p.slug));
+	const prose = pageProse(page);
+	const pageHrefs = new Set([...anchors.map((a) => a.href), ...page.ctas.map((c) => c.href)]);
+	for (const product of products ?? []) {
+		// Own products are governed by rule 7 (no prices or links), so they're exempt here.
+		if (!product.name || product.product_type?.startsWith('own')) continue;
+		const escaped = product.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+		const named = new RegExp('(^|[^\\w])' + escaped + '(?!\\w)').test(prose);
+		if (!named) continue;
+		if (!specSlugs.has(product.slug)) {
+			errors.push(`rule 8: page names "${product.name}" but it is not on the spec's product list, so it has no link`);
+			continue;
+		}
+		const targets = [product.site, links?.[product.slug]].filter(Boolean);
+		if (!targets.some((t) => pageHrefs.has(t))) errors.push(`rule 8: page names "${product.name}" but never links it`);
 	}
 }
 

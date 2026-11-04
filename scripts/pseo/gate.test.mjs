@@ -225,3 +225,19 @@ test('rule 9: a page with an eligible sibling must carry at least one related li
 	const stale = { ...structuredClone(best), related: [{ href: '/tools/compare/gone', slug: 'gone' }] };
 	assert.ok(checkRelatedLinks(stale, pool).some((e) => e.includes('not a live sibling')));
 });
+
+test('rule 8: a catalog tool named in the text but not linked fails (HighLevel on close-vs-pipedrive)', () => {
+	const local = loadLocal();
+	const runDate = '2026-11-01';
+	const real = local.specs.find((s) => s.slug === 'close-vs-pipedrive');
+	const spec = { ...real, products: real.products.filter((p) => p.slug !== 'highlevel') };
+	const page = renderPage(spec, { facts: local.facts, products: local.products, links: local.links, claims: local.claims, runDate });
+	const bad = gate(page, { spec, facts: local.facts, products: local.products, links: local.links, claims: local.claims, runDate });
+	assert.ok(bad.errors.some((e) => e.startsWith('rule 8:') && e.includes('HighLevel')), bad.errors.join('\n'));
+
+	const goodPage = renderPage(real, { facts: local.facts, products: local.products, links: local.links, claims: local.claims, runDate });
+	assert.ok(goodPage.faq.some((f) => f.aHtml?.includes('href="https://www.gohighlevel.com/"')));
+	assert.ok(goodPage.fitTable.rowsHtml.flat().some((c) => c.includes('href="https://www.gohighlevel.com/"')));
+	const good = gate(goodPage, { spec: real, facts: local.facts, products: local.products, links: local.links, claims: local.claims, runDate });
+	assert.ok(!good.errors.some((e) => e.startsWith('rule 8:')), good.errors.join('\n'));
+});

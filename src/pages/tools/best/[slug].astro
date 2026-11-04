@@ -91,7 +91,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 		{page.fitTable && (
 			<section class="band fittable">
 				<div class="inner">
-					<FitTable caption={page.fitTable.caption} head={page.fitTable.head} rows={page.fitTable.rows} links={page.fitTable.links} />
+					<FitTable caption={page.fitTable.caption} head={page.fitTable.head} rows={page.fitTable.rows} rowsHtml={page.fitTable.rowsHtml} links={page.fitTable.links} />
 				</div>
 			</section>
 		)}
@@ -159,7 +159,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 							{page.faq.map((f) => (
 								<div class="qa">
 									<h3 class="q">{f.q}</h3>
-									<p class="a">{f.a}</p>
+									{f.aHtml ? <p class="a" set:html={f.aHtml} /> : <p class="a">{f.a}</p>}
 								</div>
 							))}
 						</div>

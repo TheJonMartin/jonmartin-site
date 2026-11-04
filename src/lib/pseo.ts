@@ -24,6 +24,7 @@ export interface PseoFitTable {
 	head: string[];
 	/** Cells are plain text, unlike the trusted-HTML cells in tools.ts table Blocks. */
 	rows: string[][];
+	rowsHtml?: string[][];
 	/** Aligned with `head`; a link per tool column, null for the label column. */
 	links?: (PseoHeadLink | null)[];
 }
@@ -47,6 +48,8 @@ export interface PseoSection {
 export interface PseoFaqEntry {
 	q: string;
 	a: string;
+	/** Trusted HTML version of `a` with inline tool links. */
+	aHtml?: string;
 }
 
 export interface PseoCta {

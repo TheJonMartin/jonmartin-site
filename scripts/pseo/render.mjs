@@ -70,6 +70,23 @@ function productAnchor(slug, ctx) {
 	throw new Error(`link token for "${slug}" but it has no affiliate link and no site`);
 }
 
+function escapeRegex(text) {
+	return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Inside link-capable text, names of the spec's "mention" products that appear in a fact value become links (first occurrence each). */
+function linkMentions(html, ctx) {
+	let out = html;
+	for (const [slug, sp] of ctx.specProductsBySlug ?? []) {
+		if (sp.role !== 'mention') continue;
+		const name = ctx.productsBySlug?.get(slug)?.name;
+		if (!name) continue;
+		const re = new RegExp(`(^|[^\\w>])(${escapeRegex(escapeHtml(name))})(?![\\w<])`);
+		out = out.replace(re, (_, pre) => `${pre}${productAnchor(slug, ctx)}`);
+	}
+	return out;
+}
+
 function resolveTokens(text, ctx, { allowLinks = false } = {}) {
 	return text.replace(/\{\{([^}]*)\}\}/g, (match, inner) => {
 		const [kind, id] = inner.split(':');
@@ -80,7 +97,7 @@ function resolveTokens(text, ctx, { allowLinks = false } = {}) {
 		if (kind === 'fact') {
 			const fact = ctx.factsById.get(id);
 			if (!fact) throw new Error(`unknown fact token: {{${inner}}}`);
-			return escapeHtml(fact.value);
+			return allowLinks ? linkMentions(escapeHtml(fact.value), ctx) : escapeHtml(fact.value);
 		}
 		if (kind === 'calc') {
 			const computed = ctx.computed.get(id);
@@ -126,16 +143,17 @@ function buildFitTable(spec, ctx, productsBySlug) {
 	if (!spec.niche?.must_haves?.length) return null;
 	const optionProducts = spec.products.filter((p) => p.role === 'option');
 	const head = ['Must-have', ...optionProducts.map((p) => productsBySlug.get(p.slug).name)];
-	const rows = spec.niche.must_haves.map((mustHave) => {
-		const row = [mustHave];
-		for (const p of optionProducts) {
+	// Same cells as trusted HTML, with {{link:slug}} and mention names linked.
+	const rowsHtml = spec.niche.must_haves.map((mustHave) => [
+		escapeHtml(mustHave),
+		...optionProducts.map((p) => {
 			const cell = spec.fit?.[mustHave]?.[p.slug];
-			row.push(cell !== undefined ? resolveTokens(cell, ctx) : '');
-		}
-		return row;
-	});
+			return cell !== undefined ? resolveTokens(cell, ctx, { allowLinks: true }) : '';
+		}),
+	]);
+	const rows = rowsHtml.map((row) => row.map((cell) => decodeEntities(stripTags(cell))));
 	const links = [null, ...optionProducts.map((p) => headLink(ctx.ctasByProduct?.get(p.slug)))];
-	return { caption: `Fit for ${resolveTokens(spec.niche.label, ctx)}`, head, rows, links };
+	return { caption: `Fit for ${resolveTokens(spec.niche.label, ctx)}`, head, rows, rowsHtml, links };
 }
 
 function buildCtas(spec, productsBySlug, links) {
@@ -194,7 +212,10 @@ export function renderPage(spec, { facts, products, links, claims, runDate }) {
 		label: resolveTokens(section.label, ctx),
 		blocks: section.blocks.map((block) => resolveBlock(block, ctx)),
 	}));
-	const faq = (spec.faq ?? []).map((f) => ({ q: resolveTokens(f.q, ctx), a: resolveTokens(f.a, ctx) }));
+	const faq = (spec.faq ?? []).map((f) => {
+		const aHtml = resolveTokens(f.a, ctx, { allowLinks: true });
+		return { q: resolveTokens(f.q, ctx), a: decodeEntities(stripTags(aHtml)), aHtml };
+	});
 	const disclosure = ctas.some((c) => c.kind === 'affiliate')
 		? 'This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.'
 		: null;
