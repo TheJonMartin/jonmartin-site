@@ -2,6 +2,8 @@
 import Base from '../../../layouts/Base.astro';
 import Disclosure from '../../../components/pseo/Disclosure.astro';
 import FitTable from '../../../components/pseo/FitTable.astro';
+import QuickPicks from '../../../components/pseo/QuickPicks.astro';
+import ToolLink from '../../../components/pseo/ToolLink.astro';
 import OwnProductCta from '../../../components/pseo/OwnProductCta.astro';
 import WaitlistCta from '../../../components/pseo/WaitlistCta.astro';
 import { pagesFor, type PseoPage } from '../../../lib/pseo';
@@ -83,10 +85,12 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 
 		{page.disclosure && <Disclosure text={page.disclosure} />}
 
+		<QuickPicks products={page.products} />
+
 		{page.fitTable && (
 			<section class="band fittable">
 				<div class="inner">
-					<FitTable caption={page.fitTable.caption} head={page.fitTable.head} rows={page.fitTable.rows} />
+					<FitTable caption={page.fitTable.caption} head={page.fitTable.head} rows={page.fitTable.rows} links={page.fitTable.links} />
 				</div>
 			</section>
 		)}
@@ -101,6 +105,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 					<div class="content">
 						{section.blocks.map((block) => {
 							if (block.type === 'p') return <p set:html={block.html} />;
+							if (block.type === 'cta') return <div class="toolcta"><ToolLink href={block.href} label={block.label} kind={block.kind} variant="outline" /></div>;
 							if (block.type === 'h3') return <h3 class="subhead">{block.text}</h3>;
 							if (block.type === 'table')
 								return (
@@ -184,6 +189,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 										{cta.label} &rarr;
 									</a>
 								);
+							if (cta.kind === 'site') return <ToolLink href={cta.href} label={cta.label} kind="site" variant="solid" />;
 							if (cta.kind === 'own') return <OwnProductCta label={cta.label} href={cta.href} />;
 							const product = productFor(cta.product);
 							return <WaitlistCta product={product?.name ?? cta.product} slug={cta.product} />;
@@ -206,6 +212,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 						))}
 					</ul>
 					<p class="disclaimer">Checked on {page.checked}. Figures and listing details can change; confirm current plans and pricing on the vendor's site before you buy.</p>
+					<p class="more"><a href="/tools#comparisons">More comparisons &rarr;</a></p>
 				</div>
 			</div>
 		</section>
@@ -251,6 +258,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 	.n { font-size: 13px; color: var(--sage); padding-top: 4px; }
 	.item { font-size: 18px; line-height: 1.55; }
 
+	.toolcta { margin: 0; }
 	.subhead { font-family: Georgia, Gelasio, serif; font-size: 24px; font-weight: 400; line-height: 1.25; color: var(--plum); margin: 2.25rem 0 0.9rem; }
 	.content .subhead:first-child { margin-top: 0; }
 
@@ -260,7 +268,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 	.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 	.cmp { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
 	.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 12px 14px 12px 0; border-top: 1px solid var(--hairline); }
-	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); border-top: none; padding-top: 0; }
+	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--plum); border-top: none; border-bottom: 2px solid var(--plum); padding-top: 0; padding-bottom: 12px; }
 	.cmp tbody th { font-weight: 700; color: var(--plum); }
 
 	/* FAQ */
@@ -289,6 +297,8 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 	.srcs { list-style: none; margin: 0 0 1rem; padding: 0; }
 	.srcs li { padding: 10px 0; border-top: 1px solid var(--hairline); font-size: 16px; overflow-wrap: anywhere; }
 	.srcs li:first-child { border-top: none; padding-top: 0; }
+	.more { font-size: 15px !important; margin-top: 1.25rem !important; }
+	.more a { color: var(--plum); font-weight: 700; text-decoration: underline; text-decoration-color: var(--mustard); text-underline-offset: 4px; }
 	.disclaimer { font-size: 13px !important; color: var(--muted); }
 
 	@media (max-width: 720px) {

@@ -1,0 +1,28 @@
+---
+/*
+ * One link to a compared tool. Affiliate links carry rel="sponsored nofollow";
+ * plain site links (no affiliate program) carry rel="noopener" only.
+ * variant: "solid" (Try it band), "outline" (in body copy), "small" (fit-table header).
+ */
+interface Props {
+	href: string;
+	label: string;
+	kind: 'affiliate' | 'site';
+	variant?: 'solid' | 'outline' | 'small';
+}
+const { href, label, kind, variant = 'outline' } = Astro.props;
+const rel = kind === 'affiliate' ? 'sponsored nofollow noopener noreferrer' : 'noopener';
+---
+
+<a class:list={['toollink', variant]} href={href} target="_blank" rel={rel}>{label} &rarr;</a>
+
+<style>
+	.toollink { display: inline-block; font-family: 'Courier New', Cousine, monospace; text-transform: uppercase; letter-spacing: 0.14em; text-decoration: none; line-height: 1.3; }
+	.toollink:focus-visible { outline: 2px solid var(--mustard); outline-offset: 3px; }
+	.solid { font-size: 13px; padding: 16px 26px; background: var(--mustard); color: var(--plum); letter-spacing: 0.16em; }
+	.solid:hover { background: var(--cream); color: var(--plum); }
+	.outline { font-size: 12px; font-weight: 700; padding: 11px 18px; border: 1.5px solid var(--plum); color: var(--plum); background: transparent; margin: 0.25rem 0 1.6rem; }
+	.outline:hover { background: var(--plum); color: var(--cream); }
+	.small { font-size: 11px; font-weight: 700; padding: 6px 10px; margin-top: 8px; background: var(--mustard); color: var(--plum); letter-spacing: 0.1em; white-space: nowrap; }
+	.small:hover { background: var(--plum); color: var(--cream); }
+</style>

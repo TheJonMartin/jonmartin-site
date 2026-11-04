@@ -1,0 +1,42 @@
+---
+import type { PseoProductRef } from '../../lib/pseo';
+
+interface Props {
+	products: PseoProductRef[];
+}
+const picks = Astro.props.products.filter((p) => p.pick && p.href);
+const rel = (p: PseoProductRef) => (p.linkKind === 'affiliate' ? 'sponsored nofollow noopener noreferrer' : 'noopener');
+---
+
+{picks.length > 0 && (
+	<section class="quickpicks" aria-labelledby="quick-picks">
+		<div class="inner">
+			<h2 id="quick-picks" class="qp-label">Quick picks</h2>
+			<ul class="qp-list">
+				{picks.map((p) => (
+					<li>
+						<a class="qp-name" href={p.href} target="_blank" rel={rel(p)}>{p.name} &rarr;</a>
+						<span class="qp-text">{p.pick}</span>
+					</li>
+				))}
+			</ul>
+		</div>
+	</section>
+)}
+
+<style>
+	.quickpicks { padding: 40px 0 8px; }
+	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.qp-label { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--plum); margin: 0 0 0.9rem; font-family: 'Courier New', Cousine, monospace; }
+	.qp-list { list-style: none; margin: 0; padding: 0; max-width: 820px; }
+	.qp-list li { display: grid; grid-template-columns: minmax(130px, 180px) minmax(0, 1fr); gap: 18px; padding: 12px 0; border-top: 1px solid var(--hairline); align-items: baseline; }
+	.qp-list li:first-child { border-top: none; padding-top: 0; }
+	.qp-name { font-family: Georgia, Gelasio, serif; font-weight: 700; font-size: 18px; color: var(--plum); text-decoration: underline; text-decoration-color: var(--mustard); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+	.qp-name:hover { color: var(--charcoal); }
+	.qp-text { font-size: 17px; line-height: 1.5; }
+
+	@media (max-width: 720px) {
+		.inner { padding: 0 20px; }
+		.qp-list li { grid-template-columns: 1fr; gap: 4px; }
+	}
+</style>

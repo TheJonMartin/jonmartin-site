@@ -143,3 +143,49 @@ test('rule 7: fails when a planned product gets a live cta', () => {
 	assert.equal(result.ok, false);
 	assert.ok(result.errors.some((e) => e.startsWith('rule 7:') && e.includes('live cta')), result.errors.join('\n'));
 });
+
+test('rule 8: fails when an option product has neither an affiliate link nor a site URL', () => {
+	const spec = structuredClone(specs.best);
+	spec.products.find((p) => p.slug === 'gamma-crm').link = false;
+	const page = render(spec);
+	const result = gate(page, { spec, facts, products, links, claims, runDate: RUN_DATE });
+	assert.equal(result.ok, false);
+	assert.ok(result.errors.some((e) => e.startsWith('rule 8:') && e.includes('gamma-crm')), result.errors.join('\n'));
+});
+
+test('rule 8: an option product without an affiliate link falls back to a plain site link', () => {
+	const spec = structuredClone(specs.best);
+	spec.products.find((p) => p.slug === 'gamma-crm').link = false;
+	const withSite = products.map((p) => (p.slug === 'gamma-crm' ? { ...p, site: 'https://gamma.example.com/' } : p));
+	const page = render(spec, { products: withSite });
+	const cta = page.ctas.find((c) => c.product === 'gamma-crm');
+	assert.deepEqual(cta, { label: 'Visit Gamma CRM', href: 'https://gamma.example.com/', kind: 'site', product: 'gamma-crm' });
+	assert.equal(page.products.find((p) => p.slug === 'gamma-crm').linkKind, 'site');
+	const result = gate(page, { spec, facts, products: withSite, links, claims, runDate: RUN_DATE });
+	assert.ok(!result.errors.some((e) => e.startsWith('rule 8:')), result.errors.join('\n'));
+});
+
+test('disclosure only appears when at least one affiliate link is on the page', () => {
+	const spec = structuredClone(specs.best);
+	for (const p of spec.products) p.link = false;
+	const withSite = products.map((p) => ({ ...p, site: `https://${p.slug}.example.com/` }));
+	const page = render(spec, { products: withSite });
+	assert.equal(page.disclosure, null);
+	assert.ok(page.ctas.every((c) => c.kind !== 'affiliate'));
+});
+
+test('rule 8: a mentioned product must be linked inline with {{link:slug}}', () => {
+	const spec = structuredClone(specs.best);
+	const withSite = products.map((p) => (p.slug === 'delta-sync' ? p : { ...p, site: `https://${p.slug}.example.com/` }));
+	const mention = { slug: 'zeta-crm', name: 'Zeta CRM', product_type: 'affiliate', site: 'https://zeta.example.com/' };
+	spec.products.push({ slug: 'zeta-crm', role: 'mention', link: false });
+	const unlinked = render(spec, { products: [...withSite, mention] });
+	const bad = gate(unlinked, { spec, facts, products: [...withSite, mention], links, claims, runDate: RUN_DATE });
+	assert.ok(bad.errors.some((e) => e.startsWith('rule 8:') && e.includes('zeta-crm')), bad.errors.join('\n'));
+
+	spec.sections[0].blocks.push({ type: 'p', html: 'Teams moving off {{link:zeta-crm}} can import contacts.' });
+	const linked = render(spec, { products: [...withSite, mention] });
+	assert.ok(linked.sections[0].blocks.at(-1).html.includes('<a href="https://zeta.example.com/" target="_blank" rel="noopener">Zeta CRM</a>'));
+	const good = gate(linked, { spec, facts, products: [...withSite, mention], links, claims, runDate: RUN_DATE });
+	assert.ok(!good.errors.some((e) => e.startsWith('rule 8:')), good.errors.join('\n'));
+});

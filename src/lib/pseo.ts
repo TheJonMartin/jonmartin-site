@@ -9,19 +9,39 @@ import type { Block } from './tools';
 export type PseoRoute = 'best' | 'compare';
 export type PseoTemplate = 'best' | 'compare' | 'howto';
 export type PseoStatus = 'live' | 'noindex';
-export type PseoCtaKind = 'affiliate' | 'own' | 'waitlist';
+/** `site`: plain link to the tool's own site when there is no approved affiliate link. */
+export type PseoCtaKind = 'affiliate' | 'site' | 'own' | 'waitlist';
 export type PseoProductType = 'affiliate' | 'own_live' | 'own_planned';
+
+export interface PseoHeadLink {
+	label: string;
+	href: string;
+	kind: 'affiliate' | 'site';
+}
 
 export interface PseoFitTable {
 	caption: string;
 	head: string[];
 	/** Cells are plain text, unlike the trusted-HTML cells in tools.ts table Blocks. */
 	rows: string[][];
+	/** Aligned with `head`; a link per tool column, null for the label column. */
+	links?: (PseoHeadLink | null)[];
 }
+
+/** Button linking to one tool, placed at the end of that tool's part of a section. */
+export interface PseoCtaBlock {
+	type: 'cta';
+	product: string;
+	label: string;
+	href: string;
+	kind: 'affiliate' | 'site';
+}
+
+export type PseoBlock = Block | PseoCtaBlock;
 
 export interface PseoSection {
 	label: string;
-	blocks: Block[];
+	blocks: PseoBlock[];
 }
 
 export interface PseoFaqEntry {
@@ -41,6 +61,11 @@ export interface PseoProductRef {
 	slug: string;
 	name: string;
 	type: PseoProductType;
+	/** One-line quick pick (option products only, when the spec sets one). */
+	pick?: string;
+	/** Link for option products: affiliate link or the tool's own site. */
+	href?: string;
+	linkKind?: 'affiliate' | 'site';
 }
 
 export interface PseoSource {

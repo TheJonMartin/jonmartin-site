@@ -5,15 +5,15 @@
   "status": "live",
   "title": "Best CRM for Freelancers and Solo Consultants — Jon Martin",
   "seoTitle": "Best CRM for Freelancers in 2026",
-  "description": "A plain comparison of Capsule, Close, Pipedrive, and folk for freelancers who need a low-cost CRM that fits a solo book.",
+  "description": "A plain comparison of Capsule, Close, Pipedrive, folk, and HubSpot for freelancers who need a low-cost CRM that fits a solo book.",
   "h1": "The best CRM for freelancers and solo consultants",
   "dek": [
-    "Four CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+    "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
     "Every number below comes from each vendor's own pricing page, checked recently."
   ],
   "published": "2026-11-01",
-  "modified": "2026-11-01",
-  "checked": "Nov 1, 2026",
+  "modified": "2026-11-03",
+  "checked": "Nov 3, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Freelancers and solo consultants"
@@ -25,7 +25,8 @@
       "Capsule",
       "Close",
       "Pipedrive",
-      "folk"
+      "folk",
+      "HubSpot"
     ],
     "rows": [
       [
@@ -33,22 +34,53 @@
         "Free plan: Up to 2 users.",
         "Solo: $9 per user per month.",
         "Lite: $14 per seat per month, billed annually.",
-        "Standard: $24 per member per month, billed yearly ($30 monthly)."
+        "Standard: $24 per member per month, billed yearly ($30 monthly).",
+        "Free: up to 2 users. Starter starts at $15 per seat per month."
       ],
       [
         "contact limit that fits a solo book",
         "Free: 250 contacts, 1 sales pipeline. Starter: 30,000 contacts.",
         "Solo: 1 user, 10,000 leads, no workflows.",
         "Pipedrive's pricing page doesn't publish a contact cap for the Lite plan.",
-        "No published contact cap on folk's pricing page."
+        "No published contact cap on folk's pricing page.",
+        "Free: 1,000 contacts."
       ],
       [
         "simple pipeline",
         "One pipeline on the free plan, more on paid plans.",
         "Pipeline view ships on Solo, same as every Close plan.",
         "Pipeline view is the core of every Pipedrive plan.",
-        "Board-style pipeline built around contacts and relationships, not just deals."
+        "Board-style pipeline built around contacts and relationships, not just deals.",
+        "Free plan: deal pipelines included."
       ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Capsule",
+        "href": "https://get.capsulenow.io/x0kzganxlolo",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Close",
+        "href": "https://refer.close.com/bebtpaitxgfs",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Pipedrive",
+        "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit folk",
+        "href": "https://www.folk.app/",
+        "kind": "site"
+      },
+      {
+        "label": "Visit HubSpot",
+        "href": "https://www.hubspot.com/products/crm",
+        "kind": "site"
+      }
     ]
   },
   "sections": [
@@ -61,7 +93,7 @@
         },
         {
           "type": "p",
-          "html": "I'm comparing four tools that all publish a usable plan for one person: Capsule, Close, Pipedrive, and folk. I don't sell any of them, and I don't have an affiliate link for every one, which I'll call out plainly where it applies instead of pretending all four are equally easy to sign up for."
+          "html": "I'm comparing five tools that all publish a usable plan for one person: Capsule, Close, Pipedrive, folk, and HubSpot. I don't sell any of them. Each one has a link on this page; some are affiliate links and some go straight to the vendor's own site, and the disclosure above says which kind pays me."
         }
       ]
     },
@@ -70,11 +102,15 @@
       "blocks": [
         {
           "type": "p",
-          "html": "If you want the one-line version: Capsule's free plan is the easiest way to start at zero cost, Close is the strongest pick once you're ready to pay and want built-in calling, and folk is worth a look if you live in email and LinkedIn, but you'll have to go find it yourself since there's no link for it here."
+          "html": "If you want the one-line version: Capsule's free plan is the easiest way to start at zero cost, Close is the strongest pick once you're ready to pay and want built-in calling, and folk is worth a look if you live in email and LinkedIn."
         },
         {
           "type": "p",
           "html": "Pipedrive is solid but its entry plan is built more for a small team's pipeline habits than a true one-person workflow."
+        },
+        {
+          "type": "p",
+          "html": "HubSpot's free CRM is the other zero-cost starting point here. It allows more contacts than Capsule's free plan, and paid seats sit on top when you need them."
         }
       ]
     },
@@ -82,16 +118,83 @@
       "label": "Plan and price breakdown",
       "blocks": [
         {
+          "type": "h3",
+          "text": "Capsule"
+        },
+        {
           "type": "p",
           "html": "Capsule's free plan is the place to start. Users: Up to 2 users. Limits: 250 contacts, 1 sales pipeline. That's enough to run a real solo book before paying anything. The Starter plan raises the ceiling to 30,000 contacts, and there's no setup fee on either plan (Capsule lists it as None)."
         },
         {
-          "type": "p",
-          "html": "Close's Solo plan runs $9 per user per month, about $108 a year. What you get: 1 user, 10,000 leads, no workflows. Pipedrive's entry Lite plan is quoted as $14 per seat per month, billed annually, so you pay for the year up front rather than month to month."
+          "type": "cta",
+          "product": "capsule",
+          "label": "Try Capsule",
+          "href": "https://get.capsulenow.io/x0kzganxlolo",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Close"
         },
         {
           "type": "p",
-          "html": "folk's Standard plan: $24 per member per month, billed yearly ($30 monthly). Premium: $48 per member per month, billed yearly, and that's the tier to watch, because Email sequences start on Premium. Every one of these plans is priced for one seat, so the real question is which limit you'll hit first: contacts, leads, or features."
+          "html": "Close's Solo plan runs $9 per user per month, about $108 a year. What you get: 1 user, 10,000 leads, no workflows."
+        },
+        {
+          "type": "cta",
+          "product": "close",
+          "label": "Try Close",
+          "href": "https://refer.close.com/bebtpaitxgfs",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Pipedrive"
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive's entry Lite plan is quoted as $14 per seat per month, billed annually, so you pay for the year up front rather than month to month."
+        },
+        {
+          "type": "cta",
+          "product": "pipedrive",
+          "label": "Try Pipedrive",
+          "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "folk"
+        },
+        {
+          "type": "p",
+          "html": "folk's Standard plan: $24 per member per month, billed yearly ($30 monthly). Premium: $48 per member per month, billed yearly, and that's the tier to watch, because Email sequences start on Premium."
+        },
+        {
+          "type": "cta",
+          "product": "folk",
+          "label": "Visit folk",
+          "href": "https://www.folk.app/",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "HubSpot"
+        },
+        {
+          "type": "p",
+          "html": "HubSpot's free CRM covers up to 2 users and 1,000 contacts, and HubSpot describes it as free with no expiration date. Signup needs no credit card required. Paid seats begin with Starter, which starts at $15 per seat per month. HubSpot's CRM page doesn't publish the billing term next to that Starter price, so check it before you count on month to month."
+        },
+        {
+          "type": "cta",
+          "product": "hubspot",
+          "label": "Visit HubSpot",
+          "href": "https://www.hubspot.com/products/crm",
+          "kind": "site"
+        },
+        {
+          "type": "p",
+          "html": "Every one of these plans is priced for one seat, so the real question is which limit you'll hit first: contacts, leads, or features."
         }
       ]
     },
@@ -100,11 +203,11 @@
       "blocks": [
         {
           "type": "p",
-          "html": "The table below checks all four against what a solo book actually needs: a free or low-cost plan, a contact limit that won't choke on a few hundred relationships, and a pipeline simple enough to update between client calls."
+          "html": "The table below checks all five against what a solo book actually needs: a free or low-cost plan, a contact limit that won't choke on a few hundred relationships, and a pipeline simple enough to update between client calls."
         },
         {
           "type": "p",
-          "html": "Capsule and Close both clear the bar on price. Pipedrive clears it on pipeline simplicity but costs more than Capsule's free tier out of the gate. folk clears it on simplicity too, though you're signing up directly on folk's own site since I don't have a link for it."
+          "html": "Capsule, Close, and HubSpot all clear the bar on price. Pipedrive clears it on pipeline simplicity but costs more than the free tiers out of the gate. folk clears it on simplicity too, with a relationship-first view of your contacts."
         }
       ]
     },
@@ -118,6 +221,10 @@
         {
           "type": "p",
           "html": "Pipedrive's Lite price looks competitive until you remember it's an annual commitment, not a month-to-month one, which is a bigger ask for a solo consultant than for a funded team. folk's trial (2 weeks, no credit card) is about the same length as the others, so plan your test before you start the clock."
+        },
+        {
+          "type": "p",
+          "html": "HubSpot's free CRM stops at 1,000 contacts, and the jump to Starter is priced per seat, so check the current plan page before you plan your first paid year around it."
         }
       ]
     },
@@ -130,7 +237,7 @@
         },
         {
           "type": "p",
-          "html": "Consider Pipedrive if you already think in pipeline stages and don't mind the annual bill. Look at folk directly on its own site if email and LinkedIn are where most of your client relationships actually live, since that's the one tool here without a link to click."
+          "html": "Consider Pipedrive if you already think in pipeline stages and don't mind the annual bill. Look at folk if email and LinkedIn are where most of your client relationships actually live. Pick HubSpot's free CRM if you want a no-cost start that keeps more contacts than Capsule's free plan."
         }
       ]
     }
@@ -149,12 +256,12 @@
       "a": "No. It's quoted as $14 per seat per month, billed annually, so the monthly number is paid as one annual bill, same as Pipedrive's other plans."
     },
     {
-      "q": "Do you have an affiliate link for folk?",
-      "a": "No. There's no approved affiliate link for folk, so there's no link for it on this page. You'll need to sign up directly on folk's own site."
+      "q": "Are all the links on this page affiliate links?",
+      "a": "No. The Capsule, Close, and Pipedrive links are affiliate links. The folk and HubSpot links go straight to each vendor's own site with no affiliate tracking."
     },
     {
       "q": "How long are the free trials?",
-      "a": "About the same across the board. Capsule: 14 days on paid plans. Close: 14 days, no credit card. folk: 2 weeks, no credit card. Capsule's free plan also means you can try it with no clock at all."
+      "a": "About the same across the board. Capsule: 14 days on paid plans. Close: 14 days, no credit card. folk: 2 weeks, no credit card. Capsule's free plan also means you can try it with no clock at all. HubSpot's free CRM has no clock either: HubSpot calls it free with no expiration date."
     }
   ],
   "closing": "For most freelancers, start free on Capsule, move to Close when you need calling, and only look past both if your work already lives in email and LinkedIn.",
@@ -176,28 +283,60 @@
       "href": "https://aff.trypipedrive.com/5102umtkzh8i",
       "kind": "affiliate",
       "product": "pipedrive"
+    },
+    {
+      "label": "Visit folk",
+      "href": "https://www.folk.app/",
+      "kind": "site",
+      "product": "folk"
+    },
+    {
+      "label": "Visit HubSpot",
+      "href": "https://www.hubspot.com/products/crm",
+      "kind": "site",
+      "product": "hubspot"
     }
   ],
   "products": [
     {
       "slug": "capsule",
       "name": "Capsule",
-      "type": "affiliate"
+      "type": "affiliate",
+      "pick": "Easiest free start for a one-person book.",
+      "href": "https://get.capsulenow.io/x0kzganxlolo",
+      "linkKind": "affiliate"
     },
     {
       "slug": "close",
       "name": "Close",
-      "type": "affiliate"
+      "type": "affiliate",
+      "pick": "Best paid pick if you want built-in calling.",
+      "href": "https://refer.close.com/bebtpaitxgfs",
+      "linkKind": "affiliate"
     },
     {
       "slug": "pipedrive",
       "name": "Pipedrive",
-      "type": "affiliate"
+      "type": "affiliate",
+      "pick": "Pipeline-first, with the bill paid annually.",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "linkKind": "affiliate"
     },
     {
       "slug": "folk",
       "name": "folk",
-      "type": "affiliate"
+      "type": "affiliate",
+      "pick": "Worth a look if your clients live in email and LinkedIn.",
+      "href": "https://www.folk.app/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate",
+      "pick": "Free CRM with paid seats to add later.",
+      "href": "https://www.hubspot.com/products/crm",
+      "linkKind": "site"
     }
   ],
   "sources": [
@@ -216,6 +355,10 @@
     {
       "text": "folk pricing page",
       "href": "https://www.folk.app/pricing"
+    },
+    {
+      "text": "HubSpot CRM page",
+      "href": "https://www.hubspot.com/products/crm"
     }
   ]
 }

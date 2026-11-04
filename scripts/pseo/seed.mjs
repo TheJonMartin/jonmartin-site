@@ -23,7 +23,7 @@ export function loadSpecs() {
 export function loadLocal() {
 	const factsFile = readJson('seed', 'facts.json');
 	const products = factsFile.products;
-	const facts = factsFile.facts.map((f) => ({ ...f, checked_at: factsFile.checked_at, stale: false }));
+	const facts = factsFile.facts.map((f) => ({ ...f, checked_at: f.checked_at ?? factsFile.checked_at, stale: false }));
 	const claims = readJson('seed', 'claims.json');
 	const niches = readJson('seed', 'niches.json');
 	const links = readJson('seed', 'links.json');

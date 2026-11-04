@@ -17,12 +17,19 @@
 		{
 			"slug": "close",
 			"role": "option",
-			"link": true
+			"link": true,
+			"pick": "Better fit if your team lives on the phone; calling is built in."
 		},
 		{
 			"slug": "pipedrive",
 			"role": "option",
-			"link": true
+			"link": true,
+			"pick": "Better fit if your team works the pipeline and wants a deep integration catalog."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
 		}
 	],
 	"title": "Close vs Pipedrive for a Small Sales Team — Jon Martin",
@@ -64,12 +71,28 @@
 			"label": "Price and plan breakdown",
 			"blocks": [
 				{
+					"type": "h3",
+					"text": "Close"
+				},
+				{
 					"type": "p",
 					"html": "Start with the two Close plans a small team actually weighs. Essentials: {{fact:close.essentials_price}}. Five seats run about {{calc:close_team_5}} a month. Growth: {{fact:close.growth_price}}, which a 5-person team usually wants once calling volume grows. Calling sits on top of either plan. Close's pricing page puts it this way: {{fact:close.calling_cost}}."
 				},
 				{
+					"type": "cta",
+					"product": "close"
+				},
+				{
+					"type": "h3",
+					"text": "Pipedrive"
+				},
+				{
 					"type": "p",
 					"html": "Pipedrive's plans are billed annually. Lite: {{fact:pipedrive.lite_price}}. Growth: {{fact:pipedrive.growth_price}}. Premium: {{fact:pipedrive.premium_price}}. Growth is where the workflow tools show up (in Pipedrive's words, {{fact:pipedrive.growth_automation}}). Five seats on Growth run about {{calc:pipedrive_team_5}} a month, close to five seats on Close Essentials."
+				},
+				{
+					"type": "cta",
+					"product": "pipedrive"
 				}
 			]
 		},
@@ -78,7 +101,7 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "The table below lines up both tools against the four things a small B2B sales team usually can't do without: built-in calling, email sequences, a pipeline view, and a way to bring over contacts from HubSpot. Close wins on calling, since dialing and SMS are part of the product rather than a bolt-on."
+					"html": "The table below lines up both tools against the four things a small B2B sales team usually can't do without: built-in calling, email sequences, a pipeline view, and a way to bring over contacts from {{link:hubspot}}. Close wins on calling, since dialing and SMS are part of the product rather than a bolt-on."
 				},
 				{
 					"type": "p",
