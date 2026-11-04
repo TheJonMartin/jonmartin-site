@@ -6,10 +6,12 @@ interface Props {
 	caption: string;
 	head: string[];
 	rows: string[][];
+	/** Optional trusted-HTML version of `rows` (inline tool links). Used for display when present. */
+	rowsHtml?: string[][];
 	/** Optional, aligned with `head`: a link for each tool column (null for the label column). */
 	links?: (PseoHeadLink | null)[];
 }
-const { caption, head, rows, links = [] } = Astro.props;
+const { caption, head, rows, rowsHtml, links = [] } = Astro.props;
 ---
 
 <figure class="tablefig">
@@ -27,10 +29,10 @@ const { caption, head, rows, links = [] } = Astro.props;
 				</tr>
 			</thead>
 			<tbody>
-				{rows.map((r) => (
+				{rows.map((r, i) => (
 					<tr>
 						<th scope="row">{r[0]}</th>
-						{r.slice(1).map((c) => <td>{c}</td>)}
+						{r.slice(1).map((c, j) => (rowsHtml ? <td set:html={rowsHtml[i][j + 1]} /> : <td>{c}</td>))}
 					</tr>
 				))}
 			</tbody>

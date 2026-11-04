@@ -24,6 +24,7 @@ export interface PseoFitTable {
 	head: string[];
 	/** Cells are plain text, unlike the trusted-HTML cells in tools.ts table Blocks. */
 	rows: string[][];
+	rowsHtml?: string[][];
 	/** Aligned with `head`; a link per tool column, null for the label column. */
 	links?: (PseoHeadLink | null)[];
 }
@@ -47,6 +48,8 @@ export interface PseoSection {
 export interface PseoFaqEntry {
 	q: string;
 	a: string;
+	/** Trusted HTML version of `a` with inline tool links. */
+	aHtml?: string;
 }
 
 export interface PseoCta {
@@ -73,6 +76,14 @@ export interface PseoSource {
 	href: string;
 }
 
+export interface PseoRelated {
+	slug: string;
+	route: string;
+	title: string;
+	dek: string;
+	href: string;
+}
+
 export interface PseoPage {
 	slug: string;
 	route: PseoRoute;
@@ -96,6 +107,8 @@ export interface PseoPage {
 	ctas: PseoCta[];
 	products: PseoProductRef[];
 	sources: PseoSource[];
+	/** Other live pSEO pages sharing a product or niche (max 4), set at render time. */
+	related?: PseoRelated[];
 }
 
 const modules = import.meta.glob<{ default: PseoPage }>('../data/pseo/pages/*.json', { eager: true });

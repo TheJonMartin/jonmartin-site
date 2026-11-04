@@ -4,12 +4,12 @@
 // up to quota, re-render existing live pages and apply live-page rules, retire old
 // noindex pages -> local: write files to disk; remote: open one PR.
 
-import { readFileSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, unlinkSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { renderPage, affiliateLinks } from './render.mjs';
-import { gate } from './gate.mjs';
+import { renderPage, affiliateLinks, attachRelated } from './render.mjs';
+import { gate, checkRelatedLinks } from './gate.mjs';
 import { loadLocal, loadSpecs } from './seed.mjs';
 import { loadAll, createClient } from './lib/supabase.mjs';
 import { fetchLinks } from './lib/notion.mjs';
@@ -146,6 +146,29 @@ function changedRewrites(liveRewrites) {
 	});
 }
 
+/**
+ * Related comparisons: computed from every page that will be live after this run (new pages that passed the gate and
+ * quota, live re-renders not demoted, and live pages on disk with no spec), so a new page and its siblings link both ways.
+ */
+function linkRelated(written, liveRewrites) {
+	const renderedSlugs = new Set([...written, ...liveRewrites].map((r) => r.slug));
+	const onDisk = existsSync(PAGES_DIR)
+		? readdirSync(PAGES_DIR)
+				.filter((f) => f.endsWith('.json'))
+				.map((f) => JSON.parse(readFileSync(path.join(PAGES_DIR, f), 'utf8')))
+				.filter((p) => p.status === 'live' && !renderedSlugs.has(p.slug))
+		: [];
+	const targets = [...written.map((c) => c.page), ...liveRewrites.map((r) => r.page)];
+	const pool = [...targets.filter((p) => p.status === 'live'), ...onDisk];
+	attachRelated(targets, pool);
+	const failures = [];
+	for (const page of targets.filter((p) => p.status === 'live')) {
+		const errors = checkRelatedLinks(page, pool);
+		if (errors.length > 0) failures.push({ slug: page.slug, errors });
+	}
+	return failures;
+}
+
 function applyQuota(newCandidates, quota) {
 	const sorted = [...newCandidates].sort((a, b) => a.wave - b.wave || a.slug.localeCompare(b.slug));
 	return { written: sorted.slice(0, quota), skipped: sorted.slice(quota).map((c) => c.slug) };
@@ -174,6 +197,7 @@ async function runLocal({ dryRun, date }) {
 	});
 	await applyLiveRules(liveRewrites, { metrics: data.metrics, runDate: date, checkLinksNetwork: false });
 	const { written, skipped } = applyQuota(newCandidates, dailyQuota());
+	for (const f of linkRelated(written, liveRewrites)) console.error(`related links ${f.slug}: ${f.errors.join('; ')}`);
 
 	if (!dryRun) {
 		for (const candidate of written) writeFileSync(pagePath(candidate.slug), serialize(candidate.page));
@@ -218,6 +242,7 @@ async function runRemote({ date }) {
 		});
 		await applyLiveRules(liveRewrites, { metrics: data.metrics, runDate: date, checkLinksNetwork: true });
 		const { written, skipped } = applyQuota(newCandidates, dailyQuota());
+	for (const f of linkRelated(written, liveRewrites)) console.error(`related links ${f.slug}: ${f.errors.join('; ')}`);
 
 		const files = {};
 		for (const candidate of written) files[`src/data/pseo/pages/${candidate.slug}.json`] = serialize(candidate.page);

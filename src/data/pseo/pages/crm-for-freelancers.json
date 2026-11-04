@@ -54,6 +54,32 @@
         "Free plan: deal pipelines included."
       ]
     ],
+    "rowsHtml": [
+      [
+        "free or low-cost solo plan",
+        "Free plan: Up to 2 users.",
+        "Solo: $9 per user per month.",
+        "Lite: $14 per seat per month, billed annually.",
+        "Standard: $24 per member per month, billed yearly ($30 monthly).",
+        "Free: up to 2 users. Starter starts at $15 per seat per month."
+      ],
+      [
+        "contact limit that fits a solo book",
+        "Free: 250 contacts, 1 sales pipeline. Starter: 30,000 contacts.",
+        "Solo: 1 user, 10,000 leads, no workflows.",
+        "Pipedrive's pricing page doesn't publish a contact cap for the Lite plan.",
+        "No published contact cap on folk's pricing page.",
+        "Free: 1,000 contacts."
+      ],
+      [
+        "simple pipeline",
+        "One pipeline on the free plan, more on paid plans.",
+        "Pipeline view ships on Solo, same as every Close plan.",
+        "Pipeline view is the core of every Pipedrive plan.",
+        "Board-style pipeline built around contacts and relationships, not just deals.",
+        "Free plan: deal pipelines included."
+      ]
+    ],
     "links": [
       null,
       {
@@ -245,23 +271,28 @@
   "faq": [
     {
       "q": "Is there a truly free CRM for freelancers in this group?",
-      "a": "Capsule is. Free plan users: Up to 2 users. Limits: 250 contacts, 1 sales pipeline."
+      "a": "Capsule is. Free plan users: Up to 2 users. Limits: 250 contacts, 1 sales pipeline.",
+      "aHtml": "Capsule is. Free plan users: Up to 2 users. Limits: 250 contacts, 1 sales pipeline."
     },
     {
       "q": "How much does Close cost for one person over a year?",
-      "a": "Close's Solo plan runs $9 per user per month, about $108 a year."
+      "a": "Close's Solo plan runs $9 per user per month, about $108 a year.",
+      "aHtml": "Close's Solo plan runs $9 per user per month, about $108 a year."
     },
     {
       "q": "Is Pipedrive's Lite plan billed monthly?",
-      "a": "No. It's quoted as $14 per seat per month, billed annually, so the monthly number is paid as one annual bill, same as Pipedrive's other plans."
+      "a": "No. It's quoted as $14 per seat per month, billed annually, so the monthly number is paid as one annual bill, same as Pipedrive's other plans.",
+      "aHtml": "No. It's quoted as $14 per seat per month, billed annually, so the monthly number is paid as one annual bill, same as Pipedrive's other plans."
     },
     {
       "q": "Are all the links on this page affiliate links?",
-      "a": "No. The Capsule, Close, and Pipedrive links are affiliate links. The folk and HubSpot links go straight to each vendor's own site with no affiliate tracking."
+      "a": "No. The Capsule, Close, and Pipedrive links are affiliate links. The folk and HubSpot links go straight to each vendor's own site with no affiliate tracking.",
+      "aHtml": "No. The Capsule, Close, and Pipedrive links are affiliate links. The folk and HubSpot links go straight to each vendor's own site with no affiliate tracking."
     },
     {
       "q": "How long are the free trials?",
-      "a": "About the same across the board. Capsule: 14 days on paid plans. Close: 14 days, no credit card. folk: 2 weeks, no credit card. Capsule's free plan also means you can try it with no clock at all. HubSpot's free CRM has no clock either: HubSpot calls it free with no expiration date."
+      "a": "About the same across the board. Capsule: 14 days on paid plans. Close: 14 days, no credit card. folk: 2 weeks, no credit card. Capsule's free plan also means you can try it with no clock at all. HubSpot's free CRM has no clock either: HubSpot calls it free with no expiration date.",
+      "aHtml": "About the same across the board. Capsule: 14 days on paid plans. Close: 14 days, no credit card. folk: 2 weeks, no credit card. Capsule's free plan also means you can try it with no clock at all. HubSpot's free CRM has no clock either: HubSpot calls it free with no expiration date."
     }
   ],
   "closing": "For most freelancers, start free on Capsule, move to Close when you need calling, and only look past both if your work already lives in email and LinkedIn.",
@@ -359,6 +390,15 @@
     {
       "text": "HubSpot CRM page",
       "href": "https://www.hubspot.com/products/crm"
+    }
+  ],
+  "related": [
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
     }
   ]
 }

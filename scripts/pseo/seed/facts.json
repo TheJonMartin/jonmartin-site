@@ -7,6 +7,10 @@
     { "slug": "capsule", "name": "Capsule", "product_type": "affiliate", "cheat_sheet_name": "Capsule / Transpond", "site": "https://capsulecrm.com/" },
     { "slug": "folk", "name": "folk", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.folk.app/", "note": "No approved program. Listed without a link." },
     { "slug": "hubspot", "name": "HubSpot", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.hubspot.com/products/crm", "note": "No affiliate program joined. Plain link to the product site, no affiliate params." },
+    { "slug": "highlevel", "name": "HighLevel", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.gohighlevel.com/", "note": "No affiliate program joined. Plain link to the product site, no affiliate params." },
+    { "slug": "zapier", "name": "Zapier", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://zapier.com/", "note": "No affiliate program joined. Plain link to the product site, no affiliate params." },
+    { "slug": "zoom", "name": "Zoom", "product_type": "affiliate", "cheat_sheet_name": null, "site": "https://www.zoom.com/", "note": "No affiliate program joined. Plain link to the product site, no affiliate params." },
+    { "slug": "lemlist", "name": "lemlist", "product_type": "affiliate", "cheat_sheet_name": "lemlist", "site": "https://www.lemlist.com/", "note": "Affiliate link already used on /tools pages (src/lib/tools.ts)." },
     { "slug": "portal-audit", "name": "Portal Audit", "product_type": "own_live", "owner_bot": "Boss Man", "cta_url": "https://audit.thejonmartin.com/" },
     { "slug": "giftkeep", "name": "GiftKeep", "product_type": "own_live", "owner_bot": "GiftKeep", "cta_url": "https://giftkeep.app/" },
     { "slug": "stripe-sync", "name": "HubSpot to Stripe sync", "product_type": "own_planned", "owner_bot": "Stripe Sync", "cta_url": "/contact" }

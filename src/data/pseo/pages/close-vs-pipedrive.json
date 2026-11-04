@@ -47,6 +47,28 @@
         "No HubSpot importer named on the pricing page; ask sales."
       ]
     ],
+    "rowsHtml": [
+      [
+        "built-in calling",
+        "Yes. Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute.",
+        "Not in the plan prices above; price out calling separately."
+      ],
+      [
+        "email sequences",
+        "Not on Essentials; workflows arrive with Growth.",
+        "Automations and email sequences start on Growth."
+      ],
+      [
+        "pipeline view",
+        "Pipeline view ships on every plan, including Essentials.",
+        "Pipeline view ships on every plan; it's the core of the product."
+      ],
+      [
+        "HubSpot import",
+        "Yes. Built-in importers for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, Pipedrive and <a href=\"https://www.gohighlevel.com/\" target=\"_blank\" rel=\"noopener\">HighLevel</a>.",
+        "No HubSpot importer named on the pricing page; ask sales."
+      ]
+    ],
     "links": [
       null,
       {
@@ -132,7 +154,7 @@
         },
         {
           "type": "p",
-          "html": "Pipedrive wins on integration breadth. Its marketplace lists 500+ apps, including Zapier, Zoom and lemlist, a bigger catalog than anything Close publishes. Neither tool sweeps all four rows, which is exactly why the table matters more than either vendor's marketing page."
+          "html": "Pipedrive wins on integration breadth. Its marketplace lists 500+ apps, including <a href=\"https://zapier.com/\" target=\"_blank\" rel=\"noopener\">Zapier</a>, <a href=\"https://www.zoom.com/\" target=\"_blank\" rel=\"noopener\">Zoom</a> and <a href=\"https://get.lemlist.com/25fqpl724zci\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">lemlist</a>, a bigger catalog than anything Close publishes. Neither tool sweeps all four rows, which is exactly why the table matters more than either vendor's marketing page."
         }
       ]
     },
@@ -166,23 +188,28 @@
   "faq": [
     {
       "q": "Does Close or Pipedrive include calling for free?",
-      "a": "Neither includes it in the seat price. Close's pricing page says: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute. Pipedrive's plan prices above don't include calling, so check its calling options before you compare totals."
+      "a": "Neither includes it in the seat price. Close's pricing page says: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute. Pipedrive's plan prices above don't include calling, so check its calling options before you compare totals.",
+      "aHtml": "Neither includes it in the seat price. Close's pricing page says: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute. Pipedrive's plan prices above don't include calling, so check its calling options before you compare totals."
     },
     {
       "q": "Is Pipedrive really billed annually?",
-      "a": "Yes. Growth is quoted as $39 per seat per month, billed annually, and every other Pipedrive tier is billed as one annual payment too."
+      "a": "Yes. Growth is quoted as $39 per seat per month, billed annually, and every other Pipedrive tier is billed as one annual payment too.",
+      "aHtml": "Yes. Growth is quoted as $39 per seat per month, billed annually, and every other Pipedrive tier is billed as one annual payment too."
     },
     {
       "q": "Which one is cheaper for a 5-person team?",
-      "a": "Close Essentials and Pipedrive Growth land close together for five seats: $175 versus $195 a month."
+      "a": "Close Essentials and Pipedrive Growth land close together for five seats: $175 versus $195 a month.",
+      "aHtml": "Close Essentials and Pipedrive Growth land close together for five seats: $175 versus $195 a month."
     },
     {
       "q": "Can I move my HubSpot data into either tool?",
-      "a": "Close publishes it plainly: Built-in importers for HubSpot, Pipedrive and HighLevel. Pipedrive's pricing page doesn't name a HubSpot importer, so ask its sales team how a HubSpot move works before you commit."
+      "a": "Close publishes it plainly: Built-in importers for HubSpot, Pipedrive and HighLevel. Pipedrive's pricing page doesn't name a HubSpot importer, so ask its sales team how a HubSpot move works before you commit.",
+      "aHtml": "Close publishes it plainly: Built-in importers for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, Pipedrive and <a href=\"https://www.gohighlevel.com/\" target=\"_blank\" rel=\"noopener\">HighLevel</a>. Pipedrive's pricing page doesn't name a HubSpot importer, so ask its sales team how a HubSpot move works before you commit."
     },
     {
       "q": "What if I just want to try both first?",
-      "a": "Both have trials. Close's trial: 14 days, no credit card. Pipedrive's trial: 14 days, no credit card. That's plenty of time to compare."
+      "a": "Both have trials. Close's trial: 14 days, no credit card. Pipedrive's trial: 14 days, no credit card. That's plenty of time to compare.",
+      "aHtml": "Both have trials. Close's trial: 14 days, no credit card. Pipedrive's trial: 14 days, no credit card. That's plenty of time to compare."
     }
   ],
   "closing": "For a 5-person B2B sales team, pick Close if calling matters most and Pipedrive if integration breadth does.",
@@ -221,6 +248,26 @@
       "slug": "hubspot",
       "name": "HubSpot",
       "type": "affiliate"
+    },
+    {
+      "slug": "highlevel",
+      "name": "HighLevel",
+      "type": "affiliate"
+    },
+    {
+      "slug": "zapier",
+      "name": "Zapier",
+      "type": "affiliate"
+    },
+    {
+      "slug": "zoom",
+      "name": "Zoom",
+      "type": "affiliate"
+    },
+    {
+      "slug": "lemlist",
+      "name": "lemlist",
+      "type": "affiliate"
     }
   ],
   "sources": [
@@ -231,6 +278,15 @@
     {
       "text": "Pipedrive pricing page",
       "href": "https://www.pipedrive.com/en/pricing"
+    }
+  ],
+  "related": [
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
     }
   ]
 }
