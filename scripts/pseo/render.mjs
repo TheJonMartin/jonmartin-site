@@ -231,6 +231,8 @@ export function renderPage(spec, { facts, products, links, claims, runDate }) {
 			};
 		}),
 		sources: buildSources(spec, facts, productsBySlug),
+		// Filled by attachRelated() once every page in the run is rendered.
+		related: [],
 	};
 }
 
@@ -272,4 +274,42 @@ export function pageText(page) {
 
 export function affiliateLinks(page) {
 	return page.ctas.filter((c) => c.kind === 'affiliate').map((c) => c.href);
+}
+
+export const MAX_RELATED = 4;
+
+function nicheKey(page) {
+	return (page.niche?.label ?? '').trim().toLowerCase();
+}
+
+function productSlugs(page) {
+	return new Set((page.products ?? []).map((p) => p.slug));
+}
+
+/** Other live pages that share at least one product or the same niche with `page`, best match first (max 4, never self, never noindex). */
+export function relatedFor(page, pool, max = MAX_RELATED) {
+	const mine = productSlugs(page);
+	return pool
+		.filter((other) => other.slug !== page.slug && other.status === 'live')
+		.map((other) => {
+			const shared = [...productSlugs(other)].filter((slug) => mine.has(slug)).length;
+			const sameNiche = nicheKey(other) !== '' && nicheKey(other) === nicheKey(page);
+			return { other, shared, sameNiche };
+		})
+		.filter((c) => c.shared > 0 || c.sameNiche)
+		.sort((a, b) => b.shared - a.shared || Number(b.sameNiche) - Number(a.sameNiche) || a.other.seoTitle.localeCompare(b.other.seoTitle))
+		.slice(0, max)
+		.map(({ other }) => ({
+			slug: other.slug,
+			route: other.route,
+			title: other.seoTitle,
+			dek: other.dek?.[0] ?? '',
+			href: `/tools/${other.route}/${other.slug}`,
+		}));
+}
+
+/** Sets `related` on each page in `targets` from the full pool, so a new page and its siblings link both ways on the same run. */
+export function attachRelated(targets, pool) {
+	for (const page of targets) page.related = relatedFor(page, pool);
+	return targets;
 }

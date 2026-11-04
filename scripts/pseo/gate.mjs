@@ -1,6 +1,6 @@
-// Step 2: gate checks from BUILD_PLAN.md "Gate" section, rules 1-8.
+// Step 2: gate checks from BUILD_PLAN.md "Gate" section, rules 1-9.
 
-import { pageText, pageProse, computedValues } from './render.mjs';
+import { pageText, pageProse, computedValues, relatedFor, MAX_RELATED } from './render.mjs';
 
 const BANNED_PHRASES = [
 	'steward',
@@ -245,7 +245,18 @@ function checkEveryToolLinked(page, spec, products, links, errors) {
 	}
 }
 
-export function gate(page, { spec, facts, products, links, claims, otherPages = [], runDate }) {
+/** Rule 9: a page with at least one eligible sibling (live, not self, shares a product or niche) must carry at least one related link, and every related link must point at an eligible sibling. */
+export function checkRelatedLinks(page, pool, errors = []) {
+	const eligible = relatedFor(page, pool, Infinity);
+	const related = page.related ?? [];
+	if (eligible.length > 0 && related.length === 0) errors.push(`rule 9: page has ${eligible.length} eligible sibling page(s) but no related links`);
+	const eligibleHrefs = new Set(eligible.map((r) => r.href));
+	for (const r of related) if (!eligibleHrefs.has(r.href)) errors.push(`rule 9: related link ${r.href} is not a live sibling page`);
+	if (related.length > MAX_RELATED) errors.push(`rule 9: ${related.length} related links (max ${MAX_RELATED})`);
+	return errors;
+}
+
+export function gate(page, { spec, facts, products, links, claims, otherPages = [], runDate, relatedPool = null }) {
 	const errors = [];
 	checkOptionsCount(page, spec, errors);
 	checkFacts(page, spec, facts, runDate, errors);
@@ -255,5 +266,6 @@ export function gate(page, { spec, facts, products, links, claims, otherPages = 
 	checkBannedWords(page, errors);
 	checkOwnProductClaims(page, claims, errors);
 	checkEveryToolLinked(page, spec, products, links, errors);
+	if (relatedPool) checkRelatedLinks(page, relatedPool, errors);
 	return { ok: errors.length === 0, errors };
 }

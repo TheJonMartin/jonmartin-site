@@ -73,6 +73,14 @@ export interface PseoSource {
 	href: string;
 }
 
+export interface PseoRelated {
+	slug: string;
+	route: string;
+	title: string;
+	dek: string;
+	href: string;
+}
+
 export interface PseoPage {
 	slug: string;
 	route: PseoRoute;
@@ -96,6 +104,8 @@ export interface PseoPage {
 	ctas: PseoCta[];
 	products: PseoProductRef[];
 	sources: PseoSource[];
+	/** Other live pSEO pages sharing a product or niche (max 4), set at render time. */
+	related?: PseoRelated[];
 }
 
 const modules = import.meta.glob<{ default: PseoPage }>('../data/pseo/pages/*.json', { eager: true });

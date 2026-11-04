@@ -232,5 +232,14 @@
       "text": "Pipedrive pricing page",
       "href": "https://www.pipedrive.com/en/pricing"
     }
+  ],
+  "related": [
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    }
   ]
 }

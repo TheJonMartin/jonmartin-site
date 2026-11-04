@@ -4,8 +4,8 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
-import { renderPage } from './render.mjs';
-import { gate } from './gate.mjs';
+import { renderPage, attachRelated, relatedFor } from './render.mjs';
+import { gate, checkRelatedLinks } from './gate.mjs';
 import { loadLocal } from './seed.mjs';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
@@ -48,6 +48,7 @@ const EXPECTED_KEYS = [
 	'ctas',
 	'products',
 	'sources',
+	'related',
 ].sort();
 
 function render(spec, overrides = {}) {
@@ -188,4 +189,39 @@ test('rule 8: a mentioned product must be linked inline with {{link:slug}}', () 
 	assert.ok(linked.sections[0].blocks.at(-1).html.includes('<a href="https://zeta.example.com/" target="_blank" rel="noopener">Zeta CRM</a>'));
 	const good = gate(linked, { spec, facts, products: [...withSite, mention], links, claims, runDate: RUN_DATE });
 	assert.ok(!good.errors.some((e) => e.startsWith('rule 8:')), good.errors.join('\n'));
+});
+
+test('related comparisons: pages sharing a product link to each other, never self or noindex, max 4', () => {
+	const { best, compare } = renderAll();
+	attachRelated([best, compare], [best, compare]);
+	assert.deepEqual(best.related.map((r) => r.href), ['/tools/compare/alpha-crm-vs-beta-crm']);
+	assert.deepEqual(compare.related.map((r) => r.href), ['/tools/best/best-crm-for-small-sales-teams']);
+	assert.equal(compare.related[0].title, best.seoTitle);
+
+	const retired = { ...structuredClone(compare), status: 'noindex' };
+	assert.deepEqual(relatedFor(best, [best, retired]), []);
+
+	const unrelated = { ...structuredClone(compare), slug: 'other', products: [{ slug: 'omega' }], niche: { label: 'Someone else' } };
+	assert.deepEqual(relatedFor(best, [best, unrelated]), []);
+	const sameNiche = { ...unrelated, niche: { label: best.niche.label } };
+	assert.deepEqual(relatedFor(best, [best, sameNiche]).map((r) => r.slug), ['other']);
+
+	const many = Array.from({ length: 6 }, (_, i) => ({ ...structuredClone(compare), slug: `sib-${i}` }));
+	assert.equal(relatedFor(best, [best, ...many]).length, 4);
+});
+
+test('rule 9: a page with an eligible sibling must carry at least one related link', () => {
+	const { best, compare } = renderAll();
+	const pool = [best, compare];
+	const bad = gate(best, { spec: specs.best, facts, products, links, claims, runDate: RUN_DATE, relatedPool: pool });
+	assert.ok(bad.errors.some((e) => e.startsWith('rule 9:')), bad.errors.join('\n'));
+
+	attachRelated(pool, pool);
+	for (const page of pool) assert.deepEqual(checkRelatedLinks(page, pool), []);
+
+	const alone = { ...structuredClone(best), related: [] };
+	assert.deepEqual(checkRelatedLinks(alone, [alone]), [], 'no sibling, no requirement');
+
+	const stale = { ...structuredClone(best), related: [{ href: '/tools/compare/gone', slug: 'gone' }] };
+	assert.ok(checkRelatedLinks(stale, pool).some((e) => e.includes('not a live sibling')));
 });

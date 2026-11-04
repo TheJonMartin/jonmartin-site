@@ -2,6 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import Disclosure from '../../../components/pseo/Disclosure.astro';
 import FitTable from '../../../components/pseo/FitTable.astro';
+import RelatedPages from '../../../components/pseo/RelatedPages.astro';
 import QuickPicks from '../../../components/pseo/QuickPicks.astro';
 import ToolLink from '../../../components/pseo/ToolLink.astro';
 import OwnProductCta from '../../../components/pseo/OwnProductCta.astro';
@@ -166,6 +167,8 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 				</div>
 			</section>
 		)}
+
+		<RelatedPages related={page.related ?? []} />
 
 		<section class="band offer">
 			<div class="inner">

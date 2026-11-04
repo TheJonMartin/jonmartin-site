@@ -360,5 +360,14 @@
       "text": "HubSpot CRM page",
       "href": "https://www.hubspot.com/products/crm"
     }
+  ],
+  "related": [
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    }
   ]
 }
