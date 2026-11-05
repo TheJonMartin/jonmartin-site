@@ -289,7 +289,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 								{relatedTools.map((r) => (
 									<li>
 										<a href={`/tools/${r.slug}`}><strong>{r.name}</strong></a>
-										<span class="reldesc">{r.description}</span>
+										<span class="reldesc">{r.relatedBlurb ?? r.description}</span>
 									</li>
 								))}
 								<li><a class="allrow" href="/tools">All tools <span aria-hidden="true">&rarr;</span></a></li>
