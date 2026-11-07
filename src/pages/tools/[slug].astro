@@ -1,7 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Disclosure from '../../components/pseo/Disclosure.astro';
 import { tools, disclosure, CHECKED, PUBLISHED, MODIFIED, type Block } from '../../lib/tools';
-import { breadcrumbSchema } from '../../lib/schema';
+import { breadcrumbSchema, faqPairsSchema } from '../../lib/schema';
 
 export function getStaticPaths() {
 	return tools.map((tool) => ({ params: { slug: tool.slug }, props: { tool } }));
@@ -58,15 +59,7 @@ const schema = {
 };
 
 // One list renders the visible FAQ and the JSON-LD, so the text always matches.
-const faqSchema =
-	faq.length > 0
-		? {
-				'@context': 'https://schema.org',
-				'@type': 'FAQPage',
-				'@id': `${canonical}#faq`,
-				mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
-			}
-		: null;
+const faqSchema = faq.length > 0 ? faqPairsSchema(faq, `${canonical}#faq`) : null;
 const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schema];
 ---
 
@@ -86,11 +79,7 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 			</div>
 		</section>
 
-		<div class="disclosure-bar">
-			<div class="inner">
-				<p class="label disclosure-top"><span class="d-tag">Disclosure</span> {disclosureText}</p>
-			</div>
-		</div>
+		<Disclosure text={disclosureText} />
 
 		<section class="band facts">
 			<div class="inner">
@@ -319,11 +308,6 @@ const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schem
 	.hero h1 { color: var(--cream); font-size: clamp(36px, 5.6vw, 72px); font-weight: 400; line-height: 1.04; letter-spacing: -0.02em; max-width: 20ch; text-wrap: balance; margin: 0 0 36px; }
 	.dekcol { display: grid; gap: 14px; max-width: 62ch; }
 	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
-
-	/* disclosure under hero */
-	.disclosure-bar { border-bottom: 1px solid var(--hairline); padding: 14px 0; background: var(--white); }
-	.disclosure-top { font-size: 11px; line-height: 1.6; color: var(--muted); margin: 0; letter-spacing: 0.06em; }
-	.d-tag { color: var(--plum); margin-right: 0.5rem; }
 
 	/* fact strip */
 	.facts { padding: 40px 0; border-top: none; }

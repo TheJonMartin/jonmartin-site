@@ -8,7 +8,7 @@ services:
     schedule: "0 6 * * *"
     branch: main
     buildCommand: node --version
-    startCommand: "test -f scripts/pseo/run.mjs && node scripts/pseo/run.mjs || echo 'pseo engine not on main yet'"
+    startCommand: "node scripts/pseo/run.mjs"
     envVars:
       - key: PSEO_SUPABASE_URL
         sync: false
