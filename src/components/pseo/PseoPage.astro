@@ -1,0 +1,299 @@
+---
+import Base from '../../layouts/Base.astro';
+import Disclosure from './Disclosure.astro';
+import FitTable from './FitTable.astro';
+import RelatedPages from './RelatedPages.astro';
+import QuickPicks from './QuickPicks.astro';
+import ToolLink from './ToolLink.astro';
+import OwnProductCta from './OwnProductCta.astro';
+import WaitlistCta from './WaitlistCta.astro';
+import type { PseoPage as PseoPageData } from '../../lib/pseo';
+import { breadcrumbSchema, faqPairsSchema } from '../../lib/schema';
+
+interface Props {
+	page: PseoPageData;
+}
+
+const { page } = Astro.props;
+const canonical = new URL(`/tools/${page.route}/${page.slug}`, Astro.site).href;
+const pad = (n: number) => String(n).padStart(2, '0');
+
+const templateLabels: Record<string, string> = { best: 'Best picks', compare: 'Comparison', howto: 'How-to' };
+const metaCells = [templateLabels[page.template] ?? page.template, page.niche.label, `Checked ${page.checked}`];
+
+function productFor(slug: string) {
+	return page.products.find((p) => p.slug === slug);
+}
+
+const breadcrumb = breadcrumbSchema(page.title, canonical, Astro.site!.href, {
+	name: 'Tools',
+	url: new URL('/tools', Astro.site).href,
+});
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'Article',
+	'@id': canonical,
+	headline: page.h1,
+	name: page.title,
+	description: page.description,
+	url: canonical,
+	datePublished: page.published,
+	dateModified: page.modified,
+	author: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	publisher: { '@type': 'Person', '@id': 'https://thejonmartin.com/#jon', name: 'Jon Martin' },
+	inLanguage: 'en-US',
+	mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+};
+
+const faqSchema = page.faq.length > 0 ? faqPairsSchema(page.faq, `${canonical}#faq`) : null;
+const schemas = faqSchema ? [breadcrumb, schema, faqSchema] : [breadcrumb, schema];
+---
+
+<Base
+	title={page.title}
+	seoTitle={page.seoTitle}
+	description={page.description}
+	schema={schemas}
+	navBordered={false}
+	ogType="article"
+	publishedTime={page.published}
+	modifiedTime={page.modified}
+	noindex={page.status === 'noindex'}
+>
+	<main id="main">
+		<section class="band hero">
+			<div class="inner">
+				<div class="edge">
+					<div class="meta">
+						{metaCells.map((c, n) => <div class:list={['cell', { accent: n === 0 }]}>{c}</div>)}
+					</div>
+					<h1>{page.h1}</h1>
+					<div class="dekcol">
+						{page.dek.map((line) => <p class="dek">{line}</p>)}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{page.disclosure && <Disclosure text={page.disclosure} />}
+
+		<QuickPicks products={page.products} />
+
+		{page.fitTable && (
+			<section class="band fittable">
+				<div class="inner">
+					<FitTable caption={page.fitTable.caption} head={page.fitTable.head} rows={page.fitTable.rows} rowsHtml={page.fitTable.rowsHtml} links={page.fitTable.links} />
+				</div>
+			</section>
+		)}
+
+		{page.sections.map((section, i) => (
+			<section class="band">
+				<div class="inner ledger">
+					<div class="rail">
+						<h2 class="label section-label">{pad(i + 1)} / {section.label}</h2>
+						<div class="rule"></div>
+					</div>
+					<div class="content">
+						{section.blocks.map((block) => {
+							if (block.type === 'p') return <p set:html={block.html} />;
+							if (block.type === 'cta') return <div class="toolcta"><ToolLink href={block.href} label={block.label} kind={block.kind} variant="outline" /></div>;
+							if (block.type === 'h3') return <h3 class="subhead">{block.text}</h3>;
+							if (block.type === 'table')
+								return (
+									<figure class="tablefig">
+										{block.caption && <figcaption class="tcap">{block.caption}</figcaption>}
+										<div class="tablewrap">
+											<table class="cmp">
+												<thead>
+													<tr>{block.head.map((h) => <th scope="col">{h}</th>)}</tr>
+												</thead>
+												<tbody>
+													{block.rows.map((r) => (
+														<tr>
+															<th scope="row" set:html={r[0]} />
+															{r.slice(1).map((c) => <td set:html={c} />)}
+														</tr>
+													))}
+												</tbody>
+											</table>
+										</div>
+									</figure>
+								);
+							if (block.type === 'ul')
+								return <ul class="rows">{block.items.map((item) => <li set:html={item} />)}</ul>;
+							return (
+								<ol class="numbered">
+									{block.items.map((item, n) => (
+										<li>
+											<span class="label n">{block.type === 'steps' ? `Step ${n + 1}` : pad(n + 1)}</span>
+											<span class="item" set:html={item} />
+										</li>
+									))}
+								</ol>
+							);
+						})}
+					</div>
+				</div>
+			</section>
+		))}
+
+		{page.faq.length > 0 && (
+			<section class="band faq" id="faq">
+				<div class="inner ledger">
+					<div class="rail">
+						<h2 class="label section-label">Common questions</h2>
+						<div class="rule"></div>
+					</div>
+					<div class="content">
+						<div class="faqlist">
+							{page.faq.map((f) => (
+								<div class="qa">
+									<h3 class="q">{f.q}</h3>
+									{f.aHtml ? <p class="a" set:html={f.aHtml} /> : <p class="a">{f.a}</p>}
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</section>
+		)}
+
+		<RelatedPages related={page.related ?? []} />
+
+		<section class="band offer">
+			<div class="inner">
+				<p class="label offer-label">The short version</p>
+				<p class="offer-statement">{page.closing}</p>
+			</div>
+		</section>
+
+		<section class="band try" id="try">
+			<div class="inner ledger">
+				<div class="rail">
+					<h2 class="label section-label try-label">Try it</h2>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<div class="ctas">
+						{page.ctas.map((cta) => {
+							if (cta.kind === 'affiliate')
+								return (
+									<a class="btn btn-primary" href={cta.href} target="_blank" rel="sponsored nofollow noopener noreferrer">
+										{cta.label} &rarr;
+									</a>
+								);
+							if (cta.kind === 'site') return <ToolLink href={cta.href} label={cta.label} kind="site" variant="solid" />;
+							if (cta.kind === 'own') return <OwnProductCta label={cta.label} href={cta.href} />;
+							const product = productFor(cta.product);
+							return <WaitlistCta product={product?.name ?? cta.product} slug={cta.product} />;
+						})}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="band sources">
+			<div class="inner ledger">
+				<div class="rail">
+					<h2 class="label section-label">Sources opened</h2>
+					<div class="rule"></div>
+				</div>
+				<div class="content">
+					<ul class="srcs">
+						{page.sources.map((s) => (
+							<li><a href={s.href} target="_blank" rel="noopener noreferrer">{s.text}</a></li>
+						))}
+					</ul>
+					<p class="disclaimer">Checked on {page.checked}. Figures and listing details can change; confirm current plans and pricing on the vendor's site before you buy.</p>
+					<p class="more"><a href="/tools#comparisons">More comparisons &rarr;</a></p>
+				</div>
+			</div>
+		</section>
+	</main>
+</Base>
+
+<style>
+	.band { padding: 80px 0; border-top: 1px solid var(--hairline); }
+	.band:first-child { border-top: none; }
+	.inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+	.ledger { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 2.6fr); gap: 56px; }
+	.rail { position: sticky; top: 24px; align-self: start; }
+	.section-label { font-size: 12px; font-weight: 400; line-height: 1.4; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); display: block; margin: 0 0 0.75rem; }
+	.rule { width: 40px; height: 2px; background: var(--mustard); }
+
+	.hero { background: var(--plum); color: var(--cream); padding: 72px 0 80px; }
+	.hero .edge { border-left: 1px solid var(--hairline-on-plum); padding-left: 18px; }
+	.meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-bottom: 1px solid var(--hairline-on-plum); margin-bottom: 40px; }
+	.cell { padding: 14px 18px; font-family: 'Courier New', Cousine, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--label-on-plum); border-right: 1px solid var(--hairline-on-plum); }
+	.cell.accent { color: var(--mustard); }
+	.hero h1 { color: var(--cream); font-size: clamp(36px, 5.6vw, 72px); font-weight: 400; line-height: 1.04; letter-spacing: -0.02em; max-width: 20ch; text-wrap: balance; margin: 0 0 36px; }
+	.dekcol { display: grid; gap: 14px; max-width: 62ch; }
+	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
+
+	.fittable { padding: 40px 0; }
+
+	.content p { font-size: 18px; line-height: 1.6; max-width: 62ch; margin: 0 0 1.1rem; }
+	.content p:last-child { margin-bottom: 0; }
+	.content :global(strong) { color: var(--plum); font-weight: 700; }
+
+	.rows { list-style: none; margin: 0 0 1.25rem; padding: 0; max-width: 66ch; }
+	.rows li { font-size: 18px; line-height: 1.55; padding: 16px 0; border-top: 1px solid var(--hairline); }
+	.rows li:first-child { border-top: none; padding-top: 0; }
+	.rows li:last-child { padding-bottom: 0; }
+
+	.numbered { list-style: none; margin: 0 0 1.25rem; padding: 0; max-width: 70ch; }
+	.numbered li { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 20px; padding: 22px 0; border-top: 1px solid var(--hairline); align-items: start; }
+	.numbered li:first-child { border-top: none; padding-top: 0; }
+	.numbered li:last-child { padding-bottom: 0; }
+	.n { font-size: 13px; color: var(--sage); padding-top: 4px; }
+	.item { font-size: 18px; line-height: 1.55; }
+
+	.toolcta { margin: 0; }
+	.subhead { font-family: Georgia, Gelasio, serif; font-size: 24px; font-weight: 400; line-height: 1.25; color: var(--plum); margin: 2.25rem 0 0.9rem; }
+	.content .subhead:first-child { margin-top: 0; }
+
+	.tablefig { margin: 1.75rem 0; }
+	.tcap { font-family: Georgia, Gelasio, serif; font-weight: 700; font-size: 18px; color: var(--plum); margin: 0 0 0.75rem; }
+	.tablewrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+	.cmp { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; min-width: 560px; }
+	.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 12px 14px 12px 0; border-top: 1px solid var(--hairline); }
+	.cmp thead th { font-family: 'Courier New', Cousine, monospace; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--plum); border-top: none; border-bottom: 2px solid var(--plum); padding-top: 0; padding-bottom: 12px; }
+	.cmp tbody th { font-weight: 700; color: var(--plum); }
+
+	.faqlist { max-width: 66ch; }
+	.qa { padding: 22px 0; border-top: 1px solid var(--hairline); }
+	.qa:first-child { border-top: none; padding-top: 0; }
+	.q { font-family: Georgia, Gelasio, serif; font-size: 21px; font-weight: 400; line-height: 1.3; color: var(--plum); margin: 0 0 0.6rem; }
+	.content p.a { font-size: 17px; margin: 0; }
+
+	.offer { background: var(--mustard); padding: 56px 0; border-top: none; }
+	.offer-label { font-size: 11px; letter-spacing: 0.18em; color: var(--mustard-shade); margin: 0 0 0.75rem; }
+	.offer-statement { font-family: Georgia, Gelasio, serif; font-size: clamp(26px, 4vw, 44px); line-height: 1.14; max-width: 26ch; color: var(--charcoal); margin: 0; text-wrap: balance; }
+
+	.try { background: var(--plum); color: var(--cream); border-top: none; }
+	.try-label { color: var(--mustard); }
+	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; }
+	.btn-primary { background: var(--mustard); color: var(--plum); }
+	.btn-primary:hover { background: var(--cream); color: var(--plum); }
+	.btn:focus-visible { outline: 2px solid var(--cream); outline-offset: 3px; }
+	.ctas { display: flex; flex-wrap: wrap; gap: 14px; align-items: start; }
+
+	.sources { padding: 56px 0 72px; }
+	.srcs { list-style: none; margin: 0 0 1rem; padding: 0; }
+	.srcs li { padding: 10px 0; border-top: 1px solid var(--hairline); font-size: 16px; overflow-wrap: anywhere; }
+	.srcs li:first-child { border-top: none; padding-top: 0; }
+	.more { font-size: 15px !important; margin-top: 1.25rem !important; }
+	.more a { color: var(--plum); font-weight: 700; text-decoration: underline; text-decoration-color: var(--mustard); text-underline-offset: 4px; }
+	.disclaimer { font-size: 13px !important; color: var(--muted); }
+
+	@media (max-width: 720px) {
+		.inner { padding: 0 20px; }
+		.band { padding: 56px 0; }
+		.ledger { grid-template-columns: 1fr; gap: 28px; }
+		.rail { position: static; }
+		.numbered li { grid-template-columns: 56px minmax(0, 1fr); gap: 14px; }
+		.cell { border-right: none; }
+	}
+</style>
