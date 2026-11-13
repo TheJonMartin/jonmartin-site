@@ -59,3 +59,7 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 
 # Dead WordPress-era posts: gone for good.
 /2011/*               /404.html   410
+
+# Short links for the pSEO roundups (Nov 12, 2026). Canonical pages live on the engine route /tools/best/<slug>.
+/best/calling-apps-for-hubspot       /tools/best/calling-apps-for-hubspot       301
+/best/cold-email-tools-for-hubspot   /tools/best/cold-email-tools-for-hubspot   301

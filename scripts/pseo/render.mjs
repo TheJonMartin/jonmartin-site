@@ -216,8 +216,9 @@ export function renderPage(spec, { facts, products, links, claims, runDate }) {
 		const aHtml = resolveTokens(f.a, ctx, { allowLinks: true });
 		return { q: resolveTokens(f.q, ctx), a: decodeEntities(stripTags(aHtml)), aHtml };
 	});
+	// A spec may carry its own approved disclosure wording; otherwise the default.
 	const disclosure = ctas.some((c) => c.kind === 'affiliate')
-		? 'This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.'
+		? (spec.disclosure ?? 'This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.')
 		: null;
 
 	return {
