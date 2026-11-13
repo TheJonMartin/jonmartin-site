@@ -1,0 +1,202 @@
+{
+	"slug": "crm-for-small-marketing-agencies",
+	"route": "best",
+	"template": "best",
+	"wave": 2,
+	"niche": {
+		"label": "Small marketing agencies",
+		"team_size": 8,
+		"must_haves": [
+			"Seat price",
+			"Free way to start",
+			"Built-in extras",
+			"Automation starts on"
+		]
+	},
+	"products": [
+		{
+			"slug": "pipedrive",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if new business is a pipeline you work every day and you want proposals and e-signatures in the CRM."
+		},
+		{
+			"slug": "capsule",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want a simple, low-cost CRM for client relationships and a free start."
+		},
+		{
+			"slug": "close",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if your new business runs on calls and you want calling in the CRM."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "CRM for Small Marketing Agencies — Jon Martin",
+	"seoTitle": "Best CRM for Small Marketing Agencies",
+	"description": "Pipedrive, Capsule, and Close compared for a small marketing agency: seat prices, free starts, built-in extras, and which plan automation starts on.",
+	"h1": "A CRM for a small marketing agency",
+	"dek": [
+		"Three CRMs a small agency can run its own new business and client relationships on.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This page is for a marketing agency with a small team, where the founder or one account lead handles new business and the rest of the team handles delivery. You need somewhere to track prospects, proposals, and renewals that isn't a spreadsheet or someone's inbox."
+				},
+				{
+					"type": "p",
+					"html": "It's about the agency's own CRM, not your clients' systems. If your clients run {{link:hubspot}}, you can still pick something lighter for your own pipeline. What matters is that your team will actually keep it up to date."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick Pipedrive if new business is a pipeline you work every day and you want proposals and signatures in one place. Pick Capsule if you want something simple and cheap, with a free plan to start. Pick Close if your new business depends on calling and you want the phone built in."
+				},
+				{
+					"type": "p",
+					"html": "All three have a free trial, so the real test is a week of your actual pipeline in each. Load ten live prospects, not demo data, and see which one the team opens without being reminded."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Pipedrive"
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive's Lite plan is {{fact:pipedrive.lite_price}}. Growth is {{fact:pipedrive.growth_price}}; on automation, the pricing page says: {{fact:pipedrive.growth_automation}}. Premium is {{fact:pipedrive.premium_price}}, and {{fact:pipedrive.premium_esign}}. The trial is {{fact:pipedrive.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "For an agency, that e-signature piece matters: a proposal that gets signed inside the CRM is a proposal that doesn't get lost in an email thread."
+				},
+				{
+					"type": "cta",
+					"product": "pipedrive"
+				},
+				{
+					"type": "h3",
+					"text": "Capsule"
+				},
+				{
+					"type": "p",
+					"html": "Capsule has {{fact:capsule.free_plan}}. Paid plans are {{fact:capsule.paid_annual}}. Starter is {{fact:capsule.starter_monthly}}. Per Capsule, {{fact:capsule.annual_saving}}. There's {{fact:capsule.trial_nov}}."
+				},
+				{
+					"type": "p",
+					"html": "On limits, {{fact:capsule.contacts_tiers}}. Capsule also {{fact:capsule.transpond}}, which suits an agency that wants a light newsletter for its own list."
+				},
+				{
+					"type": "cta",
+					"product": "capsule"
+				},
+				{
+					"type": "h3",
+					"text": "Close"
+				},
+				{
+					"type": "p",
+					"html": "Close's Solo plan is {{fact:close.solo_price}}, limited to {{fact:close.solo_limits}}. Essentials is {{fact:close.essentials_price}} on annual billing, or {{fact:close.essentials_monthly}}. Growth is {{fact:close.growth_price}}. The trial is {{fact:close.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "On calling, Close's pricing page says: {{fact:close.calling_cost}}. That covers texting too, so you don't need a second tool for SMS."
+				},
+				{
+					"type": "cta",
+					"product": "close"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Think about where your new business actually happens. If it's referrals and email, a simple CRM you keep up to date beats a powerful one you don't. If it's outbound calling, calling in the CRM saves a second tool."
+				},
+				{
+					"type": "p",
+					"html": "Price the plan where automation starts, not the cheapest plan. Follow-up reminders and sequences are the reason most agencies buy a CRM, and on Pipedrive and Close they sit above the entry tier."
+				},
+				{
+					"type": "p",
+					"html": "Keep your own CRM separate from client work. Clients' leads belong in their systems, and mixing the two makes both harder to clean up later."
+				}
+			]
+		},
+		{
+			"label": "What to set up first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Set up one pipeline with the stages your new business really goes through, from first conversation to signed. Keep it to a few stages. Add a field for the service the prospect wants and one for expected monthly value."
+				},
+				{
+					"type": "p",
+					"html": "Then import only live prospects and current clients. Old leads from years ago can wait until the team trusts the system."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which CRM is cheapest for a small agency?",
+			"a": "Capsule has {{fact:capsule.free_plan}}. Among paid plans, Close Solo is {{fact:close.solo_price}}, and Pipedrive Lite is {{fact:pipedrive.lite_price}}."
+		},
+		{
+			"q": "Which one handles proposals and e-signatures?",
+			"a": "Pipedrive says {{fact:pipedrive.premium_esign}}."
+		},
+		{
+			"q": "Can I try them before paying?",
+			"a": "Yes. Pipedrive's trial is {{fact:pipedrive.trial}}. Capsule offers {{fact:capsule.trial_nov}}. Close's trial is {{fact:close.trial}}."
+		},
+		{
+			"q": "Does any of them include calling?",
+			"a": "Close does, billed by usage: {{fact:close.calling_cost}}."
+		}
+	],
+	"closing": "Pick the CRM your team will open every day for new business, and price the plan where follow-up automation starts.",
+	"computed": [],
+	"fit": {
+		"Seat price": {
+			"pipedrive": "Lite {{fact:pipedrive.lite_price}}.",
+			"capsule": "{{fact:capsule.paid_annual}}.",
+			"close": "Solo {{fact:close.solo_price}}; Essentials {{fact:close.essentials_price}} on annual billing."
+		},
+		"Free way to start": {
+			"pipedrive": "Trial: {{fact:pipedrive.trial}}.",
+			"capsule": "{{fact:capsule.free_plan}}.",
+			"close": "Trial: {{fact:close.trial}}."
+		},
+		"Built-in extras": {
+			"pipedrive": "Contracts and e-signatures on Premium.",
+			"capsule": "Email marketing through Transpond.",
+			"close": "Calling and SMS, billed by usage."
+		},
+		"Automation starts on": {
+			"pipedrive": "Growth.",
+			"capsule": "Check the plan you pick on Capsule's pricing page.",
+			"close": "Growth."
+		}
+	}
+}

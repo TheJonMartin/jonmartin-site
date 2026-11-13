@@ -1,0 +1,350 @@
+{
+  "slug": "hubspot-reporting-dashboards-for-small-teams",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "HubSpot Reporting Dashboards for Small Teams — Jon Martin",
+  "seoTitle": "HubSpot Reporting Dashboards for Small Teams",
+  "description": "Databox, Geckoboard, and Klipfolio compared for small teams that report out of HubSpot: entry prices, trials, what each pulls from HubSpot, and who can view.",
+  "h1": "Reporting dashboards for a small team that runs on HubSpot",
+  "dek": [
+    "Three dashboard tools that sit on top of HubSpot, for teams that have outgrown the built-in reports or need to show numbers to people without a HubSpot login.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small teams reporting out of HubSpot"
+  },
+  "fitTable": {
+    "caption": "Fit for Small teams reporting out of HubSpot",
+    "head": [
+      "Must-have",
+      "Databox",
+      "Geckoboard",
+      "Klipfolio"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Platform $399 a month on annual billing ($4,788 a year).",
+        "Essentials from $79 a month, billed annually.",
+        "Base $120 a month billed annually, or $140 billed monthly."
+      ],
+      [
+        "Free trial",
+        "Yes: a 14-day trial of the Platform plan with no credit card, and no free plan.",
+        "Yes, free for 14 days.",
+        "Yes: 14 days free, no payment details until you buy, and it does not auto-convert."
+      ],
+      [
+        "What it pulls from HubSpot",
+        "HubSpot plus other sources, with custom metrics and portal merging.",
+        "deals, deal values, activities, contacts, companies, leads, and tickets, across Sales Hub and Service Hub.",
+        "HubSpot plus other sources, connected over OAuth."
+      ],
+      [
+        "Who can view",
+        "up to 10 users and 30 data sources for one flat price on Platform.",
+        "sharing links and unlimited viewers.",
+        "Unlimited users on every plan."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Platform $399 a month on annual billing ($4,788 a year).",
+        "Essentials from $79 a month, billed annually.",
+        "Base $120 a month billed annually, or $140 billed monthly."
+      ],
+      [
+        "Free trial",
+        "Yes: a 14-day trial of the Platform plan with no credit card, and no free plan.",
+        "Yes, free for 14 days.",
+        "Yes: 14 days free, no payment details until you buy, and it does not auto-convert."
+      ],
+      [
+        "What it pulls from HubSpot",
+        "HubSpot plus other sources, with custom metrics and portal merging.",
+        "deals, deal values, activities, contacts, companies, leads, and tickets, across Sales Hub and Service Hub.",
+        "HubSpot plus other sources, connected over OAuth."
+      ],
+      [
+        "Who can view",
+        "up to 10 users and 30 data sources for one flat price on Platform.",
+        "sharing links and unlimited viewers.",
+        "Unlimited users on every plan."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Databox",
+        "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Geckoboard",
+        "href": "https://www.geckoboard.com/",
+        "kind": "site"
+      },
+      {
+        "label": "Visit Klipfolio",
+        "href": "https://www.klipfolio.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This page is for a small company, somewhere between a handful of people and a few dozen, that runs sales or marketing in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> and keeps getting asked for the same numbers. Someone exports a report every Monday, pastes it into a slide, and the numbers are stale by Wednesday."
+        },
+        {
+          "type": "p",
+          "html": "HubSpot's own dashboards cover a lot. The tools below are for the cases they don't: blending HubSpot with ad spend or web analytics, showing numbers on a TV in the office, or sharing a live view with people who don't have a HubSpot seat."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start with Geckoboard if the goal is a live screen for the sales or support team. Start with Klipfolio if you want the lowest entry price and unlimited users. Look at Databox if you need custom metrics across several sources, or across several HubSpot portals, and can carry its higher price."
+        },
+        {
+          "type": "p",
+          "html": "Before you trial any of them, write down the five numbers people actually ask you for. A dashboard tool with a thousand connectors doesn't help if nobody agreed what a qualified lead is."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Databox"
+        },
+        {
+          "type": "p",
+          "html": "Databox prices its Platform plan at $399 a month on annual billing ($4,788 a year), or $499 a month on monthly billing. That plan covers up to 10 users and 30 data sources for one flat price. There's a 14-day trial of the Platform plan with no credit card, and no free plan. Agencies get a separate plan with unlimited users, priced by account pack at $20 a month per pack (1 account, 5 data sources), billed annually."
+        },
+        {
+          "type": "p",
+          "html": "On HubSpot, Databox layers dashboards, alerts, and custom metrics on <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and can merge multiple HubSpot portals and other data sources. That portal-merging piece is the reason an agency or a multi-brand company would pay Databox prices instead of a simpler tool."
+        },
+        {
+          "type": "cta",
+          "product": "databox",
+          "label": "Try Databox",
+          "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Geckoboard"
+        },
+        {
+          "type": "p",
+          "html": "Geckoboard's Essentials plan is priced from $79 a month, billed annually, with 2 dashboards, 1 editor, and 1 screen. Performance is priced from $319 a month, billed annually. You can try it free for 14 days, and every plan includes sharing links and unlimited viewers."
+        },
+        {
+          "type": "p",
+          "html": "Geckoboard's HubSpot integration covers deals, deal values, activities, contacts, companies, leads, and tickets, across Sales Hub and Service Hub. Its HubSpot page also says you can share <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> dashboards with your team with no HubSpot upgrades required. It is built for a live view on a screen, not for deep analysis."
+        },
+        {
+          "type": "cta",
+          "product": "geckoboard",
+          "label": "Visit Geckoboard",
+          "href": "https://www.geckoboard.com/",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "Klipfolio"
+        },
+        {
+          "type": "p",
+          "html": "Klipfolio's Base plan is $120 a month billed annually, or $140 billed monthly, with 3 dashboards, unlimited users, and a 4-hour data refresh. Grow is $190 a month billed annually, or $220 billed monthly. The trial is 14 days free, no payment details until you buy, and it does not auto-convert."
+        },
+        {
+          "type": "p",
+          "html": "Klipfolio connects to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> over OAuth and combines HubSpot with 100+ other sources. Per its HubSpot page, live dashboards can be shared with anyone, with no <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> seat required. The four-hour refresh on Base is the trade for the price; it's fine for a weekly review and wrong for a sales floor screen."
+        },
+        {
+          "type": "cta",
+          "product": "klipfolio",
+          "label": "Visit Klipfolio",
+          "href": "https://www.klipfolio.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If the question is what the team should look at all day, pick the tool built for a live screen. If the question is what leadership looks at once a week, refresh speed matters less than getting the definitions right."
+        },
+        {
+          "type": "p",
+          "html": "If you manage more than one HubSpot portal, for clients or for separate brands, that narrows the field fast. Databox is the one of these three whose HubSpot page talks about merging portals."
+        },
+        {
+          "type": "p",
+          "html": "Watch the limits that sit next to the price. Dashboards, editors, data sources, and refresh speed are where these plans differ, and the cheapest plan is usually cheap because of one of them."
+        }
+      ]
+    },
+    {
+      "label": "Before you connect HubSpot",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Each of these tools connects to HubSpot through a login and an authorization screen. Whoever clicks through needs enough access in HubSpot to approve it, so sort out who that is before the trial clock starts."
+        },
+        {
+          "type": "p",
+          "html": "Then clean the fields the dashboard will lean on: lifecycle stage, deal stage, owner, and source. A dashboard shows bad data faster. It doesn't fix it."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can I share HubSpot dashboards with people who don't have a HubSpot login?",
+      "a": "Yes, with any of these three. Klipfolio says live dashboards can be shared with anyone, with no HubSpot seat required. Geckoboard includes sharing links and unlimited viewers.",
+      "aHtml": "Yes, with any of these three. Klipfolio says live dashboards can be shared with anyone, with no <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> seat required. Geckoboard includes sharing links and unlimited viewers."
+    },
+    {
+      "q": "Which is cheapest to start?",
+      "a": "Of the three, Geckoboard is priced from $79 a month, billed annually and Klipfolio's Base plan is $120 a month billed annually, or $140 billed monthly. Databox's Platform plan is $399 a month on annual billing ($4,788 a year).",
+      "aHtml": "Of the three, Geckoboard is priced from $79 a month, billed annually and Klipfolio's Base plan is $120 a month billed annually, or $140 billed monthly. Databox's Platform plan is $399 a month on annual billing ($4,788 a year)."
+    },
+    {
+      "q": "Is there a free plan?",
+      "a": "Not on these three. Databox offers a 14-day trial of the Platform plan with no credit card, and no free plan. Geckoboard is free for 14 days. Klipfolio's trial is 14 days free, no payment details until you buy, and it does not auto-convert.",
+      "aHtml": "Not on these three. Databox offers a 14-day trial of the Platform plan with no credit card, and no free plan. Geckoboard is free for 14 days. Klipfolio's trial is 14 days free, no payment details until you buy, and it does not auto-convert."
+    },
+    {
+      "q": "Which one handles more than one HubSpot portal?",
+      "a": "Databox says it layers dashboards, alerts, and custom metrics on HubSpot, and can merge multiple HubSpot portals and other data sources.",
+      "aHtml": "Databox says it layers dashboards, alerts, and custom metrics on <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and can merge multiple HubSpot portals and other data sources."
+    }
+  ],
+  "closing": "Agree on the numbers first, then pick the tool that shows them to the people who need them at the speed they need them.",
+  "ctas": [
+    {
+      "label": "Try Databox",
+      "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+      "kind": "affiliate",
+      "product": "databox"
+    },
+    {
+      "label": "Visit Geckoboard",
+      "href": "https://www.geckoboard.com/",
+      "kind": "site",
+      "product": "geckoboard"
+    },
+    {
+      "label": "Visit Klipfolio",
+      "href": "https://www.klipfolio.com/",
+      "kind": "site",
+      "product": "klipfolio"
+    }
+  ],
+  "products": [
+    {
+      "slug": "databox",
+      "name": "Databox",
+      "type": "affiliate",
+      "pick": "Best fit if you want HubSpot and your other sources in one place, with custom metrics, and the budget allows it.",
+      "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "geckoboard",
+      "name": "Geckoboard",
+      "type": "affiliate",
+      "pick": "Best fit if you want a live sales or support screen the whole team can see.",
+      "href": "https://www.geckoboard.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "klipfolio",
+      "name": "Klipfolio",
+      "type": "affiliate",
+      "pick": "Best fit if you want unlimited users at a lower entry price and don't mind a slower refresh.",
+      "href": "https://www.klipfolio.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Databox pricing page",
+      "href": "https://databox.com/pricing"
+    },
+    {
+      "text": "Databox pricing page",
+      "href": "https://databox.com/integrations/hubspot"
+    },
+    {
+      "text": "Geckoboard pricing page",
+      "href": "https://www.geckoboard.com/pricing/"
+    },
+    {
+      "text": "Geckoboard pricing page",
+      "href": "https://www.geckoboard.com/product/data-sources/hubspot/"
+    },
+    {
+      "text": "Klipfolio pricing page",
+      "href": "https://www.klipfolio.com/pricing"
+    },
+    {
+      "text": "Klipfolio pricing page",
+      "href": "https://www.klipfolio.com/integrations/hubspot-dashboard"
+    }
+  ],
+  "related": [
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
+      "slug": "cold-email-tools-for-agencies",
+      "route": "best",
+      "title": "Best Cold Email Tools for Agencies",
+      "dek": "Three cold email platforms an agency can run several client programs on.",
+      "href": "/tools/best/cold-email-tools-for-agencies"
+    },
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    }
+  ]
+}
