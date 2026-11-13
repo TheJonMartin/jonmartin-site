@@ -1,0 +1,213 @@
+{
+	"slug": "shared-inbox-for-small-support-teams",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Small support teams answering from a shared email address",
+		"team_size": 3,
+		"must_haves": [
+			"Entry price",
+			"Free start",
+			"HubSpot connection",
+			"Limits to watch"
+		]
+	},
+	"products": [
+		{
+			"slug": "supportbee",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want a simple shared inbox at the lowest per-seat price."
+		},
+		{
+			"slug": "helpscout",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want a free plan to start and room to add chat and a help center."
+		},
+		{
+			"slug": "front",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if the team works out of email all day and wants HubSpot records next to each conversation."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Shared Inbox for Small Support Teams — Jon Martin",
+	"seoTitle": "Shared Inbox Software for Small Support Teams",
+	"description": "SupportBee, Help Scout, and Front compared for small support teams: per-seat prices, free plans and trials, HubSpot connections, and the limits to watch.",
+	"h1": "A shared inbox for a small support team",
+	"dek": [
+		"Three tools that turn support@ into a queue a small team can share, so every email gets one owner and one answer.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for a team of two to ten people answering customer email from a shared address, usually by forwarding and cc'ing each other, and losing track of who replied."
+				},
+				{
+					"type": "p",
+					"html": "Many of these teams also keep customers in {{link:hubspot}}. The question is whether support conversations need to sit on that record, or whether a separate inbox is fine."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick SupportBee if you want a plain shared inbox at the lowest per-seat price. Pick Help Scout if you want to start on a free plan and grow into chat and a help center. Pick Front if the team lives in email and you want HubSpot contacts and deals visible beside each thread."
+				},
+				{
+					"type": "p",
+					"html": "For a three-person team billed annually, that's about {{calc:supportbee_team3}} a month on SupportBee Startup, and about {{calc:front_team3}} on Front Starter."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "SupportBee"
+				},
+				{
+					"type": "p",
+					"html": "SupportBee Startup is {{fact:supportbee.startup}}. Enterprise is {{fact:supportbee.enterprise}}. Per SupportBee, {{fact:supportbee.annual}}. Plans include {{fact:supportbee.unlimited}}, and Startup comes with {{fact:supportbee.kb}}. There's {{fact:supportbee.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "It's the most focused of the three: a shared inbox, a knowledge base, and the basics around them, without a long list of channels to configure."
+				},
+				{
+					"type": "cta",
+					"product": "supportbee"
+				},
+				{
+					"type": "h3",
+					"text": "Help Scout"
+				},
+				{
+					"type": "p",
+					"html": "Help Scout has {{fact:helpscout.free}}. Standard is {{fact:helpscout.standard}}, and it includes {{fact:helpscout.channels}}. Plus is {{fact:helpscout.plus}}. Plus also allows {{fact:helpscout.light_users}}."
+				},
+				{
+					"type": "p",
+					"html": "Check the monthly and annual toggle on Help Scout's pricing page before you budget, since the figures above are what the default view shows."
+				},
+				{
+					"type": "cta",
+					"product": "helpscout"
+				},
+				{
+					"type": "h3",
+					"text": "Front"
+				},
+				{
+					"type": "p",
+					"html": "Front Starter is {{fact:front.starter}}. Professional is {{fact:front.professional}}. Per Front, {{fact:front.annual}}. Starter gives you {{fact:front.starter_rules}}. There's {{fact:front.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Front offers {{fact:front.hubspot}}. That's the pick for a team that works deals and support out of the same inbox."
+				},
+				{
+					"type": "cta",
+					"product": "front"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with seats. Count everyone who needs to reply, not everyone who needs to read. Some plans let teammates view without a full seat, and that changes the bill."
+				},
+				{
+					"type": "p",
+					"html": "Then decide if support history belongs in HubSpot. If sales needs to see open tickets before a renewal call, a direct HubSpot connection is worth paying for. If not, keep it simple."
+				},
+				{
+					"type": "p",
+					"html": "Last, look at the ceiling. Seat caps, automation rule limits, and knowledge base counts are what push a small team onto the next plan."
+				}
+			]
+		},
+		{
+			"label": "Before you switch",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Write down three rules first: who owns a new email, how fast you reply, and when a thread counts as done. The tool enforces rules; it doesn't invent them."
+				},
+				{
+					"type": "p",
+					"html": "Move one address at a time, and keep the old inbox forwarding for a few weeks so nothing slips through."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is there a free shared inbox?",
+			"a": "Help Scout has {{fact:helpscout.free}}."
+		},
+		{
+			"q": "Which is cheapest per seat?",
+			"a": "SupportBee Startup is {{fact:supportbee.startup}}. Front Starter is {{fact:front.starter}}."
+		},
+		{
+			"q": "Which connects to HubSpot?",
+			"a": "Front offers {{fact:front.hubspot}}. Help Scout's Plus plan adds Salesforce, Jira, and HubSpot integrations."
+		},
+		{
+			"q": "Can I try before paying?",
+			"a": "SupportBee offers {{fact:supportbee.trial}}. Front offers {{fact:front.trial}}."
+		}
+	],
+	"closing": "Agree on who owns each email first, then pick the cheapest inbox that enforces it and reaches HubSpot if you need it to.",
+	"computed": [
+		{
+			"id": "supportbee_team3",
+			"label": "SupportBee Startup (annual), 3 seats",
+			"expr": "supportbee.startup * 3"
+		},
+		{
+			"id": "front_team3",
+			"label": "Front Starter (annual), 3 seats",
+			"expr": "front.starter * 3"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"supportbee": "Startup {{fact:supportbee.startup}}.",
+			"helpscout": "Standard {{fact:helpscout.standard}}.",
+			"front": "Starter {{fact:front.starter}}."
+		},
+		"Free start": {
+			"supportbee": "{{fact:supportbee.trial}}.",
+			"helpscout": "{{fact:helpscout.free}}.",
+			"front": "{{fact:front.trial}}."
+		},
+		"HubSpot connection": {
+			"supportbee": "Check SupportBee's integrations page.",
+			"helpscout": "On Plus.",
+			"front": "{{fact:front.hubspot}}."
+		},
+		"Limits to watch": {
+			"supportbee": "{{fact:supportbee.kb}} on Startup.",
+			"helpscout": "Free plan: one inbox.",
+			"front": "Starter: {{fact:front.starter_rules}}."
+		}
+	}
+}

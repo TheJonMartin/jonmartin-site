@@ -1,0 +1,304 @@
+{
+  "slug": "sop-training-software-for-small-teams",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "SOP and Training Software for Small Teams — Jon Martin",
+  "seoTitle": "SOP and Training Software for Small Teams",
+  "description": "Trainual, Whale, and Waybook compared for small teams documenting processes: pricing, free starts, how you capture SOPs, and content limits.",
+  "h1": "SOP and training software for a small team",
+  "dek": [
+    "Three tools for getting how-we-do-it knowledge out of one person's head and into a place new hires can find it.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small teams writing down how the work gets done"
+  },
+  "fitTable": {
+    "caption": "Fit for Small teams writing down how the work gets done",
+    "head": [
+      "Must-have",
+      "Trainual",
+      "Whale",
+      "Waybook"
+    ],
+    "rows": [
+      [
+        "Public price",
+        "No; priced by team size and features through a demo, with no public price.",
+        "Yes; Scale $299 a month billed yearly, with 3 creators included.",
+        "Yes; Core $99 a month on annual billing, or $119 on monthly billing, plus $5 a month per additional member on annual billing."
+      ],
+      [
+        "Free start",
+        "Book a demo.",
+        "free forever for 1 creator, up to 10 members, and 20 Playbook items.",
+        "a 7-day free trial."
+      ],
+      [
+        "Capture method",
+        "a built-in screen recorder, plus flowcharts and embedded video.",
+        "a screen recorder and a video-to-SOP converter, even on Free.",
+        "an unlimited AI content writer on every plan."
+      ],
+      [
+        "Content limits",
+        "Check your quote.",
+        "Free plan caps Playbook items.",
+        "unlimited subjects, documents, and steps on every plan."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Public price",
+        "No; priced by team size and features through a demo, with no public price.",
+        "Yes; Scale $299 a month billed yearly, with 3 creators included.",
+        "Yes; Core $99 a month on annual billing, or $119 on monthly billing, plus $5 a month per additional member on annual billing."
+      ],
+      [
+        "Free start",
+        "Book a demo.",
+        "free forever for 1 creator, up to 10 members, and 20 Playbook items.",
+        "a 7-day free trial."
+      ],
+      [
+        "Capture method",
+        "a built-in screen recorder, plus flowcharts and embedded video.",
+        "a screen recorder and a video-to-SOP converter, even on Free.",
+        "an unlimited AI content writer on every plan."
+      ],
+      [
+        "Content limits",
+        "Check your quote.",
+        "Free plan caps Playbook items.",
+        "unlimited subjects, documents, and steps on every plan."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Trainual",
+        "href": "https://start.trainual.com/7kqqclprayt4",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Whale",
+        "href": "https://usewhale.io/",
+        "kind": "site"
+      },
+      {
+        "label": "Visit Waybook",
+        "href": "https://www.waybook.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This is for an owner or operations lead at a team of roughly five to fifty people who keeps answering the same questions, and who knows the next hire will ask them again."
+        },
+        {
+          "type": "p",
+          "html": "Any of these tools will hold documents. What separates them is how fast you can capture a process, how much it costs as the team grows, and whether you can see the price before talking to sales."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start with Whale if you want to try it free and record processes as you do them. Pick Waybook if you want a published price and unlimited documents on every plan. Pick Trainual if you want training paths, roles, and SOPs in one system and don't mind getting a quote."
+        },
+        {
+          "type": "p",
+          "html": "Whichever you choose, document the five tasks that new hires ask about most before buying anything. If you can't write those five, the tool won't do it for you."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Trainual"
+        },
+        {
+          "type": "p",
+          "html": "Trainual offers Core, Pro, Premium, and Enterprise plans. It's priced by team size and features through a demo, with no public price. It includes 500+ free templates for processes, policies, roles, and responsibilities, a built-in screen recorder, plus flowcharts and embedded video, and AI-powered knowledge search with Q&amp;A on every plan."
+        },
+        {
+          "type": "p",
+          "html": "If you need to step back, an account can go on hold for up to three months instead of canceling. That's a useful option for a seasonal business."
+        },
+        {
+          "type": "cta",
+          "product": "trainual",
+          "label": "Try Trainual",
+          "href": "https://start.trainual.com/7kqqclprayt4",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Whale"
+        },
+        {
+          "type": "p",
+          "html": "Whale's Free plan is free forever for 1 creator, up to 10 members, and 20 Playbook items. Scale is $299 a month billed yearly, with 3 creators included, and extra creators cost $29 a month billed yearly, or $39 billed monthly, per extra creator. Advance is $599 a month billed yearly, with 5 creators included. Per Whale, yearly billing saves 25%."
+        },
+        {
+          "type": "p",
+          "html": "The capture piece is the draw: Whale includes a screen recorder and a video-to-SOP converter, even on Free. Record a task once, then edit the steps it writes instead of starting from a blank page."
+        },
+        {
+          "type": "cta",
+          "product": "whale",
+          "label": "Visit Whale",
+          "href": "https://usewhale.io/",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "Waybook"
+        },
+        {
+          "type": "p",
+          "html": "Waybook Core is $99 a month on annual billing, or $119 on monthly billing, plus $5 a month per additional member on annual billing. Pro is $198 a month on annual billing, or $238 on monthly billing, plus $10 a month per additional member on annual billing. There's a 7-day free trial, and annual billing saves 17%."
+        },
+        {
+          "type": "p",
+          "html": "Waybook includes unlimited subjects, documents, and steps on every plan and an unlimited AI content writer on every plan. The per-member charge is the number to model as you grow."
+        },
+        {
+          "type": "cta",
+          "product": "waybook",
+          "label": "Visit Waybook",
+          "href": "https://www.waybook.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Decide who writes. If one person documents everything, a plan priced by creator is cheap. If every team lead writes their own SOPs, a plan priced by member or by team size is easier to predict."
+        },
+        {
+          "type": "p",
+          "html": "Then decide how processes get captured. Screen recording suits software tasks. Written steps with photos suit physical tasks. Most teams need both, so test each tool on one of each."
+        },
+        {
+          "type": "p",
+          "html": "Last, look at what happens when someone leaves. The tool should make it obvious which documents that person owned so someone else can pick them up."
+        }
+      ]
+    },
+    {
+      "label": "Getting started",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Pick one role, list its recurring tasks, and write those first. A finished set for one role beats a half-finished set for every role."
+        },
+        {
+          "type": "p",
+          "html": "Set a review date on each document. Processes change, and a stale SOP does more harm than a missing one."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which of these has a free plan?",
+      "a": "Whale's Free plan is free forever for 1 creator, up to 10 members, and 20 Playbook items. Waybook has a 7-day free trial.",
+      "aHtml": "Whale's Free plan is free forever for 1 creator, up to 10 members, and 20 Playbook items. Waybook has a 7-day free trial."
+    },
+    {
+      "q": "How much does Trainual cost?",
+      "a": "Trainual is priced by team size and features through a demo, with no public price.",
+      "aHtml": "Trainual is priced by team size and features through a demo, with no public price."
+    },
+    {
+      "q": "Can I turn a screen recording into an SOP?",
+      "a": "Whale includes a screen recorder and a video-to-SOP converter, even on Free. Trainual includes a built-in screen recorder, plus flowcharts and embedded video.",
+      "aHtml": "Whale includes a screen recorder and a video-to-SOP converter, even on Free. Trainual includes a built-in screen recorder, plus flowcharts and embedded video."
+    },
+    {
+      "q": "Are there document limits?",
+      "a": "Waybook includes unlimited subjects, documents, and steps on every plan. Whale's Free plan caps Playbook items; paid plans don't.",
+      "aHtml": "Waybook includes unlimited subjects, documents, and steps on every plan. Whale's Free plan caps Playbook items; paid plans don't."
+    }
+  ],
+  "closing": "Write the first five SOPs before you buy, then pick the tool that makes the next fifty easiest to keep current.",
+  "ctas": [
+    {
+      "label": "Try Trainual",
+      "href": "https://start.trainual.com/7kqqclprayt4",
+      "kind": "affiliate",
+      "product": "trainual"
+    },
+    {
+      "label": "Visit Whale",
+      "href": "https://usewhale.io/",
+      "kind": "site",
+      "product": "whale"
+    },
+    {
+      "label": "Visit Waybook",
+      "href": "https://www.waybook.com/",
+      "kind": "site",
+      "product": "waybook"
+    }
+  ],
+  "products": [
+    {
+      "slug": "trainual",
+      "name": "Trainual",
+      "type": "affiliate",
+      "pick": "Best fit if you want training, roles, and SOPs in one system and are fine pricing it through a demo.",
+      "href": "https://start.trainual.com/7kqqclprayt4",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "whale",
+      "name": "Whale",
+      "type": "affiliate",
+      "pick": "Best fit if you want to start free and turn screen recordings into SOPs.",
+      "href": "https://usewhale.io/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "waybook",
+      "name": "Waybook",
+      "type": "affiliate",
+      "pick": "Best fit if you want a public, flat-ish price with unlimited documents.",
+      "href": "https://www.waybook.com/",
+      "linkKind": "site"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Trainual pricing page",
+      "href": "https://trainual.com/pricing"
+    },
+    {
+      "text": "Whale pricing page",
+      "href": "https://usewhale.io/pricing/"
+    },
+    {
+      "text": "Waybook pricing page",
+      "href": "https://www.waybook.com/pricing"
+    }
+  ],
+  "related": []
+}

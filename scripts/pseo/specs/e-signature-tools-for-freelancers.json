@@ -1,0 +1,213 @@
+{
+	"slug": "e-signature-tools-for-freelancers",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Freelancers and solo consultants",
+		"team_size": 1,
+		"must_haves": [
+			"Free option",
+			"Paid entry price",
+			"Signers need an account?",
+			"Trial"
+		]
+	},
+	"products": [
+		{
+			"slug": "quicksigner",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want the lowest paid price for unlimited documents."
+		},
+		{
+			"slug": "pandadoc",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you also send proposals and quotes, not just contracts."
+		},
+		{
+			"slug": "dropbox-sign",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want unlimited signature requests from a big-name vendor and a long trial."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		},
+		{
+			"slug": "zapier",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "E-Signature Tools for Freelancers — Jon Martin",
+	"seoTitle": "E-Signature Tools for Freelancers",
+	"description": "QuickSigner, PandaDoc, and Dropbox Sign compared for freelancers: free options, paid prices, trials, and whether your clients need an account to sign.",
+	"h1": "E-signature tools for freelancers",
+	"dek": [
+		"Three ways for a freelancer or solo consultant to get contracts and statements of work signed online, without printing or chasing scans.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for a freelancer, contractor, or one-person consultancy that sends a few contracts a month and wants them signed quickly, with a clean record of who signed what and when."
+				},
+				{
+					"type": "p",
+					"html": "At this size, the questions are narrow. How many documents can you send for free? What does the first paid plan cost? Do your clients have to create an account to sign?"
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If you send a handful of documents a month, start on a free plan; QuickSigner and PandaDoc both have one. If you send more, QuickSigner's Business plan is the cheapest paid option here. Pick PandaDoc if you also build proposals and want them in the same tool. Pick Dropbox Sign if you want unlimited signature requests and a long trial before paying."
+				},
+				{
+					"type": "p",
+					"html": "On monthly billing, a year of QuickSigner Business comes to {{calc:quicksigner_year_monthly}} per user; paying yearly brings it to $48."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "QuickSigner"
+				},
+				{
+					"type": "p",
+					"html": "QuickSigner's Free plan is {{fact:quicksigner.free}}. Business is {{fact:quicksigner.business}}, and Professional is {{fact:quicksigner.professional}}. Template limits: {{fact:quicksigner.templates}}. There's {{fact:quicksigner.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "For clients, the key line is that {{fact:quicksigner.signers}}. That keeps the signing step to a link and a click."
+				},
+				{
+					"type": "cta",
+					"product": "quicksigner"
+				},
+				{
+					"type": "h3",
+					"text": "PandaDoc"
+				},
+				{
+					"type": "p",
+					"html": "PandaDoc has {{fact:pandadoc.free}}. Starter is {{fact:pandadoc.starter}}. Business is {{fact:pandadoc.business}}. There's {{fact:pandadoc.trial}}, and {{fact:pandadoc.annual}}."
+				},
+				{
+					"type": "p",
+					"html": "One thing to know before you automate: {{fact:pandadoc.credits}}. If you plan to send documents from a {{link:zapier}} flow or from {{link:hubspot}}, read how many credits your plan includes."
+				},
+				{
+					"type": "cta",
+					"product": "pandadoc"
+				},
+				{
+					"type": "h3",
+					"text": "Dropbox Sign"
+				},
+				{
+					"type": "p",
+					"html": "Dropbox Sign Essentials is {{fact:dropbox-sign.essentials}}. Standard is {{fact:dropbox-sign.standard}}. It offers {{fact:dropbox-sign.unlimited}} and {{fact:dropbox-sign.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "On cost to clients, Dropbox Sign says {{fact:dropbox-sign.signers}}. It lists {{fact:dropbox-sign.integrations}}."
+				},
+				{
+					"type": "cta",
+					"product": "dropbox-sign"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Count last quarter's contracts. If the number fits under a free plan's monthly limit, there's no reason to pay yet. If it doesn't, compare the paid plans on a yearly basis, since that's how most of them price their best rate."
+				},
+				{
+					"type": "p",
+					"html": "Then think about what comes before the signature. If you already write proposals in a document editor and only need signing, a lean tool is enough. If the proposal itself is where you win the work, a tool that builds it and collects the signature saves a step."
+				},
+				{
+					"type": "p",
+					"html": "Last, send yourself a test document from each tool and sign it on your phone. That's where your client will see it."
+				}
+			]
+		},
+		{
+			"label": "Keep the paperwork tidy",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Save a signed copy to the same folder every time, named by client and date. The tool's audit trail is useful, but you want your own copy if you ever switch tools."
+				},
+				{
+					"type": "p",
+					"html": "Use one template per service you sell, so scope and payment terms don't drift from client to client."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is there a free e-signature tool for freelancers?",
+			"a": "QuickSigner's Free plan is {{fact:quicksigner.free}}. PandaDoc has {{fact:pandadoc.free}}."
+		},
+		{
+			"q": "Do my clients need an account to sign?",
+			"a": "Not on QuickSigner: {{fact:quicksigner.signers}}. Dropbox Sign says signers pay nothing."
+		},
+		{
+			"q": "Which has the longest trial?",
+			"a": "Dropbox Sign offers {{fact:dropbox-sign.trial}}. QuickSigner and PandaDoc each list a 14-day trial."
+		},
+		{
+			"q": "Does any of these connect to HubSpot?",
+			"a": "Dropbox Sign lists {{fact:dropbox-sign.integrations}}."
+		}
+	],
+	"closing": "Start free if your volume allows, and pay only when the monthly limit, not the feature list, pushes you to.",
+	"computed": [
+		{
+			"id": "quicksigner_year_monthly",
+			"label": "QuickSigner Business, 12 months on monthly billing",
+			"expr": "quicksigner.business * 12"
+		}
+	],
+	"fit": {
+		"Free option": {
+			"quicksigner": "{{fact:quicksigner.free}}.",
+			"pandadoc": "{{fact:pandadoc.free}}.",
+			"dropbox-sign": "No free plan; {{fact:dropbox-sign.trial}}."
+		},
+		"Paid entry price": {
+			"quicksigner": "Business {{fact:quicksigner.business}}.",
+			"pandadoc": "Starter {{fact:pandadoc.starter}}.",
+			"dropbox-sign": "Essentials {{fact:dropbox-sign.essentials}}."
+		},
+		"Signers need an account?": {
+			"quicksigner": "No; {{fact:quicksigner.signers}}.",
+			"pandadoc": "Check PandaDoc's signer docs.",
+			"dropbox-sign": "Signers pay nothing."
+		},
+		"Trial": {
+			"quicksigner": "{{fact:quicksigner.trial}}.",
+			"pandadoc": "{{fact:pandadoc.trial}}.",
+			"dropbox-sign": "{{fact:dropbox-sign.trial}}."
+		}
+	}
+}
