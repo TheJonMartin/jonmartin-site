@@ -1,0 +1,308 @@
+{
+  "slug": "salesmsg-vs-aircall",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "Salesmsg vs Aircall — Jon Martin",
+  "seoTitle": "Salesmsg vs Aircall for HubSpot Teams",
+  "description": "Salesmsg and Aircall compared for small HubSpot teams: entry prices, texting vs calling, HubSpot workflows and logging, and seat minimums.",
+  "h1": "Salesmsg vs Aircall",
+  "dek": [
+    "A texting-first tool and a calling-first tool, compared for a small team that wants every conversation on the HubSpot record.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown. Both links are affiliate links."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small teams that text and call customers from HubSpot"
+  },
+  "fitTable": {
+    "caption": "Fit for Small teams that text and call customers from HubSpot",
+    "head": [
+      "Must-have",
+      "Salesmsg",
+      "Aircall"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Basic $25 a month on monthly billing, with 1 seat and 1 number included.",
+        "Essentials $30 per license per month, billed annually."
+      ],
+      [
+        "Main channel",
+        "Texting.",
+        "Calling."
+      ],
+      [
+        "HubSpot workflows",
+        "Workflows can trigger SMS.",
+        "Logs calls and SMS to records."
+      ],
+      [
+        "Minimum seats",
+        "None listed; Basic includes one seat.",
+        "a minimum of 3 licenses on Essentials and Professional."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Basic $25 a month on monthly billing, with 1 seat and 1 number included.",
+        "Essentials $30 per license per month, billed annually."
+      ],
+      [
+        "Main channel",
+        "Texting.",
+        "Calling."
+      ],
+      [
+        "HubSpot workflows",
+        "Workflows can trigger SMS.",
+        "Logs calls and SMS to records."
+      ],
+      [
+        "Minimum seats",
+        "None listed; Basic includes one seat.",
+        "a minimum of 3 licenses on Essentials and Professional."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Salesmsg",
+        "href": "https://join.salesmessage.com/0zdc6fya9z6u",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Aircall",
+        "href": "https://get.aircall.io/fddlp6kkr3qu",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This comparison is for a small sales or service team in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> that talks to customers by text and phone, and is choosing between <a href=\"https://join.salesmessage.com/0zdc6fya9z6u\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Salesmsg</a> and <a href=\"https://get.aircall.io/fddlp6kkr3qu\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Aircall</a>."
+        },
+        {
+          "type": "p",
+          "html": "Both can text and both can call. The real question is which channel your team uses most, because each tool is built around one of them."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Choose Salesmsg if most conversations happen by text and you want HubSpot workflows to send messages automatically. Choose Aircall if most conversations are calls and you want a full phone system with texting on the side."
+        },
+        {
+          "type": "p",
+          "html": "For a two-person team, Salesmsg Basic plus one extra seat is about $35 a month. Aircall needs three licenses, so its floor on Essentials is about $90 a month on annual billing."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Salesmsg"
+        },
+        {
+          "type": "p",
+          "html": "Salesmsg Basic is $25 a month on monthly billing, with 1 seat and 1 number included, and Pro is $277 a month on monthly billing. Extra seats are $10 a month each, and extra numbers are $5 a month each. Messages and minutes use credits: 1 credit per SMS (160 characters) and 1 credit per minute of calling. There's a 14-day free trial and a 30-day money-back guarantee."
+        },
+        {
+          "type": "p",
+          "html": "In HubSpot, Salesmsg offers two-way contact and activity sync, texting from inside <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and SMS triggered from HubSpot workflows. It also says SMS opt-outs update the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contact property."
+        },
+        {
+          "type": "cta",
+          "product": "salesmsg",
+          "label": "Try Salesmsg",
+          "href": "https://join.salesmessage.com/0zdc6fya9z6u",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Aircall"
+        },
+        {
+          "type": "p",
+          "html": "Aircall Essentials is $30 per license per month, billed annually, and Professional is $50 per license per month. There's a minimum of 3 licenses on Essentials and Professional, and you get 25% off for paying annually."
+        },
+        {
+          "type": "p",
+          "html": "Aircall logs calls and SMS to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription. Its Insight Cards show <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> history before a rep answers."
+        },
+        {
+          "type": "cta",
+          "product": "aircall",
+          "label": "Try Aircall",
+          "href": "https://get.aircall.io/fddlp6kkr3qu",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "Fit for a small HubSpot team",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If your customers reply to texts and ignore calls, Salesmsg's workflow-triggered texts save the most time: reminders, follow-ups, and confirmations go out without a rep touching them."
+        },
+        {
+          "type": "p",
+          "html": "If your team lives on the phone, Aircall's call logging and caller context in HubSpot matter more than texting features."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Salesmsg runs on credits, so heavy calling or long texts can cost more than the plan price suggests."
+        },
+        {
+          "type": "p",
+          "html": "Aircall's three-license minimum makes it a poor fit for one or two people, and texting isn't the center of the product."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Pull last month's conversations and count texts against calls. Buy the tool built for the bigger number."
+        },
+        {
+          "type": "p",
+          "html": "Whichever you choose, make sure opt-outs reach a single HubSpot property before you send any automated texts."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Can HubSpot workflows send texts?",
+      "a": "With Salesmsg, yes: two-way contact and activity sync, texting from inside HubSpot, and SMS triggered from HubSpot workflows.",
+      "aHtml": "With Salesmsg, yes: two-way contact and activity sync, texting from inside <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and SMS triggered from HubSpot workflows."
+    },
+    {
+      "q": "Does Aircall log texts to HubSpot?",
+      "a": "Yes. Aircall logs calls and SMS to HubSpot Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription.",
+      "aHtml": "Yes. Aircall logs calls and SMS to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription."
+    },
+    {
+      "q": "Is there a minimum number of seats?",
+      "a": "Aircall has a minimum of 3 licenses on Essentials and Professional. Salesmsg Basic includes one seat.",
+      "aHtml": "Aircall has a minimum of 3 licenses on Essentials and Professional. Salesmsg Basic includes one seat."
+    },
+    {
+      "q": "Can I try Salesmsg first?",
+      "a": "Yes: a 14-day free trial and a 30-day money-back guarantee.",
+      "aHtml": "Yes: a 14-day free trial and a 30-day money-back guarantee."
+    }
+  ],
+  "closing": "Pick Salesmsg when texting carries the work and Aircall when calls do.",
+  "ctas": [
+    {
+      "label": "Try Salesmsg",
+      "href": "https://join.salesmessage.com/0zdc6fya9z6u",
+      "kind": "affiliate",
+      "product": "salesmsg"
+    },
+    {
+      "label": "Try Aircall",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "kind": "affiliate",
+      "product": "aircall"
+    }
+  ],
+  "products": [
+    {
+      "slug": "salesmsg",
+      "name": "Salesmsg",
+      "type": "affiliate",
+      "pick": "Better fit if texting is the main channel and you want HubSpot workflows to send texts.",
+      "href": "https://join.salesmessage.com/0zdc6fya9z6u",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "aircall",
+      "name": "Aircall",
+      "type": "affiliate",
+      "pick": "Better fit if calling is the main channel and you want a full phone system in HubSpot.",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/pricing/"
+    },
+    {
+      "text": "HubSpot App Marketplace: Aircall listing",
+      "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
+    },
+    {
+      "text": "Aircall's HubSpot integration page",
+      "href": "https://aircall.io/integrations/hubspot/"
+    },
+    {
+      "text": "Salesmsg pricing page",
+      "href": "https://www.salesmessage.com/pricing"
+    },
+    {
+      "text": "Salesmsg pricing page",
+      "href": "https://www.salesmessage.com/hubspot"
+    }
+  ],
+  "related": [
+    {
+      "slug": "business-texting-for-hubspot",
+      "route": "best",
+      "title": "Business Texting Tools That Work With HubSpot",
+      "dek": "Three tools that let a small team send and receive business texts and keep every message on the HubSpot record, so nobody texts a customer from a personal phone again.",
+      "href": "/tools/best/business-texting-for-hubspot"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "aircall-vs-unitel-voice",
+      "route": "compare",
+      "title": "Aircall vs Unitel Voice for Small Teams",
+      "dek": "A CRM-connected call center and a lean virtual phone system, compared for a team of one to three people who need a real business number.",
+      "href": "/tools/compare/aircall-vs-unitel-voice"
+    },
+    {
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
+    }
+  ]
+}

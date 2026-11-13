@@ -1,0 +1,185 @@
+{
+	"slug": "lusha-vs-seamless-ai",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Small sales teams enriching HubSpot contacts",
+		"team_size": 3,
+		"must_haves": [
+			"Free plan",
+			"Paid entry",
+			"Credits per contact",
+			"HubSpot push"
+		]
+	},
+	"products": [
+		{
+			"slug": "lusha",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want public prices and a plan you can buy today for a small team."
+		},
+		{
+			"slug": "seamless-ai",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want a large monthly credit pool and automatic saves into HubSpot, and don't mind a sales quote."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Lusha vs Seamless.AI — Jon Martin",
+	"seoTitle": "Lusha vs Seamless.AI for HubSpot Teams",
+	"description": "Lusha and Seamless.AI compared for small sales teams on HubSpot: free plans, paid pricing, credits per contact, and how each pushes data to HubSpot.",
+	"h1": "Lusha vs Seamless.AI",
+	"dek": [
+		"Two contact data tools compared for a small team that wants emails and phone numbers to land cleanly in HubSpot.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. Both links are affiliate links."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a founder or a small sales team that needs contact data, emails and direct dials, for prospects tracked in {{link:hubspot}}, and is weighing {{link:lusha}} against {{link:seamless-ai}}."
+				},
+				{
+					"type": "p",
+					"html": "Both sell credits that unlock contact details. They differ in how they price, how a credit is spent, and how records reach HubSpot."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose Lusha if you want to see the price, buy a small plan, and start today. Choose Seamless.AI if you'll use a lot of credits each month and want contacts saved to HubSpot automatically, and you're fine getting a quote."
+				},
+				{
+					"type": "p",
+					"html": "Start both on their free plans, look up the same twenty prospects, and compare hit rates before you pay for either."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Lusha"
+				},
+				{
+					"type": "p",
+					"html": "Lusha has {{fact:lusha.free_plan}}. Starter is {{fact:lusha.starter_monthly}}, or {{fact:lusha.starter_annual}}. Pro is {{fact:lusha.pro_monthly}}. Credits work like this: {{fact:lusha.credit_cost}}. Note that {{fact:lusha.team_limit}}."
+				},
+				{
+					"type": "p",
+					"html": "Lusha {{fact:lusha.hubspot_push}}. Per Lusha, {{fact:lusha.hubspot_admin}}."
+				},
+				{
+					"type": "cta",
+					"product": "lusha"
+				},
+				{
+					"type": "h3",
+					"text": "Seamless.AI"
+				},
+				{
+					"type": "p",
+					"html": "Seamless.AI has {{fact:seamless-ai.free_plan}}. Beyond that, {{fact:seamless-ai.paid_pricing}}. Credit allowances run from {{fact:seamless-ai.basic_credits}} to {{fact:seamless-ai.pro_credits}}. Credits are spent as {{fact:seamless-ai.credit_use}}."
+				},
+				{
+					"type": "p",
+					"html": "Seamless.AI {{fact:seamless-ai.hubspot_import}}. Per Seamless.AI, {{fact:seamless-ai.hubspot_perm}}."
+				},
+				{
+					"type": "cta",
+					"product": "seamless-ai"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Phone numbers cost more credits than emails on both tools, so decide whether your team calls or emails first. A calling team burns credits much faster."
+				},
+				{
+					"type": "p",
+					"html": "If you need a budget number this week, Lusha's public prices make that easy. If you expect heavy monthly volume, Seamless.AI's larger credit pools may work out cheaper once quoted."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Lusha routes larger teams to sales, so the public prices only go so far."
+				},
+				{
+					"type": "p",
+					"html": "Seamless.AI has no public paid price, so you can't compare costs without a sales call."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Test both on the same list, and check how each one handles a contact that already exists in HubSpot. Duplicates are the most common cleanup job after an enrichment tool goes live."
+				},
+				{
+					"type": "p",
+					"html": "Then price the plan for the credits you used in the test, multiplied out over a month."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Do both have free plans?",
+			"a": "Yes. Lusha has {{fact:lusha.free_plan}}. Seamless.AI has {{fact:seamless-ai.free_plan}}."
+		},
+		{
+			"q": "How much does a phone number cost in credits?",
+			"a": "On Lusha, {{fact:lusha.credit_cost}}. On Seamless.AI, {{fact:seamless-ai.credit_use}}."
+		},
+		{
+			"q": "Do they avoid duplicates in HubSpot?",
+			"a": "Lusha {{fact:lusha.hubspot_push}}."
+		},
+		{
+			"q": "What does Seamless.AI cost?",
+			"a": "Per Seamless.AI, {{fact:seamless-ai.paid_pricing}}."
+		}
+	],
+	"closing": "Pick Lusha for public prices and a quick start, and Seamless.AI for big monthly credit pools once you've seen a quote.",
+	"computed": [],
+	"fit": {
+		"Free plan": {
+			"lusha": "{{fact:lusha.free_plan}}.",
+			"seamless-ai": "{{fact:seamless-ai.free_plan}}."
+		},
+		"Paid entry": {
+			"lusha": "Starter {{fact:lusha.starter_monthly}}.",
+			"seamless-ai": "Quoted per company."
+		},
+		"Credits per contact": {
+			"lusha": "{{fact:lusha.credit_cost}}.",
+			"seamless-ai": "{{fact:seamless-ai.credit_use}}."
+		},
+		"HubSpot push": {
+			"lusha": "Field mapping with duplicate checks.",
+			"seamless-ai": "One at a time, in bulk, or automatically on save."
+		}
+	}
+}

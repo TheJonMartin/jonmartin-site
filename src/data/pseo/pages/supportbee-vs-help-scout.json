@@ -1,0 +1,296 @@
+{
+  "slug": "supportbee-vs-help-scout",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "SupportBee vs Help Scout — Jon Martin",
+  "seoTitle": "SupportBee vs Help Scout for Small Support Teams",
+  "description": "SupportBee and Help Scout compared for small support teams: per-seat prices, free plan and trial, help centers, and HubSpot integration.",
+  "h1": "SupportBee vs Help Scout",
+  "dek": [
+    "Two shared inbox tools compared for a small team that answers customers from one support address.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown. The SupportBee link is an affiliate link."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small support teams moving off a shared Gmail"
+  },
+  "fitTable": {
+    "caption": "Fit for Small support teams moving off a shared Gmail",
+    "head": [
+      "Must-have",
+      "SupportBee",
+      "Help Scout"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Startup $17 per seat per month billed annually ($204 per seat a year).",
+        "Standard $25 per user per month as shown on the pricing page’s default view."
+      ],
+      [
+        "Free start",
+        "a 14-day free trial.",
+        "a free plan with 5 users, 1 inbox, and 1 Docs site."
+      ],
+      [
+        "Help center",
+        "1 knowledge base and 1 team on Startup.",
+        "1 Docs site on Free."
+      ],
+      [
+        "HubSpot",
+        "Not listed on the pricing page.",
+        "On Plus."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Startup $17 per seat per month billed annually ($204 per seat a year).",
+        "Standard $25 per user per month as shown on the pricing page’s default view."
+      ],
+      [
+        "Free start",
+        "a 14-day free trial.",
+        "a free plan with 5 users, 1 inbox, and 1 Docs site."
+      ],
+      [
+        "Help center",
+        "1 knowledge base and 1 team on Startup.",
+        "1 Docs site on Free."
+      ],
+      [
+        "HubSpot",
+        "Not listed on the pricing page.",
+        "On Plus."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try SupportBee",
+        "href": "https://try.supportbee.com/zkx9yrw6bm02",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Help Scout",
+        "href": "https://www.helpscout.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This comparison is for a team of two to five people answering customer email together, choosing between <a href=\"https://try.supportbee.com/zkx9yrw6bm02\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">SupportBee</a> and <a href=\"https://www.helpscout.com/\" target=\"_blank\" rel=\"noopener\">Help Scout</a>. Many of these teams also keep customers in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>."
+        },
+        {
+          "type": "p",
+          "html": "Both turn a shared address into a queue with owners and statuses. They differ in price, how far they reach beyond email, and how they connect to the rest of your stack."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Choose SupportBee if you want a simple shared inbox and the lowest per-seat bill. Choose Help Scout if you want to start free and expect to add chat, SMS, or a HubSpot integration as you grow."
+        },
+        {
+          "type": "p",
+          "html": "For three seats on annual billing, SupportBee Startup comes to about $51 a month."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "SupportBee"
+        },
+        {
+          "type": "p",
+          "html": "SupportBee Startup is $17 per seat per month billed annually ($204 per seat a year), and Enterprise is $21 per seat per month billed annually ($252 per seat a year). Per SupportBee, annual billing saves 20%. Plans include unlimited email inboxes and tickets, and Startup comes with 1 knowledge base and 1 team. There's a 14-day free trial."
+        },
+        {
+          "type": "p",
+          "html": "It keeps to the essentials: a shared inbox, a knowledge base, and the controls a small team needs to stop double replies."
+        },
+        {
+          "type": "cta",
+          "product": "supportbee",
+          "label": "Try SupportBee",
+          "href": "https://try.supportbee.com/zkx9yrw6bm02",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Help Scout"
+        },
+        {
+          "type": "p",
+          "html": "Help Scout has a free plan with 5 users, 1 inbox, and 1 Docs site. Standard is $25 per user per month as shown on the pricing page’s default view, with multiple inboxes, plus live chat and SMS. Plus is $45 per user per month as shown on the default view, adding Salesforce, Jira, and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integrations, and it allows teammates who view and collaborate without a full seat, up to 25."
+        },
+        {
+          "type": "p",
+          "html": "Check the monthly and annual toggle on Help Scout's pricing page, since the figures above come from its default view."
+        },
+        {
+          "type": "cta",
+          "product": "helpscout",
+          "label": "Visit Help Scout",
+          "href": "https://www.helpscout.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "Fit for a small support team",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If email is the only channel and the budget is tight, SupportBee's per-seat price is hard to beat."
+        },
+        {
+          "type": "p",
+          "html": "If you want to start for nothing, or if sales needs support history in HubSpot later, Help Scout's free plan and Plus tier give you that path."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "SupportBee's pricing page doesn't list a HubSpot integration, so check before you rely on one."
+        },
+        {
+          "type": "p",
+          "html": "Help Scout's free plan has one inbox, and the HubSpot integration sits on Plus, not Standard."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Count replying seats, list your channels, and decide whether support history needs to be in HubSpot. Those three answers pick the tool."
+        },
+        {
+          "type": "p",
+          "html": "Run the trial on your real support address for a week, with a rule for who owns new email."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does Help Scout have a free plan?",
+      "a": "Yes: a free plan with 5 users, 1 inbox, and 1 Docs site.",
+      "aHtml": "Yes: a free plan with 5 users, 1 inbox, and 1 Docs site."
+    },
+    {
+      "q": "Which is cheaper per seat?",
+      "a": "SupportBee Startup is $17 per seat per month billed annually ($204 per seat a year). Help Scout Standard is $25 per user per month as shown on the pricing page’s default view.",
+      "aHtml": "SupportBee Startup is $17 per seat per month billed annually ($204 per seat a year). Help Scout Standard is $25 per user per month as shown on the pricing page’s default view."
+    },
+    {
+      "q": "Which integrates with HubSpot?",
+      "a": "Help Scout Plus is $45 per user per month as shown on the default view, adding Salesforce, Jira, and HubSpot integrations.",
+      "aHtml": "Help Scout Plus is $45 per user per month as shown on the default view, adding Salesforce, Jira, and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integrations."
+    },
+    {
+      "q": "Is there a trial?",
+      "a": "SupportBee offers a 14-day free trial.",
+      "aHtml": "SupportBee offers a 14-day free trial."
+    }
+  ],
+  "closing": "Pick SupportBee for a cheap, focused shared inbox and Help Scout for a free start with room to grow.",
+  "ctas": [
+    {
+      "label": "Try SupportBee",
+      "href": "https://try.supportbee.com/zkx9yrw6bm02",
+      "kind": "affiliate",
+      "product": "supportbee"
+    },
+    {
+      "label": "Visit Help Scout",
+      "href": "https://www.helpscout.com/",
+      "kind": "site",
+      "product": "helpscout"
+    }
+  ],
+  "products": [
+    {
+      "slug": "supportbee",
+      "name": "SupportBee",
+      "type": "affiliate",
+      "pick": "Better fit if you want a plain shared inbox at a low per-seat price.",
+      "href": "https://try.supportbee.com/zkx9yrw6bm02",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "helpscout",
+      "name": "Help Scout",
+      "type": "affiliate",
+      "pick": "Better fit if you want a free plan now and chat, SMS, and a HubSpot integration later.",
+      "href": "https://www.helpscout.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "SupportBee pricing page",
+      "href": "https://supportbee.com/pricing"
+    },
+    {
+      "text": "Help Scout pricing page",
+      "href": "https://www.helpscout.com/pricing/"
+    }
+  ],
+  "related": [
+    {
+      "slug": "shared-inbox-for-small-support-teams",
+      "route": "best",
+      "title": "Shared Inbox Software for Small Support Teams",
+      "dek": "Three tools that turn support@ into a queue a small team can share, so every email gets one owner and one answer.",
+      "href": "/tools/best/shared-inbox-for-small-support-teams"
+    },
+    {
+      "slug": "ai-outbound-platforms-for-small-sales-teams",
+      "route": "best",
+      "title": "AI Outbound Platforms for Small Sales Teams",
+      "dek": "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+      "href": "/tools/best/ai-outbound-platforms-for-small-sales-teams"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "aircall-vs-unitel-voice",
+      "route": "compare",
+      "title": "Aircall vs Unitel Voice for Small Teams",
+      "dek": "A CRM-connected call center and a lean virtual phone system, compared for a team of one to three people who need a real business number.",
+      "href": "/tools/compare/aircall-vs-unitel-voice"
+    }
+  ]
+}

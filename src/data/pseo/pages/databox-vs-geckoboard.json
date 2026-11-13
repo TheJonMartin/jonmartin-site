@@ -1,0 +1,304 @@
+{
+  "slug": "databox-vs-geckoboard",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "Databox vs Geckoboard — Jon Martin",
+  "seoTitle": "Databox vs Geckoboard for HubSpot Reporting",
+  "description": "Databox and Geckoboard compared for small teams reporting on HubSpot: entry prices, trials, what each pulls from HubSpot, and how you share dashboards.",
+  "h1": "Databox vs Geckoboard",
+  "dek": [
+    "Two dashboard tools compared for a small team that wants HubSpot numbers in front of people without exporting reports every week.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown. The Databox link is an affiliate link."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small teams building dashboards on HubSpot data"
+  },
+  "fitTable": {
+    "caption": "Fit for Small teams building dashboards on HubSpot data",
+    "head": [
+      "Must-have",
+      "Databox",
+      "Geckoboard"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Platform $399 a month on annual billing ($4,788 a year).",
+        "Essentials from $79 a month, billed annually."
+      ],
+      [
+        "Trial",
+        "a 14-day trial of the Platform plan with no credit card, and no free plan.",
+        "free for 14 days."
+      ],
+      [
+        "HubSpot data",
+        "HubSpot plus other sources, with portal merging.",
+        "deals, deal values, activities, contacts, companies, leads, and tickets, across Sales Hub and Service Hub."
+      ],
+      [
+        "Sharing",
+        "up to 10 users and 30 data sources for one flat price.",
+        "sharing links and unlimited viewers."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Platform $399 a month on annual billing ($4,788 a year).",
+        "Essentials from $79 a month, billed annually."
+      ],
+      [
+        "Trial",
+        "a 14-day trial of the Platform plan with no credit card, and no free plan.",
+        "free for 14 days."
+      ],
+      [
+        "HubSpot data",
+        "HubSpot plus other sources, with portal merging.",
+        "deals, deal values, activities, contacts, companies, leads, and tickets, across Sales Hub and Service Hub."
+      ],
+      [
+        "Sharing",
+        "up to 10 users and 30 data sources for one flat price.",
+        "sharing links and unlimited viewers."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Databox",
+        "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Geckoboard",
+        "href": "https://www.geckoboard.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This comparison is for a small team that reports out of <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> and is choosing between <a href=\"https://join.databox.com/6b2dhjfxvch3-5b1iq5\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Databox</a> and <a href=\"https://www.geckoboard.com/\" target=\"_blank\" rel=\"noopener\">Geckoboard</a> to put those numbers on a dashboard."
+        },
+        {
+          "type": "p",
+          "html": "Both connect to HubSpot and both make dashboards. One is built for analysis across many sources; the other is built for a clear, live screen."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Choose Geckoboard if the goal is a live screen of sales or support numbers the whole team can see. Choose Databox if you need custom metrics, several data sources, or several HubSpot portals in one place."
+        },
+        {
+          "type": "p",
+          "html": "Price is the other big difference: Geckoboard Essentials is from $79 a month, billed annually, while Databox Platform is $399 a month on annual billing ($4,788 a year)."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Databox"
+        },
+        {
+          "type": "p",
+          "html": "Databox Platform is $399 a month on annual billing ($4,788 a year), or $499 a month on monthly billing. It covers up to 10 users and 30 data sources for one flat price. There's a 14-day trial of the Platform plan with no credit card, and no free plan."
+        },
+        {
+          "type": "p",
+          "html": "Databox layers dashboards, alerts, and custom metrics on <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and can merge multiple HubSpot portals and other data sources. Agencies can use a separate plan with unlimited users, priced by account pack at $20 a month per pack (1 account, 5 data sources), billed annually."
+        },
+        {
+          "type": "cta",
+          "product": "databox",
+          "label": "Try Databox",
+          "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Geckoboard"
+        },
+        {
+          "type": "p",
+          "html": "Geckoboard Essentials is from $79 a month, billed annually, with 2 dashboards, 1 editor, and 1 screen. Performance is from $319 a month, billed annually. It's free for 14 days, and plans include sharing links and unlimited viewers."
+        },
+        {
+          "type": "p",
+          "html": "From HubSpot it pulls deals, deal values, activities, contacts, companies, leads, and tickets, across Sales Hub and Service Hub. Geckoboard also says you can share <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> dashboards with your team with no HubSpot upgrades required."
+        },
+        {
+          "type": "cta",
+          "product": "geckoboard",
+          "label": "Visit Geckoboard",
+          "href": "https://www.geckoboard.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "Fit for a small team",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If the team needs one screen with five numbers on it, Geckoboard does that with less setup and a lower bill."
+        },
+        {
+          "type": "p",
+          "html": "If leadership wants HubSpot blended with ad spend, finance, or product data, or you manage more than one portal, Databox is built for that work."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Databox costs several times more at entry, which is hard to justify for a single dashboard."
+        },
+        {
+          "type": "p",
+          "html": "Geckoboard's Essentials plan limits dashboards, editors, and screens, so a growing team moves up quickly."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "List the numbers people ask for and where each one lives. If they all live in HubSpot, start with the simpler tool. If they live in several systems, the multi-source tool earns its price."
+        },
+        {
+          "type": "p",
+          "html": "Use the trial to build the one dashboard you'd actually show on Monday, not a demo template."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which is cheaper?",
+      "a": "Geckoboard Essentials is from $79 a month, billed annually. Databox Platform is $399 a month on annual billing ($4,788 a year).",
+      "aHtml": "Geckoboard Essentials is from $79 a month, billed annually. Databox Platform is $399 a month on annual billing ($4,788 a year)."
+    },
+    {
+      "q": "Can I share dashboards with people outside HubSpot?",
+      "a": "Geckoboard includes sharing links and unlimited viewers. Databox Platform covers up to 10 users and 30 data sources for one flat price.",
+      "aHtml": "Geckoboard includes sharing links and unlimited viewers. Databox Platform covers up to 10 users and 30 data sources for one flat price."
+    },
+    {
+      "q": "Is there a free trial?",
+      "a": "Databox offers a 14-day trial of the Platform plan with no credit card, and no free plan. Geckoboard is free for 14 days.",
+      "aHtml": "Databox offers a 14-day trial of the Platform plan with no credit card, and no free plan. Geckoboard is free for 14 days."
+    },
+    {
+      "q": "Which handles more than one HubSpot portal?",
+      "a": "Databox layers dashboards, alerts, and custom metrics on HubSpot, and can merge multiple HubSpot portals and other data sources.",
+      "aHtml": "Databox layers dashboards, alerts, and custom metrics on <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and can merge multiple HubSpot portals and other data sources."
+    }
+  ],
+  "closing": "Pick Geckoboard for a simple live screen and Databox when the numbers come from more than HubSpot.",
+  "ctas": [
+    {
+      "label": "Try Databox",
+      "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+      "kind": "affiliate",
+      "product": "databox"
+    },
+    {
+      "label": "Visit Geckoboard",
+      "href": "https://www.geckoboard.com/",
+      "kind": "site",
+      "product": "geckoboard"
+    }
+  ],
+  "products": [
+    {
+      "slug": "databox",
+      "name": "Databox",
+      "type": "affiliate",
+      "pick": "Better fit if you need custom metrics across HubSpot and other sources, or across several HubSpot portals.",
+      "href": "https://join.databox.com/6b2dhjfxvch3-5b1iq5",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "geckoboard",
+      "name": "Geckoboard",
+      "type": "affiliate",
+      "pick": "Better fit if you want a simple live screen of HubSpot numbers for the whole team.",
+      "href": "https://www.geckoboard.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Databox pricing page",
+      "href": "https://databox.com/pricing"
+    },
+    {
+      "text": "Databox pricing page",
+      "href": "https://databox.com/integrations/hubspot"
+    },
+    {
+      "text": "Geckoboard pricing page",
+      "href": "https://www.geckoboard.com/pricing/"
+    },
+    {
+      "text": "Geckoboard pricing page",
+      "href": "https://www.geckoboard.com/product/data-sources/hubspot/"
+    }
+  ],
+  "related": [
+    {
+      "slug": "hubspot-reporting-dashboards-for-small-teams",
+      "route": "best",
+      "title": "HubSpot Reporting Dashboards for Small Teams",
+      "dek": "Three dashboard tools that sit on top of HubSpot, for teams that have outgrown the built-in reports or need to show numbers to people without a HubSpot login.",
+      "href": "/tools/best/hubspot-reporting-dashboards-for-small-teams"
+    },
+    {
+      "slug": "ai-outbound-platforms-for-small-sales-teams",
+      "route": "best",
+      "title": "AI Outbound Platforms for Small Sales Teams",
+      "dek": "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+      "href": "/tools/best/ai-outbound-platforms-for-small-sales-teams"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "aircall-vs-unitel-voice",
+      "route": "compare",
+      "title": "Aircall vs Unitel Voice for Small Teams",
+      "dek": "A CRM-connected call center and a lean virtual phone system, compared for a team of one to three people who need a real business number.",
+      "href": "/tools/compare/aircall-vs-unitel-voice"
+    }
+  ]
+}
