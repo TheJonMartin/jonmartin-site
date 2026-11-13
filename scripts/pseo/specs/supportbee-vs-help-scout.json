@@ -1,0 +1,191 @@
+{
+	"slug": "supportbee-vs-help-scout",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Small support teams moving off a shared Gmail",
+		"team_size": 3,
+		"must_haves": [
+			"Entry price",
+			"Free start",
+			"Help center",
+			"HubSpot"
+		]
+	},
+	"products": [
+		{
+			"slug": "supportbee",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want a plain shared inbox at a low per-seat price."
+		},
+		{
+			"slug": "helpscout",
+			"role": "option",
+			"link": false,
+			"pick": "Better fit if you want a free plan now and chat, SMS, and a HubSpot integration later."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "SupportBee vs Help Scout — Jon Martin",
+	"seoTitle": "SupportBee vs Help Scout for Small Support Teams",
+	"description": "SupportBee and Help Scout compared for small support teams: per-seat prices, free plan and trial, help centers, and HubSpot integration.",
+	"h1": "SupportBee vs Help Scout",
+	"dek": [
+		"Two shared inbox tools compared for a small team that answers customers from one support address.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. The SupportBee link is an affiliate link."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a team of two to five people answering customer email together, choosing between {{link:supportbee}} and {{link:helpscout}}. Many of these teams also keep customers in {{link:hubspot}}."
+				},
+				{
+					"type": "p",
+					"html": "Both turn a shared address into a queue with owners and statuses. They differ in price, how far they reach beyond email, and how they connect to the rest of your stack."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose SupportBee if you want a simple shared inbox and the lowest per-seat bill. Choose Help Scout if you want to start free and expect to add chat, SMS, or a HubSpot integration as you grow."
+				},
+				{
+					"type": "p",
+					"html": "For three seats on annual billing, SupportBee Startup comes to about {{calc:supportbee_three}} a month."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "SupportBee"
+				},
+				{
+					"type": "p",
+					"html": "SupportBee Startup is {{fact:supportbee.startup}}, and Enterprise is {{fact:supportbee.enterprise}}. Per SupportBee, {{fact:supportbee.annual}}. Plans include {{fact:supportbee.unlimited}}, and Startup comes with {{fact:supportbee.kb}}. There's {{fact:supportbee.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "It keeps to the essentials: a shared inbox, a knowledge base, and the controls a small team needs to stop double replies."
+				},
+				{
+					"type": "cta",
+					"product": "supportbee"
+				},
+				{
+					"type": "h3",
+					"text": "Help Scout"
+				},
+				{
+					"type": "p",
+					"html": "Help Scout has {{fact:helpscout.free}}. Standard is {{fact:helpscout.standard}}, with {{fact:helpscout.channels}}. Plus is {{fact:helpscout.plus}}, and it allows {{fact:helpscout.light_users}}."
+				},
+				{
+					"type": "p",
+					"html": "Check the monthly and annual toggle on Help Scout's pricing page, since the figures above come from its default view."
+				},
+				{
+					"type": "cta",
+					"product": "helpscout"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small support team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If email is the only channel and the budget is tight, SupportBee's per-seat price is hard to beat."
+				},
+				{
+					"type": "p",
+					"html": "If you want to start for nothing, or if sales needs support history in HubSpot later, Help Scout's free plan and Plus tier give you that path."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "SupportBee's pricing page doesn't list a HubSpot integration, so check before you rely on one."
+				},
+				{
+					"type": "p",
+					"html": "Help Scout's free plan has one inbox, and the HubSpot integration sits on Plus, not Standard."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Count replying seats, list your channels, and decide whether support history needs to be in HubSpot. Those three answers pick the tool."
+				},
+				{
+					"type": "p",
+					"html": "Run the trial on your real support address for a week, with a rule for who owns new email."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Does Help Scout have a free plan?",
+			"a": "Yes: {{fact:helpscout.free}}."
+		},
+		{
+			"q": "Which is cheaper per seat?",
+			"a": "SupportBee Startup is {{fact:supportbee.startup}}. Help Scout Standard is {{fact:helpscout.standard}}."
+		},
+		{
+			"q": "Which integrates with HubSpot?",
+			"a": "Help Scout Plus is {{fact:helpscout.plus}}."
+		},
+		{
+			"q": "Is there a trial?",
+			"a": "SupportBee offers {{fact:supportbee.trial}}."
+		}
+	],
+	"closing": "Pick SupportBee for a cheap, focused shared inbox and Help Scout for a free start with room to grow.",
+	"computed": [
+		{
+			"id": "supportbee_three",
+			"label": "SupportBee Startup (annual), 3 seats",
+			"expr": "supportbee.startup * 3"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"supportbee": "Startup {{fact:supportbee.startup}}.",
+			"helpscout": "Standard {{fact:helpscout.standard}}."
+		},
+		"Free start": {
+			"supportbee": "{{fact:supportbee.trial}}.",
+			"helpscout": "{{fact:helpscout.free}}."
+		},
+		"Help center": {
+			"supportbee": "{{fact:supportbee.kb}} on Startup.",
+			"helpscout": "1 Docs site on Free."
+		},
+		"HubSpot": {
+			"supportbee": "Not listed on the pricing page.",
+			"helpscout": "On Plus."
+		}
+	}
+}

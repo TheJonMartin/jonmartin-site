@@ -1,0 +1,196 @@
+{
+	"slug": "salesmsg-vs-aircall",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Small teams that text and call customers from HubSpot",
+		"team_size": 3,
+		"must_haves": [
+			"Entry price",
+			"Main channel",
+			"HubSpot workflows",
+			"Minimum seats"
+		]
+	},
+	"products": [
+		{
+			"slug": "salesmsg",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if texting is the main channel and you want HubSpot workflows to send texts."
+		},
+		{
+			"slug": "aircall",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if calling is the main channel and you want a full phone system in HubSpot."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Salesmsg vs Aircall — Jon Martin",
+	"seoTitle": "Salesmsg vs Aircall for HubSpot Teams",
+	"description": "Salesmsg and Aircall compared for small HubSpot teams: entry prices, texting vs calling, HubSpot workflows and logging, and seat minimums.",
+	"h1": "Salesmsg vs Aircall",
+	"dek": [
+		"A texting-first tool and a calling-first tool, compared for a small team that wants every conversation on the HubSpot record.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. Both links are affiliate links."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a small sales or service team in {{link:hubspot}} that talks to customers by text and phone, and is choosing between {{link:salesmsg}} and {{link:aircall}}."
+				},
+				{
+					"type": "p",
+					"html": "Both can text and both can call. The real question is which channel your team uses most, because each tool is built around one of them."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose Salesmsg if most conversations happen by text and you want HubSpot workflows to send messages automatically. Choose Aircall if most conversations are calls and you want a full phone system with texting on the side."
+				},
+				{
+					"type": "p",
+					"html": "For a two-person team, Salesmsg Basic plus one extra seat is about {{calc:salesmsg_two}} a month. Aircall needs three licenses, so its floor on Essentials is about {{calc:aircall_three}} a month on annual billing."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Salesmsg"
+				},
+				{
+					"type": "p",
+					"html": "Salesmsg Basic is {{fact:salesmsg.basic}}, and Pro is {{fact:salesmsg.pro}}. Extra seats are {{fact:salesmsg.extra_seat}}, and extra numbers are {{fact:salesmsg.extra_number}}. Messages and minutes use credits: {{fact:salesmsg.credits}}. There's {{fact:salesmsg.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "In HubSpot, Salesmsg offers {{fact:salesmsg.hubspot}}. It also says {{fact:salesmsg.optout}}."
+				},
+				{
+					"type": "cta",
+					"product": "salesmsg"
+				},
+				{
+					"type": "h3",
+					"text": "Aircall"
+				},
+				{
+					"type": "p",
+					"html": "Aircall Essentials is {{fact:aircall.essentials_annual}}, and Professional is {{fact:aircall.professional_license}}. There's {{fact:aircall.min_licenses_ess_pro}}, and you get {{fact:aircall.annual_saving}}."
+				},
+				{
+					"type": "p",
+					"html": "Aircall {{fact:aircall.hubspot_logging}}. Its {{fact:aircall.insight_card}}."
+				},
+				{
+					"type": "cta",
+					"product": "aircall"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small HubSpot team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If your customers reply to texts and ignore calls, Salesmsg's workflow-triggered texts save the most time: reminders, follow-ups, and confirmations go out without a rep touching them."
+				},
+				{
+					"type": "p",
+					"html": "If your team lives on the phone, Aircall's call logging and caller context in HubSpot matter more than texting features."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Salesmsg runs on credits, so heavy calling or long texts can cost more than the plan price suggests."
+				},
+				{
+					"type": "p",
+					"html": "Aircall's three-license minimum makes it a poor fit for one or two people, and texting isn't the center of the product."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pull last month's conversations and count texts against calls. Buy the tool built for the bigger number."
+				},
+				{
+					"type": "p",
+					"html": "Whichever you choose, make sure opt-outs reach a single HubSpot property before you send any automated texts."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Can HubSpot workflows send texts?",
+			"a": "With Salesmsg, yes: {{fact:salesmsg.hubspot}}."
+		},
+		{
+			"q": "Does Aircall log texts to HubSpot?",
+			"a": "Yes. Aircall {{fact:aircall.hubspot_logging}}."
+		},
+		{
+			"q": "Is there a minimum number of seats?",
+			"a": "Aircall has {{fact:aircall.min_licenses_ess_pro}}. Salesmsg Basic includes one seat."
+		},
+		{
+			"q": "Can I try Salesmsg first?",
+			"a": "Yes: {{fact:salesmsg.trial}}."
+		}
+	],
+	"closing": "Pick Salesmsg when texting carries the work and Aircall when calls do.",
+	"computed": [
+		{
+			"id": "salesmsg_two",
+			"label": "Salesmsg Basic plus 1 extra seat",
+			"expr": "salesmsg.basic + salesmsg.extra_seat"
+		},
+		{
+			"id": "aircall_three",
+			"label": "Aircall Essentials (annual), 3 licenses",
+			"expr": "aircall.essentials_annual * 3"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"salesmsg": "Basic {{fact:salesmsg.basic}}.",
+			"aircall": "Essentials {{fact:aircall.essentials_annual}}."
+		},
+		"Main channel": {
+			"salesmsg": "Texting.",
+			"aircall": "Calling."
+		},
+		"HubSpot workflows": {
+			"salesmsg": "Workflows can trigger SMS.",
+			"aircall": "Logs calls and SMS to records."
+		},
+		"Minimum seats": {
+			"salesmsg": "None listed; Basic includes one seat.",
+			"aircall": "{{fact:aircall.min_licenses_ess_pro}}."
+		}
+	}
+}

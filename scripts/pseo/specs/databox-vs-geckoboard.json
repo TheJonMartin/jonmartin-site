@@ -1,0 +1,185 @@
+{
+	"slug": "databox-vs-geckoboard",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Small teams building dashboards on HubSpot data",
+		"team_size": 10,
+		"must_haves": [
+			"Entry price",
+			"Trial",
+			"HubSpot data",
+			"Sharing"
+		]
+	},
+	"products": [
+		{
+			"slug": "databox",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you need custom metrics across HubSpot and other sources, or across several HubSpot portals."
+		},
+		{
+			"slug": "geckoboard",
+			"role": "option",
+			"link": false,
+			"pick": "Better fit if you want a simple live screen of HubSpot numbers for the whole team."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Databox vs Geckoboard — Jon Martin",
+	"seoTitle": "Databox vs Geckoboard for HubSpot Reporting",
+	"description": "Databox and Geckoboard compared for small teams reporting on HubSpot: entry prices, trials, what each pulls from HubSpot, and how you share dashboards.",
+	"h1": "Databox vs Geckoboard",
+	"dek": [
+		"Two dashboard tools compared for a small team that wants HubSpot numbers in front of people without exporting reports every week.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. The Databox link is an affiliate link."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a small team that reports out of {{link:hubspot}} and is choosing between {{link:databox}} and {{link:geckoboard}} to put those numbers on a dashboard."
+				},
+				{
+					"type": "p",
+					"html": "Both connect to HubSpot and both make dashboards. One is built for analysis across many sources; the other is built for a clear, live screen."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose Geckoboard if the goal is a live screen of sales or support numbers the whole team can see. Choose Databox if you need custom metrics, several data sources, or several HubSpot portals in one place."
+				},
+				{
+					"type": "p",
+					"html": "Price is the other big difference: Geckoboard Essentials is {{fact:geckoboard.essentials_price}}, while Databox Platform is {{fact:databox.platform_annual}}."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Databox"
+				},
+				{
+					"type": "p",
+					"html": "Databox Platform is {{fact:databox.platform_annual}}, or {{fact:databox.platform_monthly}}. It covers {{fact:databox.platform_limits}}. There's {{fact:databox.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "Databox {{fact:databox.hubspot}}. Agencies can use a separate plan with {{fact:databox.agency_pack}}."
+				},
+				{
+					"type": "cta",
+					"product": "databox"
+				},
+				{
+					"type": "h3",
+					"text": "Geckoboard"
+				},
+				{
+					"type": "p",
+					"html": "Geckoboard Essentials is {{fact:geckoboard.essentials_price}}, with {{fact:geckoboard.essentials_limits}}. Performance is {{fact:geckoboard.performance_price}}. It's {{fact:geckoboard.trial}}, and plans include {{fact:geckoboard.viewers}}."
+				},
+				{
+					"type": "p",
+					"html": "From HubSpot it pulls {{fact:geckoboard.hubspot}}. Geckoboard also says you can {{fact:geckoboard.hubspot_no_upgrade}}."
+				},
+				{
+					"type": "cta",
+					"product": "geckoboard"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If the team needs one screen with five numbers on it, Geckoboard does that with less setup and a lower bill."
+				},
+				{
+					"type": "p",
+					"html": "If leadership wants HubSpot blended with ad spend, finance, or product data, or you manage more than one portal, Databox is built for that work."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Databox costs several times more at entry, which is hard to justify for a single dashboard."
+				},
+				{
+					"type": "p",
+					"html": "Geckoboard's Essentials plan limits dashboards, editors, and screens, so a growing team moves up quickly."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "List the numbers people ask for and where each one lives. If they all live in HubSpot, start with the simpler tool. If they live in several systems, the multi-source tool earns its price."
+				},
+				{
+					"type": "p",
+					"html": "Use the trial to build the one dashboard you'd actually show on Monday, not a demo template."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which is cheaper?",
+			"a": "Geckoboard Essentials is {{fact:geckoboard.essentials_price}}. Databox Platform is {{fact:databox.platform_annual}}."
+		},
+		{
+			"q": "Can I share dashboards with people outside HubSpot?",
+			"a": "Geckoboard includes {{fact:geckoboard.viewers}}. Databox Platform covers {{fact:databox.platform_limits}}."
+		},
+		{
+			"q": "Is there a free trial?",
+			"a": "Databox offers {{fact:databox.trial}}. Geckoboard is {{fact:geckoboard.trial}}."
+		},
+		{
+			"q": "Which handles more than one HubSpot portal?",
+			"a": "Databox {{fact:databox.hubspot}}."
+		}
+	],
+	"closing": "Pick Geckoboard for a simple live screen and Databox when the numbers come from more than HubSpot.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"databox": "Platform {{fact:databox.platform_annual}}.",
+			"geckoboard": "Essentials {{fact:geckoboard.essentials_price}}."
+		},
+		"Trial": {
+			"databox": "{{fact:databox.trial}}.",
+			"geckoboard": "{{fact:geckoboard.trial}}."
+		},
+		"HubSpot data": {
+			"databox": "HubSpot plus other sources, with portal merging.",
+			"geckoboard": "{{fact:geckoboard.hubspot}}."
+		},
+		"Sharing": {
+			"databox": "{{fact:databox.platform_limits}}.",
+			"geckoboard": "{{fact:geckoboard.viewers}}."
+		}
+	}
+}

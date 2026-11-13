@@ -1,0 +1,191 @@
+{
+	"slug": "aircall-vs-unitel-voice",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Very small teams choosing a business phone line",
+		"team_size": 3,
+		"must_haves": [
+			"Entry price",
+			"Price for three people",
+			"Money-back or minimum",
+			"HubSpot logging"
+		]
+	},
+	"products": [
+		{
+			"slug": "aircall",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if calls should log to HubSpot automatically and the team can carry a three-license minimum."
+		},
+		{
+			"slug": "unitel-voice",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you need a professional business line and call routing at the lowest monthly cost."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Aircall vs Unitel Voice — Jon Martin",
+	"seoTitle": "Aircall vs Unitel Voice for Small Teams",
+	"description": "Aircall and Unitel Voice compared for very small teams: entry prices, cost for three people, minimums and guarantees, and HubSpot call logging.",
+	"h1": "Aircall vs Unitel Voice",
+	"dek": [
+		"A CRM-connected call center and a lean virtual phone system, compared for a team of one to three people who need a real business number.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. Both links are affiliate links."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a founder, a consultant, or a team of up to three who want a business phone number that isn't someone's cell, and are weighing {{link:aircall}} against {{link:unitel-voice}}."
+				},
+				{
+					"type": "p",
+					"html": "These two tools solve different problems. One is a calling platform built to sit inside a CRM like {{link:hubspot}}. The other is a virtual phone system that gives a small business a main number, extensions, and routing for very little money."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose Unitel Voice if you need a professional number and call routing and don't need calls in a CRM. Choose Aircall if every call should land on the HubSpot record and the team will grow into a sales or support line."
+				},
+				{
+					"type": "p",
+					"html": "For three people, Aircall Essentials comes to about {{calc:aircall_three}} a month on annual billing. Unitel Voice Office is {{fact:unitel.office_price}}."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Aircall"
+				},
+				{
+					"type": "p",
+					"html": "Aircall Essentials is {{fact:aircall.essentials_annual}}, and Professional is {{fact:aircall.professional_license}}. There's {{fact:aircall.min_licenses_ess_pro}}, and you get {{fact:aircall.annual_saving}}. {{fact:aircall.power_dialer}}."
+				},
+				{
+					"type": "p",
+					"html": "Aircall {{fact:aircall.hubspot_logging}}. Per Aircall, {{fact:aircall.integrations}}."
+				},
+				{
+					"type": "cta",
+					"product": "aircall"
+				},
+				{
+					"type": "h3",
+					"text": "Unitel Voice"
+				},
+				{
+					"type": "p",
+					"html": "Unitel Voice Solo is {{fact:unitel.solo_price}}. Team is {{fact:unitel.team_price}}. Office is {{fact:unitel.office_price}}, with {{fact:unitel.extra_user}}."
+				},
+				{
+					"type": "p",
+					"html": "Unitel Voice offers a {{fact:unitel.guarantee}}. Recording isn't included by default: {{fact:unitel.call_recording}}."
+				},
+				{
+					"type": "cta",
+					"product": "unitel-voice"
+				}
+			]
+		},
+		{
+			"label": "Fit for a one-to-three-person team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If you're one person who needs a main line that rings your cell, Unitel Voice's Solo plan is built for that and costs a fraction of a calling platform."
+				},
+				{
+					"type": "p",
+					"html": "If two or three people make sales calls and you want notes, recordings, and outcomes on the HubSpot contact, Aircall's HubSpot logging is the reason to pay more."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Aircall's three-license minimum makes it expensive for a solo founder, and the price climbs quickly past Essentials."
+				},
+				{
+					"type": "p",
+					"html": "Unitel Voice doesn't list a HubSpot integration on the facts checked here, so calls won't land on CRM records by themselves, and recording is an add-on."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Ask whether calls are a sales channel or simply how customers reach you. If they're a sales channel, buy the tool that logs to HubSpot. If not, buy the cheap, reliable line."
+				},
+				{
+					"type": "p",
+					"html": "Both have a way to back out: Aircall bills monthly if you skip the annual discount, and Unitel Voice has a money-back window."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which is cheaper for one person?",
+			"a": "Unitel Voice Solo is {{fact:unitel.solo_price}}. Aircall has {{fact:aircall.min_licenses_ess_pro}}."
+		},
+		{
+			"q": "Does either log calls to HubSpot?",
+			"a": "Aircall {{fact:aircall.hubspot_logging}}."
+		},
+		{
+			"q": "Can I try Unitel Voice risk-free?",
+			"a": "It offers a {{fact:unitel.guarantee}}."
+		},
+		{
+			"q": "Is call recording included?",
+			"a": "On Unitel Voice, {{fact:unitel.call_recording}}. Aircall's HubSpot logging includes recordings."
+		}
+	],
+	"closing": "Buy Unitel Voice for a cheap professional line and Aircall when calls need to live in HubSpot.",
+	"computed": [
+		{
+			"id": "aircall_three",
+			"label": "Aircall Essentials (annual), 3 licenses",
+			"expr": "aircall.essentials_annual * 3"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"aircall": "Essentials {{fact:aircall.essentials_annual}}.",
+			"unitel-voice": "Solo {{fact:unitel.solo_price}}."
+		},
+		"Price for three people": {
+			"aircall": "About {{calc:aircall_three}} a month (annual).",
+			"unitel-voice": "Office {{fact:unitel.office_price}}."
+		},
+		"Money-back or minimum": {
+			"aircall": "{{fact:aircall.min_licenses_ess_pro}}.",
+			"unitel-voice": "{{fact:unitel.guarantee}}."
+		},
+		"HubSpot logging": {
+			"aircall": "Yes: calls and SMS, with recordings.",
+			"unitel-voice": "Not listed."
+		}
+	}
+}
