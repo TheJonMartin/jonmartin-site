@@ -1,0 +1,168 @@
+{
+	"slug": "apollo-vs-lusha",
+	"route": "compare",
+	"template": "compare",
+	"wave": 2,
+	"niche": {
+		"label": "HubSpot teams enriching contacts",
+		"team_size": 5,
+		"must_haves": [
+			"Free plan",
+			"Self-serve price",
+			"What reaches HubSpot",
+			"Admin needed to connect"
+		]
+	},
+	"products": [
+		{
+			"slug": "apollo",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want prospecting, outreach, and HubSpot sync in one tool."
+		},
+		{
+			"slug": "lusha",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you mainly need emails and phone numbers pushed into HubSpot."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Apollo vs Lusha for HubSpot Enrichment — Jon Martin",
+	"seoTitle": "Apollo vs Lusha for HubSpot Contact Enrichment",
+	"description": "Apollo or Lusha for a small HubSpot team: free plans, self-serve prices, what syncs into HubSpot, and who has to connect it.",
+	"h1": "Apollo vs Lusha for enriching HubSpot contacts",
+	"dek": [
+		"Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+		"Prices and integration details come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for a small team, a handful of reps, using {{link:hubspot}} as its CRM and needing better contact data: work emails, direct dials, company details. You've narrowed it to Apollo and Lusha because both have free plans and prices you can see."
+				},
+				{
+					"type": "p",
+					"html": "If you need a full data platform with intent data and a sales contract, look at a broader roundup instead. This page is about getting good contact data into HubSpot without a big project."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick Apollo if you want one tool that finds contacts, runs outreach, and keeps HubSpot in sync both ways. Pick Lusha if you want a simpler tool that reveals contact details and pushes them into HubSpot without creating duplicates."
+				},
+				{
+					"type": "p",
+					"html": "Both need an admin to connect. Check that before you start a trial."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Apollo"
+				},
+				{
+					"type": "p",
+					"html": "Apollo has {{fact:apollo.free_plan}}. Basic is {{fact:apollo.basic_price}} and Professional is {{fact:apollo.professional_price}}. Keep in mind that {{fact:apollo.same_plan}}, so one power user can push the whole team up a tier, and {{fact:apollo.credits_expire}}."
+				},
+				{
+					"type": "cta",
+					"product": "apollo"
+				},
+				{
+					"type": "h3",
+					"text": "Lusha"
+				},
+				{
+					"type": "p",
+					"html": "Lusha has {{fact:lusha.free_plan}}. Starter is {{fact:lusha.starter_monthly}}, or {{fact:lusha.starter_annual}}. Professional is {{fact:lusha.pro_monthly}}. Credits: {{fact:lusha.credit_cost}}, so phone-heavy teams burn credits faster. Self-serve stops at a point: {{fact:lusha.team_limit}}."
+				},
+				{
+					"type": "cta",
+					"product": "lusha"
+				}
+			]
+		},
+		{
+			"label": "What each one does in HubSpot",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Apollo's HubSpot integration offers {{fact:apollo.hubspot_sync}}. Note that {{fact:apollo.hubspot_paid}}. You get {{fact:apollo.config_window}}."
+				},
+				{
+					"type": "p",
+					"html": "Lusha {{fact:lusha.hubspot_push}}. It doesn't describe activity sync; it's built to get clean contact and company records into HubSpot."
+				},
+				{
+					"type": "p",
+					"html": "So the real question is how much you want a second tool writing to HubSpot. Two-way sync is powerful, and it's also one more thing that can overwrite a field you care about. Set the mapping rules before you turn either one on."
+				}
+			]
+		},
+		{
+			"label": "Who has to connect it",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "For Apollo, {{fact:apollo.hubspot_admin}}. For Lusha, {{fact:lusha.hubspot_admin}}."
+				},
+				{
+					"type": "p",
+					"html": "If your team doesn't have a HubSpot admin, that's your first step, not the tool choice. Whoever owns the HubSpot account has to approve the connection either way."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is Apollo or Lusha cheaper?",
+			"a": "Both start free. On paid plans, Apollo Basic is {{fact:apollo.basic_price}} and Lusha Starter is {{fact:lusha.starter_monthly}}. Compare credits too, not only the sticker price."
+		},
+		{
+			"q": "Which one syncs with HubSpot both ways?",
+			"a": "Apollo. Its HubSpot page describes {{fact:apollo.hubspot_sync}}. Lusha pushes contacts and companies into HubSpot."
+		},
+		{
+			"q": "Does the HubSpot integration cost extra?",
+			"a": "For Apollo, {{fact:apollo.hubspot_paid}}. Lusha's Free plan lists CRM integrations as included."
+		},
+		{
+			"q": "How are credits counted?",
+			"a": "Lusha: {{fact:lusha.credit_cost}}. Apollo: {{fact:apollo.credits_expire}}."
+		}
+	],
+	"closing": "Pick Apollo for prospecting plus two-way HubSpot sync, and Lusha for contact details pushed cleanly into HubSpot.",
+	"computed": [],
+	"fit": {
+		"Free plan": {
+			"apollo": "Yes, {{fact:apollo.free_plan}}.",
+			"lusha": "Yes, {{fact:lusha.free_plan}}."
+		},
+		"Self-serve price": {
+			"apollo": "Basic {{fact:apollo.basic_price}}.",
+			"lusha": "Starter {{fact:lusha.starter_monthly}}."
+		},
+		"What reaches HubSpot": {
+			"apollo": "Contacts, accounts, deals, and activities, both ways.",
+			"lusha": "Contacts and companies, with a duplicate check."
+		},
+		"Admin needed to connect": {
+			"apollo": "Yes: {{fact:apollo.hubspot_admin}}.",
+			"lusha": "Yes: {{fact:lusha.hubspot_admin}}."
+		}
+	}
+}

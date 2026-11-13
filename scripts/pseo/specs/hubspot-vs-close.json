@@ -1,0 +1,191 @@
+{
+	"slug": "hubspot-vs-close",
+	"route": "compare",
+	"template": "compare",
+	"wave": 2,
+	"niche": {
+		"label": "Five-person B2B sales teams",
+		"team_size": 5,
+		"must_haves": [
+			"Entry seat price",
+			"Free way to start",
+			"Built-in calling",
+			"Works alongside the other"
+		]
+	},
+	"products": [
+		{
+			"slug": "hubspot",
+			"role": "option",
+			"link": false,
+			"pick": "Better fit if marketing, sales, and service will share one CRM."
+		},
+		{
+			"slug": "close",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if your reps live on the phone and you want calling in the seat."
+		}
+	],
+	"title": "HubSpot vs Close for a Five-Person Sales Team — Jon Martin",
+	"seoTitle": "HubSpot vs Close for a Five-Person Sales Team",
+	"description": "HubSpot or Close for a small B2B sales team: seat prices, free options, calling, and the two-way sync that lets you run both.",
+	"h1": "HubSpot or Close for a five-person sales team",
+	"dek": [
+		"HubSpot and Close both run a sales pipeline. They start from different places.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a B2B team with about five people selling, deciding between {{link:hubspot}} and {{link:close}} as the CRM. Maybe you're on HubSpot's free tools and wondering whether to pay for more seats, or someone on the team used Close at a past job and keeps bringing it up."
+				},
+				{
+					"type": "p",
+					"html": "It's not a full platform review. I'm looking at the things a five-person team runs into in the first month: what a seat costs, how to start for free, whether reps can call from the CRM, and whether you can keep both."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If your company will run marketing, sales, and service out of one system, HubSpot is the safer base. If your reps spend most of the day dialing and you want calling built into the CRM seat, Close is the more direct fit."
+				},
+				{
+					"type": "p",
+					"html": "You don't always have to pick one. Close's integration page describes {{fact:close.hubspot_sync}}. That lets marketing stay in HubSpot while reps work in Close."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "HubSpot"
+				},
+				{
+					"type": "p",
+					"html": "HubSpot's CRM is {{fact:hubspot.free_no_expiry}} for {{fact:hubspot.free_users}} and {{fact:hubspot.free_contacts}}, with {{fact:hubspot.free_card}}. Paid Smart CRM Starter {{fact:hubspot.starter_price}}, and {{fact:hubspot.starter_discount}}. Professional {{fact:hubspot.pro_price}}. Five Starter seats come to about ${{calc:hubspot_starter_5}} a month at that price."
+				},
+				{
+					"type": "p",
+					"html": "HubSpot's Sales Hub seats (the ones with sales tools like sequences) are priced on a separate page that I couldn't load to check for this update, so I'm not quoting them here. Open HubSpot's Sales Hub pricing page before you budget."
+				},
+				{
+					"type": "cta",
+					"product": "hubspot"
+				},
+				{
+					"type": "h3",
+					"text": "Close"
+				},
+				{
+					"type": "p",
+					"html": "Close lists Essentials at {{fact:close.essentials_price}} on annual billing, or {{fact:close.essentials_monthly}}. Five Essentials seats on annual billing come to about {{calc:close_team_5}} a month. Growth is {{fact:close.growth_price}}. The trial is {{fact:close.trial}}, and there's a money-back window of {{fact:close.money_back}}."
+				},
+				{
+					"type": "p",
+					"html": "Calling is part of the product, billed by usage: {{fact:close.calling_cost}}."
+				},
+				{
+					"type": "cta",
+					"product": "close"
+				}
+			]
+		},
+		{
+			"label": "Fit for a five-person sales team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "The table lines both tools up against four things a small team asks about first. HubSpot wins on a free start. Close wins on calling built into the seat. Both can work together, which matters more than most comparison pages admit."
+				},
+				{
+					"type": "p",
+					"html": "If you're thinking about moving off HubSpot entirely, price the move as a project, not a weekend. Contacts move easily; workflows, reports, and the habits built around them don't."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "HubSpot's free and Starter prices are easy to start on, but the Starter price is a new-customer discount, and the sales-specific seats live on a different pricing page. Budget from the page you'll actually buy from, not the CRM landing page."
+				},
+				{
+					"type": "p",
+					"html": "Close's seat price doesn't include calling minutes, and Essentials doesn't include workflows; Growth is where automation and the power dialer come in. A team that wants automation on day one should price Growth, not Essentials."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick HubSpot if more than one team will live in the CRM, or if you want to start free and grow into paid seats. Pick Close if your sales motion is phone-first and the reps are the main users."
+				},
+				{
+					"type": "p",
+					"html": "If marketing already runs on HubSpot and sales wants Close, run both and use the two-way sync. Decide up front which system owns each field, or the two will fight over it."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is HubSpot or Close cheaper for five reps?",
+			"a": "At the listed prices, five Smart CRM Starter seats on HubSpot come to about ${{calc:hubspot_starter_5}} a month and five Close Essentials seats on annual billing to about {{calc:close_team_5}} a month. HubSpot's Sales Hub seats are priced separately, so check that page too."
+		},
+		{
+			"q": "Can I use HubSpot and Close together?",
+			"a": "Yes. Close's integration page describes {{fact:close.hubspot_sync}}."
+		},
+		{
+			"q": "Does Close include calling?",
+			"a": "Yes, billed by usage: {{fact:close.calling_cost}}."
+		},
+		{
+			"q": "Can I try both for free?",
+			"a": "HubSpot has a free CRM with {{fact:hubspot.free_card}}. Close's trial is {{fact:close.trial}}."
+		}
+	],
+	"closing": "For a five-person team, pick HubSpot if several teams share the CRM and Close if the phone is the job, and use the sync if you need both.",
+	"computed": [
+		{
+			"id": "hubspot_starter_5",
+			"label": "HubSpot Smart CRM Starter, 5 seats",
+			"expr": "hubspot.starter_price * 5"
+		},
+		{
+			"id": "close_team_5",
+			"label": "Close Essentials (annual), 5 seats",
+			"expr": "close.essentials_price * 5"
+		}
+	],
+	"fit": {
+		"Entry seat price": {
+			"hubspot": "Smart CRM Starter {{fact:hubspot.starter_price}}.",
+			"close": "Essentials {{fact:close.essentials_price}} on annual billing."
+		},
+		"Free way to start": {
+			"hubspot": "Free CRM, {{fact:hubspot.free_users}}.",
+			"close": "Trial: {{fact:close.trial}}."
+		},
+		"Built-in calling": {
+			"hubspot": "Not covered by the CRM page facts here; check your edition.",
+			"close": "Yes: {{fact:close.calling_cost}}."
+		},
+		"Works alongside the other": {
+			"hubspot": "Yes, through Close's HubSpot integration.",
+			"close": "Yes: {{fact:close.hubspot_sync}}."
+		}
+	}
+}
