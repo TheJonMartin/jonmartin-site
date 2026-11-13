@@ -281,11 +281,11 @@
       "href": "/tools/best/crm-for-freelancers"
     },
     {
-      "slug": "close-vs-pipedrive",
-      "route": "compare",
-      "title": "Close vs Pipedrive for Small Sales Teams",
-      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
-      "href": "/tools/compare/close-vs-pipedrive"
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
     }
   ]
 }

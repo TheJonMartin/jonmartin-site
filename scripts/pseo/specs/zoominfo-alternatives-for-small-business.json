@@ -93,11 +93,11 @@
 				},
 				{
 					"type": "p",
-					"html": "Apollo has {{fact:apollo.free_plan}}. Paid plans on Apollo's pricing page: Basic at {{fact:apollo.basic_price}} and Professional at {{fact:apollo.professional_price}}. Two terms to know before you buy: {{fact:apollo.same_plan}}, and {{fact:apollo.credits_expire}}."
+					"html": "Apollo has {{fact:apollo.free_plan}}. Paid plans on Apollo's pricing page: Basic at {{fact:apollo.basic_monthly}} and Professional at {{fact:apollo.professional_monthly}}. Two terms to know before you buy: {{fact:apollo.same_plan}}, and {{fact:apollo.credits_expire}}."
 				},
 				{
 					"type": "p",
-					"html": "On HubSpot, Apollo offers {{fact:apollo.hubspot_sync}}. Per Apollo's HubSpot page, {{fact:apollo.hubspot_paid}}, and its help article says {{fact:apollo.hubspot_admin}}. You also get {{fact:apollo.config_window}}."
+					"html": "On HubSpot, Apollo offers {{fact:apollo.hubspot_two_way}}. Per Apollo's HubSpot page, {{fact:apollo.hubspot_paid}}, and its help article says {{fact:apollo.hubspot_admin}}. You also get {{fact:apollo.hubspot_setup_window}}."
 				},
 				{
 					"type": "cta",
@@ -178,7 +178,7 @@
 		},
 		{
 			"q": "Which ZoomInfo alternative syncs best with HubSpot?",
-			"a": "Of these four, Apollo describes the deepest HubSpot connection: {{fact:apollo.hubspot_sync}}. Note that {{fact:apollo.hubspot_paid}}."
+			"a": "Of these four, Apollo describes the deepest HubSpot connection: {{fact:apollo.hubspot_two_way}}. Note that {{fact:apollo.hubspot_paid}}."
 		},
 		{
 			"q": "Do I need to be a HubSpot admin to connect these tools?",
@@ -193,7 +193,7 @@
 	"computed": [],
 	"fit": {
 		"Public self-serve price": {
-			"apollo": "Yes. Basic is {{fact:apollo.basic_price}}.",
+			"apollo": "Yes. Basic is {{fact:apollo.basic_monthly}}.",
 			"lusha": "Yes. Starter is {{fact:lusha.starter_monthly}}.",
 			"seamless-ai": "No: {{fact:seamless-ai.paid_pricing}}.",
 			"cognism": "No: priced {{fact:cognism.quote}}."

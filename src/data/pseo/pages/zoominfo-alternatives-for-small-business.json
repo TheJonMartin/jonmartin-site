@@ -332,6 +332,22 @@
   ],
   "sources": [
     {
+      "text": "Seamless.AI pricing article",
+      "href": "https://seamless.ai/customers/blog/products/how-much-does-seamless-ai-cost"
+    },
+    {
+      "text": "Seamless.AI credit and license types",
+      "href": "https://seamless.ai/customers/education/articles/seamless-ai-credit-and-license-types"
+    },
+    {
+      "text": "Seamless.AI's HubSpot integration page",
+      "href": "https://seamless.ai/products/integrations/hubspot"
+    },
+    {
+      "text": "Seamless.AI Prospecting Agent article",
+      "href": "https://seamless.ai/customers/education/articles/hubspot-and-seamless-data-source-integration"
+    },
+    {
       "text": "Apollo pricing page",
       "href": "https://www.apollo.io/pricing"
     },
@@ -350,14 +366,6 @@
     {
       "text": "Lusha HubSpot page",
       "href": "https://www.lusha.com/integrations/hubspot/"
-    },
-    {
-      "text": "Seamless.AI pricing article",
-      "href": "https://seamless.ai/customers/blog/products/how-much-does-seamless-ai-cost"
-    },
-    {
-      "text": "Seamless.AI credit article",
-      "href": "https://seamless.ai/customers/education/articles/seamless-ai-credit-and-license-types"
     },
     {
       "text": "Seamless.AI HubSpot article",
@@ -381,25 +389,25 @@
       "href": "/tools/compare/apollo-vs-lusha"
     },
     {
+      "slug": "cold-email-tools-for-hubspot",
+      "route": "best",
+      "title": "Cold Email Tools for HubSpot, Compared",
+      "dek": "HubSpot is the CRM. The outbound tool is the layer that fills it, or wrecks it.",
+      "href": "/tools/best/cold-email-tools-for-hubspot"
+    },
+    {
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
+    },
+    {
       "slug": "aircall-vs-calilio",
       "route": "compare",
       "title": "Aircall vs Calilio for Small HubSpot Teams",
       "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
       "href": "/tools/compare/aircall-vs-calilio"
-    },
-    {
-      "slug": "crm-for-freelancers",
-      "route": "best",
-      "title": "Best CRM for Freelancers in 2026",
-      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
-      "href": "/tools/best/crm-for-freelancers"
-    },
-    {
-      "slug": "close-vs-pipedrive",
-      "route": "compare",
-      "title": "Close vs Pipedrive for Small Sales Teams",
-      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
-      "href": "/tools/compare/close-vs-pipedrive"
     }
   ]
 }

@@ -76,7 +76,7 @@
 				},
 				{
 					"type": "p",
-					"html": "Apollo has {{fact:apollo.free_plan}}. Basic is {{fact:apollo.basic_price}} and Professional is {{fact:apollo.professional_price}}. Keep in mind that {{fact:apollo.same_plan}}, so one power user can push the whole team up a tier, and {{fact:apollo.credits_expire}}."
+					"html": "Apollo has {{fact:apollo.free_plan}}. Basic is {{fact:apollo.basic_monthly}} and Professional is {{fact:apollo.professional_monthly}}. Keep in mind that {{fact:apollo.same_plan}}, so one power user can push the whole team up a tier, and {{fact:apollo.credits_expire}}."
 				},
 				{
 					"type": "cta",
@@ -101,7 +101,7 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "Apollo's HubSpot integration offers {{fact:apollo.hubspot_sync}}. Note that {{fact:apollo.hubspot_paid}}. You get {{fact:apollo.config_window}}."
+					"html": "Apollo's HubSpot integration offers {{fact:apollo.hubspot_two_way}}. Note that {{fact:apollo.hubspot_paid}}. You get {{fact:apollo.hubspot_setup_window}}."
 				},
 				{
 					"type": "p",
@@ -130,11 +130,11 @@
 	"faq": [
 		{
 			"q": "Is Apollo or Lusha cheaper?",
-			"a": "Both start free. On paid plans, Apollo Basic is {{fact:apollo.basic_price}} and Lusha Starter is {{fact:lusha.starter_monthly}}. Compare credits too, not only the sticker price."
+			"a": "Both start free. On paid plans, Apollo Basic is {{fact:apollo.basic_monthly}} and Lusha Starter is {{fact:lusha.starter_monthly}}. Compare credits too, not only the sticker price."
 		},
 		{
 			"q": "Which one syncs with HubSpot both ways?",
-			"a": "Apollo. Its HubSpot page describes {{fact:apollo.hubspot_sync}}. Lusha pushes contacts and companies into HubSpot."
+			"a": "Apollo. Its HubSpot page describes {{fact:apollo.hubspot_two_way}}. Lusha pushes contacts and companies into HubSpot."
 		},
 		{
 			"q": "Does the HubSpot integration cost extra?",
@@ -153,7 +153,7 @@
 			"lusha": "Yes, {{fact:lusha.free_plan}}."
 		},
 		"Self-serve price": {
-			"apollo": "Basic {{fact:apollo.basic_price}}.",
+			"apollo": "Basic {{fact:apollo.basic_monthly}}.",
 			"lusha": "Starter {{fact:lusha.starter_monthly}}."
 		},
 		"What reaches HubSpot": {

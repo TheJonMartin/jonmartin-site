@@ -76,7 +76,7 @@
 				},
 				{
 					"type": "p",
-					"html": "Aircall Essentials is {{fact:aircall.essentials_price}}. Professional is {{fact:aircall.professional_price}}. There's {{fact:aircall.min_licenses}}, so the smallest Essentials account runs about {{calc:aircall_min_3}} a month. Aircall's page shows {{fact:aircall.annual_discount}}. {{fact:aircall.power_dialer}}."
+					"html": "Aircall Essentials is {{fact:aircall.essentials_annual}}. Professional is {{fact:aircall.professional_license}}. There's {{fact:aircall.min_licenses_ess_pro}}, so the smallest Essentials account runs about {{calc:aircall_min_3}} a month. Aircall's page shows {{fact:aircall.annual_saving}}. {{fact:aircall.power_dialer}}."
 				},
 				{
 					"type": "cta",
@@ -130,7 +130,7 @@
 	"faq": [
 		{
 			"q": "Which is cheaper, Aircall or Calilio?",
-			"a": "Calilio. Standard is {{fact:calilio.standard_price}}. Aircall Essentials is {{fact:aircall.essentials_price}}, with {{fact:aircall.min_licenses}}."
+			"a": "Calilio. Standard is {{fact:calilio.standard_price}}. Aircall Essentials is {{fact:aircall.essentials_annual}}, with {{fact:aircall.min_licenses_ess_pro}}."
 		},
 		{
 			"q": "Do both integrate with HubSpot?",
@@ -150,7 +150,7 @@
 		{
 			"id": "aircall_min_3",
 			"label": "Aircall Essentials, 3-license minimum",
-			"expr": "aircall.essentials_price * 3"
+			"expr": "aircall.essentials_annual * 3"
 		},
 		{
 			"id": "calilio_3",
@@ -160,11 +160,11 @@
 	],
 	"fit": {
 		"Entry price": {
-			"aircall": "Essentials {{fact:aircall.essentials_price}}.",
+			"aircall": "Essentials {{fact:aircall.essentials_annual}}.",
 			"calilio": "Standard {{fact:calilio.standard_price}}."
 		},
 		"Minimum seats": {
-			"aircall": "Yes, {{fact:aircall.min_licenses}}.",
+			"aircall": "Yes, {{fact:aircall.min_licenses_ess_pro}}.",
 			"calilio": "No minimum listed; Standard caps at 10 users."
 		},
 		"Calls logged in HubSpot": {

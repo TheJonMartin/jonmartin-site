@@ -242,7 +242,11 @@
       "href": "https://aircall.io/pricing/"
     },
     {
-      "text": "Aircall HubSpot page",
+      "text": "HubSpot App Marketplace: Aircall listing",
+      "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
+    },
+    {
+      "text": "Aircall's HubSpot integration page",
       "href": "https://aircall.io/integrations/hubspot/"
     },
     {
@@ -259,6 +263,13 @@
     }
   ],
   "related": [
+    {
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
+    },
     {
       "slug": "apollo-vs-lusha",
       "route": "compare",
@@ -279,13 +290,6 @@
       "title": "Close vs Pipedrive for Small Sales Teams",
       "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
       "href": "/tools/compare/close-vs-pipedrive"
-    },
-    {
-      "slug": "hubspot-vs-close",
-      "route": "compare",
-      "title": "HubSpot vs Close for a Five-Person Sales Team",
-      "dek": "HubSpot and Close both run a sales pipeline. They start from different places.",
-      "href": "/tools/compare/hubspot-vs-close"
     }
   ]
 }
