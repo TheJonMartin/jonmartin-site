@@ -1,0 +1,218 @@
+{
+	"slug": "business-texting-for-hubspot",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Small teams that text customers and live in HubSpot",
+		"team_size": 3,
+		"must_haves": [
+			"Entry price",
+			"Texts logged in HubSpot",
+			"Workflow triggers",
+			"Calling too"
+		]
+	},
+	"products": [
+		{
+			"slug": "salesmsg",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if texting is the main job and HubSpot workflows should send the texts."
+		},
+		{
+			"slug": "aircall",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if calling is the main job and texts ride along with it."
+		},
+		{
+			"slug": "calilio",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want calls and texts on HubSpot timelines at the lowest per-user price."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Business Texting for HubSpot — Jon Martin",
+	"seoTitle": "Business Texting Tools That Work With HubSpot",
+	"description": "Salesmsg, Aircall, and Calilio compared for small teams that text customers from HubSpot: prices, what gets logged, workflow triggers, and calling.",
+	"h1": "Business texting that works with HubSpot",
+	"dek": [
+		"Three tools that let a small team send and receive business texts and keep every message on the HubSpot record, so nobody texts a customer from a personal phone again.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for a small sales or service team, often three to ten people, whose customers answer texts faster than email, and who keep contacts and deals in {{link:hubspot}}."
+				},
+				{
+					"type": "p",
+					"html": "The problem these tools solve is simple: texts sent from personal phones never reach the CRM, so the next person to pick up the account has no idea what was said."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick Salesmsg if most of the work is texting, and you want HubSpot workflows to send texts on their own. Pick Aircall if the team mostly makes calls and texting is a side channel. Pick Calilio if you want calls and texts on HubSpot timelines and the per-user price matters most."
+				},
+				{
+					"type": "p",
+					"html": "Salesmsg Basic with one extra seat comes to about {{calc:salesmsg_team2}} a month. For a three-person team, the rough monthly floor is about {{calc:calilio_team3}} on Calilio Standard billed annually, and about {{calc:aircall_team3}} on Aircall Essentials billed annually."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Salesmsg"
+				},
+				{
+					"type": "p",
+					"html": "Salesmsg Basic is {{fact:salesmsg.basic}}. Pro is {{fact:salesmsg.pro}}. Extra seats are {{fact:salesmsg.extra_seat}}, and extra numbers are {{fact:salesmsg.extra_number}}. Usage runs on credits: {{fact:salesmsg.credits}}. There's {{fact:salesmsg.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "Its HubSpot integration offers {{fact:salesmsg.hubspot}}. It also says {{fact:salesmsg.optout}}, which matters for keeping texting legal when contacts reply STOP."
+				},
+				{
+					"type": "cta",
+					"product": "salesmsg"
+				},
+				{
+					"type": "h3",
+					"text": "Aircall"
+				},
+				{
+					"type": "p",
+					"html": "Aircall Essentials is {{fact:aircall.essentials_annual}}, and Professional is {{fact:aircall.professional_license}}. There is {{fact:aircall.min_licenses_ess_pro}}, and you get {{fact:aircall.annual_saving}}."
+				},
+				{
+					"type": "p",
+					"html": "Aircall {{fact:aircall.hubspot_logging}}. Its {{fact:aircall.insight_card}}. Texting is part of the phone system, not the center of it, so check SMS limits for your country before you commit."
+				},
+				{
+					"type": "cta",
+					"product": "aircall"
+				},
+				{
+					"type": "h3",
+					"text": "Calilio"
+				},
+				{
+					"type": "p",
+					"html": "Calilio Standard is {{fact:calilio.standard_price}}. Premium is {{fact:calilio.premium_price}}. Note that {{fact:calilio.standard_users}}. There's {{fact:calilio.money_back}}."
+				},
+				{
+					"type": "p",
+					"html": "Per Calilio, {{fact:calilio.hubspot_both_plans}}, and {{fact:calilio.hubspot_logging}}. Calilio lists {{fact:calilio.hubspot_events}}. One caution: {{fact:calilio.hubspot_launch}}, so it has a shorter track record than the other two."
+				},
+				{
+					"type": "cta",
+					"product": "calilio"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with which channel carries the work. If the team texts all day, a texting-first tool with workflow triggers saves the most time. If the team is on the phone all day, buy the phone system and use its texting."
+				},
+				{
+					"type": "p",
+					"html": "Then count seats honestly. A minimum license count or a per-seat add-on changes the math more than the headline price does for a team this size."
+				},
+				{
+					"type": "p",
+					"html": "Finally, check the compliance basics: who registers your numbers for business texting, how opt-outs reach HubSpot, and whether texts to some countries cost extra."
+				}
+			]
+		},
+		{
+			"label": "Before you connect HubSpot",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Clean phone number fields first. Texting tools match conversations to contacts by number, so a mix of formats creates duplicate contacts on day one."
+				},
+				{
+					"type": "p",
+					"html": "Agree on one property that marks a contact as opted out of texts, and make sure the tool you pick writes to it."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Can HubSpot workflows send texts?",
+			"a": "Salesmsg says its integration offers {{fact:salesmsg.hubspot}}."
+		},
+		{
+			"q": "Do texts show up on the HubSpot record?",
+			"a": "Yes, on all three. Aircall {{fact:aircall.hubspot_logging}}. Per Calilio, {{fact:calilio.hubspot_logging}}."
+		},
+		{
+			"q": "What does texting cost per message on Salesmsg?",
+			"a": "It runs on credits: {{fact:salesmsg.credits}}."
+		},
+		{
+			"q": "Is there a minimum team size?",
+			"a": "On Aircall there is {{fact:aircall.min_licenses_ess_pro}}. Salesmsg and Calilio price per user."
+		}
+	],
+	"closing": "Pick the tool that matches the channel your team actually uses, then make sure every text lands on the HubSpot record.",
+	"computed": [
+		{
+			"id": "salesmsg_team2",
+			"label": "Salesmsg Basic plus 1 extra seat",
+			"expr": "salesmsg.basic + salesmsg.extra_seat"
+		},
+		{
+			"id": "calilio_team3",
+			"label": "Calilio Standard (annual), 3 users",
+			"expr": "calilio.standard_price * 3"
+		},
+		{
+			"id": "aircall_team3",
+			"label": "Aircall Essentials (annual), 3 licenses",
+			"expr": "aircall.essentials_annual * 3"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"salesmsg": "Basic {{fact:salesmsg.basic}}.",
+			"aircall": "Essentials {{fact:aircall.essentials_annual}}.",
+			"calilio": "Standard {{fact:calilio.standard_price}}."
+		},
+		"Texts logged in HubSpot": {
+			"salesmsg": "Yes, two-way sync.",
+			"aircall": "Yes, calls and SMS.",
+			"calilio": "Yes, calls, texts, and voicemails."
+		},
+		"Workflow triggers": {
+			"salesmsg": "HubSpot workflows can send SMS.",
+			"aircall": "Check Aircall's HubSpot page.",
+			"calilio": "Check Calilio's HubSpot page."
+		},
+		"Calling too": {
+			"salesmsg": "Yes, on credits.",
+			"aircall": "Yes, calling first.",
+			"calilio": "Yes; {{fact:calilio.power_dialer}}."
+		}
+	}
+}

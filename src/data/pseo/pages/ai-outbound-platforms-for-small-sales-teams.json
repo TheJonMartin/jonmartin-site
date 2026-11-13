@@ -1,0 +1,350 @@
+{
+  "slug": "ai-outbound-platforms-for-small-sales-teams",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "AI Outbound Platforms for Small Sales Teams — Jon Martin",
+  "seoTitle": "AI Outbound Platforms for Small Sales Teams",
+  "description": "Apollo, Reply.io, and Amplemarket compared for small sales teams on HubSpot: entry prices, trials, how each syncs with HubSpot, and what you pay for beyond email.",
+  "h1": "AI outbound platforms for a small sales team on HubSpot",
+  "dek": [
+    "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown. The Amplemarket link is an affiliate link (#ad)."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small B2B sales teams that log everything in HubSpot"
+  },
+  "fitTable": {
+    "caption": "Fit for Small B2B sales teams that log everything in HubSpot",
+    "head": [
+      "Must-have",
+      "Apollo",
+      "Reply.io",
+      "Amplemarket"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Basic $49 a month on monthly billing.",
+        "Email Volume starts from $59 a month.",
+        "Startup $600 a month on an annual term, with 2 users included."
+      ],
+      [
+        "Free start",
+        "a free plan that stays free with no time limit.",
+        "a 14-day free trial with core features and integrations.",
+        "a free trial on all plans."
+      ],
+      [
+        "HubSpot sync",
+        "Two-way, on paid plans.",
+        "Direct CRM integration.",
+        "Native two-way sync, with workflow triggers."
+      ],
+      [
+        "Channels beyond email",
+        "Check the plan on Apollo's pricing page.",
+        "Calls and SMS add-on, $29 per account a month.",
+        "LinkedIn actions and calls log to HubSpot."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Basic $49 a month on monthly billing.",
+        "Email Volume starts from $59 a month.",
+        "Startup $600 a month on an annual term, with 2 users included."
+      ],
+      [
+        "Free start",
+        "a free plan that stays free with no time limit.",
+        "a 14-day free trial with core features and integrations.",
+        "a free trial on all plans."
+      ],
+      [
+        "HubSpot sync",
+        "Two-way, on paid plans.",
+        "Direct CRM integration.",
+        "Native two-way sync, with workflow triggers."
+      ],
+      [
+        "Channels beyond email",
+        "Check the plan on Apollo's pricing page.",
+        "Calls and SMS add-on, $29 per account a month.",
+        "LinkedIn actions and calls log to HubSpot."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Apollo",
+        "href": "https://get.apollo.io/mep2h66xs2o5",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Reply.io",
+        "href": "https://reply.io/",
+        "kind": "site"
+      },
+      {
+        "label": "Try Amplemarket",
+        "href": "https://grow.amplemarket.com/h3sjnh",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This page is for a founder or a sales lead with a handful of reps who already keep deals in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> and want outbound to run without a separate stack of data, sending, and dialing tools."
+        },
+        {
+          "type": "p",
+          "html": "All three vendors now put AI at the front of their pitch. That matters less than three plain questions: what it costs per month for your team, how much you can try before paying, and what lands back in HubSpot when a rep sends a message."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start with Apollo if money is tight, since it has a free plan and its paid tiers are listed by the month. Look at Reply.io if email is the main channel and you'd rather add calling or LinkedIn later as separate line items. Look at Amplemarket if you'd rather buy one annual contract that covers data, sending, and HubSpot automation for a small group of users."
+        },
+        {
+          "type": "p",
+          "html": "Whatever you pick, run the trial against one real segment of your market, with HubSpot connected, before you commit. Sync problems show up in week one, not in the demo."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Apollo"
+        },
+        {
+          "type": "p",
+          "html": "Apollo has a free plan that stays free with no time limit. Basic is $49 a month on monthly billing and Professional is $99 a month on monthly billing. Per Apollo, all seats on an Apollo account are on the same plan, so you can't put one power user on a higher tier. Also note that unused credits expire at the end of each billing cycle."
+        },
+        {
+          "type": "p",
+          "html": "On HubSpot, Apollo offers a two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. The catch for a free start is that the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration requires a paid Apollo subscription, and connecting it takes a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> super admin. Apollo's setup gives you 6 hours after enabling to set sync rules before anything syncs, which is worth using."
+        },
+        {
+          "type": "cta",
+          "product": "apollo",
+          "label": "Try Apollo",
+          "href": "https://get.apollo.io/mep2h66xs2o5",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Reply.io"
+        },
+        {
+          "type": "p",
+          "html": "Reply.io's Email Volume plan starts from $59 a month. Multichannel starts from $99 a month, through sales, and the AI SDR plan starts from $500 a month, through sales. The calls and SMS add-on is $29 per account a month. There's a 14-day free trial with core features and integrations."
+        },
+        {
+          "type": "p",
+          "html": "For the CRM side, Reply.io lists direct CRM integrations, <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> among them, that sync contacts, accounts, calls, tasks, statuses, and activities. Its email plans lean on volume, so check how many active contacts the plan you're quoted covers."
+        },
+        {
+          "type": "cta",
+          "product": "replyio",
+          "label": "Visit Reply.io",
+          "href": "https://reply.io/",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "Amplemarket"
+        },
+        {
+          "type": "p",
+          "html": "#ad. I earn a commission if you buy through the Amplemarket link, and I haven't used it myself, so everything here comes from its own pages. Amplemarket's Startup plan is $600 a month on an annual term, with 2 users included, and it includes data on 27,000 contacts. Growth is custom pricing, with 4 users included. The pricing page notes a free trial on all plans and additional users available to purchase on every plan."
+        },
+        {
+          "type": "p",
+          "html": "Its HubSpot integration is a native two-way sync that logs emails, LinkedIn actions, and calls to the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contact timeline. Per Amplemarket, <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Smart Lists, properties, and workflows can trigger Amplemarket sequences, and an Amplemarket admin connects <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> through HubSpot’s OAuth flow. That trigger piece is the main reason a HubSpot-centered team would pay for it."
+        },
+        {
+          "type": "cta",
+          "product": "amplemarket",
+          "label": "Try Amplemarket",
+          "href": "https://grow.amplemarket.com/h3sjnh",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Price the team you have, not the plan name. Apollo bills per seat by the month. Reply.io starts low and grows with add-ons. Amplemarket is one annual figure with users included. Lay all three out for your real headcount before the first demo."
+        },
+        {
+          "type": "p",
+          "html": "Then decide where outreach should start. If reps start sequences by hand, any of the three works. If you want a HubSpot list or workflow to kick off a sequence on its own, read each vendor's HubSpot page for that exact behavior before you sign."
+        },
+        {
+          "type": "p",
+          "html": "Last, check who owns the data. Contacts you pull from a vendor's database and push into HubSpot stay in HubSpot after you cancel, but credits and unsent sequences don't."
+        }
+      ]
+    },
+    {
+      "label": "Before you connect HubSpot",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Decide which system wins when the same field differs in both places, and turn on a narrow set of fields first: owner, lifecycle stage, and a source field that marks the record as outbound."
+        },
+        {
+          "type": "p",
+          "html": "Connect with a HubSpot user who has the rights the vendor asks for, then watch a handful of test contacts move both ways before you load a real list."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which of these has a free plan?",
+      "a": "Apollo does: a free plan that stays free with no time limit. Reply.io offers a 14-day free trial with core features and integrations, and Amplemarket's pricing page says a free trial on all plans.",
+      "aHtml": "Apollo does: a free plan that stays free with no time limit. Reply.io offers a 14-day free trial with core features and integrations, and Amplemarket's pricing page says a free trial on all plans."
+    },
+    {
+      "q": "Do they sync with HubSpot both ways?",
+      "a": "Apollo and Amplemarket both describe a two-way sync. Apollo's needs a paid plan: the HubSpot integration requires a paid Apollo subscription.",
+      "aHtml": "Apollo and Amplemarket both describe a two-way sync. Apollo's needs a paid plan: the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration requires a paid Apollo subscription."
+    },
+    {
+      "q": "Can HubSpot workflows start outreach?",
+      "a": "Amplemarket says HubSpot Smart Lists, properties, and workflows can trigger Amplemarket sequences.",
+      "aHtml": "Amplemarket says <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Smart Lists, properties, and workflows can trigger Amplemarket sequences."
+    },
+    {
+      "q": "Is the Amplemarket link an ad?",
+      "a": "Yes. It's an affiliate link (#ad), and I haven't used Amplemarket myself.",
+      "aHtml": "Yes. It's an affiliate link (#ad), and I haven't used Amplemarket myself."
+    }
+  ],
+  "closing": "Start with the cheapest plan that can push activity into HubSpot, prove it on one segment, and only then pay for the AI layer on top.",
+  "ctas": [
+    {
+      "label": "Try Apollo",
+      "href": "https://get.apollo.io/mep2h66xs2o5",
+      "kind": "affiliate",
+      "product": "apollo"
+    },
+    {
+      "label": "Visit Reply.io",
+      "href": "https://reply.io/",
+      "kind": "site",
+      "product": "replyio"
+    },
+    {
+      "label": "Try Amplemarket",
+      "href": "https://grow.amplemarket.com/h3sjnh",
+      "kind": "affiliate",
+      "product": "amplemarket"
+    }
+  ],
+  "products": [
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "type": "affiliate",
+      "pick": "Best fit if you want to start free and grow into paid seats, with a two-way HubSpot sync once you pay.",
+      "href": "https://get.apollo.io/mep2h66xs2o5",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "replyio",
+      "name": "Reply.io",
+      "type": "affiliate",
+      "pick": "Best fit if you want a low entry price for email, with calls, texts, and LinkedIn as add-ons.",
+      "href": "https://reply.io/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "amplemarket",
+      "name": "Amplemarket",
+      "type": "affiliate",
+      "pick": "Best fit if the budget is there for an all-in-one platform on an annual term and HubSpot workflows should trigger outreach.",
+      "href": "https://grow.amplemarket.com/h3sjnh",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Apollo pricing page",
+      "href": "https://www.apollo.io/pricing"
+    },
+    {
+      "text": "Apollo HubSpot page",
+      "href": "https://www.apollo.io/apollo-hubspot"
+    },
+    {
+      "text": "Apollo help article",
+      "href": "https://knowledge.apollo.io/hc/en-us/articles/4416619021837-Integrate-HubSpot-with-Apollo"
+    },
+    {
+      "text": "Amplemarket pricing page",
+      "href": "https://www.amplemarket.com/pricing"
+    },
+    {
+      "text": "Amplemarket pricing page",
+      "href": "https://www.amplemarket.com/integrations/hubspot"
+    },
+    {
+      "text": "Reply.io pricing page",
+      "href": "https://reply.io/pricing/"
+    }
+  ],
+  "related": [
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
+      "slug": "zoominfo-alternatives-for-small-business",
+      "route": "best",
+      "title": "ZoomInfo Alternatives for Small Sales Teams on HubSpot",
+      "dek": "Four contact-data tools a small team can weigh before it signs a ZoomInfo quote.",
+      "href": "/tools/best/zoominfo-alternatives-for-small-business"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "cold-email-tools-for-agencies",
+      "route": "best",
+      "title": "Best Cold Email Tools for Agencies",
+      "dek": "Three cold email platforms an agency can run several client programs on.",
+      "href": "/tools/best/cold-email-tools-for-agencies"
+    }
+  ]
+}

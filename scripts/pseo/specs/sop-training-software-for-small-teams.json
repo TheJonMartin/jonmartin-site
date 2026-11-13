@@ -1,0 +1,197 @@
+{
+	"slug": "sop-training-software-for-small-teams",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Small teams writing down how the work gets done",
+		"team_size": 10,
+		"must_haves": [
+			"Public price",
+			"Free start",
+			"Capture method",
+			"Content limits"
+		]
+	},
+	"products": [
+		{
+			"slug": "trainual",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want training, roles, and SOPs in one system and are fine pricing it through a demo."
+		},
+		{
+			"slug": "whale",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want to start free and turn screen recordings into SOPs."
+		},
+		{
+			"slug": "waybook",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want a public, flat-ish price with unlimited documents."
+		}
+	],
+	"title": "SOP and Training Software for Small Teams — Jon Martin",
+	"seoTitle": "SOP and Training Software for Small Teams",
+	"description": "Trainual, Whale, and Waybook compared for small teams documenting processes: pricing, free starts, how you capture SOPs, and content limits.",
+	"h1": "SOP and training software for a small team",
+	"dek": [
+		"Three tools for getting how-we-do-it knowledge out of one person's head and into a place new hires can find it.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for an owner or operations lead at a team of roughly five to fifty people who keeps answering the same questions, and who knows the next hire will ask them again."
+				},
+				{
+					"type": "p",
+					"html": "Any of these tools will hold documents. What separates them is how fast you can capture a process, how much it costs as the team grows, and whether you can see the price before talking to sales."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with Whale if you want to try it free and record processes as you do them. Pick Waybook if you want a published price and unlimited documents on every plan. Pick Trainual if you want training paths, roles, and SOPs in one system and don't mind getting a quote."
+				},
+				{
+					"type": "p",
+					"html": "Whichever you choose, document the five tasks that new hires ask about most before buying anything. If you can't write those five, the tool won't do it for you."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Trainual"
+				},
+				{
+					"type": "p",
+					"html": "Trainual offers {{fact:trainual.plans}}. It's {{fact:trainual.pricing}}. It includes {{fact:trainual.templates}}, {{fact:trainual.recorder}}, and {{fact:trainual.search}}."
+				},
+				{
+					"type": "p",
+					"html": "If you need to step back, {{fact:trainual.pause}}. That's a useful option for a seasonal business."
+				},
+				{
+					"type": "cta",
+					"product": "trainual"
+				},
+				{
+					"type": "h3",
+					"text": "Whale"
+				},
+				{
+					"type": "p",
+					"html": "Whale's Free plan is {{fact:whale.free}}. Scale is {{fact:whale.scale}}, and extra creators cost {{fact:whale.extra_creator}}. Advance is {{fact:whale.advance}}. Per Whale, {{fact:whale.annual}}."
+				},
+				{
+					"type": "p",
+					"html": "The capture piece is the draw: Whale includes {{fact:whale.video_sop}}. Record a task once, then edit the steps it writes instead of starting from a blank page."
+				},
+				{
+					"type": "cta",
+					"product": "whale"
+				},
+				{
+					"type": "h3",
+					"text": "Waybook"
+				},
+				{
+					"type": "p",
+					"html": "Waybook Core is {{fact:waybook.core}}. Pro is {{fact:waybook.pro}}. There's {{fact:waybook.trial}}, and {{fact:waybook.annual}}."
+				},
+				{
+					"type": "p",
+					"html": "Waybook includes {{fact:waybook.unlimited}} and {{fact:waybook.ai_writer}}. The per-member charge is the number to model as you grow."
+				},
+				{
+					"type": "cta",
+					"product": "waybook"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Decide who writes. If one person documents everything, a plan priced by creator is cheap. If every team lead writes their own SOPs, a plan priced by member or by team size is easier to predict."
+				},
+				{
+					"type": "p",
+					"html": "Then decide how processes get captured. Screen recording suits software tasks. Written steps with photos suit physical tasks. Most teams need both, so test each tool on one of each."
+				},
+				{
+					"type": "p",
+					"html": "Last, look at what happens when someone leaves. The tool should make it obvious which documents that person owned so someone else can pick them up."
+				}
+			]
+		},
+		{
+			"label": "Getting started",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick one role, list its recurring tasks, and write those first. A finished set for one role beats a half-finished set for every role."
+				},
+				{
+					"type": "p",
+					"html": "Set a review date on each document. Processes change, and a stale SOP does more harm than a missing one."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which of these has a free plan?",
+			"a": "Whale's Free plan is {{fact:whale.free}}. Waybook has {{fact:waybook.trial}}."
+		},
+		{
+			"q": "How much does Trainual cost?",
+			"a": "Trainual is {{fact:trainual.pricing}}."
+		},
+		{
+			"q": "Can I turn a screen recording into an SOP?",
+			"a": "Whale includes {{fact:whale.video_sop}}. Trainual includes {{fact:trainual.recorder}}."
+		},
+		{
+			"q": "Are there document limits?",
+			"a": "Waybook includes {{fact:waybook.unlimited}}. Whale's Free plan caps Playbook items; paid plans don't."
+		}
+	],
+	"closing": "Write the first five SOPs before you buy, then pick the tool that makes the next fifty easiest to keep current.",
+	"computed": [],
+	"fit": {
+		"Public price": {
+			"trainual": "No; {{fact:trainual.pricing}}.",
+			"whale": "Yes; Scale {{fact:whale.scale}}.",
+			"waybook": "Yes; Core {{fact:waybook.core}}."
+		},
+		"Free start": {
+			"trainual": "Book a demo.",
+			"whale": "{{fact:whale.free}}.",
+			"waybook": "{{fact:waybook.trial}}."
+		},
+		"Capture method": {
+			"trainual": "{{fact:trainual.recorder}}.",
+			"whale": "{{fact:whale.video_sop}}.",
+			"waybook": "{{fact:waybook.ai_writer}}."
+		},
+		"Content limits": {
+			"trainual": "Check your quote.",
+			"whale": "Free plan caps Playbook items.",
+			"waybook": "{{fact:waybook.unlimited}}."
+		}
+	}
+}

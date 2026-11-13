@@ -1,0 +1,342 @@
+{
+  "slug": "shared-inbox-for-small-support-teams",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "Shared Inbox for Small Support Teams — Jon Martin",
+  "seoTitle": "Shared Inbox Software for Small Support Teams",
+  "description": "SupportBee, Help Scout, and Front compared for small support teams: per-seat prices, free plans and trials, HubSpot connections, and the limits to watch.",
+  "h1": "A shared inbox for a small support team",
+  "dek": [
+    "Three tools that turn support@ into a queue a small team can share, so every email gets one owner and one answer.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small support teams answering from a shared email address"
+  },
+  "fitTable": {
+    "caption": "Fit for Small support teams answering from a shared email address",
+    "head": [
+      "Must-have",
+      "SupportBee",
+      "Help Scout",
+      "Front"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Startup $17 per seat per month billed annually ($204 per seat a year).",
+        "Standard $25 per user per month as shown on the pricing page’s default view.",
+        "Starter $25 per seat per month billed annually, up to 10 seats."
+      ],
+      [
+        "Free start",
+        "a 14-day free trial.",
+        "a free plan with 5 users, 1 inbox, and 1 Docs site.",
+        "a 14-day free trial of Professional features, no credit card."
+      ],
+      [
+        "HubSpot connection",
+        "Check SupportBee's integrations page.",
+        "On Plus.",
+        "an integration with HubSpot CRM, so contacts and deals sit next to conversations."
+      ],
+      [
+        "Limits to watch",
+        "1 knowledge base and 1 team on Startup.",
+        "Free plan: one inbox.",
+        "Starter: shared inbox and ticketing, with up to 10 automation rules."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Startup $17 per seat per month billed annually ($204 per seat a year).",
+        "Standard $25 per user per month as shown on the pricing page’s default view.",
+        "Starter $25 per seat per month billed annually, up to 10 seats."
+      ],
+      [
+        "Free start",
+        "a 14-day free trial.",
+        "a free plan with 5 users, 1 inbox, and 1 Docs site.",
+        "a 14-day free trial of Professional features, no credit card."
+      ],
+      [
+        "HubSpot connection",
+        "Check SupportBee's integrations page.",
+        "On Plus.",
+        "an integration with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> CRM, so contacts and deals sit next to conversations."
+      ],
+      [
+        "Limits to watch",
+        "1 knowledge base and 1 team on Startup.",
+        "Free plan: one inbox.",
+        "Starter: shared inbox and ticketing, with up to 10 automation rules."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try SupportBee",
+        "href": "https://try.supportbee.com/zkx9yrw6bm02",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Help Scout",
+        "href": "https://www.helpscout.com/",
+        "kind": "site"
+      },
+      {
+        "label": "Visit Front",
+        "href": "https://front.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This is for a team of two to ten people answering customer email from a shared address, usually by forwarding and cc'ing each other, and losing track of who replied."
+        },
+        {
+          "type": "p",
+          "html": "Many of these teams also keep customers in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. The question is whether support conversations need to sit on that record, or whether a separate inbox is fine."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Pick SupportBee if you want a plain shared inbox at the lowest per-seat price. Pick Help Scout if you want to start on a free plan and grow into chat and a help center. Pick Front if the team lives in email and you want HubSpot contacts and deals visible beside each thread."
+        },
+        {
+          "type": "p",
+          "html": "For a three-person team billed annually, that's about $51 a month on SupportBee Startup, and about $75 on Front Starter."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "SupportBee"
+        },
+        {
+          "type": "p",
+          "html": "SupportBee Startup is $17 per seat per month billed annually ($204 per seat a year). Enterprise is $21 per seat per month billed annually ($252 per seat a year). Per SupportBee, annual billing saves 20%. Plans include unlimited email inboxes and tickets, and Startup comes with 1 knowledge base and 1 team. There's a 14-day free trial."
+        },
+        {
+          "type": "p",
+          "html": "It's the most focused of the three: a shared inbox, a knowledge base, and the basics around them, without a long list of channels to configure."
+        },
+        {
+          "type": "cta",
+          "product": "supportbee",
+          "label": "Try SupportBee",
+          "href": "https://try.supportbee.com/zkx9yrw6bm02",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Help Scout"
+        },
+        {
+          "type": "p",
+          "html": "Help Scout has a free plan with 5 users, 1 inbox, and 1 Docs site. Standard is $25 per user per month as shown on the pricing page’s default view, and it includes multiple inboxes, plus live chat and SMS. Plus is $45 per user per month as shown on the default view, adding Salesforce, Jira, and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integrations. Plus also allows teammates who view and collaborate without a full seat, up to 25."
+        },
+        {
+          "type": "p",
+          "html": "Check the monthly and annual toggle on Help Scout's pricing page before you budget, since the figures above are what the default view shows."
+        },
+        {
+          "type": "cta",
+          "product": "helpscout",
+          "label": "Visit Help Scout",
+          "href": "https://www.helpscout.com/",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "Front"
+        },
+        {
+          "type": "p",
+          "html": "Front Starter is $25 per seat per month billed annually, up to 10 seats. Professional is $65 per seat per month billed annually, up to 50 seats. Per Front, annual billing saves 24%. Starter gives you shared inbox and ticketing, with up to 10 automation rules. There's a 14-day free trial of Professional features, no credit card."
+        },
+        {
+          "type": "p",
+          "html": "On HubSpot, Front offers an integration with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> CRM, so contacts and deals sit next to conversations. That's the pick for a team that works deals and support out of the same inbox."
+        },
+        {
+          "type": "cta",
+          "product": "front",
+          "label": "Visit Front",
+          "href": "https://front.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start with seats. Count everyone who needs to reply, not everyone who needs to read. Some plans let teammates view without a full seat, and that changes the bill."
+        },
+        {
+          "type": "p",
+          "html": "Then decide if support history belongs in HubSpot. If sales needs to see open tickets before a renewal call, a direct HubSpot connection is worth paying for. If not, keep it simple."
+        },
+        {
+          "type": "p",
+          "html": "Last, look at the ceiling. Seat caps, automation rule limits, and knowledge base counts are what push a small team onto the next plan."
+        }
+      ]
+    },
+    {
+      "label": "Before you switch",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Write down three rules first: who owns a new email, how fast you reply, and when a thread counts as done. The tool enforces rules; it doesn't invent them."
+        },
+        {
+          "type": "p",
+          "html": "Move one address at a time, and keep the old inbox forwarding for a few weeks so nothing slips through."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is there a free shared inbox?",
+      "a": "Help Scout has a free plan with 5 users, 1 inbox, and 1 Docs site.",
+      "aHtml": "Help Scout has a free plan with 5 users, 1 inbox, and 1 Docs site."
+    },
+    {
+      "q": "Which is cheapest per seat?",
+      "a": "SupportBee Startup is $17 per seat per month billed annually ($204 per seat a year). Front Starter is $25 per seat per month billed annually, up to 10 seats.",
+      "aHtml": "SupportBee Startup is $17 per seat per month billed annually ($204 per seat a year). Front Starter is $25 per seat per month billed annually, up to 10 seats."
+    },
+    {
+      "q": "Which connects to HubSpot?",
+      "a": "Front offers an integration with HubSpot CRM, so contacts and deals sit next to conversations. Help Scout's Plus plan adds Salesforce, Jira, and HubSpot integrations.",
+      "aHtml": "Front offers an integration with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> CRM, so contacts and deals sit next to conversations. Help Scout's Plus plan adds Salesforce, Jira, and HubSpot integrations."
+    },
+    {
+      "q": "Can I try before paying?",
+      "a": "SupportBee offers a 14-day free trial. Front offers a 14-day free trial of Professional features, no credit card.",
+      "aHtml": "SupportBee offers a 14-day free trial. Front offers a 14-day free trial of Professional features, no credit card."
+    }
+  ],
+  "closing": "Agree on who owns each email first, then pick the cheapest inbox that enforces it and reaches HubSpot if you need it to.",
+  "ctas": [
+    {
+      "label": "Try SupportBee",
+      "href": "https://try.supportbee.com/zkx9yrw6bm02",
+      "kind": "affiliate",
+      "product": "supportbee"
+    },
+    {
+      "label": "Visit Help Scout",
+      "href": "https://www.helpscout.com/",
+      "kind": "site",
+      "product": "helpscout"
+    },
+    {
+      "label": "Visit Front",
+      "href": "https://front.com/",
+      "kind": "site",
+      "product": "front"
+    }
+  ],
+  "products": [
+    {
+      "slug": "supportbee",
+      "name": "SupportBee",
+      "type": "affiliate",
+      "pick": "Best fit if you want a simple shared inbox at the lowest per-seat price.",
+      "href": "https://try.supportbee.com/zkx9yrw6bm02",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "helpscout",
+      "name": "Help Scout",
+      "type": "affiliate",
+      "pick": "Best fit if you want a free plan to start and room to add chat and a help center.",
+      "href": "https://www.helpscout.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "front",
+      "name": "Front",
+      "type": "affiliate",
+      "pick": "Best fit if the team works out of email all day and wants HubSpot records next to each conversation.",
+      "href": "https://front.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "SupportBee pricing page",
+      "href": "https://supportbee.com/pricing"
+    },
+    {
+      "text": "Help Scout pricing page",
+      "href": "https://www.helpscout.com/pricing/"
+    },
+    {
+      "text": "Front pricing page",
+      "href": "https://front.com/pricing"
+    },
+    {
+      "text": "Front pricing page",
+      "href": "https://front.com/integrations/hubspot"
+    }
+  ],
+  "related": [
+    {
+      "slug": "ai-outbound-platforms-for-small-sales-teams",
+      "route": "best",
+      "title": "AI Outbound Platforms for Small Sales Teams",
+      "dek": "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+      "href": "/tools/best/ai-outbound-platforms-for-small-sales-teams"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
+      "slug": "cold-email-tools-for-agencies",
+      "route": "best",
+      "title": "Best Cold Email Tools for Agencies",
+      "dek": "Three cold email platforms an agency can run several client programs on.",
+      "href": "/tools/best/cold-email-tools-for-agencies"
+    }
+  ]
+}

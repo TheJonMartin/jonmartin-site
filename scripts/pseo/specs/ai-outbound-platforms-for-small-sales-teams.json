@@ -1,0 +1,202 @@
+{
+	"slug": "ai-outbound-platforms-for-small-sales-teams",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Small B2B sales teams that log everything in HubSpot",
+		"team_size": 5,
+		"must_haves": [
+			"Entry price",
+			"Free start",
+			"HubSpot sync",
+			"Channels beyond email"
+		]
+	},
+	"products": [
+		{
+			"slug": "apollo",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want to start free and grow into paid seats, with a two-way HubSpot sync once you pay."
+		},
+		{
+			"slug": "replyio",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want a low entry price for email, with calls, texts, and LinkedIn as add-ons."
+		},
+		{
+			"slug": "amplemarket",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if the budget is there for an all-in-one platform on an annual term and HubSpot workflows should trigger outreach."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "AI Outbound Platforms for Small Sales Teams — Jon Martin",
+	"seoTitle": "AI Outbound Platforms for Small Sales Teams",
+	"description": "Apollo, Reply.io, and Amplemarket compared for small sales teams on HubSpot: entry prices, trials, how each syncs with HubSpot, and what you pay for beyond email.",
+	"h1": "AI outbound platforms for a small sales team on HubSpot",
+	"dek": [
+		"Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. The Amplemarket link is an affiliate link (#ad)."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This page is for a founder or a sales lead with a handful of reps who already keep deals in {{link:hubspot}} and want outbound to run without a separate stack of data, sending, and dialing tools."
+				},
+				{
+					"type": "p",
+					"html": "All three vendors now put AI at the front of their pitch. That matters less than three plain questions: what it costs per month for your team, how much you can try before paying, and what lands back in HubSpot when a rep sends a message."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with Apollo if money is tight, since it has a free plan and its paid tiers are listed by the month. Look at Reply.io if email is the main channel and you'd rather add calling or LinkedIn later as separate line items. Look at Amplemarket if you'd rather buy one annual contract that covers data, sending, and HubSpot automation for a small group of users."
+				},
+				{
+					"type": "p",
+					"html": "Whatever you pick, run the trial against one real segment of your market, with HubSpot connected, before you commit. Sync problems show up in week one, not in the demo."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Apollo"
+				},
+				{
+					"type": "p",
+					"html": "Apollo has {{fact:apollo.free_plan}}. Basic is {{fact:apollo.basic_monthly}} and Professional is {{fact:apollo.professional_monthly}}. Per Apollo, {{fact:apollo.same_plan}}, so you can't put one power user on a higher tier. Also note that {{fact:apollo.credits_expire}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Apollo offers a {{fact:apollo.hubspot_two_way}}. The catch for a free start is that {{fact:apollo.hubspot_paid}}, and {{fact:apollo.hubspot_admin}}. Apollo's setup gives you {{fact:apollo.hubspot_setup_window}}, which is worth using."
+				},
+				{
+					"type": "cta",
+					"product": "apollo"
+				},
+				{
+					"type": "h3",
+					"text": "Reply.io"
+				},
+				{
+					"type": "p",
+					"html": "Reply.io's Email Volume plan {{fact:replyio.email_volume}}. Multichannel {{fact:replyio.multichannel}}, and the AI SDR plan {{fact:replyio.ai_sdr}}. The calls and SMS add-on is {{fact:replyio.calls_sms}}. There's {{fact:replyio.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "For the CRM side, Reply.io lists {{fact:replyio.crm}}. Its email plans lean on volume, so check how many active contacts the plan you're quoted covers."
+				},
+				{
+					"type": "cta",
+					"product": "replyio"
+				},
+				{
+					"type": "h3",
+					"text": "Amplemarket"
+				},
+				{
+					"type": "p",
+					"html": "#ad. I earn a commission if you buy through the Amplemarket link, and I haven't used it myself, so everything here comes from its own pages. Amplemarket's Startup plan is {{fact:amplemarket.startup_price}}, and it includes data on {{fact:amplemarket.startup_contacts}}. Growth is {{fact:amplemarket.growth}}. The pricing page notes {{fact:amplemarket.trial}} and {{fact:amplemarket.extra_users}}."
+				},
+				{
+					"type": "p",
+					"html": "Its HubSpot integration is {{fact:amplemarket.hubspot_sync}}. Per Amplemarket, {{fact:amplemarket.hubspot_triggers}}, and {{fact:amplemarket.hubspot_admin}}. That trigger piece is the main reason a HubSpot-centered team would pay for it."
+				},
+				{
+					"type": "cta",
+					"product": "amplemarket"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Price the team you have, not the plan name. Apollo bills per seat by the month. Reply.io starts low and grows with add-ons. Amplemarket is one annual figure with users included. Lay all three out for your real headcount before the first demo."
+				},
+				{
+					"type": "p",
+					"html": "Then decide where outreach should start. If reps start sequences by hand, any of the three works. If you want a HubSpot list or workflow to kick off a sequence on its own, read each vendor's HubSpot page for that exact behavior before you sign."
+				},
+				{
+					"type": "p",
+					"html": "Last, check who owns the data. Contacts you pull from a vendor's database and push into HubSpot stay in HubSpot after you cancel, but credits and unsent sequences don't."
+				}
+			]
+		},
+		{
+			"label": "Before you connect HubSpot",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Decide which system wins when the same field differs in both places, and turn on a narrow set of fields first: owner, lifecycle stage, and a source field that marks the record as outbound."
+				},
+				{
+					"type": "p",
+					"html": "Connect with a HubSpot user who has the rights the vendor asks for, then watch a handful of test contacts move both ways before you load a real list."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which of these has a free plan?",
+			"a": "Apollo does: {{fact:apollo.free_plan}}. Reply.io offers {{fact:replyio.trial}}, and Amplemarket's pricing page says {{fact:amplemarket.trial}}."
+		},
+		{
+			"q": "Do they sync with HubSpot both ways?",
+			"a": "Apollo and Amplemarket both describe a two-way sync. Apollo's needs a paid plan: {{fact:apollo.hubspot_paid}}."
+		},
+		{
+			"q": "Can HubSpot workflows start outreach?",
+			"a": "Amplemarket says {{fact:amplemarket.hubspot_triggers}}."
+		},
+		{
+			"q": "Is the Amplemarket link an ad?",
+			"a": "Yes. It's an affiliate link (#ad), and I haven't used Amplemarket myself."
+		}
+	],
+	"closing": "Start with the cheapest plan that can push activity into HubSpot, prove it on one segment, and only then pay for the AI layer on top.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"apollo": "Basic {{fact:apollo.basic_monthly}}.",
+			"replyio": "Email Volume {{fact:replyio.email_volume}}.",
+			"amplemarket": "Startup {{fact:amplemarket.startup_price}}."
+		},
+		"Free start": {
+			"apollo": "{{fact:apollo.free_plan}}.",
+			"replyio": "{{fact:replyio.trial}}.",
+			"amplemarket": "{{fact:amplemarket.trial}}."
+		},
+		"HubSpot sync": {
+			"apollo": "Two-way, on paid plans.",
+			"replyio": "Direct CRM integration.",
+			"amplemarket": "Native two-way sync, with workflow triggers."
+		},
+		"Channels beyond email": {
+			"apollo": "Check the plan on Apollo's pricing page.",
+			"replyio": "Calls and SMS add-on, {{fact:replyio.calls_sms}}.",
+			"amplemarket": "LinkedIn actions and calls log to HubSpot."
+		}
+	}
+}
