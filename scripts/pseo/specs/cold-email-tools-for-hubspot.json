@@ -1,0 +1,352 @@
+{
+	"slug": "cold-email-tools-for-hubspot",
+	"route": "best",
+	"template": "best",
+	"wave": 2,
+	"niche": {
+		"label": "Outbound teams on HubSpot",
+		"team_size": 5,
+		"must_haves": [
+			"Best when",
+			"HubSpot connection",
+			"Plan notes",
+			"Public starting price"
+		]
+	},
+	"products": [
+		{
+			"slug": "lemlist",
+			"role": "option",
+			"link": false,
+			"pick": "Deepest native HubSpot outbound sync in this set."
+		},
+		{
+			"slug": "instantly",
+			"role": "option",
+			"link": true,
+			"pick": "Cheap high-volume sending across many inboxes."
+		},
+		{
+			"slug": "apollo-io",
+			"role": "option",
+			"link": true,
+			"pick": "Contact database plus sequences with sync rules."
+		},
+		{
+			"slug": "seamless-ai",
+			"role": "option",
+			"link": true,
+			"pick": "Verified emails and dials into HubSpot."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"disclosure": "I earn a commission if you sign up through my link, at no extra cost to you. I only recommend tools I'd suggest anyway.",
+	"title": "Cold Email Tools for HubSpot: lemlist, Instantly, Apollo, and Seamless.AI — Jon Martin",
+	"seoTitle": "Cold Email Tools for HubSpot, Compared",
+	"description": "Cold email tools for HubSpot: what lemlist, Instantly, Apollo, and Seamless.AI sync to your CRM, plan notes, and when HubSpot sequences are enough. Checked Nov 9, 2026.",
+	"h1": "Cold email tools for HubSpot: lemlist, Instantly, Apollo, and Seamless.AI",
+	"dek": [
+		"HubSpot is the CRM. The outbound tool is the layer that fills it, or wrecks it.",
+		"Four products, four jobs, for HubSpot teams picking a cold email or prospecting add-on."
+	],
+	"fit": {
+		"Best when": {
+			"lemlist": "Multichannel outbound plus native HubSpot activity",
+			"instantly": "High-volume email across many mailboxes",
+			"apollo-io": "Database plus sequences plus sync controls",
+			"seamless-ai": "Contact data into HubSpot"
+		},
+		"HubSpot connection": {
+			"lemlist": "Native sync; activity logging; campaign exit rules",
+			"instantly": "Import plus Automations from HubSpot events; outcomes sync back through automation connectors or webhooks",
+			"apollo-io": "Bi-directional sync with push conditions and write rules",
+			"seamless-ai": "Import with match scores and mappings; data source for HubSpot's Prospecting Agent"
+		},
+		"Plan notes": {
+			"lemlist": "{{fact:lemlist.hubspot_plans}} (lemlist FAQ)",
+			"instantly": "Automations (incl. HubSpot) on all Outbound plans, starting at Growth",
+			"apollo-io": "Requires an Apollo subscription (vendor page); Basic plan description includes CRM integrations",
+			"seamless-ai": "Free: {{fact:seamless.free_credits}}. Paid: {{fact:seamless.paid_pricing}}"
+		},
+		"Public starting price": {
+			"lemlist": "Email {{fact:lemlist.email_price}}; Multichannel {{fact:lemlist.multichannel_price}}",
+			"instantly": "Growth {{fact:instantly.growth_price}}; Hyper Growth {{fact:instantly.hypergrowth_price}}; Light Speed {{fact:instantly.lightspeed_price}}",
+			"apollo-io": "Free {{fact:apollo.free_price}}; Basic {{fact:apollo.basic_price}}; Professional {{fact:apollo.professional_price}}; Enterprise {{fact:apollo.enterprise}}",
+			"seamless-ai": "Free: {{fact:seamless.free_credits}}. Paid: custom"
+		}
+	},
+	"sections": [
+		{
+			"label": "Four products, four jobs",
+			"blocks": [
+				{
+					"type": "ol",
+					"items": [
+						"<strong>lemlist</strong>: multichannel outbound with a deep native HubSpot sync",
+						"<strong>Instantly</strong>: high-volume email sending",
+						"<strong>Apollo.io</strong>: contact database plus sequences with CRM sync rules",
+						"<strong>Seamless.AI</strong>: verified contact data into HubSpot"
+					]
+				},
+				{
+					"type": "p",
+					"html": "I'm not rewriting the Instantly deep-dives. Those live on <a href=\"/tools/instantly\">Instantly</a> and <a href=\"/tools/instantly-vs-lemlist\">Instantly vs lemlist</a>. This is the {{link:hubspot}}-first roundup that links out."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose by what HubSpot needs to receive, not by mailbox volume alone."
+				},
+				{
+					"type": "ul",
+					"items": [
+						"Need sends and replies logged into HubSpot with field-level sync: start with lemlist.",
+						"Need cheap high-volume sending across many inboxes: Instantly (read the HubSpot limits on the Instantly page).",
+						"Need a prospecting database plus sequences with push and write rules: Apollo.io.",
+						"Need verified emails and dials imported into HubSpot: Seamless.AI."
+					]
+				},
+				{
+					"type": "p",
+					"html": "Sending under about 50 personal emails a week on Sales Hub? HubSpot sequences may be enough. No affiliate link for that; there's nothing to sell you."
+				},
+				{
+					"type": "p",
+					"html": "Volume without write rules fills HubSpot with junk."
+				}
+			]
+		},
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Outbound or prospecting teams that keep HubSpot as the system of record. Not for teams replacing HubSpot with a sequencer CRM."
+				},
+				{
+					"type": "p",
+					"html": "Not for: founders who already live in HubSpot sequences and don't need more mailboxes or a lead database."
+				}
+			]
+		},
+		{
+			"label": "The HubSpot question to answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Before you compare brands, answer one question: what does HubSpot need to receive?"
+				},
+				{
+					"type": "ol",
+					"items": [
+						"Activity logging (sends, replies, calls on the timeline)",
+						"List import only",
+						"Two-way field sync with overwrite rules",
+						"Enrichment or new contacts from a database"
+					]
+				},
+				{
+					"type": "p",
+					"html": "If you can't answer that, you'll buy volume and inherit cleanup."
+				}
+			]
+		},
+		{
+			"label": "lemlist: deepest HubSpot outbound sync in this set",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:lemlist}} is multichannel outbound: email on the Email plan, with LinkedIn, calls, and more on Multichannel. The HubSpot angle is the sync."
+				},
+				{
+					"type": "p",
+					"html": "Per <a href=\"https://www.lemlist.com/integrations/hubspot\" target=\"_blank\" rel=\"noopener\">lemlist's HubSpot page</a>:"
+				},
+				{
+					"type": "ul",
+					"items": [
+						"Import from HubSpot lists or views, with dedupe.",
+						"Map fields and choose sync behavior on create vs later updates.",
+						"Log outreach activity to the contact timeline; pick which activity types sync.",
+						"Auto-exit campaigns when lifecycle stage changes, a deal is created, or the contact leaves the list filter.",
+						"Launch from HubSpot via the lemlist icon."
+					]
+				},
+				{
+					"type": "p",
+					"html": "lemlist's FAQ on that page: the integration {{fact:lemlist.hubspot_plans}}."
+				},
+				{
+					"type": "p",
+					"html": "<strong>Prices</strong> from <a href=\"https://www.lemlist.com/pricing\" target=\"_blank\" rel=\"noopener\">lemlist.com/pricing</a>: Email {{fact:lemlist.email_price}}; Multichannel {{fact:lemlist.multichannel_price}}; Enterprise custom. Billing options: {{fact:lemlist.billing}}. The FAQ lists a {{fact:lemlist.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "Head-to-head with Instantly (HubSpot logging vs price): <a href=\"/tools/instantly-vs-lemlist\">Instantly vs lemlist</a>."
+				},
+				{
+					"type": "cta",
+					"product": "lemlist"
+				}
+			]
+		},
+		{
+			"label": "Instantly: volume sending (link out, don't duplicate)",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:instantly}} is cold email infrastructure: unlimited email accounts with warmup, lead uploads, and campaigns. The entry Outbound plan is Growth at {{fact:instantly.growth_price}} (<a href=\"https://help.instantly.ai/en/articles/10273259-instantly-plans-overview\" target=\"_blank\" rel=\"noopener\">plans overview</a>). Hyper Growth is {{fact:instantly.hypergrowth_price}}; Light Speed is {{fact:instantly.lightspeed_price}}. Credits plans and Bundles sit beside Outbound, so read <a href=\"https://instantly.ai/pricing\" target=\"_blank\" rel=\"noopener\">instantly.ai/pricing</a> slowly before you pick."
+				},
+				{
+					"type": "p",
+					"html": "<strong>HubSpot:</strong> Instantly's <a href=\"https://instantly.ai/marketplace/hubspot\" target=\"_blank\" rel=\"noopener\">HubSpot marketplace page</a> covers importing contacts and lists, and Automations from HubSpot events. Outcomes can sync back &ldquo;using native automation connectors or enhanced with custom webhook and sync solutions.&rdquo;"
+				},
+				{
+					"type": "p",
+					"html": "<strong>Plan gating:</strong> Instantly's Automations help article states {{fact:instantly.automations}}. HubSpot triggers and HubSpot actions live in that Automations builder. Outbound starts at Growth."
+				},
+				{
+					"type": "p",
+					"html": "Full setup detail, OutboundSync notes, and when HubSpot sequences are enough: <a href=\"/tools/instantly\">Instantly for HubSpot teams</a>."
+				},
+				{
+					"type": "cta",
+					"product": "instantly"
+				}
+			]
+		},
+		{
+			"label": "Apollo.io: database plus sequences with sync rules",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:apollo-io}} finds contacts, enriches them, and runs sequences. HubSpot keeps the lifecycle. Apollo's own framing: prospect in Apollo, grow in HubSpot."
+				},
+				{
+					"type": "p",
+					"html": "Per <a href=\"https://www.apollo.io/apollo-hubspot\" target=\"_blank\" rel=\"noopener\">apollo.io/apollo-hubspot</a>:"
+				},
+				{
+					"type": "ul",
+					"items": [
+						"Bi-directional sync of contacts, accounts, deals, and activity.",
+						"Push conditions (deal stage, email status, custom fields).",
+						"Write rules: overwrite vs fill empty.",
+						"Duplicate flags and a sync error log.",
+						"{{fact:apollo.config_window}}.",
+						"&ldquo;Requires an Apollo subscription.&rdquo;"
+					]
+				},
+				{
+					"type": "p",
+					"html": "More detail: <a href=\"/tools/apollo-io\">Apollo.io</a>."
+				},
+				{
+					"type": "p",
+					"html": "<strong>Prices</strong> from the plan data on <a href=\"https://www.apollo.io/pricing\" target=\"_blank\" rel=\"noopener\">apollo.io/pricing</a>:"
+				},
+				{
+					"type": "ul",
+					"items": [
+						"Free Plan: {{fact:apollo.free_price}}",
+						"Basic Plan: {{fact:apollo.basic_price}} (billed monthly); the plan description includes CRM integrations",
+						"Professional Plan: {{fact:apollo.professional_price}} (billed monthly)",
+						"Enterprise: {{fact:apollo.enterprise}}"
+					]
+				},
+				{
+					"type": "p",
+					"html": "Apollo's FAQ says annual billing is discounted vs monthly."
+				},
+				{
+					"type": "p",
+					"html": "Set push rules before anyone imports a list. Loose rules are how portals get bloated for a quarter."
+				},
+				{
+					"type": "cta",
+					"product": "apollo-io"
+				}
+			]
+		},
+		{
+			"label": "Seamless.AI: data in, governance first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:seamless-ai}} is a contact data tool. The HubSpot question isn't &ldquo;is the data good.&rdquo; It's &ldquo;what happens when reps click import.&rdquo;"
+				},
+				{
+					"type": "p",
+					"html": "Per <a href=\"https://seamless.ai/products/integrations/hubspot\" target=\"_blank\" rel=\"noopener\">seamless.ai/products/integrations/hubspot</a>: import contacts and companies, set match scores, customize mappings, enrich records."
+				},
+				{
+					"type": "p",
+					"html": "Seamless also positions itself as a data source for HubSpot's Breeze Prospecting Agent."
+				},
+				{
+					"type": "p",
+					"html": "<strong>Prices:</strong> Free plan with {{fact:seamless.free_credits}} (<a href=\"https://seamless.ai/customers/blog/products/how-much-does-seamless-ai-cost\" target=\"_blank\" rel=\"noopener\">vendor pricing article</a>). Paid plans are custom; Seamless does not publish a public paid dollar price on the pages I checked. Credit allowances on their education article: Basic {{fact:seamless.basic_credits}}; Pro {{fact:seamless.pro_credits}}. Those are credits, not dollars."
+				},
+				{
+					"type": "p",
+					"html": "Decide match scores and who can auto-import before you connect it. Details: <a href=\"/tools/seamless-ai\">Seamless.AI</a>."
+				},
+				{
+					"type": "cta",
+					"product": "seamless-ai"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "ol",
+					"items": [
+						"HubSpot sequences already cover your volume: stay put.",
+						"Need native HubSpot email and activity logging from outbound: lemlist.",
+						"Need the cheapest high-volume send: Instantly, and read the activity-sync limits.",
+						"Need data and outbound in one product with sync controls: Apollo.",
+						"Need phones and emails into HubSpot only: Seamless.",
+						"Before any connect: clean duplicates and lifecycle."
+					]
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "What cold email tool works best with HubSpot?",
+			"a": "It depends what &ldquo;works&rdquo; means. lemlist has the deepest native HubSpot outbound sync in this group. Instantly focuses on sending volume. Apollo adds a large contact database with sync controls. Seamless.AI is mainly for contact data."
+		},
+		{
+			"q": "Does Instantly integrate with HubSpot?",
+			"a": "Yes. Instantly can import HubSpot contacts and lists and run Automations from HubSpot events. Automations (including HubSpot) are available on all Outbound plans per Instantly's help docs. Full send and reply history may still need automations or a webhook sync tool; see <a href=\"/tools/instantly\">/tools/instantly</a>."
+		},
+		{
+			"q": "Does lemlist sync with HubSpot?",
+			"a": "Yes. lemlist's HubSpot page describes contact sync, activity logging, field mapping, and campaign exit rules tied to HubSpot lifecycle or deals. lemlist says it works with all HubSpot paid plans."
+		},
+		{
+			"q": "How much do these tools cost?",
+			"a": "Instantly Outbound starts at {{fact:instantly.growth_price}} (Growth). lemlist Email is {{fact:lemlist.email_price}}. Apollo's pricing page lists Basic at {{fact:apollo.basic_price}} and Professional at {{fact:apollo.professional_price}}. Seamless paid pricing is custom; free includes {{fact:seamless.free_credits}}. Re-check vendor pages the day you buy."
+		},
+		{
+			"q": "Will these tools duplicate my HubSpot contacts?",
+			"a": "They can, if import or push rules are loose. Set match keys, decide overwrite vs fill-empty, and limit who can auto-import before you connect anything."
+		},
+		{
+			"q": "Should I replace HubSpot sequences?",
+			"a": "Usually no, if volume is low and everything already lives in HubSpot. Add an outbound tool when you need more mailboxes, multichannel steps, or a prospecting database HubSpot doesn't replace."
+		}
+	],
+	"closing": "The tool isn't the risk. The import rules are."
+}

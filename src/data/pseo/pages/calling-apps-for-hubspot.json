@@ -1,0 +1,426 @@
+{
+  "slug": "calling-apps-for-hubspot",
+  "route": "best",
+  "template": "compare",
+  "status": "live",
+  "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice for Small Sales Teams — Jon Martin",
+  "seoTitle": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+  "description": "Calling apps for HubSpot: Aircall logs calls to Contacts, Deals, and Tickets. Unitel Voice is a simple phone line with no HubSpot sync we could confirm. Prices checked Nov 9, 2026.",
+  "h1": "Calling apps for HubSpot: Aircall vs Unitel Voice for small sales teams",
+  "dek": [
+    "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+    "That's the filter for this page: two calling options for small sales teams that run HubSpot as the system of record."
+  ],
+  "published": "2026-11-12",
+  "modified": "2026-11-12",
+  "checked": "Nov 12, 2026",
+  "disclosure": "I earn a commission if you sign up through my link, at no extra cost to you. I only recommend tools I'd suggest anyway.",
+  "niche": {
+    "label": "Small sales teams on HubSpot"
+  },
+  "fitTable": {
+    "caption": "Fit for Small sales teams on HubSpot",
+    "head": [
+      "Must-have",
+      "Aircall",
+      "Unitel Voice"
+    ],
+    "rows": [
+      [
+        "Best for",
+        "HubSpot teams that need calls on the CRM",
+        "Solo or small office that needs a business number"
+      ],
+      [
+        "HubSpot integration",
+        "Native (vendor page and HubSpot App Marketplace listing)",
+        "None I could confirm"
+      ],
+      [
+        "What syncs",
+        "Calls and SMS to Contacts, Companies, Deals, and Tickets; recordings, outcomes, transcription; Insight Cards; workflow properties; optional ticket creation",
+        "Nothing automatic. Calls stay outside HubSpot unless logged by hand"
+      ],
+      [
+        "Plan needed for HubSpot",
+        "Essentials or Professional plans",
+        "Not applicable"
+      ],
+      [
+        "Starting price (US)",
+        "Essentials $30 per license per month, billed annually; Professional $50 per license per month, billed annually; 3 licenses minimum on every plan",
+        "Solo $9.99 per month, or $84 billed yearly (1 user); Team $19.99 per month, or $168 billed yearly (unlimited users); Office $29.99 per month, or $252 billed yearly (3 users included), plus $7.99 per extra user per month"
+      ],
+      [
+        "Dialer extras",
+        "Power Dialer and outbound call campaigns on Professional",
+        "Mobile app, desktop softphone, ring groups (Team and up), desk phones (Office)"
+      ],
+      [
+        "Trial or guarantee",
+        "Free access to test the platform (vendor FAQ)",
+        "30-day money-back guarantee"
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Best for",
+        "HubSpot teams that need calls on the CRM",
+        "Solo or small office that needs a business number"
+      ],
+      [
+        "HubSpot integration",
+        "Native (vendor page and HubSpot App Marketplace listing)",
+        "None I could confirm"
+      ],
+      [
+        "What syncs",
+        "Calls and SMS to Contacts, Companies, Deals, and Tickets; recordings, outcomes, transcription; Insight Cards; workflow properties; optional ticket creation",
+        "Nothing automatic. Calls stay outside HubSpot unless logged by hand"
+      ],
+      [
+        "Plan needed for HubSpot",
+        "Essentials or Professional plans",
+        "Not applicable"
+      ],
+      [
+        "Starting price (US)",
+        "Essentials $30 per license per month, billed annually; Professional $50 per license per month, billed annually; 3 licenses minimum on every plan",
+        "Solo $9.99 per month, or $84 billed yearly (1 user); Team $19.99 per month, or $168 billed yearly (unlimited users); Office $29.99 per month, or $252 billed yearly (3 users included), plus $7.99 per extra user per month"
+      ],
+      [
+        "Dialer extras",
+        "Power Dialer and outbound call campaigns on Professional",
+        "Mobile app, desktop softphone, ring groups (Team and up), desk phones (Office)"
+      ],
+      [
+        "Trial or guarantee",
+        "Free access to test the platform (vendor FAQ)",
+        "30-day money-back guarantee"
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Aircall",
+        "href": "https://get.aircall.io/fddlp6kkr3qu",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Unitel Voice",
+        "href": "https://unitelvoice.partnerlinks.io/jp010yb97vom",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "For a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> sales or service team that needs calls on the contact and deal timeline, start with <a href=\"https://get.aircall.io/fddlp6kkr3qu\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Aircall</a>. It has a native HubSpot integration that logs calls and SMS to Contacts, Companies, Deals, and Tickets."
+        },
+        {
+          "type": "p",
+          "html": "<a href=\"https://unitelvoice.partnerlinks.io/jp010yb97vom\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Unitel Voice</a> is a simpler, cheaper business phone line. I could not confirm a HubSpot integration on Unitel's site. Fine for a solo founder who needs a business number. Weak fit if HubSpot call logging matters."
+        },
+        {
+          "type": "p",
+          "html": "Pick the phone system by where the call record lives."
+        }
+      ]
+    },
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "Small sales teams on HubSpot, such as SDRs, inbound desks, and founder-led outbound, that need shared numbers and call activity on the record.",
+            "Service teams that want tickets created from calls.",
+            "Not for: a team making a handful of personal calls a week that only needs a second line on a cell phone. Unitel can cover that. Aircall is more phone system than you need."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "What good looks like for a HubSpot dialer",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Call activity on the right HubSpot objects (Contact, Company, Deal, Ticket).",
+            "Context before the answer: Insight Cards or the equivalent.",
+            "Call outcomes that can trigger HubSpot workflows, so follow-up isn't manual."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "If the dialer can't do those three, you're buying a phone line, not a HubSpot calling layer."
+        }
+      ]
+    },
+    {
+      "label": "Aircall: the HubSpot-connected option",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Aircall is a cloud phone system for sales and support. On HubSpot, the useful part is the logging."
+        },
+        {
+          "type": "p",
+          "html": "Per <a href=\"https://aircall.io/integrations/hubspot/\" target=\"_blank\" rel=\"noopener\">Aircall's HubSpot page</a>:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Calls and SMS log to Contacts, Companies, Deals, and Tickets, with duration, number, recording link, agent comments, outcomes, and transcription.",
+            "Insight Cards pull HubSpot context into the call screen before a rep answers.",
+            "Custom contact properties can trigger HubSpot workflows after a call.",
+            "Admins can auto-create tickets by call type.",
+            "Conversation Intelligence can bring transcription into HubSpot."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "<strong>Plan gating:</strong> HubSpot's App Marketplace listing for Aircall says the integration requires an Aircall subscription on the Essentials or Professional plans, and the listing's Essentials card includes the HubSpot integration. Aircall's own pricing comparison lists the HubSpot integration on both of those plans."
+        },
+        {
+          "type": "p",
+          "html": "<strong>Prices</strong> from <a href=\"https://aircall.io/pricing/\" target=\"_blank\" rel=\"noopener\">aircall.io/pricing</a> (US):"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Essentials: $30 per license per month, billed annually (vendor FAQ: annual billing is 25% off monthly). 3 licenses minimum on every plan.",
+            "Professional: $50 per license per month, billed annually. Adds Power Dialer, smart routing, queue callback, and conversation intelligence.",
+            "Enterprise: custom pricing, for teams of 25+ licenses.",
+            "Extra numbers: $6 per month for each extra number.",
+            "AI Voice Agents are also sold standalone from $99 per month minimum, separate from the dialer decision for most small teams."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Pros"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Call data lands where HubSpot reporting and workflows already look.",
+            "Works for sales (deals) and service (tickets) in one account.",
+            "Power Dialer is there when you outgrow click-to-call (Professional)."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Cons"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Another subscription on top of HubSpot, with a 3-license minimum.",
+            "Someone has to own routing, properties, and ticket rules or it gets messy.",
+            "Overkill if you only need a personal business number."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "Deeper write-up: <a href=\"/tools/aircall\">Aircall for HubSpot teams</a>."
+        },
+        {
+          "type": "cta",
+          "product": "aircall",
+          "label": "Try Aircall",
+          "href": "https://get.aircall.io/fddlp6kkr3qu",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "Unitel Voice: simple phone line, weak HubSpot fit",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Unitel Voice gives you a toll-free or local business number that works on the phones you already carry, through its mobile app and desktop softphone. Auto attendant greetings, routing, and live US-based support. The Office plan adds desk phones and a dedicated account manager for setup."
+        },
+        {
+          "type": "p",
+          "html": "<strong>Prices</strong> from <a href=\"https://www.unitelvoice.com/pricing/\" target=\"_blank\" rel=\"noopener\">unitelvoice.com/pricing</a>:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Solo: $9.99 per month, or $84 billed yearly (1 user).",
+            "Team: $19.99 per month, or $168 billed yearly (unlimited users).",
+            "Office: $29.99 per month, or $252 billed yearly (3 users included), plus $7.99 per extra user per month.",
+            "30-day money-back guarantee."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "<strong>HubSpot:</strong> I did not find a HubSpot integration on Unitel's site. Treat it as a standalone phone system. If HubSpot call logging is the job, look at Aircall instead of hoping a Zap will appear later."
+        },
+        {
+          "type": "h3",
+          "text": "Pros"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Cheap, clear plans.",
+            "Works with phones you already carry.",
+            "Human support is the pitch, and Unitel leans into it."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Cons"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "No HubSpot sync I could confirm.",
+            "Not a sales-floor dialer.",
+            "Call recording is an add-on."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "Deeper write-up: <a href=\"/tools/unitel-voice\">Unitel Voice</a>."
+        },
+        {
+          "type": "cta",
+          "product": "unitel-voice",
+          "label": "Try Unitel Voice",
+          "href": "https://unitelvoice.partnerlinks.io/jp010yb97vom",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Need HubSpot call logging, Insight Cards, or workflow triggers from calls: Aircall (Essentials or Professional).",
+            "Need Power Dialer or outbound campaigns: Aircall Professional.",
+            "Need a business number only, and you'll live without automatic CRM logging: Unitel.",
+            "Before you buy either: decide which HubSpot objects get call activity and who owns the routing rules. Do that first. Then connect."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "If your HubSpot contact data is already a mess, with duplicate numbers or wrong owners, fix that before you pipe a dialer into it."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the best calling app for HubSpot?",
+      "a": "For teams that need calls on HubSpot records, Aircall is the stronger of these two because it has a native HubSpot integration. Unitel Voice is simpler and cheaper as a phone line, but I could not confirm HubSpot call logging.",
+      "aHtml": "For teams that need calls on HubSpot records, Aircall is the stronger of these two because it has a native HubSpot integration. Unitel Voice is simpler and cheaper as a phone line, but I could not confirm HubSpot call logging."
+    },
+    {
+      "q": "Does Aircall integrate with HubSpot?",
+      "a": "Yes. Aircall's HubSpot page says calls and SMS log to Contacts, Companies, Deals, and Tickets, with Insight Cards, workflow properties, and optional ticket creation. The HubSpot App Marketplace listing names the Essentials or Professional plans as the required Aircall subscriptions.",
+      "aHtml": "Yes. Aircall's HubSpot page says calls and SMS log to Contacts, Companies, Deals, and Tickets, with Insight Cards, workflow properties, and optional ticket creation. The HubSpot App Marketplace listing names the Essentials or Professional plans as the required Aircall subscriptions."
+    },
+    {
+      "q": "How much does Aircall cost?",
+      "a": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. Enterprise is custom. The FAQ says annual billing is 25% off monthly.",
+      "aHtml": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. Enterprise is custom. The FAQ says annual billing is 25% off monthly."
+    },
+    {
+      "q": "Does Unitel Voice work with HubSpot?",
+      "a": "I could not confirm a HubSpot integration on Unitel's site. Treat it as a standalone phone system unless Unitel or HubSpot publish one.",
+      "aHtml": "I could not confirm a HubSpot integration on Unitel's site. Treat it as a standalone phone system unless Unitel or HubSpot publish one."
+    },
+    {
+      "q": "Do I need a dialer if HubSpot already has calling?",
+      "a": "HubSpot calling can be enough for light volume. A dedicated dialer matters when you need shared numbers, IVR, power dialing, or call analytics tied into workflows. Check what your HubSpot edition already includes before you buy.",
+      "aHtml": "HubSpot calling can be enough for light volume. A dedicated dialer matters when you need shared numbers, IVR, power dialing, or call analytics tied into workflows. Check what your HubSpot edition already includes before you buy."
+    }
+  ],
+  "closing": "Calls you can't report on are calls that didn't happen.",
+  "ctas": [
+    {
+      "label": "Try Aircall",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "kind": "affiliate",
+      "product": "aircall"
+    },
+    {
+      "label": "Try Unitel Voice",
+      "href": "https://unitelvoice.partnerlinks.io/jp010yb97vom",
+      "kind": "affiliate",
+      "product": "unitel-voice"
+    }
+  ],
+  "products": [
+    {
+      "slug": "aircall",
+      "name": "Aircall",
+      "type": "affiliate",
+      "pick": "Start here if calls need to land on the HubSpot record. Native integration.",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "unitel-voice",
+      "name": "Unitel Voice",
+      "type": "affiliate",
+      "pick": "Simpler, cheaper business line. No HubSpot sync I could confirm.",
+      "href": "https://unitelvoice.partnerlinks.io/jp010yb97vom",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/pricing/"
+    },
+    {
+      "text": "HubSpot App Marketplace: Aircall listing",
+      "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
+    },
+    {
+      "text": "Aircall's HubSpot integration page",
+      "href": "https://aircall.io/integrations/hubspot/"
+    },
+    {
+      "text": "Unitel Voice pricing page",
+      "href": "https://www.unitelvoice.com/pricing/"
+    }
+  ],
+  "related": [
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    },
+    {
+      "slug": "cold-email-tools-for-hubspot",
+      "route": "best",
+      "title": "Cold Email Tools for HubSpot, Compared",
+      "dek": "HubSpot is the CRM. The outbound tool is the layer that fills it, or wrecks it.",
+      "href": "/tools/best/cold-email-tools-for-hubspot"
+    }
+  ]
+}
