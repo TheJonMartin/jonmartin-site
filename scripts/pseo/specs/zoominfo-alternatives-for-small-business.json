@@ -1,0 +1,220 @@
+{
+	"slug": "zoominfo-alternatives-for-small-business",
+	"route": "best",
+	"template": "best",
+	"wave": 1,
+	"niche": {
+		"label": "Small sales teams on HubSpot",
+		"team_size": 5,
+		"must_haves": [
+			"Public self-serve price",
+			"Free way to test",
+			"HubSpot sync",
+			"Who can connect it"
+		]
+	},
+	"products": [
+		{
+			"slug": "apollo",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want one tool for finding contacts and writing them back to HubSpot."
+		},
+		{
+			"slug": "lusha",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if a few reps need emails and direct dials at a price you can see before you call sales."
+		},
+		{
+			"slug": "seamless-ai",
+			"role": "option",
+			"link": true,
+			"pick": "Worth a look if you want a large monthly credit allowance and don't mind a quoted price."
+		},
+		{
+			"slug": "cognism",
+			"role": "option",
+			"link": false,
+			"pick": "Worth a look if you want a sales-led contract with seats bundled in."
+		},
+		{
+			"slug": "zoominfo",
+			"role": "mention",
+			"link": true
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "ZoomInfo Alternatives for Small Business — Jon Martin",
+	"seoTitle": "ZoomInfo Alternatives for Small Sales Teams on HubSpot",
+	"description": "Apollo, Lusha, Seamless.AI, and Cognism compared for small HubSpot teams: public prices, free plans, HubSpot sync, and who has to connect it.",
+	"h1": "ZoomInfo alternatives for a small sales team on HubSpot",
+	"dek": [
+		"Four contact-data tools a small team can weigh before it signs a ZoomInfo quote.",
+		"Every price and integration detail below comes from the vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This page is for a small sales team, roughly five reps, that runs {{link:hubspot}} as its CRM and needs emails and phone numbers for prospects. You looked at {{link:zoominfo}}, saw a form instead of a price, and want to know what else is out there before you book a sales call. On ZoomInfo's pricing page, {{fact:zoominfo.quote}}."
+				},
+				{
+					"type": "p",
+					"html": "If you have an enterprise data budget and a RevOps team to run it, this page isn't for you. It's for teams where the person who buys the tool is also the person who has to get it talking to HubSpot."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with Apollo if you want prospecting and HubSpot sync in one place. Start with Lusha if you mostly need contact details for a few reps and want to see the price before you talk to anyone. Seamless.AI and Cognism both work with HubSpot too, but you'll get a quote instead of a price tag."
+				},
+				{
+					"type": "p",
+					"html": "Whichever you pick, check one thing first: who on your team is allowed to connect apps to HubSpot. All four name an admin or permission requirement for the HubSpot connection, and that's the step that stalls small teams."
+				}
+			]
+		},
+		{
+			"label": "The four options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Apollo"
+				},
+				{
+					"type": "p",
+					"html": "Apollo has {{fact:apollo.free_plan}}. Paid plans on Apollo's pricing page: Basic at {{fact:apollo.basic_monthly}} and Professional at {{fact:apollo.professional_monthly}}. Two terms to know before you buy: {{fact:apollo.same_plan}}, and {{fact:apollo.credits_expire}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Apollo offers {{fact:apollo.hubspot_two_way}}. Per Apollo's HubSpot page, {{fact:apollo.hubspot_paid}}, and its help article says {{fact:apollo.hubspot_admin}}. You also get {{fact:apollo.hubspot_setup_window}}."
+				},
+				{
+					"type": "cta",
+					"product": "apollo"
+				},
+				{
+					"type": "h3",
+					"text": "Lusha"
+				},
+				{
+					"type": "p",
+					"html": "Lusha has {{fact:lusha.free_plan}}. Its pricing page lists Starter at {{fact:lusha.starter_monthly}}, or {{fact:lusha.starter_annual}}. Professional is {{fact:lusha.pro_monthly}}. Credits work like this: {{fact:lusha.credit_cost}}. Self-serve has a ceiling: {{fact:lusha.team_limit}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Lusha {{fact:lusha.hubspot_push}}. The catch for a small team: {{fact:lusha.hubspot_admin}}."
+				},
+				{
+					"type": "cta",
+					"product": "lusha"
+				},
+				{
+					"type": "h3",
+					"text": "Seamless.AI"
+				},
+				{
+					"type": "p",
+					"html": "Seamless.AI offers {{fact:seamless-ai.free_plan}}. After that, {{fact:seamless-ai.paid_pricing}}. Its help center lists credit allowances by license instead: {{fact:seamless-ai.basic_credits}}, or {{fact:seamless-ai.pro_credits}}. Credit cost per contact: {{fact:seamless-ai.credit_use}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Seamless.AI {{fact:seamless-ai.hubspot_import}}. One permission matters: {{fact:seamless-ai.hubspot_perm}}."
+				},
+				{
+					"type": "cta",
+					"product": "seamless-ai"
+				},
+				{
+					"type": "h3",
+					"text": "Cognism"
+				},
+				{
+					"type": "p",
+					"html": "Cognism sells {{fact:cognism.packages}}. Cognism is priced {{fact:cognism.quote}}. Credits are simple: {{fact:cognism.credit}}, and there's {{fact:cognism.revisit}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Cognism {{fact:cognism.hubspot_export}}. I don't have an affiliate link for Cognism, so the button goes straight to its site."
+				},
+				{
+					"type": "cta",
+					"product": "cognism"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If you need to see a price before you talk to a salesperson, you're down to Apollo and Lusha. Those are the two here with self-serve prices on the page."
+				},
+				{
+					"type": "p",
+					"html": "If HubSpot is your system of record and you want activity to land there too, Apollo is the one of these four whose HubSpot page describes two-way sync with activities. The other three push contacts and companies into HubSpot."
+				},
+				{
+					"type": "p",
+					"html": "If nobody on your team has admin rights in HubSpot, sort that out before you start a trial. Each of these tools names an admin or permission requirement for the HubSpot connection, and a trial clock runs while you wait for access."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is there a free ZoomInfo alternative?",
+			"a": "Apollo, Lusha, and Seamless.AI all have free plans. Apollo has {{fact:apollo.free_plan}}. Lusha has {{fact:lusha.free_plan}}. Seamless.AI offers {{fact:seamless-ai.free_plan}}."
+		},
+		{
+			"q": "Which ZoomInfo alternative syncs best with HubSpot?",
+			"a": "Of these four, Apollo describes the deepest HubSpot connection: {{fact:apollo.hubspot_two_way}}. Note that {{fact:apollo.hubspot_paid}}."
+		},
+		{
+			"q": "Do I need to be a HubSpot admin to connect these tools?",
+			"a": "Usually, yes. For Apollo, {{fact:apollo.hubspot_admin}}. For Lusha, {{fact:lusha.hubspot_admin}}. For Seamless.AI, {{fact:seamless-ai.hubspot_perm}}."
+		},
+		{
+			"q": "Why doesn't ZoomInfo show a price?",
+			"a": "ZoomInfo's pricing page has {{fact:zoominfo.quote}}. On the same page, ZoomInfo's {{fact:zoominfo.hubspot}}."
+		}
+	],
+	"closing": "For a small HubSpot team, start with the tool whose price you can see and whose HubSpot connection you can actually authorize.",
+	"computed": [],
+	"fit": {
+		"Public self-serve price": {
+			"apollo": "Yes. Basic is {{fact:apollo.basic_monthly}}.",
+			"lusha": "Yes. Starter is {{fact:lusha.starter_monthly}}.",
+			"seamless-ai": "No: {{fact:seamless-ai.paid_pricing}}.",
+			"cognism": "No: priced {{fact:cognism.quote}}."
+		},
+		"Free way to test": {
+			"apollo": "Yes, {{fact:apollo.free_plan}}.",
+			"lusha": "Yes, {{fact:lusha.free_plan}}.",
+			"seamless-ai": "Yes, {{fact:seamless-ai.free_plan}}.",
+			"cognism": "No free plan listed on the pricing page."
+		},
+		"HubSpot sync": {
+			"apollo": "Two-way, with activities; {{fact:apollo.hubspot_paid}}.",
+			"lusha": "Pushes contacts and companies, with a duplicate check.",
+			"seamless-ai": "Imports contacts and companies, manually or automatically.",
+			"cognism": "Exports contacts and companies with update rules."
+		},
+		"Who can connect it": {
+			"apollo": "Per Apollo, {{fact:apollo.hubspot_admin}}.",
+			"lusha": "Per Lusha, {{fact:lusha.hubspot_admin}}.",
+			"seamless-ai": "Per Seamless.AI, {{fact:seamless-ai.hubspot_perm}}.",
+			"cognism": "A Cognism admin sets it up."
+		}
+	}
+}

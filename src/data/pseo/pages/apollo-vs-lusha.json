@@ -1,0 +1,291 @@
+{
+  "slug": "apollo-vs-lusha",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "Apollo vs Lusha for HubSpot Enrichment — Jon Martin",
+  "seoTitle": "Apollo vs Lusha for HubSpot Contact Enrichment",
+  "description": "Apollo or Lusha for a small HubSpot team: free plans, self-serve prices, what syncs into HubSpot, and who has to connect it.",
+  "h1": "Apollo vs Lusha for enriching HubSpot contacts",
+  "dek": [
+    "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+    "Prices and integration details come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-12",
+  "modified": "2026-11-12",
+  "checked": "Nov 12, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "HubSpot teams enriching contacts"
+  },
+  "fitTable": {
+    "caption": "Fit for HubSpot teams enriching contacts",
+    "head": [
+      "Must-have",
+      "Apollo",
+      "Lusha"
+    ],
+    "rows": [
+      [
+        "Free plan",
+        "Yes, a free plan that stays free with no time limit.",
+        "Yes, a Free plan with up to 40 credits a month, CRM integrations included."
+      ],
+      [
+        "Self-serve price",
+        "Basic $49 a month on monthly billing.",
+        "Starter $49.90 a month billed monthly, with 400 credits a month."
+      ],
+      [
+        "What reaches HubSpot",
+        "Contacts, accounts, deals, and activities, both ways.",
+        "Contacts and companies, with a duplicate check."
+      ],
+      [
+        "Admin needed to connect",
+        "Yes: connecting it takes a HubSpot super admin.",
+        "Yes: setup needs admin access on both Lusha and HubSpot."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Free plan",
+        "Yes, a free plan that stays free with no time limit.",
+        "Yes, a Free plan with up to 40 credits a month, CRM integrations included."
+      ],
+      [
+        "Self-serve price",
+        "Basic $49 a month on monthly billing.",
+        "Starter $49.90 a month billed monthly, with 400 credits a month."
+      ],
+      [
+        "What reaches HubSpot",
+        "Contacts, accounts, deals, and activities, both ways.",
+        "Contacts and companies, with a duplicate check."
+      ],
+      [
+        "Admin needed to connect",
+        "Yes: connecting it takes a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> super admin.",
+        "Yes: setup needs admin access on both Lusha and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Apollo",
+        "href": "https://get.apollo.io/mep2h66xs2o5",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Lusha",
+        "href": "https://partnerstack.lusha.com/4zjmlll5znab",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This is for a small team, a handful of reps, using <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> as its CRM and needing better contact data: work emails, direct dials, company details. You've narrowed it to Apollo and Lusha because both have free plans and prices you can see."
+        },
+        {
+          "type": "p",
+          "html": "If you need a full data platform with intent data and a sales contract, look at a broader roundup instead. This page is about getting good contact data into HubSpot without a big project."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Pick Apollo if you want one tool that finds contacts, runs outreach, and keeps HubSpot in sync both ways. Pick Lusha if you want a simpler tool that reveals contact details and pushes them into HubSpot without creating duplicates."
+        },
+        {
+          "type": "p",
+          "html": "Both need an admin to connect. Check that before you start a trial."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Apollo"
+        },
+        {
+          "type": "p",
+          "html": "Apollo has a free plan that stays free with no time limit. Basic is $49 a month on monthly billing and Professional is $99 a month on monthly billing. Keep in mind that all seats on an Apollo account are on the same plan, so one power user can push the whole team up a tier, and unused credits expire at the end of each billing cycle."
+        },
+        {
+          "type": "cta",
+          "product": "apollo",
+          "label": "Try Apollo",
+          "href": "https://get.apollo.io/mep2h66xs2o5",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Lusha"
+        },
+        {
+          "type": "p",
+          "html": "Lusha has a Free plan with up to 40 credits a month, CRM integrations included. Starter is $49.90 a month billed monthly, with 400 credits a month, or $37.45 a month billed annually ($449.10 a year). Professional is $69.90 a month billed monthly, with 600 credits a month. Credits: 1 credit to reveal an email and 5 credits to reveal a phone number, so phone-heavy teams burn credits faster. Self-serve stops at a point: teams larger than 5 users go through sales."
+        },
+        {
+          "type": "cta",
+          "product": "lusha",
+          "label": "Try Lusha",
+          "href": "https://partnerstack.lusha.com/4zjmlll5znab",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "What each one does in HubSpot",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Apollo's HubSpot integration offers two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Note that the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration requires a paid Apollo subscription. You get 6 hours after enabling to set sync rules before anything syncs."
+        },
+        {
+          "type": "p",
+          "html": "Lusha pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates. It doesn't describe activity sync; it's built to get clean contact and company records into HubSpot."
+        },
+        {
+          "type": "p",
+          "html": "So the real question is how much you want a second tool writing to HubSpot. Two-way sync is powerful, and it's also one more thing that can overwrite a field you care about. Set the mapping rules before you turn either one on."
+        }
+      ]
+    },
+    {
+      "label": "Who has to connect it",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "For Apollo, connecting it takes a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> super admin. For Lusha, setup needs admin access on both Lusha and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>."
+        },
+        {
+          "type": "p",
+          "html": "If your team doesn't have a HubSpot admin, that's your first step, not the tool choice. Whoever owns the HubSpot account has to approve the connection either way."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Apollo or Lusha cheaper?",
+      "a": "Both start free. On paid plans, Apollo Basic is $49 a month on monthly billing and Lusha Starter is $49.90 a month billed monthly, with 400 credits a month. Compare credits too, not only the sticker price.",
+      "aHtml": "Both start free. On paid plans, Apollo Basic is $49 a month on monthly billing and Lusha Starter is $49.90 a month billed monthly, with 400 credits a month. Compare credits too, not only the sticker price."
+    },
+    {
+      "q": "Which one syncs with HubSpot both ways?",
+      "a": "Apollo. Its HubSpot page describes two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to HubSpot. Lusha pushes contacts and companies into HubSpot.",
+      "aHtml": "Apollo. Its HubSpot page describes two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Lusha pushes contacts and companies into HubSpot."
+    },
+    {
+      "q": "Does the HubSpot integration cost extra?",
+      "a": "For Apollo, the HubSpot integration requires a paid Apollo subscription. Lusha's Free plan lists CRM integrations as included.",
+      "aHtml": "For Apollo, the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration requires a paid Apollo subscription. Lusha's Free plan lists CRM integrations as included."
+    },
+    {
+      "q": "How are credits counted?",
+      "a": "Lusha: 1 credit to reveal an email and 5 credits to reveal a phone number. Apollo: unused credits expire at the end of each billing cycle.",
+      "aHtml": "Lusha: 1 credit to reveal an email and 5 credits to reveal a phone number. Apollo: unused credits expire at the end of each billing cycle."
+    }
+  ],
+  "closing": "Pick Apollo for prospecting plus two-way HubSpot sync, and Lusha for contact details pushed cleanly into HubSpot.",
+  "ctas": [
+    {
+      "label": "Try Apollo",
+      "href": "https://get.apollo.io/mep2h66xs2o5",
+      "kind": "affiliate",
+      "product": "apollo"
+    },
+    {
+      "label": "Try Lusha",
+      "href": "https://partnerstack.lusha.com/4zjmlll5znab",
+      "kind": "affiliate",
+      "product": "lusha"
+    }
+  ],
+  "products": [
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "type": "affiliate",
+      "pick": "Better fit if you want prospecting, outreach, and HubSpot sync in one tool.",
+      "href": "https://get.apollo.io/mep2h66xs2o5",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "lusha",
+      "name": "Lusha",
+      "type": "affiliate",
+      "pick": "Better fit if you mainly need emails and phone numbers pushed into HubSpot.",
+      "href": "https://partnerstack.lusha.com/4zjmlll5znab",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Apollo pricing page",
+      "href": "https://www.apollo.io/pricing"
+    },
+    {
+      "text": "Apollo HubSpot page",
+      "href": "https://www.apollo.io/apollo-hubspot"
+    },
+    {
+      "text": "Apollo help article",
+      "href": "https://knowledge.apollo.io/hc/en-us/articles/4416619021837-Integrate-HubSpot-with-Apollo"
+    },
+    {
+      "text": "Lusha pricing page",
+      "href": "https://www.lusha.com/pricing/"
+    },
+    {
+      "text": "Lusha HubSpot page",
+      "href": "https://www.lusha.com/integrations/hubspot/"
+    }
+  ],
+  "related": [
+    {
+      "slug": "zoominfo-alternatives-for-small-business",
+      "route": "best",
+      "title": "ZoomInfo Alternatives for Small Sales Teams on HubSpot",
+      "dek": "Four contact-data tools a small team can weigh before it signs a ZoomInfo quote.",
+      "href": "/tools/best/zoominfo-alternatives-for-small-business"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    },
+    {
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
+    }
+  ]
+}

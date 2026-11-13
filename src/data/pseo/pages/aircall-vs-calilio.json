@@ -1,0 +1,295 @@
+{
+  "slug": "aircall-vs-calilio",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "Aircall vs Calilio for HubSpot Teams — Jon Martin",
+  "seoTitle": "Aircall vs Calilio for Small HubSpot Teams",
+  "description": "Aircall or Calilio for a small team on HubSpot: entry prices, seat minimums, what lands in HubSpot, and which plan has a power dialer.",
+  "h1": "Aircall vs Calilio for a small team on HubSpot",
+  "dek": [
+    "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+    "Prices and integration details come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-12",
+  "modified": "2026-11-12",
+  "checked": "Nov 12, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small HubSpot teams that make calls"
+  },
+  "fitTable": {
+    "caption": "Fit for Small HubSpot teams that make calls",
+    "head": [
+      "Must-have",
+      "Aircall",
+      "Calilio"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Essentials $30 per license per month, billed annually.",
+        "Standard $12 per user per month billed annually, or $15 billed monthly."
+      ],
+      [
+        "Minimum seats",
+        "Yes, a minimum of 3 licenses on Essentials and Professional.",
+        "No minimum listed; Standard caps at 10 users."
+      ],
+      [
+        "Calls logged in HubSpot",
+        "Contacts, Companies, Deals, and Tickets.",
+        "Contact timeline, on both plans; its HubSpot page doesn't mention deals."
+      ],
+      [
+        "Power dialer",
+        "Power Dialer comes with Professional.",
+        "Power Dialer is on Premium only."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Essentials $30 per license per month, billed annually.",
+        "Standard $12 per user per month billed annually, or $15 billed monthly."
+      ],
+      [
+        "Minimum seats",
+        "Yes, a minimum of 3 licenses on Essentials and Professional.",
+        "No minimum listed; Standard caps at 10 users."
+      ],
+      [
+        "Calls logged in HubSpot",
+        "Contacts, Companies, Deals, and Tickets.",
+        "Contact timeline, on both plans; its HubSpot page doesn't mention deals."
+      ],
+      [
+        "Power dialer",
+        "Power Dialer comes with Professional.",
+        "Power Dialer is on Premium only."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Aircall",
+        "href": "https://get.aircall.io/fddlp6kkr3qu",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Calilio",
+        "href": "https://try.calilio.com/w9o0wqtljqir",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This is for a small team that runs <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> and needs business phone numbers with calls logged to the CRM. Maybe it's two reps and a founder, maybe it's a five-person inbound desk."
+        },
+        {
+          "type": "p",
+          "html": "The rule I use for any phone system on HubSpot: pick it by where the call record ends up. If calls don't land on the HubSpot record, your activity reports are missing half the work."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Aircall is the safer pick if you want call activity on deals and tickets, not only contacts, and you have at least three people on the phones. Calilio is the cheaper pick for a very small team. Its HubSpot connection is newer; the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration went live in September 2026."
+        },
+        {
+          "type": "p",
+          "html": "Both give you a way out if it doesn't fit. Calilio offers a 14-day money-back guarantee. Aircall's pricing page offers free access to try it."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Aircall"
+        },
+        {
+          "type": "p",
+          "html": "Aircall Essentials is $30 per license per month, billed annually. Professional is $50 per license per month. There's a minimum of 3 licenses on Essentials and Professional, so the smallest Essentials account runs about $90 a month. Aircall's page shows 25% off for paying annually. Power Dialer comes with Professional."
+        },
+        {
+          "type": "cta",
+          "product": "aircall",
+          "label": "Try Aircall",
+          "href": "https://get.aircall.io/fddlp6kkr3qu",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Calilio"
+        },
+        {
+          "type": "p",
+          "html": "Calilio Standard is $12 per user per month billed annually, or $15 billed monthly. Premium is $28 per user per month billed annually, or $35 billed monthly. Three Standard users on annual billing run about $36 a month. Plan limits: Standard caps out at 10 users; Premium has no user limit. Power Dialer is on Premium only."
+        },
+        {
+          "type": "cta",
+          "product": "calilio",
+          "label": "Try Calilio",
+          "href": "https://try.calilio.com/w9o0wqtljqir",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "What lands in HubSpot",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Aircall logs calls and SMS to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription. Insight Cards show <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> history before a rep answers."
+        },
+        {
+          "type": "p",
+          "html": "With Calilio, every call, text, and voicemail lands on the right <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contact timeline, with recordings, AI summaries, and transcripts. The integration page lists 16 events synced to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and the pricing table shows the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is on both Standard and Premium."
+        },
+        {
+          "type": "p",
+          "html": "The difference that matters for most HubSpot teams: Aircall names deals and tickets as places call activity lands. Calilio's HubSpot page describes the contact timeline and doesn't mention deals or tickets. If your reports are built on deals, ask Calilio about that before you switch."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "One to three callers, mostly contact-level follow-up, tight budget: Calilio. Three or more callers, call activity reported on deals or tickets, or a service team creating tickets from calls: Aircall."
+        },
+        {
+          "type": "p",
+          "html": "Need a power dialer? On Aircall that means Professional; on Calilio it means Premium. Price the plan that has it, not the entry plan."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which is cheaper, Aircall or Calilio?",
+      "a": "Calilio. Standard is $12 per user per month billed annually, or $15 billed monthly. Aircall Essentials is $30 per license per month, billed annually, with a minimum of 3 licenses on Essentials and Professional.",
+      "aHtml": "Calilio. Standard is $12 per user per month billed annually, or $15 billed monthly. Aircall Essentials is $30 per license per month, billed annually, with a minimum of 3 licenses on Essentials and Professional."
+    },
+    {
+      "q": "Do both integrate with HubSpot?",
+      "a": "Yes. Aircall logs calls and SMS to HubSpot Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription. With Calilio, every call, text, and voicemail lands on the right HubSpot contact timeline, with recordings, AI summaries, and transcripts.",
+      "aHtml": "Yes. Aircall logs calls and SMS to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription. With Calilio, every call, text, and voicemail lands on the right <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contact timeline, with recordings, AI summaries, and transcripts."
+    },
+    {
+      "q": "Which plans have a power dialer?",
+      "a": "Aircall: Power Dialer comes with Professional. Calilio: Power Dialer is on Premium only.",
+      "aHtml": "Aircall: Power Dialer comes with Professional. Calilio: Power Dialer is on Premium only."
+    },
+    {
+      "q": "Is Calilio's HubSpot integration new?",
+      "a": "Yes. Per Calilio's product updates, the HubSpot integration went live in September 2026.",
+      "aHtml": "Yes. Per Calilio's product updates, the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration went live in September 2026."
+    }
+  ],
+  "closing": "Pick the phone system by where the call record ends up: Aircall for deals and tickets, Calilio for a lean team logging to contacts.",
+  "ctas": [
+    {
+      "label": "Try Aircall",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "kind": "affiliate",
+      "product": "aircall"
+    },
+    {
+      "label": "Try Calilio",
+      "href": "https://try.calilio.com/w9o0wqtljqir",
+      "kind": "affiliate",
+      "product": "calilio"
+    }
+  ],
+  "products": [
+    {
+      "slug": "aircall",
+      "name": "Aircall",
+      "type": "affiliate",
+      "pick": "Better fit if you want call activity logged on HubSpot deals and tickets, not only contacts.",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "calilio",
+      "name": "Calilio",
+      "type": "affiliate",
+      "pick": "Better fit if you have one to three callers and want the lower entry price.",
+      "href": "https://try.calilio.com/w9o0wqtljqir",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/pricing/"
+    },
+    {
+      "text": "HubSpot App Marketplace: Aircall listing",
+      "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
+    },
+    {
+      "text": "Aircall's HubSpot integration page",
+      "href": "https://aircall.io/integrations/hubspot/"
+    },
+    {
+      "text": "Calilio pricing page",
+      "href": "https://www.calilio.com/pricing"
+    },
+    {
+      "text": "Calilio HubSpot page",
+      "href": "https://www.calilio.com/integration/hubspot"
+    },
+    {
+      "text": "Calilio product updates",
+      "href": "https://www.calilio.com/whats-new"
+    }
+  ],
+  "related": [
+    {
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    }
+  ]
+}
