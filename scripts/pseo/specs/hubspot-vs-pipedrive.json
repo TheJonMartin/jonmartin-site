@@ -1,0 +1,191 @@
+{
+	"slug": "hubspot-vs-pipedrive",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Small sales teams picking their first paid CRM",
+		"team_size": 5,
+		"must_haves": [
+			"Entry seat price",
+			"Free way to start",
+			"Sales automation",
+			"Proposals and e-signatures"
+		]
+	},
+	"products": [
+		{
+			"slug": "hubspot",
+			"role": "option",
+			"link": false,
+			"pick": "Better fit if you want to start free and keep marketing, sales, and service in one CRM later."
+		},
+		{
+			"slug": "pipedrive",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if the team lives in a visual pipeline and wants automation at a mid-tier price."
+		}
+	],
+	"title": "HubSpot vs Pipedrive — Jon Martin",
+	"seoTitle": "HubSpot vs Pipedrive for Small Sales Teams",
+	"description": "HubSpot and Pipedrive compared for small sales teams: seat prices, free options, where automation starts, and built-in proposals and e-signatures.",
+	"h1": "HubSpot vs Pipedrive for a small sales team",
+	"dek": [
+		"The two CRMs small sales teams most often shortlist, compared on what a five-person team pays and gets.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. The Pipedrive link is an affiliate link."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a small B2B team, around five sellers, choosing between {{link:hubspot}} and {{link:pipedrive}} as its first paid CRM, or deciding whether to move off HubSpot's free tools."
+				},
+				{
+					"type": "p",
+					"html": "Both will hold contacts, deals, and a pipeline. The difference is how you start, where automation begins, and what the bill looks like once everyone has a seat."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose HubSpot if you want to start free and expect marketing and service to share the CRM later. Choose Pipedrive if the team thinks in pipeline stages and wants automation and sequences without moving to a top-tier plan."
+				},
+				{
+					"type": "p",
+					"html": "For five seats, HubSpot's Starter tier comes to about ${{calc:hubspot_starter_5}} a month at its starting price, and Pipedrive Growth comes to about {{calc:pipedrive_growth_5}} a month on annual billing."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "HubSpot"
+				},
+				{
+					"type": "p",
+					"html": "HubSpot's free CRM has {{fact:hubspot.free_users}} and {{fact:hubspot.free_contacts}}. It's {{fact:hubspot.free_no_expiry}}, with {{fact:hubspot.free_pipelines}} and {{fact:hubspot.free_card}}."
+				},
+				{
+					"type": "p",
+					"html": "Paid seats: Starter {{fact:hubspot.starter_price}}, and Professional {{fact:hubspot.pro_price}}. Per HubSpot, {{fact:hubspot.starter_discount}}, so check the renewal price."
+				},
+				{
+					"type": "cta",
+					"product": "hubspot"
+				},
+				{
+					"type": "h3",
+					"text": "Pipedrive"
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive Lite is {{fact:pipedrive.lite_price}}. Growth is {{fact:pipedrive.growth_price}}. Premium is {{fact:pipedrive.premium_price}}, and Ultimate is {{fact:pipedrive.ultimate_price}}. Per Pipedrive, {{fact:pipedrive.annual_saving}}. The trial is {{fact:pipedrive.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive says {{fact:pipedrive.growth_automation}}, and {{fact:pipedrive.premium_esign}}."
+				},
+				{
+					"type": "cta",
+					"product": "pipedrive"
+				}
+			]
+		},
+		{
+			"label": "Fit for a five-person team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If two or fewer people need the CRM today, HubSpot's free tier is hard to beat. Past that, both bill per seat, and the tier you need for automation decides the cost."
+				},
+				{
+					"type": "p",
+					"html": "If your reps send proposals and contracts, count that in. Pipedrive puts e-signatures on Premium; on HubSpot, check which tier your quote covers."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "HubSpot's Starter price carries a new-customer discount, so the second-year bill can be higher. The jump from Starter to Professional is steep for a small team."
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive's Lite plan doesn't include automation, so most teams that want sequences land on Growth or above."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Write down the three automations you'd build in month one, then find the cheapest tier on each side that runs them. Compare those two prices for your seat count."
+				},
+				{
+					"type": "p",
+					"html": "Then trial both with real deals for a week. The CRM your team actually updates is the right one."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is HubSpot free?",
+			"a": "HubSpot's CRM is {{fact:hubspot.free_no_expiry}}, with {{fact:hubspot.free_users}}."
+		},
+		{
+			"q": "Does Pipedrive have a free plan?",
+			"a": "No. It offers a trial: {{fact:pipedrive.trial}}."
+		},
+		{
+			"q": "Where does automation start?",
+			"a": "On Pipedrive, {{fact:pipedrive.growth_automation}}."
+		},
+		{
+			"q": "Which is cheaper for five people?",
+			"a": "At starting prices, HubSpot Starter for five is about ${{calc:hubspot_starter_5}} a month and Pipedrive Growth for five is about {{calc:pipedrive_growth_5}} a month."
+		}
+	],
+	"closing": "Start free on HubSpot if the team is tiny; pick Pipedrive if the pipeline is the job and you need automation without a top-tier bill.",
+	"computed": [
+		{
+			"id": "hubspot_starter_5",
+			"label": "HubSpot Starter, 5 seats",
+			"expr": "hubspot.starter_price * 5"
+		},
+		{
+			"id": "pipedrive_growth_5",
+			"label": "Pipedrive Growth (annual), 5 seats",
+			"expr": "pipedrive.growth_price * 5"
+		}
+	],
+	"fit": {
+		"Entry seat price": {
+			"hubspot": "Starter {{fact:hubspot.starter_price}}.",
+			"pipedrive": "Lite {{fact:pipedrive.lite_price}}."
+		},
+		"Free way to start": {
+			"hubspot": "Free CRM, {{fact:hubspot.free_users}}.",
+			"pipedrive": "Trial: {{fact:pipedrive.trial}}."
+		},
+		"Sales automation": {
+			"hubspot": "Check the tier in your quote.",
+			"pipedrive": "{{fact:pipedrive.growth_automation}}."
+		},
+		"Proposals and e-signatures": {
+			"hubspot": "Check the tier in your quote.",
+			"pipedrive": "{{fact:pipedrive.premium_esign}}."
+		}
+	}
+}

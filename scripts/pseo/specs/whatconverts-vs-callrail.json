@@ -1,0 +1,190 @@
+{
+	"slug": "whatconverts-vs-callrail",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Agencies and in-house marketers tracking calls into HubSpot",
+		"team_size": 5,
+		"must_haves": [
+			"Entry price",
+			"Tracks forms",
+			"HubSpot path",
+			"Trial"
+		]
+	},
+	"products": [
+		{
+			"slug": "whatconverts",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you track calls, forms, and chat across many client accounts."
+		},
+		{
+			"slug": "callrail",
+			"role": "option",
+			"link": false,
+			"pick": "Better fit if you want a direct HubSpot integration for calls and texts."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		},
+		{
+			"slug": "zapier",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "WhatConverts vs CallRail — Jon Martin",
+	"seoTitle": "WhatConverts vs CallRail for HubSpot Users",
+	"description": "WhatConverts and CallRail compared for marketers who send leads to HubSpot: entry prices, form tracking, how each reaches HubSpot, and trials.",
+	"h1": "WhatConverts vs CallRail",
+	"dek": [
+		"Two call tracking tools compared for marketers who need every phone lead, and the ad that drove it, to show up in HubSpot.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. The WhatConverts link is an affiliate link."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for an agency or an in-house marketer deciding between {{link:whatconverts}} and {{link:callrail}} to attribute calls, and sometimes forms, to the campaigns behind them, with leads landing in {{link:hubspot}}."
+				},
+				{
+					"type": "p",
+					"html": "Both assign tracking numbers and record calls. They differ in what else they track, how they price, and how they reach HubSpot."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose WhatConverts if you need calls, forms, and chat in one report, or if you manage many client accounts. Choose CallRail if you want calls and texts to create HubSpot records directly, without building automations yourself."
+				},
+				{
+					"type": "p",
+					"html": "Adding form tracking moves both tools up a tier, so price the tier you'll actually use, not the entry plan."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "WhatConverts"
+				},
+				{
+					"type": "p",
+					"html": "WhatConverts call tracking is {{fact:whatconverts.call_tracking_price}}. Plus is {{fact:whatconverts.plus_single}}. For agencies, Agency Plus is {{fact:whatconverts.agency_plus}}. There's {{fact:whatconverts.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "It tracks {{fact:whatconverts.tracks}}. Its HubSpot connection {{fact:whatconverts.hubspot_zapier}}; once it's set up, {{fact:whatconverts.hubspot_two_way}}."
+				},
+				{
+					"type": "cta",
+					"product": "whatconverts"
+				},
+				{
+					"type": "h3",
+					"text": "CallRail"
+				},
+				{
+					"type": "p",
+					"html": "CallRail's call tracking tier is {{fact:callrail.lead_tracking}}. The tier with forms is {{fact:callrail.ltc}}. Extra numbers are {{fact:callrail.extra_number}}, and there's {{fact:callrail.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "CallRail {{fact:callrail.hubspot}}. It serves {{fact:callrail.countries}}."
+				},
+				{
+					"type": "cta",
+					"product": "callrail"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small marketing team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If you run one brand and calls are the main lead source, CallRail's direct HubSpot integration is the simpler setup. If you run several brands or clients, WhatConverts' agency plan keeps them on one bill."
+				},
+				{
+					"type": "p",
+					"html": "If forms and chat matter as much as calls, WhatConverts reports all three together on its Plus tier."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "WhatConverts reaches HubSpot through {{link:zapier}}, so someone has to build and maintain those workflows, and you pay for a Zapier account."
+				},
+				{
+					"type": "p",
+					"html": "CallRail's form tracking costs a higher tier, and its service covers a short list of countries."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "List your lead sources by volume. If calls dominate and you want the least setup, lean CallRail. If you need every channel in one report, lean WhatConverts."
+				},
+				{
+					"type": "p",
+					"html": "Trial both on one campaign, then check that the source and campaign fields arrive in HubSpot the way your reports expect."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Does WhatConverts integrate with HubSpot?",
+			"a": "Yes, but its connection {{fact:whatconverts.hubspot_zapier}}."
+		},
+		{
+			"q": "Does CallRail create contacts in HubSpot?",
+			"a": "CallRail {{fact:callrail.hubspot}}."
+		},
+		{
+			"q": "Which one tracks forms?",
+			"a": "Both, on higher tiers. WhatConverts Plus is {{fact:whatconverts.plus_single}}. CallRail's form tier is {{fact:callrail.ltc}}."
+		},
+		{
+			"q": "Is there a free trial?",
+			"a": "WhatConverts offers {{fact:whatconverts.trial}}. CallRail offers {{fact:callrail.trial}}."
+		}
+	],
+	"closing": "Pick CallRail for direct, call-first HubSpot logging and WhatConverts for calls, forms, and chat across many accounts.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"whatconverts": "{{fact:whatconverts.call_tracking_price}}.",
+			"callrail": "{{fact:callrail.lead_tracking}}."
+		},
+		"Tracks forms": {
+			"whatconverts": "Yes, on Plus.",
+			"callrail": "Yes, on the higher tier."
+		},
+		"HubSpot path": {
+			"whatconverts": "Through Zapier workflows.",
+			"callrail": "Direct integration."
+		},
+		"Trial": {
+			"whatconverts": "{{fact:whatconverts.trial}}.",
+			"callrail": "{{fact:callrail.trial}}."
+		}
+	}
+}

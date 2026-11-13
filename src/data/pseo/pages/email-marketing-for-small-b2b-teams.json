@@ -1,0 +1,342 @@
+{
+  "slug": "email-marketing-for-small-b2b-teams",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "Email Marketing for Small B2B Teams — Jon Martin",
+  "seoTitle": "Email Marketing Tools for Small B2B Teams",
+  "description": "Transpond, Brevo, and ActiveCampaign compared for small B2B teams: entry prices, free plans and trials, users included, and automation.",
+  "h1": "Email marketing for a small B2B team",
+  "dek": [
+    "Three email marketing tools for a B2B team that sends a newsletter, a few nurture sequences, and the odd product announcement, without a marketing department.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small B2B teams sending newsletters and nurture emails"
+  },
+  "fitTable": {
+    "caption": "Fit for Small B2B teams sending newsletters and nurture emails",
+    "head": [
+      "Must-have",
+      "Transpond",
+      "Brevo",
+      "ActiveCampaign"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Starter $9.90 a month billed annually at 250 contacts, with up to 3 users.",
+        "Starter $9 a month on monthly billing, or $97 a year, including the first email tier.",
+        "Starter $15 a month billed yearly for 1,000 contacts, with 10,000 email sends a month and 1 user seat."
+      ],
+      [
+        "Free start",
+        "a free plan for email marketing basics.",
+        "a free plan with no credit card, sending up to 300 emails a day.",
+        "a free 14-day trial."
+      ],
+      [
+        "Users included",
+        "Up to 3 on Starter.",
+        "1 marketing seat on Starter and up to 3 on Standard.",
+        "1 on Starter."
+      ],
+      [
+        "Automation",
+        "Unlimited on Growth.",
+        "Check the plan on Brevo's pricing page.",
+        "Multi-step from Starter."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Starter $9.90 a month billed annually at 250 contacts, with up to 3 users.",
+        "Starter $9 a month on monthly billing, or $97 a year, including the first email tier.",
+        "Starter $15 a month billed yearly for 1,000 contacts, with 10,000 email sends a month and 1 user seat."
+      ],
+      [
+        "Free start",
+        "a free plan for email marketing basics.",
+        "a free plan with no credit card, sending up to 300 emails a day.",
+        "a free 14-day trial."
+      ],
+      [
+        "Users included",
+        "Up to 3 on Starter.",
+        "1 marketing seat on Starter and up to 3 on Standard.",
+        "1 on Starter."
+      ],
+      [
+        "Automation",
+        "Unlimited on Growth.",
+        "Check the plan on Brevo's pricing page.",
+        "Multi-step from Starter."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Transpond",
+        "href": "https://get.capsulenow.io/3gbnt",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Brevo",
+        "href": "https://www.brevo.com/",
+        "kind": "site"
+      },
+      {
+        "label": "Visit ActiveCampaign",
+        "href": "https://www.activecampaign.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This is for a B2B company with a small list, often a few hundred to a few thousand contacts, where one or two people handle marketing on top of other work."
+        },
+        {
+          "type": "p",
+          "html": "If you already run <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> for sales, you may be weighing its marketing tools against a separate email platform. This page covers the separate-platform side, priced for a small list."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start with Brevo if you want to send for free while the list is small. Pick Transpond if you want a low monthly price with several users and unlimited automations. Pick ActiveCampaign if automation is the heart of what you do and you're comfortable paying for it."
+        },
+        {
+          "type": "p",
+          "html": "All three price by list size or email volume, so the number on the pricing page only holds for the list size it was quoted at. Re-price at the size you expect a year from now."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Transpond"
+        },
+        {
+          "type": "p",
+          "html": "Transpond Starter is $9.90 a month billed annually at 250 contacts, with up to 3 users. Growth is $19.80 a month billed annually at 250 contacts, with up to 5 users and unlimited automations. There's also a free plan for email marketing basics, and annual billing saves up to 10%."
+        },
+        {
+          "type": "p",
+          "html": "Transpond also offers AI-built branded email templates and an AI content assistant from Starter. One limit to know: Transpond offers an SMS add-on for UK customers only."
+        },
+        {
+          "type": "cta",
+          "product": "transpond",
+          "label": "Try Transpond",
+          "href": "https://get.capsulenow.io/3gbnt",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Brevo"
+        },
+        {
+          "type": "p",
+          "html": "Brevo has a free plan with no credit card, sending up to 300 emails a day. Starter is $9 a month on monthly billing, or $97 a year, including the first email tier, and Standard is $18 a month on monthly billing, or $194 a year, including the first email tier. Per Brevo, yearly billing saves 10%."
+        },
+        {
+          "type": "p",
+          "html": "Seats are tight on the lower plans: Brevo lists 1 marketing seat on Starter and up to 3 on Standard. Contacts are tied to email volume, with 500 contacts at the 5,000-emails-a-month tier on Starter."
+        },
+        {
+          "type": "cta",
+          "product": "brevo",
+          "label": "Visit Brevo",
+          "href": "https://www.brevo.com/",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "ActiveCampaign"
+        },
+        {
+          "type": "p",
+          "html": "ActiveCampaign Starter is $15 a month billed yearly for 1,000 contacts, with 10,000 email sends a month and 1 user seat. Plus is $49 a month billed yearly for 1,000 contacts, adding landing pages and an optional enhanced CRM. Pro is $79 a month billed yearly for 1,000 contacts, with 3 user seats. There's a free 14-day trial."
+        },
+        {
+          "type": "p",
+          "html": "ActiveCampaign gives you 250+ pre-built email templates and multi-step automation from Starter. The pricing page shows prices that rise with the size of your contact list, so a bigger list moves you up fast."
+        },
+        {
+          "type": "cta",
+          "product": "activecampaign",
+          "label": "Visit ActiveCampaign",
+          "href": "https://www.activecampaign.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Count users first. If two or three people need to build campaigns, check the seat limit on the plan before the price. A cheap plan with one seat means sharing a login, which you shouldn't do."
+        },
+        {
+          "type": "p",
+          "html": "Then list the automations you'll actually build in the first quarter: a welcome series, a demo follow-up, a re-engagement email. If that's the whole list, you don't need the most advanced builder."
+        },
+        {
+          "type": "p",
+          "html": "Last, decide how contacts move between your CRM and the email tool. If sales lives in HubSpot, look for a sync or an integration before you import a single list."
+        }
+      ]
+    },
+    {
+      "label": "Before you send",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Set up SPF, DKIM, and DMARC on your sending domain before the first campaign. Every tool here will walk you through it, and skipping it hurts deliverability from day one."
+        },
+        {
+          "type": "p",
+          "html": "Import only contacts who agreed to hear from you, and keep the unsubscribe link visible."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which of these is free?",
+      "a": "Brevo has a free plan with no credit card, sending up to 300 emails a day. Transpond has a free plan for email marketing basics. ActiveCampaign offers a free 14-day trial instead.",
+      "aHtml": "Brevo has a free plan with no credit card, sending up to 300 emails a day. Transpond has a free plan for email marketing basics. ActiveCampaign offers a free 14-day trial instead."
+    },
+    {
+      "q": "Which is cheapest for a small list?",
+      "a": "Transpond Starter is $9.90 a month billed annually at 250 contacts, with up to 3 users. Brevo Starter is $9 a month on monthly billing, or $97 a year, including the first email tier.",
+      "aHtml": "Transpond Starter is $9.90 a month billed annually at 250 contacts, with up to 3 users. Brevo Starter is $9 a month on monthly billing, or $97 a year, including the first email tier."
+    },
+    {
+      "q": "How many users do I get?",
+      "a": "Transpond Starter has up to 3 users. Brevo lists 1 marketing seat on Starter and up to 3 on Standard. ActiveCampaign Pro includes 3 user seats.",
+      "aHtml": "Transpond Starter has up to 3 users. Brevo lists 1 marketing seat on Starter and up to 3 on Standard. ActiveCampaign Pro includes 3 user seats."
+    },
+    {
+      "q": "Can I send SMS from these?",
+      "a": "Transpond offers an SMS add-on for UK customers only. Check Brevo and ActiveCampaign pricing pages for SMS add-ons in your country.",
+      "aHtml": "Transpond offers an SMS add-on for UK customers only. Check Brevo and ActiveCampaign pricing pages for SMS add-ons in your country."
+    }
+  ],
+  "closing": "Pick the cheapest plan that gives every sender a seat and covers the automations you'll build this quarter, then re-price as the list grows.",
+  "ctas": [
+    {
+      "label": "Try Transpond",
+      "href": "https://get.capsulenow.io/3gbnt",
+      "kind": "affiliate",
+      "product": "transpond"
+    },
+    {
+      "label": "Visit Brevo",
+      "href": "https://www.brevo.com/",
+      "kind": "site",
+      "product": "brevo"
+    },
+    {
+      "label": "Visit ActiveCampaign",
+      "href": "https://www.activecampaign.com/",
+      "kind": "site",
+      "product": "activecampaign"
+    }
+  ],
+  "products": [
+    {
+      "slug": "transpond",
+      "name": "Transpond",
+      "type": "affiliate",
+      "pick": "Best fit if you want low prices for a small list, a few users, and unlimited automations on Growth.",
+      "href": "https://get.capsulenow.io/3gbnt",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "brevo",
+      "name": "Brevo",
+      "type": "affiliate",
+      "pick": "Best fit if you want a free plan that sends daily and prices driven by email volume.",
+      "href": "https://www.brevo.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "activecampaign",
+      "name": "ActiveCampaign",
+      "type": "affiliate",
+      "pick": "Best fit if multi-step automation is the main job and you'll pay more for it.",
+      "href": "https://www.activecampaign.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Transpond pricing page",
+      "href": "https://transpond.io/pricing"
+    },
+    {
+      "text": "Brevo pricing page",
+      "href": "https://www.brevo.com/pricing/"
+    },
+    {
+      "text": "Brevo pricing page",
+      "href": "https://www.brevo.com/pricing.md"
+    },
+    {
+      "text": "ActiveCampaign pricing page",
+      "href": "https://www.activecampaign.com/pricing"
+    }
+  ],
+  "related": [
+    {
+      "slug": "ai-outbound-platforms-for-small-sales-teams",
+      "route": "best",
+      "title": "AI Outbound Platforms for Small Sales Teams",
+      "dek": "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+      "href": "/tools/best/ai-outbound-platforms-for-small-sales-teams"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
+      "slug": "cold-email-tools-for-agencies",
+      "route": "best",
+      "title": "Best Cold Email Tools for Agencies",
+      "dek": "Three cold email platforms an agency can run several client programs on.",
+      "href": "/tools/best/cold-email-tools-for-agencies"
+    }
+  ]
+}
