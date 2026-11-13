@@ -1,0 +1,202 @@
+{
+	"slug": "email-marketing-for-small-b2b-teams",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Small B2B teams sending newsletters and nurture emails",
+		"team_size": 5,
+		"must_haves": [
+			"Entry price",
+			"Free start",
+			"Users included",
+			"Automation"
+		]
+	},
+	"products": [
+		{
+			"slug": "transpond",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want low prices for a small list, a few users, and unlimited automations on Growth."
+		},
+		{
+			"slug": "brevo",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want a free plan that sends daily and prices driven by email volume."
+		},
+		{
+			"slug": "activecampaign",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if multi-step automation is the main job and you'll pay more for it."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Email Marketing for Small B2B Teams — Jon Martin",
+	"seoTitle": "Email Marketing Tools for Small B2B Teams",
+	"description": "Transpond, Brevo, and ActiveCampaign compared for small B2B teams: entry prices, free plans and trials, users included, and automation.",
+	"h1": "Email marketing for a small B2B team",
+	"dek": [
+		"Three email marketing tools for a B2B team that sends a newsletter, a few nurture sequences, and the odd product announcement, without a marketing department.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for a B2B company with a small list, often a few hundred to a few thousand contacts, where one or two people handle marketing on top of other work."
+				},
+				{
+					"type": "p",
+					"html": "If you already run {{link:hubspot}} for sales, you may be weighing its marketing tools against a separate email platform. This page covers the separate-platform side, priced for a small list."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with Brevo if you want to send for free while the list is small. Pick Transpond if you want a low monthly price with several users and unlimited automations. Pick ActiveCampaign if automation is the heart of what you do and you're comfortable paying for it."
+				},
+				{
+					"type": "p",
+					"html": "All three price by list size or email volume, so the number on the pricing page only holds for the list size it was quoted at. Re-price at the size you expect a year from now."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Transpond"
+				},
+				{
+					"type": "p",
+					"html": "Transpond Starter is {{fact:transpond.starter}}. Growth is {{fact:transpond.growth}}. There's also {{fact:transpond.free}}, and {{fact:transpond.annual}}."
+				},
+				{
+					"type": "p",
+					"html": "Transpond also offers {{fact:transpond.ai}}. One limit to know: Transpond offers {{fact:transpond.sms}}."
+				},
+				{
+					"type": "cta",
+					"product": "transpond"
+				},
+				{
+					"type": "h3",
+					"text": "Brevo"
+				},
+				{
+					"type": "p",
+					"html": "Brevo has {{fact:brevo.free}}. Starter is {{fact:brevo.starter}}, and Standard is {{fact:brevo.standard}}. Per Brevo, {{fact:brevo.annual}}."
+				},
+				{
+					"type": "p",
+					"html": "Seats are tight on the lower plans: Brevo lists {{fact:brevo.seats}}. Contacts are tied to email volume, with {{fact:brevo.contacts}}."
+				},
+				{
+					"type": "cta",
+					"product": "brevo"
+				},
+				{
+					"type": "h3",
+					"text": "ActiveCampaign"
+				},
+				{
+					"type": "p",
+					"html": "ActiveCampaign Starter is {{fact:activecampaign.starter}}. Plus is {{fact:activecampaign.plus}}. Pro is {{fact:activecampaign.pro}}. There's {{fact:activecampaign.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "ActiveCampaign gives you {{fact:activecampaign.templates}}. The pricing page shows {{fact:activecampaign.scaling}}, so a bigger list moves you up fast."
+				},
+				{
+					"type": "cta",
+					"product": "activecampaign"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Count users first. If two or three people need to build campaigns, check the seat limit on the plan before the price. A cheap plan with one seat means sharing a login, which you shouldn't do."
+				},
+				{
+					"type": "p",
+					"html": "Then list the automations you'll actually build in the first quarter: a welcome series, a demo follow-up, a re-engagement email. If that's the whole list, you don't need the most advanced builder."
+				},
+				{
+					"type": "p",
+					"html": "Last, decide how contacts move between your CRM and the email tool. If sales lives in HubSpot, look for a sync or an integration before you import a single list."
+				}
+			]
+		},
+		{
+			"label": "Before you send",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Set up SPF, DKIM, and DMARC on your sending domain before the first campaign. Every tool here will walk you through it, and skipping it hurts deliverability from day one."
+				},
+				{
+					"type": "p",
+					"html": "Import only contacts who agreed to hear from you, and keep the unsubscribe link visible."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which of these is free?",
+			"a": "Brevo has {{fact:brevo.free}}. Transpond has {{fact:transpond.free}}. ActiveCampaign offers {{fact:activecampaign.trial}} instead."
+		},
+		{
+			"q": "Which is cheapest for a small list?",
+			"a": "Transpond Starter is {{fact:transpond.starter}}. Brevo Starter is {{fact:brevo.starter}}."
+		},
+		{
+			"q": "How many users do I get?",
+			"a": "Transpond Starter has up to 3 users. Brevo lists {{fact:brevo.seats}}. ActiveCampaign Pro includes 3 user seats."
+		},
+		{
+			"q": "Can I send SMS from these?",
+			"a": "Transpond offers {{fact:transpond.sms}}. Check Brevo and ActiveCampaign pricing pages for SMS add-ons in your country."
+		}
+	],
+	"closing": "Pick the cheapest plan that gives every sender a seat and covers the automations you'll build this quarter, then re-price as the list grows.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"transpond": "Starter {{fact:transpond.starter}}.",
+			"brevo": "Starter {{fact:brevo.starter}}.",
+			"activecampaign": "Starter {{fact:activecampaign.starter}}."
+		},
+		"Free start": {
+			"transpond": "{{fact:transpond.free}}.",
+			"brevo": "{{fact:brevo.free}}.",
+			"activecampaign": "{{fact:activecampaign.trial}}."
+		},
+		"Users included": {
+			"transpond": "Up to 3 on Starter.",
+			"brevo": "{{fact:brevo.seats}}.",
+			"activecampaign": "1 on Starter."
+		},
+		"Automation": {
+			"transpond": "Unlimited on Growth.",
+			"brevo": "Check the plan on Brevo's pricing page.",
+			"activecampaign": "Multi-step from Starter."
+		}
+	}
+}

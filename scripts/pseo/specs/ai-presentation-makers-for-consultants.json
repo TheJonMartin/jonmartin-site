@@ -1,0 +1,197 @@
+{
+	"slug": "ai-presentation-makers-for-consultants",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "Independent consultants and small advisory firms",
+		"team_size": 2,
+		"must_haves": [
+			"Entry price",
+			"Free start",
+			"AI allowance",
+			"Export"
+		]
+	},
+	"products": [
+		{
+			"slug": "gamma",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want to draft a whole deck from a prompt and export it to PowerPoint or Google Slides."
+		},
+		{
+			"slug": "beautifulai",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want slides that format themselves and unlimited AI generation on one plan."
+		},
+		{
+			"slug": "pitch",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want a free plan with unlimited decks and a team plan that grows with you."
+		}
+	],
+	"title": "AI Presentation Makers for Consultants — Jon Martin",
+	"seoTitle": "AI Presentation Makers for Consultants",
+	"description": "Gamma, Beautiful.ai, and Pitch compared for consultants: prices, free plans and trials, AI credit limits, and export options.",
+	"h1": "AI presentation makers for consultants",
+	"dek": [
+		"Three tools that turn an outline into a client-ready deck, for consultants who'd rather spend the time on the thinking than on aligning boxes.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This is for an independent consultant or a two-to-five-person advisory shop that builds proposals, workshop decks, and readouts every week, often on a deadline."
+				},
+				{
+					"type": "p",
+					"html": "The AI part is useful for a first draft. What matters more is how much AI you get before hitting a limit, whether the output looks like your brand, and whether you can hand the client a file they can open."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start with Gamma if you want the fastest path from a prompt to a full draft. Pick Beautiful.ai if layout is where you lose time and you want unlimited AI on one plan. Pick Pitch if you want a free plan with unlimited decks and room for a small team later."
+				},
+				{
+					"type": "p",
+					"html": "Draft the same deck in each tool's free plan or trial: your last proposal, rebuilt from its outline. That will tell you more than any feature list."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Gamma"
+				},
+				{
+					"type": "p",
+					"html": "Gamma starts {{fact:gamma.free}}. Plus is {{fact:gamma.plus}}. Pro is {{fact:gamma.pro}}. Per Gamma, {{fact:gamma.annual}}, and {{fact:gamma.per_user}}."
+				},
+				{
+					"type": "p",
+					"html": "Gamma supports {{fact:gamma.export}}, so clients don't need a Gamma account to open your work. Note that {{fact:gamma.free_credits}}, so the free plan is for testing, not for steady use."
+				},
+				{
+					"type": "cta",
+					"product": "gamma"
+				},
+				{
+					"type": "h3",
+					"text": "Beautiful.ai"
+				},
+				{
+					"type": "p",
+					"html": "Beautiful.ai Pro is {{fact:beautifulai.pro}}. Team is {{fact:beautifulai.team}}. There's {{fact:beautifulai.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "Its strength is {{fact:beautifulai.layouts}}, along with {{fact:beautifulai.ai}}. It also supports {{fact:beautifulai.ppt}}, which helps if you're moving old decks over."
+				},
+				{
+					"type": "cta",
+					"product": "beautifulai"
+				},
+				{
+					"type": "h3",
+					"text": "Pitch"
+				},
+				{
+					"type": "p",
+					"html": "Pitch is {{fact:pitch.free}}. Plus is {{fact:pitch.plus}}. Team is {{fact:pitch.team}}. Per Pitch, {{fact:pitch.annual}}."
+				},
+				{
+					"type": "p",
+					"html": "If you run out of AI on a paid plan, Pitch sells {{fact:pitch.credits}}. As for trials, Pitch offers {{fact:pitch.trial}}."
+				},
+				{
+					"type": "cta",
+					"product": "pitch"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Look at the AI allowance, not just the price. Credit-based plans charge per generation, and a heavy week of proposals can use a month's allowance. Unlimited plans cost more up front but don't surprise you."
+				},
+				{
+					"type": "p",
+					"html": "Then check the handoff. Many clients want an editable file. If yours do, test the export on a real deck and open it in the client's tool before you commit."
+				},
+				{
+					"type": "p",
+					"html": "Last, think about brand. Custom fonts, colors, and themes keep every deck looking like your firm, and they sit on different plans in each tool."
+				}
+			]
+		},
+		{
+			"label": "Using AI drafts well",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Feed the tool your outline, not a one-line prompt. The structure of your argument is the part a client is paying for, and the AI should only fill in the layout."
+				},
+				{
+					"type": "p",
+					"html": "Check every chart and number the tool adds. A generated slide can look finished and still be wrong."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which AI presentation maker has a free plan?",
+			"a": "Gamma and Pitch do. Gamma starts {{fact:gamma.free}}. Pitch is {{fact:pitch.free}}. Beautiful.ai offers {{fact:beautifulai.trial}} instead of a free plan for most users."
+		},
+		{
+			"q": "Can I export to PowerPoint?",
+			"a": "Gamma supports {{fact:gamma.export}}. Pitch includes PowerPoint export on Plus."
+		},
+		{
+			"q": "Do AI credits run out?",
+			"a": "On Gamma's free plan, {{fact:gamma.free_credits}}. Pitch sells {{fact:pitch.credits}}. Beautiful.ai lists {{fact:beautifulai.ai}}."
+		},
+		{
+			"q": "Is Gamma billed per person?",
+			"a": "Yes: {{fact:gamma.per_user}}."
+		}
+	],
+	"closing": "Rebuild one real proposal in each tool, open the export the way your client would, and pick the one that saved you the most time.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"gamma": "Plus {{fact:gamma.plus}}.",
+			"beautifulai": "Pro {{fact:beautifulai.pro}}.",
+			"pitch": "Plus {{fact:pitch.plus}}."
+		},
+		"Free start": {
+			"gamma": "{{fact:gamma.free}}.",
+			"beautifulai": "{{fact:beautifulai.trial}}.",
+			"pitch": "{{fact:pitch.free}}."
+		},
+		"AI allowance": {
+			"gamma": "Monthly credits by plan.",
+			"beautifulai": "{{fact:beautifulai.ai}}.",
+			"pitch": "Monthly credits on paid plans."
+		},
+		"Export": {
+			"gamma": "{{fact:gamma.export}}.",
+			"beautifulai": "{{fact:beautifulai.ppt}}.",
+			"pitch": "PowerPoint export on Plus."
+		}
+	}
+}

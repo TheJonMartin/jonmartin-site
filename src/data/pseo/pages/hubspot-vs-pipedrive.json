@@ -1,0 +1,291 @@
+{
+  "slug": "hubspot-vs-pipedrive",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "HubSpot vs Pipedrive — Jon Martin",
+  "seoTitle": "HubSpot vs Pipedrive for Small Sales Teams",
+  "description": "HubSpot and Pipedrive compared for small sales teams: seat prices, free options, where automation starts, and built-in proposals and e-signatures.",
+  "h1": "HubSpot vs Pipedrive for a small sales team",
+  "dek": [
+    "The two CRMs small sales teams most often shortlist, compared on what a five-person team pays and gets.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown. The Pipedrive link is an affiliate link."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small sales teams picking their first paid CRM"
+  },
+  "fitTable": {
+    "caption": "Fit for Small sales teams picking their first paid CRM",
+    "head": [
+      "Must-have",
+      "HubSpot",
+      "Pipedrive"
+    ],
+    "rows": [
+      [
+        "Entry seat price",
+        "Starter starts at $15 per seat per month.",
+        "Lite $14 per seat per month, billed annually."
+      ],
+      [
+        "Free way to start",
+        "Free CRM, up to 2 users.",
+        "Trial: 14 days, no credit card."
+      ],
+      [
+        "Sales automation",
+        "Check the tier in your quote.",
+        "Automations and email sequences start on Growth."
+      ],
+      [
+        "Proposals and e-signatures",
+        "Check the tier in your quote.",
+        "quotes, proposals, and contracts with built-in e-signatures start on Premium."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry seat price",
+        "Starter starts at $15 per seat per month.",
+        "Lite $14 per seat per month, billed annually."
+      ],
+      [
+        "Free way to start",
+        "Free CRM, up to 2 users.",
+        "Trial: 14 days, no credit card."
+      ],
+      [
+        "Sales automation",
+        "Check the tier in your quote.",
+        "Automations and email sequences start on Growth."
+      ],
+      [
+        "Proposals and e-signatures",
+        "Check the tier in your quote.",
+        "quotes, proposals, and contracts with built-in e-signatures start on Premium."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Visit HubSpot",
+        "href": "https://www.hubspot.com/products/crm",
+        "kind": "site"
+      },
+      {
+        "label": "Try Pipedrive",
+        "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This comparison is for a small B2B team, around five sellers, choosing between <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> and <a href=\"https://aff.trypipedrive.com/5102umtkzh8i\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Pipedrive</a> as its first paid CRM, or deciding whether to move off HubSpot's free tools."
+        },
+        {
+          "type": "p",
+          "html": "Both will hold contacts, deals, and a pipeline. The difference is how you start, where automation begins, and what the bill looks like once everyone has a seat."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Choose HubSpot if you want to start free and expect marketing and service to share the CRM later. Choose Pipedrive if the team thinks in pipeline stages and wants automation and sequences without moving to a top-tier plan."
+        },
+        {
+          "type": "p",
+          "html": "For five seats, HubSpot's Starter tier comes to about $75 a month at its starting price, and Pipedrive Growth comes to about $195 a month on annual billing."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "HubSpot"
+        },
+        {
+          "type": "p",
+          "html": "HubSpot's free CRM has up to 2 users and 1,000 contacts. It's free with no expiration date, with deal pipelines included and no credit card required."
+        },
+        {
+          "type": "p",
+          "html": "Paid seats: Starter starts at $15 per seat per month, and Professional starts at $50 per seat per month. Per HubSpot, the Starter price carries a discount for new customers only, so check the renewal price."
+        },
+        {
+          "type": "cta",
+          "product": "hubspot",
+          "label": "Visit HubSpot",
+          "href": "https://www.hubspot.com/products/crm",
+          "kind": "site"
+        },
+        {
+          "type": "h3",
+          "text": "Pipedrive"
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive Lite is $14 per seat per month, billed annually. Growth is $39 per seat per month, billed annually. Premium is $59 per seat per month, billed annually, and Ultimate is $79 per seat per month, billed annually. Per Pipedrive, annual billing saves up to 42%. The trial is 14 days, no credit card."
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive says Automations and email sequences start on Growth, and quotes, proposals, and contracts with built-in e-signatures start on Premium."
+        },
+        {
+          "type": "cta",
+          "product": "pipedrive",
+          "label": "Try Pipedrive",
+          "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "Fit for a five-person team",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If two or fewer people need the CRM today, HubSpot's free tier is hard to beat. Past that, both bill per seat, and the tier you need for automation decides the cost."
+        },
+        {
+          "type": "p",
+          "html": "If your reps send proposals and contracts, count that in. Pipedrive puts e-signatures on Premium; on HubSpot, check which tier your quote covers."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "HubSpot's Starter price carries a new-customer discount, so the second-year bill can be higher. The jump from Starter to Professional is steep for a small team."
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive's Lite plan doesn't include automation, so most teams that want sequences land on Growth or above."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Write down the three automations you'd build in month one, then find the cheapest tier on each side that runs them. Compare those two prices for your seat count."
+        },
+        {
+          "type": "p",
+          "html": "Then trial both with real deals for a week. The CRM your team actually updates is the right one."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is HubSpot free?",
+      "a": "HubSpot's CRM is free with no expiration date, with up to 2 users.",
+      "aHtml": "HubSpot's CRM is free with no expiration date, with up to 2 users."
+    },
+    {
+      "q": "Does Pipedrive have a free plan?",
+      "a": "No. It offers a trial: 14 days, no credit card.",
+      "aHtml": "No. It offers a trial: 14 days, no credit card."
+    },
+    {
+      "q": "Where does automation start?",
+      "a": "On Pipedrive, Automations and email sequences start on Growth.",
+      "aHtml": "On Pipedrive, Automations and email sequences start on Growth."
+    },
+    {
+      "q": "Which is cheaper for five people?",
+      "a": "At starting prices, HubSpot Starter for five is about $75 a month and Pipedrive Growth for five is about $195 a month.",
+      "aHtml": "At starting prices, HubSpot Starter for five is about $75 a month and Pipedrive Growth for five is about $195 a month."
+    }
+  ],
+  "closing": "Start free on HubSpot if the team is tiny; pick Pipedrive if the pipeline is the job and you need automation without a top-tier bill.",
+  "ctas": [
+    {
+      "label": "Visit HubSpot",
+      "href": "https://www.hubspot.com/products/crm",
+      "kind": "site",
+      "product": "hubspot"
+    },
+    {
+      "label": "Try Pipedrive",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "kind": "affiliate",
+      "product": "pipedrive"
+    }
+  ],
+  "products": [
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate",
+      "pick": "Better fit if you want to start free and keep marketing, sales, and service in one CRM later.",
+      "href": "https://www.hubspot.com/products/crm",
+      "linkKind": "site"
+    },
+    {
+      "slug": "pipedrive",
+      "name": "Pipedrive",
+      "type": "affiliate",
+      "pick": "Better fit if the team lives in a visual pipeline and wants automation at a mid-tier price.",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "linkKind": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Pipedrive pricing page",
+      "href": "https://www.pipedrive.com/en/pricing"
+    },
+    {
+      "text": "HubSpot CRM page",
+      "href": "https://www.hubspot.com/products/crm"
+    }
+  ],
+  "related": [
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    },
+    {
+      "slug": "crm-for-small-marketing-agencies",
+      "route": "best",
+      "title": "Best CRM for Small Marketing Agencies",
+      "dek": "Three CRMs a small agency can run its own new business and client relationships on.",
+      "href": "/tools/best/crm-for-small-marketing-agencies"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    },
+    {
+      "slug": "ai-outbound-platforms-for-small-sales-teams",
+      "route": "best",
+      "title": "AI Outbound Platforms for Small Sales Teams",
+      "dek": "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+      "href": "/tools/best/ai-outbound-platforms-for-small-sales-teams"
+    }
+  ]
+}

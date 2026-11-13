@@ -1,0 +1,309 @@
+{
+  "slug": "whatconverts-vs-callrail",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "WhatConverts vs CallRail — Jon Martin",
+  "seoTitle": "WhatConverts vs CallRail for HubSpot Users",
+  "description": "WhatConverts and CallRail compared for marketers who send leads to HubSpot: entry prices, form tracking, how each reaches HubSpot, and trials.",
+  "h1": "WhatConverts vs CallRail",
+  "dek": [
+    "Two call tracking tools compared for marketers who need every phone lead, and the ad that drove it, to show up in HubSpot.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown. The WhatConverts link is an affiliate link."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Agencies and in-house marketers tracking calls into HubSpot"
+  },
+  "fitTable": {
+    "caption": "Fit for Agencies and in-house marketers tracking calls into HubSpot",
+    "head": [
+      "Must-have",
+      "WhatConverts",
+      "CallRail"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "$30 a month for a single account, plus usage, with $30 of usage credit included.",
+        "$50 a month plus usage, with 5 numbers and 250 minutes included."
+      ],
+      [
+        "Tracks forms",
+        "Yes, on Plus.",
+        "Yes, on the higher tier."
+      ],
+      [
+        "HubSpot path",
+        "Through Zapier workflows.",
+        "Direct integration."
+      ],
+      [
+        "Trial",
+        "a 14-day free trial.",
+        "a 14-day free trial with no credit card."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "$30 a month for a single account, plus usage, with $30 of usage credit included.",
+        "$50 a month plus usage, with 5 numbers and 250 minutes included."
+      ],
+      [
+        "Tracks forms",
+        "Yes, on Plus.",
+        "Yes, on the higher tier."
+      ],
+      [
+        "HubSpot path",
+        "Through Zapier workflows.",
+        "Direct integration."
+      ],
+      [
+        "Trial",
+        "a 14-day free trial.",
+        "a 14-day free trial with no credit card."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try WhatConverts",
+        "href": "https://partners.whatconverts.com/srs1hg1mn12z",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit CallRail",
+        "href": "https://www.callrail.com/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This comparison is for an agency or an in-house marketer deciding between <a href=\"https://partners.whatconverts.com/srs1hg1mn12z\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">WhatConverts</a> and <a href=\"https://www.callrail.com/\" target=\"_blank\" rel=\"noopener\">CallRail</a> to attribute calls, and sometimes forms, to the campaigns behind them, with leads landing in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>."
+        },
+        {
+          "type": "p",
+          "html": "Both assign tracking numbers and record calls. They differ in what else they track, how they price, and how they reach HubSpot."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Choose WhatConverts if you need calls, forms, and chat in one report, or if you manage many client accounts. Choose CallRail if you want calls and texts to create HubSpot records directly, without building automations yourself."
+        },
+        {
+          "type": "p",
+          "html": "Adding form tracking moves both tools up a tier, so price the tier you'll actually use, not the entry plan."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "WhatConverts"
+        },
+        {
+          "type": "p",
+          "html": "WhatConverts call tracking is $30 a month for a single account, plus usage, with $30 of usage credit included. Plus is $60 a month for a single account, plus usage; adds form and chat tracking. For agencies, Agency Plus is $500 a month for unlimited accounts, plus usage, with $250 of usage credit included. There's a 14-day free trial."
+        },
+        {
+          "type": "p",
+          "html": "It tracks phone calls, forms, and chat, with the marketing source attached. Its HubSpot connection runs through <a href=\"https://zapier.com/\" target=\"_blank\" rel=\"noopener\">Zapier</a> workflows you set up yourself, so you need a Zapier account; once it's set up, new leads create <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contacts, and deal values can flow back to WhatConverts."
+        },
+        {
+          "type": "cta",
+          "product": "whatconverts",
+          "label": "Try WhatConverts",
+          "href": "https://partners.whatconverts.com/srs1hg1mn12z",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "CallRail"
+        },
+        {
+          "type": "p",
+          "html": "CallRail's call tracking tier is $50 a month plus usage, with 5 numbers and 250 minutes included. The tier with forms is $95 a month plus usage; adds form tracking. Extra numbers are $3 each, and there's a 14-day free trial with no credit card."
+        },
+        {
+          "type": "p",
+          "html": "CallRail creates <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> leads from inbound calls and texts, or adds activities to existing contacts, with recordings viewable in HubSpot. It serves the United States, Canada, the UK, and Australia."
+        },
+        {
+          "type": "cta",
+          "product": "callrail",
+          "label": "Visit CallRail",
+          "href": "https://www.callrail.com/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "Fit for a small marketing team",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "If you run one brand and calls are the main lead source, CallRail's direct HubSpot integration is the simpler setup. If you run several brands or clients, WhatConverts' agency plan keeps them on one bill."
+        },
+        {
+          "type": "p",
+          "html": "If forms and chat matter as much as calls, WhatConverts reports all three together on its Plus tier."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "WhatConverts reaches HubSpot through <a href=\"https://zapier.com/\" target=\"_blank\" rel=\"noopener\">Zapier</a>, so someone has to build and maintain those workflows, and you pay for a Zapier account."
+        },
+        {
+          "type": "p",
+          "html": "CallRail's form tracking costs a higher tier, and its service covers a short list of countries."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "List your lead sources by volume. If calls dominate and you want the least setup, lean CallRail. If you need every channel in one report, lean WhatConverts."
+        },
+        {
+          "type": "p",
+          "html": "Trial both on one campaign, then check that the source and campaign fields arrive in HubSpot the way your reports expect."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does WhatConverts integrate with HubSpot?",
+      "a": "Yes, but its connection runs through Zapier workflows you set up yourself, so you need a Zapier account.",
+      "aHtml": "Yes, but its connection runs through <a href=\"https://zapier.com/\" target=\"_blank\" rel=\"noopener\">Zapier</a> workflows you set up yourself, so you need a Zapier account."
+    },
+    {
+      "q": "Does CallRail create contacts in HubSpot?",
+      "a": "CallRail creates HubSpot leads from inbound calls and texts, or adds activities to existing contacts, with recordings viewable in HubSpot.",
+      "aHtml": "CallRail creates <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> leads from inbound calls and texts, or adds activities to existing contacts, with recordings viewable in HubSpot."
+    },
+    {
+      "q": "Which one tracks forms?",
+      "a": "Both, on higher tiers. WhatConverts Plus is $60 a month for a single account, plus usage; adds form and chat tracking. CallRail's form tier is $95 a month plus usage; adds form tracking.",
+      "aHtml": "Both, on higher tiers. WhatConverts Plus is $60 a month for a single account, plus usage; adds form and chat tracking. CallRail's form tier is $95 a month plus usage; adds form tracking."
+    },
+    {
+      "q": "Is there a free trial?",
+      "a": "WhatConverts offers a 14-day free trial. CallRail offers a 14-day free trial with no credit card.",
+      "aHtml": "WhatConverts offers a 14-day free trial. CallRail offers a 14-day free trial with no credit card."
+    }
+  ],
+  "closing": "Pick CallRail for direct, call-first HubSpot logging and WhatConverts for calls, forms, and chat across many accounts.",
+  "ctas": [
+    {
+      "label": "Try WhatConverts",
+      "href": "https://partners.whatconverts.com/srs1hg1mn12z",
+      "kind": "affiliate",
+      "product": "whatconverts"
+    },
+    {
+      "label": "Visit CallRail",
+      "href": "https://www.callrail.com/",
+      "kind": "site",
+      "product": "callrail"
+    }
+  ],
+  "products": [
+    {
+      "slug": "whatconverts",
+      "name": "WhatConverts",
+      "type": "affiliate",
+      "pick": "Better fit if you track calls, forms, and chat across many client accounts.",
+      "href": "https://partners.whatconverts.com/srs1hg1mn12z",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "callrail",
+      "name": "CallRail",
+      "type": "affiliate",
+      "pick": "Better fit if you want a direct HubSpot integration for calls and texts.",
+      "href": "https://www.callrail.com/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    },
+    {
+      "slug": "zapier",
+      "name": "Zapier",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "WhatConverts pricing page",
+      "href": "https://www.whatconverts.com/pricing/"
+    },
+    {
+      "text": "WhatConverts pricing page",
+      "href": "https://www.whatconverts.com/help/docs/integrations/customer-relationship-management-integrations/hubspot/understand-the-hubspot-integration/"
+    },
+    {
+      "text": "CallRail pricing page",
+      "href": "https://www.callrail.com/pricing"
+    },
+    {
+      "text": "CallRail pricing page",
+      "href": "https://www.callrail.com/integrations/hubspot"
+    }
+  ],
+  "related": [
+    {
+      "slug": "call-tracking-for-hubspot-agencies",
+      "route": "best",
+      "title": "Call and Form Tracking for Agencies Using HubSpot",
+      "dek": "Three call tracking tools for an agency that has to prove which campaigns made the phone ring, and get that answer into a client's HubSpot.",
+      "href": "/tools/best/call-tracking-for-hubspot-agencies"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    },
+    {
+      "slug": "e-signature-tools-for-freelancers",
+      "route": "best",
+      "title": "E-Signature Tools for Freelancers",
+      "dek": "Three ways for a freelancer or solo consultant to get contracts and statements of work signed online, without printing or chasing scans.",
+      "href": "/tools/best/e-signature-tools-for-freelancers"
+    },
+    {
+      "slug": "ai-outbound-platforms-for-small-sales-teams",
+      "route": "best",
+      "title": "AI Outbound Platforms for Small Sales Teams",
+      "dek": "Three platforms that find prospects, write and send sequences, and push the activity back into HubSpot, priced for teams of a few reps rather than a floor of fifty.",
+      "href": "/tools/best/ai-outbound-platforms-for-small-sales-teams"
+    }
+  ]
+}

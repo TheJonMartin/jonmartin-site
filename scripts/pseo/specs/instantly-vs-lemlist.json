@@ -1,0 +1,196 @@
+{
+	"slug": "instantly-vs-lemlist",
+	"route": "compare",
+	"template": "compare",
+	"wave": 3,
+	"niche": {
+		"label": "Small teams running cold email into HubSpot",
+		"team_size": 3,
+		"must_haves": [
+			"Entry price",
+			"Sending accounts",
+			"Free trial",
+			"HubSpot connection"
+		]
+	},
+	"products": [
+		{
+			"slug": "instantly",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want many sending accounts on one flat plan and email is the only channel."
+		},
+		{
+			"slug": "lemlist",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want email plus other channels and a HubSpot sync that logs every touch."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Instantly vs lemlist — Jon Martin",
+	"seoTitle": "Instantly vs lemlist: Price, Sending, and HubSpot",
+	"description": "Instantly and lemlist compared for small teams running cold email: entry prices, sending accounts, trials, and how each connects to HubSpot.",
+	"h1": "Instantly vs lemlist",
+	"dek": [
+		"Two of the most common cold email tools, compared for a small team that books meetings by email and keeps its pipeline in HubSpot.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown. Both links are affiliate links."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a founder or a small sales team, one to five people, choosing between {{link:instantly}} and {{link:lemlist}} for outbound, with contacts and deals in {{link:hubspot}}."
+				},
+				{
+					"type": "p",
+					"html": "Both tools send sequences and warm up inboxes. They differ in how they price, how many channels they cover, and how much they write back to HubSpot."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Choose Instantly if email is the whole plan and you want to spread volume across many inboxes for one flat price. Choose lemlist if you want email plus other touches in one sequence, with every step logged on the HubSpot timeline."
+				},
+				{
+					"type": "p",
+					"html": "A year of Instantly Growth on monthly billing comes to {{calc:instantly_year}}. A year of lemlist Email at the monthly rate comes to {{calc:lemlist_year}}, less on yearly billing."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Instantly"
+				},
+				{
+					"type": "p",
+					"html": "Instantly's Growth plan is {{fact:instantly.growth_price}}, with {{fact:instantly.unlimited_accounts}}. Its limits are {{fact:instantly.growth_limits}}. It also offers {{fact:instantly.leads_db}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Instantly {{fact:instantly.hubspot}}. Per Instantly, {{fact:instantly.automations}}."
+				},
+				{
+					"type": "cta",
+					"product": "instantly"
+				},
+				{
+					"type": "h3",
+					"text": "lemlist"
+				},
+				{
+					"type": "p",
+					"html": "lemlist's Email plan is {{fact:lemlist.email_price}}. Multichannel is {{fact:lemlist.multichannel_price}}. Billing options are {{fact:lemlist.billing}}. Plans include {{fact:lemlist.unlimited_senders}}, and there's a {{fact:lemlist.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "Its HubSpot integration {{fact:lemlist.hubspot_sync}}. Note that it {{fact:lemlist.hubspot_plans}}."
+				},
+				{
+					"type": "cta",
+					"product": "lemlist"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small outbound team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If your plan is high-volume email across several domains, Instantly's pricing is easier to predict: the number of inboxes doesn't change the bill. Watch the contact and email caps instead."
+				},
+				{
+					"type": "p",
+					"html": "If your plan mixes email with other channels, or if reps need to see each touch in HubSpot before a call, lemlist covers more of that in one place."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Instantly's Growth plan caps uploaded contacts, which a busy team can hit quickly. Its lead data is a separate purchase."
+				},
+				{
+					"type": "p",
+					"html": "lemlist's HubSpot integration needs a paid HubSpot plan and admin access, so a team on HubSpot's free tools can't use the sync."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Run both trials with the same sequence to the same kind of prospect, and connect HubSpot on day one. Compare deliverability, replies, and how clean the records look in HubSpot after a week."
+				},
+				{
+					"type": "p",
+					"html": "Whichever wins, set daily sending limits low at first and raise them slowly."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which is cheaper?",
+			"a": "Instantly Growth is {{fact:instantly.growth_price}}. lemlist Email is {{fact:lemlist.email_price}}."
+		},
+		{
+			"q": "Do they both work with HubSpot?",
+			"a": "Yes. Instantly {{fact:instantly.hubspot}}. lemlist {{fact:lemlist.hubspot_sync}}."
+		},
+		{
+			"q": "Is there a free trial?",
+			"a": "lemlist offers a {{fact:lemlist.trial}}."
+		},
+		{
+			"q": "Can I add unlimited inboxes?",
+			"a": "Instantly includes {{fact:instantly.unlimited_accounts}}. lemlist includes {{fact:lemlist.unlimited_senders}}."
+		}
+	],
+	"closing": "Pick Instantly for flat-priced email volume and lemlist for multichannel sequences that log to HubSpot.",
+	"computed": [
+		{
+			"id": "instantly_year",
+			"label": "Instantly Growth, 12 months",
+			"expr": "instantly.growth_price * 12"
+		},
+		{
+			"id": "lemlist_year",
+			"label": "lemlist Email at the monthly rate, 12 months",
+			"expr": "lemlist.email_price * 12"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"instantly": "Growth {{fact:instantly.growth_price}}.",
+			"lemlist": "Email {{fact:lemlist.email_price}}."
+		},
+		"Sending accounts": {
+			"instantly": "{{fact:instantly.unlimited_accounts}}.",
+			"lemlist": "{{fact:lemlist.unlimited_senders}}."
+		},
+		"Free trial": {
+			"instantly": "Check Instantly's pricing page.",
+			"lemlist": "{{fact:lemlist.trial}}."
+		},
+		"HubSpot connection": {
+			"instantly": "Imports contacts and lists; HubSpot events can trigger automations.",
+			"lemlist": "Logs outreach to the HubSpot timeline; needs a paid HubSpot plan."
+		}
+	}
+}
