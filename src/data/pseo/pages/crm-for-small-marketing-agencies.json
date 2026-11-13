@@ -1,0 +1,342 @@
+{
+  "slug": "crm-for-small-marketing-agencies",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "CRM for Small Marketing Agencies — Jon Martin",
+  "seoTitle": "Best CRM for Small Marketing Agencies",
+  "description": "Pipedrive, Capsule, and Close compared for a small marketing agency: seat prices, free starts, built-in extras, and which plan automation starts on.",
+  "h1": "A CRM for a small marketing agency",
+  "dek": [
+    "Three CRMs a small agency can run its own new business and client relationships on.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small marketing agencies"
+  },
+  "fitTable": {
+    "caption": "Fit for Small marketing agencies",
+    "head": [
+      "Must-have",
+      "Pipedrive",
+      "Capsule",
+      "Close"
+    ],
+    "rows": [
+      [
+        "Seat price",
+        "Lite $14 per seat per month, billed annually.",
+        "Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually.",
+        "Solo $9 per user per month; Essentials $35 per user per month on annual billing."
+      ],
+      [
+        "Free way to start",
+        "Trial: 14 days, no credit card.",
+        "a free plan for up to 2 users and 250 contacts, with one sales pipeline.",
+        "Trial: 14 days, no credit card."
+      ],
+      [
+        "Built-in extras",
+        "Contracts and e-signatures on Premium.",
+        "Email marketing through Transpond.",
+        "Calling and SMS, billed by usage."
+      ],
+      [
+        "Automation starts on",
+        "Growth.",
+        "Check the plan you pick on Capsule's pricing page.",
+        "Growth."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Seat price",
+        "Lite $14 per seat per month, billed annually.",
+        "Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually.",
+        "Solo $9 per user per month; Essentials $35 per user per month on annual billing."
+      ],
+      [
+        "Free way to start",
+        "Trial: 14 days, no credit card.",
+        "a free plan for up to 2 users and 250 contacts, with one sales pipeline.",
+        "Trial: 14 days, no credit card."
+      ],
+      [
+        "Built-in extras",
+        "Contracts and e-signatures on Premium.",
+        "Email marketing through Transpond.",
+        "Calling and SMS, billed by usage."
+      ],
+      [
+        "Automation starts on",
+        "Growth.",
+        "Check the plan you pick on Capsule's pricing page.",
+        "Growth."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Pipedrive",
+        "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Capsule",
+        "href": "https://get.capsulenow.io/x0kzganxlolo",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Close",
+        "href": "https://refer.close.com/bebtpaitxgfs",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This page is for a marketing agency with a small team, where the founder or one account lead handles new business and the rest of the team handles delivery. You need somewhere to track prospects, proposals, and renewals that isn't a spreadsheet or someone's inbox."
+        },
+        {
+          "type": "p",
+          "html": "It's about the agency's own CRM, not your clients' systems. If your clients run <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, you can still pick something lighter for your own pipeline. What matters is that your team will actually keep it up to date."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Pick Pipedrive if new business is a pipeline you work every day and you want proposals and signatures in one place. Pick Capsule if you want something simple and cheap, with a free plan to start. Pick Close if your new business depends on calling and you want the phone built in."
+        },
+        {
+          "type": "p",
+          "html": "All three have a free trial, so the real test is a week of your actual pipeline in each. Load ten live prospects, not demo data, and see which one the team opens without being reminded."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Pipedrive"
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive's Lite plan is $14 per seat per month, billed annually. Growth is $39 per seat per month, billed annually; on automation, the pricing page says: Automations and email sequences start on Growth. Premium is $59 per seat per month, billed annually, and quotes, proposals, and contracts with built-in e-signatures start on Premium. The trial is 14 days, no credit card."
+        },
+        {
+          "type": "p",
+          "html": "For an agency, that e-signature piece matters: a proposal that gets signed inside the CRM is a proposal that doesn't get lost in an email thread."
+        },
+        {
+          "type": "cta",
+          "product": "pipedrive",
+          "label": "Try Pipedrive",
+          "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Capsule"
+        },
+        {
+          "type": "p",
+          "html": "Capsule has a free plan for up to 2 users and 250 contacts, with one sales pipeline. Paid plans are Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually. Starter is $22 per user per month on monthly billing. Per Capsule, annual billing saves up to 18%. There's a 14-day trial of every paid plan, no card required."
+        },
+        {
+          "type": "p",
+          "html": "On limits, Starter includes 30,000 contacts and Growth 60,000. Capsule also connects to Transpond, its own marketing platform, for email campaigns, which suits an agency that wants a light newsletter for its own list."
+        },
+        {
+          "type": "cta",
+          "product": "capsule",
+          "label": "Try Capsule",
+          "href": "https://get.capsulenow.io/x0kzganxlolo",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Close"
+        },
+        {
+          "type": "p",
+          "html": "Close's Solo plan is $9 per user per month, limited to 1 user, 10,000 leads, no workflows. Essentials is $35 per user per month on annual billing, or $49 per user per month on monthly billing. Growth is $99 per user per month, adds workflows and the power dialer. The trial is 14 days, no credit card."
+        },
+        {
+          "type": "p",
+          "html": "On calling, Close's pricing page says: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute. That covers texting too, so you don't need a second tool for SMS."
+        },
+        {
+          "type": "cta",
+          "product": "close",
+          "label": "Try Close",
+          "href": "https://refer.close.com/bebtpaitxgfs",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Think about where your new business actually happens. If it's referrals and email, a simple CRM you keep up to date beats a powerful one you don't. If it's outbound calling, calling in the CRM saves a second tool."
+        },
+        {
+          "type": "p",
+          "html": "Price the plan where automation starts, not the cheapest plan. Follow-up reminders and sequences are the reason most agencies buy a CRM, and on Pipedrive and Close they sit above the entry tier."
+        },
+        {
+          "type": "p",
+          "html": "Keep your own CRM separate from client work. Clients' leads belong in their systems, and mixing the two makes both harder to clean up later."
+        }
+      ]
+    },
+    {
+      "label": "What to set up first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Set up one pipeline with the stages your new business really goes through, from first conversation to signed. Keep it to a few stages. Add a field for the service the prospect wants and one for expected monthly value."
+        },
+        {
+          "type": "p",
+          "html": "Then import only live prospects and current clients. Old leads from years ago can wait until the team trusts the system."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which CRM is cheapest for a small agency?",
+      "a": "Capsule has a free plan for up to 2 users and 250 contacts, with one sales pipeline. Among paid plans, Close Solo is $9 per user per month, and Pipedrive Lite is $14 per seat per month, billed annually.",
+      "aHtml": "Capsule has a free plan for up to 2 users and 250 contacts, with one sales pipeline. Among paid plans, Close Solo is $9 per user per month, and Pipedrive Lite is $14 per seat per month, billed annually."
+    },
+    {
+      "q": "Which one handles proposals and e-signatures?",
+      "a": "Pipedrive says quotes, proposals, and contracts with built-in e-signatures start on Premium.",
+      "aHtml": "Pipedrive says quotes, proposals, and contracts with built-in e-signatures start on Premium."
+    },
+    {
+      "q": "Can I try them before paying?",
+      "a": "Yes. Pipedrive's trial is 14 days, no credit card. Capsule offers a 14-day trial of every paid plan, no card required. Close's trial is 14 days, no credit card.",
+      "aHtml": "Yes. Pipedrive's trial is 14 days, no credit card. Capsule offers a 14-day trial of every paid plan, no card required. Close's trial is 14 days, no credit card."
+    },
+    {
+      "q": "Does any of them include calling?",
+      "a": "Close does, billed by usage: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute.",
+      "aHtml": "Close does, billed by usage: Built-in calling and SMS, usage-based, most outbound calls about $0.02 a minute."
+    }
+  ],
+  "closing": "Pick the CRM your team will open every day for new business, and price the plan where follow-up automation starts.",
+  "ctas": [
+    {
+      "label": "Try Pipedrive",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "kind": "affiliate",
+      "product": "pipedrive"
+    },
+    {
+      "label": "Try Capsule",
+      "href": "https://get.capsulenow.io/x0kzganxlolo",
+      "kind": "affiliate",
+      "product": "capsule"
+    },
+    {
+      "label": "Try Close",
+      "href": "https://refer.close.com/bebtpaitxgfs",
+      "kind": "affiliate",
+      "product": "close"
+    }
+  ],
+  "products": [
+    {
+      "slug": "pipedrive",
+      "name": "Pipedrive",
+      "type": "affiliate",
+      "pick": "Best fit if new business is a pipeline you work every day and you want proposals and e-signatures in the CRM.",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "capsule",
+      "name": "Capsule",
+      "type": "affiliate",
+      "pick": "Best fit if you want a simple, low-cost CRM for client relationships and a free start.",
+      "href": "https://get.capsulenow.io/x0kzganxlolo",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "close",
+      "name": "Close",
+      "type": "affiliate",
+      "pick": "Best fit if your new business runs on calls and you want calling in the CRM.",
+      "href": "https://refer.close.com/bebtpaitxgfs",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Close pricing page",
+      "href": "https://www.close.com/pricing"
+    },
+    {
+      "text": "Pipedrive pricing page",
+      "href": "https://www.pipedrive.com/en/pricing"
+    },
+    {
+      "text": "Capsule pricing page",
+      "href": "https://capsulecrm.com/pricing/"
+    },
+    {
+      "text": "Close HubSpot integration page",
+      "href": "https://www.close.com/integrations/hubspot"
+    }
+  ],
+  "related": [
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    },
+    {
+      "slug": "capsule-vs-pipedrive",
+      "route": "compare",
+      "title": "Capsule vs Pipedrive for a Small Team",
+      "dek": "Capsule and Pipedrive both suit small teams. One leans toward relationships, the other toward working a sales pipeline.",
+      "href": "/tools/compare/capsule-vs-pipedrive"
+    },
+    {
+      "slug": "hubspot-vs-close",
+      "route": "compare",
+      "title": "HubSpot vs Close for a Five-Person Sales Team",
+      "dek": "HubSpot and Close both run a sales pipeline. They start from different places.",
+      "href": "/tools/compare/hubspot-vs-close"
+    }
+  ]
+}

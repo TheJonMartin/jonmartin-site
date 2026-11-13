@@ -1,0 +1,207 @@
+{
+	"slug": "call-tracking-for-hubspot-agencies",
+	"route": "best",
+	"template": "best",
+	"wave": 2,
+	"niche": {
+		"label": "Marketing agencies with clients on HubSpot",
+		"team_size": 10,
+		"must_haves": [
+			"Entry price",
+			"Tracks forms too",
+			"How it reaches HubSpot",
+			"Multi-client setup"
+		]
+	},
+	"products": [
+		{
+			"slug": "whatconverts",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you want calls, forms, and chat tracked across many client accounts on one plan."
+		},
+		{
+			"slug": "callrail",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want a direct HubSpot integration that creates contacts from calls and texts."
+		},
+		{
+			"slug": "ctm",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if your client reps also want to place and take calls inside HubSpot."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		},
+		{
+			"slug": "zapier",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Call Tracking for HubSpot Agencies — Jon Martin",
+	"seoTitle": "Call and Form Tracking for Agencies Using HubSpot",
+	"description": "WhatConverts, CallRail, and CallTrackingMetrics compared for agencies whose clients run HubSpot: prices, form tracking, how each reaches HubSpot, and multi-client setup.",
+	"h1": "Call and form tracking for agencies whose clients run HubSpot",
+	"dek": [
+		"Three call tracking tools for an agency that has to prove which campaigns made the phone ring, and get that answer into a client's HubSpot.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This page is for a small marketing agency running paid search, social, or SEO for clients who use {{link:hubspot}}. The client asks which campaign brought in last month's best leads. Half of those leads called instead of filling out a form, and HubSpot has no idea where the callers came from."
+				},
+				{
+					"type": "p",
+					"html": "Call tracking fixes that by giving each campaign its own number and passing the source along with the call. The hard part for an agency isn't the tracking. It's getting the data into each client's HubSpot without building a custom setup per client."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If you want one plan that covers many client accounts and tracks calls, forms, and chat, look at WhatConverts first. If a direct HubSpot integration matters most, look at CallRail or CallTrackingMetrics, since both describe creating HubSpot records from calls without a middle step."
+				},
+				{
+					"type": "p",
+					"html": "Whichever you pick, run it on one client first. Number swapping, form capture, and the HubSpot mapping each have their own setup, and you want to learn them once, not across every account at the same time."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "WhatConverts"
+				},
+				{
+					"type": "p",
+					"html": "WhatConverts' Call Tracking plan is {{fact:whatconverts.call_tracking_price}}. Plus is {{fact:whatconverts.plus_single}}. For agencies, the multi-account version of Plus is {{fact:whatconverts.agency_plus}}. There's {{fact:whatconverts.trial}}. Plus tracks {{fact:whatconverts.tracks}}."
+				},
+				{
+					"type": "p",
+					"html": "The HubSpot connection is the part to read closely. Per WhatConverts' help center, its HubSpot integration {{fact:whatconverts.hubspot_zapier}}. Set up that way, {{fact:whatconverts.hubspot_two_way}}. It works, but each client account needs its own workflows."
+				},
+				{
+					"type": "cta",
+					"product": "whatconverts"
+				},
+				{
+					"type": "h3",
+					"text": "CallRail"
+				},
+				{
+					"type": "p",
+					"html": "CallRail's Lead Tracking plan is {{fact:callrail.lead_tracking}}. Lead Tracking Complete is {{fact:callrail.ltc}}. Extra local numbers are {{fact:callrail.extra_number}}. There's {{fact:callrail.trial}}. CallRail is available in {{fact:callrail.countries}}."
+				},
+				{
+					"type": "p",
+					"html": "CallRail's HubSpot integration {{fact:callrail.hubspot}}. That's a direct connection, so there's no extra automation tool sitting in the middle."
+				},
+				{
+					"type": "cta",
+					"product": "callrail"
+				},
+				{
+					"type": "h3",
+					"text": "CallTrackingMetrics"
+				},
+				{
+					"type": "p",
+					"html": "CallTrackingMetrics (CTM) lists Marketing Pro at {{fact:ctm.marketing_pro}}. On that plan, {{fact:ctm.hubspot_tier}}. It includes {{fact:ctm.forms}}, {{fact:ctm.transcription}}, and {{fact:ctm.agency}}."
+				},
+				{
+					"type": "p",
+					"html": "CTM's HubSpot page describes {{fact:ctm.hubspot_softphone}}. That softphone matters if the client's sales team, not just the marketing team, will use the tool every day."
+				},
+				{
+					"type": "cta",
+					"product": "ctm"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Count your client accounts. A per-account price that looks small multiplies fast, and a flat multi-account plan can come out ahead once you pass a handful of clients. Do that math with your own client count before you compare sticker prices."
+				},
+				{
+					"type": "p",
+					"html": "Then ask how each client's HubSpot is set up. If a client has no admin who can approve a connection, or doesn't pay for an automation tool, a direct integration is easier to hand over than a set of workflows."
+				},
+				{
+					"type": "p",
+					"html": "Last, decide whether you're tracking only calls or calls and forms. If forms already land in HubSpot with a source, you may only need the call side."
+				}
+			]
+		},
+		{
+			"label": "Before you switch on tracking",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Agree with each client on what counts as a lead, and which HubSpot property will hold the call source. Then test with a real call from a tracked ad before you report on anything."
+				},
+				{
+					"type": "p",
+					"html": "Check whether the client's own HubSpot already logs calls from another tool. Two tools creating records from the same call is the most common mess in this setup."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Does WhatConverts connect directly to HubSpot?",
+			"a": "Per its help center, the HubSpot integration {{fact:whatconverts.hubspot_zapier}}."
+		},
+		{
+			"q": "Which of these tracks forms as well as calls?",
+			"a": "All three can. WhatConverts tracks {{fact:whatconverts.tracks}}. CallRail adds form tracking on Lead Tracking Complete, {{fact:callrail.ltc}}. CTM includes {{fact:ctm.forms}}."
+		},
+		{
+			"q": "Is there a free trial?",
+			"a": "WhatConverts offers {{fact:whatconverts.trial}}, and CallRail offers {{fact:callrail.trial}}."
+		},
+		{
+			"q": "Can reps make calls from HubSpot?",
+			"a": "CTM describes {{fact:ctm.hubspot_softphone}}."
+		}
+	],
+	"closing": "Pick the tool whose HubSpot connection you can set up the same way for every client, then roll it out one account at a time.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"whatconverts": "{{fact:whatconverts.call_tracking_price}}.",
+			"callrail": "{{fact:callrail.lead_tracking}}.",
+			"ctm": "Marketing Pro {{fact:ctm.marketing_pro}}."
+		},
+		"Tracks forms too": {
+			"whatconverts": "Yes, from Plus.",
+			"callrail": "Yes, on Lead Tracking Complete.",
+			"ctm": "Yes: {{fact:ctm.forms}}."
+		},
+		"How it reaches HubSpot": {
+			"whatconverts": "Through Zapier workflows you build.",
+			"callrail": "Direct integration.",
+			"ctm": "Direct integration with a softphone in HubSpot."
+		},
+		"Multi-client setup": {
+			"whatconverts": "{{fact:whatconverts.agency_plus}}.",
+			"callrail": "Not covered on the pricing page I checked.",
+			"ctm": "Yes: {{fact:ctm.agency}}."
+		}
+	}
+}
