@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import home from '../content/pages/home.json';
 import about from '../content/pages/about.json';
 import { getCollection } from 'astro:content';
-import { portalAuditSchema } from '../lib/schema';
+import { portalMendSchema } from '../lib/schema';
 
 // Copy lives in src/content/pages/home.json so it's editable through the
 // Decap CMS at /admin without touching this template. See docs/cms-setup.md.
@@ -16,9 +16,10 @@ const recentPosts = (await getCollection('writing', ({ data }) => !data.draft))
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-// Portal Audit + Fixer are presented as one product; both buttons go to the app.
-// One constant so the destination is a one-line change.
-const APP_URL = 'https://audit.thejonmartin.com';
+// Portal Mend (the audit + Fixer) is one product; both buttons go to the app.
+// One constant so the destination is a one-line change. The app's OAuth
+// callback stays on audit.thejonmartin.com; only the entry host changes.
+const APP_URL = 'https://portalmend.com';
 
 // '#jon' (Person) and '#org' (Organization) are emitted sitewide by SeoHead
 // from src/lib/schema.ts; pages point at them by @id rather than re-describing.
@@ -31,13 +32,13 @@ const schema = [{
 			url: 'https://thejonmartin.com/',
 			name: 'Jon Martin',
 			// Site identity uses the About description (consulting/diagnosis), not the
-			// homepage's Portal Audit pitch, which stays on the page and its Service node.
+			// homepage's Portal Mend pitch, which stays on the page and its Service node.
 			description: about.description,
 			publisher: { '@id': 'https://thejonmartin.com/#org' },
 			inLanguage: 'en-US',
 		},
 	],
-}, portalAuditSchema(description)];
+}, portalMendSchema(description)];
 ---
 
 <Base title={title} description={description} schema={schema} navBordered={false}>
@@ -55,7 +56,11 @@ const schema = [{
 					<h1 set:html={home.heroTitle.replace(/\bfix it\b/, '<span class="range">fix it</span>')} />
 
 					<div class="herorow">
-						<p class="dek">{home.subhead}</p>
+						<div>
+							<p class="dek">{home.subhead}</p>
+							{/* TODO(rename): temporary "formerly Portal Audit" line; remove 3-6 months after the Nov 2026 rename. */}
+							{home.heroFormerly && <p class="formerly">{home.heroFormerly}</p>}
+						</div>
 						<a class="btn btn-primary" href={APP_URL}>Run my free audit &rarr;</a>
 					</div>
 				</div>
@@ -211,6 +216,7 @@ const schema = [{
 	.hero :global(.range) { color: var(--mustard); }
 	.herorow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; }
 	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
+	.formerly { font-family: 'Courier New', Cousine, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--label-on-plum); margin: 1rem 0 0; }
 
 	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; justify-self: start; }
 	.btn-primary { background: var(--mustard); color: var(--plum); }
