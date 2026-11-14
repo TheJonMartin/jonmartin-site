@@ -46,9 +46,9 @@ export default defineConfig({
 
 	integrations: [
 		sitemap({
-			// Must match every noindex page (Base/FourLawsLayout): /thanks-contact, /thanks-consulting, /thanks-giftkeep, /404, and noindex pSEO engine pages.
+			// Must match every noindex page (Base/FourLawsLayout): /thanks-contact, /thanks-consulting, /404, and noindex pSEO engine pages.
 			filter: (page) => {
-				if (/\/(thanks-contact|thanks-consulting|thanks-giftkeep|404)(\.html)?$/.test(page)) return false;
+				if (/\/(thanks-contact|thanks-consulting|404)(\.html)?$/.test(page)) return false;
 				const pathname = new URL(page).pathname.replace(/\.html$/, '');
 				return !pseoNoindex.has(pathname);
 			},

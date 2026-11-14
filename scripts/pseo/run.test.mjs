@@ -72,7 +72,7 @@ test('trafficVerdicts: a 90+ day old page with plenty of impressions is left alo
 	assert.deepEqual(trafficVerdicts(pages, metrics, '2026-11-01'), {});
 });
 
-test('run.mjs --local --dry-run exits 0 with an empty specs folder', () => {
+test('run.mjs --local --dry-run exits 0', () => {
 	const result = spawnSync(process.execPath, [path.join(dir, 'run.mjs'), '--local', '--dry-run'], { encoding: 'utf8' });
 	assert.equal(result.status, 0, result.stderr);
 });
