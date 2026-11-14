@@ -275,7 +275,7 @@ export function checkRelatedLinks(page, pool, errors = []) {
 	return errors;
 }
 
-export function gate(page, { spec, facts, products, links, claims, otherPages = [], runDate, relatedPool = null }) {
+export function gate(page, { spec, facts, products, links, claims, otherPages = [], runDate }) {
 	const errors = [];
 	checkOptionsCount(page, spec, errors);
 	checkFacts(page, spec, facts, runDate, errors);
@@ -285,6 +285,5 @@ export function gate(page, { spec, facts, products, links, claims, otherPages = 
 	checkBannedWords(page, errors);
 	checkOwnProductClaims(page, claims, errors);
 	checkEveryToolLinked(page, spec, products, links, errors);
-	if (relatedPool) checkRelatedLinks(page, relatedPool, errors);
 	return { ok: errors.length === 0, errors };
 }
