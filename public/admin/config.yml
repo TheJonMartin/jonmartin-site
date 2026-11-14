@@ -148,6 +148,7 @@ collections:
           - { label: "Meta description (search results)", name: "description", widget: "text" }
           - { label: "Headline (H1)", name: "heroTitle", widget: "text" }
           - { label: "Subhead", name: "subhead", widget: "text" }
+          - { label: "Hero 'formerly' line (temporary rename note; leave empty to hide)", name: "heroFormerly", widget: "string", required: false }
           - label: "Hero metadata strip (small labels above the headline, e.g. \"Field report\", \"No. 001\")"
             name: "heroMeta"
             widget: "list"

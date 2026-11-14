@@ -1,8 +1,9 @@
 {
-	"title": "Jon Martin — Free HubSpot Health Audit and Fixer",
-	"description": "A free HubSpot health check, scored against 11 years of what I've seen break in real portals. Nothing changes in your portal unless you approve it.",
+	"title": "Portal Mend — Free HubSpot Health Audit | Jon Martin",
+	"description": "Portal Mend scores your HubSpot portal and gives you a 90-day fix plan. Your first audit is free. Nothing changes in your portal unless you approve it.",
 	"heroTitle": "Know what's wrong in your HubSpot portal. Then fix it.",
-	"subhead": "AI is the lens. The standard is mine: the best practices and the problems I've seen over 11 years across B2B SaaS, B2B services, custom manufacturing, and the companies that work inside and on top of HubSpot. Portal Audit turns that into a scored report and a 90-day plan. Nothing changes in your portal unless you approve it. Portal Fixer is part of that same install: it applies the safe cleanup items you approve, and shows you every change before it happens.",
+	"subhead": "AI is the lens. The standard is mine: the best practices and the problems I've seen over 11 years across B2B SaaS, B2B services, custom manufacturing, and the companies that work inside and on top of HubSpot. Portal Mend turns that into a scored report and a 90-day plan. Nothing changes in your portal unless you approve it. Fixer is part of that same install: it applies the cleanup items you approve, and shows you every change before it happens.",
+	"heroFormerly": "Portal Mend (formerly Portal Audit).",
 	"heroMeta": [
 		{
 			"label": "HubSpot health audit",
@@ -15,7 +16,7 @@
 			"label": "First audit free"
 		},
 		{
-			"label": "Fixer: free beta"
+			"label": "Fix: free beta"
 		}
 	],
 	"offerStatement": "Nothing changes in your portal unless you approve it. Fixes are optional, and you see every change first.",
@@ -38,7 +39,7 @@
 			"value": "Scored + 90-day plan"
 		},
 		{
-			"label": "Fixer",
+			"label": "Fix",
 			"value": "Free beta"
 		}
 	],
@@ -51,21 +52,21 @@
 		"Marketing and automation: lists, forms, emails and workflows, if your plan includes them.",
 		"Security and limits: login activity, an audit-log summary, and account limits."
 	],
-	"checksConvergence": "46 automated checks and 37 best-practice tests, ending in a plan for the first 30, 60 and 90 days. The tests aren't generic. They're the patterns I've learned to look for over 11 years, run through automation.",
-	"fixerHeading": "The audit reads. Fixer writes, and only what you approve.",
-	"auditLabel": "Portal Audit",
+	"checksConvergence": "51 checks and 37 tests, ending in a plan for the first 30, 60 and 90 days. The tests aren't generic. They're the patterns I've learned to look for over 11 years, run through automation.",
+	"fixerHeading": "The audit scans and reports. Fixer makes changes, and only what you approve.",
+	"auditLabel": "Part 1: the audit",
 	"auditPoints": [
-		"Reads your settings and counts records.",
+		"Scans your settings and counts records.",
 		"Never creates, changes or deletes anything.",
 		"Gives you a scored report and a 90-day plan."
 	],
-	"fixerLabel": "Portal Fixer",
+	"fixerLabel": "Part 2: Fixer",
 	"fixerPoints": [
-		"Re-reads the portal and shows a dry-run preview of the change.",
-		"Reads each value back after writing, and restores the snapshot if it doesn't match.",
-		"Never deletes or merges records, turns on a workflow, or sends email."
+		"Re-reads the portal and shows a dry-run preview of every change.",
+		"You approve it, then it applies, and you can undo.",
+		"Fixer covers a short, published list of fixes."
 	],
-	"fixerNote": "Fixer covers a short, published list of fixes. Anything else on the report stays with you. One HubSpot app (Portal Audit, with Fixer built in), not made or endorsed by HubSpot.",
+	"fixerNote": "One HubSpot app: Portal Mend, with the audit and Fixer built in. Not made or endorsed by HubSpot.",
 	"writingHeading": "Writing",
 	"startHeading": "Run the audit first.",
 	"startBody": "It's free for your first portal and starts with one install. Want it to keep watching? Watch reruns the audit every month, or every week, and emails you the report. Fixer is on that same install when you want approved cleanup applied."
