@@ -12,8 +12,8 @@
     "Prices and integration details come from each vendor's own pages, checked on the date shown."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-14",
+  "checked": "Nov 14, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Small HubSpot teams that make calls"
@@ -239,26 +239,26 @@
   "sources": [
     {
       "text": "Aircall pricing page",
-      "href": "https://aircall.io/pricing/"
-    },
-    {
-      "text": "HubSpot App Marketplace: Aircall listing",
       "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
-    },
-    {
-      "text": "Aircall's HubSpot integration page",
-      "href": "https://aircall.io/integrations/hubspot/"
     },
     {
       "text": "Calilio pricing page",
       "href": "https://www.calilio.com/pricing"
     },
     {
-      "text": "Calilio HubSpot page",
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/pricing/"
+    },
+    {
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/integrations/hubspot/"
+    },
+    {
+      "text": "Calilio pricing page",
       "href": "https://www.calilio.com/integration/hubspot"
     },
     {
-      "text": "Calilio product updates",
+      "text": "Calilio pricing page",
       "href": "https://www.calilio.com/whats-new"
     }
   ],
