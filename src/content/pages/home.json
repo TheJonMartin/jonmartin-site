@@ -52,7 +52,7 @@
 		"Marketing and automation: lists, forms, emails and workflows, if your plan includes them.",
 		"Security and limits: login activity, an audit-log summary, and account limits."
 	],
-	"checksConvergence": "51 automated checks, ending in a plan for the first 30, 60 and 90 days. The tests aren't generic. They're the patterns I've learned to look for over 11 years, run through automation.",
+	"checksConvergence": "51 checks and 37 tests, ending in a plan for the first 30, 60 and 90 days. The tests aren't generic. They're the patterns I've learned to look for over 11 years, run through automation.",
 	"fixerHeading": "The audit scans and reports. Fixer makes changes, and only what you approve.",
 	"auditLabel": "Part 1: the audit",
 	"auditPoints": [
