@@ -16,9 +16,18 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 /starter-package     /           301
 /premium-package     /           301
 
-# Portal Audit pricing lives on the audit subdomain (source of truth).
-/pricing              https://audit.thejonmartin.com/pricing  301
-/pricing/             https://audit.thejonmartin.com/pricing  301
+# Portal Mend pricing lives on portalmend.com (source of truth).
+/pricing              https://portalmend.com/pricing  301
+/pricing/             https://portalmend.com/pricing  301
+
+# Portal Audit / Portal Fixer renamed to Portal Mend (Nov 2026). No such pages
+# ever existed here; precautionary 301s for old or guessed links.
+/portal-audit         https://portalmend.com  301
+/portal-audit/        https://portalmend.com  301
+/portal-fixer         https://portalmend.com  301
+/portal-fixer/        https://portalmend.com  301
+/fixer                https://portalmend.com  301
+/fixer/               https://portalmend.com  301
 
 # Trailing-slash redirects after build.format 'file' (see docs/site-consolidation.md).
 # /writing/<slug>/ has no splat rule (Netlify splat is end-only); relies on pretty-URL normalization to .html.
