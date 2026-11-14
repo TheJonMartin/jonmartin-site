@@ -213,8 +213,8 @@ test('related comparisons: pages sharing a product link to each other, never sel
 test('rule 9: a page with an eligible sibling must carry at least one related link', () => {
 	const { best, compare } = renderAll();
 	const pool = [best, compare];
-	const bad = gate(best, { spec: specs.best, facts, products, links, claims, runDate: RUN_DATE, relatedPool: pool });
-	assert.ok(bad.errors.some((e) => e.startsWith('rule 9:')), bad.errors.join('\n'));
+	const bad = checkRelatedLinks(best, pool);
+	assert.ok(bad.some((e) => e.startsWith('rule 9:')), bad.join('\n'));
 
 	attachRelated(pool, pool);
 	for (const page of pool) assert.deepEqual(checkRelatedLinks(page, pool), []);

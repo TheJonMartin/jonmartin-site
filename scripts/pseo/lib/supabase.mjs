@@ -37,21 +37,17 @@ export function createClient({ url, serviceKey, fetchImpl = fetch }) {
 				extraHeaders: { Prefer: 'resolution=merge-duplicates,return=representation' },
 			});
 		},
-		patch(table, query, body) {
-			return request('PATCH', table, { query, body, extraHeaders: { Prefer: 'return=representation' } });
-		},
 	};
 }
 
 export async function loadAll({ url, serviceKey, fetchImpl = fetch }) {
 	const client = createClient({ url, serviceKey, fetchImpl });
-	const [products, facts, claims, niches, pages, metrics] = await Promise.all([
+	const [products, facts, claims, pages, metrics] = await Promise.all([
 		client.select('pseo_products'),
 		client.select('pseo_facts'),
 		client.select('pseo_claims_allowlist'),
-		client.select('pseo_niches'),
 		client.select('pseo_pages'),
 		client.select('pseo_page_metrics'),
 	]);
-	return { products, facts, claims, niches, pages, metrics };
+	return { products, facts, claims, pages, metrics };
 }
