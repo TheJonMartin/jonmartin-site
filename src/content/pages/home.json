@@ -1,19 +1,17 @@
 {
 	"title": "Portal Mend — Free HubSpot Health Audit | Jon Martin",
 	"description": "Portal Mend scores your HubSpot portal and gives you a 90-day fix plan. Your first audit is free. Nothing changes in your portal unless you approve it.",
-	"heroTitle": "Know what's wrong in your HubSpot portal. Then fix it.",
-	"subhead": "AI is the lens. The standard is mine: the best practices and the problems I've seen over 11 years across B2B SaaS, B2B services, custom manufacturing, and the companies that work inside and on top of HubSpot. Portal Mend turns that into a scored report and a 90-day plan. Nothing changes in your portal unless you approve it. Fixer is part of that same install: it applies the cleanup items you approve, and shows you every change before it happens.",
-	"heroFormerly": "Portal Mend (formerly Portal Audit).",
+	"heroTitle": "Inherited a HubSpot portal you don't trust? Get a straight answer. Then clean it up.",
+	"subhead": "Portal Mend scans your portal, scores it, and writes a prioritized fix plan. It's an app, not a service. No calls, no consulting. Nothing changes in your portal unless you approve it. When you want cleanup applied, Fixer shows you a dry-run preview of every change first.",
+	"heroFormerly": "Formerly Portal Audit.",
+	"heroButtonNote": "One free audit per portal. No payment details. 51 automated checks, ending in a 30/60/90-day plan.",
 	"heroMeta": [
 		{
-			"label": "HubSpot health audit",
+			"label": "Free HubSpot audit",
 			"accent": true
 		},
 		{
-			"label": "No changes to your portal"
-		},
-		{
-			"label": "First audit free"
+			"label": "Nothing changes in your portal unless you approve it"
 		},
 		{
 			"label": "Fix: free beta"
