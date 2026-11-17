@@ -207,8 +207,8 @@ const personSchema = {
  * Organization for the site (#org). Only facts already on the site: name matches
  * the WebSite name and Base siteName ("Jon Martin"); the TheJonMartin handle is
  * kept as alternateName. The description leads with the consulting/diagnosis
- * work, not HubSpot; Portal Audit and GiftKeep are listed as products in
- * hasOfferCatalog (Portal Audit's full node lives on /; GiftKeep lives on giftkeep.app). logo is the JM monogram icon (public/apple-touch-icon.png,
+ * work, not HubSpot; Portal Mend and GiftKeep are listed as products in
+ * hasOfferCatalog (Portal Mend's full node lives on /; GiftKeep lives on giftkeep.app). logo is the JM monogram icon (public/apple-touch-icon.png,
  * 180x180), email is the footer address, sameAs are the profiles linked from
  * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
  * ratings or employee counts: none are published.
@@ -237,9 +237,11 @@ const organizationSchema = {
 				'@type': 'Offer',
 				itemOffered: {
 					'@type': 'Service',
-					'@id': 'https://thejonmartin.com/#portal-audit',
-					name: 'Portal Audit',
-					url: 'https://audit.thejonmartin.com/',
+					'@id': 'https://thejonmartin.com/#portal-mend',
+					name: 'Portal Mend',
+					// TODO(rename): drop alternateName once the Portal Audit -> Portal Mend transition ends (~3-6 months after Nov 2026).
+					alternateName: 'Portal Audit',
+					url: 'https://portalmend.com/',
 				},
 			},
 			{
@@ -272,22 +274,23 @@ export const siteEntitiesSchema = {
 };
 
 /**
- * Portal Audit as a Service (homepage). Prices are the approved ones only:
- * free audit (one per portal), Watch $19/mo or $190/yr, Watch Weekly $29/mo or
- * $290/yr (weekly audits, Jon 2026-10-24), Fix free during beta
- * then $49/mo or $490/yr (annual is 10x monthly, Jon 2026-10-23). No onboarding fee. Keep in step with public/llms.txt.
+ * Portal Mend as a Service (homepage). Jon, 2026-11-14: no plan prices in the
+ * homepage JSON-LD; only the free audit offer, linking to the pricing page
+ * (prices live on portalmend.com/pricing and in public/llms.txt).
  * Never describe the app as "read-only".
  */
-export function portalAuditSchema(description: string) {
-	const pricing = 'https://audit.thejonmartin.com/pricing';
+export function portalMendSchema(description: string) {
+	const pricing = 'https://portalmend.com/pricing';
 	return {
 		'@context': 'https://schema.org',
 		'@type': 'Service',
-		'@id': 'https://thejonmartin.com/#portal-audit',
-		name: 'Portal Audit',
+		'@id': 'https://thejonmartin.com/#portal-mend',
+		name: 'Portal Mend',
+		// TODO(rename): drop alternateName once the Portal Audit -> Portal Mend transition ends.
+		alternateName: 'Portal Audit',
 		serviceType: 'HubSpot portal health audit',
 		description,
-		url: 'https://audit.thejonmartin.com/',
+		url: 'https://portalmend.com/',
 		provider: { '@id': 'https://thejonmartin.com/#org' },
 		brand: { '@id': 'https://thejonmartin.com/#org' },
 		offers: [
@@ -297,85 +300,6 @@ export function portalAuditSchema(description: string) {
 				description: 'One free audit per portal.',
 				price: '0',
 				priceCurrency: 'USD',
-				url: pricing,
-			},
-			{
-				'@type': 'Offer',
-				name: 'Watch',
-				price: '19',
-				priceCurrency: 'USD',
-				priceSpecification: [
-					{
-						'@type': 'UnitPriceSpecification',
-						price: '19',
-						priceCurrency: 'USD',
-						unitCode: 'MON',
-						unitText: 'month',
-					},
-					{
-						'@type': 'UnitPriceSpecification',
-						price: '190',
-						priceCurrency: 'USD',
-						unitCode: 'ANN',
-						unitText: 'year',
-					},
-				],
-				url: pricing,
-			},
-			{
-				'@type': 'Offer',
-				name: 'Watch Weekly',
-				description: 'Weekly audits.',
-				price: '29',
-				priceCurrency: 'USD',
-				priceSpecification: [
-					{
-						'@type': 'UnitPriceSpecification',
-						price: '29',
-						priceCurrency: 'USD',
-						unitCode: 'MON',
-						unitText: 'month',
-					},
-					{
-						'@type': 'UnitPriceSpecification',
-						price: '290',
-						priceCurrency: 'USD',
-						unitCode: 'ANN',
-						unitText: 'year',
-					},
-				],
-				url: pricing,
-			},
-			{
-				'@type': 'Offer',
-				name: 'Fix',
-				description: 'Free during beta, then $49/mo or $490/yr.',
-				price: '0',
-				priceCurrency: 'USD',
-				priceSpecification: [
-					{
-						'@type': 'UnitPriceSpecification',
-						name: 'During beta',
-						price: '0',
-						priceCurrency: 'USD',
-					},
-					{
-						'@type': 'UnitPriceSpecification',
-						name: 'After beta',
-						price: '49',
-						priceCurrency: 'USD',
-						unitCode: 'MON',
-						unitText: 'month',
-					},
-					{
-						'@type': 'UnitPriceSpecification',
-						name: 'After beta (annual)',
-						price: '490',
-						priceCurrency: 'USD',
-						unitCode: 'ANN',
-						unitText: 'year',
-					},
-				],
 				url: pricing,
 			},
 		],
