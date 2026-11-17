@@ -53,15 +53,18 @@ const schema = [{
 						))}
 					</div>
 
-					<h1 set:html={home.heroTitle.replace(/\bfix it\b/, '<span class="range">fix it</span>')} />
+					<h1 set:html={home.heroTitle.replace(/\bclean it up\b/, '<span class="range">clean it up</span>')} />
 
 					<div class="herorow">
 						<div>
 							<p class="dek">{home.subhead}</p>
+						</div>
+						<div class="herocta">
+							<a class="btn btn-primary" href={APP_URL}>Run my free audit &rarr;</a>
+							{home.heroButtonNote && <p class="buttonnote">{home.heroButtonNote}</p>}
 							{/* TODO(rename): temporary "formerly Portal Audit" line; remove 3-6 months after the Nov 2026 rename. */}
 							{home.heroFormerly && <p class="formerly">{home.heroFormerly}</p>}
 						</div>
-						<a class="btn btn-primary" href={APP_URL}>Run my free audit &rarr;</a>
 					</div>
 				</div>
 			</div>
@@ -216,6 +219,7 @@ const schema = [{
 	.hero :global(.range) { color: var(--mustard); }
 	.herorow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; align-items: start; }
 	.dek { font-size: 19px; line-height: 1.6; color: var(--body-on-plum); margin: 0; }
+	.buttonnote { font-size: 15px; line-height: 1.5; color: var(--body-on-plum); margin: 1rem 0 0; }
 	.formerly { font-family: 'Courier New', Cousine, monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--label-on-plum); margin: 1rem 0 0; }
 
 	.btn { display: inline-block; font-family: 'Courier New', Cousine, monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; padding: 16px 26px; text-decoration: none; justify-self: start; }
