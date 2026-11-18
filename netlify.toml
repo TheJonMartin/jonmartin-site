@@ -14,6 +14,9 @@
 [[headers]]
   for = "/*"
   [headers.values]
+    # THE-151: Netlify's default HSTS is max-age only. www and fourlaws are
+    # both HTTPS on Netlify, so subdomains are safe to include. No preload yet.
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
     X-Frame-Options = "DENY"
     Content-Security-Policy = "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'"
     Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; font-src 'self' data:; frame-src 'none'"
