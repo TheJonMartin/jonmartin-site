@@ -1,0 +1,284 @@
+{
+  "slug": "capsule-vs-pipedrive",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "Capsule vs Pipedrive for a Small Team — Jon Martin",
+  "seoTitle": "Capsule vs Pipedrive for a Small Team",
+  "description": "Capsule or Pipedrive for a small team's first CRM: per-user prices, free options, contact limits, and where sales automation starts.",
+  "h1": "Capsule or Pipedrive for a small team's first CRM",
+  "dek": [
+    "Capsule and Pipedrive both suit small teams. One leans toward relationships, the other toward working a sales pipeline.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Small teams picking a first CRM"
+  },
+  "fitTable": {
+    "caption": "Fit for Small teams picking a first CRM",
+    "head": [
+      "Must-have",
+      "Capsule",
+      "Pipedrive"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually.",
+        "Lite $14 per seat per month, billed annually."
+      ],
+      [
+        "Free option",
+        "a free plan for up to 2 users and 250 contacts, with one sales pipeline.",
+        "Trial: 14 days, no credit card."
+      ],
+      [
+        "Contact limits",
+        "Starter includes 30,000 contacts and Growth 60,000.",
+        "Not listed as a headline limit on the pricing page."
+      ],
+      [
+        "Sales automation",
+        "Check the plan on Capsule's pricing page.",
+        "Automations and email sequences start on Growth."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually.",
+        "Lite $14 per seat per month, billed annually."
+      ],
+      [
+        "Free option",
+        "a free plan for up to 2 users and 250 contacts, with one sales pipeline.",
+        "Trial: 14 days, no credit card."
+      ],
+      [
+        "Contact limits",
+        "Starter includes 30,000 contacts and Growth 60,000.",
+        "Not listed as a headline limit on the pricing page."
+      ],
+      [
+        "Sales automation",
+        "Check the plan on Capsule's pricing page.",
+        "Automations and email sequences start on Growth."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Capsule",
+        "href": "https://get.capsulenow.io/x0kzganxlolo",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try Pipedrive",
+        "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This comparison is for a team of a few people choosing its first real CRM, usually moving off a spreadsheet, a shared inbox, or memory. You've narrowed it to <a href=\"https://get.capsulenow.io/x0kzganxlolo\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Capsule</a> and <a href=\"https://aff.trypipedrive.com/5102umtkzh8i\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Pipedrive</a> because both are known for being easy to start."
+        },
+        {
+          "type": "p",
+          "html": "I'm not covering every feature. I'm looking at what decides it for a small team: what a user costs, whether you can start free, how many contacts you get, and when automation kicks in."
+        }
+      ]
+    },
+    {
+      "label": "The straight answer first",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Capsule is the simpler, cheaper start, and it has a free plan. Pipedrive costs a bit more per seat but is built around moving deals through a pipeline, with automation and email sequences on its Growth plan."
+        },
+        {
+          "type": "p",
+          "html": "If your work is mostly keeping track of people and conversations, Capsule fits. If your work is chasing deals to close every week, Pipedrive fits."
+        }
+      ]
+    },
+    {
+      "label": "Price and plan breakdown",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Capsule"
+        },
+        {
+          "type": "p",
+          "html": "Capsule has a free plan for up to 2 users and 250 contacts, with one sales pipeline. Paid plans are Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually. Starter is $22 per user per month on monthly billing. Per Capsule, annual billing saves up to 18%. Five Growth users on annual billing come to about $180 a month."
+        },
+        {
+          "type": "p",
+          "html": "Capsule offers a 14-day trial of every paid plan, no card required. On contacts, Starter includes 30,000 contacts and Growth 60,000."
+        },
+        {
+          "type": "cta",
+          "product": "capsule",
+          "label": "Try Capsule",
+          "href": "https://get.capsulenow.io/x0kzganxlolo",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Pipedrive"
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive's Lite plan is $14 per seat per month, billed annually, Growth is $39 per seat per month, billed annually, and Premium is $59 per seat per month, billed annually. Per Pipedrive, annual billing saves up to 42%. Five Growth seats come to about $195 a month."
+        },
+        {
+          "type": "p",
+          "html": "The trial is 14 days, no credit card. There's no free plan on the pricing page, so the trial is the way in."
+        },
+        {
+          "type": "cta",
+          "product": "pipedrive",
+          "label": "Try Pipedrive",
+          "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "Fit for a small team",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "The table lines the two up on four questions a small team asks first. Capsule wins on a free start and on entry price. Pipedrive wins on automation built for a sales pipeline."
+        },
+        {
+          "type": "p",
+          "html": "On automation, Pipedrive is explicit: Automations and email sequences start on Growth. If follow-up is where deals get dropped today, that's the feature you're paying for."
+        }
+      ]
+    },
+    {
+      "label": "Where each one falls short",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Capsule's free plan is small: two users and a modest contact cap. It's a way to try the product, not a way to run a growing team for free. If you need sequences and heavier sales automation, check which Capsule plan includes them before you commit."
+        },
+        {
+          "type": "p",
+          "html": "Pipedrive's entry plan is lean on purpose. Lite is a pipeline and contact manager; the automation most teams buy Pipedrive for starts a tier up, so budget for Growth."
+        }
+      ]
+    },
+    {
+      "label": "How to decide",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Run both trials in the same week with the same ten live deals. Whichever one the team updates without being told is the answer."
+        },
+        {
+          "type": "p",
+          "html": "If you might connect your CRM to other tools later, look at integrations now. Pipedrive's pricing page highlights integrations from the Lite plan up, so check that the tools you already use are on its list. Capsule connects to Transpond, its own marketing platform, for email campaigns, which covers email campaigns without a separate tool."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Capsule cheaper than Pipedrive?",
+      "a": "At list prices, yes. Capsule's paid plans are Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually. Pipedrive Lite is $14 per seat per month, billed annually and Growth is $39 per seat per month, billed annually.",
+      "aHtml": "At list prices, yes. Capsule's paid plans are Starter $18, Growth $36, Advanced $54 and Ultimate $72 per user per month, billed annually. Pipedrive Lite is $14 per seat per month, billed annually and Growth is $39 per seat per month, billed annually."
+    },
+    {
+      "q": "Does either have a free plan?",
+      "a": "Capsule has a free plan for up to 2 users and 250 contacts, with one sales pipeline. Pipedrive offers a trial instead: 14 days, no credit card.",
+      "aHtml": "Capsule has a free plan for up to 2 users and 250 contacts, with one sales pipeline. Pipedrive offers a trial instead: 14 days, no credit card."
+    },
+    {
+      "q": "Which one has sales automation?",
+      "a": "Pipedrive says Automations and email sequences start on Growth.",
+      "aHtml": "Pipedrive says Automations and email sequences start on Growth."
+    },
+    {
+      "q": "How many contacts do I get?",
+      "a": "On Capsule, Starter includes 30,000 contacts and Growth 60,000, and the free plan covers 250 contacts.",
+      "aHtml": "On Capsule, Starter includes 30,000 contacts and Growth 60,000, and the free plan covers 250 contacts."
+    }
+  ],
+  "closing": "Pick Capsule for a simple, low-cost start and Pipedrive if you need a pipeline with automation behind it.",
+  "ctas": [
+    {
+      "label": "Try Capsule",
+      "href": "https://get.capsulenow.io/x0kzganxlolo",
+      "kind": "affiliate",
+      "product": "capsule"
+    },
+    {
+      "label": "Try Pipedrive",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "kind": "affiliate",
+      "product": "pipedrive"
+    }
+  ],
+  "products": [
+    {
+      "slug": "capsule",
+      "name": "Capsule",
+      "type": "affiliate",
+      "pick": "Better fit if you want a simple CRM, a free plan, and a low per-user price.",
+      "href": "https://get.capsulenow.io/x0kzganxlolo",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "pipedrive",
+      "name": "Pipedrive",
+      "type": "affiliate",
+      "pick": "Better fit if you run an active sales pipeline and want automation and sequences.",
+      "href": "https://aff.trypipedrive.com/5102umtkzh8i",
+      "linkKind": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Pipedrive pricing page",
+      "href": "https://www.pipedrive.com/en/pricing"
+    },
+    {
+      "text": "Capsule pricing page",
+      "href": "https://capsulecrm.com/pricing/"
+    }
+  ],
+  "related": [
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    },
+    {
+      "slug": "crm-for-small-marketing-agencies",
+      "route": "best",
+      "title": "Best CRM for Small Marketing Agencies",
+      "dek": "Three CRMs a small agency can run its own new business and client relationships on.",
+      "href": "/tools/best/crm-for-small-marketing-agencies"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    }
+  ]
+}

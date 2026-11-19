@@ -1,0 +1,202 @@
+{
+	"slug": "cold-email-tools-for-agencies",
+	"route": "best",
+	"template": "best",
+	"wave": 2,
+	"niche": {
+		"label": "Lead generation and outbound agencies",
+		"team_size": 5,
+		"must_haves": [
+			"Entry price",
+			"Sending accounts",
+			"Client workspaces",
+			"HubSpot connection"
+		]
+	},
+	"products": [
+		{
+			"slug": "instantly",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if you need many sending accounts on one flat plan."
+		},
+		{
+			"slug": "lemlist",
+			"role": "option",
+			"link": true,
+			"pick": "Best fit if campaigns mix email with other channels and you want unlimited users."
+		},
+		{
+			"slug": "smartlead",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want separate, white-labeled workspaces for each client."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"title": "Cold Email Tools for Agencies — Jon Martin",
+	"seoTitle": "Best Cold Email Tools for Agencies",
+	"description": "Instantly, lemlist, and Smartlead compared for agencies running cold email for clients: prices, sending accounts, client workspaces, and HubSpot connections.",
+	"h1": "Cold email tools for an agency running outbound for clients",
+	"dek": [
+		"Three cold email platforms an agency can run several client programs on.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This page is for a small agency that runs cold email on behalf of clients: you write the sequences, manage the sending domains, and report on replies. Some clients want the replies to land in their {{link:hubspot}} account, and some don't have a CRM at all."
+				},
+				{
+					"type": "p",
+					"html": "An agency needs different things from a cold email tool than an in-house rep does. You need lots of sending accounts, a clean way to keep clients apart, and a reporting story you can hand to someone who isn't in the tool."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Pick Instantly if your main cost is sending accounts and you want them unlimited on one plan. Pick lemlist if your campaigns run across email and other channels and the client's team wants to log in too. Pick Smartlead if keeping each client in its own branded workspace matters most."
+				},
+				{
+					"type": "p",
+					"html": "Whatever you pick, the tool won't fix deliverability on its own. Separate domains per client, warmed-up inboxes, and sane daily volumes do more for reply rates than any feature on these pages."
+				}
+			]
+		},
+		{
+			"label": "The three options",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Instantly"
+				},
+				{
+					"type": "p",
+					"html": "Instantly's Growth plan is {{fact:instantly.growth_price}}, with {{fact:instantly.unlimited_accounts}}. Instantly also sells larger bundles that add data credits and higher sending volume; check the pricing page for the current mix. Per Instantly, {{fact:instantly.automations}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, Instantly {{fact:instantly.hubspot}}."
+				},
+				{
+					"type": "cta",
+					"product": "instantly"
+				},
+				{
+					"type": "h3",
+					"text": "lemlist"
+				},
+				{
+					"type": "p",
+					"html": "lemlist's email plan is {{fact:lemlist.email_price}}, and the multichannel plan is {{fact:lemlist.multichannel_price}}. Billing is {{fact:lemlist.billing}}. The email plan comes with {{fact:lemlist.unlimited_senders}}. There's a {{fact:lemlist.trial}}."
+				},
+				{
+					"type": "p",
+					"html": "On HubSpot, lemlist {{fact:lemlist.hubspot_sync}}. Its help center notes it {{fact:lemlist.hubspot_plans}}, so a client on free HubSpot is out of luck."
+				},
+				{
+					"type": "cta",
+					"product": "lemlist"
+				},
+				{
+					"type": "h3",
+					"text": "Smartlead"
+				},
+				{
+					"type": "p",
+					"html": "Smartlead's Base plan is {{fact:smartlead.base_price}}, and Pro is {{fact:smartlead.pro_price}}. For agencies, {{fact:smartlead.whitelabel}}, and {{fact:smartlead.prime_clients}}. It offers {{fact:smartlead.no_lockin}}."
+				},
+				{
+					"type": "p",
+					"html": "Smartlead has {{fact:smartlead.hubspot}}. One catch from its help center: {{fact:smartlead.hubspot_per_campaign}}."
+				},
+				{
+					"type": "cta",
+					"product": "smartlead"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Start from your client count and how separate they need to be. If clients never log in, a single account with good tagging may be enough. If clients want their own login and your brand on it, workspaces and white-labeling move to the top of the list."
+				},
+				{
+					"type": "p",
+					"html": "Then look at which clients run HubSpot on a paid plan. lemlist needs a paid HubSpot plan, and Smartlead's sync has to be set per campaign, so map that out before the first client goes live."
+				},
+				{
+					"type": "p",
+					"html": "Last, price the seat count you'll really have. Unlimited users or unlimited sending accounts matter more for an agency than the entry price on the page."
+				}
+			]
+		},
+		{
+			"label": "Before the first client campaign",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Agree with the client on who owns the sending domains and who sees the replies. Write that down. It's the first thing that becomes a problem when a client leaves."
+				},
+				{
+					"type": "p",
+					"html": "Run a small test campaign from each new domain before the full send, and check that replies and meetings show up where the client expects them, whether that's HubSpot or a shared inbox."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Which cold email tool is best for managing many clients?",
+			"a": "Smartlead is built around client workspaces: {{fact:smartlead.whitelabel}}. Instantly comes {{fact:instantly.unlimited_accounts}}."
+		},
+		{
+			"q": "Do these tools sync with HubSpot?",
+			"a": "All three connect to HubSpot. lemlist {{fact:lemlist.hubspot_plans}}. Smartlead has {{fact:smartlead.hubspot}}."
+		},
+		{
+			"q": "Is there a free trial?",
+			"a": "lemlist offers a {{fact:lemlist.trial}}."
+		},
+		{
+			"q": "Which is cheapest to start?",
+			"a": "Smartlead's Base plan is {{fact:smartlead.base_price}}. Instantly's Growth plan is {{fact:instantly.growth_price}}. lemlist's email plan is {{fact:lemlist.email_price}}."
+		}
+	],
+	"closing": "For an agency, pick the tool that keeps clients cleanly apart and gets replies into each client's system without a custom build every time.",
+	"computed": [],
+	"fit": {
+		"Entry price": {
+			"instantly": "Growth {{fact:instantly.growth_price}}.",
+			"lemlist": "Email plan {{fact:lemlist.email_price}}.",
+			"smartlead": "Base {{fact:smartlead.base_price}}."
+		},
+		"Sending accounts": {
+			"instantly": "{{fact:instantly.unlimited_accounts}}.",
+			"lemlist": "{{fact:lemlist.unlimited_senders}}.",
+			"smartlead": "Volume is set by plan: Base covers 6,000 email sends."
+		},
+		"Client workspaces": {
+			"instantly": "Not covered on the pricing page I checked.",
+			"lemlist": "Not covered on the pricing page I checked.",
+			"smartlead": "{{fact:smartlead.whitelabel}}."
+		},
+		"HubSpot connection": {
+			"instantly": "{{fact:instantly.hubspot}}.",
+			"lemlist": "Needs a paid HubSpot plan and admin access.",
+			"smartlead": "Native, switched on per campaign."
+		}
+	}
+}

@@ -1,0 +1,191 @@
+{
+	"slug": "capsule-vs-pipedrive",
+	"route": "compare",
+	"template": "compare",
+	"wave": 2,
+	"niche": {
+		"label": "Small teams picking a first CRM",
+		"team_size": 5,
+		"must_haves": [
+			"Entry price",
+			"Free option",
+			"Contact limits",
+			"Sales automation"
+		]
+	},
+	"products": [
+		{
+			"slug": "capsule",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you want a simple CRM, a free plan, and a low per-user price."
+		},
+		{
+			"slug": "pipedrive",
+			"role": "option",
+			"link": true,
+			"pick": "Better fit if you run an active sales pipeline and want automation and sequences."
+		}
+	],
+	"title": "Capsule vs Pipedrive for a Small Team — Jon Martin",
+	"seoTitle": "Capsule vs Pipedrive for a Small Team",
+	"description": "Capsule or Pipedrive for a small team's first CRM: per-user prices, free options, contact limits, and where sales automation starts.",
+	"h1": "Capsule or Pipedrive for a small team's first CRM",
+	"dek": [
+		"Capsule and Pipedrive both suit small teams. One leans toward relationships, the other toward working a sales pipeline.",
+		"Prices and features below come from each vendor's own pages, checked on the date shown."
+	],
+	"sections": [
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "This comparison is for a team of a few people choosing its first real CRM, usually moving off a spreadsheet, a shared inbox, or memory. You've narrowed it to {{link:capsule}} and {{link:pipedrive}} because both are known for being easy to start."
+				},
+				{
+					"type": "p",
+					"html": "I'm not covering every feature. I'm looking at what decides it for a small team: what a user costs, whether you can start free, how many contacts you get, and when automation kicks in."
+				}
+			]
+		},
+		{
+			"label": "The straight answer first",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Capsule is the simpler, cheaper start, and it has a free plan. Pipedrive costs a bit more per seat but is built around moving deals through a pipeline, with automation and email sequences on its Growth plan."
+				},
+				{
+					"type": "p",
+					"html": "If your work is mostly keeping track of people and conversations, Capsule fits. If your work is chasing deals to close every week, Pipedrive fits."
+				}
+			]
+		},
+		{
+			"label": "Price and plan breakdown",
+			"blocks": [
+				{
+					"type": "h3",
+					"text": "Capsule"
+				},
+				{
+					"type": "p",
+					"html": "Capsule has {{fact:capsule.free_plan}}. Paid plans are {{fact:capsule.paid_annual}}. Starter is {{fact:capsule.starter_monthly}}. Per Capsule, {{fact:capsule.annual_saving}}. Five Growth users on annual billing come to about {{calc:capsule_growth_5}} a month."
+				},
+				{
+					"type": "p",
+					"html": "Capsule offers {{fact:capsule.trial_nov}}. On contacts, {{fact:capsule.contacts_tiers}}."
+				},
+				{
+					"type": "cta",
+					"product": "capsule"
+				},
+				{
+					"type": "h3",
+					"text": "Pipedrive"
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive's Lite plan is {{fact:pipedrive.lite_price}}, Growth is {{fact:pipedrive.growth_price}}, and Premium is {{fact:pipedrive.premium_price}}. Per Pipedrive, {{fact:pipedrive.annual_saving}}. Five Growth seats come to about {{calc:pipedrive_growth_5}} a month."
+				},
+				{
+					"type": "p",
+					"html": "The trial is {{fact:pipedrive.trial}}. There's no free plan on the pricing page, so the trial is the way in."
+				},
+				{
+					"type": "cta",
+					"product": "pipedrive"
+				}
+			]
+		},
+		{
+			"label": "Fit for a small team",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "The table lines the two up on four questions a small team asks first. Capsule wins on a free start and on entry price. Pipedrive wins on automation built for a sales pipeline."
+				},
+				{
+					"type": "p",
+					"html": "On automation, Pipedrive is explicit: {{fact:pipedrive.growth_automation}}. If follow-up is where deals get dropped today, that's the feature you're paying for."
+				}
+			]
+		},
+		{
+			"label": "Where each one falls short",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Capsule's free plan is small: two users and a modest contact cap. It's a way to try the product, not a way to run a growing team for free. If you need sequences and heavier sales automation, check which Capsule plan includes them before you commit."
+				},
+				{
+					"type": "p",
+					"html": "Pipedrive's entry plan is lean on purpose. Lite is a pipeline and contact manager; the automation most teams buy Pipedrive for starts a tier up, so budget for Growth."
+				}
+			]
+		},
+		{
+			"label": "How to decide",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Run both trials in the same week with the same ten live deals. Whichever one the team updates without being told is the answer."
+				},
+				{
+					"type": "p",
+					"html": "If you might connect your CRM to other tools later, look at integrations now. Pipedrive's pricing page highlights integrations from the Lite plan up, so check that the tools you already use are on its list. Capsule {{fact:capsule.transpond}}, which covers email campaigns without a separate tool."
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Is Capsule cheaper than Pipedrive?",
+			"a": "At list prices, yes. Capsule's paid plans are {{fact:capsule.paid_annual}}. Pipedrive Lite is {{fact:pipedrive.lite_price}} and Growth is {{fact:pipedrive.growth_price}}."
+		},
+		{
+			"q": "Does either have a free plan?",
+			"a": "Capsule has {{fact:capsule.free_plan}}. Pipedrive offers a trial instead: {{fact:pipedrive.trial}}."
+		},
+		{
+			"q": "Which one has sales automation?",
+			"a": "Pipedrive says {{fact:pipedrive.growth_automation}}."
+		},
+		{
+			"q": "How many contacts do I get?",
+			"a": "On Capsule, {{fact:capsule.contacts_tiers}}, and the free plan covers 250 contacts."
+		}
+	],
+	"closing": "Pick Capsule for a simple, low-cost start and Pipedrive if you need a pipeline with automation behind it.",
+	"computed": [
+		{
+			"id": "capsule_growth_5",
+			"label": "Capsule Growth (annual), 5 users",
+			"expr": "capsule.growth_annual * 5"
+		},
+		{
+			"id": "pipedrive_growth_5",
+			"label": "Pipedrive Growth (annual), 5 seats",
+			"expr": "pipedrive.growth_price * 5"
+		}
+	],
+	"fit": {
+		"Entry price": {
+			"capsule": "{{fact:capsule.paid_annual}}.",
+			"pipedrive": "Lite {{fact:pipedrive.lite_price}}."
+		},
+		"Free option": {
+			"capsule": "{{fact:capsule.free_plan}}.",
+			"pipedrive": "Trial: {{fact:pipedrive.trial}}."
+		},
+		"Contact limits": {
+			"capsule": "{{fact:capsule.contacts_tiers}}.",
+			"pipedrive": "Not listed as a headline limit on the pricing page."
+		},
+		"Sales automation": {
+			"capsule": "Check the plan on Capsule's pricing page.",
+			"pipedrive": "{{fact:pipedrive.growth_automation}}."
+		}
+	}
+}

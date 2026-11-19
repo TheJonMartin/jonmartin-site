@@ -1,0 +1,362 @@
+{
+  "slug": "cold-email-tools-for-agencies",
+  "route": "best",
+  "template": "best",
+  "status": "live",
+  "title": "Cold Email Tools for Agencies — Jon Martin",
+  "seoTitle": "Best Cold Email Tools for Agencies",
+  "description": "Instantly, lemlist, and Smartlead compared for agencies running cold email for clients: prices, sending accounts, client workspaces, and HubSpot connections.",
+  "h1": "Cold email tools for an agency running outbound for clients",
+  "dek": [
+    "Three cold email platforms an agency can run several client programs on.",
+    "Prices and features below come from each vendor's own pages, checked on the date shown."
+  ],
+  "published": "2026-11-13",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
+  "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "Lead generation and outbound agencies"
+  },
+  "fitTable": {
+    "caption": "Fit for Lead generation and outbound agencies",
+    "head": [
+      "Must-have",
+      "Instantly",
+      "lemlist",
+      "Smartlead"
+    ],
+    "rows": [
+      [
+        "Entry price",
+        "Growth $47 per month.",
+        "Email plan $69 per month, or $55 per month billed yearly.",
+        "Base $39 a month for 2,000 contacts and 6,000 email sends."
+      ],
+      [
+        "Sending accounts",
+        "unlimited email accounts and unlimited warmup.",
+        "unlimited users, senders, and campaigns.",
+        "Volume is set by plan: Base covers 6,000 email sends."
+      ],
+      [
+        "Client workspaces",
+        "Not covered on the pricing page I checked.",
+        "Not covered on the pricing page I checked.",
+        "white-labeling is a $29 a month add-on per client workspace; adding clients starts on Pro."
+      ],
+      [
+        "HubSpot connection",
+        "imports HubSpot contacts and lists and runs automations from HubSpot events.",
+        "Needs a paid HubSpot plan and admin access.",
+        "Native, switched on per campaign."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Entry price",
+        "Growth $47 per month.",
+        "Email plan $69 per month, or $55 per month billed yearly.",
+        "Base $39 a month for 2,000 contacts and 6,000 email sends."
+      ],
+      [
+        "Sending accounts",
+        "unlimited email accounts and unlimited warmup.",
+        "unlimited users, senders, and campaigns.",
+        "Volume is set by plan: Base covers 6,000 email sends."
+      ],
+      [
+        "Client workspaces",
+        "Not covered on the pricing page I checked.",
+        "Not covered on the pricing page I checked.",
+        "white-labeling is a $29 a month add-on per client workspace; adding clients starts on Pro."
+      ],
+      [
+        "HubSpot connection",
+        "imports <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contacts and lists and runs automations from HubSpot events.",
+        "Needs a paid HubSpot plan and admin access.",
+        "Native, switched on per campaign."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Try Instantly",
+        "href": "https://refer.instantly.ai/wwmtfom0192k",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Try lemlist",
+        "href": "https://get.lemlist.com/25fqpl724zci",
+        "kind": "affiliate"
+      },
+      {
+        "label": "Visit Smartlead",
+        "href": "https://www.smartlead.ai/",
+        "kind": "site"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "This page is for a small agency that runs cold email on behalf of clients: you write the sequences, manage the sending domains, and report on replies. Some clients want the replies to land in their <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> account, and some don't have a CRM at all."
+        },
+        {
+          "type": "p",
+          "html": "An agency needs different things from a cold email tool than an in-house rep does. You need lots of sending accounts, a clean way to keep clients apart, and a reporting story you can hand to someone who isn't in the tool."
+        }
+      ]
+    },
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Pick Instantly if your main cost is sending accounts and you want them unlimited on one plan. Pick lemlist if your campaigns run across email and other channels and the client's team wants to log in too. Pick Smartlead if keeping each client in its own branded workspace matters most."
+        },
+        {
+          "type": "p",
+          "html": "Whatever you pick, the tool won't fix deliverability on its own. Separate domains per client, warmed-up inboxes, and sane daily volumes do more for reply rates than any feature on these pages."
+        }
+      ]
+    },
+    {
+      "label": "The three options",
+      "blocks": [
+        {
+          "type": "h3",
+          "text": "Instantly"
+        },
+        {
+          "type": "p",
+          "html": "Instantly's Growth plan is $47 per month, with unlimited email accounts and unlimited warmup. Instantly also sells larger bundles that add data credits and higher sending volume; check the pricing page for the current mix. Per Instantly, the Automation Builder is available to all Outbound plans."
+        },
+        {
+          "type": "p",
+          "html": "On HubSpot, Instantly imports <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> contacts and lists and runs automations from HubSpot events."
+        },
+        {
+          "type": "cta",
+          "product": "instantly",
+          "label": "Try Instantly",
+          "href": "https://refer.instantly.ai/wwmtfom0192k",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "lemlist"
+        },
+        {
+          "type": "p",
+          "html": "lemlist's email plan is $69 per month, or $55 per month billed yearly, and the multichannel plan is $109 per month, or $87 per month billed yearly. Billing is Monthly, Quarterly (save 10%), or Yearly (save 20%). The email plan comes with unlimited users, senders, and campaigns. There's a 14-day free trial with Multichannel features and 200 credits."
+        },
+        {
+          "type": "p",
+          "html": "On HubSpot, lemlist imports <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> lists, logs outreach to the contact timeline, maps fields, and auto-exits leads on CRM changes. Its help center notes it works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> paid plans and needs HubSpot admin access, so a client on free HubSpot is out of luck."
+        },
+        {
+          "type": "cta",
+          "product": "lemlist",
+          "label": "Try lemlist",
+          "href": "https://get.lemlist.com/25fqpl724zci",
+          "kind": "affiliate"
+        },
+        {
+          "type": "h3",
+          "text": "Smartlead"
+        },
+        {
+          "type": "p",
+          "html": "Smartlead's Base plan is $39 a month for 2,000 contacts and 6,000 email sends, and Pro is $94 a month for 30,000 contacts and 90,000 email sends. For agencies, white-labeling is a $29 a month add-on per client workspace; adding clients starts on Pro, and the top plan, Unlimited Prime, already includes 3 client workspaces. It offers monthly and annual plans with no lock-in; cancel anytime."
+        },
+        {
+          "type": "p",
+          "html": "Smartlead has a native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration that pushes leads, deals, and email activity into HubSpot and pulls HubSpot lists into campaigns. One catch from its help center: <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> sync has to be switched on per campaign when you import leads, and can’t be added to a campaign already running."
+        },
+        {
+          "type": "cta",
+          "product": "smartlead",
+          "label": "Visit Smartlead",
+          "href": "https://www.smartlead.ai/",
+          "kind": "site"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Start from your client count and how separate they need to be. If clients never log in, a single account with good tagging may be enough. If clients want their own login and your brand on it, workspaces and white-labeling move to the top of the list."
+        },
+        {
+          "type": "p",
+          "html": "Then look at which clients run HubSpot on a paid plan. lemlist needs a paid HubSpot plan, and Smartlead's sync has to be set per campaign, so map that out before the first client goes live."
+        },
+        {
+          "type": "p",
+          "html": "Last, price the seat count you'll really have. Unlimited users or unlimited sending accounts matter more for an agency than the entry price on the page."
+        }
+      ]
+    },
+    {
+      "label": "Before the first client campaign",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Agree with the client on who owns the sending domains and who sees the replies. Write that down. It's the first thing that becomes a problem when a client leaves."
+        },
+        {
+          "type": "p",
+          "html": "Run a small test campaign from each new domain before the full send, and check that replies and meetings show up where the client expects them, whether that's HubSpot or a shared inbox."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Which cold email tool is best for managing many clients?",
+      "a": "Smartlead is built around client workspaces: white-labeling is a $29 a month add-on per client workspace; adding clients starts on Pro. Instantly comes unlimited email accounts and unlimited warmup.",
+      "aHtml": "Smartlead is built around client workspaces: white-labeling is a $29 a month add-on per client workspace; adding clients starts on Pro. Instantly comes unlimited email accounts and unlimited warmup."
+    },
+    {
+      "q": "Do these tools sync with HubSpot?",
+      "a": "All three connect to HubSpot. lemlist works with all HubSpot paid plans and needs HubSpot admin access. Smartlead has a native HubSpot integration that pushes leads, deals, and email activity into HubSpot and pulls HubSpot lists into campaigns.",
+      "aHtml": "All three connect to HubSpot. lemlist works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> paid plans and needs HubSpot admin access. Smartlead has a native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration that pushes leads, deals, and email activity into HubSpot and pulls HubSpot lists into campaigns."
+    },
+    {
+      "q": "Is there a free trial?",
+      "a": "lemlist offers a 14-day free trial with Multichannel features and 200 credits.",
+      "aHtml": "lemlist offers a 14-day free trial with Multichannel features and 200 credits."
+    },
+    {
+      "q": "Which is cheapest to start?",
+      "a": "Smartlead's Base plan is $39 a month for 2,000 contacts and 6,000 email sends. Instantly's Growth plan is $47 per month. lemlist's email plan is $69 per month, or $55 per month billed yearly.",
+      "aHtml": "Smartlead's Base plan is $39 a month for 2,000 contacts and 6,000 email sends. Instantly's Growth plan is $47 per month. lemlist's email plan is $69 per month, or $55 per month billed yearly."
+    }
+  ],
+  "closing": "For an agency, pick the tool that keeps clients cleanly apart and gets replies into each client's system without a custom build every time.",
+  "ctas": [
+    {
+      "label": "Try Instantly",
+      "href": "https://refer.instantly.ai/wwmtfom0192k",
+      "kind": "affiliate",
+      "product": "instantly"
+    },
+    {
+      "label": "Try lemlist",
+      "href": "https://get.lemlist.com/25fqpl724zci",
+      "kind": "affiliate",
+      "product": "lemlist"
+    },
+    {
+      "label": "Visit Smartlead",
+      "href": "https://www.smartlead.ai/",
+      "kind": "site",
+      "product": "smartlead"
+    }
+  ],
+  "products": [
+    {
+      "slug": "instantly",
+      "name": "Instantly",
+      "type": "affiliate",
+      "pick": "Best fit if you need many sending accounts on one flat plan.",
+      "href": "https://refer.instantly.ai/wwmtfom0192k",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "lemlist",
+      "name": "lemlist",
+      "type": "affiliate",
+      "pick": "Best fit if campaigns mix email with other channels and you want unlimited users.",
+      "href": "https://get.lemlist.com/25fqpl724zci",
+      "linkKind": "affiliate"
+    },
+    {
+      "slug": "smartlead",
+      "name": "Smartlead",
+      "type": "affiliate",
+      "pick": "Best fit if you want separate, white-labeled workspaces for each client.",
+      "href": "https://www.smartlead.ai/",
+      "linkKind": "site"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "Instantly plans overview",
+      "href": "https://help.instantly.ai/en/articles/10273259-instantly-plans-overview"
+    },
+    {
+      "text": "Instantly Automations help article",
+      "href": "https://help.instantly.ai/en/articles/12838955-automations"
+    },
+    {
+      "text": "Instantly HubSpot marketplace page",
+      "href": "https://instantly.ai/marketplace/hubspot"
+    },
+    {
+      "text": "lemlist pricing page",
+      "href": "https://www.lemlist.com/pricing"
+    },
+    {
+      "text": "lemlist's HubSpot integration page",
+      "href": "https://www.lemlist.com/integrations/hubspot"
+    },
+    {
+      "text": "Instantly pricing page",
+      "href": "https://instantly.ai/pricing"
+    },
+    {
+      "text": "Smartlead pricing page",
+      "href": "https://www.smartlead.ai/pricing"
+    },
+    {
+      "text": "Smartlead pricing page",
+      "href": "https://helpcenter.smartlead.ai/en/articles/127-how-to-set-up-hubspot-integration-with-smartlead"
+    },
+    {
+      "text": "Smartlead pricing page",
+      "href": "https://helpcenter.smartlead.ai/en/articles/225-how-to-sync-leads-with-hubspot"
+    }
+  ],
+  "related": [
+    {
+      "slug": "cold-email-tools-for-hubspot",
+      "route": "best",
+      "title": "Cold Email Tools for HubSpot, Compared",
+      "dek": "HubSpot is the CRM. The outbound tool is the layer that fills it, or wrecks it.",
+      "href": "/tools/best/cold-email-tools-for-hubspot"
+    },
+    {
+      "slug": "close-vs-pipedrive",
+      "route": "compare",
+      "title": "Close vs Pipedrive for Small Sales Teams",
+      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
+      "href": "/tools/compare/close-vs-pipedrive"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    }
+  ]
+}
