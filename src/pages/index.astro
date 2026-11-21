@@ -16,7 +16,7 @@ const recentPosts = (await getCollection('writing', ({ data }) => !data.draft))
 const fmt = (d: Date) =>
 	d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-// Portal Audit + Fixer are presented as one product; both buttons go to the app.
+// TheJonMartin Tools is one HubSpot app; both buttons go to the public install site.
 // One constant so the destination is a one-line change.
 const APP_URL = 'https://audit.thejonmartin.com';
 
@@ -31,7 +31,7 @@ const schema = [{
 			url: 'https://thejonmartin.com/',
 			name: 'Jon Martin',
 			// Site identity uses the About description (consulting/diagnosis), not the
-			// homepage's Portal Audit pitch, which stays on the page and its Service node.
+			// homepage's TheJonMartin Tools pitch, which stays on the page and its Service node.
 			description: about.description,
 			publisher: { '@id': 'https://thejonmartin.com/#org' },
 			inLanguage: 'en-US',
@@ -115,7 +115,7 @@ const schema = [{
 			</div>
 		</section>
 
-		<!-- 03 / How Fixer works -->
+		<!-- 03 / How Fix works -->
 		<section class="band distinction">
 			<div class="inner ledger">
 				<div class="rail">
