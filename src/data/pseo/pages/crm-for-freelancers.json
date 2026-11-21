@@ -12,8 +12,8 @@
     "Every number below comes from each vendor's own pricing page, checked recently."
   ],
   "published": "2026-11-01",
-  "modified": "2026-11-07",
-  "checked": "Nov 7, 2026",
+  "modified": "2026-11-14",
+  "checked": "Nov 14, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Freelancers and solo consultants"
@@ -372,12 +372,12 @@
   ],
   "sources": [
     {
-      "text": "Close pricing page",
-      "href": "https://www.close.com/pricing"
-    },
-    {
       "text": "Pipedrive pricing page",
       "href": "https://www.pipedrive.com/en/pricing"
+    },
+    {
+      "text": "Close pricing page",
+      "href": "https://www.close.com/pricing"
     },
     {
       "text": "Capsule pricing page",
@@ -390,6 +390,10 @@
     {
       "text": "HubSpot pricing page",
       "href": "https://www.hubspot.com/products/crm"
+    },
+    {
+      "text": "Close pricing page",
+      "href": "https://www.close.com/integrations/hubspot"
     }
   ],
   "related": [
@@ -399,6 +403,27 @@
       "title": "Close vs Pipedrive for Small Sales Teams",
       "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
       "href": "/tools/compare/close-vs-pipedrive"
+    },
+    {
+      "slug": "hubspot-vs-close",
+      "route": "compare",
+      "title": "HubSpot vs Close for a Five-Person Sales Team",
+      "dek": "HubSpot and Close both run a sales pipeline. They start from different places.",
+      "href": "/tools/compare/hubspot-vs-close"
+    },
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
     }
   ]
 }

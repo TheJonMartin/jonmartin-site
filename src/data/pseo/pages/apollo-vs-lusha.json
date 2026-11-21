@@ -12,8 +12,8 @@
     "Prices and integration details come from each vendor's own pages, checked on the date shown."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-14",
+  "checked": "Nov 14, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "HubSpot teams enriching contacts"
@@ -242,11 +242,7 @@
       "href": "https://www.apollo.io/pricing"
     },
     {
-      "text": "Apollo HubSpot page",
-      "href": "https://www.apollo.io/apollo-hubspot"
-    },
-    {
-      "text": "Apollo help article",
+      "text": "Apollo pricing page",
       "href": "https://knowledge.apollo.io/hc/en-us/articles/4416619021837-Integrate-HubSpot-with-Apollo"
     },
     {
@@ -254,7 +250,11 @@
       "href": "https://www.lusha.com/pricing/"
     },
     {
-      "text": "Lusha HubSpot page",
+      "text": "Apollo pricing page",
+      "href": "https://www.apollo.io/apollo-hubspot"
+    },
+    {
+      "text": "Lusha pricing page",
       "href": "https://www.lusha.com/integrations/hubspot/"
     }
   ],

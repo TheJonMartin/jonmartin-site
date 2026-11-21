@@ -12,8 +12,8 @@
     "That's the filter for this page: two calling options for small sales teams that run HubSpot as the system of record."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-14",
+  "checked": "Nov 14, 2026",
   "disclosure": "I earn a commission if you sign up through my link, at no extra cost to you. I only recommend tools I'd suggest anyway.",
   "niche": {
     "label": "Small sales teams on HubSpot"
@@ -385,14 +385,14 @@
   "sources": [
     {
       "text": "Aircall pricing page",
-      "href": "https://aircall.io/pricing/"
-    },
-    {
-      "text": "HubSpot App Marketplace: Aircall listing",
       "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
     },
     {
-      "text": "Aircall's HubSpot integration page",
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/pricing/"
+    },
+    {
+      "text": "Aircall pricing page",
       "href": "https://aircall.io/integrations/hubspot/"
     },
     {
@@ -402,25 +402,32 @@
   ],
   "related": [
     {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "zoominfo-alternatives-for-small-business",
+      "route": "best",
+      "title": "ZoomInfo Alternatives for Small Sales Teams on HubSpot",
+      "dek": "Four contact-data tools a small team can weigh before it signs a ZoomInfo quote.",
+      "href": "/tools/best/zoominfo-alternatives-for-small-business"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
       "slug": "crm-for-freelancers",
       "route": "best",
       "title": "Best CRM for Freelancers in 2026",
       "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
       "href": "/tools/best/crm-for-freelancers"
-    },
-    {
-      "slug": "close-vs-pipedrive",
-      "route": "compare",
-      "title": "Close vs Pipedrive for Small Sales Teams",
-      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
-      "href": "/tools/compare/close-vs-pipedrive"
-    },
-    {
-      "slug": "cold-email-tools-for-hubspot",
-      "route": "best",
-      "title": "Cold Email Tools for HubSpot, Compared",
-      "dek": "HubSpot is the CRM. The outbound tool is the layer that fills it, or wrecks it.",
-      "href": "/tools/best/cold-email-tools-for-hubspot"
     }
   ]
 }
