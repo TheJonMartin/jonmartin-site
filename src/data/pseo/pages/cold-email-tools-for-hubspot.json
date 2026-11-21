@@ -12,8 +12,8 @@
     "Four products, four jobs, for HubSpot teams picking a cold email or prospecting add-on."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-13",
+  "checked": "Nov 13, 2026",
   "disclosure": "I earn a commission if you sign up through my link, at no extra cost to you. I only recommend tools I'd suggest anyway.",
   "niche": {
     "label": "Outbound teams on HubSpot"
@@ -466,39 +466,39 @@
   ],
   "sources": [
     {
-      "text": "Instantly plans overview",
+      "text": "Instantly pricing page",
       "href": "https://help.instantly.ai/en/articles/10273259-instantly-plans-overview"
     },
     {
-      "text": "Instantly Automations help article",
+      "text": "Instantly pricing page",
       "href": "https://help.instantly.ai/en/articles/12838955-automations"
     },
     {
-      "text": "Instantly HubSpot marketplace page",
+      "text": "Instantly pricing page",
       "href": "https://instantly.ai/marketplace/hubspot"
     },
     {
-      "text": "Apollo pricing page",
+      "text": "Apollo.io pricing page",
       "href": "https://www.apollo.io/pricing"
     },
     {
-      "text": "Apollo's HubSpot integration page",
+      "text": "Apollo.io pricing page",
       "href": "https://www.apollo.io/apollo-hubspot"
     },
     {
-      "text": "Seamless.AI pricing article",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/blog/products/how-much-does-seamless-ai-cost"
     },
     {
-      "text": "Seamless.AI credit and license types",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/education/articles/seamless-ai-credit-and-license-types"
     },
     {
-      "text": "Seamless.AI's HubSpot integration page",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/products/integrations/hubspot"
     },
     {
-      "text": "Seamless.AI Prospecting Agent article",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/education/articles/hubspot-and-seamless-data-source-integration"
     },
     {
@@ -506,8 +506,12 @@
       "href": "https://www.lemlist.com/pricing"
     },
     {
-      "text": "lemlist's HubSpot integration page",
+      "text": "lemlist pricing page",
       "href": "https://www.lemlist.com/integrations/hubspot"
+    },
+    {
+      "text": "Seamless.AI pricing page",
+      "href": "https://seamless.ai/customers/education/articles/hubspot"
     }
   ],
   "related": [
