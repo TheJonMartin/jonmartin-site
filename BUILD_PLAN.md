@@ -19,7 +19,7 @@ Approved plan: "Programmatic SEO Engine: Plan" (Jon, Oct 31 2026 3:22 PM ET). On
 3. Body >= 600 words; similarity (5-word shingle Jaccard) vs every other engine page < 0.5.
 4. Every number in rendered prose (digits, $, %, commas) equals a fact number/value or a computed value, or is in an allowlist of years/list numbers (1-10 in labels).
 5. Disclosure present before first affiliate link; every affiliate link has rel containing "sponsored" and "nofollow"; every affiliate href is in the cheat-sheet links map.
-6. Banned (case-insensitive): "steward", "staff-only", "staff only", "we implement", "I implement", "implement it for you", "done-for-you", "review" schema, "AggregateRating", own-product prices ("$29", "$199", "$19/mo", "$49" next to an own product name), planned-product live wording ("available now", "sign up today", "get started" next to Stripe sync).
+6. Banned (case-insensitive): "steward", "staff-only", "staff only", "we implement", "I implement", "implement it for you", "done-for-you", "review" schema, "AggregateRating", own-product prices ("$29", "$199", "$19/mo", "$49" next to an own product name), planned-product live wording ("available now", "sign up today", "get started" next to a product still marked own_planned). Stripe Sync is live; do not invent its price.
 7. Own-product sentences only from `claims_allowlist` rows with approved_by set. own_planned products render only the waitlist CTA with a PLANNED label.
 Live-page rules (run.mjs): fact older than 45 days, dead affiliate link, or < 10 impressions after 90 days (only when page_metrics has data) -> status noindex; retire after 120 days.
 

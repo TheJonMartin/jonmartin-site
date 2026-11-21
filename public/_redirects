@@ -16,7 +16,7 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 /starter-package     /           301
 /premium-package     /           301
 
-# Portal Audit pricing lives on the audit subdomain (source of truth).
+# TheJonMartin Tools pricing lives on the audit subdomain (source of truth).
 /pricing              https://audit.thejonmartin.com/pricing  301
 /pricing/             https://audit.thejonmartin.com/pricing  301
 
@@ -52,7 +52,7 @@ https://www.thejonmartin.com/premium-package   https://thejonmartin.com/        
 /thanks-steward/      https://giftkeep.app/  301
 /thanks-steward.html  https://giftkeep.app/  301
 
-# Retired HubSpot-Facing Review (Oct 23, 2026) -> Portal Audit.
+# Retired HubSpot-Facing Review (Oct 23, 2026) -> TheJonMartin Tools (audit subdomain).
 /hubspot-facing       https://audit.thejonmartin.com  301
 /hubspot-facing/      https://audit.thejonmartin.com  301
 /hubspot-facing.html  https://audit.thejonmartin.com  301

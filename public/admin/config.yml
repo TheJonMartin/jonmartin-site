@@ -182,12 +182,12 @@ collections:
             name: "auditPoints"
             widget: "list"
             field: { label: "Point", name: "point", widget: "text" }
-          - { label: "Fixer panel label", name: "fixerLabel", widget: "string" }
-          - label: "Fixer panel bullet points"
+          - { label: "Fix panel label", name: "fixerLabel", widget: "string" }
+          - label: "Fix panel bullet points"
             name: "fixerPoints"
             widget: "list"
             field: { label: "Point", name: "point", widget: "text" }
-          - { label: "Fixer disclaimer", name: "fixerNote", widget: "text" }
+          - { label: "Fix disclaimer", name: "fixerNote", widget: "text" }
           - { label: '"Start" section heading', name: "startHeading", widget: "text" }
           - { label: "Start section body", name: "startBody", widget: "text" }
           - { label: '"Writing" section heading', name: "writingHeading", widget: "string" }

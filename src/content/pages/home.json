@@ -1,24 +1,24 @@
 {
-	"title": "Jon Martin — Free HubSpot Health Audit and Fixer",
+	"title": "Jon Martin — TheJonMartin Tools, a free HubSpot health check",
 	"description": "A free HubSpot health check, scored against 11 years of what I've seen break in real portals. Nothing changes in your portal unless you approve it.",
 	"heroTitle": "Know what's wrong in your HubSpot portal. Then fix it.",
-	"subhead": "AI is the lens. The standard is mine: the best practices and the problems I've seen over 11 years across B2B SaaS, B2B services, custom manufacturing, and the companies that work inside and on top of HubSpot. Portal Audit turns that into a scored report and a 90-day plan. Nothing changes in your portal unless you approve it. Portal Fixer is part of that same install: it applies the safe cleanup items you approve, and shows you every change before it happens.",
+	"subhead": "AI is the lens. The standard is mine: the best practices and the problems I've seen over 11 years across B2B SaaS, B2B services, custom manufacturing, and the companies that work inside and on top of HubSpot. TheJonMartin Tools is one HubSpot app. Audit turns that into a scored report and a 90-day plan. Nothing changes in your portal unless you approve it. Fix is in the same app: dry run, review the changes, approve, then apply, with history and undo. Span, Stripe Sync, and Pricebook are optional tools you can add later.",
 	"heroMeta": [
 		{
 			"label": "HubSpot health audit",
 			"accent": true
 		},
 		{
-			"label": "No changes to your portal"
+			"label": "Nothing changes unless you approve it"
 		},
 		{
 			"label": "First audit free"
 		},
 		{
-			"label": "Fixer: free beta"
+			"label": "Fix: free beta"
 		}
 	],
-	"offerStatement": "Nothing changes in your portal unless you approve it. Fixes are optional, and you see every change first.",
+	"offerStatement": "Nothing changes in your portal unless you approve it. Fixes are optional. You see every change first, and nothing is written until you approve.",
 	"whoHeading": "Who this is for",
 	"whoParagraphs": [
 		"HubSpot admins at smaller companies who inherited the portal, or run it next to another job, and want a straight answer on what needs attention.",
@@ -38,7 +38,7 @@
 			"value": "Scored + 90-day plan"
 		},
 		{
-			"label": "Fixer",
+			"label": "Fix",
 			"value": "Free beta"
 		}
 	],
@@ -51,22 +51,22 @@
 		"Marketing and automation: lists, forms, emails and workflows, if your plan includes them.",
 		"Security and limits: login activity, an audit-log summary, and account limits."
 	],
-	"checksConvergence": "46 automated checks and 37 best-practice tests, ending in a plan for the first 30, 60 and 90 days. The tests aren't generic. They're the patterns I've learned to look for over 11 years, run through automation.",
-	"fixerHeading": "The audit reads. Fixer writes, and only what you approve.",
-	"auditLabel": "Portal Audit",
+	"checksConvergence": "51 automated checks and 37 best-practice tests, ending in a plan for the first 30, 60 and 90 days. The tests aren't generic. They're the patterns I've learned to look for over 11 years, run through automation.",
+	"fixerHeading": "Audit reads. Fix writes, and only what you approve.",
+	"auditLabel": "Audit",
 	"auditPoints": [
 		"Reads your settings and counts records.",
 		"Never creates, changes or deletes anything.",
 		"Gives you a scored report and a 90-day plan."
 	],
-	"fixerLabel": "Portal Fixer",
+	"fixerLabel": "Fix",
 	"fixerPoints": [
-		"Re-reads the portal and shows a dry-run preview of the change.",
-		"Reads each value back after writing, and restores the snapshot if it doesn't match.",
-		"Never deletes or merges records, turns on a workflow, or sends email."
+		"Four steps: dry run, review the changes, approve, then apply.",
+		"Nothing is written until you approve. After a write, it reads the value back and restores the snapshot if it doesn't match.",
+		"Never deletes or merges records, turns on a workflow, or sends email. Only a Super Admin can approve or apply."
 	],
-	"fixerNote": "Fixer covers a short, published list of fixes. Anything else on the report stays with you. One HubSpot app (Portal Audit, with Fixer built in), not made or endorsed by HubSpot.",
+	"fixerNote": "Fix covers a short, published list of fixes. Anything else on the report stays with you. TheJonMartin Tools is one HubSpot app with five tools — Audit, Fix, Span, Stripe Sync, and Pricebook — not made or endorsed by HubSpot. Every page has tool tabs, and Home has a Needs your attention list for reviews, approvals, and questions waiting on you.",
 	"writingHeading": "Writing",
 	"startHeading": "Run the audit first.",
-	"startBody": "It's free for your first portal and starts with one install. Want it to keep watching? Watch reruns the audit every month, or every week, and emails you the report. Fixer is on that same install when you want approved cleanup applied."
+	"startBody": "It's free for your first portal and starts with one install. Want it to keep watching? Watch reruns the audit every month, or every week, and emails you the report. Fix is on that same install when you want approved cleanup applied. Locked tools show Add this tool and ask only for that tool's permissions. Span, Stripe Sync, and Pricebook are optional add-ons."
 }
