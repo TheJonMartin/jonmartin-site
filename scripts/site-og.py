@@ -2,7 +2,8 @@
 
 Replaces the old untracked raster that had no source script. The content is
 hard-coded (it is the one sitewide card, not a per-page render). The revenue
-figure that used to sit in the subline was removed on purpose (Jon, Oct 28).
+figure that used to sit in the subline was removed on purpose (Jon, Oct 28),
+and the headline is the About hero line (Jon, Nov 21).
 
 Matches the layout of scripts/tool-og.py: cream ground, plum left bar, sage
 label, plum serif headline, mustard rule, sage footer. Run from the repo root:
@@ -13,7 +14,7 @@ import html
 from playwright.sync_api import sync_playwright
 
 LABEL = 'FIELD REPORT & SECOND OPINION'
-HEADLINE = "I don't build it. I tell you why the last three things you built didn't work."
+HEADLINE = "Most broken processes aren't tool problems."
 SUBLINE = 'Written diagnosis for founders of professional services firms.'
 FOOTER = 'thejonmartin.com'
 
