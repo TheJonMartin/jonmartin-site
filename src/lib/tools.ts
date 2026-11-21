@@ -479,13 +479,13 @@ export const tools: Tool[] = [
 		related: ['whatconverts', 'gamma'],
 		name: 'AdCreative.ai',
 		title: 'AdCreative.ai — Jon Martin',
-		seoTitle: 'AdCreative.ai and HubSpot: Where AI Ad Creative Fits',
+		seoTitle: 'AdCreative.ai Review: AI Ad Creative Without a Designer',
 		description:
-			"AdCreative.ai makes banners, ad copy, and short video ads. For HubSpot teams it sits upstream of the CRM. What it does, who it fits, and what to set up first.",
-		h1: 'AdCreative.ai sits upstream of HubSpot.',
+			"AdCreative.ai makes banners, ad copy, product photos and short video ads without a designer. Who it fits, what its claims are worth, and what to track first.",
+		h1: 'Banners, ad copy and video ads, without a designer.',
 		dek: [
 			'AdCreative.ai makes ads. Banners, ad copy, product photos, short video ads.',
-			"That's useful for a performance marketing team. For a RevOps or HubSpot admin audience, it's a weak fit. It sits upstream of HubSpot, in the ad platforms, not in your CRM.",
+			"That's useful for a performance marketing team. For a RevOps audience it's a weak fit. It works in the ad platforms, not in your CRM, and I couldn't confirm a HubSpot integration.",
 		],
 		category: 'AI ad creative',
 		facts: [
@@ -578,13 +578,13 @@ export const tools: Tool[] = [
 		related: ['aircall', 'elevenlabs'],
 		name: 'Unitel Voice',
 		title: 'Unitel Voice — Jon Martin',
-		seoTitle: 'Unitel Voice and HubSpot: A Phone Line, Not a RevOps Tool',
+		seoTitle: 'Unitel Voice Review: A Business Number on Your Cell',
 		description:
-			"Unitel Voice is a business phone service for solo founders and small teams. No HubSpot integration confirmed. Who it fits, who should look elsewhere, and why.",
+			"Unitel Voice puts a business number on the phone you already carry, with local, toll-free or vanity options. Who it fits, and who should look elsewhere.",
 		h1: 'A business number for your cell, not a RevOps tool.',
 		dek: [
 			'Unitel Voice is a good fit for a solo founder who needs a business number on their cell.',
-			"For a HubSpot-driven sales or service team, it's a weak fit. I couldn't confirm a HubSpot integration on Unitel's site, and for RevOps the integration is the whole point.",
+			"For a sales or service team that needs every call logged to the CRM, it's a weak fit. I couldn't confirm a HubSpot integration on Unitel's site, and for RevOps the integration is the whole point.",
 		],
 		category: 'Small-business phone',
 		facts: [
@@ -1075,12 +1075,12 @@ export const tools: Tool[] = [
 		related: ['quicksigner', 'whatconverts'],
 		name: 'Plesk',
 		title: 'Plesk — Jon Martin',
-		seoTitle: 'Plesk for Sites Not Hosted on HubSpot',
-		description: `Most SMB sites aren't hosted on HubSpot. Plesk is a control panel for running WordPress sites that still use HubSpot tracking and forms. Who it fits.`,
-		h1: `Most small business sites don't live on HubSpot. Someone still has to run them.`,
+		seoTitle: 'Plesk Review: One Control Panel for Many WordPress Sites',
+		description: `Plesk is a hosting control panel for running WordPress sites: updates, staging, cloning and backups from one dashboard. Who it fits, and who can skip it.`,
+		h1: `Your website still needs someone to run it.`,
 		dek: [
-			`A lot of HubSpot customers never put their website on HubSpot. The site runs on WordPress or another host, and HubSpot tracking and forms get added to it.`,
-			`Plesk is a hosting and server control panel for running those sites. It isn't a RevOps tool and it doesn't touch your CRM. This page is for the people who manage the site underneath it.`,
+			`Plesk is a hosting and server control panel. One dashboard for many sites, with WordPress updates, staging, cloning and backups built in.`,
+			`It isn't a RevOps tool and it doesn't touch your CRM. But a lot of HubSpot customers run their site on WordPress with HubSpot tracking and forms added, and someone has to keep that site working. This page is for them.`,
 		],
 		category: 'Hosting control panel',
 		facts: [
@@ -1173,12 +1173,12 @@ export const tools: Tool[] = [
 		related: ['trainual', 'plesk'],
 		name: 'QuickSigner',
 		title: 'QuickSigner — Jon Martin',
-		seoTitle: 'QuickSigner and HubSpot: E-Signature Through the API',
-		description: `QuickSigner is a simple, lower-cost e-signature tool. No native HubSpot integration found, so the connection is an API build. What it takes and who it suits.`,
+		seoTitle: 'QuickSigner Review: Lower-Cost E-Signature and Its API',
+		description: `QuickSigner is a simple, lower-cost e-signature tool with templates, signing order and an audit trail. Signers need no account. Who it suits, and the API catch.`,
 		h1: `E-signature is the last mile of the deal.`,
 		dek: [
 			`The contract gets signed, and then someone has to remember to move the deal to Closed Won.`,
-			`QuickSigner is a simple, lower-cost e-signature tool. The catch for HubSpot teams: I couldn't confirm a native HubSpot integration. You'd connect it through its API.`,
+			`QuickSigner is a simple, lower-cost e-signature tool, and signers don't need an account. I couldn't confirm a native HubSpot integration, so connecting it to your CRM means building on its API and webhooks.`,
 		],
 		category: 'E-signature',
 		facts: [

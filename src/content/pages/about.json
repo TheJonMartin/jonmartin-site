@@ -1,14 +1,14 @@
 {
-  "title": "About Jon Martin: RevOps Diagnoses, Not Builds",
-  "description": "Jon Martin writes diagnoses of why systems and org structures keep breaking in founder-led professional services firms \u2014 and why the fixes didn't hold.",
+  "title": "About Jon Martin: RevOps Process Design and Consulting",
+  "description": "Jon Martin designs and diagnoses the processes behind revenue teams, and works out why systems and org structures keep breaking in founder-led firms.",
   "kicker": "About",
-  "heroTitle": "I diagnose. I don't implement.",
+  "heroTitle": "Most broken processes aren't tool problems.",
   "subhead": "Most people who get called into a broken business are there to build something. That's the problem \u2014 the last three things you built are why you're calling.",
   "sections": [
     {
       "heading": "The short version",
       "paragraphs": [
-        "I'm Jon Martin, a revenue operations solutions architect. I spent 12 years building and running RevOps functions, and I founded two firms, scaled both, and sold both. Today I work in systems integration and subscription management, mostly for SaaS and professional services companies, and I treat the job as variety management, not tooling. What I write here are diagnoses of why systems and org structures keep breaking in founder-led professional services firms, and why the fixes didn't hold."
+        "I'm Jon Martin, a revenue operations solutions architect. I spent 12 years building and running RevOps functions, and I founded two firms, scaled both, and sold both. Today I design and diagnose the processes behind revenue teams, mostly in systems integration and subscription management for SaaS and professional services companies, and I treat the job as variety management, not tooling. What I write here are diagnoses of why systems and org structures keep breaking in founder-led professional services firms, and why the fixes didn't hold."
       ]
     },
     {
@@ -35,7 +35,7 @@
     {
       "heading": "Portal Audit",
       "paragraphs": [
-        "Portal Audit is the packaged version of what I look for in a HubSpot portal. It's a free health check with a scored report and a 90-day plan. AI is the lens. The standard is mine: the best practices and the problems I've seen over 11 years across B2B SaaS, B2B services, custom manufacturing, and the companies that work inside and on top of HubSpot. Nothing changes in your portal unless you approve it. <a href=\"https://audit.thejonmartin.com\">Run my free audit &rarr;</a>"
+        "Portal Audit is the packaged version of what I look for in a HubSpot portal: a free health check with a scored report and a 90-day plan. Nothing changes in your portal unless you approve it. <a href=\"https://audit.thejonmartin.com\">Run my free audit &rarr;</a>"
       ]
     },
     {
