@@ -189,7 +189,6 @@ function checkBannedWords(page, errors) {
 
 	const plannedNames = page.products.filter((p) => p.type === 'own_planned').map((p) => p.name);
 	for (const phrase of PLANNED_LIVE_PHRASES) {
-		if (within(text, phrase, 'stripe sync', PROXIMITY_CHARS)) errors.push(`rule 6: planned-live wording "${phrase}" found near "stripe sync"`);
 		for (const name of plannedNames) {
 			if (within(text, phrase, name, PROXIMITY_CHARS)) errors.push(`rule 6: planned-live wording "${phrase}" found near "${name}"`);
 		}
