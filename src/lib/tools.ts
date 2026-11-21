@@ -71,12 +71,18 @@ export interface Tool {
 	about?: string[];
 	/** Visible FAQ, also emitted as FAQPage JSON-LD from the same list. Answers are plain text. */
 	faq?: { q: string; a: string }[];
+	/** Related-tools card blurb on other pages (defaults to description). */
+	relatedBlurb?: string;
 }
 
 export const CHECKED = 'Oct 13, 2026';
 export const PUBLISHED = '2026-10-14';
 /** Date the pages were last edited (CHECKED is when vendor facts were verified). Update when you change a page. */
 export const MODIFIED = '2026-10-15';
+
+const AM = 'https://grow.amplemarket.com/h3sjnh';
+const amp = (t: string) => `<a href="${AM}" target="_blank" rel="sponsored noopener noreferrer">${t}</a>`;
+const hs = '<a href="https://www.hubspot.com/" target="_blank" rel="noopener noreferrer">HubSpot</a>';
 
 export const tools: Tool[] = [
 	{
@@ -233,6 +239,7 @@ export const tools: Tool[] = [
 					},
 					{ type: 'p', html: "Two things to know. The HubSpot integration needs a paid Apollo plan, and some enrichment actions use credits. And Apollo says it doesn't set or manage HubSpot marketing contact status. That stays your job." },
 					{ type: 'p', html: "Apollo also says it can feed HubSpot's Prospecting Agent as a data source." },
+					{ type: 'p', html: "For comparison, <a href=\"/tools/amplemarket\">Amplemarket's two-way HubSpot sync</a> runs in batches about every three hours, so check any tool's sync interval before you trust it to keep customers out of a sequence." },
 				],
 			},
 		],
@@ -1274,6 +1281,7 @@ export const tools: Tool[] = [
 			"instantly-vs-lemlist",
 			"apollo-io",
 			"seamless-ai",
+			"amplemarket",
 		],
 		name: "Instantly",
 		title: "Instantly — Jon Martin",
@@ -1508,6 +1516,7 @@ export const tools: Tool[] = [
 						items: [
 							"If you want HubSpot to log sends and replies natively without a sync tool, look at <a href=\"https://get.lemlist.com/25fqpl724zci\" target=\"_blank\" rel=\"sponsored noopener noreferrer\">lemlist</a> (also an affiliate link). Its HubSpot integration logs sent emails and replies as HubSpot email activity. The full side-by-side is on <a href=\"/tools/instantly-vs-lemlist\">Instantly vs lemlist</a>.",
 							"If you need a contact database more than sending volume, <a href=\"/tools/apollo-io\">Apollo</a> is the better starting point.",
+							"If your team runs email, LinkedIn and calls out of one tool, compare it with <a href=\"/tools/amplemarket\">Amplemarket's HubSpot integration</a>, which pulls exclusions from HubSpot and logs activity to the contact timeline.",
 						],
 					},
 				],
@@ -1850,6 +1859,7 @@ export const tools: Tool[] = [
 							"<strong>A firm that needs contact data more than sending:</strong> start with <a href=\"/tools/apollo-io\">Apollo</a>.",
 						],
 					},
+					{ type: "p", html: "If neither fits because your reps also work LinkedIn and the phone, see how the <a href=\"/tools/amplemarket\">Amplemarket HubSpot integration</a> handles exclusions, activity logging and workflow-triggered sequences." },
 				],
 			},
 			{
@@ -1983,6 +1993,134 @@ export const tools: Tool[] = [
 				a: "They can if mapping is loose. lemlist checks for an existing contact by email before creating one, but its field mapping doesn't backfill records already in HubSpot. Instantly's HubSpot import has a duplicate check across campaigns and lists. Use email as the one key, decide who owns lifecycle stage, and clean duplicates before connecting either.",
 			},
 		],
+	},
+	{
+		slug: 'amplemarket',
+		related: ["instantly", "apollo-io", "seamless-ai"],
+		name: "Amplemarket",
+		title: "Amplemarket — Jon Martin",
+		seoTitle: "Amplemarket HubSpot Integration: Where Outbound Breaks",
+		description: "Most outbound problems blamed on reps are CRM seams. How Amplemarket's HubSpot sync handles exclusions, activity logging, handoffs and job changes.",
+		h1: "Amplemarket HubSpot Integration: Fix the Seams Before You Coach the Rep",
+		dek: [
+			"Outbound doesn't break at the rep. It breaks at the seams with your CRM.",
+			"An SDR emails a customer who renewed last month, and the fix everyone reaches for is a coaching conversation. That's usually the wrong fix.",
+		],
+		category: "Sales engagement and outbound",
+		facts: [
+			{ label: "Category", value: "Sales engagement and outbound" },
+			{ label: "Connects to HubSpot", value: "Native, two-way (push and pull), per Amplemarket" },
+			{ label: "Sync timing", value: "Batches about every 3 hours, not live", flag: true },
+			{ label: "Plan needed", value: "Included with every subscription, works with HubSpot Free through Enterprise, per Amplemarket" },
+		],
+		sections: [
+			{
+				label: "Most outbound \"people problems\" are system problems",
+				blocks: [
+					{ type: "p", html: "Most of what gets called a people problem in outbound is a system problem wearing a name tag. The rep did exactly what the tools told them was fine. Nobody told the tools what the CRM already knew." },
+					{ type: "p", html: `I live in ${hs}. The pattern I keep coming back to is that outbound fails at the handoffs — the places where one system is supposed to tell another something and doesn't. Five of them show up over and over.` },
+					{ type: "p", html: `None of them are fixed by a better rep. Below is how ${amp("Amplemarket")}'s HubSpot integration says it handles each one, from Amplemarket's own docs.` },
+				],
+			},
+			{
+				label: "Seam 1: Who's already a customer (CRM exclusions)",
+				blocks: [
+					{ type: "p", html: "The rep didn't email a customer because they were careless. They emailed a customer because the sequencing tool had no idea who your customers were." },
+					{ type: "p", html: "Exclusions live in the CRM. Lifecycle stage, open deals, contacts another rep owns. If that data doesn't flow into the outbound tool before a list gets built, you're asking reps to cross-check by memory. They won't catch everything. Nobody would." },
+					{ type: "p", html: "The fix pattern: exclusions pulled from the CRM automatically, by lifecycle stage and deal status, before a list is built. Not a spreadsheet someone updates on Fridays." },
+					{ type: "p", html: "Amplemarket says its integration pulls HubSpot contacts and companies into an exclusion list by lifecycle stage, deal status or any property, so they're filtered out when a rep builds a prospect list. Its help article says the pull runs every 3 hours. Worth knowing. A deal opened at 10 AM may not be excluded by 10:05." },
+					{ type: "p", html: "If the contacts you're excluding came in from a data tool, the same logic applies to <a href=\"/tools/seamless-ai\">contact data you import into HubSpot</a>. Garbage in the CRM means garbage in the exclusion list." },
+				],
+			},
+			{
+				label: "Seam 2: Deliverability (inbox placement)",
+				blocks: [
+					{ type: "p", html: "Low reply rates get pinned on the copy. So the rep rewrites the copy. Then rewrites it again." },
+					{ type: "p", html: "Sometimes the copy was fine. The email went to spam. You can't coach your way out of a mailbox problem." },
+					{ type: "p", html: "The fix pattern: test mailbox placement on a schedule, and flag bad mailboxes before anyone picks them for a sequence." },
+					{ type: "p", html: "Amplemarket describes automated weekly placement tests on every connected mailbox. A mailbox that fails gets flagged in its Domain Health Center and again during sequence prep, so it's visible at the moment someone's choosing where to send from. That second spot is the one that matters. A health dashboard nobody opens doesn't protect anyone." },
+				],
+			},
+			{
+				label: "Seam 3: Activity logging to the HubSpot timeline",
+				blocks: [
+					{ type: "p", html: "Reps don't skip logging because they're lazy. Logging is a second job nobody gave them time for." },
+					{ type: "p", html: "Every email, every LinkedIn touch, every call — copied by hand into a CRM timeline. Then leadership sees gaps and assumes the work didn't happen. It happened. It just didn't sync." },
+					{ type: "p", html: "The fix pattern: activity pushed to the contact timeline by the system, so the rep isn't the integration." },
+					{ type: "p", html: "Amplemarket's docs list emails (sent and received), LinkedIn connection requests and messages, calls (including some third-party dialers) and calendar events as activity pushed to HubSpot contact timelines. The cadence is every three hours. That's fine for a timeline. It's not fine if your team expects to see a reply logged before the next standup, so set the expectation out loud." },
+					{ type: "p", html: "For comparison, <a href=\"/tools/instantly\">Instantly's HubSpot integration</a> leans on a separate sync tool for full timeline logging. Different design, same question: who's doing the logging?" },
+				],
+			},
+			{
+				label: "Seam 4: The MQL-to-sequence handoff (lists and workflows)",
+				blocks: [
+					{ type: "p", html: "The MQL handoff isn't broken because sales ignores marketing. It's broken because someone is still exporting a CSV." },
+					{ type: "p", html: "Marketing scores the lead in the CRM. Then a human exports a list, sends it over, and a different human uploads it somewhere else. Every step is a place for the lead to sit. Neither team is the problem. The export is." },
+					{ type: "p", html: "The fix pattern: list or workflow membership in the CRM triggers enrollment directly. The lead score decides who gets worked, not whoever remembered to send the file." },
+					{ type: "p", html: "Amplemarket says HubSpot Smart Lists, contact properties and workflows can trigger its sequences — a lead score crossing a threshold or a contact joining a list can enroll them without a manual handoff. That's the pattern to look for in any tool." },
+				],
+			},
+			{
+				label: "Seam 5: Champions who change jobs",
+				blocks: [
+					{ type: "p", html: "Your warmest outbound lead usually isn't on a cold list. It's the champion who just left a customer for a new job." },
+					{ type: "p", html: "They already know what you do. And almost nobody catches the move, because nobody has time to watch LinkedIn for every past customer contact. That's not a rep failing. That's a job no person should be doing by hand." },
+					{ type: "p", html: "The fix pattern: watch past customer contacts using CRM data, and alert someone when they change jobs." },
+					{ type: "p", html: "Amplemarket has a past-customer job change signal. Per its docs, you pick who to watch by selecting customer accounts in your CRM or uploading a list, and the move shows up as a signal." },
+				],
+			},
+			{
+				label: "Five questions to ask any outbound tool's HubSpot integration",
+				blocks: [
+					{ type: "p", html: "Doesn't matter which tool you're looking at. Ask these before you sign anything." },
+					{ type: "ol", items: [
+						"<strong>Which direction does it sync?</strong> Push only, pull only, or both, and for which objects. A one-way sync means one of your systems is always guessing.",
+						"<strong>How often?</strong> Get the actual interval in writing. A marketing page and a help article don't always make the same promise. Plan around the slower one.",
+						"<strong>What gets excluded, and from where?</strong> Can it pull exclusions from lifecycle stage, deal status and owner, or only from a list someone maintains by hand?",
+						"<strong>What gets logged?</strong> Email, calls, social touches, meetings. Each one that doesn't sync becomes a manual task for a rep.",
+						"<strong>What triggers enrollment?</strong> A CRM list or workflow, or a person with a CSV. If it's the person, you haven't fixed the handoff. You've moved it.",
+					] },
+					{ type: "p", html: "1–5 don't matter if nobody owns the integration after go-live. A sync nobody watches drifts. And <a href=\"https://audit.thejonmartin.com\" target=\"_blank\" rel=\"noopener noreferrer\">check your portal before you pipe outbound data into it</a> — the audit only reads, it never changes anything in your portal." },
+				],
+			},
+			{
+				label: "Who Amplemarket fits, and who it doesn't",
+				blocks: [
+					{ type: "p", html: "On paper, Amplemarket fits sales teams that run multichannel outbound — email, LinkedIn and calls — out of one tool, with HubSpot as the system of record, and want exclusions, logging and enrollment driven by CRM data instead of exports. Amplemarket pitches its entry plan at small businesses, startups and founder-led sales teams." },
+					{ type: "p", html: "Who it's not for: a team sending cold email at volume that mostly needs cheap mailboxes and warmup. Look at <a href=\"/tools/instantly\">Instantly's HubSpot integration</a> first, and the side-by-side on <a href=\"/tools/instantly-vs-lemlist\">Instantly vs lemlist for HubSpot teams</a>." },
+					{ type: "p", html: "If you're weighing it against Apollo, read <a href=\"/tools/apollo-io\">Apollo's HubSpot push and write rules</a> next to the five questions above. The answers to 1 and 2 will tell you more than any feature grid." },
+					{ type: "p", html: "And if the sync timing above is a dealbreaker, it's a dealbreaker. Every three hours is fine for most outbound. It isn't fine for everything. More options are on the <a href=\"/tools\">other HubSpot-adjacent tools</a> page." },
+				],
+			},
+		],
+		pros: [],
+		cons: [],
+		closingIntro: "Next time a rep gets blamed for an outbound miss, trace it back one step. Ask what the system told them, and when. Most of the time, they did the right thing with the information they had.",
+		closing: "Fix the seam before you coach the rep.",
+		tryLede: "If this fits your stack, you can look at Amplemarket here.",
+		cta: { label: "See Amplemarket", href: AM },
+		sources: [
+			{ text: "Amplemarket, HubSpot integration page", href: "https://www.amplemarket.com/integrations/hubspot" },
+			{ text: "Amplemarket Knowledge Base, Integrating with HubSpot", href: "https://knowledge.amplemarket.com/articles/8661663156-integrating-with-hubspot" },
+			{ text: "Amplemarket, Email Spam Checker (inbox placement tests)", href: "https://www.amplemarket.com/inbox-placement-tests" },
+			{ text: "Amplemarket, Intent Signals: past customer job changes", href: "https://www.amplemarket.com/signals/past-customer-job-changes" },
+		],
+		checked: "Nov 4, 2026",
+		published: "2026-11-05",
+		modified: "2026-11-05",
+		disclosure: "I'm an Amplemarket affiliate. If you sign up through my link I may earn a commission, at no extra cost to you.",
+		disclosureOnce: true,
+		disclaimer: "Product details were checked on Amplemarket's own pages on Nov 4, 2026 and can change. Confirm current features and plans on Amplemarket's site before you buy.",
+		about: ["Amplemarket", "HubSpot"],
+		faq: [
+			{ q: "Does Amplemarket integrate with HubSpot?", a: "Yes. Amplemarket has a native, two-way HubSpot integration. It pulls HubSpot contacts and companies into its exclusion list and pushes contacts and activity (emails, LinkedIn actions, calls and calendar events) back to HubSpot contact timelines, per Amplemarket's integration page and help article." },
+			{ q: "How often does Amplemarket sync to HubSpot?", a: "About every three hours, in batches, not live. Amplemarket's help article says pulls into the exclusion list run every 3 hours and pushes to HubSpot run every three hours. Plan around that delay, especially for exclusions on newly opened deals." },
+			{ q: "Can Amplemarket stop reps emailing existing customers?", a: "Yes. Amplemarket pulls HubSpot records into an exclusion list by lifecycle stage, deal status or any property, so existing customers, active deals and opted-out contacts are kept out of sequences. Because the pull runs about every three hours, a very recent change may not be excluded yet." },
+			{ q: "Can a HubSpot workflow start an Amplemarket sequence?", a: "Yes. Amplemarket says HubSpot Smart Lists, contact properties and workflows can trigger its sequences. For example, a lead score crossing a threshold or a contact being added to a list can enroll that contact without a manual export." },
+			{ q: "Does Amplemarket check deliverability?", a: "Yes. Amplemarket runs automated weekly placement tests on every connected mailbox. Mailboxes landing in spam are flagged as unhealthy in its Domain Health Center and again when you pick mailboxes for a new sequence." },
+			{ q: "Is the HubSpot integration on every plan?", a: "Yes, per Amplemarket. Its HubSpot integration page says the integration is included with every Amplemarket subscription at no extra fee, and works with HubSpot Free CRM, Starter, Professional and Enterprise. You need an active HubSpot account." },
+		],
+		relatedBlurb: "Two-way HubSpot sync for multichannel outbound: CRM exclusions, timeline logging and workflow-triggered sequences.",
 	},
 ];
 
