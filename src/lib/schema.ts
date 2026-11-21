@@ -207,8 +207,8 @@ const personSchema = {
  * Organization for the site (#org). Only facts already on the site: name matches
  * the WebSite name and Base siteName ("Jon Martin"); the TheJonMartin handle is
  * kept as alternateName. The description leads with the consulting/diagnosis
- * work, not HubSpot; Portal Audit and GiftKeep are listed as products in
- * hasOfferCatalog (Portal Audit's full node lives on /; GiftKeep lives on giftkeep.app). logo is the JM monogram icon (public/apple-touch-icon.png,
+ * work, not HubSpot; TheJonMartin Tools and GiftKeep are listed as products in
+ * hasOfferCatalog (TheJonMartin Tools' full node lives on /; GiftKeep lives on giftkeep.app). The @id #portal-audit is kept stable from the earlier product name. logo is the JM monogram icon (public/apple-touch-icon.png,
  * 180x180), email is the footer address, sameAs are the profiles linked from
  * /about that carry the TheJonMartin / jonmartin.co handles. No address, phone,
  * ratings or employee counts: none are published.
@@ -238,7 +238,7 @@ const organizationSchema = {
 				itemOffered: {
 					'@type': 'Service',
 					'@id': 'https://thejonmartin.com/#portal-audit',
-					name: 'Portal Audit',
+					name: 'TheJonMartin Tools',
 					url: 'https://audit.thejonmartin.com/',
 				},
 			},
@@ -272,11 +272,13 @@ export const siteEntitiesSchema = {
 };
 
 /**
- * Portal Audit as a Service (homepage). Prices are the approved ones only:
+ * TheJonMartin Tools as a Service (homepage). Prices are the approved ones only:
  * free audit (one per portal), Watch $19/mo or $190/yr, Watch Weekly $29/mo or
  * $290/yr (weekly audits, Jon 2026-10-24), Fix free during beta
  * then $49/mo or $490/yr (annual is 10x monthly, Jon 2026-10-23). No onboarding fee. Keep in step with public/llms.txt.
+ * Do not invent prices for Span, Stripe Sync, or Pricebook.
  * Never describe the app as "read-only".
+ * The @id #portal-audit is kept stable from the earlier product name.
  */
 export function portalAuditSchema(description: string) {
 	const pricing = 'https://audit.thejonmartin.com/pricing';
@@ -284,7 +286,7 @@ export function portalAuditSchema(description: string) {
 		'@context': 'https://schema.org',
 		'@type': 'Service',
 		'@id': 'https://thejonmartin.com/#portal-audit',
-		name: 'Portal Audit',
+		name: 'TheJonMartin Tools',
 		serviceType: 'HubSpot portal health audit',
 		description,
 		url: 'https://audit.thejonmartin.com/',
