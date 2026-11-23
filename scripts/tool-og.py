@@ -1,10 +1,11 @@
 """Regenerate public/og/tools/<slug>-v2.png (1200x630) from src/lib/tools.ts.
 
 Matches the layout of public/og.png: cream ground, plum left bar, sage label,
-plum serif headline, mustard rule. Run from the repo root:  python3 scripts/tool-og.py
+plum serif headline, mustard rule. Run from the repo root:  python3 scripts/tool-og.py [slug ...]
+With no args renders every tool; pass one or more slugs to render only those.
 Requires: playwright (python) with Chromium.
 """
-import html, re
+import html, re, sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
@@ -15,6 +16,10 @@ for b in blocks:
     slug = b.split("'", 1)[0]
     g = lambda k: re.search(rf"\n\t\t{k}: ([\'\"`])(.*?)(?<!\\)\1,\n", b).group(2).replace("\\'", "'")
     tools.append((slug, g('name'), g('category'), g('h1')))
+
+only = set(sys.argv[1:])
+if only:
+    tools = [t for t in tools if t[0] in only]
 
 PAGE = """<html><body style="margin:0;width:1200px;height:630px;background:#FAF6EF;position:relative;overflow:hidden">
 <div style="position:absolute;left:0;top:0;bottom:0;width:15px;background:#4A3352"></div>

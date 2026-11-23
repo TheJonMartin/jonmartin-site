@@ -175,7 +175,7 @@ const personSchema = {
 	email: 'mailto:jon@thejonmartin.com',
 	jobTitle: 'Revenue Operations Solutions Architect',
 	description:
-		'Writes diagnoses of why systems, processes, and org structures keep breaking in founder-led professional services firms.',
+		'Designs and diagnoses the processes behind revenue teams, and finds why systems and org structures keep breaking in founder-led professional services firms.',
 	knowsAbout: [
 		'Revenue Operations',
 		'Organizational Design',
