@@ -12,8 +12,8 @@
     "Prices and integration details come from each vendor's own pages, checked on the date shown."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-23",
+  "checked": "Nov 23, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Small HubSpot teams that make calls"
@@ -271,6 +271,13 @@
       "href": "/tools/best/calling-apps-for-hubspot"
     },
     {
+      "slug": "hubspot-vs-aircall",
+      "route": "compare",
+      "title": "HubSpot Calling vs Aircall: Minutes, Plans, and CTI",
+      "dek": "HubSpot already includes calling. The question is whether the minutes you pay for cover your team, or whether you need a phone system that sits on top of the CRM.",
+      "href": "/tools/compare/hubspot-vs-aircall"
+    },
+    {
       "slug": "apollo-vs-lusha",
       "route": "compare",
       "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
@@ -283,13 +290,6 @@
       "title": "Best CRM for Freelancers in 2026",
       "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
       "href": "/tools/best/crm-for-freelancers"
-    },
-    {
-      "slug": "close-vs-pipedrive",
-      "route": "compare",
-      "title": "Close vs Pipedrive for Small Sales Teams",
-      "dek": "Close and Pipedrive both run a sales pipeline for about the same price, but they get there differently.",
-      "href": "/tools/compare/close-vs-pipedrive"
     }
   ]
 }
