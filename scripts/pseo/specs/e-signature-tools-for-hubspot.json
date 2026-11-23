@@ -41,7 +41,7 @@
 	],
 	"disclosure": "This page contains an affiliate link. If you sign up through it, I earn a commission. It costs you nothing extra.",
 	"title": "E-Signature Tools for HubSpot: QuickSigner, DocuSign, Dropbox Sign, and HubSpot Quotes — Jon Martin",
-	"seoTitle": "E-Signature Tools for HubSpot (Quotes, DocuSign, Dropbox Sign)",
+	"seoTitle": "HubSpot E-Signature Tools: Quotes, DocuSign, Dropbox Sign",
 	"description": "HubSpot quote e-sign compared with DocuSign, Dropbox Sign, and QuickSigner: plans, prices, and which ones actually connect to HubSpot. Checked Nov 23, 2026.",
 	"h1": "E-signature tools for HubSpot",
 	"dek": [
@@ -55,24 +55,24 @@
 			"quicksigner": "A low published price and unlimited documents, if someone can build an API connection."
 		},
 		"Native HubSpot path": {
-			"docusign": "{{fact:docusign.hubspot_app}}.",
-			"dropbox-sign": "{{fact:dropbox-sign.hubspot_records}}.",
-			"quicksigner": "{{fact:quicksigner.no_hubspot}}."
+			"docusign": "DocuSign {{fact:docusign.hubspot_app}}.",
+			"dropbox-sign": "Dropbox Sign {{fact:dropbox-sign.hubspot_records}}.",
+			"quicksigner": "There is {{fact:quicksigner.no_hubspot}}."
 		},
 		"Plan or seat needed": {
-			"docusign": "{{fact:docusign.hubspot_reqs}}; {{fact:docusign.mapping}}.",
-			"dropbox-sign": "{{fact:dropbox-sign.hubspot_plans}}.",
+			"docusign": "It {{fact:docusign.hubspot_reqs}}; {{fact:docusign.mapping}}.",
+			"dropbox-sign": "Per Dropbox Sign, {{fact:dropbox-sign.hubspot_plans}}.",
 			"quicksigner": "The eSignature API sits on the Professional plan."
 		},
 		"Starting published price": {
-			"docusign": "Personal {{fact:docusign.personal}}; Standard {{fact:docusign.standard}}; Business Pro {{fact:docusign.business_pro}}.",
-			"dropbox-sign": "Essentials {{fact:dropbox-sign.essentials_price}}; Standard {{fact:dropbox-sign.standard_price}}.",
-			"quicksigner": "Business {{fact:quicksigner.business_price}}; Professional {{fact:quicksigner.pro_price}}."
+			"docusign": "Personal: {{fact:docusign.personal}}; Standard: {{fact:docusign.standard}}; Business Pro: {{fact:docusign.business_pro}}.",
+			"dropbox-sign": "Essentials: {{fact:dropbox-sign.essentials_price}}; Standard: {{fact:dropbox-sign.standard_price}}.",
+			"quicksigner": "Business: {{fact:quicksigner.business_price}}; Professional: {{fact:quicksigner.pro_price}}."
 		},
 		"Included volume": {
 			"docusign": "{{fact:docusign.envelopes}}.",
-			"dropbox-sign": "{{fact:dropbox-sign.unlimited_requests}}.",
-			"quicksigner": "{{fact:quicksigner.free_docs}}. {{fact:quicksigner.unlimited_docs}}."
+			"dropbox-sign": "It allows {{fact:dropbox-sign.unlimited_requests}}.",
+			"quicksigner": "{{fact:quicksigner.free_docs}}; {{fact:quicksigner.unlimited_docs}}."
 		}
 	},
 	"sections": [
@@ -81,11 +81,11 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "Before you add a signer, check whether {{link:hubspot}} already covers it. HubSpot can collect e-signatures on quotes, and {{fact:hubspot.esign_dropbox}}."
+					"html": "Before you add a signer, check whether {{link:hubspot}} already covers it. HubSpot can collect e-signatures on quotes. Per HubSpot, {{fact:hubspot.esign_dropbox}}."
 				},
 				{
 					"type": "p",
-					"html": "On the current quoting tools, {{fact:hubspot.esign_revenue}}. HubSpot's own examples: {{fact:hubspot.esign_rev_pro}}, and {{fact:hubspot.esign_rev_ent}}. If you need more, the catalog lists an {{fact:hubspot.esign_addon}}."
+					"html": "On the current quoting tools, {{fact:hubspot.esign_revenue}}. HubSpot's own examples: {{fact:hubspot.esign_rev_pro}}, and {{fact:hubspot.esign_rev_ent}}. If you need more, the catalog lists {{fact:hubspot.esign_addon}}."
 				},
 				{
 					"type": "p",
@@ -93,7 +93,7 @@
 				},
 				{
 					"type": "p",
-					"html": "One warning for anyone reading older guides: {{fact:hubspot.legacy_quotes}}. {{fact:hubspot.legacy_esign}}. So do not tell a new customer to plan around legacy quotes, and reconcile the two official articles before you rely on a Starter answer."
+					"html": "One warning for anyone reading older guides: {{fact:hubspot.legacy_quotes}}. Also, {{fact:hubspot.legacy_esign}}. So do not tell a new customer to plan around legacy quotes, and check your account before you rely on a Starter answer."
 				}
 			]
 		},
@@ -136,15 +136,15 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "{{link:docusign}} has an official HubSpot app. {{fact:docusign.hubspot_app}}. {{fact:docusign.hubspot_reqs}}."
+					"html": "{{link:docusign}} has an official HubSpot app. It {{fact:docusign.hubspot_app}}. It {{fact:docusign.hubspot_reqs}}."
 				},
 				{
 					"type": "p",
-					"html": "{{fact:docusign.mapping}}. And {{fact:docusign.not_sync}}, so treat it as envelope creation from the record, not a two-way data sync."
+					"html": "Note that {{fact:docusign.mapping}}. And {{fact:docusign.not_sync}}, so treat it as envelope creation from the record, not a two-way data sync."
 				},
 				{
 					"type": "p",
-					"html": "<strong>Prices</strong> from <a href=\"https://ecom.docusign.com/plans-and-pricing/esignature\" target=\"_blank\" rel=\"noopener\">DocuSign's pricing page</a>: Personal {{fact:docusign.personal}}; Standard {{fact:docusign.standard}}; Business Pro {{fact:docusign.business_pro}}. {{fact:docusign.envelopes}}."
+					"html": "<strong>Prices</strong> from <a href=\"https://ecom.docusign.com/plans-and-pricing/esignature\" target=\"_blank\" rel=\"noopener\">DocuSign's pricing page</a>: Personal: {{fact:docusign.personal}}; Standard: {{fact:docusign.standard}}; Business Pro: {{fact:docusign.business_pro}}. {{fact:docusign.envelopes}}."
 				}
 			]
 		},
@@ -153,7 +153,7 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "{{link:dropbox-sign}} has an official HubSpot app as well. {{fact:dropbox-sign.hubspot_records}}, and the signed file saves back to the record. {{fact:dropbox-sign.hellosign_untracked}}, so send from inside the integration."
+					"html": "{{link:dropbox-sign}} has an official HubSpot app as well. It {{fact:dropbox-sign.hubspot_records}}, and the signed file saves back to the record. Note that {{fact:dropbox-sign.hellosign_untracked}}, so send from inside the integration."
 				},
 				{
 					"type": "p",
@@ -161,7 +161,7 @@
 				},
 				{
 					"type": "p",
-					"html": "<strong>Prices</strong> from <a href=\"https://sign.dropbox.com/products/dropbox-sign/pricing\" target=\"_blank\" rel=\"noopener\">the Dropbox Sign pricing page</a>: Essentials {{fact:dropbox-sign.essentials_price}}; Standard {{fact:dropbox-sign.standard_price}}; {{fact:dropbox-sign.premium}}. {{fact:dropbox-sign.unlimited_requests}}, and there is {{fact:dropbox-sign.trial_days}}. {{fact:dropbox-sign.hubspot_plans}}."
+					"html": "<strong>Prices</strong> from <a href=\"https://sign.dropbox.com/products/dropbox-sign/pricing\" target=\"_blank\" rel=\"noopener\">the Dropbox Sign pricing page</a>: Essentials: {{fact:dropbox-sign.essentials_price}}; Standard: {{fact:dropbox-sign.standard_price}}; Premium: {{fact:dropbox-sign.premium}}. Plans include {{fact:dropbox-sign.unlimited_requests}}, and there is {{fact:dropbox-sign.trial_days}}. Per Dropbox Sign, {{fact:dropbox-sign.hubspot_plans}}."
 				}
 			]
 		},
@@ -170,11 +170,11 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "{{link:quicksigner}} is the cheap option, placed last here because it takes a build. {{fact:quicksigner.no_hubspot}}."
+					"html": "{{link:quicksigner}} is the cheap option, placed last here because it takes a build. There is {{fact:quicksigner.no_hubspot}}."
 				},
 				{
 					"type": "p",
-					"html": "<strong>Prices</strong> from <a href=\"https://www.quicksigner.com/pricing/\" target=\"_blank\" rel=\"noopener\">quicksigner.com/pricing</a>: {{fact:quicksigner.free_docs}}. Business {{fact:quicksigner.business_price}}; Professional {{fact:quicksigner.pro_price}}. {{fact:quicksigner.unlimited_docs}}, {{fact:quicksigner.signers_free}}, and {{fact:quicksigner.trial_days}}."
+					"html": "<strong>Prices</strong> from <a href=\"https://www.quicksigner.com/pricing/\" target=\"_blank\" rel=\"noopener\">quicksigner.com/pricing</a>: {{fact:quicksigner.free_docs}}. Business: {{fact:quicksigner.business_price}}; Professional: {{fact:quicksigner.pro_price}}. You get {{fact:quicksigner.unlimited_docs}}, and {{fact:quicksigner.signers_free}}. There is {{fact:quicksigner.trial_days}}."
 				},
 				{
 					"type": "p",
@@ -204,31 +204,31 @@
 	"faq": [
 		{
 			"q": "Does HubSpot have built-in e-signature?",
-			"a": "Yes, on quotes. {{fact:hubspot.esign_dropbox}}."
+			"a": "Yes, on quotes. Per HubSpot, {{fact:hubspot.esign_dropbox}}."
 		},
 		{
 			"q": "Which HubSpot plan do I need for quote e-sign?",
-			"a": "For the current quoting tools, {{fact:hubspot.esign_revenue}}. {{fact:hubspot.legacy_quotes}}, so new customers should not plan on them."
+			"a": "For the current quoting tools, {{fact:hubspot.esign_revenue}}. Note that {{fact:hubspot.legacy_quotes}}, so new customers should not plan on them."
 		},
 		{
 			"q": "How many e-signatures does HubSpot include?",
-			"a": "HubSpot's examples: {{fact:hubspot.esign_rev_pro}}, and {{fact:hubspot.esign_rev_ent}}. The catalog lists an {{fact:hubspot.esign_addon}}."
+			"a": "HubSpot's examples: {{fact:hubspot.esign_rev_pro}}, and {{fact:hubspot.esign_rev_ent}}. The catalog lists {{fact:hubspot.esign_addon}}."
 		},
 		{
 			"q": "Does DocuSign integrate with HubSpot?",
-			"a": "Yes. {{fact:docusign.hubspot_app}}. {{fact:docusign.hubspot_reqs}}."
+			"a": "Yes. It {{fact:docusign.hubspot_app}}. It {{fact:docusign.hubspot_reqs}}."
 		},
 		{
 			"q": "Does Dropbox Sign integrate with HubSpot?",
-			"a": "Yes. {{fact:dropbox-sign.hubspot_records}}. {{fact:dropbox-sign.hubspot_plans}}."
+			"a": "Yes. It {{fact:dropbox-sign.hubspot_records}}. Per Dropbox Sign, {{fact:dropbox-sign.hubspot_plans}}."
 		},
 		{
 			"q": "Does QuickSigner integrate with HubSpot?",
-			"a": "{{fact:quicksigner.no_hubspot}}. {{fact:quicksigner.api}}."
+			"a": "There is {{fact:quicksigner.no_hubspot}}. If you build it, {{fact:quicksigner.api}}."
 		},
 		{
 			"q": "How much does QuickSigner cost?",
-			"a": "{{fact:quicksigner.free_docs}}. Business {{fact:quicksigner.business_price}}. Professional {{fact:quicksigner.pro_price}}. {{fact:quicksigner.signers_free}}."
+			"a": "{{fact:quicksigner.free_docs}}. Business {{fact:quicksigner.business_price}}. Professional {{fact:quicksigner.pro_price}}. Also, {{fact:quicksigner.signers_free}}."
 		},
 		{
 			"q": "Should a HubSpot team start with QuickSigner?",

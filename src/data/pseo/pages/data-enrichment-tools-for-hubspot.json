@@ -41,33 +41,33 @@
         "Self-serve published price",
         "Starter $49.90 a month billed monthly, with 400 credits a month; $37.45 a month billed annually ($449.10 a year).",
         "Basic $65 a month on monthly billing; Professional $99 a month on monthly billing.",
-        "paid plans are quoted per company, with no fixed public price.",
+        "By quote: paid plans are quoted per company, with no fixed public price.",
         "Prospecting is by quote, with no public price; CRM Enrichment from $12,000 a year.",
-        "pricing comes through a sales form, with no public price."
+        "By quote: pricing comes through a sales form, with no public price."
       ],
       [
         "Free or included option",
-        "a Free plan with up to 40 credits a month, CRM integrations included.",
-        "a free plan that stays free with no time limit.",
-        "a Free license gets 50 Universal Credits that don't replenish.",
+        "Yes, a Free plan with up to 40 credits a month, CRM integrations included.",
+        "Yes, a free plan that stays free with no time limit.",
+        "Yes, a Free license gets 50 Universal Credits that don't replenish.",
         "No self-serve free tier; sales-led.",
         "No self-serve free tier; sales-led."
       ],
       [
         "HubSpot sync",
-        "pushes contacts and companies into HubSpot with field mapping, and checks for existing records first so you don't create duplicates.",
-        "two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to HubSpot.",
-        "imports real-time verified emails and phone numbers into HubSpot.",
-        "exports contacts and companies to HubSpot with field mapping and per-field update rules, set up by a Cognism admin.",
+        "Lusha pushes contacts and companies into HubSpot with field mapping, and checks for existing records first so you don't create duplicates.",
+        "A two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to HubSpot.",
+        "Seamless.AI imports real-time verified emails and phone numbers into HubSpot.",
+        "Cognism exports contacts and companies to HubSpot with field mapping and per-field update rules, set up by a Cognism admin.",
         "Enrich for HubSpot plus the ZoomInfo HubSpot Connector."
       ],
       [
         "Credit or seat model",
         "1 credit to reveal an email and 5 credits to reveal a phone number; on monthly plans, unused credits roll over up to twice the plan's limit; annual plans get all credits up front.",
-        "credits are pooled across the team, granted up front each billing cycle, and don't roll over.",
+        "Apollo's credits are pooled across the team, granted up front each billing cycle, and don't roll over.",
         "1 credit for an email, 5 for a phone number, or 6 for the full contact.",
         "1 credit = 1 revealed contact; Standard and Pro prospecting packages, each with 5 seats included.",
-        "flexible packages priced through sales, with no public prices."
+        "ZoomInfo sells flexible packages priced through sales, with no public prices."
       ]
     ],
     "rowsHtml": [
@@ -83,33 +83,33 @@
         "Self-serve published price",
         "Starter $49.90 a month billed monthly, with 400 credits a month; $37.45 a month billed annually ($449.10 a year).",
         "Basic $65 a month on monthly billing; Professional $99 a month on monthly billing.",
-        "paid plans are quoted per company, with no fixed public price.",
+        "By quote: paid plans are quoted per company, with no fixed public price.",
         "Prospecting is by quote, with no public price; CRM Enrichment from $12,000 a year.",
-        "pricing comes through a sales form, with no public price."
+        "By quote: pricing comes through a sales form, with no public price."
       ],
       [
         "Free or included option",
-        "a Free plan with up to 40 credits a month, CRM integrations included.",
-        "a free plan that stays free with no time limit.",
-        "a Free license gets 50 Universal Credits that don&#39;t replenish.",
+        "Yes, a Free plan with up to 40 credits a month, CRM integrations included.",
+        "Yes, a free plan that stays free with no time limit.",
+        "Yes, a Free license gets 50 Universal Credits that don&#39;t replenish.",
         "No self-serve free tier; sales-led.",
         "No self-serve free tier; sales-led."
       ],
       [
         "HubSpot sync",
-        "pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates.",
-        "two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>.",
-        "imports real-time verified emails and phone numbers into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>.",
-        "exports contacts and companies to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping and per-field update rules, set up by a Cognism admin.",
+        "Lusha pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates.",
+        "A two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>.",
+        "Seamless.AI imports real-time verified emails and phone numbers into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>.",
+        "Cognism exports contacts and companies to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping and per-field update rules, set up by a Cognism admin.",
         "Enrich for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> plus the ZoomInfo HubSpot Connector."
       ],
       [
         "Credit or seat model",
         "1 credit to reveal an email and 5 credits to reveal a phone number; on monthly plans, unused credits roll over up to twice the plan&#39;s limit; annual plans get all credits up front.",
-        "credits are pooled across the team, granted up front each billing cycle, and don&#39;t roll over.",
+        "Apollo's credits are pooled across the team, granted up front each billing cycle, and don&#39;t roll over.",
         "1 credit for an email, 5 for a phone number, or 6 for the full contact.",
         "1 credit = 1 revealed contact; Standard and Pro prospecting packages, each with 5 seats included.",
-        "flexible packages priced through sales, with no public prices."
+        "ZoomInfo sells flexible packages priced through sales, with no public prices."
       ]
     ],
     "links": [
@@ -147,11 +147,11 @@
       "blocks": [
         {
           "type": "p",
-          "html": "Before you buy a specialist, look at what <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> already includes. data enrichment is included in all paid plans with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>&#39;s Smart CRM, at no additional cost, and data enrichment does not use <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Credits."
+          "html": "Before you buy a specialist, look at what <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> already includes. Per HubSpot, data enrichment is included in all paid plans with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>&#39;s Smart CRM, at no additional cost, and data enrichment does not use <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Credits."
         },
         {
           "type": "p",
-          "html": "A a Super Admin configures enrichment settings, including automatic and continuous enrichment. existing values are kept unless you choose to overwrite them. One caution: smart properties do use <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Credits, so do not fold those into the free-enrichment story."
+          "html": "In practice, a Super Admin configures enrichment settings, including automatic and continuous enrichment. By default, existing values are kept unless you choose to overwrite them. One caution: smart properties do use <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Credits, so do not fold those into the free-enrichment story."
         },
         {
           "type": "p",
@@ -173,7 +173,7 @@
             "Need self-serve emails and dials with a published price: Lusha.",
             "Want prospecting plus a two-way CRM sync in one tool: Apollo.",
             "Want a large monthly credit allowance and will take a quote: Seamless.AI.",
-            "Want sales-led European-leaning data or standalone CRM enrichment: Cognism.",
+            "Want sales-led, compliance-first data, pitched at teams selling into EMEA, or standalone CRM enrichment: Cognism.",
             "Want enterprise GTM data with a HubSpot connector: ZoomInfo."
           ]
         },
@@ -206,17 +206,17 @@
         {
           "type": "ul",
           "items": [
-            "a Free plan with up to 40 credits a month, CRM integrations included.",
+            "Includes a Free plan with up to 40 credits a month, CRM integrations included.",
             "Starter: $49.90 a month billed monthly, with 400 credits a month, or $37.45 a month billed annually ($449.10 a year).",
             "Professional: $69.90 a month billed monthly, with 600 credits a month, or $52.45 a month billed annually ($629.10 a year).",
             "Premium: $299.95 a month billed annually ($3,599.10 a year).",
-            "Credits: 1 credit to reveal an email and 5 credits to reveal a phone number. on monthly plans, unused credits roll over up to twice the plan&#39;s limit; annual plans get all credits up front.",
-            "teams larger than 5 users go through sales."
+            "Credits: 1 credit to reveal an email and 5 credits to reveal a phone number; on monthly plans, unused credits roll over up to twice the plan&#39;s limit; annual plans get all credits up front.",
+            "Note: teams larger than 5 users go through sales."
           ]
         },
         {
           "type": "p",
-          "html": "<strong>HubSpot:</strong> pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates. setup needs admin access on both Lusha and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Note that a separate Lusha Signals app on the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> App Marketplace adds a Signals card to each contact record, so budget for that separately if you want it. Two-way compare with Apollo: <a href=\"/tools/compare/apollo-vs-lusha\">Apollo vs Lusha</a>."
+          "html": "<strong>HubSpot:</strong> Lusha pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates, and setup needs admin access on both Lusha and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Note that a separate Lusha Signals app on the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> App Marketplace adds a Signals card to each contact record. Two-way compare with Apollo: <a href=\"/tools/compare/apollo-vs-lusha\">Apollo vs Lusha</a>."
         },
         {
           "type": "cta",
@@ -232,20 +232,20 @@
       "blocks": [
         {
           "type": "p",
-          "html": "<a href=\"https://get.apollo.io/mep2h66xs2o5\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Apollo</a> finds contacts, enriches them, and runs sequences, while HubSpot keeps the lifecycle. Per <a href=\"https://www.apollo.io/apollo-hubspot\" target=\"_blank\" rel=\"noopener\">apollo.io/apollo-hubspot</a>, two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>."
+          "html": "<a href=\"https://get.apollo.io/mep2h66xs2o5\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Apollo</a> finds contacts, enriches them, and runs sequences, while HubSpot keeps the lifecycle. Per <a href=\"https://www.apollo.io/apollo-hubspot\" target=\"_blank\" rel=\"noopener\">apollo.io/apollo-hubspot</a>, Apollo runs a two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>."
         },
         {
           "type": "ul",
           "items": [
-            "recommended for HubSpot Sales Hub, and it requires an Apollo subscription.",
-            "connecting it takes a HubSpot super admin, and you get 6 hours after enabling to set sync rules before anything syncs.",
-            "credits are pooled across the team, granted up front each billing cycle, and don&#39;t roll over.",
-            "all seats on an Apollo account are on the same plan."
+            "It is recommended for HubSpot Sales Hub, and it requires an Apollo subscription.",
+            "Setup: connecting it takes a HubSpot super admin, and you get 6 hours after enabling to set sync rules before anything syncs.",
+            "Apollo's credits are pooled across the team, granted up front each billing cycle, and don&#39;t roll over.",
+            "Note that all seats on an Apollo account are on the same plan."
           ]
         },
         {
           "type": "p",
-          "html": "<strong>Prices</strong> from <a href=\"https://www.apollo.io/pricing\" target=\"_blank\" rel=\"noopener\">apollo.io/pricing</a>: Basic $65 a month on monthly billing, or $49 per seat per month, billed annually; Professional $99 a month on monthly billing, or $79 per seat per month, billed annually. a free plan that stays free with no time limit. More detail: <a href=\"/tools/apollo-io\">my Apollo write-up</a>."
+          "html": "<strong>Prices</strong> from <a href=\"https://www.apollo.io/pricing\" target=\"_blank\" rel=\"noopener\">apollo.io/pricing</a>: Basic $65 a month on monthly billing, or $49 per seat per month, billed annually; Professional $99 a month on monthly billing, or $79 per seat per month, billed annually. There is a free plan that stays free with no time limit. More detail: <a href=\"/tools/apollo-io\">my Apollo write-up</a>."
         },
         {
           "type": "p",
@@ -269,7 +269,7 @@
         },
         {
           "type": "p",
-          "html": "<strong>Price:</strong> the pricing page asks for your details to quote a price; no paid prices are published. a Free license gets 50 Universal Credits that don&#39;t replenish. On the education article, a Basic license gets 250 credits per user per month on a Basic license and a Pro license 10,000 credits per user per month on a Pro license, where 1 credit for an email, 5 for a phone number, or 6 for the full contact. Those are credits, not dollars. Deeper notes: <a href=\"/tools/seamless-ai\">Seamless.AI</a>, and it also shows up in my <a href=\"/tools/best/cold-email-tools-for-hubspot\">cold email tools for HubSpot</a> roundup."
+          "html": "<strong>Price:</strong> the pricing page asks for your details to quote a price; no paid prices are published. There is also a free tier: a Free license gets 50 Universal Credits that don&#39;t replenish. Per its help article, the per-license allowances are 250 credits per user per month on a Basic license and 10,000 credits per user per month on a Pro license. A reveal costs 1 credit for an email, 5 for a phone number, or 6 for the full contact. Those are credits, not dollars. Deeper notes: <a href=\"/tools/seamless-ai\">Seamless.AI</a>, and it also shows up in my <a href=\"/tools/best/cold-email-tools-for-hubspot\">cold email tools for HubSpot</a> roundup."
         },
         {
           "type": "cta",
@@ -285,11 +285,11 @@
       "blocks": [
         {
           "type": "p",
-          "html": "<a href=\"https://www.cognism.com/\" target=\"_blank\" rel=\"noopener\">Cognism</a> is sales-led. Standard and Pro prospecting packages, each with 5 seats included, and pricing is by quote, with no public price. 1 credit = 1 revealed contact, and no charge for viewing contacts you already revealed. It has a native two-way sync for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, launched in February 2026, with exports contacts and companies to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping and per-field update rules, set up by a Cognism admin. Separately, CRM Enrichment from $12,000 a year, and CRM Enrichment can be bought on its own or as an add-on to a Cognism plan; enriched contacts use credits again only when key details change, like a job move."
+          "html": "<a href=\"https://www.cognism.com/\" target=\"_blank\" rel=\"noopener\">Cognism</a> is sales-led. It sells Standard and Pro prospecting packages, each with 5 seats included, and pricing is by quote, with no public price. 1 credit = 1 revealed contact, and no charge for viewing contacts you already revealed. It has a native two-way sync for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, launched in February 2026; it exports contacts and companies to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping and per-field update rules, set up by a Cognism admin. Separately, Cognism lists CRM Enrichment from $12,000 a year; CRM Enrichment can be bought on its own or as an add-on to a Cognism plan, and enriched contacts use credits again only when key details change, like a job move."
         },
         {
           "type": "p",
-          "html": "<a href=\"https://try.zoominfo.com/lhyvwoum3lxo\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">ZoomInfo</a> is the enterprise option. flexible packages priced through sales, with no public prices. On HubSpot, it offers Enrich for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> plus the ZoomInfo HubSpot Connector, plus a Chrome extension that matches what you see on the web to your <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> prospects and customers. If you came here comparing it against smaller tools, see my <a href=\"/tools/best/zoominfo-alternatives-for-small-business\">ZoomInfo alternatives for small business</a>. This page is the HubSpot enrichment angle, not that one."
+          "html": "<a href=\"https://try.zoominfo.com/lhyvwoum3lxo\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">ZoomInfo</a> is the enterprise option. It sells flexible packages priced through sales, with no public prices. On HubSpot, it offers Enrich for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> plus the ZoomInfo HubSpot Connector, and adds a Chrome extension that matches what you see on the web to your <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> prospects and customers. If you came here comparing it against smaller tools, see my <a href=\"/tools/best/zoominfo-alternatives-for-small-business\">ZoomInfo alternatives for small business</a>. This page is the HubSpot enrichment angle, not that one."
         }
       ]
     },
@@ -300,7 +300,7 @@
           "type": "ol",
           "items": [
             "Already-have-records versus need-net-new-contacts: start with HubSpot's included enrichment for the first case.",
-            "Need a published price: Lusha, then Apollo now that its live prices are recorded.",
+            "Need a published price: Lusha, then Apollo.",
             "Willing to take a sales call for a larger database: Seamless.AI, Cognism, or ZoomInfo.",
             "Before you connect anything, decide match keys, overwrite-versus-fill-empty, and who can auto-import."
           ]
@@ -315,38 +315,38 @@
   "faq": [
     {
       "q": "Does HubSpot have its own data enrichment?",
-      "a": "Yes. data enrichment is included in all paid plans with HubSpot's Smart CRM, at no additional cost, and data enrichment does not use HubSpot Credits. A a Super Admin configures enrichment settings, including automatic and continuous enrichment.",
-      "aHtml": "Yes. data enrichment is included in all paid plans with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>&#39;s Smart CRM, at no additional cost, and data enrichment does not use <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Credits. A a Super Admin configures enrichment settings, including automatic and continuous enrichment."
+      "a": "Yes. Per HubSpot, data enrichment is included in all paid plans with HubSpot's Smart CRM, at no additional cost, and data enrichment does not use HubSpot Credits. In practice, a Super Admin configures enrichment settings, including automatic and continuous enrichment.",
+      "aHtml": "Yes. Per HubSpot, data enrichment is included in all paid plans with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>&#39;s Smart CRM, at no additional cost, and data enrichment does not use <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Credits. In practice, a Super Admin configures enrichment settings, including automatic and continuous enrichment."
     },
     {
       "q": "Does Lusha integrate with HubSpot?",
-      "a": "Yes. pushes contacts and companies into HubSpot with field mapping, and checks for existing records first so you don't create duplicates. setup needs admin access on both Lusha and HubSpot. The Signals card is separate: a separate Lusha Signals app on the HubSpot App Marketplace adds a Signals card to each contact record.",
-      "aHtml": "Yes. pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates. setup needs admin access on both Lusha and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. The Signals card is separate: a separate Lusha Signals app on the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> App Marketplace adds a Signals card to each contact record."
+      "a": "Yes. Lusha pushes contacts and companies into HubSpot with field mapping, and checks for existing records first so you don't create duplicates, and setup needs admin access on both Lusha and HubSpot. Separately, a separate Lusha Signals app on the HubSpot App Marketplace adds a Signals card to each contact record.",
+      "aHtml": "Yes. Lusha pushes contacts and companies into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> with field mapping, and checks for existing records first so you don&#39;t create duplicates, and setup needs admin access on both Lusha and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Separately, a separate Lusha Signals app on the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> App Marketplace adds a Signals card to each contact record."
     },
     {
       "q": "How much does Lusha cost?",
-      "a": "a Free plan with up to 40 credits a month, CRM integrations included. Starter is $49.90 a month billed monthly, with 400 credits a month, or $37.45 a month billed annually ($449.10 a year). 1 credit to reveal an email and 5 credits to reveal a phone number. Higher plans are on Lusha's pricing page.",
-      "aHtml": "a Free plan with up to 40 credits a month, CRM integrations included. Starter is $49.90 a month billed monthly, with 400 credits a month, or $37.45 a month billed annually ($449.10 a year). 1 credit to reveal an email and 5 credits to reveal a phone number. Higher plans are on Lusha's pricing page."
+      "a": "There is a Free plan with up to 40 credits a month, CRM integrations included. Starter is $49.90 a month billed monthly, with 400 credits a month, or $37.45 a month billed annually ($449.10 a year). 1 credit to reveal an email and 5 credits to reveal a phone number. Higher plans are on Lusha's pricing page.",
+      "aHtml": "There is a Free plan with up to 40 credits a month, CRM integrations included. Starter is $49.90 a month billed monthly, with 400 credits a month, or $37.45 a month billed annually ($449.10 a year). 1 credit to reveal an email and 5 credits to reveal a phone number. Higher plans are on Lusha's pricing page."
     },
     {
       "q": "Does Apollo sync both ways with HubSpot?",
-      "a": "Yes, per Apollo's official HubSpot page. two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to HubSpot. recommended for HubSpot Sales Hub, and it requires an Apollo subscription. Basic is $65 a month on monthly billing and Professional is $99 a month on monthly billing.",
-      "aHtml": "Yes, per Apollo's official HubSpot page. two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. recommended for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Sales Hub, and it requires an Apollo subscription. Basic is $65 a month on monthly billing and Professional is $99 a month on monthly billing."
+      "a": "Yes, per Apollo's official HubSpot page. It runs a two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to HubSpot. It is recommended for HubSpot Sales Hub, and it requires an Apollo subscription. Basic is $65 a month on monthly billing and Professional is $99 a month on monthly billing.",
+      "aHtml": "Yes, per Apollo's official HubSpot page. It runs a two-way sync of contacts, accounts, and deals, with emails, calls, meetings, tasks, and notes pushed to <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. It is recommended for <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Sales Hub, and it requires an Apollo subscription. Basic is $65 a month on monthly billing and Professional is $99 a month on monthly billing."
     },
     {
       "q": "Does Seamless.AI integrate with HubSpot?",
-      "a": "Yes. It imports real-time verified emails and phone numbers into HubSpot, and finds look-alike contacts and accounts inside HubSpot. the pricing page asks for your details to quote a price; no paid prices are published.",
-      "aHtml": "Yes. It imports real-time verified emails and phone numbers into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and finds look-alike contacts and accounts inside <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. the pricing page asks for your details to quote a price; no paid prices are published."
+      "a": "Yes. It imports real-time verified emails and phone numbers into HubSpot, and finds look-alike contacts and accounts inside HubSpot. On price, the pricing page asks for your details to quote a price; no paid prices are published.",
+      "aHtml": "Yes. It imports real-time verified emails and phone numbers into <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and finds look-alike contacts and accounts inside <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. On price, the pricing page asks for your details to quote a price; no paid prices are published."
     },
     {
       "q": "How much do Seamless.AI, Cognism, and ZoomInfo cost?",
-      "a": "Seamless.AI and ZoomInfo are quote-led: paid plans are quoted per company, with no fixed public price, and ZoomInfo offers pricing comes through a sales form, with no public price. Cognism prospecting is by quote, with no public price, and CRM Enrichment from $12,000 a year.",
-      "aHtml": "Seamless.AI and ZoomInfo are quote-led: paid plans are quoted per company, with no fixed public price, and ZoomInfo offers pricing comes through a sales form, with no public price. Cognism prospecting is by quote, with no public price, and CRM Enrichment from $12,000 a year."
+      "a": "Seamless.AI and ZoomInfo are quote-led: paid plans are quoted per company, with no fixed public price, and ZoomInfo's pricing comes through a sales form, with no public price. Cognism prospecting is by quote, with no public price, and CRM Enrichment from $12,000 a year.",
+      "aHtml": "Seamless.AI and ZoomInfo are quote-led: paid plans are quoted per company, with no fixed public price, and ZoomInfo's pricing comes through a sales form, with no public price. Cognism prospecting is by quote, with no public price, and CRM Enrichment from $12,000 a year."
     },
     {
       "q": "Which enrichment tool should a small HubSpot team start with?",
-      "a": "Use HubSpot's included enrichment first for records you already have. If you need net-new emails and dials with a published price, look at Lusha, and Apollo. Treat Seamless.AI, Cognism, and ZoomInfo as options you buy through sales.",
-      "aHtml": "Use HubSpot's included enrichment first for records you already have. If you need net-new emails and dials with a published price, look at Lusha, and Apollo. Treat Seamless.AI, Cognism, and ZoomInfo as options you buy through sales."
+      "a": "Use HubSpot's included enrichment first for records you already have. If you need net-new emails and dials with a published price, look at Lusha or Apollo. Treat Seamless.AI, Cognism, and ZoomInfo as options you buy through sales.",
+      "aHtml": "Use HubSpot's included enrichment first for records you already have. If you need net-new emails and dials with a published price, look at Lusha or Apollo. Treat Seamless.AI, Cognism, and ZoomInfo as options you buy through sales."
     }
   ],
   "closing": "Fill the records you have before you pay to buy new ones.",

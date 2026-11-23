@@ -39,17 +39,17 @@
       [
         "Included calling",
         "500 calling minutes per account per month on Starter. Professional and Enterprise include more, shared across the account.",
-        "unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
+        "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
       ],
       [
         "Who can place a call",
-        "an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
+        "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
         "Each caller needs a license, with 3 licenses minimum on every plan."
       ],
       [
         "What lands in HubSpot",
-        "Calls are recorded and auto-logged on the contact record.",
-        "calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription."
+        "Calls are logged to the CRM record.",
+        "Per Aircall, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription."
       ],
       [
         "Starting price (US)",
@@ -58,13 +58,13 @@
       ],
       [
         "Phone system features",
-        "Calling and logging inside the CRM. the sales power dialer is labeled beta and is listed for Sales Hub Enterprise.",
+        "Calling and logging inside the CRM, where the sales power dialer is labeled beta and is listed for Sales Hub Enterprise.",
         "Essentials includes 250+ integrations, IVR, call recording, and SMS. Professional adds advanced analytics, smart routing, Power Dialer, and AI conversation intelligence."
       ],
       [
         "Trial or access",
-        "No separate calling trial. Calling comes with the paid hub.",
-        "free access to test the platform before committing."
+        "Calling comes with the paid hub.",
+        "Aircall offers free access to test the platform before committing."
       ]
     ],
     "rowsHtml": [
@@ -81,17 +81,17 @@
       [
         "Included calling",
         "500 calling minutes per account per month on Starter. Professional and Enterprise include more, shared across the account.",
-        "unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
+        "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
       ],
       [
         "Who can place a call",
-        "an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
+        "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
         "Each caller needs a license, with 3 licenses minimum on every plan."
       ],
       [
         "What lands in HubSpot",
-        "Calls are recorded and auto-logged on the contact record.",
-        "calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription."
+        "Calls are logged to the CRM record.",
+        "Per Aircall, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription."
       ],
       [
         "Starting price (US)",
@@ -100,13 +100,13 @@
       ],
       [
         "Phone system features",
-        "Calling and logging inside the CRM. the sales power dialer is labeled beta and is listed for Sales Hub Enterprise.",
+        "Calling and logging inside the CRM, where the sales power dialer is labeled beta and is listed for Sales Hub Enterprise.",
         "Essentials includes 250+ integrations, IVR, call recording, and SMS. Professional adds advanced analytics, smart routing, Power Dialer, and AI conversation intelligence."
       ],
       [
         "Trial or access",
-        "No separate calling trial. Calling comes with the paid hub.",
-        "free access to test the platform before committing."
+        "Calling comes with the paid hub.",
+        "Aircall offers free access to test the platform before committing."
       ]
     ],
     "links": [
@@ -176,7 +176,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise. The useful detail is that minutes are pooled, not handed out per user."
+          "html": "On HubSpot, calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise. The useful detail is that minutes are pooled, not handed out per user."
         },
         {
           "type": "ul",
@@ -191,7 +191,7 @@
         },
         {
           "type": "p",
-          "html": "If you run out, you can add capacity on the higher editions. The catalog lists a $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only, and a $25 a month for 5 more HubSpot-provided phone numbers, on Professional or Enterprise only. Light inbound or booked calls usually stay inside the cap. Heavy outbound does not."
+          "html": "If you run out, you can add capacity on the higher editions. The catalog lists $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only, and $25 a month for 5 more HubSpot-provided phone numbers, on Professional or Enterprise only. Light inbound or booked calls usually stay inside the cap. Heavy outbound does not."
         },
         {
           "type": "p",
@@ -213,14 +213,13 @@
         {
           "type": "ul",
           "items": [
-            "calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription.",
-            "Insight Cards show HubSpot history before a rep answers.",
-            "logs calls and SMS to HubSpot Contacts, Companies, Deals, and Tickets, with recordings, comments, outcomes, and transcription."
+            "On HubSpot, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription.",
+            "Insight Cards show HubSpot history before a rep answers."
           ]
         },
         {
           "type": "p",
-          "html": "<strong>Plan gating:</strong> the HubSpot App Marketplace listing names Essentials or Professional plans as the Aircall subscriptions that carry the integration, and Aircall's own pricing lists all plans include 250+ integrations, HubSpot among them."
+          "html": "<strong>Integrations:</strong> Aircall's pricing page says all plans include 250+ integrations, HubSpot among them."
         },
         {
           "type": "p",
@@ -281,7 +280,7 @@
           "items": [
             "Estimate a rough monthly talk time. If it fits the included minutes, stay on HubSpot calling.",
             "If you are hitting the cap, add capacity on Professional or Enterprise, or move the calling to Aircall.",
-            "If you need IVR, a shared inbox, a power dialer, or calling that is not minute-capped, pick Aircall (Essentials or Professional).",
+            "If you need IVR, a power dialer, or calling that is not minute-capped, pick Aircall (Essentials or Professional).",
             "Before you buy either, decide which HubSpot objects get call activity and who owns the routing rules."
           ]
         },
@@ -295,38 +294,38 @@
   "faq": [
     {
       "q": "Does HubSpot include calling, and on which plans?",
-      "a": "Yes. calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise.",
-      "aHtml": "Yes. calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise."
+      "a": "Yes. Specifically, calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise.",
+      "aHtml": "Yes. Specifically, calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise."
     },
     {
       "q": "How many calling minutes does each HubSpot plan include?",
-      "a": "500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise. minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month.",
-      "aHtml": "500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise. minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month."
+      "a": "500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise. Note that minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month.",
+      "aHtml": "500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise. Note that minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month."
     },
     {
       "q": "Can I buy more HubSpot calling minutes?",
-      "a": "On the higher editions, yes. The catalog lists a $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only. minutes reset at the start of each month, not on your renewal date, and once they run out you can't start new calls from HubSpot.",
-      "aHtml": "On the higher editions, yes. The catalog lists a $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only. minutes reset at the start of each month, not on your renewal date, and once they run out you can&#39;t start new calls from HubSpot."
+      "a": "On the higher editions, yes. The catalog lists $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only. Note that minutes reset at the start of each month, not on your renewal date, and once they run out you can't start new calls from HubSpot.",
+      "aHtml": "On the higher editions, yes. The catalog lists $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only. Note that minutes reset at the start of each month, not on your renewal date, and once they run out you can&#39;t start new calls from HubSpot."
     },
     {
       "q": "Who is allowed to place a call in HubSpot?",
-      "a": "an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call. Note that calling through your own phone uses twice as many minutes, because it makes two separate calls.",
-      "aHtml": "an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call. Note that calling through your own phone uses twice as many minutes, because it makes two separate calls."
+      "a": "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call. Note that calling through your own phone uses twice as many minutes, because it makes two separate calls.",
+      "aHtml": "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call. Note that calling through your own phone uses twice as many minutes, because it makes two separate calls."
     },
     {
       "q": "How much does Aircall cost?",
-      "a": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. custom pricing, for teams of 25+ licenses. The FAQ says annual billing is 25% off monthly.",
-      "aHtml": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. custom pricing, for teams of 25+ licenses. The FAQ says annual billing is 25% off monthly."
+      "a": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. Enterprise is custom pricing, for teams of 25+ licenses. The FAQ says annual billing is 25% off monthly.",
+      "aHtml": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. Enterprise is custom pricing, for teams of 25+ licenses. The FAQ says annual billing is 25% off monthly."
     },
     {
       "q": "Does Aircall integrate with HubSpot?",
-      "a": "Yes. calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription. Insight Cards show HubSpot history before a rep answers.",
-      "aHtml": "Yes. calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription. Insight Cards show HubSpot history before a rep answers."
+      "a": "Yes. In HubSpot, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription. Insight Cards show HubSpot history before a rep answers.",
+      "aHtml": "Yes. In HubSpot, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription. Insight Cards show HubSpot history before a rep answers."
     },
     {
       "q": "Is Aircall calling unlimited?",
-      "a": "unlimited calls within the US and Canada on Essentials and Professional (terms apply). On Enterprise, unlimited global calls on Enterprise. International rates vary.",
-      "aHtml": "unlimited calls within the US and Canada on Essentials and Professional (terms apply). On Enterprise, unlimited global calls on Enterprise. International rates vary."
+      "a": "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply), and unlimited global calls on Enterprise. International rates vary.",
+      "aHtml": "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply), and unlimited global calls on Enterprise. International rates vary."
     },
     {
       "q": "Should a small HubSpot team start with Aircall or HubSpot calling?",

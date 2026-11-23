@@ -51,27 +51,27 @@
 		},
 		"Included calling": {
 			"hubspot": "{{fact:hubspot.calling_min_starter}}. Professional and Enterprise include more, shared across the account.",
-			"aircall": "{{fact:aircall.unlimited_us_ca}}."
+			"aircall": "Aircall lists {{fact:aircall.unlimited_us_ca}}."
 		},
 		"Who can place a call": {
-			"hubspot": "{{fact:hubspot.calling_seats}}.",
+			"hubspot": "In HubSpot, {{fact:hubspot.calling_seats}}.",
 			"aircall": "Each caller needs a license, with {{fact:aircall.min_licenses}}."
 		},
 		"What lands in HubSpot": {
-			"hubspot": "Calls are recorded and auto-logged on the contact record.",
-			"aircall": "{{fact:aircall.hubspot_records}}."
+			"hubspot": "Calls are logged to the CRM record.",
+			"aircall": "Per Aircall, {{fact:aircall.hubspot_records}}."
 		},
 		"Starting price (US)": {
 			"hubspot": "Included with a paid edition. Catalog list prices: {{fact:hubspot.core_seat_starter}}; {{fact:hubspot.sales_seat_pro}}; {{fact:hubspot.sales_seat_ent}}.",
 			"aircall": "Essentials {{fact:aircall.essentials_price}}; Professional {{fact:aircall.professional_price}}; {{fact:aircall.annual_discount}}."
 		},
 		"Phone system features": {
-			"hubspot": "Calling and logging inside the CRM. {{fact:hubspot.power_dialer}}.",
+			"hubspot": "Calling and logging inside the CRM, where {{fact:hubspot.power_dialer}}.",
 			"aircall": "{{fact:aircall.essentials_features}}. {{fact:aircall.pro_features}}."
 		},
 		"Trial or access": {
-			"hubspot": "No separate calling trial. Calling comes with the paid hub.",
-			"aircall": "{{fact:aircall.free_access}}."
+			"hubspot": "Calling comes with the paid hub.",
+			"aircall": "Aircall offers {{fact:aircall.free_access}}."
 		}
 	},
 	"sections": [
@@ -127,7 +127,7 @@
 			"blocks": [
 				{
 					"type": "p",
-					"html": "{{fact:hubspot.calling_editions}}. The useful detail is that minutes are pooled, not handed out per user."
+					"html": "On HubSpot, {{fact:hubspot.calling_editions}}. The useful detail is that minutes are pooled, not handed out per user."
 				},
 				{
 					"type": "ul",
@@ -142,7 +142,7 @@
 				},
 				{
 					"type": "p",
-					"html": "If you run out, you can add capacity on the higher editions. The catalog lists a {{fact:hubspot.minute_addon}}, and a {{fact:hubspot.number_addon}}. Light inbound or booked calls usually stay inside the cap. Heavy outbound does not."
+					"html": "If you run out, you can add capacity on the higher editions. The catalog lists {{fact:hubspot.minute_addon}}, and {{fact:hubspot.number_addon}}. Light inbound or booked calls usually stay inside the cap. Heavy outbound does not."
 				},
 				{
 					"type": "p",
@@ -164,14 +164,13 @@
 				{
 					"type": "ul",
 					"items": [
-						"{{fact:aircall.hubspot_records}}.",
-						"{{fact:aircall.insight_card}}.",
-						"{{fact:aircall.hubspot_logging}}."
+						"On HubSpot, {{fact:aircall.hubspot_records}}.",
+						"{{fact:aircall.insight_card}}."
 					]
 				},
 				{
 					"type": "p",
-					"html": "<strong>Plan gating:</strong> the HubSpot App Marketplace listing names {{fact:aircall.hubspot_plans}} as the Aircall subscriptions that carry the integration, and Aircall's own pricing lists {{fact:aircall.integrations}}."
+					"html": "<strong>Integrations:</strong> Aircall's pricing page says {{fact:aircall.integrations}}."
 				},
 				{
 					"type": "p",
@@ -229,7 +228,7 @@
 					"items": [
 						"Estimate a rough monthly talk time. If it fits the included minutes, stay on HubSpot calling.",
 						"If you are hitting the cap, add capacity on Professional or Enterprise, or move the calling to Aircall.",
-						"If you need IVR, a shared inbox, a power dialer, or calling that is not minute-capped, pick Aircall (Essentials or Professional).",
+						"If you need IVR, a power dialer, or calling that is not minute-capped, pick Aircall (Essentials or Professional).",
 						"Before you buy either, decide which HubSpot objects get call activity and who owns the routing rules."
 					]
 				},
@@ -243,31 +242,31 @@
 	"faq": [
 		{
 			"q": "Does HubSpot include calling, and on which plans?",
-			"a": "Yes. {{fact:hubspot.calling_editions}}."
+			"a": "Yes. Specifically, {{fact:hubspot.calling_editions}}."
 		},
 		{
 			"q": "How many calling minutes does each HubSpot plan include?",
-			"a": "{{fact:hubspot.calling_min_starter}}, {{fact:hubspot.calling_min_pro}}, and {{fact:hubspot.calling_min_ent}}. {{fact:hubspot.calling_not_additive}}."
+			"a": "{{fact:hubspot.calling_min_starter}}, {{fact:hubspot.calling_min_pro}}, and {{fact:hubspot.calling_min_ent}}. Note that {{fact:hubspot.calling_not_additive}}."
 		},
 		{
 			"q": "Can I buy more HubSpot calling minutes?",
-			"a": "On the higher editions, yes. The catalog lists a {{fact:hubspot.minute_addon}}. {{fact:hubspot.calling_reset}}."
+			"a": "On the higher editions, yes. The catalog lists {{fact:hubspot.minute_addon}}. Note that {{fact:hubspot.calling_reset}}."
 		},
 		{
 			"q": "Who is allowed to place a call in HubSpot?",
-			"a": "{{fact:hubspot.calling_seats}}. Note that {{fact:hubspot.call_from_phone}}."
+			"a": "In HubSpot, {{fact:hubspot.calling_seats}}. Note that {{fact:hubspot.call_from_phone}}."
 		},
 		{
 			"q": "How much does Aircall cost?",
-			"a": "On Aircall's pricing page, Essentials is {{fact:aircall.essentials_price}} and Professional is {{fact:aircall.professional_price}}, with {{fact:aircall.min_licenses}}. {{fact:aircall.enterprise}}. The FAQ says {{fact:aircall.annual_discount}}."
+			"a": "On Aircall's pricing page, Essentials is {{fact:aircall.essentials_price}} and Professional is {{fact:aircall.professional_price}}, with {{fact:aircall.min_licenses}}. Enterprise is {{fact:aircall.enterprise}}. The FAQ says {{fact:aircall.annual_discount}}."
 		},
 		{
 			"q": "Does Aircall integrate with HubSpot?",
-			"a": "Yes. {{fact:aircall.hubspot_records}}. {{fact:aircall.insight_card}}."
+			"a": "Yes. In HubSpot, {{fact:aircall.hubspot_records}}. {{fact:aircall.insight_card}}."
 		},
 		{
 			"q": "Is Aircall calling unlimited?",
-			"a": "{{fact:aircall.unlimited_us_ca}}. On Enterprise, {{fact:aircall.enterprise_global}}. International rates vary."
+			"a": "Aircall lists {{fact:aircall.unlimited_us_ca}}, and {{fact:aircall.enterprise_global}}. International rates vary."
 		},
 		{
 			"q": "Should a small HubSpot team start with Aircall or HubSpot calling?",

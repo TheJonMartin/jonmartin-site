@@ -4,7 +4,7 @@
   "template": "best",
   "status": "live",
   "title": "E-Signature Tools for HubSpot: QuickSigner, DocuSign, Dropbox Sign, and HubSpot Quotes — Jon Martin",
-  "seoTitle": "E-Signature Tools for HubSpot (Quotes, DocuSign, Dropbox Sign)",
+  "seoTitle": "HubSpot E-Signature Tools: Quotes, DocuSign, Dropbox Sign",
   "description": "HubSpot quote e-sign compared with DocuSign, Dropbox Sign, and QuickSigner: plans, prices, and which ones actually connect to HubSpot. Checked Nov 23, 2026.",
   "h1": "E-signature tools for HubSpot",
   "dek": [
@@ -35,27 +35,27 @@
       ],
       [
         "Native HubSpot path",
-        "works with all HubSpot products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records.",
-        "sends signature requests from Contact, Company, or Deal records in HubSpot.",
-        "no native HubSpot integration listed on QuickSigner's site; connecting it means a build on its REST API and webhooks."
+        "DocuSign works with all HubSpot products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records.",
+        "Dropbox Sign sends signature requests from Contact, Company, or Deal records in HubSpot.",
+        "There is no native HubSpot integration listed on QuickSigner's site; connecting it means a build on its REST API and webhooks."
       ],
       [
         "Plan or seat needed",
-        "needs a paid DocuSign plan and a DocuSign Admin, plus a HubSpot Super Admin or App Marketplace permission to connect; custom property mapping needs DocuSign eSignature Business Pro or higher.",
-        "the HubSpot integration is available on Essentials, Standard, and Premium.",
+        "It needs a paid DocuSign plan and a DocuSign Admin, plus a HubSpot Super Admin or App Marketplace permission to connect; custom property mapping needs DocuSign eSignature Business Pro or higher.",
+        "Per Dropbox Sign, the HubSpot integration is available on Essentials, Standard, and Premium.",
         "The eSignature API sits on the Professional plan."
       ],
       [
         "Starting published price",
-        "Personal Personal: $11 a month on an annual plan ($132 a year), 5 envelopes a month; Standard Standard: $30 per user per month on an annual plan ($360 a year); Business Pro Business Pro: $45 per user per month on an annual plan ($540 a year).",
-        "Essentials Essentials: $15 a month for 1 user; Standard Standard: $25 per user per month, starting at $600 billed yearly (2 or more users).",
-        "Business $5 per user per month, or $48 per user a year; Professional $15 per user per month, or $144 per user a year."
+        "Personal: $11 a month on an annual plan ($132 a year), with 5 envelopes a month; Standard: $30 per user per month on an annual plan ($360 a year); Business Pro: $45 per user per month on an annual plan ($540 a year).",
+        "Essentials: $15 a month for 1 user; Standard: $25 per user per month, starting at $600 billed yearly (2 or more users).",
+        "Business: $5 per user per month, or $48 per user a year; Professional: $15 per user per month, or $144 per user a year."
       ],
       [
         "Included volume",
         "Standard and Business Pro: 100 envelopes per user per year on annual plans, or 10 per user per month on monthly plans.",
-        "unlimited signature requests.",
-        "Free plan: 5 documents a month. unlimited documents on Business and Professional."
+        "It allows unlimited signature requests.",
+        "5 documents a month on the Free plan; unlimited documents on Business and Professional."
       ]
     ],
     "rowsHtml": [
@@ -67,27 +67,27 @@
       ],
       [
         "Native HubSpot path",
-        "works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records.",
-        "sends signature requests from Contact, Company, or Deal records in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>.",
-        "no native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration listed on QuickSigner&#39;s site; connecting it means a build on its REST API and webhooks."
+        "DocuSign works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records.",
+        "Dropbox Sign sends signature requests from Contact, Company, or Deal records in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>.",
+        "There is no native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration listed on QuickSigner&#39;s site; connecting it means a build on its REST API and webhooks."
       ],
       [
         "Plan or seat needed",
-        "needs a paid DocuSign plan and a DocuSign Admin, plus a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Super Admin or App Marketplace permission to connect; custom property mapping needs DocuSign eSignature Business Pro or higher.",
-        "the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is available on Essentials, Standard, and Premium.",
+        "It needs a paid DocuSign plan and a DocuSign Admin, plus a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Super Admin or App Marketplace permission to connect; custom property mapping needs DocuSign eSignature Business Pro or higher.",
+        "Per Dropbox Sign, the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is available on Essentials, Standard, and Premium.",
         "The eSignature API sits on the Professional plan."
       ],
       [
         "Starting published price",
-        "Personal Personal: $11 a month on an annual plan ($132 a year), 5 envelopes a month; Standard Standard: $30 per user per month on an annual plan ($360 a year); Business Pro Business Pro: $45 per user per month on an annual plan ($540 a year).",
-        "Essentials Essentials: $15 a month for 1 user; Standard Standard: $25 per user per month, starting at $600 billed yearly (2 or more users).",
-        "Business $5 per user per month, or $48 per user a year; Professional $15 per user per month, or $144 per user a year."
+        "Personal: $11 a month on an annual plan ($132 a year), with 5 envelopes a month; Standard: $30 per user per month on an annual plan ($360 a year); Business Pro: $45 per user per month on an annual plan ($540 a year).",
+        "Essentials: $15 a month for 1 user; Standard: $25 per user per month, starting at $600 billed yearly (2 or more users).",
+        "Business: $5 per user per month, or $48 per user a year; Professional: $15 per user per month, or $144 per user a year."
       ],
       [
         "Included volume",
         "Standard and Business Pro: 100 envelopes per user per year on annual plans, or 10 per user per month on monthly plans.",
-        "unlimited signature requests.",
-        "Free plan: 5 documents a month. unlimited documents on Business and Professional."
+        "It allows unlimited signature requests.",
+        "5 documents a month on the Free plan; unlimited documents on Business and Professional."
       ]
     ],
     "links": [
@@ -115,11 +115,11 @@
       "blocks": [
         {
           "type": "p",
-          "html": "Before you add a signer, check whether <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> already covers it. HubSpot can collect e-signatures on quotes, and quote e-sign is powered by Dropbox Sign, and you don&#39;t need a Dropbox Sign account for the regular quote flow."
+          "html": "Before you add a signer, check whether <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> already covers it. HubSpot can collect e-signatures on quotes. Per HubSpot, quote e-sign is powered by Dropbox Sign, and you don&#39;t need a Dropbox Sign account for the regular quote flow."
         },
         {
           "type": "p",
-          "html": "On the current quoting tools, e-sign on current quotes needs a Revenue Hub subscription and a Revenue Hub seat. HubSpot's own examples: 25 e-signatures per user per month on Revenue Hub Professional, pooled across the account, and 50 e-signatures per user per month on Revenue Hub Enterprise, pooled across the account. If you need more, the catalog lists an $60 a month for 100 more e-signatures a month, on Revenue Hub Professional or Enterprise only."
+          "html": "On the current quoting tools, e-sign on current quotes needs a Revenue Hub subscription and a Revenue Hub seat. HubSpot's own examples: 25 e-signatures per user per month on Revenue Hub Professional, pooled across the account, and 50 e-signatures per user per month on Revenue Hub Enterprise, pooled across the account. If you need more, the catalog lists $60 a month for 100 more e-signatures a month, on Revenue Hub Professional or Enterprise only."
         },
         {
           "type": "p",
@@ -127,7 +127,7 @@
         },
         {
           "type": "p",
-          "html": "One warning for anyone reading older guides: legacy quotes are no longer available to new users. legacy quote e-sign is a Sales Hub feature, and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>&#39;s own help articles disagree on whether Starter includes it. So do not tell a new customer to plan around legacy quotes, and reconcile the two official articles before you rely on a Starter answer."
+          "html": "One warning for anyone reading older guides: legacy quotes are no longer available to new users. Also, legacy quote e-sign is a Sales Hub feature, and <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>&#39;s own help articles disagree on whether Starter includes it. So do not tell a new customer to plan around legacy quotes, and check your account before you rely on a Starter answer."
         }
       ]
     },
@@ -170,15 +170,15 @@
       "blocks": [
         {
           "type": "p",
-          "html": "<a href=\"https://www.docusign.com/\" target=\"_blank\" rel=\"noopener\">DocuSign</a> has an official HubSpot app. works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records. needs a paid DocuSign plan and a DocuSign Admin, plus a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Super Admin or App Marketplace permission to connect."
+          "html": "<a href=\"https://www.docusign.com/\" target=\"_blank\" rel=\"noopener\">DocuSign</a> has an official HubSpot app. It works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records. It needs a paid DocuSign plan and a DocuSign Admin, plus a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Super Admin or App Marketplace permission to connect."
         },
         {
           "type": "p",
-          "html": "custom property mapping needs DocuSign eSignature Business Pro or higher. And it fills envelopes with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> property values but is not a full data sync app, so treat it as envelope creation from the record, not a two-way data sync."
+          "html": "Note that custom property mapping needs DocuSign eSignature Business Pro or higher. And it fills envelopes with <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> property values but is not a full data sync app, so treat it as envelope creation from the record, not a two-way data sync."
         },
         {
           "type": "p",
-          "html": "<strong>Prices</strong> from <a href=\"https://ecom.docusign.com/plans-and-pricing/esignature\" target=\"_blank\" rel=\"noopener\">DocuSign's pricing page</a>: Personal Personal: $11 a month on an annual plan ($132 a year), 5 envelopes a month; Standard Standard: $30 per user per month on an annual plan ($360 a year); Business Pro Business Pro: $45 per user per month on an annual plan ($540 a year). Standard and Business Pro: 100 envelopes per user per year on annual plans, or 10 per user per month on monthly plans."
+          "html": "<strong>Prices</strong> from <a href=\"https://ecom.docusign.com/plans-and-pricing/esignature\" target=\"_blank\" rel=\"noopener\">DocuSign's pricing page</a>: Personal: $11 a month on an annual plan ($132 a year), with 5 envelopes a month; Standard: $30 per user per month on an annual plan ($360 a year); Business Pro: $45 per user per month on an annual plan ($540 a year). Standard and Business Pro: 100 envelopes per user per year on annual plans, or 10 per user per month on monthly plans."
         }
       ]
     },
@@ -187,7 +187,7 @@
       "blocks": [
         {
           "type": "p",
-          "html": "<a href=\"https://sign.dropbox.com/\" target=\"_blank\" rel=\"noopener\">Dropbox Sign</a> has an official HubSpot app as well. sends signature requests from Contact, Company, or Deal records in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and the signed file saves back to the record. requests sent from hellosign.com aren&#39;t tracked in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, so send from inside the integration."
+          "html": "<a href=\"https://sign.dropbox.com/\" target=\"_blank\" rel=\"noopener\">Dropbox Sign</a> has an official HubSpot app as well. It sends signature requests from Contact, Company, or Deal records in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, and the signed file saves back to the record. Note that requests sent from hellosign.com aren&#39;t tracked in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>, so send from inside the integration."
         },
         {
           "type": "p",
@@ -195,7 +195,7 @@
         },
         {
           "type": "p",
-          "html": "<strong>Prices</strong> from <a href=\"https://sign.dropbox.com/products/dropbox-sign/pricing\" target=\"_blank\" rel=\"noopener\">the Dropbox Sign pricing page</a>: Essentials Essentials: $15 a month for 1 user; Standard Standard: $25 per user per month, starting at $600 billed yearly (2 or more users); Premium: custom quote, for 5 or more users. unlimited signature requests, and there is a 30-day free trial. the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is available on Essentials, Standard, and Premium."
+          "html": "<strong>Prices</strong> from <a href=\"https://sign.dropbox.com/products/dropbox-sign/pricing\" target=\"_blank\" rel=\"noopener\">the Dropbox Sign pricing page</a>: Essentials: $15 a month for 1 user; Standard: $25 per user per month, starting at $600 billed yearly (2 or more users); Premium: a custom quote, for 5 or more users. Plans include unlimited signature requests, and there is a 30-day free trial. Per Dropbox Sign, the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is available on Essentials, Standard, and Premium."
         }
       ]
     },
@@ -204,11 +204,11 @@
       "blocks": [
         {
           "type": "p",
-          "html": "<a href=\"https://get.quicksigner.com/mvxowii17iqr\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">QuickSigner</a> is the cheap option, placed last here because it takes a build. no native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration listed on QuickSigner&#39;s site; connecting it means a build on its REST API and webhooks."
+          "html": "<a href=\"https://get.quicksigner.com/mvxowii17iqr\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">QuickSigner</a> is the cheap option, placed last here because it takes a build. There is no native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration listed on QuickSigner&#39;s site; connecting it means a build on its REST API and webhooks."
         },
         {
           "type": "p",
-          "html": "<strong>Prices</strong> from <a href=\"https://www.quicksigner.com/pricing/\" target=\"_blank\" rel=\"noopener\">quicksigner.com/pricing</a>: Free plan: 5 documents a month. Business $5 per user per month, or $48 per user a year; Professional $15 per user per month, or $144 per user a year. unlimited documents on Business and Professional, signers don&#39;t need an account, an app, or a fee, and a 14-day free trial on paid plans."
+          "html": "<strong>Prices</strong> from <a href=\"https://www.quicksigner.com/pricing/\" target=\"_blank\" rel=\"noopener\">quicksigner.com/pricing</a>: 5 documents a month on the Free plan. Business: $5 per user per month, or $48 per user a year; Professional: $15 per user per month, or $144 per user a year. You get unlimited documents on Business and Professional, and signers don&#39;t need an account, an app, or a fee. There is a 14-day free trial on paid plans."
         },
         {
           "type": "p",
@@ -241,38 +241,38 @@
   "faq": [
     {
       "q": "Does HubSpot have built-in e-signature?",
-      "a": "Yes, on quotes. quote e-sign is powered by Dropbox Sign, and you don't need a Dropbox Sign account for the regular quote flow.",
-      "aHtml": "Yes, on quotes. quote e-sign is powered by Dropbox Sign, and you don&#39;t need a Dropbox Sign account for the regular quote flow."
+      "a": "Yes, on quotes. Per HubSpot, quote e-sign is powered by Dropbox Sign, and you don't need a Dropbox Sign account for the regular quote flow.",
+      "aHtml": "Yes, on quotes. Per HubSpot, quote e-sign is powered by Dropbox Sign, and you don&#39;t need a Dropbox Sign account for the regular quote flow."
     },
     {
       "q": "Which HubSpot plan do I need for quote e-sign?",
-      "a": "For the current quoting tools, e-sign on current quotes needs a Revenue Hub subscription and a Revenue Hub seat. legacy quotes are no longer available to new users, so new customers should not plan on them.",
-      "aHtml": "For the current quoting tools, e-sign on current quotes needs a Revenue Hub subscription and a Revenue Hub seat. legacy quotes are no longer available to new users, so new customers should not plan on them."
+      "a": "For the current quoting tools, e-sign on current quotes needs a Revenue Hub subscription and a Revenue Hub seat. Note that legacy quotes are no longer available to new users, so new customers should not plan on them.",
+      "aHtml": "For the current quoting tools, e-sign on current quotes needs a Revenue Hub subscription and a Revenue Hub seat. Note that legacy quotes are no longer available to new users, so new customers should not plan on them."
     },
     {
       "q": "How many e-signatures does HubSpot include?",
-      "a": "HubSpot's examples: 25 e-signatures per user per month on Revenue Hub Professional, pooled across the account, and 50 e-signatures per user per month on Revenue Hub Enterprise, pooled across the account. The catalog lists an $60 a month for 100 more e-signatures a month, on Revenue Hub Professional or Enterprise only.",
-      "aHtml": "HubSpot's examples: 25 e-signatures per user per month on Revenue Hub Professional, pooled across the account, and 50 e-signatures per user per month on Revenue Hub Enterprise, pooled across the account. The catalog lists an $60 a month for 100 more e-signatures a month, on Revenue Hub Professional or Enterprise only."
+      "a": "HubSpot's examples: 25 e-signatures per user per month on Revenue Hub Professional, pooled across the account, and 50 e-signatures per user per month on Revenue Hub Enterprise, pooled across the account. The catalog lists $60 a month for 100 more e-signatures a month, on Revenue Hub Professional or Enterprise only.",
+      "aHtml": "HubSpot's examples: 25 e-signatures per user per month on Revenue Hub Professional, pooled across the account, and 50 e-signatures per user per month on Revenue Hub Enterprise, pooled across the account. The catalog lists $60 a month for 100 more e-signatures a month, on Revenue Hub Professional or Enterprise only."
     },
     {
       "q": "Does DocuSign integrate with HubSpot?",
-      "a": "Yes. works with all HubSpot products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records. needs a paid DocuSign plan and a DocuSign Admin, plus a HubSpot Super Admin or App Marketplace permission to connect.",
-      "aHtml": "Yes. works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records. needs a paid DocuSign plan and a DocuSign Admin, plus a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Super Admin or App Marketplace permission to connect."
+      "a": "Yes. It works with all HubSpot products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records. It needs a paid DocuSign plan and a DocuSign Admin, plus a HubSpot Super Admin or App Marketplace permission to connect.",
+      "aHtml": "Yes. It works with all <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> products and plans, and creates, sends, and tracks envelopes from contact, company, and deal records. It needs a paid DocuSign plan and a DocuSign Admin, plus a <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> Super Admin or App Marketplace permission to connect."
     },
     {
       "q": "Does Dropbox Sign integrate with HubSpot?",
-      "a": "Yes. sends signature requests from Contact, Company, or Deal records in HubSpot. the HubSpot integration is available on Essentials, Standard, and Premium.",
-      "aHtml": "Yes. sends signature requests from Contact, Company, or Deal records in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is available on Essentials, Standard, and Premium."
+      "a": "Yes. It sends signature requests from Contact, Company, or Deal records in HubSpot. Per Dropbox Sign, the HubSpot integration is available on Essentials, Standard, and Premium.",
+      "aHtml": "Yes. It sends signature requests from Contact, Company, or Deal records in <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a>. Per Dropbox Sign, the <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration is available on Essentials, Standard, and Premium."
     },
     {
       "q": "Does QuickSigner integrate with HubSpot?",
-      "a": "no native HubSpot integration listed on QuickSigner's site; connecting it means a build on its REST API and webhooks. the eSignature API is on Professional: first 50 sign requests free, then $0.30 each, with volume pricing above 500 a month.",
-      "aHtml": "no native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration listed on QuickSigner&#39;s site; connecting it means a build on its REST API and webhooks. the eSignature API is on Professional: first 50 sign requests free, then $0.30 each, with volume pricing above 500 a month."
+      "a": "There is no native HubSpot integration listed on QuickSigner's site; connecting it means a build on its REST API and webhooks. If you build it, the eSignature API is on Professional: first 50 sign requests free, then $0.30 each, with volume pricing above 500 a month.",
+      "aHtml": "There is no native <a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> integration listed on QuickSigner&#39;s site; connecting it means a build on its REST API and webhooks. If you build it, the eSignature API is on Professional: first 50 sign requests free, then $0.30 each, with volume pricing above 500 a month."
     },
     {
       "q": "How much does QuickSigner cost?",
-      "a": "Free plan: 5 documents a month. Business $5 per user per month, or $48 per user a year. Professional $15 per user per month, or $144 per user a year. signers don't need an account, an app, or a fee.",
-      "aHtml": "Free plan: 5 documents a month. Business $5 per user per month, or $48 per user a year. Professional $15 per user per month, or $144 per user a year. signers don&#39;t need an account, an app, or a fee."
+      "a": "5 documents a month on the Free plan. Business $5 per user per month, or $48 per user a year. Professional $15 per user per month, or $144 per user a year. Also, signers don't need an account, an app, or a fee.",
+      "aHtml": "5 documents a month on the Free plan. Business $5 per user per month, or $48 per user a year. Professional $15 per user per month, or $144 per user a year. Also, signers don&#39;t need an account, an app, or a fee."
     },
     {
       "q": "Should a HubSpot team start with QuickSigner?",
