@@ -1,0 +1,239 @@
+{
+	"slug": "e-signature-tools-for-hubspot",
+	"route": "best",
+	"template": "best",
+	"wave": 3,
+	"niche": {
+		"label": "HubSpot teams that need documents signed",
+		"team_size": 5,
+		"must_haves": [
+			"Best for",
+			"Native HubSpot path",
+			"Plan or seat needed",
+			"Starting published price",
+			"Included volume"
+		]
+	},
+	"products": [
+		{
+			"slug": "docusign",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you are already on DocuSign and want envelopes created from HubSpot records."
+		},
+		{
+			"slug": "dropbox-sign",
+			"role": "option",
+			"link": false,
+			"pick": "Best fit if you want signature requests from contact, company, or deal records, with the signed file saved back."
+		},
+		{
+			"slug": "quicksigner",
+			"role": "option",
+			"link": true,
+			"pick": "Worth a look for a low published price and unlimited documents, if someone can own an API build."
+		},
+		{
+			"slug": "hubspot",
+			"role": "mention",
+			"link": false
+		}
+	],
+	"disclosure": "This page contains an affiliate link. If you sign up through it, I earn a commission. It costs you nothing extra.",
+	"title": "E-Signature Tools for HubSpot: QuickSigner, DocuSign, Dropbox Sign, and HubSpot Quotes — Jon Martin",
+	"seoTitle": "HubSpot E-Signature Tools: Quotes, DocuSign, Dropbox Sign",
+	"description": "HubSpot quote e-sign compared with DocuSign, Dropbox Sign, and QuickSigner: plans, prices, and which ones actually connect to HubSpot. Checked Nov 23, 2026.",
+	"h1": "E-signature tools for HubSpot",
+	"dek": [
+		"First ask whether HubSpot's own quote e-sign already covers the job. Then pick a native CRM integration, or a cheaper tool you are willing to wire up.",
+		"Four options lined up for HubSpot teams: HubSpot quotes, DocuSign, Dropbox Sign, and QuickSigner."
+	],
+	"fit": {
+		"Best for": {
+			"docusign": "Teams already on DocuSign that want envelopes created from HubSpot records.",
+			"dropbox-sign": "Teams that want signature requests from contact, company, or deal records, with the signed file saved back.",
+			"quicksigner": "A low published price and unlimited documents, if someone can build an API connection."
+		},
+		"Native HubSpot path": {
+			"docusign": "DocuSign {{fact:docusign.hubspot_app}}.",
+			"dropbox-sign": "Dropbox Sign {{fact:dropbox-sign.hubspot_records}}.",
+			"quicksigner": "There is {{fact:quicksigner.no_hubspot}}."
+		},
+		"Plan or seat needed": {
+			"docusign": "It {{fact:docusign.hubspot_reqs}}; {{fact:docusign.mapping}}.",
+			"dropbox-sign": "Per Dropbox Sign, {{fact:dropbox-sign.hubspot_plans}}.",
+			"quicksigner": "The eSignature API sits on the Professional plan."
+		},
+		"Starting published price": {
+			"docusign": "Personal: {{fact:docusign.personal}}; Standard: {{fact:docusign.standard}}; Business Pro: {{fact:docusign.business_pro}}.",
+			"dropbox-sign": "Essentials: {{fact:dropbox-sign.essentials_price}}; Standard: {{fact:dropbox-sign.standard_price}}.",
+			"quicksigner": "Business: {{fact:quicksigner.business_price}}; Professional: {{fact:quicksigner.pro_price}}."
+		},
+		"Included volume": {
+			"docusign": "{{fact:docusign.envelopes}}.",
+			"dropbox-sign": "It allows {{fact:dropbox-sign.unlimited_requests}}.",
+			"quicksigner": "{{fact:quicksigner.free_docs}}; {{fact:quicksigner.unlimited_docs}}."
+		}
+	},
+	"sections": [
+		{
+			"label": "Start with HubSpot's own quote e-sign",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "Before you add a signer, check whether {{link:hubspot}} already covers it. HubSpot can collect e-signatures on quotes. Per HubSpot, {{fact:hubspot.esign_dropbox}}."
+				},
+				{
+					"type": "p",
+					"html": "On the current quoting tools, {{fact:hubspot.esign_revenue}}. HubSpot's own examples: {{fact:hubspot.esign_rev_pro}}, and {{fact:hubspot.esign_rev_ent}}. If you need more, the catalog lists {{fact:hubspot.esign_addon}}."
+				},
+				{
+					"type": "p",
+					"html": "Revenue Hub seat list prices are {{fact:hubspot.revenue_seat_pro}} and {{fact:hubspot.revenue_seat_ent}}. That is the price of the hub, not of e-sign on its own, because e-sign is a feature of the hub."
+				},
+				{
+					"type": "p",
+					"html": "One warning for anyone reading older guides: {{fact:hubspot.legacy_quotes}}. Also, {{fact:hubspot.legacy_esign}}. So do not tell a new customer to plan around legacy quotes, and check your account before you rely on a Starter answer."
+				}
+			]
+		},
+		{
+			"label": "The short answer",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "If the team signs sales quotes inside HubSpot and already has, or will buy, Revenue Hub, start with the native quote e-sign. Add a specialist when you need to sign documents that are not quotes."
+				},
+				{
+					"type": "ul",
+					"items": [
+						"Already have DocuSign and want envelopes from HubSpot records: DocuSign.",
+						"Want signature requests from contact, company, or deal records, saved back: Dropbox Sign.",
+						"Want the lowest published price and can own an API build: QuickSigner."
+					]
+				},
+				{
+					"type": "p",
+					"html": "QuickSigner has an affiliate link and the others do not. That is not a reason to rank it ahead of the native HubSpot options. It is the cheap choice that takes developer time."
+				}
+			]
+		},
+		{
+			"label": "Who this is for",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "HubSpot sales and operations teams that want documents or quotes signed without leaving the CRM, or a cheaper signer than the enterprise tools."
+				},
+				{
+					"type": "p",
+					"html": "Not for: a signer comparison with no CRM context."
+				}
+			]
+		},
+		{
+			"label": "DocuSign",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:docusign}} has an official HubSpot app. It {{fact:docusign.hubspot_app}}. It {{fact:docusign.hubspot_reqs}}."
+				},
+				{
+					"type": "p",
+					"html": "Note that {{fact:docusign.mapping}}. And {{fact:docusign.not_sync}}, so treat it as envelope creation from the record, not a two-way data sync."
+				},
+				{
+					"type": "p",
+					"html": "<strong>Prices</strong> from <a href=\"https://ecom.docusign.com/plans-and-pricing/esignature\" target=\"_blank\" rel=\"noopener\">DocuSign's pricing page</a>: Personal: {{fact:docusign.personal}}; Standard: {{fact:docusign.standard}}; Business Pro: {{fact:docusign.business_pro}}. {{fact:docusign.envelopes}}."
+				}
+			]
+		},
+		{
+			"label": "Dropbox Sign",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:dropbox-sign}} has an official HubSpot app as well. It {{fact:dropbox-sign.hubspot_records}}, and the signed file saves back to the record. Note that {{fact:dropbox-sign.hellosign_untracked}}, so send from inside the integration."
+				},
+				{
+					"type": "p",
+					"html": "HubSpot's own quote e-sign is powered by the same engine, but that is a different thing from installing the Dropbox Sign app for general documents."
+				},
+				{
+					"type": "p",
+					"html": "<strong>Prices</strong> from <a href=\"https://sign.dropbox.com/products/dropbox-sign/pricing\" target=\"_blank\" rel=\"noopener\">the Dropbox Sign pricing page</a>: Essentials: {{fact:dropbox-sign.essentials_price}}; Standard: {{fact:dropbox-sign.standard_price}}; Premium: {{fact:dropbox-sign.premium}}. Plans include {{fact:dropbox-sign.unlimited_requests}}, and there is {{fact:dropbox-sign.trial_days}}. Per Dropbox Sign, {{fact:dropbox-sign.hubspot_plans}}."
+				}
+			]
+		},
+		{
+			"label": "QuickSigner",
+			"blocks": [
+				{
+					"type": "p",
+					"html": "{{link:quicksigner}} is the cheap option, placed last here because it takes a build. There is {{fact:quicksigner.no_hubspot}}."
+				},
+				{
+					"type": "p",
+					"html": "<strong>Prices</strong> from <a href=\"https://www.quicksigner.com/pricing/\" target=\"_blank\" rel=\"noopener\">quicksigner.com/pricing</a>: {{fact:quicksigner.free_docs}}. Business: {{fact:quicksigner.business_price}}; Professional: {{fact:quicksigner.pro_price}}. You get {{fact:quicksigner.unlimited_docs}}, and {{fact:quicksigner.signers_free}}. There is {{fact:quicksigner.trial_days}}."
+				},
+				{
+					"type": "p",
+					"html": "If you build the connection, {{fact:quicksigner.api}}. Do not confuse QuickSigner with the Swedish product QuickSign at quicksign.se. Deeper write-up: <a href=\"/tools/quicksigner\">QuickSigner</a>."
+				},
+				{
+					"type": "cta",
+					"product": "quicksigner"
+				}
+			]
+		},
+		{
+			"label": "How to choose",
+			"blocks": [
+				{
+					"type": "ol",
+					"items": [
+						"Quotes already in HubSpot, and you have or will buy Revenue Hub: start with the native quote e-sign.",
+						"Contracts from contact, company, or deal records, and you want a native app: DocuSign or Dropbox Sign.",
+						"Lowest published price, and someone can own an API build: QuickSigner.",
+						"Whatever you pick, confirm who signs, what saves back to the record, and who administers it before you roll it out."
+					]
+				}
+			]
+		}
+	],
+	"faq": [
+		{
+			"q": "Does HubSpot have built-in e-signature?",
+			"a": "Yes, on quotes. Per HubSpot, {{fact:hubspot.esign_dropbox}}."
+		},
+		{
+			"q": "Which HubSpot plan do I need for quote e-sign?",
+			"a": "For the current quoting tools, {{fact:hubspot.esign_revenue}}. Note that {{fact:hubspot.legacy_quotes}}, so new customers should not plan on them."
+		},
+		{
+			"q": "How many e-signatures does HubSpot include?",
+			"a": "HubSpot's examples: {{fact:hubspot.esign_rev_pro}}, and {{fact:hubspot.esign_rev_ent}}. The catalog lists {{fact:hubspot.esign_addon}}."
+		},
+		{
+			"q": "Does DocuSign integrate with HubSpot?",
+			"a": "Yes. It {{fact:docusign.hubspot_app}}. It {{fact:docusign.hubspot_reqs}}."
+		},
+		{
+			"q": "Does Dropbox Sign integrate with HubSpot?",
+			"a": "Yes. It {{fact:dropbox-sign.hubspot_records}}. Per Dropbox Sign, {{fact:dropbox-sign.hubspot_plans}}."
+		},
+		{
+			"q": "Does QuickSigner integrate with HubSpot?",
+			"a": "There is {{fact:quicksigner.no_hubspot}}. If you build it, {{fact:quicksigner.api}}."
+		},
+		{
+			"q": "How much does QuickSigner cost?",
+			"a": "{{fact:quicksigner.free_docs}}. Business {{fact:quicksigner.business_price}}. Professional {{fact:quicksigner.pro_price}}. Also, {{fact:quicksigner.signers_free}}."
+		},
+		{
+			"q": "Should a HubSpot team start with QuickSigner?",
+			"a": "Only if they need a low published price and can own an API connection. If they mainly sign HubSpot quotes, start with HubSpot's own e-sign. For a native button on records, look at DocuSign or Dropbox Sign first."
+		}
+	],
+	"closing": "Check whether HubSpot already signs the document before you pay for another signer."
+}

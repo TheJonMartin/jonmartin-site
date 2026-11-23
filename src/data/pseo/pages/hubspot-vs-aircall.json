@@ -1,0 +1,465 @@
+{
+  "slug": "hubspot-vs-aircall",
+  "route": "compare",
+  "template": "compare",
+  "status": "live",
+  "title": "HubSpot Calling vs Aircall for Sales Teams — Jon Martin",
+  "seoTitle": "HubSpot Calling vs Aircall: Minutes, Plans, and CTI",
+  "description": "HubSpot's built-in calling versus Aircall for HubSpot sales teams: included minutes, seats, prices, and what logs to the record. Checked Nov 23, 2026.",
+  "h1": "HubSpot calling vs Aircall for sales teams",
+  "dek": [
+    "HubSpot already includes calling. The question is whether the minutes you pay for cover your team, or whether you need a phone system that sits on top of the CRM.",
+    "This page lines up HubSpot's built-in dialer against Aircall so you can decide on capacity first and features second."
+  ],
+  "published": "2026-11-23",
+  "modified": "2026-11-23",
+  "checked": "Nov 23, 2026",
+  "disclosure": "This page contains an affiliate link. If you sign up through it, I earn a commission. It costs you nothing extra.",
+  "niche": {
+    "label": "HubSpot sales teams deciding on a dialer"
+  },
+  "fitTable": {
+    "caption": "Fit for HubSpot sales teams deciding on a dialer",
+    "head": [
+      "Must-have",
+      "HubSpot",
+      "Aircall"
+    ],
+    "rows": [
+      [
+        "Best for",
+        "Teams whose monthly talk time fits the included minutes and who want to dial from inside the CRM without another vendor.",
+        "Teams that need a full phone system or calling that is not capped by HubSpot's account-wide minute pool."
+      ],
+      [
+        "What it is",
+        "Built-in VoIP calling from contact records, the calling remote, and the inbox.",
+        "A cloud phone system with numbers, routing, and desktop and mobile apps, plus a native HubSpot integration."
+      ],
+      [
+        "Included calling",
+        "500 calling minutes per account per month on Starter. Professional and Enterprise include more, shared across the account.",
+        "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
+      ],
+      [
+        "Who can place a call",
+        "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
+        "Each caller needs a license, with 3 licenses minimum on every plan."
+      ],
+      [
+        "What lands in HubSpot",
+        "Calls are logged to the CRM record.",
+        "Per Aircall, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription."
+      ],
+      [
+        "Starting price (US)",
+        "Included with a paid edition. Catalog list prices: $20 per seat per month (Core Seat, Starter, catalog list price); $100 per seat per month (Sales Seat, Professional, catalog list price); $150 per seat per month (Sales Seat, Enterprise, catalog list price).",
+        "Essentials $30 per license per month, billed annually; Professional $50 per license per month, billed annually; annual billing is 25% off monthly."
+      ],
+      [
+        "Phone system features",
+        "Calling and logging inside the CRM, where the sales power dialer is labeled beta and is listed for Sales Hub Enterprise.",
+        "Essentials includes 250+ integrations, IVR, call recording, and SMS. Professional adds advanced analytics, smart routing, Power Dialer, and AI conversation intelligence."
+      ],
+      [
+        "Trial or access",
+        "Calling comes with the paid hub.",
+        "Aircall offers free access to test the platform before committing."
+      ]
+    ],
+    "rowsHtml": [
+      [
+        "Best for",
+        "Teams whose monthly talk time fits the included minutes and who want to dial from inside the CRM without another vendor.",
+        "Teams that need a full phone system or calling that is not capped by HubSpot's account-wide minute pool."
+      ],
+      [
+        "What it is",
+        "Built-in VoIP calling from contact records, the calling remote, and the inbox.",
+        "A cloud phone system with numbers, routing, and desktop and mobile apps, plus a native HubSpot integration."
+      ],
+      [
+        "Included calling",
+        "500 calling minutes per account per month on Starter. Professional and Enterprise include more, shared across the account.",
+        "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
+      ],
+      [
+        "Who can place a call",
+        "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
+        "Each caller needs a license, with 3 licenses minimum on every plan."
+      ],
+      [
+        "What lands in HubSpot",
+        "Calls are logged to the CRM record.",
+        "Per Aircall, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription."
+      ],
+      [
+        "Starting price (US)",
+        "Included with a paid edition. Catalog list prices: $20 per seat per month (Core Seat, Starter, catalog list price); $100 per seat per month (Sales Seat, Professional, catalog list price); $150 per seat per month (Sales Seat, Enterprise, catalog list price).",
+        "Essentials $30 per license per month, billed annually; Professional $50 per license per month, billed annually; annual billing is 25% off monthly."
+      ],
+      [
+        "Phone system features",
+        "Calling and logging inside the CRM, where the sales power dialer is labeled beta and is listed for Sales Hub Enterprise.",
+        "Essentials includes 250+ integrations, IVR, call recording, and SMS. Professional adds advanced analytics, smart routing, Power Dialer, and AI conversation intelligence."
+      ],
+      [
+        "Trial or access",
+        "Calling comes with the paid hub.",
+        "Aircall offers free access to test the platform before committing."
+      ]
+    ],
+    "links": [
+      null,
+      {
+        "label": "Visit HubSpot",
+        "href": "https://www.hubspot.com/products/crm",
+        "kind": "site"
+      },
+      {
+        "label": "Try Aircall",
+        "href": "https://get.aircall.io/fddlp6kkr3qu",
+        "kind": "affiliate"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "label": "The short answer",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "<a href=\"https://www.hubspot.com/products/crm\" target=\"_blank\" rel=\"noopener\">HubSpot</a> includes calling in Sales Hub and Service Hub. Minutes are a shared account cap, not a per-rep allotment: 500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise."
+        },
+        {
+          "type": "p",
+          "html": "<a href=\"https://get.aircall.io/fddlp6kkr3qu\" target=\"_blank\" rel=\"sponsored nofollow noopener noreferrer\">Aircall</a> is a separate cloud phone system with a native HubSpot integration. On its published US plans, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan and unlimited calls within the US and Canada on Essentials and Professional (terms apply)."
+        },
+        {
+          "type": "p",
+          "html": "Stay on HubSpot calling if your monthly talk time fits the included minutes. Add Aircall if you are hitting the cap or need a full phone system. Decide on capacity before you decide on features."
+        }
+      ]
+    },
+    {
+      "label": "Who this is for",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            "HubSpot sales teams, and service teams that share the same calling pool, choosing between the built-in dialer and a phone system on top of it.",
+            "Teams that want call activity on the contact and deal timeline, not just a second line.",
+            "Not for: a team that only needs a cheap personal number and does not use HubSpot as the system of record."
+          ]
+        }
+      ]
+    },
+    {
+      "label": "What good looks like for a HubSpot dialer",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "You know the monthly minute cap before you start a calling block.",
+            "Calls land on the right HubSpot records with recording and outcome.",
+            "Outcomes can trigger HubSpot workflows so follow-up is not manual."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "If a call never lands on the record, the pipeline report is fiction. That is the filter for this comparison."
+        }
+      ]
+    },
+    {
+      "label": "HubSpot's built-in calling",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "On HubSpot, calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise. The useful detail is that minutes are pooled, not handed out per user."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Minutes: 500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise.",
+            "Pooling: minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month.",
+            "Reset: minutes reset at the start of each month, not on your renewal date, and once they run out you can&#39;t start new calls from HubSpot.",
+            "Seats: an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call.",
+            "Watch the meter: calling through your own phone uses twice as many minutes, because it makes two separate calls.",
+            "Numbers: 1 HubSpot-provided phone number on Starter, up to 3 on Professional, and up to 5 on Enterprise."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "If you run out, you can add capacity on the higher editions. The catalog lists $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only, and $25 a month for 5 more HubSpot-provided phone numbers, on Professional or Enterprise only. Light inbound or booked calls usually stay inside the cap. Heavy outbound does not."
+        },
+        {
+          "type": "p",
+          "html": "On the dialer itself, the sales power dialer is labeled beta and is listed for Sales Hub Enterprise. If you need queued outbound today, read the Aircall section before you plan around that beta."
+        }
+      ]
+    },
+    {
+      "label": "Aircall as the HubSpot phone system",
+      "blocks": [
+        {
+          "type": "p",
+          "html": "Aircall is a cloud phone system for sales and support. On HubSpot, the part that matters is the logging."
+        },
+        {
+          "type": "p",
+          "html": "Per <a href=\"https://aircall.io/integrations/hubspot/\" target=\"_blank\" rel=\"noopener\">Aircall's HubSpot page</a>:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "On HubSpot, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription.",
+            "Insight Cards show HubSpot history before a rep answers."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "<strong>Integrations:</strong> Aircall's pricing page says all plans include 250+ integrations, HubSpot among them."
+        },
+        {
+          "type": "p",
+          "html": "<strong>Prices</strong> from <a href=\"https://aircall.io/pricing/\" target=\"_blank\" rel=\"noopener\">aircall.io/pricing</a> (US):"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Essentials: $30 per license per month, billed annually (annual billing is 25% off monthly). 3 licenses minimum on every plan. Essentials includes 250+ integrations, IVR, call recording, and SMS.",
+            "Professional: $50 per license per month, billed annually. Professional adds advanced analytics, smart routing, Power Dialer, and AI conversation intelligence.",
+            "Enterprise: custom pricing, for teams of 25+ licenses, with unlimited global calls on Enterprise.",
+            "Extra numbers: $6 per month for each extra number.",
+            "AI Voice Agents are sold standalone from $99 per month minimum, with 50 AI Voice Agents minutes a month on every plan."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Pros"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Call data lands where HubSpot reporting and workflows already look.",
+            "Unlimited US and Canada calling on the published plans, so you are not rationing a shared pool.",
+            "A real Power Dialer and smart routing when you outgrow click-to-call."
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Cons"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Another subscription on top of HubSpot, with a three-license minimum.",
+            "Someone has to own routing, properties, and ticket rules.",
+            "Overkill if a few short calls a month already fit inside your included minutes."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "Deeper write-up: <a href=\"/tools/aircall\">Aircall for HubSpot teams</a>."
+        },
+        {
+          "type": "cta",
+          "product": "aircall",
+          "label": "Try Aircall",
+          "href": "https://get.aircall.io/fddlp6kkr3qu",
+          "kind": "affiliate"
+        }
+      ]
+    },
+    {
+      "label": "How to choose",
+      "blocks": [
+        {
+          "type": "ol",
+          "items": [
+            "Estimate a rough monthly talk time. If it fits the included minutes, stay on HubSpot calling.",
+            "If you are hitting the cap, add capacity on Professional or Enterprise, or move the calling to Aircall.",
+            "If you need IVR, a power dialer, or calling that is not minute-capped, pick Aircall (Essentials or Professional).",
+            "Before you buy either, decide which HubSpot objects get call activity and who owns the routing rules."
+          ]
+        },
+        {
+          "type": "p",
+          "html": "This is a capacity and feature decision, not a moral one. There is no prize for ripping out calling you already pay for. For a broader list of options, see my roundup of calling apps for HubSpot."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Does HubSpot include calling, and on which plans?",
+      "a": "Yes. Specifically, calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise.",
+      "aHtml": "Yes. Specifically, calling is included in Sales Hub and Service Hub Starter, Professional, and Enterprise."
+    },
+    {
+      "q": "How many calling minutes does each HubSpot plan include?",
+      "a": "500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise. Note that minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month.",
+      "aHtml": "500 calling minutes per account per month on Starter, 3,000 calling minutes per account per month on Professional, and 12,000 calling minutes per account per month on Enterprise. Note that minutes are not additive across hubs: Sales Hub Professional plus Service Hub Professional is still 3,000 minutes per account per month."
+    },
+    {
+      "q": "Can I buy more HubSpot calling minutes?",
+      "a": "On the higher editions, yes. The catalog lists $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only. Note that minutes reset at the start of each month, not on your renewal date, and once they run out you can't start new calls from HubSpot.",
+      "aHtml": "On the higher editions, yes. The catalog lists $50 a month for each extra 1,000 calling minutes, on Sales Hub or Service Hub Professional or Enterprise only. Note that minutes reset at the start of each month, not on your renewal date, and once they run out you can&#39;t start new calls from HubSpot."
+    },
+    {
+      "q": "Who is allowed to place a call in HubSpot?",
+      "a": "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call. Note that calling through your own phone uses twice as many minutes, because it makes two separate calls.",
+      "aHtml": "In HubSpot, an assigned Sales or Service seat is needed to call on Professional and Enterprise; on Starter, a Core Seat can also call. Note that calling through your own phone uses twice as many minutes, because it makes two separate calls."
+    },
+    {
+      "q": "How much does Aircall cost?",
+      "a": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. Enterprise is custom pricing, for teams of 25+ licenses. The FAQ says annual billing is 25% off monthly.",
+      "aHtml": "On Aircall's pricing page, Essentials is $30 per license per month, billed annually and Professional is $50 per license per month, billed annually, with 3 licenses minimum on every plan. Enterprise is custom pricing, for teams of 25+ licenses. The FAQ says annual billing is 25% off monthly."
+    },
+    {
+      "q": "Does Aircall integrate with HubSpot?",
+      "a": "Yes. In HubSpot, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription. Insight Cards show HubSpot history before a rep answers.",
+      "aHtml": "Yes. In HubSpot, calls are logged on Contact, Company, Deal, and Ticket records with duration, number, a recording link, comments, outcomes, and transcription. Insight Cards show HubSpot history before a rep answers."
+    },
+    {
+      "q": "Is Aircall calling unlimited?",
+      "a": "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply), and unlimited global calls on Enterprise. International rates vary.",
+      "aHtml": "Aircall lists unlimited calls within the US and Canada on Essentials and Professional (terms apply), and unlimited global calls on Enterprise. International rates vary."
+    },
+    {
+      "q": "Should a small HubSpot team start with Aircall or HubSpot calling?",
+      "a": "Start with HubSpot calling if your monthly talk time fits the included minutes. Look at Aircall when you are hitting that cap or need a full phone system on top of the CRM.",
+      "aHtml": "Start with HubSpot calling if your monthly talk time fits the included minutes. Look at Aircall when you are hitting that cap or need a full phone system on top of the CRM."
+    }
+  ],
+  "closing": "Decide on minutes before you decide on a phone system.",
+  "ctas": [
+    {
+      "label": "Visit HubSpot",
+      "href": "https://www.hubspot.com/products/crm",
+      "kind": "site",
+      "product": "hubspot"
+    },
+    {
+      "label": "Try Aircall",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "kind": "affiliate",
+      "product": "aircall"
+    }
+  ],
+  "products": [
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "type": "affiliate",
+      "pick": "Start here if your monthly talk time fits the minutes already included with your hub.",
+      "href": "https://www.hubspot.com/products/crm",
+      "linkKind": "site"
+    },
+    {
+      "slug": "aircall",
+      "name": "Aircall",
+      "type": "affiliate",
+      "pick": "Add this when you are hitting the minute cap or need a full phone system on top of the CRM.",
+      "href": "https://get.aircall.io/fddlp6kkr3qu",
+      "linkKind": "affiliate"
+    }
+  ],
+  "sources": [
+    {
+      "text": "HubSpot CRM page",
+      "href": "https://www.hubspot.com/products/crm"
+    },
+    {
+      "text": "Aircall pricing page",
+      "href": "https://aircall.io/pricing/"
+    },
+    {
+      "text": "HubSpot App Marketplace: Aircall listing",
+      "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
+    },
+    {
+      "text": "Aircall's HubSpot integration page",
+      "href": "https://aircall.io/integrations/hubspot/"
+    },
+    {
+      "text": "HubSpot calling page",
+      "href": "https://www.hubspot.com/products/voip"
+    },
+    {
+      "text": "HubSpot product and services catalog",
+      "href": "https://legal.hubspot.com/hubspot-product-and-services-catalog"
+    },
+    {
+      "text": "HubSpot calling FAQ",
+      "href": "https://knowledge.hubspot.com/calling/calling-frequently-asked-questions"
+    },
+    {
+      "text": "HubSpot catalog, add-ons",
+      "href": "https://legal.hubspot.com/hubspot-product-and-services-catalog/add-ons"
+    },
+    {
+      "text": "HubSpot help: make calls",
+      "href": "https://knowledge.hubspot.com/calling/make-calls-in-the-hubspot-browser"
+    },
+    {
+      "text": "HubSpot Sales Hub pricing page",
+      "href": "https://www.hubspot.com/pricing/sales"
+    },
+    {
+      "text": "HubSpot help: sales power dialer",
+      "href": "https://knowledge.hubspot.com/calling/use-the-sales-power"
+    },
+    {
+      "text": "HubSpot data enrichment page",
+      "href": "https://www.hubspot.com/products/crm/data-enrichment"
+    },
+    {
+      "text": "HubSpot help: data enrichment",
+      "href": "https://knowledge.hubspot.com/records/get-started-with-data-enrichment"
+    },
+    {
+      "text": "HubSpot help: e-signatures with quotes",
+      "href": "https://knowledge.hubspot.com/quotes/use-e-signatures-with-quotes"
+    },
+    {
+      "text": "HubSpot Revenue Hub page",
+      "href": "https://www.hubspot.com/products/revenue"
+    },
+    {
+      "text": "HubSpot help: legacy quotes vs quotes",
+      "href": "https://knowledge.hubspot.com/quotes/compare-legacy-quotes-and-quotes"
+    }
+  ],
+  "related": [
+    {
+      "slug": "aircall-vs-calilio",
+      "route": "compare",
+      "title": "Aircall vs Calilio for Small HubSpot Teams",
+      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
+      "href": "/tools/compare/aircall-vs-calilio"
+    },
+    {
+      "slug": "calling-apps-for-hubspot",
+      "route": "best",
+      "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
+      "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
+      "href": "/tools/best/calling-apps-for-hubspot"
+    },
+    {
+      "slug": "apollo-vs-lusha",
+      "route": "compare",
+      "title": "Apollo vs Lusha for HubSpot Contact Enrichment",
+      "dek": "Both tools find emails and phone numbers. They differ in how much of HubSpot they touch.",
+      "href": "/tools/compare/apollo-vs-lusha"
+    },
+    {
+      "slug": "crm-for-freelancers",
+      "route": "best",
+      "title": "Best CRM for Freelancers in 2026",
+      "dek": "Five CRMs built to handle a one-person client book, compared on price, limits, and trial length.",
+      "href": "/tools/best/crm-for-freelancers"
+    }
+  ]
+}

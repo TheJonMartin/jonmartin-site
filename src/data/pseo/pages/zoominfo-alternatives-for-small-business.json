@@ -12,8 +12,8 @@
     "Every price and integration detail below comes from the vendor's own pages, checked on the date shown."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-23",
+  "checked": "Nov 23, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Small sales teams on HubSpot"
@@ -30,7 +30,7 @@
     "rows": [
       [
         "Public self-serve price",
-        "Yes. Basic is $49 a month on monthly billing.",
+        "Yes. Basic is $65 a month on monthly billing.",
         "Yes. Starter is $49.90 a month billed monthly, with 400 credits a month.",
         "No: paid plans are quoted per company, with no fixed public price.",
         "No: priced by quote, with no public price."
@@ -60,7 +60,7 @@
     "rowsHtml": [
       [
         "Public self-serve price",
-        "Yes. Basic is $49 a month on monthly billing.",
+        "Yes. Basic is $65 a month on monthly billing.",
         "Yes. Starter is $49.90 a month billed monthly, with 400 credits a month.",
         "No: paid plans are quoted per company, with no fixed public price.",
         "No: priced by quote, with no public price."
@@ -147,7 +147,7 @@
         },
         {
           "type": "p",
-          "html": "Apollo has a free plan that stays free with no time limit. Paid plans on Apollo's pricing page: Basic at $49 a month on monthly billing and Professional at $99 a month on monthly billing. Two terms to know before you buy: all seats on an Apollo account are on the same plan, and unused credits expire at the end of each billing cycle."
+          "html": "Apollo has a free plan that stays free with no time limit. Paid plans on Apollo's pricing page: Basic at $65 a month on monthly billing and Professional at $99 a month on monthly billing. Two terms to know before you buy: all seats on an Apollo account are on the same plan, and unused credits expire at the end of each billing cycle."
         },
         {
           "type": "p",
@@ -378,9 +378,28 @@
     {
       "text": "Cognism HubSpot help article",
       "href": "https://help.cognism.com/hc/en-gb/articles/34166414769298-How-to-Set-Up-HubSpot-Field-Mappings"
+    },
+    {
+      "text": "Seamless.AI pricing page",
+      "href": "https://seamless.ai/pricing"
+    },
+    {
+      "text": "Cognism CRM Enrichment page",
+      "href": "https://www.cognism.com/enrich"
+    },
+    {
+      "text": "Cognism HubSpot 2-way sync announcement",
+      "href": "https://www.cognism.com/newsroom/cognism-launches-2-way-sync-for-hubspot"
     }
   ],
   "related": [
+    {
+      "slug": "data-enrichment-tools-for-hubspot",
+      "route": "best",
+      "title": "Data Enrichment Tools for HubSpot (Lusha, Apollo, Seamless)",
+      "dek": "These tools do not all do the same job. Some fill fields on records you already have. Others go find net-new people and direct dials.",
+      "href": "/tools/best/data-enrichment-tools-for-hubspot"
+    },
     {
       "slug": "apollo-vs-lusha",
       "route": "compare",
@@ -401,13 +420,6 @@
       "title": "Calling Apps for HubSpot: Aircall vs Unitel Voice",
       "dek": "If your reps make calls and those calls never land on the HubSpot record, your pipeline report is fiction.",
       "href": "/tools/best/calling-apps-for-hubspot"
-    },
-    {
-      "slug": "aircall-vs-calilio",
-      "route": "compare",
-      "title": "Aircall vs Calilio for Small HubSpot Teams",
-      "dek": "Both are cloud phone systems that log calls into HubSpot. The price floor is very different.",
-      "href": "/tools/compare/aircall-vs-calilio"
     }
   ]
 }
