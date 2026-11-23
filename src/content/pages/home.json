@@ -63,7 +63,7 @@
 	"fixerPoints": [
 		"Re-reads the portal and shows a dry-run preview of the change.",
 		"Reads each value back after writing, and restores the snapshot if it doesn't match.",
-		"Never deletes or merges records, turns on a workflow, or sends email."
+		"Never deletes or merges records, turns on a workflow, or sends email. It may delete a HubSpot list only after you review a dry run and approve that run."
 	],
 	"fixerNote": "Fixer covers a short, published list of fixes. Anything else on the report stays with you. One HubSpot app (Portal Audit, with Fixer built in), not made or endorsed by HubSpot.",
 	"writingHeading": "Writing",
