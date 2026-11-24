@@ -13,10 +13,10 @@
     "seo-scan": "npm run build && node scripts/seo-scan/index.mjs"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.4.12"
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^7.4.13"
   },
   "devDependencies": {
-    "linkedom": "^0.18.13"
+    "linkedom": "^0.18.15"
   }
 }
