@@ -12,8 +12,8 @@
     "Start with the records in HubSpot, then decide whether you need a specialist, and whether you need a price you can see before a sales call."
   ],
   "published": "2026-11-23",
-  "modified": "2026-11-23",
-  "checked": "Nov 23, 2026",
+  "modified": "2026-11-24",
+  "checked": "Nov 24, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "HubSpot teams filling contact and company data"
@@ -431,19 +431,15 @@
   ],
   "sources": [
     {
-      "text": "Seamless.AI pricing article",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/blog/products/how-much-does-seamless-ai-cost"
     },
     {
-      "text": "Seamless.AI credit and license types",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/education/articles/seamless-ai-credit-and-license-types"
     },
     {
-      "text": "Seamless.AI's HubSpot integration page",
-      "href": "https://seamless.ai/products/integrations/hubspot"
-    },
-    {
-      "text": "Seamless.AI Prospecting Agent article",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/education/articles/hubspot-and-seamless-data-source-integration"
     },
     {
@@ -451,23 +447,19 @@
       "href": "https://www.apollo.io/pricing"
     },
     {
-      "text": "Apollo HubSpot page",
+      "text": "Apollo pricing page",
       "href": "https://www.apollo.io/apollo-hubspot"
-    },
-    {
-      "text": "Apollo help article",
-      "href": "https://knowledge.apollo.io/hc/en-us/articles/4416619021837-Integrate-HubSpot-with-Apollo"
     },
     {
       "text": "Lusha pricing page",
       "href": "https://www.lusha.com/pricing/"
     },
     {
-      "text": "Lusha HubSpot page",
+      "text": "Lusha pricing page",
       "href": "https://www.lusha.com/integrations/hubspot/"
     },
     {
-      "text": "Seamless.AI HubSpot article",
+      "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/customers/education/articles/hubspot"
     },
     {
@@ -475,27 +467,35 @@
       "href": "https://www.cognism.com/pricing"
     },
     {
-      "text": "Cognism HubSpot help article",
-      "href": "https://help.cognism.com/hc/en-gb/articles/34166414769298-How-to-Set-Up-HubSpot-Field-Mappings"
-    },
-    {
       "text": "ZoomInfo pricing page",
       "href": "https://www.zoominfo.com/pricing"
+    },
+    {
+      "text": "Apollo pricing page",
+      "href": "https://knowledge.apollo.io/hc/en-us/articles/4416619021837-Integrate-HubSpot-with-Apollo"
+    },
+    {
+      "text": "Cognism pricing page",
+      "href": "https://help.cognism.com/hc/en-gb/articles/34166414769298-How-to-Set-Up-HubSpot-Field-Mappings"
     },
     {
       "text": "Seamless.AI pricing page",
       "href": "https://seamless.ai/pricing"
     },
     {
-      "text": "Cognism CRM Enrichment page",
+      "text": "Seamless.AI pricing page",
+      "href": "https://seamless.ai/products/integrations/hubspot"
+    },
+    {
+      "text": "Cognism pricing page",
       "href": "https://www.cognism.com/enrich"
     },
     {
-      "text": "Cognism HubSpot 2-way sync announcement",
+      "text": "Cognism pricing page",
       "href": "https://www.cognism.com/newsroom/cognism-launches-2-way-sync-for-hubspot"
     },
     {
-      "text": "ZoomInfo HubSpot integration page",
+      "text": "ZoomInfo pricing page",
       "href": "https://www.zoominfo.com/integrations/hubspot"
     }
   ],
