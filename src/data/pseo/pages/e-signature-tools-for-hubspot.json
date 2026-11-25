@@ -12,8 +12,8 @@
     "Four options lined up for HubSpot teams: HubSpot quotes, DocuSign, Dropbox Sign, and QuickSigner."
   ],
   "published": "2026-11-23",
-  "modified": "2026-11-23",
-  "checked": "Nov 23, 2026",
+  "modified": "2026-11-25",
+  "checked": "Nov 25, 2026",
   "disclosure": "This page contains an affiliate link. If you sign up through it, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "HubSpot teams that need documents signed"
@@ -334,32 +334,32 @@
   ],
   "sources": [
     {
-      "text": "QuickSigner pricing page",
-      "href": "https://www.quicksigner.com/pricing/"
-    },
-    {
-      "text": "DocuSign eSignature pricing page",
-      "href": "https://ecom.docusign.com/plans-and-pricing/esignature"
-    },
-    {
-      "text": "DocuSign plans and pricing guide",
-      "href": "https://www.docusign.com/blog/docusign-plans-and-pricing"
-    },
-    {
-      "text": "HubSpot help: DocuSign integration",
-      "href": "https://knowledge.hubspot.com/integrations/use-hubspots-integration-with-docusign"
-    },
-    {
       "text": "Dropbox Sign pricing page",
       "href": "https://sign.dropbox.com/products/dropbox-sign/pricing"
     },
     {
-      "text": "Dropbox help: install the HubSpot integration",
+      "text": "QuickSigner pricing page",
+      "href": "https://www.quicksigner.com/pricing/"
+    },
+    {
+      "text": "DocuSign pricing page",
+      "href": "https://knowledge.hubspot.com/integrations/use-hubspots-integration-with-docusign"
+    },
+    {
+      "text": "DocuSign pricing page",
+      "href": "https://www.docusign.com/blog/docusign-plans-and-pricing"
+    },
+    {
+      "text": "Dropbox Sign pricing page",
       "href": "https://help.dropbox.com/integrations/install-authorize-hubspot-integration"
     },
     {
-      "text": "Dropbox help: HubSpot integration overview",
+      "text": "Dropbox Sign pricing page",
       "href": "https://help.dropbox.com/integrations/dropbox-sign-hubspot-integration-overview"
+    },
+    {
+      "text": "DocuSign pricing page",
+      "href": "https://ecom.docusign.com/plans-and-pricing/esignature"
     }
   ],
   "related": [
