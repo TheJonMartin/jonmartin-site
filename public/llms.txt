@@ -96,6 +96,22 @@ Affiliate links, disclosed on each page. Each page covers what the tool does, wh
 - [Plesk](https://thejonmartin.com/tools/plesk): Plesk is a hosting control panel for running WordPress sites: updates, staging, cloning and backups from one dashboard. Who it fits, and who can skip it.
 - [QuickSigner](https://thejonmartin.com/tools/quicksigner): QuickSigner is a simple, lower-cost e-signature tool with templates, signing order and an audit trail. Signers need no account. Who it suits, and the API catch.
 
+## Tool guides: best-of lists and comparisons
+
+Side-by-side guides for HubSpot teams, with prices and HubSpot integration checked on the date shown on each page. Affiliate links, disclosed on each page.
+
+- [Calling apps for HubSpot](https://thejonmartin.com/tools/best/calling-apps-for-hubspot): Aircall vs Unitel Voice for small sales teams: what logs to HubSpot Contacts, Deals and Tickets, and which is a simple phone line with no HubSpot sync.
+- [Cold email tools for HubSpot](https://thejonmartin.com/tools/best/cold-email-tools-for-hubspot): What lemlist, Instantly, Apollo and Seamless.AI sync to HubSpot, plan notes, and when HubSpot sequences are enough.
+- [Best CRM for freelancers](https://thejonmartin.com/tools/best/crm-for-freelancers): Capsule, Close, Pipedrive, folk and HubSpot compared for freelancers and solo consultants who need a low-cost CRM.
+- [Data enrichment tools for HubSpot](https://thejonmartin.com/tools/best/data-enrichment-tools-for-hubspot): Lusha, Apollo, Seamless.AI, Cognism and ZoomInfo compared for HubSpot users, plus when HubSpot's own enrichment is enough.
+- [E-signature tools for HubSpot](https://thejonmartin.com/tools/best/e-signature-tools-for-hubspot): HubSpot quote e-sign compared with DocuSign, Dropbox Sign and QuickSigner: plans, prices, and which ones connect to HubSpot.
+- [ZoomInfo alternatives for small teams on HubSpot](https://thejonmartin.com/tools/best/zoominfo-alternatives-for-small-business): Apollo, Lusha, Seamless.AI and Cognism compared on public prices, free plans and HubSpot sync.
+- [Aircall vs Calilio](https://thejonmartin.com/tools/compare/aircall-vs-calilio): Entry prices, seat minimums, what lands in HubSpot, and which plan has a power dialer.
+- [Apollo vs Lusha](https://thejonmartin.com/tools/compare/apollo-vs-lusha): Free plans, self-serve prices, what syncs into HubSpot, and who has to connect it.
+- [Close vs Pipedrive](https://thejonmartin.com/tools/compare/close-vs-pipedrive): Price, calling, integrations and fit for a 5-person B2B sales team.
+- [HubSpot calling vs Aircall](https://thejonmartin.com/tools/compare/hubspot-vs-aircall): Included minutes, seats, prices, and what logs to the record.
+- [HubSpot vs Close](https://thejonmartin.com/tools/compare/hubspot-vs-close): Seat prices, free options, calling, and the two-way sync that lets you run both.
+
 ## Optional
 
 - [Stakeholder Communication Matrix (PDF)](https://thejonmartin.com/stakeholder-communication-matrix.pdf): The downloadable reference template from the matrix essay — frequency, channel, and depth of communication for six client-side stakeholder tiers.
