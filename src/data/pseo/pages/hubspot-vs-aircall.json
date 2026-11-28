@@ -12,8 +12,8 @@
     "This page lines up HubSpot's built-in dialer against Aircall so you can decide on capacity first and features second."
   ],
   "published": "2026-11-23",
-  "modified": "2026-11-23",
-  "checked": "Nov 23, 2026",
+  "modified": "2026-11-28",
+  "checked": "Nov 28, 2026",
   "disclosure": "This page contains an affiliate link. If you sign up through it, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "HubSpot sales teams deciding on a dialer"
@@ -368,7 +368,7 @@
   ],
   "sources": [
     {
-      "text": "HubSpot CRM page",
+      "text": "HubSpot pricing page",
       "href": "https://www.hubspot.com/products/crm"
     },
     {
@@ -376,59 +376,59 @@
       "href": "https://aircall.io/pricing/"
     },
     {
-      "text": "HubSpot App Marketplace: Aircall listing",
+      "text": "Aircall pricing page",
       "href": "https://ecosystem.hubspot.com/marketplace/listing/aircall"
     },
     {
-      "text": "Aircall's HubSpot integration page",
+      "text": "Aircall pricing page",
       "href": "https://aircall.io/integrations/hubspot/"
     },
     {
-      "text": "HubSpot calling page",
+      "text": "HubSpot pricing page",
       "href": "https://www.hubspot.com/products/voip"
     },
     {
-      "text": "HubSpot product and services catalog",
+      "text": "HubSpot pricing page",
       "href": "https://legal.hubspot.com/hubspot-product-and-services-catalog"
     },
     {
-      "text": "HubSpot calling FAQ",
+      "text": "HubSpot pricing page",
       "href": "https://knowledge.hubspot.com/calling/calling-frequently-asked-questions"
     },
     {
-      "text": "HubSpot catalog, add-ons",
+      "text": "HubSpot pricing page",
       "href": "https://legal.hubspot.com/hubspot-product-and-services-catalog/add-ons"
     },
     {
-      "text": "HubSpot help: make calls",
-      "href": "https://knowledge.hubspot.com/calling/make-calls-in-the-hubspot-browser"
-    },
-    {
-      "text": "HubSpot Sales Hub pricing page",
-      "href": "https://www.hubspot.com/pricing/sales"
-    },
-    {
-      "text": "HubSpot help: sales power dialer",
+      "text": "HubSpot pricing page",
       "href": "https://knowledge.hubspot.com/calling/use-the-sales-power"
     },
     {
-      "text": "HubSpot data enrichment page",
+      "text": "HubSpot pricing page",
       "href": "https://www.hubspot.com/products/crm/data-enrichment"
     },
     {
-      "text": "HubSpot help: data enrichment",
+      "text": "HubSpot pricing page",
       "href": "https://knowledge.hubspot.com/records/get-started-with-data-enrichment"
     },
     {
-      "text": "HubSpot help: e-signatures with quotes",
+      "text": "HubSpot pricing page",
       "href": "https://knowledge.hubspot.com/quotes/use-e-signatures-with-quotes"
     },
     {
-      "text": "HubSpot Revenue Hub page",
+      "text": "HubSpot pricing page",
       "href": "https://www.hubspot.com/products/revenue"
     },
     {
-      "text": "HubSpot help: legacy quotes vs quotes",
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/calling/make-calls-in-the-hubspot-browser"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://www.hubspot.com/pricing/sales"
+    },
+    {
+      "text": "HubSpot pricing page",
       "href": "https://knowledge.hubspot.com/quotes/compare-legacy-quotes-and-quotes"
     }
   ],

@@ -12,8 +12,8 @@
     "Prices and features below come from each vendor's own pages, checked on the date shown."
   ],
   "published": "2026-11-12",
-  "modified": "2026-11-12",
-  "checked": "Nov 12, 2026",
+  "modified": "2026-11-28",
+  "checked": "Nov 28, 2026",
   "disclosure": "This page contains affiliate links. If you sign up through one, I earn a commission. It costs you nothing extra.",
   "niche": {
     "label": "Five-person B2B sales teams"
@@ -250,15 +250,63 @@
   ],
   "sources": [
     {
+      "text": "HubSpot pricing page",
+      "href": "https://www.hubspot.com/products/crm"
+    },
+    {
       "text": "Close pricing page",
       "href": "https://www.close.com/pricing"
     },
     {
-      "text": "HubSpot CRM page",
-      "href": "https://www.hubspot.com/products/crm"
+      "text": "HubSpot pricing page",
+      "href": "https://www.hubspot.com/products/voip"
     },
     {
-      "text": "Close HubSpot integration page",
+      "text": "HubSpot pricing page",
+      "href": "https://legal.hubspot.com/hubspot-product-and-services-catalog"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/calling/calling-frequently-asked-questions"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://legal.hubspot.com/hubspot-product-and-services-catalog/add-ons"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/calling/use-the-sales-power"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://www.hubspot.com/products/crm/data-enrichment"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/records/get-started-with-data-enrichment"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/quotes/use-e-signatures-with-quotes"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://www.hubspot.com/products/revenue"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/calling/make-calls-in-the-hubspot-browser"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://www.hubspot.com/pricing/sales"
+    },
+    {
+      "text": "HubSpot pricing page",
+      "href": "https://knowledge.hubspot.com/quotes/compare-legacy-quotes-and-quotes"
+    },
+    {
+      "text": "Close pricing page",
       "href": "https://www.close.com/integrations/hubspot"
     }
   ],
