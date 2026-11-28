@@ -179,6 +179,10 @@ function summarize({ mode, date, written, skipped, gateFailures, liveRewrites, r
 	return `pseo ${mode} ${date}: +${written.length} new, ${liveRewrites.length} re-rendered (${demoted} -> noindex), ${retirements.length} retired, ${gateFailures.length} gate failures, ${skipped.length} quota-skipped`;
 }
 
+function shouldOpenNightlyPr(written) {
+	return written.length > 0;
+}
+
 function dailyQuota() {
 	const n = Number(process.env.PSEO_DAILY_QUOTA ?? 2);
 	return Number.isFinite(n) && n >= 0 ? n : 2;
@@ -259,7 +263,7 @@ async function runRemote({ date }) {
 			gateFailures,
 		};
 
-		if (Object.keys(files).length > 0) {
+		if (shouldOpenNightlyPr(written)) {
 			await openPr({
 				token: process.env.PSEO_GITHUB_TOKEN,
 				repo: process.env.PSEO_REPO,
@@ -269,6 +273,8 @@ async function runRemote({ date }) {
 				title: `pSEO nightly ${date}`,
 				body: JSON.stringify(summary, null, 2),
 			});
+		} else {
+			console.log('no new pages, skipping PR');
 		}
 
 		// Write back refreshed fact dates/stale flags and page statuses.
@@ -311,4 +317,4 @@ if (path.resolve(fileURLToPath(import.meta.url)) === path.resolve(process.argv[1
 	});
 }
 
-export { buildRun, applyLiveRules, applyQuota, resolveLinks };
+export { buildRun, applyLiveRules, applyQuota, resolveLinks, shouldOpenNightlyPr };

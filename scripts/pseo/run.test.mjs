@@ -6,6 +6,7 @@ import path from 'node:path';
 
 import { refreshFacts, checkLink } from './lib/refresh.mjs';
 import { trafficVerdicts } from './lib/gsc.mjs';
+import { shouldOpenNightlyPr } from './run.mjs';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
 
@@ -70,6 +71,14 @@ test('trafficVerdicts: a 90+ day old page with plenty of impressions is left alo
 	const pages = [{ slug: 'a', status: 'live', published: '2026-01-01' }];
 	const metrics = [{ page: 'a', date: '2026-10-01', impressions: 50 }];
 	assert.deepEqual(trafficVerdicts(pages, metrics, '2026-11-01'), {});
+});
+
+test('shouldOpenNightlyPr: true when at least one new page was written', () => {
+	assert.equal(shouldOpenNightlyPr([{ slug: 'new-page' }]), true);
+});
+
+test('shouldOpenNightlyPr: false when no new pages (re-renders / noindex / retirements only)', () => {
+	assert.equal(shouldOpenNightlyPr([]), false);
 });
 
 test('run.mjs --local --dry-run exits 0', () => {
