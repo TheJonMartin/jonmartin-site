@@ -250,6 +250,7 @@ const organizationSchema = {
 					'@type': 'SoftwareApplication',
 					'@id': 'https://thejonmartin.com/#giftkeep',
 					name: 'GiftKeep',
+					description: 'A gift ledger and donor management tool for small nonprofits.',
 					url: 'https://giftkeep.app/',
 				},
 			},
